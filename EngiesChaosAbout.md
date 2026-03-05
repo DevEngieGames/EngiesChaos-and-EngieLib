@@ -17,8 +17,12 @@ You could also call this a Fork of [All About Engie](https://modrinth.com/mod/al
 - **There is references to Blood. Not like actual blood, but my brother who goes by "Blood/Hellhound_Blood" online.**
 - **There is references to real life species. (i.e. Foxes, Sharks, and Cats.)**
 - **There will be a WIKI later down the line.**
-- **This mods in game ID is the same as the original(AKA "allaboutengie" or "All About Engie").**
+- **~~This mods in game ID is the same as the original(AKA "allaboutengie" or "All About Engie").~~ <- This no longer applies from versions 13.34.37 and above as the mod has gotten a rename.**
 - **This mod can run without [AttributeFix](https://modrinth.com/mod/attributefix) but please do install it for any version, the mod works much better with it installed. (Thanks to the [AttributeFix](https://modrinth.com/mod/attributefix) [developer](https://modrinth.com/user/Darkhax) for the 1.21.4 port.)**
+- **If you want to check on what versions are currently up and working correctly for the workspace, you can check them [here](https://github.com/DevEngieGames/RE-All-About-Engie/blob/Version-Statuses/Check%20me!).**
+- **If (by chance) you want to know what mods are compatible and incompatible, I have those left in the mod versions. Optional being compatible and Incompatible being (well) incompatible.**
+- **This mod REQUIRES "EngieLib" you can get "EngieLib" from [here](https://github.com/DevEngieGames/RE-AllAboutEngie-and-EngieLib/releases) or [here](https://modrinth.com/mod/engielib).**
+- **Xaero's Minimap/Worldmap mod support is built in for this mod, as for everything else, check out [this page](https://github.com/DevEngieGames/RE-AllAboutEngie-and-EngieLib/tree/Resourcepacks) on the github for the others.**
 
 ![About the mod.](https://cdn.modrinth.com/data/cached_images/c0e86859a7baf2a5aab8e90cfd52645be7806692.png)
 
@@ -31,7 +35,7 @@ You could also call this a Fork of [All About Engie](https://modrinth.com/mod/al
 - **Amour and tools.**
   - The tools can range from being tiny to extremely massive!
     - Mini, Regular, Big, Large, Huge, Enormous, Gigantic, Massive, Biblically, Monstrosity, Doomsday, Super Doomsday, The End, Engies, Mindscape Engie's, EngieGames.
-    - There is Antimatter variants of all of these.
+    - There is Antimatter variants of all of these. Except for Mindscape Engie's.
 - **Mobs.**
   - Ranging from passive and helpful to extremely aggressive!
     - They also drop items for you to craft tools!
@@ -49,7 +53,7 @@ You could also call this a Fork of [All About Engie](https://modrinth.com/mod/al
     - Only time will tell.
 - **Doomsday**
   - Survive Mother Nature.
-    - I highly reccommend you backup your worlds when trying this. Also has a chance to break which an operator can run "/AllAboutEngie debug doomsday" twice to fix it.
+    - I highly reccommend you backup your worlds when trying this. Also has a chance to break which an operator can run "/REAllAboutEngie debug doomsday" twice to fix it.
 - **Challenge.**
   - Good luck.
     - Enable the trueHardcore("HAVE FUN") gamerule to get access to this!
@@ -61,7 +65,7 @@ You could also call this a Fork of [All About Engie](https://modrinth.com/mod/al
 
 - **MCreator**
   - **What I use to make the mod.**
-  - **Current engine being used: 2025.2**
+  - **Current engine being used: 2025.2(2025.3 for 1.21.8)**
 - **[DevEngie](https://modrinth.com/user/DevEngie)**
   - **Made the base for this mod. ([All About Engie](https://modrinth.com/mod/all-about-engie))**
   - **Gave me permission to reupload & rework the original mod.**
