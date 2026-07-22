@@ -12,6 +12,7 @@ assignees: DevEngieGames
 - [ ] Yes
 
 **Version the bug occurs on.**
+- [ ] All Versions
 - [ ] 1.21.4
 - [ ] 1.21.1
 - [ ] 1.20.6
@@ -19,6 +20,7 @@ assignees: DevEngieGames
 - [ ] 1.20.1
 - [ ] 1.19.4
 - [ ] 1.19.2
+- [ ] 1.18.2
 - [ ] Resourcepack
 
 **Describe the bug**
