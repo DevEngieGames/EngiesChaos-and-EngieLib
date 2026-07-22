@@ -1,8 +1,8 @@
 ---
-name: Bug report
-about: Create a report to help us improve
+name: Bug report.
+about: Create a report to help me fix the damn mods.
 title: 'Bug Report: '
-labels: 'Bug'
+labels: 'Bug.'
 assignees: DevEngieGames
 
 ---
