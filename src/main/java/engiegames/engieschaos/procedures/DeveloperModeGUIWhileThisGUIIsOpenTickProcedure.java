@@ -1,0 +1,57 @@
+package engiegames.engieschaos.procedures;
+
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+
+import engiegames.engieschaos.init.EngiesChaosModMenus;
+import engiegames.engieschaos.init.EngiesChaosModItems;
+
+public class DeveloperModeGUIWhileThisGUIIsOpenTickProcedure {
+	public static void execute(Entity entity) {
+		if (entity == null)
+			return;
+		if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+			ItemStack _setstack = new ItemStack(EngiesChaosModItems.OLD_ENRAGED_PLUSH.get()).copy();
+			_setstack.setCount(1);
+			_menu.getSlots().get(4).set(_setstack);
+			_player.containerMenu.broadcastChanges();
+		}
+		if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+			ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_GAMES_BAN_HAMMER.get()).copy();
+			_setstack.setCount(1);
+			_menu.getSlots().get(5).set(_setstack);
+			_player.containerMenu.broadcastChanges();
+		}
+		if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+			ItemStack _setstack = new ItemStack(EngiesChaosModItems.X_ENGIE_GAMESS_HELMET.get()).copy();
+			_setstack.setCount(1);
+			_menu.getSlots().get(6).set(_setstack);
+			_player.containerMenu.broadcastChanges();
+		}
+		if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+			ItemStack _setstack = new ItemStack(EngiesChaosModItems.X_ENGIE_GAMESS_CHESTPLATE.get()).copy();
+			_setstack.setCount(1);
+			_menu.getSlots().get(7).set(_setstack);
+			_player.containerMenu.broadcastChanges();
+		}
+		if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+			ItemStack _setstack = new ItemStack(EngiesChaosModItems.X_ENGIE_GAMESS_LEGGINGS.get()).copy();
+			_setstack.setCount(1);
+			_menu.getSlots().get(8).set(_setstack);
+			_player.containerMenu.broadcastChanges();
+		}
+		if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+			ItemStack _setstack = new ItemStack(EngiesChaosModItems.X_ENGIE_GAMESS_BOOTS.get()).copy();
+			_setstack.setCount(1);
+			_menu.getSlots().get(9).set(_setstack);
+			_player.containerMenu.broadcastChanges();
+		}
+		if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+			ItemStack _setstack = new ItemStack(EngiesChaosModItems.X_ENGIE_PLUSH.get()).copy();
+			_setstack.setCount(1);
+			_menu.getSlots().get(10).set(_setstack);
+			_player.containerMenu.broadcastChanges();
+		}
+	}
+}
