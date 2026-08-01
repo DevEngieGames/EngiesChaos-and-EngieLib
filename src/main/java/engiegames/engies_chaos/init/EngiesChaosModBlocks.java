@@ -1,0 +1,409 @@
+/*
+ *    MCreator note: This file will be REGENERATED on each build.
+ */
+package engiegames.engies_chaos.init;
+
+import net.minecraftforge.registries.RegistryObject;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.event.level.NoteBlockEvent;
+
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.block.Block;
+
+import engiegames.engies_chaos.block.UnobtainiumOreBlock;
+import engiegames.engies_chaos.block.TheEndCoinBlockBlock;
+import engiegames.engies_chaos.block.ThanksForPlayingOldBlock;
+import engiegames.engies_chaos.block.ThanksForPlayingBlock;
+import engiegames.engies_chaos.block.TextboxyeahBlock;
+import engiegames.engies_chaos.block.SuperDoomsDayCoinBlockBlock;
+import engiegames.engies_chaos.block.ScarletBlock;
+import engiegames.engies_chaos.block.RoughianEngieGamesCoinBlockBlock;
+import engiegames.engies_chaos.block.PhantomAndNutterButterBlock;
+import engiegames.engies_chaos.block.OutragedEngieCrystalFullBlock;
+import engiegames.engies_chaos.block.OutragedEngieCrystalBlock;
+import engiegames.engies_chaos.block.OutragedEngieBlockBlock;
+import engiegames.engies_chaos.block.OldEngieOreBlock;
+import engiegames.engies_chaos.block.OldDeepslateEngieOreBlock;
+import engiegames.engies_chaos.block.MonstrosityEngieCrystalFullBlock;
+import engiegames.engies_chaos.block.MonstrosityEngieCrystalBlock;
+import engiegames.engies_chaos.block.MonstrosityEngieBlockBlock;
+import engiegames.engies_chaos.block.MindscapeCoinBlockBlock;
+import engiegames.engies_chaos.block.MetalTableBlock;
+import engiegames.engies_chaos.block.MetalChestWarpedBlock;
+import engiegames.engies_chaos.block.MetalChestSpruceBlock;
+import engiegames.engies_chaos.block.MetalChestOakBlock;
+import engiegames.engies_chaos.block.MetalChestMangroveBlock;
+import engiegames.engies_chaos.block.MetalChestJungleBlock;
+import engiegames.engies_chaos.block.MetalChestDarkOakBlock;
+import engiegames.engies_chaos.block.MetalChestCrimsonBlock;
+import engiegames.engies_chaos.block.MetalChestCherryBlock;
+import engiegames.engies_chaos.block.MetalChestBlock;
+import engiegames.engies_chaos.block.MetalChestBirchBlock;
+import engiegames.engies_chaos.block.MetalChestAcaciaBlock;
+import engiegames.engies_chaos.block.MadEngieOreBlock;
+import engiegames.engies_chaos.block.MadEngieCrystalFullBlock;
+import engiegames.engies_chaos.block.MadEngieCrystalBlock;
+import engiegames.engies_chaos.block.MadEngieBlockBlock;
+import engiegames.engies_chaos.block.EnragedEngieCrystalFullBlock;
+import engiegames.engies_chaos.block.EnragedEngieCrystalBlock;
+import engiegames.engies_chaos.block.EnragedEngieBlockBlock;
+import engiegames.engies_chaos.block.EngieOreBlock;
+import engiegames.engies_chaos.block.EngieGamesCoinBlockBlock;
+import engiegames.engies_chaos.block.EngieCrystalFullBlock;
+import engiegames.engies_chaos.block.EngieCrystalBlock;
+import engiegames.engies_chaos.block.EngieCoinBlockBlock;
+import engiegames.engies_chaos.block.EngieBlockBlock;
+import engiegames.engies_chaos.block.EngiBlockBlock;
+import engiegames.engies_chaos.block.DoomsDayCoinBlockBlock;
+import engiegames.engies_chaos.block.DeepslateUnobtainiumOreBlock;
+import engiegames.engies_chaos.block.DeepslateMadEngieOreBlock;
+import engiegames.engies_chaos.block.DeepslateEngieOreBlock;
+import engiegames.engies_chaos.block.DarkMatterTheEndCoinBlockBlock;
+import engiegames.engies_chaos.block.DarkMatterSuperDoomsDayCoinBlockBlock;
+import engiegames.engies_chaos.block.DarkMatterRoughianEngieGamesCoinBlockBlock;
+import engiegames.engies_chaos.block.DarkMatterOutragedEngieCrystalFullBlock;
+import engiegames.engies_chaos.block.DarkMatterOutragedEngieCrystalBlock;
+import engiegames.engies_chaos.block.DarkMatterOutragedEngieBlockBlock;
+import engiegames.engies_chaos.block.DarkMatterMonstrosityEngieCrystalFullBlock;
+import engiegames.engies_chaos.block.DarkMatterMonstrosityEngieCrystalBlock;
+import engiegames.engies_chaos.block.DarkMatterMonstrosityEngieBlockBlock;
+import engiegames.engies_chaos.block.DarkMatterMetalChestWarpedBlock;
+import engiegames.engies_chaos.block.DarkMatterMetalChestSpruceBlock;
+import engiegames.engies_chaos.block.DarkMatterMetalChestOakBlock;
+import engiegames.engies_chaos.block.DarkMatterMetalChestMangroveBlock;
+import engiegames.engies_chaos.block.DarkMatterMetalChestJungleBlock;
+import engiegames.engies_chaos.block.DarkMatterMetalChestDarkOakBlock;
+import engiegames.engies_chaos.block.DarkMatterMetalChestCrimsonBlock;
+import engiegames.engies_chaos.block.DarkMatterMetalChestCherryBlock;
+import engiegames.engies_chaos.block.DarkMatterMetalChestBlock;
+import engiegames.engies_chaos.block.DarkMatterMetalChestBirchBlock;
+import engiegames.engies_chaos.block.DarkMatterMetalChestAcaciaBlock;
+import engiegames.engies_chaos.block.DarkMatterMadEngieCrystalFullBlock;
+import engiegames.engies_chaos.block.DarkMatterMadEngieCrystalBlock;
+import engiegames.engies_chaos.block.DarkMatterMadEngieBlockBlock;
+import engiegames.engies_chaos.block.DarkMatterEnragedEngieCrystalFullBlock;
+import engiegames.engies_chaos.block.DarkMatterEnragedEngieCrystalBlock;
+import engiegames.engies_chaos.block.DarkMatterEnragedEngieBlockBlock;
+import engiegames.engies_chaos.block.DarkMatterEngieGamesCoinBlockBlock;
+import engiegames.engies_chaos.block.DarkMatterEngieCrystalFullBlock;
+import engiegames.engies_chaos.block.DarkMatterEngieCrystalBlock;
+import engiegames.engies_chaos.block.DarkMatterEngieCoinBlockBlock;
+import engiegames.engies_chaos.block.DarkMatterEngieBlockBlock;
+import engiegames.engies_chaos.block.DarkMatterDoomsDayCoinBlockBlock;
+import engiegames.engies_chaos.block.DarkMatterCosmicEngieGamesCoinBlockBlock;
+import engiegames.engies_chaos.block.DarkMatterBiblicallyAccurateEngieCrystalFullBlock;
+import engiegames.engies_chaos.block.DarkMatterBiblicallyAccurateEngieCrystalBlock;
+import engiegames.engies_chaos.block.DarkMatterBiblicallyAccurateBlockBlock;
+import engiegames.engies_chaos.block.DarkMatterAngryEngieCrystalFullBlock;
+import engiegames.engies_chaos.block.DarkMatterAngryEngieCrystalBlock;
+import engiegames.engies_chaos.block.DarkMatterAngryEngieBlockBlock;
+import engiegames.engies_chaos.block.CyberbloodBlockBlock;
+import engiegames.engies_chaos.block.CyberOreBlock;
+import engiegames.engies_chaos.block.CyberBlockBlock;
+import engiegames.engies_chaos.block.CosmicEngieGamesCoinBlockBlock;
+import engiegames.engies_chaos.block.CeasarBlock;
+import engiegames.engies_chaos.block.BuddingOutragedEngieBlockBlock;
+import engiegames.engies_chaos.block.BuddingMonstrosityEngieBlockBlock;
+import engiegames.engies_chaos.block.BuddingMadEngieBlockBlock;
+import engiegames.engies_chaos.block.BuddingEnragedEngieBlockBlock;
+import engiegames.engies_chaos.block.BuddingEngieBlockBlock;
+import engiegames.engies_chaos.block.BuddingDarkMatterOutragedEngieBlockBlock;
+import engiegames.engies_chaos.block.BuddingDarkMatterMonstrosityEngieBlockBlock;
+import engiegames.engies_chaos.block.BuddingDarkMatterMadEngieBlockBlock;
+import engiegames.engies_chaos.block.BuddingDarkMatterEnragedEngieBlockBlock;
+import engiegames.engies_chaos.block.BuddingDarkMatterEngieBlockBlock;
+import engiegames.engies_chaos.block.BuddingDarkMatterBiblicallyAccurateEngieBlockBlock;
+import engiegames.engies_chaos.block.BuddingDarkMatterAngryEngieBlockBlock;
+import engiegames.engies_chaos.block.BuddingBiblicallyAccurateEngieBlockBlock;
+import engiegames.engies_chaos.block.BuddingAntimatterOutragedEngieBlockBlock;
+import engiegames.engies_chaos.block.BuddingAntimatterMonstrosityEngieBlockBlock;
+import engiegames.engies_chaos.block.BuddingAntimatterMadEngieBlockBlock;
+import engiegames.engies_chaos.block.BuddingAntimatterEnragedEngieBlockBlock;
+import engiegames.engies_chaos.block.BuddingAntimatterEngieBlockBlock;
+import engiegames.engies_chaos.block.BuddingAntimatterBiblicallyAccurateEngieBlockBlock;
+import engiegames.engies_chaos.block.BuddingAntimatterAngryEngieBlockBlock;
+import engiegames.engies_chaos.block.BuddingAngryEngieBlockBlock;
+import engiegames.engies_chaos.block.BloodOreBlock;
+import engiegames.engies_chaos.block.BloodBlockBlock;
+import engiegames.engies_chaos.block.BiblicallyAccurateEngieCrystalFullBlock;
+import engiegames.engies_chaos.block.BiblicallyAccurateEngieCrystalBlock;
+import engiegames.engies_chaos.block.BiblicallyAccurateBlockBlock;
+import engiegames.engies_chaos.block.AnyTypeOfWoodHelpBlock;
+import engiegames.engies_chaos.block.AntimatterTheEndCoinBlockBlock;
+import engiegames.engies_chaos.block.AntimatterSuperDoomsDayCoinBlockBlock;
+import engiegames.engies_chaos.block.AntimatterOutragedEngieCrystalFullBlock;
+import engiegames.engies_chaos.block.AntimatterOutragedEngieCrystalBlock;
+import engiegames.engies_chaos.block.AntimatterOutragedEngieBlockBlock;
+import engiegames.engies_chaos.block.AntimatterOreBlock;
+import engiegames.engies_chaos.block.AntimatterMonstrosityEngieCrystalFullBlock;
+import engiegames.engies_chaos.block.AntimatterMonstrosityEngieCrystalBlock;
+import engiegames.engies_chaos.block.AntimatterMonstrosityEngieBlockBlock;
+import engiegames.engies_chaos.block.AntimatterMetalChestWarpedBlock;
+import engiegames.engies_chaos.block.AntimatterMetalChestSpruceBlock;
+import engiegames.engies_chaos.block.AntimatterMetalChestOakBlock;
+import engiegames.engies_chaos.block.AntimatterMetalChestMangroveBlock;
+import engiegames.engies_chaos.block.AntimatterMetalChestJungleBlock;
+import engiegames.engies_chaos.block.AntimatterMetalChestDarkOakBlock;
+import engiegames.engies_chaos.block.AntimatterMetalChestCrimsonBlock;
+import engiegames.engies_chaos.block.AntimatterMetalChestCherryBlock;
+import engiegames.engies_chaos.block.AntimatterMetalChestBlock;
+import engiegames.engies_chaos.block.AntimatterMetalChestBirchBlock;
+import engiegames.engies_chaos.block.AntimatterMetalChestAcaciaBlock;
+import engiegames.engies_chaos.block.AntimatterMadEngieCrystalFullBlock;
+import engiegames.engies_chaos.block.AntimatterMadEngieCrystalBlock;
+import engiegames.engies_chaos.block.AntimatterMadEngieBlockBlock;
+import engiegames.engies_chaos.block.AntimatterEnragedEngieCrystalFullBlock;
+import engiegames.engies_chaos.block.AntimatterEnragedEngieCrystalBlock;
+import engiegames.engies_chaos.block.AntimatterEnragedEngieBlockBlock;
+import engiegames.engies_chaos.block.AntimatterEngieGamesCoinBlockBlock;
+import engiegames.engies_chaos.block.AntimatterEngieCrystalFullBlock;
+import engiegames.engies_chaos.block.AntimatterEngieCrystalBlock;
+import engiegames.engies_chaos.block.AntimatterEngieCoinBlockBlock;
+import engiegames.engies_chaos.block.AntimatterEngieBlockBlock;
+import engiegames.engies_chaos.block.AntimatterDoomsDayCoinBlockBlock;
+import engiegames.engies_chaos.block.AntimatterBiblicallyAccurateEngieCrystalFullBlock;
+import engiegames.engies_chaos.block.AntimatterBiblicallyAccurateEngieCrystalBlock;
+import engiegames.engies_chaos.block.AntimatterBiblicallyAccurateBlockBlock;
+import engiegames.engies_chaos.block.AntimatterAngryEngieCrystalFullBlock;
+import engiegames.engies_chaos.block.AntimatterAngryEngieCrystalBlock;
+import engiegames.engies_chaos.block.AntimatterAngryEngieBlockBlock;
+import engiegames.engies_chaos.block.AngryEngieCrystalFullBlock;
+import engiegames.engies_chaos.block.AngryEngieCrystalBlock;
+import engiegames.engies_chaos.block.AngryEngieBlockBlock;
+import engiegames.engies_chaos.block.AngelHattedPresentBlock;
+import engiegames.engies_chaos.EngiesChaosMod;
+
+@Mod.EventBusSubscriber
+public class EngiesChaosModBlocks {
+	public static final DeferredRegister<Block> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, EngiesChaosMod.MODID);
+	public static final RegistryObject<Block> ENGIE_BLOCK = REGISTRY.register("engie_block", EngieBlockBlock::new);
+	public static final RegistryObject<Block> ANGRY_ENGIE_BLOCK = REGISTRY.register("angry_engie_block", AngryEngieBlockBlock::new);
+	public static final RegistryObject<Block> ENRAGED_ENGIE_BLOCK = REGISTRY.register("enraged_engie_block", EnragedEngieBlockBlock::new);
+	public static final RegistryObject<Block> METAL_TABLE = REGISTRY.register("metal_table", MetalTableBlock::new);
+	public static final RegistryObject<Block> OLD_ENGIE_ORE = REGISTRY.register("old_engie_ore", OldEngieOreBlock::new);
+	public static final RegistryObject<Block> OLD_DEEPSLATE_ENGIE_ORE = REGISTRY.register("old_deepslate_engie_ore", OldDeepslateEngieOreBlock::new);
+	public static final RegistryObject<Block> THANKS_FOR_PLAYING = REGISTRY.register("thanks_for_playing", ThanksForPlayingBlock::new);
+	public static final RegistryObject<Block> METAL_CHEST = REGISTRY.register("metal_chest", MetalChestBlock::new);
+	public static final RegistryObject<Block> METAL_CHEST_OAK = REGISTRY.register("metal_chest_oak", MetalChestOakBlock::new);
+	public static final RegistryObject<Block> METAL_CHEST_DARK_OAK = REGISTRY.register("metal_chest_dark_oak", MetalChestDarkOakBlock::new);
+	public static final RegistryObject<Block> METAL_CHEST_SPRUCE = REGISTRY.register("metal_chest_spruce", MetalChestSpruceBlock::new);
+	public static final RegistryObject<Block> METAL_CHEST_ACACIA = REGISTRY.register("metal_chest_acacia", MetalChestAcaciaBlock::new);
+	public static final RegistryObject<Block> METAL_CHEST_BIRCH = REGISTRY.register("metal_chest_birch", MetalChestBirchBlock::new);
+	public static final RegistryObject<Block> METAL_CHEST_WARPED = REGISTRY.register("metal_chest_warped", MetalChestWarpedBlock::new);
+	public static final RegistryObject<Block> METAL_CHEST_CRIMSON = REGISTRY.register("metal_chest_crimson", MetalChestCrimsonBlock::new);
+	public static final RegistryObject<Block> METAL_CHEST_JUNGLE = REGISTRY.register("metal_chest_jungle", MetalChestJungleBlock::new);
+	public static final RegistryObject<Block> OUTRAGED_ENGIE_BLOCK = REGISTRY.register("outraged_engie_block", OutragedEngieBlockBlock::new);
+	public static final RegistryObject<Block> ANGEL_HATTED_PRESENT = REGISTRY.register("angel_hatted_present", AngelHattedPresentBlock::new);
+	public static final RegistryObject<Block> CYBER_ORE = REGISTRY.register("cyber_ore", CyberOreBlock::new);
+	public static final RegistryObject<Block> BLOOD_ORE = REGISTRY.register("blood_ore", BloodOreBlock::new);
+	public static final RegistryObject<Block> UNOBTAINIUM_ORE = REGISTRY.register("unobtainium_ore", UnobtainiumOreBlock::new);
+	public static final RegistryObject<Block> DEEPSLATE_UNOBTAINIUM_ORE = REGISTRY.register("deepslate_unobtainium_ore", DeepslateUnobtainiumOreBlock::new);
+	public static final RegistryObject<Block> CYBER_BLOCK = REGISTRY.register("cyber_block", CyberBlockBlock::new);
+	public static final RegistryObject<Block> BLOOD_BLOCK = REGISTRY.register("blood_block", BloodBlockBlock::new);
+	public static final RegistryObject<Block> CYBERBLOOD_BLOCK = REGISTRY.register("cyberblood_block", CyberbloodBlockBlock::new);
+	public static final RegistryObject<Block> TEXTBOXYEAH = REGISTRY.register("textboxyeah", TextboxyeahBlock::new);
+	public static final RegistryObject<Block> BIBLICALLY_ACCURATE_BLOCK = REGISTRY.register("biblically_accurate_block", BiblicallyAccurateBlockBlock::new);
+	public static final RegistryObject<Block> MONSTROSITY_ENGIE_BLOCK = REGISTRY.register("monstrosity_engie_block", MonstrosityEngieBlockBlock::new);
+	public static final RegistryObject<Block> ANY_TYPE_OF_WOOD_HELP = REGISTRY.register("any_type_of_wood_help", AnyTypeOfWoodHelpBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_ENGIE_BLOCK = REGISTRY.register("antimatter_engie_block", AntimatterEngieBlockBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_ANGRY_ENGIE_BLOCK = REGISTRY.register("antimatter_angry_engie_block", AntimatterAngryEngieBlockBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_ENRAGED_ENGIE_BLOCK = REGISTRY.register("antimatter_enraged_engie_block", AntimatterEnragedEngieBlockBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_OUTRAGED_ENGIE_BLOCK = REGISTRY.register("antimatter_outraged_engie_block", AntimatterOutragedEngieBlockBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_BIBLICALLY_ACCURATE_BLOCK = REGISTRY.register("antimatter_biblically_accurate_block", AntimatterBiblicallyAccurateBlockBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_MONSTROSITY_ENGIE_BLOCK = REGISTRY.register("antimatter_monstrosity_engie_block", AntimatterMonstrosityEngieBlockBlock::new);
+	public static final RegistryObject<Block> ENGI_BLOCK = REGISTRY.register("engi_block", EngiBlockBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_METAL_CHEST = REGISTRY.register("antimatter_metal_chest", AntimatterMetalChestBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_METAL_CHEST_OAK = REGISTRY.register("antimatter_metal_chest_oak", AntimatterMetalChestOakBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_METAL_CHEST_DARK_OAK = REGISTRY.register("antimatter_metal_chest_dark_oak", AntimatterMetalChestDarkOakBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_METAL_CHEST_SPRUCE = REGISTRY.register("antimatter_metal_chest_spruce", AntimatterMetalChestSpruceBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_METAL_CHEST_ACACIA = REGISTRY.register("antimatter_metal_chest_acacia", AntimatterMetalChestAcaciaBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_METAL_CHEST_BIRCH = REGISTRY.register("antimatter_metal_chest_birch", AntimatterMetalChestBirchBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_METAL_CHEST_WARPED = REGISTRY.register("antimatter_metal_chest_warped", AntimatterMetalChestWarpedBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_METAL_CHEST_CRIMSON = REGISTRY.register("antimatter_metal_chest_crimson", AntimatterMetalChestCrimsonBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_METAL_CHEST_JUNGLE = REGISTRY.register("antimatter_metal_chest_jungle", AntimatterMetalChestJungleBlock::new);
+	public static final RegistryObject<Block> METAL_CHEST_MANGROVE = REGISTRY.register("metal_chest_mangrove", MetalChestMangroveBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_METAL_CHEST_MANGROVE = REGISTRY.register("antimatter_metal_chest_mangrove", AntimatterMetalChestMangroveBlock::new);
+	public static final RegistryObject<Block> METAL_CHEST_CHERRY = REGISTRY.register("metal_chest_cherry", MetalChestCherryBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_METAL_CHEST_CHERRY = REGISTRY.register("antimatter_metal_chest_cherry", AntimatterMetalChestCherryBlock::new);
+	public static final RegistryObject<Block> DOOMS_DAY_COIN_BLOCK = REGISTRY.register("dooms_day_coin_block", DoomsDayCoinBlockBlock::new);
+	public static final RegistryObject<Block> SUPER_DOOMS_DAY_COIN_BLOCK = REGISTRY.register("super_dooms_day_coin_block", SuperDoomsDayCoinBlockBlock::new);
+	public static final RegistryObject<Block> THE_END_COIN_BLOCK = REGISTRY.register("the_end_coin_block", TheEndCoinBlockBlock::new);
+	public static final RegistryObject<Block> ENGIE_COIN_BLOCK = REGISTRY.register("engie_coin_block", EngieCoinBlockBlock::new);
+	public static final RegistryObject<Block> MINDSCAPE_COIN_BLOCK = REGISTRY.register("mindscape_coin_block", MindscapeCoinBlockBlock::new);
+	public static final RegistryObject<Block> ENGIE_GAMES_COIN_BLOCK = REGISTRY.register("engie_games_coin_block", EngieGamesCoinBlockBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_DOOMS_DAY_COIN_BLOCK = REGISTRY.register("antimatter_dooms_day_coin_block", AntimatterDoomsDayCoinBlockBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_SUPER_DOOMS_DAY_COIN_BLOCK = REGISTRY.register("antimatter_super_dooms_day_coin_block", AntimatterSuperDoomsDayCoinBlockBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_THE_END_COIN_BLOCK = REGISTRY.register("antimatter_the_end_coin_block", AntimatterTheEndCoinBlockBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_ENGIE_COIN_BLOCK = REGISTRY.register("antimatter_engie_coin_block", AntimatterEngieCoinBlockBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_ENGIE_GAMES_COIN_BLOCK = REGISTRY.register("antimatter_engie_games_coin_block", AntimatterEngieGamesCoinBlockBlock::new);
+	public static final RegistryObject<Block> COSMIC_ENGIE_GAMES_COIN_BLOCK = REGISTRY.register("cosmic_engie_games_coin_block", CosmicEngieGamesCoinBlockBlock::new);
+	public static final RegistryObject<Block> ENGIE_GAMES_TESSERACT_BLOCK = REGISTRY.register("engie_games_tesseract_block", RoughianEngieGamesCoinBlockBlock::new);
+	public static final RegistryObject<Block> PHANTOM_AND_NUTTER_BUTTER = REGISTRY.register("phantom_and_nutter_butter", PhantomAndNutterButterBlock::new);
+	public static final RegistryObject<Block> THANKS_FOR_PLAYING_OLD = REGISTRY.register("thanks_for_playing_old", ThanksForPlayingOldBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_ORE = REGISTRY.register("antimatter_ore", AntimatterOreBlock::new);
+	public static final RegistryObject<Block> BUDDING_ANGRY_ENGIE_BLOCK = REGISTRY.register("budding_angry_engie_block", BuddingAngryEngieBlockBlock::new);
+	public static final RegistryObject<Block> ANGRY_ENGIE_CRYSTAL = REGISTRY.register("angry_engie_crystal", AngryEngieCrystalBlock::new);
+	public static final RegistryObject<Block> BUDDING_ENRAGED_ENGIE_BLOCK = REGISTRY.register("budding_enraged_engie_block", BuddingEnragedEngieBlockBlock::new);
+	public static final RegistryObject<Block> ENRAGED_ENGIE_CRYSTAL = REGISTRY.register("enraged_engie_crystal", EnragedEngieCrystalBlock::new);
+	public static final RegistryObject<Block> BUDDING_OUTRAGED_ENGIE_BLOCK = REGISTRY.register("budding_outraged_engie_block", BuddingOutragedEngieBlockBlock::new);
+	public static final RegistryObject<Block> OUTRAGED_ENGIE_CRYSTAL = REGISTRY.register("outraged_engie_crystal", OutragedEngieCrystalBlock::new);
+	public static final RegistryObject<Block> BUDDING_BIBLICALLY_ACCURATE_ENGIE_BLOCK = REGISTRY.register("budding_biblically_accurate_engie_block", BuddingBiblicallyAccurateEngieBlockBlock::new);
+	public static final RegistryObject<Block> BIBLICALLY_ACCURATE_ENGIE_CRYSTAL = REGISTRY.register("biblically_accurate_engie_crystal", BiblicallyAccurateEngieCrystalBlock::new);
+	public static final RegistryObject<Block> BUDDING_MONSTROSITY_ENGIE_BLOCK = REGISTRY.register("budding_monstrosity_engie_block", BuddingMonstrosityEngieBlockBlock::new);
+	public static final RegistryObject<Block> MONSTROSITY_ENGIE_CRYSTAL = REGISTRY.register("monstrosity_engie_crystal", MonstrosityEngieCrystalBlock::new);
+	public static final RegistryObject<Block> ANGRY_ENGIE_CRYSTAL_FULL = REGISTRY.register("angry_engie_crystal_full", AngryEngieCrystalFullBlock::new);
+	public static final RegistryObject<Block> ENRAGED_ENGIE_CRYSTAL_FULL = REGISTRY.register("enraged_engie_crystal_full", EnragedEngieCrystalFullBlock::new);
+	public static final RegistryObject<Block> OUTRAGED_ENGIE_CRYSTAL_FULL = REGISTRY.register("outraged_engie_crystal_full", OutragedEngieCrystalFullBlock::new);
+	public static final RegistryObject<Block> BIBLICALLY_ACCURATE_ENGIE_CRYSTAL_FULL = REGISTRY.register("biblically_accurate_engie_crystal_full", BiblicallyAccurateEngieCrystalFullBlock::new);
+	public static final RegistryObject<Block> MONSTROSITY_ENGIE_CRYSTAL_FULL = REGISTRY.register("monstrosity_engie_crystal_full", MonstrosityEngieCrystalFullBlock::new);
+	public static final RegistryObject<Block> BUDDING_ANTIMATTER_ANGRY_ENGIE_BLOCK = REGISTRY.register("budding_antimatter_angry_engie_block", BuddingAntimatterAngryEngieBlockBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_ANGRY_ENGIE_CRYSTAL = REGISTRY.register("antimatter_angry_engie_crystal", AntimatterAngryEngieCrystalBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_ANGRY_ENGIE_CRYSTAL_FULL = REGISTRY.register("antimatter_angry_engie_crystal_full", AntimatterAngryEngieCrystalFullBlock::new);
+	public static final RegistryObject<Block> BUDDING_ANTIMATTER_ENRAGED_ENGIE_BLOCK = REGISTRY.register("budding_antimatter_enraged_engie_block", BuddingAntimatterEnragedEngieBlockBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_ENRAGED_ENGIE_CRYSTAL = REGISTRY.register("antimatter_enraged_engie_crystal", AntimatterEnragedEngieCrystalBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_ENRAGED_ENGIE_CRYSTAL_FULL = REGISTRY.register("antimatter_enraged_engie_crystal_full", AntimatterEnragedEngieCrystalFullBlock::new);
+	public static final RegistryObject<Block> BUDDING_ANTIMATTER_OUTRAGED_ENGIE_BLOCK = REGISTRY.register("budding_antimatter_outraged_engie_block", BuddingAntimatterOutragedEngieBlockBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_OUTRAGED_ENGIE_CRYSTAL = REGISTRY.register("antimatter_outraged_engie_crystal", AntimatterOutragedEngieCrystalBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_OUTRAGED_ENGIE_CRYSTAL_FULL = REGISTRY.register("antimatter_outraged_engie_crystal_full", AntimatterOutragedEngieCrystalFullBlock::new);
+	public static final RegistryObject<Block> BUDDING_ANTIMATTER_BIBLICALLY_ACCURATE_ENGIE_BLOCK = REGISTRY.register("budding_antimatter_biblically_accurate_engie_block", BuddingAntimatterBiblicallyAccurateEngieBlockBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_BIBLICALLY_ACCURATE_ENGIE_CRYSTAL = REGISTRY.register("antimatter_biblically_accurate_engie_crystal", AntimatterBiblicallyAccurateEngieCrystalBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_BIBLICALLY_ACCURATE_ENGIE_CRYSTAL_FULL = REGISTRY.register("antimatter_biblically_accurate_engie_crystal_full", AntimatterBiblicallyAccurateEngieCrystalFullBlock::new);
+	public static final RegistryObject<Block> BUDDING_ANTIMATTER_MONSTROSITY_ENGIE_BLOCK = REGISTRY.register("budding_antimatter_monstrosity_engie_block", BuddingAntimatterMonstrosityEngieBlockBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_MONSTROSITY_ENGIE_CRYSTAL = REGISTRY.register("antimatter_monstrosity_engie_crystal", AntimatterMonstrosityEngieCrystalBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_MONSTROSITY_ENGIE_CRYSTAL_FULL = REGISTRY.register("antimatter_monstrosity_engie_crystal_full", AntimatterMonstrosityEngieCrystalFullBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_ENGIE_BLOCK = REGISTRY.register("dark_matter_engie_block", DarkMatterEngieBlockBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_ANGRY_ENGIE_BLOCK = REGISTRY.register("dark_matter_angry_engie_block", DarkMatterAngryEngieBlockBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_ENRAGED_ENGIE_BLOCK = REGISTRY.register("dark_matter_enraged_engie_block", DarkMatterEnragedEngieBlockBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_OUTRAGED_ENGIE_BLOCK = REGISTRY.register("dark_matter_outraged_engie_block", DarkMatterOutragedEngieBlockBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_BIBLICALLY_ACCURATE_BLOCK = REGISTRY.register("dark_matter_biblically_accurate_block", DarkMatterBiblicallyAccurateBlockBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_MONSTROSITY_ENGIE_BLOCK = REGISTRY.register("dark_matter_monstrosity_engie_block", DarkMatterMonstrosityEngieBlockBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_DOOMS_DAY_COIN_BLOCK = REGISTRY.register("dark_matter_dooms_day_coin_block", DarkMatterDoomsDayCoinBlockBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_SUPER_DOOMS_DAY_COIN_BLOCK = REGISTRY.register("dark_matter_super_dooms_day_coin_block", DarkMatterSuperDoomsDayCoinBlockBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_THE_END_COIN_BLOCK = REGISTRY.register("dark_matter_the_end_coin_block", DarkMatterTheEndCoinBlockBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_ENGIE_COIN_BLOCK = REGISTRY.register("dark_matter_engie_coin_block", DarkMatterEngieCoinBlockBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_ENGIE_GAMES_COIN_BLOCK = REGISTRY.register("dark_matter_engie_games_coin_block", DarkMatterEngieGamesCoinBlockBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_COSMIC_ENGIE_GAMES_COIN_BLOCK = REGISTRY.register("dark_matter_cosmic_engie_games_coin_block", DarkMatterCosmicEngieGamesCoinBlockBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_ROUGHIAN_ENGIE_GAMES_COIN_BLOCK = REGISTRY.register("dark_matter_roughian_engie_games_coin_block", DarkMatterRoughianEngieGamesCoinBlockBlock::new);
+	public static final RegistryObject<Block> SCARLET = REGISTRY.register("scarlet", ScarletBlock::new);
+	public static final RegistryObject<Block> MAD_ENGIE_BLOCK = REGISTRY.register("mad_engie_block", MadEngieBlockBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_MAD_ENGIE_BLOCK = REGISTRY.register("antimatter_mad_engie_block", AntimatterMadEngieBlockBlock::new);
+	public static final RegistryObject<Block> MAD_ENGIE_ORE = REGISTRY.register("mad_engie_ore", MadEngieOreBlock::new);
+	public static final RegistryObject<Block> DEEPSLATE_MAD_ENGIE_ORE = REGISTRY.register("deepslate_mad_engie_ore", DeepslateMadEngieOreBlock::new);
+	public static final RegistryObject<Block> BUDDING_MAD_ENGIE_BLOCK = REGISTRY.register("budding_mad_engie_block", BuddingMadEngieBlockBlock::new);
+	public static final RegistryObject<Block> MAD_ENGIE_CRYSTAL = REGISTRY.register("mad_engie_crystal", MadEngieCrystalBlock::new);
+	public static final RegistryObject<Block> MAD_ENGIE_CRYSTAL_FULL = REGISTRY.register("mad_engie_crystal_full", MadEngieCrystalFullBlock::new);
+	public static final RegistryObject<Block> BUDDING_ANTIMATTER_MAD_ENGIE_BLOCK = REGISTRY.register("budding_antimatter_mad_engie_block", BuddingAntimatterMadEngieBlockBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_MAD_ENGIE_CRYSTAL = REGISTRY.register("antimatter_mad_engie_crystal", AntimatterMadEngieCrystalBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_MAD_ENGIE_CRYSTAL_FULL = REGISTRY.register("antimatter_mad_engie_crystal_full", AntimatterMadEngieCrystalFullBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_MAD_ENGIE_BLOCK = REGISTRY.register("dark_matter_mad_engie_block", DarkMatterMadEngieBlockBlock::new);
+	public static final RegistryObject<Block> BUDDING_ENGIE_BLOCK = REGISTRY.register("budding_engie_block", BuddingEngieBlockBlock::new);
+	public static final RegistryObject<Block> ENGIE_CRYSTAL = REGISTRY.register("engie_crystal", EngieCrystalBlock::new);
+	public static final RegistryObject<Block> ENGIE_CRYSTAL_FULL = REGISTRY.register("engie_crystal_full", EngieCrystalFullBlock::new);
+	public static final RegistryObject<Block> BUDDING_ANTIMATTER_ENGIE_BLOCK = REGISTRY.register("budding_antimatter_engie_block", BuddingAntimatterEngieBlockBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_ENGIE_CRYSTAL = REGISTRY.register("antimatter_engie_crystal", AntimatterEngieCrystalBlock::new);
+	public static final RegistryObject<Block> ANTIMATTER_ENGIE_CRYSTAL_FULL = REGISTRY.register("antimatter_engie_crystal_full", AntimatterEngieCrystalFullBlock::new);
+	public static final RegistryObject<Block> ENGIE_ORE = REGISTRY.register("engie_ore", EngieOreBlock::new);
+	public static final RegistryObject<Block> DEEPSLATE_ENGIE_ORE = REGISTRY.register("deepslate_engie_ore", DeepslateEngieOreBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_METAL_CHEST = REGISTRY.register("dark_matter_metal_chest", DarkMatterMetalChestBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_METAL_CHEST_OAK = REGISTRY.register("dark_matter_metal_chest_oak", DarkMatterMetalChestOakBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_METAL_CHEST_DARK_OAK = REGISTRY.register("dark_matter_metal_chest_dark_oak", DarkMatterMetalChestDarkOakBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_METAL_CHEST_SPRUCE = REGISTRY.register("dark_matter_metal_chest_spruce", DarkMatterMetalChestSpruceBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_METAL_CHEST_ACACIA = REGISTRY.register("dark_matter_metal_chest_acacia", DarkMatterMetalChestAcaciaBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_METAL_CHEST_BIRCH = REGISTRY.register("dark_matter_metal_chest_birch", DarkMatterMetalChestBirchBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_METAL_CHEST_WARPED = REGISTRY.register("dark_matter_metal_chest_warped", DarkMatterMetalChestWarpedBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_METAL_CHEST_CRIMSON = REGISTRY.register("dark_matter_metal_chest_crimson", DarkMatterMetalChestCrimsonBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_METAL_CHEST_JUNGLE = REGISTRY.register("dark_matter_metal_chest_jungle", DarkMatterMetalChestJungleBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_METAL_CHEST_MANGROVE = REGISTRY.register("dark_matter_metal_chest_mangrove", DarkMatterMetalChestMangroveBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_METAL_CHEST_CHERRY = REGISTRY.register("dark_matter_metal_chest_cherry", DarkMatterMetalChestCherryBlock::new);
+	public static final RegistryObject<Block> BUDDING_DARK_MATTER_MAD_ENGIE_BLOCK = REGISTRY.register("budding_dark_matter_mad_engie_block", BuddingDarkMatterMadEngieBlockBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_MAD_ENGIE_CRYSTAL = REGISTRY.register("dark_matter_mad_engie_crystal", DarkMatterMadEngieCrystalBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_MAD_ENGIE_CRYSTAL_FULL = REGISTRY.register("dark_matter_mad_engie_crystal_full", DarkMatterMadEngieCrystalFullBlock::new);
+	public static final RegistryObject<Block> BUDDING_DARK_MATTER_ANGRY_ENGIE_BLOCK = REGISTRY.register("budding_dark_matter_angry_engie_block", BuddingDarkMatterAngryEngieBlockBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_ANGRY_ENGIE_CRYSTAL = REGISTRY.register("dark_matter_angry_engie_crystal", DarkMatterAngryEngieCrystalBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_ANGRY_ENGIE_CRYSTAL_FULL = REGISTRY.register("dark_matter_angry_engie_crystal_full", DarkMatterAngryEngieCrystalFullBlock::new);
+	public static final RegistryObject<Block> BUDDING_DARK_MATTER_ENRAGED_ENGIE_BLOCK = REGISTRY.register("budding_dark_matter_enraged_engie_block", BuddingDarkMatterEnragedEngieBlockBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_ENRAGED_ENGIE_CRYSTAL = REGISTRY.register("dark_matter_enraged_engie_crystal", DarkMatterEnragedEngieCrystalBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_ENRAGED_ENGIE_CRYSTAL_FULL = REGISTRY.register("dark_matter_enraged_engie_crystal_full", DarkMatterEnragedEngieCrystalFullBlock::new);
+	public static final RegistryObject<Block> BUDDING_DARK_MATTER_OUTRAGED_ENGIE_BLOCK = REGISTRY.register("budding_dark_matter_outraged_engie_block", BuddingDarkMatterOutragedEngieBlockBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_OUTRAGED_ENGIE_CRYSTAL = REGISTRY.register("dark_matter_outraged_engie_crystal", DarkMatterOutragedEngieCrystalBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_OUTRAGED_ENGIE_CRYSTAL_FULL = REGISTRY.register("dark_matter_outraged_engie_crystal_full", DarkMatterOutragedEngieCrystalFullBlock::new);
+	public static final RegistryObject<Block> BUDDING_DARK_MATTER_BIBLICALLY_ACCURATE_ENGIE_BLOCK = REGISTRY.register("budding_dark_matter_biblically_accurate_engie_block", BuddingDarkMatterBiblicallyAccurateEngieBlockBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_BIBLICALLY_ACCURATE_ENGIE_CRYSTAL = REGISTRY.register("dark_matter_biblically_accurate_engie_crystal", DarkMatterBiblicallyAccurateEngieCrystalBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_BIBLICALLY_ACCURATE_ENGIE_CRYSTAL_FULL = REGISTRY.register("dark_matter_biblically_accurate_engie_crystal_full", DarkMatterBiblicallyAccurateEngieCrystalFullBlock::new);
+	public static final RegistryObject<Block> BUDDING_DARK_MATTER_MONSTROSITY_ENGIE_BLOCK = REGISTRY.register("budding_dark_matter_monstrosity_engie_block", BuddingDarkMatterMonstrosityEngieBlockBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_MONSTROSITY_ENGIE_CRYSTAL = REGISTRY.register("dark_matter_monstrosity_engie_crystal", DarkMatterMonstrosityEngieCrystalBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_MONSTROSITY_ENGIE_CRYSTAL_FULL = REGISTRY.register("dark_matter_monstrosity_engie_crystal_full", DarkMatterMonstrosityEngieCrystalFullBlock::new);
+	public static final RegistryObject<Block> BUDDING_DARK_MATTER_ENGIE_BLOCK = REGISTRY.register("budding_dark_matter_engie_block", BuddingDarkMatterEngieBlockBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_ENGIE_CRYSTAL = REGISTRY.register("dark_matter_engie_crystal", DarkMatterEngieCrystalBlock::new);
+	public static final RegistryObject<Block> DARK_MATTER_ENGIE_CRYSTAL_FULL = REGISTRY.register("dark_matter_engie_crystal_full", DarkMatterEngieCrystalFullBlock::new);
+	public static final RegistryObject<Block> CEASAR = REGISTRY.register("ceasar", CeasarBlock::new);
+
+	// Start of user code block custom blocks
+	// End of user code block custom blocks
+	@SubscribeEvent
+	public static void onNoteBlockPlay(NoteBlockEvent.Play event) {
+		Block below = event.getLevel().getBlockState(event.getPos().below()).getBlock();
+		if (below == EngiesChaosModBlocks.ANGRY_ENGIE_BLOCK.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.ENRAGED_ENGIE_BLOCK.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.OLD_ENGIE_ORE.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.OLD_DEEPSLATE_ENGIE_ORE.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.THANKS_FOR_PLAYING.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.OUTRAGED_ENGIE_BLOCK.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.ANGEL_HATTED_PRESENT.get()) {
+			event.setInstrument(NoteBlockInstrument.BASS);
+		} else if (below == EngiesChaosModBlocks.CYBER_ORE.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.BLOOD_ORE.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.UNOBTAINIUM_ORE.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.DEEPSLATE_UNOBTAINIUM_ORE.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.TEXTBOXYEAH.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.BIBLICALLY_ACCURATE_BLOCK.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.MONSTROSITY_ENGIE_BLOCK.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.ANTIMATTER_ANGRY_ENGIE_BLOCK.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.ANTIMATTER_ENRAGED_ENGIE_BLOCK.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.ANTIMATTER_OUTRAGED_ENGIE_BLOCK.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.ANTIMATTER_BIBLICALLY_ACCURATE_BLOCK.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.ANTIMATTER_MONSTROSITY_ENGIE_BLOCK.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.THANKS_FOR_PLAYING_OLD.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.DARK_MATTER_ANGRY_ENGIE_BLOCK.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.DARK_MATTER_ENRAGED_ENGIE_BLOCK.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.DARK_MATTER_OUTRAGED_ENGIE_BLOCK.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.DARK_MATTER_BIBLICALLY_ACCURATE_BLOCK.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.DARK_MATTER_MONSTROSITY_ENGIE_BLOCK.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.MAD_ENGIE_ORE.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.DEEPSLATE_MAD_ENGIE_ORE.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.ENGIE_ORE.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.DEEPSLATE_ENGIE_ORE.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		}
+	}
+}
