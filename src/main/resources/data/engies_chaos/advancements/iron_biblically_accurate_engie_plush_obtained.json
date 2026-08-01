@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "item": "engies_chaos:iron_biblically_accurate_engie_plush"
+    },
+    "title": {
+      "translate": "advancements.iron_biblically_accurate_engie_plush_obtained.title"
+    },
+    "description": {
+      "translate": "advancements.iron_biblically_accurate_engie_plush_obtained.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "iron_biblically_accurate_engie_plush_obtained_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "engies_chaos:iron_biblically_accurate_engie_plush"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1000000000
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "engies_chaos:biblically_accurate_engie_plush_obtained"
+}

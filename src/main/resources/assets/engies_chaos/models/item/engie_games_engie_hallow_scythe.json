@@ -1,9 +1,36 @@
 {
-  "parent": "engies_chaos:custom/hallowsscythe",
-  "textures": {
-    "0": "engies_chaos:block/pixelscythehallowengienew",
-    "1": "engies_chaos:block/scythespikes1engie",
-    "2": "engies_chaos:block/scythespikes2engie",
-    "particle": "engies_chaos:item/pixelscythehallowengienew"
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "engies_chaos:custom/engieshallowscytheengie",
+    "textures": {
+      "0": "engies_chaos:block/scythemainengie",
+      "1": "engies_chaos:block/scythealtengie",
+      "2": "engies_chaos:block/scythespikes1engie",
+      "3": "engies_chaos:block/scythespikes2engie",
+      "4": "engies_chaos:block/scytheeyeengie",
+      "5": "engies_chaos:block/scytheeyecolorengie",
+      "particle": "engies_chaos:item/hallowsscythe"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/hallowsscythe"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/hallowsscythe"
+      }
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/hallowsscythe"
+      }
+    }
   }
 }

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:enraged_engie_hoe"
+  },
+  "addition": {
+    "item": "engies_chaos:outraged_engie_block"
+  },
+  "result": {
+    "item": "engies_chaos:outraged_engie_hoe"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aba",
+    "bab",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:dark_matter_biblically_accurate_engie_essence"
+    },
+    "b": {
+      "item": "engies_chaos:dark_matter_engie_gem"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:dark_matter_engie_upgrade",
+    "count": 1
+  }
+}

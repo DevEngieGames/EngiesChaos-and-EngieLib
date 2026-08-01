@@ -16,26 +16,25 @@ public class ChallengeCompletionProcedure {
 			return;
 		{
 			Entity _ent = entity;
-			if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-				_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-						_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "EngieLib EChaos challengecompleted");
+			if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+				_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+						_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "EngieLib REAAE challengecompleted");
 			}
 		}
 		EngiesChaosMod.queueServerWork(120, () -> {
 			EngiesChaosMod.queueServerWork(80, () -> {
 				EngiesChaosMod.queueServerWork(160, () -> {
 					EngiesChaosMod.queueServerWork(1, () -> {
-						EngiesChaosModVariables.MapVariables.get(world).MobDifficulty = EngiesChaosModVariables.MapVariables.get(world).MobDiffBeforeChallenge;
+						EngiesChaosModVariables.MapVariables.get(world).MobDifficulty = 8;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						{
 							Entity _ent = entity;
-							if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "weather clear");
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "weather clear");
 							}
 						}
-						if (world instanceof ServerLevel _serverLevel)
-							_serverLevel.getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(true, world.getServer());
+						world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(true, world.getServer());
 						EngiesChaosModVariables.MapVariables.get(world).ChallengeToggle = false;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						EngiesChaosModVariables.MapVariables.get(world).BYEBYE = false;

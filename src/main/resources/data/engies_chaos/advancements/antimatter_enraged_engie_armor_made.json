@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "engies_chaos:antimatter_enraged_engies_helmet"
+    },
+    "title": {
+      "translate": "advancements.antimatter_enraged_engie_armor_made.title"
+    },
+    "description": {
+      "translate": "advancements.antimatter_enraged_engie_armor_made.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "antimatter_enraged_engie_armor_made_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 30
+  },
+  "parent": "engies_chaos:antimatter_enraged_engie_essence_obtained"
+}

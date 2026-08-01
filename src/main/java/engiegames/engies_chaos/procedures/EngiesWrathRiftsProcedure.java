@@ -20,36 +20,32 @@ public class EngiesWrathRiftsProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount = EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					if (world instanceof ServerLevel _level)
-						_level.getServer().getCommands()
-								.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getSpawnPos().getX()), (world.getLevelData().getSpawnPos().getY()), (world.getLevelData().getSpawnPos().getZ())),
-										Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos rift");
+						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
+								Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos rift");
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 2) {
 				for (int index1 = 0; index1 < (int) Mth.nextDouble(RandomSource.create(), 1, 12 + Mth.nextDouble(RandomSource.create(), 0, 1)); index1++) {
 					EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount = EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					if (world instanceof ServerLevel _level)
-						_level.getServer().getCommands()
-								.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getSpawnPos().getX()), (world.getLevelData().getSpawnPos().getY()), (world.getLevelData().getSpawnPos().getZ())),
-										Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos rift");
+						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
+								Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos rift");
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 3) {
 				for (int index2 = 0; index2 < (int) Mth.nextDouble(RandomSource.create(), 1, 25); index2++) {
 					EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount = EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					if (world instanceof ServerLevel _level)
-						_level.getServer().getCommands()
-								.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getSpawnPos().getX()), (world.getLevelData().getSpawnPos().getY()), (world.getLevelData().getSpawnPos().getZ())),
-										Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos rift");
+						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
+								Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos rift");
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 4) {
 				for (int index3 = 0; index3 < (int) Mth.nextDouble(RandomSource.create(), 1, 50); index3++) {
 					EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount = EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					if (world instanceof ServerLevel _level)
-						_level.getServer().getCommands()
-								.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getSpawnPos().getX()), (world.getLevelData().getSpawnPos().getY()), (world.getLevelData().getSpawnPos().getZ())),
-										Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos rift");
+						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
+								Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos rift");
 				}
 			}
 		}

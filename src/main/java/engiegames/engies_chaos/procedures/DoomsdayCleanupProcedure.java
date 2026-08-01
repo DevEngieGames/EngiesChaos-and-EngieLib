@@ -1,9 +1,9 @@
 package engiegames.engies_chaos.procedures;
 
-import net.neoforged.neoforge.event.tick.PlayerTickEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.bus.api.Event;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.TickEvent;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
@@ -20,11 +20,13 @@ import javax.annotation.Nullable;
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.EngiesChaosMod;
 
-@EventBusSubscriber
+@Mod.EventBusSubscriber
 public class DoomsdayCleanupProcedure {
 	@SubscribeEvent
-	public static void onPlayerTick(PlayerTickEvent.Post event) {
-		execute(event, event.getEntity().level(), event.getEntity());
+	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+		if (event.phase == TickEvent.Phase.END) {
+			execute(event, event.player.level, event.player);
+		}
 	}
 
 	public static void execute(LevelAccessor world, Entity entity) {
@@ -37,18 +39,15 @@ public class DoomsdayCleanupProcedure {
 		if (EngiesChaosModVariables.MapVariables.get(world).DDAYCleanup == true) {
 			EngiesChaosMod.queueServerWork(5, () -> {
 				if (world instanceof ServerLevel _level)
-					_level.getServer().getCommands()
-							.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getSpawnPos().getX()), (world.getLevelData().getSpawnPos().getY()), (world.getLevelData().getSpawnPos().getZ())), Vec2.ZERO,
-									_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "execute as @a run EChaos EngieLib DoomsdayCleanupPlayer");
+					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO,
+							_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "execute as @a run EChaos EngieLib DoomsdayCleanupPlayer");
 			});
 			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands()
-						.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getSpawnPos().getX()), (world.getLevelData().getSpawnPos().getY()), (world.getLevelData().getSpawnPos().getZ())), Vec2.ZERO,
-								_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "kill @e[type=#engies_chaos:doomsday/entitycleanup]");
+				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO,
+						_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "kill @e[type=#engies_chaos:doomsday/entitycleanup]");
 			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands()
-						.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getSpawnPos().getX()), (world.getLevelData().getSpawnPos().getY()), (world.getLevelData().getSpawnPos().getZ())), Vec2.ZERO,
-								_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "kill @e[type=item]");
+				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO,
+						_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "kill @e[type=item]");
 			EngiesChaosModVariables.MapVariables.get(world).doomsdaymaxtime = 0;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime = 0;
@@ -80,30 +79,27 @@ public class DoomsdayCleanupProcedure {
 			EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount = 0;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			{
-				EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-				_vars.lightningflashnum = 0;
-				_vars.syncPlayerVariables(entity);
+				double _setval = 0;
+				entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.lightningflashnum = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
 			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands()
-						.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getSpawnPos().getX()), (world.getLevelData().getSpawnPos().getY()), (world.getLevelData().getSpawnPos().getZ())), Vec2.ZERO,
-								_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "weather clear");
+				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO,
+						_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "weather clear");
 			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands()
-						.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getSpawnPos().getX()), (world.getLevelData().getSpawnPos().getY()), (world.getLevelData().getSpawnPos().getZ())), Vec2.ZERO,
-								_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "effect clear @a");
+				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO,
+						_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "effect clear @a");
 			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands()
-						.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getSpawnPos().getX()), (world.getLevelData().getSpawnPos().getY()), (world.getLevelData().getSpawnPos().getZ())), Vec2.ZERO,
-								_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "stopsound @a");
+				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO,
+						_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "stopsound @a");
 			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands()
-						.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getSpawnPos().getX()), (world.getLevelData().getSpawnPos().getY()), (world.getLevelData().getSpawnPos().getZ())), Vec2.ZERO,
-								_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "effect give @p instant_health 1 28 true");
+				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO,
+						_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "effect give @p instant_health 1 28 true");
 			if (world instanceof ServerLevel _level)
-				_level.getServer().getCommands()
-						.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getSpawnPos().getX()), (world.getLevelData().getSpawnPos().getY()), (world.getLevelData().getSpawnPos().getZ())), Vec2.ZERO,
-								_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "worldborder set 59999962");
+				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO,
+						_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "worldborder set 59999962");
 			EngiesChaosModVariables.MapVariables.get(world).ddayscornerlightning = false;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			EngiesChaosModVariables.MapVariables.get(world).DDAYCleanup = false;
@@ -194,13 +190,11 @@ public class DoomsdayCleanupProcedure {
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			EngiesChaosModVariables.MapVariables.get(world).doomsdayaltsongstart = false;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-			if (world instanceof ServerLevel _serverLevel)
-				_serverLevel.getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(true, world.getServer());
+			world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(true, world.getServer());
 			if (EngiesChaosModVariables.MapVariables.get(world).timecheckstop == true) {
 				if (world instanceof ServerLevel _level)
-					_level.getServer().getCommands()
-							.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getSpawnPos().getX()), (world.getLevelData().getSpawnPos().getY()), (world.getLevelData().getSpawnPos().getZ())), Vec2.ZERO,
-									_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), ("time set " + EngiesChaosModVariables.MapVariables.get(world).timebeforespecial));
+					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO,
+							_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), ("time set " + EngiesChaosModVariables.MapVariables.get(world).timebeforespecial));
 				EngiesChaosModVariables.MapVariables.get(world).timecheckstop = false;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			}

@@ -1,89 +1,139 @@
 package engiegames.engies_chaos.procedures;
 
-import net.neoforged.neoforge.event.tick.LevelTickEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.bus.api.Event;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.TickEvent;
 
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.core.BlockPos;
 
 import javax.annotation.Nullable;
-
-import java.util.ArrayList;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.init.EngiesChaosModGameRules;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
+import engiegames.engies_chaos.entity.DDayLightningSpawnerEntity;
 import engiegames.engies_chaos.EngiesChaosMod;
 
-@EventBusSubscriber
+@Mod.EventBusSubscriber
 public class ThunderstormChaosProcedure {
 	@SubscribeEvent
-	public static void onWorldTick(LevelTickEvent.Post event) {
-		execute(event, event.getLevel());
+	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+		if (event.phase == TickEvent.Phase.END) {
+			execute(event, event.player.level, event.player.getY(), event.player);
+		}
 	}
 
-	public static void execute(LevelAccessor world) {
-		execute(null, world);
+	public static void execute(LevelAccessor world, double y, Entity entity) {
+		execute(null, world, y, entity);
 	}
 
-	private static void execute(@Nullable Event event, LevelAccessor world) {
+	private static void execute(@Nullable Event event, LevelAccessor world, double y, Entity entity) {
+		if (entity == null)
+			return;
 		if (world.getLevelData().isRaining() && world.getLevelData().isThundering()) {
-			if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == false && EngiesChaosModVariables.MapVariables.get(world).sddaystart == false && EngiesChaosModVariables.MapVariables.get(world).thestart == false
-					&& EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == false) {
-				if ((world instanceof ServerLevel _serverLevelGR2 && _serverLevelGR2.getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING)) == true
-						&& (world instanceof ServerLevel _serverLevelGR3 && _serverLevelGR3.getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING)) == false) {
-					EngiesChaosModVariables.MapVariables.get(world).heavylightningcd = EngiesChaosModVariables.MapVariables.get(world).heavylightningcd + 0.05;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (EngiesChaosModVariables.MapVariables.get(world).heavylightningcd >= 0.9) {
-						EngiesChaosModVariables.MapVariables.get(world).heavylightningcd = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						for (Entity entityiterator : new ArrayList<>(world.players())) {
-							if (Mth.nextDouble(RandomSource.create(), 1, 100) < 50) {
-								EngiesChaosMod.queueServerWork(1, () -> {
-									if (world instanceof ServerLevel _level) {
-										Entity entityToSpawn = EngiesChaosModEntities.D_DAY_LIGHTNING_SPAWNER
-												.get().spawn(
-														_level, BlockPos.containing(entityiterator.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerX + Mth.nextDouble(RandomSource.create(), -168, 168),
-																world.getLevelData().getSpawnPos().getY(), entityiterator.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerZ + Mth.nextDouble(RandomSource.create(), -168, 168)),
-														EntitySpawnReason.MOB_SUMMONED);
-										if (entityToSpawn != null) {
-											entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
-										}
-									}
-								});
+			if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == false && EngiesChaosModVariables.MapVariables.get(world).sddaystart == false && EngiesChaosModVariables.MapVariables.get(world).thestart == false) {
+				if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == true) {
+					entity.getPersistentData().putDouble("HeavyLightningCD", (entity.getPersistentData().getDouble("HeavyLightningCD") + 0.05));
+					if (entity.getPersistentData().getDouble("HeavyLightningCD") >= 5) {
+						entity.getPersistentData().putDouble("HeavyLightningCD", 0);
+						EngiesChaosMod.queueServerWork(1, () -> {
+							if (Math.random() < 0.25) {
+								if (world instanceof ServerLevel _level) {
+									Entity entityToSpawn = new DDayLightningSpawnerEntity(EngiesChaosModEntities.D_DAY_LIGHTNING_SPAWNER.get(), _level);
+									entityToSpawn.moveTo(((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX + Mth.nextDouble(RandomSource.create(), 0, 96)),
+											y, ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ + Mth.nextDouble(RandomSource.create(), 0, 96)),
+											world.getRandom().nextFloat() * 360F, 0);
+									if (entityToSpawn instanceof Mob _mobToSpawn)
+										_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+									_level.addFreshEntity(entityToSpawn);
+								}
+							} else if (Math.random() >= 0.25 && Math.random() < 0.5) {
+								if (world instanceof ServerLevel _level) {
+									Entity entityToSpawn = new DDayLightningSpawnerEntity(EngiesChaosModEntities.D_DAY_LIGHTNING_SPAWNER.get(), _level);
+									entityToSpawn.moveTo(((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX + Mth.nextDouble(RandomSource.create(), 0, 96)),
+											y, ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ - Mth.nextDouble(RandomSource.create(), 0, 96)),
+											world.getRandom().nextFloat() * 360F, 0);
+									if (entityToSpawn instanceof Mob _mobToSpawn)
+										_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+									_level.addFreshEntity(entityToSpawn);
+								}
+							} else if (Math.random() >= 0.5 && Math.random() < 0.75) {
+								if (world instanceof ServerLevel _level) {
+									Entity entityToSpawn = new DDayLightningSpawnerEntity(EngiesChaosModEntities.D_DAY_LIGHTNING_SPAWNER.get(), _level);
+									entityToSpawn.moveTo(((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX - Mth.nextDouble(RandomSource.create(), 0, 96)),
+											y, ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ + Mth.nextDouble(RandomSource.create(), 0, 96)),
+											world.getRandom().nextFloat() * 360F, 0);
+									if (entityToSpawn instanceof Mob _mobToSpawn)
+										_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+									_level.addFreshEntity(entityToSpawn);
+								}
+							} else if (Math.random() >= 0.75) {
+								if (world instanceof ServerLevel _level) {
+									Entity entityToSpawn = new DDayLightningSpawnerEntity(EngiesChaosModEntities.D_DAY_LIGHTNING_SPAWNER.get(), _level);
+									entityToSpawn.moveTo(((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX - Mth.nextDouble(RandomSource.create(), 0, 96)),
+											y, ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ - Mth.nextDouble(RandomSource.create(), 0, 96)),
+											world.getRandom().nextFloat() * 360F, 0);
+									if (entityToSpawn instanceof Mob _mobToSpawn)
+										_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+									_level.addFreshEntity(entityToSpawn);
+								}
 							}
-						}
+						});
 					}
-				} else if ((world instanceof ServerLevel _serverLevelGR11 && _serverLevelGR11.getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING)) == true
-						&& (world instanceof ServerLevel _serverLevelGR12 && _serverLevelGR12.getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING)) == true) {
-					EngiesChaosModVariables.MapVariables.get(world).extremelightningcd = EngiesChaosModVariables.MapVariables.get(world).extremelightningcd + 0.05;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (EngiesChaosModVariables.MapVariables.get(world).extremelightningcd >= 0.9) {
-						EngiesChaosModVariables.MapVariables.get(world).extremelightningcd = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						for (Entity entityiterator : new ArrayList<>(world.players())) {
-							if (Mth.nextDouble(RandomSource.create(), 1, 100) < 50) {
-								EngiesChaosMod.queueServerWork(1, () -> {
-									if (world instanceof ServerLevel _level) {
-										Entity entityToSpawn = EngiesChaosModEntities.D_DAY_LIGHTNING_SPAWNER
-												.get().spawn(
-														_level, BlockPos.containing(entityiterator.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerX + Mth.nextDouble(RandomSource.create(), -168, 168),
-																world.getLevelData().getSpawnPos().getY(), entityiterator.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerZ + Mth.nextDouble(RandomSource.create(), -168, 168)),
-														EntitySpawnReason.MOB_SUMMONED);
-										if (entityToSpawn != null) {
-											entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
-										}
-									}
-								});
+				} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == true && world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == true) {
+					entity.getPersistentData().putDouble("ExtremeLightningCD", (entity.getPersistentData().getDouble("ExtremeLightningCD") + 0.05));
+					if (entity.getPersistentData().getDouble("ExtremeLightningCD") >= 2.5) {
+						entity.getPersistentData().putDouble("ExtremeLightningCD", 0);
+						EngiesChaosMod.queueServerWork(1, () -> {
+							if (Math.random() < 0.25) {
+								if (world instanceof ServerLevel _level) {
+									Entity entityToSpawn = new DDayLightningSpawnerEntity(EngiesChaosModEntities.D_DAY_LIGHTNING_SPAWNER.get(), _level);
+									entityToSpawn.moveTo(((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX + Mth.nextDouble(RandomSource.create(), 0, 96)),
+											y, ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ + Mth.nextDouble(RandomSource.create(), 0, 96)),
+											world.getRandom().nextFloat() * 360F, 0);
+									if (entityToSpawn instanceof Mob _mobToSpawn)
+										_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+									_level.addFreshEntity(entityToSpawn);
+								}
+							} else if (Math.random() >= 0.25 && Math.random() < 0.5) {
+								if (world instanceof ServerLevel _level) {
+									Entity entityToSpawn = new DDayLightningSpawnerEntity(EngiesChaosModEntities.D_DAY_LIGHTNING_SPAWNER.get(), _level);
+									entityToSpawn.moveTo(((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX + Mth.nextDouble(RandomSource.create(), 0, 96)),
+											y, ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ - Mth.nextDouble(RandomSource.create(), 0, 96)),
+											world.getRandom().nextFloat() * 360F, 0);
+									if (entityToSpawn instanceof Mob _mobToSpawn)
+										_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+									_level.addFreshEntity(entityToSpawn);
+								}
+							} else if (Math.random() >= 0.5 && Math.random() < 0.75) {
+								if (world instanceof ServerLevel _level) {
+									Entity entityToSpawn = new DDayLightningSpawnerEntity(EngiesChaosModEntities.D_DAY_LIGHTNING_SPAWNER.get(), _level);
+									entityToSpawn.moveTo(((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX - Mth.nextDouble(RandomSource.create(), 0, 96)),
+											y, ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ + Mth.nextDouble(RandomSource.create(), 0, 96)),
+											world.getRandom().nextFloat() * 360F, 0);
+									if (entityToSpawn instanceof Mob _mobToSpawn)
+										_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+									_level.addFreshEntity(entityToSpawn);
+								}
+							} else if (Math.random() >= 0.75) {
+								if (world instanceof ServerLevel _level) {
+									Entity entityToSpawn = new DDayLightningSpawnerEntity(EngiesChaosModEntities.D_DAY_LIGHTNING_SPAWNER.get(), _level);
+									entityToSpawn.moveTo(((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX - Mth.nextDouble(RandomSource.create(), 0, 96)),
+											y, ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ - Mth.nextDouble(RandomSource.create(), 0, 96)),
+											world.getRandom().nextFloat() * 360F, 0);
+									if (entityToSpawn instanceof Mob _mobToSpawn)
+										_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+									_level.addFreshEntity(entityToSpawn);
+								}
 							}
-						}
+						});
 					}
 				}
 			}

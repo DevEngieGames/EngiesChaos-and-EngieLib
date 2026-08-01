@@ -9,12 +9,130 @@ import engiegames.engies_chaos.init.EngiesChaosModItems;
 
 public class TheEndHostileEntityDiesProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
-		for (int index0 = 0; index0 < 25; index0++) {
-			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
-				entityToSpawn.setPickUpDelay(10);
-				_level.addFreshEntity(entityToSpawn);
-			}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			entityToSpawn.setPickUpDelay(10);
+			_level.addFreshEntity(entityToSpawn);
 		}
 	}
 }

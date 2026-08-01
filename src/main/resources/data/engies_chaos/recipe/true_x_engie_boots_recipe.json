@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "template": [],
-  "base": "engies_chaos:dark_matter_roughian_engie_gamess_boots",
-  "addition": "engies_chaos:x_engie_upgrade_boots",
-  "result": {
-    "id": "engies_chaos:true_x_engie_boots"
-  }
-}

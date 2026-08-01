@@ -1,0 +1,87 @@
+{
+  "display": {
+    "icon": {
+      "item": "engies_chaos:the_ends_helmet"
+    },
+    "title": {
+      "translate": "advancements.antimatter_the_end_armor_obtained.title"
+    },
+    "description": {
+      "translate": "advancements.antimatter_the_end_armor_obtained.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "antimatter_the_end_armor_obtained_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "engies_chaos:antimatter_the_ends_helmet"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
+    },
+    "antimatter_the_end_armor_obtained_1": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "engies_chaos:antimatter_the_ends_chestplate"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
+    },
+    "antimatter_the_end_armor_obtained_2": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "engies_chaos:antimatter_the_ends_leggings"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
+    },
+    "antimatter_the_end_armor_obtained_3": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "engies_chaos:antimatter_the_ends_boots"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 70
+  },
+  "parent": "engies_chaos:antimatter_the_end_coin_obtained"
+}

@@ -1,20 +1,17 @@
 package engiegames.engies_chaos.procedures;
 
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.core.component.DataComponents;
+import net.minecraft.world.entity.Entity;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 
 public class TechnoPickaxeFailCheckProcedure {
-	public static void execute(LevelAccessor world, ItemStack itemstack) {
+	public static void execute(LevelAccessor world, Entity entity, ItemStack itemstack) {
+		if (entity == null)
+			return;
 		if (EngiesChaosModVariables.MapVariables.get(world).playerkilledmobswithoutpickaxeonlycount > 0) {
-			{
-				final String _tagName = "playerfailedtechnochallenge";
-				final boolean _tagValue = true;
-				CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putBoolean(_tagName, _tagValue));
-			}
+			itemstack.getOrCreateTag().putBoolean("playerfailedtechnochallenge", true);
 		}
 	}
 }

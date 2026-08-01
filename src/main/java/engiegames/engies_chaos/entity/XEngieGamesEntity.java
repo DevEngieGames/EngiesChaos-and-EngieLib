@@ -1,9 +1,9 @@
 package engiegames.engies_chaos.entity;
 
-import net.neoforged.neoforge.fluids.FluidType;
-import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.network.PlayMessages;
+import net.minecraftforge.network.NetworkHooks;
 
-import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
@@ -19,6 +19,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.PathfinderMob;
+import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -30,16 +31,22 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.protocol.Packet;
 
 import engiegames.engies_chaos.procedures.XEngieGamesRightClickedOnEntityTradeProcedure;
 import engiegames.engies_chaos.procedures.NegativeDifficultyAICheckProcedure;
 import engiegames.engies_chaos.procedures.MobHitboxScalingProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
+import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class XEngieGamesEntity extends PathfinderMob {
+	public XEngieGamesEntity(PlayMessages.SpawnEntity packet, Level world) {
+		this(EngiesChaosModEntities.X_ENGIE_GAMES.get(), world);
+	}
+
 	public XEngieGamesEntity(EntityType<XEngieGamesEntity> type, Level world) {
 		super(type, world);
+		maxUpStep = 0.6f;
 		xpReward = 0;
 		setNoAi(false);
 		setPersistenceRequired();
@@ -52,12 +59,17 @@ public class XEngieGamesEntity extends PathfinderMob {
 	}
 
 	@Override
+	public Packet<?> getAddEntityPacket() {
+		return NetworkHooks.getEntitySpawningPacket(this);
+	}
+
+	@Override
 	protected void registerGoals() {
 		super.registerGoals();
 		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.25, false) {
 			@Override
-			protected boolean canPerformAttack(LivingEntity entity) {
-				return this.isTimeToAttack() && this.mob.distanceToSqr(entity) < (this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth()) && this.mob.getSensing().hasLineOfSight(entity);
+			protected double getAttackReachSqr(LivingEntity entity) {
+				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
 		});
 		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
@@ -68,7 +80,7 @@ public class XEngieGamesEntity extends PathfinderMob {
 				double y = XEngieGamesEntity.this.getY();
 				double z = XEngieGamesEntity.this.getZ();
 				Entity entity = XEngieGamesEntity.this;
-				Level world = XEngieGamesEntity.this.level();
+				Level world = XEngieGamesEntity.this.level;
 				return super.canUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 
@@ -78,7 +90,7 @@ public class XEngieGamesEntity extends PathfinderMob {
 				double y = XEngieGamesEntity.this.getY();
 				double z = XEngieGamesEntity.this.getZ();
 				Entity entity = XEngieGamesEntity.this;
-				Level world = XEngieGamesEntity.this.level();
+				Level world = XEngieGamesEntity.this.level;
 				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 		});
@@ -89,35 +101,40 @@ public class XEngieGamesEntity extends PathfinderMob {
 	}
 
 	@Override
+	public MobType getMobType() {
+		return MobType.UNDEFINED;
+	}
+
+	@Override
 	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
 		return false;
 	}
 
 	@Override
-	public Vec3 getPassengerRidingPosition(Entity entity) {
-		return super.getPassengerRidingPosition(entity).add(0, -0.35F, 0);
+	public double getMyRidingOffset() {
+		return -0.35D;
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.hurt"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.death"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
 	}
 
 	@Override
 	public InteractionResult mobInteract(Player sourceentity, InteractionHand hand) {
 		ItemStack itemstack = sourceentity.getItemInHand(hand);
-		InteractionResult retval = InteractionResult.SUCCESS;
+		InteractionResult retval = InteractionResult.sidedSuccess(this.level.isClientSide());
 		super.mobInteract(sourceentity, hand);
 		double x = this.getX();
 		double y = this.getY();
 		double z = this.getZ();
 		Entity entity = this;
-		Level world = this.level();
+		Level world = this.level;
 
 		XEngieGamesRightClickedOnEntityTradeProcedure.execute(world, x, y, z, sourceentity);
 		return retval;
@@ -130,26 +147,26 @@ public class XEngieGamesEntity extends PathfinderMob {
 	}
 
 	@Override
-	public boolean canDrownInFluidType(FluidType type) {
+	public boolean canBreatheUnderwater() {
 		double x = this.getX();
 		double y = this.getY();
 		double z = this.getZ();
-		Level world = this.level();
+		Level world = this.level;
 		Entity entity = this;
-		return false;
+		return true;
 	}
 
 	@Override
-	public EntityDimensions getDefaultDimensions(Pose pose) {
+	public EntityDimensions getDimensions(Pose pose) {
 		Entity entity = this;
-		Level world = this.level();
+		Level world = this.level;
 		double x = this.getX();
 		double y = this.getY();
 		double z = this.getZ();
-		return super.getDefaultDimensions(pose).scale((float) MobHitboxScalingProcedure.execute());
+		return super.getDimensions(pose).scale((float) MobHitboxScalingProcedure.execute());
 	}
 
-	public static void init(RegisterSpawnPlacementsEvent event) {
+	public static void init() {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
@@ -159,7 +176,6 @@ public class XEngieGamesEntity extends PathfinderMob {
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 1);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 64);
-		builder = builder.add(Attributes.STEP_HEIGHT, 0.6);
 		return builder;
 	}
 }

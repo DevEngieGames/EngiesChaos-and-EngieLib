@@ -5,12 +5,11 @@ package engiegames.engies_chaos.init;
 
 import org.lwjgl.glfw.GLFW;
 
-import net.neoforged.neoforge.network.PacketDistributor;
-import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
-import net.neoforged.neoforge.client.event.ClientTickEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.api.distmarker.Dist;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
+import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.KeyMapping;
@@ -20,8 +19,9 @@ import engiegames.engies_chaos.network.StunMessage;
 import engiegames.engies_chaos.network.OpenREAAEConfigMessage;
 import engiegames.engies_chaos.network.DoubleJumpMessage;
 import engiegames.engies_chaos.network.DevModeGUIMessage;
+import engiegames.engies_chaos.EngiesChaosMod;
 
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = {Dist.CLIENT})
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = {Dist.CLIENT})
 public class EngiesChaosModKeyMappings {
 	public static final KeyMapping STUN = new KeyMapping("key.engies_chaos.stun", GLFW.GLFW_KEY_X, "key.categories.gameplay") {
 		private boolean isDownOld = false;
@@ -30,7 +30,7 @@ public class EngiesChaosModKeyMappings {
 		public void setDown(boolean isDown) {
 			super.setDown(isDown);
 			if (isDownOld != isDown && isDown) {
-				PacketDistributor.sendToServer(new StunMessage(0, 0));
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new StunMessage(0, 0));
 				StunMessage.pressAction(Minecraft.getInstance().player, 0, 0);
 			}
 			isDownOld = isDown;
@@ -43,12 +43,12 @@ public class EngiesChaosModKeyMappings {
 		public void setDown(boolean isDown) {
 			super.setDown(isDown);
 			if (isDownOld != isDown && isDown) {
-				PacketDistributor.sendToServer(new DoubleJumpMessage(0, 0));
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new DoubleJumpMessage(0, 0));
 				DoubleJumpMessage.pressAction(Minecraft.getInstance().player, 0, 0);
 				DOUBLE_JUMP_LASTPRESS = System.currentTimeMillis();
 			} else if (isDownOld != isDown && !isDown) {
 				int dt = (int) (System.currentTimeMillis() - DOUBLE_JUMP_LASTPRESS);
-				PacketDistributor.sendToServer(new DoubleJumpMessage(1, dt));
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new DoubleJumpMessage(1, dt));
 				DoubleJumpMessage.pressAction(Minecraft.getInstance().player, 1, dt);
 			}
 			isDownOld = isDown;
@@ -61,7 +61,7 @@ public class EngiesChaosModKeyMappings {
 		public void setDown(boolean isDown) {
 			super.setDown(isDown);
 			if (isDownOld != isDown && isDown) {
-				PacketDistributor.sendToServer(new DevModeGUIMessage(0, 0));
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new DevModeGUIMessage(0, 0));
 				DevModeGUIMessage.pressAction(Minecraft.getInstance().player, 0, 0);
 			}
 			isDownOld = isDown;
@@ -74,7 +74,7 @@ public class EngiesChaosModKeyMappings {
 		public void setDown(boolean isDown) {
 			super.setDown(isDown);
 			if (isDownOld != isDown && isDown) {
-				PacketDistributor.sendToServer(new OpenREAAEConfigMessage(0, 0));
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new OpenREAAEConfigMessage(0, 0));
 				OpenREAAEConfigMessage.pressAction(Minecraft.getInstance().player, 0, 0);
 			}
 			isDownOld = isDown;
@@ -90,7 +90,7 @@ public class EngiesChaosModKeyMappings {
 				TRASH_GUI_LASTPRESS = System.currentTimeMillis();
 			} else if (isDownOld != isDown && !isDown) {
 				int dt = (int) (System.currentTimeMillis() - TRASH_GUI_LASTPRESS);
-				PacketDistributor.sendToServer(new TrashGUIMessage(1, dt));
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new TrashGUIMessage(1, dt));
 				TrashGUIMessage.pressAction(Minecraft.getInstance().player, 1, dt);
 			}
 			isDownOld = isDown;
@@ -108,10 +108,10 @@ public class EngiesChaosModKeyMappings {
 		event.register(TRASH_GUI);
 	}
 
-	@EventBusSubscriber({Dist.CLIENT})
+	@Mod.EventBusSubscriber({Dist.CLIENT})
 	public static class KeyEventListener {
 		@SubscribeEvent
-		public static void onClientTick(ClientTickEvent.Post event) {
+		public static void onClientTick(TickEvent.ClientTickEvent event) {
 			if (Minecraft.getInstance().screen == null) {
 				STUN.consumeClick();
 				DOUBLE_JUMP.consumeClick();

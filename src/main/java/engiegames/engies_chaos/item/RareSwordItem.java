@@ -1,17 +1,38 @@
 package engiegames.engies_chaos.item;
 
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.tags.TagKey;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.Registries;
+
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
 
 public class RareSwordItem extends SwordItem {
-	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_IRON_TOOL, 250, 6f, 0, 14, TagKey.create(Registries.ITEM, ResourceLocation.parse("engies_chaos:rare_sword_repair_items")));
+	public RareSwordItem() {
+		super(new Tier() {
+			public int getUses() {
+				return 250;
+			}
 
-	public RareSwordItem(Item.Properties properties) {
-		super(TOOL_MATERIAL, 5f, -2.4f, properties);
+			public float getSpeed() {
+				return 6f;
+			}
+
+			public float getAttackDamageBonus() {
+				return 2f;
+			}
+
+			public int getLevel() {
+				return 2;
+			}
+
+			public int getEnchantmentValue() {
+				return 14;
+			}
+
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of();
+			}
+		}, 3, -2.4f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}
 }

@@ -1,24 +1,44 @@
 package engiegames.engies_chaos.item;
 
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.tags.TagKey;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.Registries;
 
 import engiegames.engies_chaos.procedures.MonstrosityToolObtainProcedure;
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
+import engiegames.engies_chaos.init.EngiesChaosModItems;
 
 public class AntimatterMonstrosityEngiePickaxeItem extends PickaxeItem {
-	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 16000, 76f, 0, 22,
-			TagKey.create(Registries.ITEM, ResourceLocation.parse("engies_chaos:antimatter_monstrosity_engie_pickaxe_repair_items")));
+	public AntimatterMonstrosityEngiePickaxeItem() {
+		super(new Tier() {
+			public int getUses() {
+				return 16000;
+			}
 
-	public AntimatterMonstrosityEngiePickaxeItem(Item.Properties properties) {
-		super(TOOL_MATERIAL, 774f, 3.8f, properties);
+			public float getSpeed() {
+				return 76f;
+			}
+
+			public float getAttackDamageBonus() {
+				return 773f;
+			}
+
+			public int getLevel() {
+				return 4;
+			}
+
+			public int getEnchantmentValue() {
+				return 22;
+			}
+
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.ANTIMATTER_MONSTROSITY_ENGIE_ESSENCE.get()));
+			}
+		}, 1, 3.8f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}
 
 	@Override

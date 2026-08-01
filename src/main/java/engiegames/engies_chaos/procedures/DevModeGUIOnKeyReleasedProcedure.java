@@ -1,5 +1,7 @@
 package engiegames.engies_chaos.procedures;
 
+import net.minecraftforge.network.NetworkHooks;
+
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
@@ -20,18 +22,13 @@ public class DevModeGUIOnKeyReleasedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).playerdebugmode == true) {
+		if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).playerdebugmode == true) {
 			if (entity instanceof ServerPlayer _ent) {
-				BlockPos _bpos = BlockPos.containing(x, y, z);
-				_ent.openMenu(new MenuProvider() {
+				BlockPos _bpos = new BlockPos(x, y, z);
+				NetworkHooks.openScreen((ServerPlayer) _ent, new MenuProvider() {
 					@Override
 					public Component getDisplayName() {
 						return Component.literal("DeveloperModeGUI");
-					}
-
-					@Override
-					public boolean shouldTriggerClientSideContainerClosingOnOpen() {
-						return false;
 					}
 
 					@Override

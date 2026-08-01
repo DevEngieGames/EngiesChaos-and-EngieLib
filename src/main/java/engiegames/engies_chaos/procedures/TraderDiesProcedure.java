@@ -1,18 +1,18 @@
 package engiegames.engies_chaos.procedures;
 
-import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.bus.api.Event;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
 
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.tags.TagKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.core.BlockPos;
+import net.minecraft.core.Registry;
 
 import javax.annotation.Nullable;
 
@@ -31,12 +31,12 @@ import engiegames.engies_chaos.entity.DoomsDayEntity;
 import engiegames.engies_chaos.entity.CosmicTheRealEngieGamesEntity;
 import engiegames.engies_chaos.EngiesChaosMod;
 
-@EventBusSubscriber
+@Mod.EventBusSubscriber
 public class TraderDiesProcedure {
 	@SubscribeEvent
 	public static void onEntityDeath(LivingDeathEvent event) {
-		if (event.getEntity() != null) {
-			execute(event, event.getEntity().level(), event.getEntity());
+		if (event != null && event.getEntity() != null) {
+			execute(event, event.getEntity().level, event.getEntity());
 		}
 	}
 
@@ -47,9 +47,9 @@ public class TraderDiesProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("allaboutengie:mobs/tradeable")))) {
+		if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/tradeable")))) {
 			EngiesChaosMod.queueServerWork(1, () -> {
-				if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).crucifixsavedentity == false) {
+				if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).crucifixsavedentity == false) {
 					if (entity instanceof DoomsDayEntity) {
 						EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays - 1;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -88,14 +88,14 @@ public class TraderDiesProcedure {
 					}
 					if (entity instanceof XEngieGamesEntity) {
 						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = EngiesChaosModEntities.X_ENGIE_GAMES.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), EntitySpawnReason.MOB_SUMMONED);
-							if (entityToSpawn != null) {
-								entityToSpawn.setYRot(entity.getYRot());
-								entityToSpawn.setYBodyRot(entity.getYRot());
-								entityToSpawn.setYHeadRot(entity.getYRot());
-								entityToSpawn.setXRot(entity.getXRot());
-								entityToSpawn.setDeltaMovement((entity.getDeltaMovement().x()), (entity.getDeltaMovement().y()), (entity.getDeltaMovement().z()));
-							}
+							Entity entityToSpawn = new XEngieGamesEntity(EngiesChaosModEntities.X_ENGIE_GAMES.get(), _level);
+							entityToSpawn.moveTo((entity.getX()), (entity.getY()), (entity.getZ()), entity.getYRot(), entity.getXRot());
+							entityToSpawn.setYBodyRot(entity.getYRot());
+							entityToSpawn.setYHeadRot(entity.getYRot());
+							entityToSpawn.setDeltaMovement((entity.getDeltaMovement().x()), (entity.getDeltaMovement().y()), (entity.getDeltaMovement().z()));
+							if (entityToSpawn instanceof Mob _mobToSpawn)
+								_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+							_level.addFreshEntity(entityToSpawn);
 						}
 					}
 				}

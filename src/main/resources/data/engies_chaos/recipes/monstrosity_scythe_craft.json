@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "monstrosityscythe",
+  "pattern": [
+    "ab",
+    "cd",
+    " e"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:biblically_accurate_block"
+    },
+    "b": {
+      "item": "engies_chaos:outraged_engie_block"
+    },
+    "c": {
+      "item": "engies_chaos:monstrosity_engie_essence"
+    },
+    "d": {
+      "item": "engies_chaos:biblically_accurate_engie_scythe"
+    },
+    "e": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:monstrosity_scythe",
+    "count": 1
+  }
+}

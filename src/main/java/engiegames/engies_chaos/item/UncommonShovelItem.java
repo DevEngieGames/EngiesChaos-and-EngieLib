@@ -1,17 +1,38 @@
 package engiegames.engies_chaos.item;
 
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.tags.TagKey;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.Registries;
+
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
 
 public class UncommonShovelItem extends ShovelItem {
-	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_STONE_TOOL, 131, 4f, 0, 5, TagKey.create(Registries.ITEM, ResourceLocation.parse("engies_chaos:uncommon_shovel_repair_items")));
+	public UncommonShovelItem() {
+		super(new Tier() {
+			public int getUses() {
+				return 131;
+			}
 
-	public UncommonShovelItem(Item.Properties properties) {
-		super(TOOL_MATERIAL, 0.75f, -3f, properties);
+			public float getSpeed() {
+				return 4f;
+			}
+
+			public float getAttackDamageBonus() {
+				return -0.25f;
+			}
+
+			public int getLevel() {
+				return 1;
+			}
+
+			public int getEnchantmentValue() {
+				return 5;
+			}
+
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of();
+			}
+		}, 1, -3f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}
 }

@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "template": [],
-  "base": "engies_chaos:outraged_engie_shovel",
-  "addition": "engies_chaos:biblically_accurate_block",
-  "result": {
-    "id": "engies_chaos:biblically_accurate_engie_shovel"
-  }
-}

@@ -3,8 +3,9 @@ package engiegames.engies_chaos.block;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -30,20 +31,20 @@ import engiegames.engies_chaos.procedures.DarkMatterMonstrosityEngieCrystalDestr
 import engiegames.engies_chaos.block.entity.DarkMatterMonstrosityEngieCrystalBlockEntity;
 
 public class DarkMatterMonstrosityEngieCrystalBlock extends Block implements EntityBlock {
-	public static final EnumProperty<Direction> FACING = DirectionalBlock.FACING;
+	public static final DirectionProperty FACING = DirectionalBlock.FACING;
 
-	public DarkMatterMonstrosityEngieCrystalBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.AMETHYST_CLUSTER).strength(12f, 105f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public DarkMatterMonstrosityEngieCrystalBlock() {
+		super(BlockBehaviour.Properties.of(Material.BUILDABLE_GLASS).sound(SoundType.AMETHYST_CLUSTER).strength(12f, 105f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state) {
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return true;
 	}
 
 	@Override
-	public int getLightBlock(BlockState state) {
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
 	}
 
@@ -92,7 +93,10 @@ public class DarkMatterMonstrosityEngieCrystalBlock extends Block implements Ent
 	@Override
 	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
 		super.tick(blockstate, world, pos, random);
-		DarkMatterMonstrosityEngieCrystalOnTickUpdateProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		int x = pos.getX();
+		int y = pos.getY();
+		int z = pos.getZ();
+		DarkMatterMonstrosityEngieCrystalOnTickUpdateProcedure.execute(world, x, y, z);
 		world.scheduleTick(pos, this, 1050);
 	}
 

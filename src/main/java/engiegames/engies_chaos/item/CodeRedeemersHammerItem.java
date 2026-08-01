@@ -1,36 +1,36 @@
 package engiegames.engies_chaos.item;
 
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.item.component.ItemAttributeModifiers;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.EquipmentSlotGroup;
-import net.minecraft.core.BlockPos;
 
-public class CodeRedeemersHammerItem extends Item {
-	public CodeRedeemersHammerItem(Item.Properties properties) {
-		super(properties.durability(19200).attributes(ItemAttributeModifiers.builder().add(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_ID, 3999, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
-				.add(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_ID, -3, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND).build()).enchantable(30));
-	}
+public class CodeRedeemersHammerItem extends SwordItem {
+	public CodeRedeemersHammerItem() {
+		super(new Tier() {
+			public int getUses() {
+				return 6900;
+			}
 
-	@Override
-	public float getDestroySpeed(ItemStack itemstack, BlockState blockstate) {
-		return 1;
-	}
+			public float getSpeed() {
+				return 4f;
+			}
 
-	@Override
-	public boolean mineBlock(ItemStack itemstack, Level world, BlockState blockstate, BlockPos pos, LivingEntity entity) {
-		itemstack.hurtAndBreak(1, entity, LivingEntity.getSlotForHand(entity.getUsedItemHand()));
-		return true;
-	}
+			public float getAttackDamageBonus() {
+				return 686f;
+			}
 
-	@Override
-	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
-		itemstack.hurtAndBreak(2, entity, LivingEntity.getSlotForHand(entity.getUsedItemHand()));
-		return true;
+			public int getLevel() {
+				return 1;
+			}
+
+			public int getEnchantmentValue() {
+				return 128000;
+			}
+
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of();
+			}
+		}, 3, -3f, new Item.Properties().tab(null));
 	}
 }

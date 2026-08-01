@@ -1,34 +1,19 @@
 package engiegames.engies_chaos.procedures;
 
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.advancements.AdvancementProgress;
-import net.minecraft.advancements.AdvancementHolder;
 
 import engiegames.engies_chaos.init.EngiesChaosModMenus;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
+import engiegames.engies_chaos.EngiesChaosMod;
 
 public class TheEndTradeButtonClickedProcedure {
-	public static void execute(Entity entity) {
+	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (!(entity instanceof ServerPlayer _plr0 && _plr0.level() instanceof ServerLevel && _plr0.getAdvancements().getOrStartProgress(_plr0.server.getAdvancements().get(ResourceLocation.parse("minecraft:adventure/trade"))).isDone())) {
-			if (entity instanceof ServerPlayer _player) {
-				AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("minecraft:adventure/trade"));
-				if (_adv != null) {
-					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-					if (!_ap.isDone()) {
-						for (String criteria : _ap.getRemainingCriteria())
-							_player.getAdvancements().award(_adv, criteria);
-					}
-				}
-			}
-		}
-		if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu2 ? _menu2.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_END_CRUCIFIX.get()) {
+		if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu0 ? _menu0.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_END_CRUCIFIX.get()) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
 				_menu.getSlots().get(0).remove(64);
 				_player.containerMenu.broadcastChanges();
@@ -37,18 +22,65 @@ public class TheEndTradeButtonClickedProcedure {
 				_menu.getSlots().get(1).remove(64);
 				_player.containerMenu.broadcastChanges();
 			}
-		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu6 ? _menu6.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_END_SCYTHE.get()
-				|| (entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu8 ? _menu8.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_END_BAN_HAMMER
+			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+				_menu.getSlots().get(2).remove(1);
+				_player.containerMenu.broadcastChanges();
+			}
+			EngiesChaosMod.queueServerWork(1, () -> {
+				if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+					ItemStack _setstack = new ItemStack(EngiesChaosModItems.THE_END_CRUCIFIX.get()).copy();
+					_setstack.setCount(1);
+					_menu.getSlots().get(3).set(_setstack);
+					_player.containerMenu.broadcastChanges();
+				}
+			});
+		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu7 ? _menu7.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_END_SCYTHE.get()
+				|| (entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu9 ? _menu9.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_END_BAN_HAMMER
 						.get()) {
-			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				_menu.getSlots().get(0).remove(64);
-				_player.containerMenu.broadcastChanges();
+			if ((entity instanceof Player _entity11 && _entity11.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu11) ? _menu11.getMenuState(1, "scythetrade", false) : false) {
+				if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+					_menu.getSlots().get(0).remove(64);
+					_player.containerMenu.broadcastChanges();
+				}
+				if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+					_menu.getSlots().get(1).remove(60);
+					_player.containerMenu.broadcastChanges();
+				}
+				if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+					_menu.getSlots().get(2).remove(1);
+					_player.containerMenu.broadcastChanges();
+				}
+				EngiesChaosMod.queueServerWork(1, () -> {
+					if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+						ItemStack _setstack = new ItemStack(EngiesChaosModItems.THE_END_SCYTHE.get()).copy();
+						_setstack.setCount(1);
+						_menu.getSlots().get(3).set(_setstack);
+						_player.containerMenu.broadcastChanges();
+					}
+				});
+			} else if ((entity instanceof Player _entity17 && _entity17.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu17) ? _menu17.getMenuState(1, "bantrade", false) : false) {
+				if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+					_menu.getSlots().get(0).remove(64);
+					_player.containerMenu.broadcastChanges();
+				}
+				if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+					_menu.getSlots().get(1).remove(60);
+					_player.containerMenu.broadcastChanges();
+				}
+				if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+					_menu.getSlots().get(2).remove(1);
+					_player.containerMenu.broadcastChanges();
+				}
+				EngiesChaosMod.queueServerWork(1, () -> {
+					if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+						ItemStack _setstack = new ItemStack(EngiesChaosModItems.THE_END_BAN_HAMMER.get()).copy();
+						_setstack.setCount(1);
+						_menu.getSlots().get(3).set(_setstack);
+						_player.containerMenu.broadcastChanges();
+					}
+				});
 			}
-			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				_menu.getSlots().get(1).remove(60);
-				_player.containerMenu.broadcastChanges();
-			}
-		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu12 ? _menu12.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_ENDS_BOOTS
+		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu23 ? _menu23.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_ENDS_BOOTS
 				.get()) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
 				_menu.getSlots().get(0).remove(64);
@@ -58,7 +90,19 @@ public class TheEndTradeButtonClickedProcedure {
 				_menu.getSlots().get(1).remove(54);
 				_player.containerMenu.broadcastChanges();
 			}
-		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu16 ? _menu16.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_ENDS_LEGGINGS
+			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+				_menu.getSlots().get(2).remove(1);
+				_player.containerMenu.broadcastChanges();
+			}
+			EngiesChaosMod.queueServerWork(1, () -> {
+				if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+					ItemStack _setstack = new ItemStack(EngiesChaosModItems.THE_ENDS_BOOTS.get()).copy();
+					_setstack.setCount(1);
+					_menu.getSlots().get(3).set(_setstack);
+					_player.containerMenu.broadcastChanges();
+				}
+			});
+		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu30 ? _menu30.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_ENDS_LEGGINGS
 				.get()) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
 				_menu.getSlots().get(0).remove(64);
@@ -68,7 +112,19 @@ public class TheEndTradeButtonClickedProcedure {
 				_menu.getSlots().get(1).remove(48);
 				_player.containerMenu.broadcastChanges();
 			}
-		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu20 ? _menu20.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_ENDS_CHESTPLATE
+			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+				_menu.getSlots().get(2).remove(1);
+				_player.containerMenu.broadcastChanges();
+			}
+			EngiesChaosMod.queueServerWork(1, () -> {
+				if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+					ItemStack _setstack = new ItemStack(EngiesChaosModItems.THE_ENDS_LEGGINGS.get()).copy();
+					_setstack.setCount(1);
+					_menu.getSlots().get(3).set(_setstack);
+					_player.containerMenu.broadcastChanges();
+				}
+			});
+		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu37 ? _menu37.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_ENDS_CHESTPLATE
 				.get()) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
 				_menu.getSlots().get(0).remove(64);
@@ -78,7 +134,19 @@ public class TheEndTradeButtonClickedProcedure {
 				_menu.getSlots().get(1).remove(32);
 				_player.containerMenu.broadcastChanges();
 			}
-		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu24 ? _menu24.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_ENDS_HELMET
+			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+				_menu.getSlots().get(2).remove(1);
+				_player.containerMenu.broadcastChanges();
+			}
+			EngiesChaosMod.queueServerWork(1, () -> {
+				if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+					ItemStack _setstack = new ItemStack(EngiesChaosModItems.THE_ENDS_CHESTPLATE.get()).copy();
+					_setstack.setCount(1);
+					_menu.getSlots().get(3).set(_setstack);
+					_player.containerMenu.broadcastChanges();
+				}
+			});
+		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu44 ? _menu44.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_ENDS_HELMET
 				.get()) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
 				_menu.getSlots().get(0).remove(64);
@@ -88,7 +156,19 @@ public class TheEndTradeButtonClickedProcedure {
 				_menu.getSlots().get(1).remove(16);
 				_player.containerMenu.broadcastChanges();
 			}
-		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu28 ? _menu28.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_END_HOE.get()) {
+			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+				_menu.getSlots().get(2).remove(1);
+				_player.containerMenu.broadcastChanges();
+			}
+			EngiesChaosMod.queueServerWork(1, () -> {
+				if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+					ItemStack _setstack = new ItemStack(EngiesChaosModItems.THE_ENDS_HELMET.get()).copy();
+					_setstack.setCount(1);
+					_menu.getSlots().get(3).set(_setstack);
+					_player.containerMenu.broadcastChanges();
+				}
+			});
+		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu51 ? _menu51.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_END_HOE.get()) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
 				_menu.getSlots().get(0).remove(60);
 				_player.containerMenu.broadcastChanges();
@@ -97,7 +177,19 @@ public class TheEndTradeButtonClickedProcedure {
 				_menu.getSlots().get(1).remove(0);
 				_player.containerMenu.broadcastChanges();
 			}
-		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu32 ? _menu32.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_END_SHOVEL
+			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+				_menu.getSlots().get(2).remove(1);
+				_player.containerMenu.broadcastChanges();
+			}
+			EngiesChaosMod.queueServerWork(1, () -> {
+				if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+					ItemStack _setstack = new ItemStack(EngiesChaosModItems.THE_END_HOE.get()).copy();
+					_setstack.setCount(1);
+					_menu.getSlots().get(3).set(_setstack);
+					_player.containerMenu.broadcastChanges();
+				}
+			});
+		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu58 ? _menu58.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_END_SHOVEL
 				.get()) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
 				_menu.getSlots().get(0).remove(48);
@@ -107,7 +199,19 @@ public class TheEndTradeButtonClickedProcedure {
 				_menu.getSlots().get(1).remove(0);
 				_player.containerMenu.broadcastChanges();
 			}
-		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu36 ? _menu36.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_END_AXE.get()) {
+			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+				_menu.getSlots().get(2).remove(1);
+				_player.containerMenu.broadcastChanges();
+			}
+			EngiesChaosMod.queueServerWork(1, () -> {
+				if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+					ItemStack _setstack = new ItemStack(EngiesChaosModItems.THE_END_SHOVEL.get()).copy();
+					_setstack.setCount(1);
+					_menu.getSlots().get(3).set(_setstack);
+					_player.containerMenu.broadcastChanges();
+				}
+			});
+		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu65 ? _menu65.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_END_AXE.get()) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
 				_menu.getSlots().get(0).remove(36);
 				_player.containerMenu.broadcastChanges();
@@ -116,7 +220,19 @@ public class TheEndTradeButtonClickedProcedure {
 				_menu.getSlots().get(1).remove(0);
 				_player.containerMenu.broadcastChanges();
 			}
-		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu40 ? _menu40.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_END_PICKAXE
+			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+				_menu.getSlots().get(2).remove(1);
+				_player.containerMenu.broadcastChanges();
+			}
+			EngiesChaosMod.queueServerWork(1, () -> {
+				if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+					ItemStack _setstack = new ItemStack(EngiesChaosModItems.THE_END_AXE.get()).copy();
+					_setstack.setCount(1);
+					_menu.getSlots().get(3).set(_setstack);
+					_player.containerMenu.broadcastChanges();
+				}
+			});
+		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu72 ? _menu72.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_END_PICKAXE
 				.get()) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
 				_menu.getSlots().get(0).remove(24);
@@ -126,7 +242,19 @@ public class TheEndTradeButtonClickedProcedure {
 				_menu.getSlots().get(1).remove(0);
 				_player.containerMenu.broadcastChanges();
 			}
-		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu44 ? _menu44.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_END_SWORD
+			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+				_menu.getSlots().get(2).remove(1);
+				_player.containerMenu.broadcastChanges();
+			}
+			EngiesChaosMod.queueServerWork(1, () -> {
+				if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+					ItemStack _setstack = new ItemStack(EngiesChaosModItems.THE_END_PICKAXE.get()).copy();
+					_setstack.setCount(1);
+					_menu.getSlots().get(3).set(_setstack);
+					_player.containerMenu.broadcastChanges();
+				}
+			});
+		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu79 ? _menu79.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.THE_END_SWORD
 				.get()) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
 				_menu.getSlots().get(0).remove(12);
@@ -136,109 +264,18 @@ public class TheEndTradeButtonClickedProcedure {
 				_menu.getSlots().get(1).remove(0);
 				_player.containerMenu.broadcastChanges();
 			}
-		}
-		if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu48 ? _menu48.getSlots().get(2).getItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.DARK_MATTER_THE_END_SCYTHE
-				.get()
-				|| (entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu50 ? _menu50.getSlots().get(2).getItem() : ItemStack.EMPTY)
-						.getItem() == EngiesChaosModItems.DARK_MATTER_THE_END_BAN_HAMMER.get()) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				_menu.getSlots().get(0).remove(64);
+				_menu.getSlots().get(2).remove(1);
 				_player.containerMenu.broadcastChanges();
 			}
-			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				_menu.getSlots().get(1).remove(60);
-				_player.containerMenu.broadcastChanges();
-			}
-		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu54 ? _menu54.getSlots().get(2).getItem() : ItemStack.EMPTY)
-				.getItem() == EngiesChaosModItems.DARK_MATTER_THE_ENDS_BOOTS.get()) {
-			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				_menu.getSlots().get(0).remove(64);
-				_player.containerMenu.broadcastChanges();
-			}
-			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				_menu.getSlots().get(1).remove(54);
-				_player.containerMenu.broadcastChanges();
-			}
-		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu58 ? _menu58.getSlots().get(2).getItem() : ItemStack.EMPTY)
-				.getItem() == EngiesChaosModItems.DARK_MATTER_THE_ENDS_LEGGINGS.get()) {
-			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				_menu.getSlots().get(0).remove(64);
-				_player.containerMenu.broadcastChanges();
-			}
-			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				_menu.getSlots().get(1).remove(48);
-				_player.containerMenu.broadcastChanges();
-			}
-		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu62 ? _menu62.getSlots().get(2).getItem() : ItemStack.EMPTY)
-				.getItem() == EngiesChaosModItems.DARK_MATTER_THE_ENDS_CHESTPLATE.get()) {
-			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				_menu.getSlots().get(0).remove(64);
-				_player.containerMenu.broadcastChanges();
-			}
-			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				_menu.getSlots().get(1).remove(32);
-				_player.containerMenu.broadcastChanges();
-			}
-		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu66 ? _menu66.getSlots().get(2).getItem() : ItemStack.EMPTY)
-				.getItem() == EngiesChaosModItems.DARK_MATTER_THE_ENDS_HELMET.get()) {
-			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				_menu.getSlots().get(0).remove(64);
-				_player.containerMenu.broadcastChanges();
-			}
-			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				_menu.getSlots().get(1).remove(16);
-				_player.containerMenu.broadcastChanges();
-			}
-		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu70 ? _menu70.getSlots().get(2).getItem() : ItemStack.EMPTY)
-				.getItem() == EngiesChaosModItems.DARK_MATTER_THE_END_HOE.get()) {
-			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				_menu.getSlots().get(0).remove(60);
-				_player.containerMenu.broadcastChanges();
-			}
-			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				_menu.getSlots().get(1).remove(0);
-				_player.containerMenu.broadcastChanges();
-			}
-		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu74 ? _menu74.getSlots().get(2).getItem() : ItemStack.EMPTY)
-				.getItem() == EngiesChaosModItems.DARK_MATTER_THE_END_SHOVEL.get()) {
-			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				_menu.getSlots().get(0).remove(48);
-				_player.containerMenu.broadcastChanges();
-			}
-			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				_menu.getSlots().get(1).remove(0);
-				_player.containerMenu.broadcastChanges();
-			}
-		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu78 ? _menu78.getSlots().get(2).getItem() : ItemStack.EMPTY)
-				.getItem() == EngiesChaosModItems.DARK_MATTER_THE_END_AXE.get()) {
-			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				_menu.getSlots().get(0).remove(36);
-				_player.containerMenu.broadcastChanges();
-			}
-			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				_menu.getSlots().get(1).remove(0);
-				_player.containerMenu.broadcastChanges();
-			}
-		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu82 ? _menu82.getSlots().get(2).getItem() : ItemStack.EMPTY)
-				.getItem() == EngiesChaosModItems.DARK_MATTER_THE_END_PICKAXE.get()) {
-			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				_menu.getSlots().get(0).remove(24);
-				_player.containerMenu.broadcastChanges();
-			}
-			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				_menu.getSlots().get(1).remove(0);
-				_player.containerMenu.broadcastChanges();
-			}
-		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu86 ? _menu86.getSlots().get(2).getItem() : ItemStack.EMPTY)
-				.getItem() == EngiesChaosModItems.DARK_MATTER_THE_END_SWORD.get()) {
-			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				_menu.getSlots().get(0).remove(12);
-				_player.containerMenu.broadcastChanges();
-			}
-			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				_menu.getSlots().get(1).remove(0);
-				_player.containerMenu.broadcastChanges();
-			}
+			EngiesChaosMod.queueServerWork(1, () -> {
+				if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+					ItemStack _setstack = new ItemStack(EngiesChaosModItems.THE_END_SWORD.get()).copy();
+					_setstack.setCount(1);
+					_menu.getSlots().get(3).set(_setstack);
+					_player.containerMenu.broadcastChanges();
+				}
+			});
 		}
 	}
 }

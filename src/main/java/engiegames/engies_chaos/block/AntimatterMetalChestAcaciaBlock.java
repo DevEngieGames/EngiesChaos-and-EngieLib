@@ -1,9 +1,12 @@
 package engiegames.engies_chaos.block;
 
+import net.minecraftforge.network.NetworkHooks;
+
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -17,6 +20,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.Containers;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.network.chat.Component;
@@ -29,17 +33,17 @@ import engiegames.engies_chaos.world.inventory.AntimatterMetalChestUIMenu;
 import engiegames.engies_chaos.block.entity.AntimatterMetalChestAcaciaBlockEntity;
 
 public class AntimatterMetalChestAcaciaBlock extends Block implements EntityBlock {
-	public AntimatterMetalChestAcaciaBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.METAL).strength(1f, 10f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public AntimatterMetalChestAcaciaBlock() {
+		super(BlockBehaviour.Properties.of(Material.BUILDABLE_GLASS).sound(SoundType.METAL).strength(1f, 10f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state) {
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return true;
 	}
 
 	@Override
-	public int getLightBlock(BlockState state) {
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
 	}
 
@@ -54,10 +58,10 @@ public class AntimatterMetalChestAcaciaBlock extends Block implements EntityBloc
 	}
 
 	@Override
-	public InteractionResult useWithoutItem(BlockState blockstate, Level world, BlockPos pos, Player entity, BlockHitResult hit) {
-		super.useWithoutItem(blockstate, world, pos, entity, hit);
+	public InteractionResult use(BlockState blockstate, Level world, BlockPos pos, Player entity, InteractionHand hand, BlockHitResult hit) {
+		super.use(blockstate, world, pos, entity, hand, hit);
 		if (entity instanceof ServerPlayer player) {
-			player.openMenu(new MenuProvider() {
+			NetworkHooks.openScreen(player, new MenuProvider() {
 				@Override
 				public Component getDisplayName() {
 					return Component.literal("Acacia Antimatter Metal Chest");

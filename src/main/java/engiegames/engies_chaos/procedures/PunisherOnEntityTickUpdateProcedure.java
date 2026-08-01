@@ -1,26 +1,31 @@
 package engiegames.engies_chaos.procedures;
 
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.core.BlockPos;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
+import engiegames.engies_chaos.entity.TheRealEngieGamesEntity;
 
 public class PunisherOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (!(EngiesChaosModVariables.MapVariables.get(world).MobDifficulty == 500000)) {
-			if (!entity.level().isClientSide())
+		if (!(EngiesChaosModVariables.MapVariables.get(world).MobDifficulty == 525000)) {
+			if (!entity.level.isClientSide())
 				entity.discard();
 			if (world instanceof ServerLevel _level) {
-				Entity entityToSpawn = EngiesChaosModEntities.THE_REAL_ENGIE_GAMES.get().spawn(_level, BlockPos.containing(x, y, z), EntitySpawnReason.MOB_SUMMONED);
-				if (entityToSpawn != null) {
-					entityToSpawn.setDeltaMovement(0, 0, 0);
-				}
+				Entity entityToSpawn = new TheRealEngieGamesEntity(EngiesChaosModEntities.THE_REAL_ENGIE_GAMES.get(), _level);
+				entityToSpawn.moveTo(x, y, z, 0, 0);
+				entityToSpawn.setYBodyRot(0);
+				entityToSpawn.setYHeadRot(0);
+				entityToSpawn.setDeltaMovement(0, 0, 0);
+				if (entityToSpawn instanceof Mob _mobToSpawn)
+					_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+				_level.addFreshEntity(entityToSpawn);
 			}
 		}
 	}

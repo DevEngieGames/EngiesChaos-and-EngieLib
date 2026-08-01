@@ -1,0 +1,68 @@
+{
+  "display": {
+    "icon": {
+      "item": "engies_chaos:antimatter_engie_gem"
+    },
+    "title": {
+      "translate": "advancements.antimatter_engie_gem_obtained.title"
+    },
+    "description": {
+      "translate": "advancements.antimatter_engie_gem_obtained.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "antimatter_engie_gem_obtained_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "engies_chaos:antimatter_engie_gem"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1000000000
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 10,
+    "recipes": [
+      "engies_chaos:antimatter_engie_sword_1",
+      "engies_chaos:antimatter_engie_pickaxe_1",
+      "engies_chaos:antimatter_engie_axe_1",
+      "engies_chaos:antimatter_engie_axe_2",
+      "engies_chaos:antimatter_engie_shovel_1",
+      "engies_chaos:antimatter_engie_hoe_1",
+      "engies_chaos:antimatter_engie_hoe_2",
+      "engies_chaos:antimatter_engie_paxel_craft",
+      "engies_chaos:antimatter_engies_paxel_craft",
+      "engies_chaos:antimatter_engie_helmet_1",
+      "engies_chaos:antimatter_engie_chestplate_1",
+      "engies_chaos:antimatter_engie_leggings_1",
+      "engies_chaos:antimatter_engie_boots_1",
+      "engies_chaos:antimatter_engie_block_1",
+      "engies_chaos:antimatter_engie_gem_9items",
+      "engies_chaos:antimatter_mini_ban_craft_1",
+      "engies_chaos:deleted_mod_element",
+      "engies_chaos:deleted_mod_element",
+      "engies_chaos:antimatter_ban_craft",
+      "engies_chaos:antimatter_big_ban_craft",
+      "engies_chaos:antimatter_large_ban_craft",
+      "engies_chaos:antimatter_mini_scythe_craft_1",
+      "engies_chaos:deleted_mod_element",
+      "engies_chaos:deleted_mod_element",
+      "engies_chaos:antimatter_scythe_craft",
+      "engies_chaos:antimatter_big_scythe_craft",
+      "engies_chaos:antimatter_large_scythe_craft"
+    ]
+  },
+  "parent": "engies_chaos:new_world"
+}

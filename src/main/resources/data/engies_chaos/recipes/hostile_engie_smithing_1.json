@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:monstrosity_engie_sword"
+  },
+  "addition": {
+    "item": "engies_chaos:engie_block"
+  },
+  "result": {
+    "item": "engies_chaos:hostile_engie_sword"
+  }
+}

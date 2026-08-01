@@ -1,7 +1,7 @@
 package engiegames.engies_chaos.client.particle;
 
-import net.neoforged.api.distmarker.OnlyIn;
-import net.neoforged.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.client.particle.TextureSheetParticle;
@@ -35,7 +35,7 @@ public class BanHammerHitParticle extends TextureSheetParticle {
 		super(world, x, y, z);
 		this.spriteSet = spriteSet;
 		this.setSize(0.2f, 0.2f);
-		this.quadSize *= 5f;
+		this.quadSize *= 2f;
 		this.lifetime = 14;
 		this.gravity = 0f;
 		this.hasPhysics = false;
@@ -54,7 +54,7 @@ public class BanHammerHitParticle extends TextureSheetParticle {
 	public void tick() {
 		super.tick();
 		if (!this.removed) {
-			this.setSprite(this.spriteSet.get((this.age / 4) % 8 + 1, 8));
+			this.setSprite(this.spriteSet.get((this.age / 2) % 8 + 1, 8));
 		}
 	}
 }

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:leggings_base"
+  },
+  "addition": {
+    "item": "engies_chaos:x_engie_upgrade"
+  },
+  "result": {
+    "item": "engies_chaos:x_engie_upgrade_leggings"
+  }
+}

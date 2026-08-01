@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "superdoomsdaycointoblock",
+  "ingredients": [
+    {
+      "item": "engies_chaos:super_dooms_day_coin"
+    },
+    {
+      "item": "engies_chaos:super_dooms_day_coin"
+    },
+    {
+      "item": "engies_chaos:super_dooms_day_coin"
+    },
+    {
+      "item": "engies_chaos:super_dooms_day_coin"
+    },
+    {
+      "item": "engies_chaos:super_dooms_day_coin"
+    },
+    {
+      "item": "engies_chaos:super_dooms_day_coin"
+    },
+    {
+      "item": "engies_chaos:super_dooms_day_coin"
+    },
+    {
+      "item": "engies_chaos:super_dooms_day_coin"
+    },
+    {
+      "item": "engies_chaos:super_dooms_day_coin"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:super_dooms_day_coin_block",
+    "count": 1
+  }
+}

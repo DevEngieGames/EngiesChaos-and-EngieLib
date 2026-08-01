@@ -1,4 +1,32 @@
 {
   "replace": false,
-  "values": []
+  "values": [
+    "engies_chaos:enraged_tnt_3",
+    "engies_chaos:enraged_tnt_4",
+    "engies_chaos:enraged_tnt",
+    "engies_chaos:enraged_tnt_2",
+    "engies_chaos:enraged_normal",
+    "engies_chaos:enraged_speed_6",
+    "engies_chaos:enraged_speed_7",
+    "engies_chaos:enraged_normal_2",
+    "engies_chaos:enraged_speed_8",
+    "engies_chaos:enraged_normal_3",
+    "engies_chaos:enraged_speed_9",
+    "engies_chaos:enraged_speed_2",
+    "engies_chaos:enraged_speed_3",
+    "engies_chaos:enraged_speed_4",
+    "engies_chaos:enraged_speed_5",
+    "engies_chaos:enraged_normal_8",
+    "engies_chaos:enraged_normal_9",
+    "engies_chaos:enraged_normal_4",
+    "engies_chaos:enraged_normal_5",
+    "engies_chaos:enraged_normal_6",
+    "engies_chaos:enraged_normal_7",
+    "engies_chaos:enraged_speed",
+    "engies_chaos:enraged_tnt_7",
+    "engies_chaos:enraged_tnt_8",
+    "engies_chaos:enraged_tnt_5",
+    "engies_chaos:enraged_tnt_6",
+    "engies_chaos:enraged_tnt_9"
+  ]
 }

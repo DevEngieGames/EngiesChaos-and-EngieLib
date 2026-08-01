@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "template": [],
-  "base": "engies_chaos:antimatter_biblically_accurate_engies_helmet",
-  "addition": "engies_chaos:antimatter_monstrosity_engie_block",
-  "result": {
-    "id": "engies_chaos:antimatter_monstrosity_engies_helmet"
-  }
-}

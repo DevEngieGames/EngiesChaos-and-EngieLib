@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "doomsdayengiepaxel",
+  "pattern": [
+    "abc",
+    " d ",
+    " d "
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:antimatter_doomsday_axe"
+    },
+    "b": {
+      "item": "engies_chaos:antimatter_doomsday_pickaxe"
+    },
+    "c": {
+      "item": "engies_chaos:antimatter_doomsday_shovel"
+    },
+    "d": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:antimatter_doomsday_aiot",
+    "count": 1
+  }
+}

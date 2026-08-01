@@ -22,15 +22,18 @@ public class RockyOnTickUpdateProcedure {
 				for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(100 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
 					{
 						Entity _ent = entity;
-						_ent.teleportTo(entityiterator.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerX, entityiterator.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerY,
-								entityiterator.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerZ);
+						_ent.teleportTo(((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX),
+								((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerY),
+								((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ));
 						if (_ent instanceof ServerPlayer _serverPlayer)
-							_serverPlayer.connection.teleport(entityiterator.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerX, entityiterator.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerY,
-									entityiterator.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerZ, _ent.getYRot(), _ent.getXRot());
+							_serverPlayer.connection.teleport(((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX),
+									((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerY),
+									((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ), _ent.getYRot(), _ent.getXRot());
 					}
 					if (entity instanceof Mob _entity)
-						_entity.getNavigation().moveTo(entityiterator.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerX, entityiterator.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerY,
-								entityiterator.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerZ, 1);
+						_entity.getNavigation().moveTo(((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX),
+								((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerY),
+								((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ), 1);
 				}
 			}
 		} else if (!world.getEntitiesOfClass(Player.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(50 / 2d), e -> true).isEmpty()) {
@@ -39,8 +42,9 @@ public class RockyOnTickUpdateProcedure {
 					final Vec3 _center = new Vec3(x, y, z);
 					for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(50 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
 						if (entity instanceof Mob _entity)
-							_entity.getNavigation().moveTo(entityiterator.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerX, entityiterator.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerY,
-									entityiterator.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerZ, 1);
+							_entity.getNavigation().moveTo(((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX),
+									((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerY),
+									((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ), 1);
 					}
 				}
 			}

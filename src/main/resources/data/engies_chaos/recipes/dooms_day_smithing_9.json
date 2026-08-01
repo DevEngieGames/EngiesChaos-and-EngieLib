@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:monstrosity_engies_leggings"
+  },
+  "addition": {
+    "item": "engies_chaos:dooms_day_coin_block"
+  },
+  "result": {
+    "item": "engies_chaos:dooms_days_leggings"
+  }
+}

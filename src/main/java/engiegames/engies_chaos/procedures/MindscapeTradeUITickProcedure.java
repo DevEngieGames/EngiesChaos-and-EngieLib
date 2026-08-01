@@ -14,6 +14,26 @@ public class MindscapeTradeUITickProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
+		if (!((entity instanceof Player _entity0 && _entity0.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu0) ? _menu0.getMenuState(1, "scythetrade", false) : false)
+				|| !((entity instanceof Player _entity1 && _entity1.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu1) ? _menu1.getMenuState(1, "bantrade", false) : false)) {
+			EngiesChaosModVariables.MapVariables.get(world).checkboxbothnomarked = true;
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			EngiesChaosModVariables.MapVariables.get(world).checkboxbothmarked = false;
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+		} else if (((entity instanceof Player _entity2 && _entity2.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu2) ? _menu2.getMenuState(1, "scythetrade", false) : false)
+				&& ((entity instanceof Player _entity3 && _entity3.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu3) ? _menu3.getMenuState(1, "bantrade", false) : false)) {
+			EngiesChaosModVariables.MapVariables.get(world).checkboxbothnomarked = false;
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			EngiesChaosModVariables.MapVariables.get(world).checkboxbothmarked = true;
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+		} else if (!((entity instanceof Player _entity4 && _entity4.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu4) ? _menu4.getMenuState(1, "scythetrade", false) : false)
+				&& !((entity instanceof Player _entity5 && _entity5.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu5) ? _menu5.getMenuState(1, "bantrade", false) : false) && getAmountInGUISlot(entity, 0) >= 64
+				&& getAmountInGUISlot(entity, 1) >= 60 && getAmountInGUISlot(entity, 1) < 64) {
+			EngiesChaosModVariables.MapVariables.get(world).checkboxbothnomarked = false;
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			EngiesChaosModVariables.MapVariables.get(world).checkboxbothmarked = true;
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+		}
 		if (getAmountInGUISlot(entity, 0) >= 64 && getAmountInGUISlot(entity, 1) >= 64 && getAmountInGUISlot(entity, 2) >= 64) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
 				ItemStack _setstack = new ItemStack(EngiesChaosModItems.MINDSCAPE_CRUCIFIX.get()).copy();
@@ -22,24 +42,24 @@ public class MindscapeTradeUITickProcedure {
 				_player.containerMenu.broadcastChanges();
 			}
 		} else if (getAmountInGUISlot(entity, 0) >= 64 && getAmountInGUISlot(entity, 1) >= 64 && getAmountInGUISlot(entity, 2) >= 60 && getAmountInGUISlot(entity, 2) < 64) {
-			if (((entity instanceof Player _entity8 && _entity8.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu8) ? _menu8.getMenuState(1, "scythetrade", false) : false)
-					&& !((entity instanceof Player _entity9 && _entity9.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu9) ? _menu9.getMenuState(1, "bantrade", false) : false)) {
+			if (((entity instanceof Player _entity17 && _entity17.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu17) ? _menu17.getMenuState(1, "scythetrade", false) : false)
+					&& !((entity instanceof Player _entity18 && _entity18.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu18) ? _menu18.getMenuState(1, "bantrade", false) : false)) {
 				if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
 					ItemStack _setstack = new ItemStack(EngiesChaosModItems.MINDSCAPE_ENGIE_SCYTHE.get()).copy();
 					_setstack.setCount(1);
 					_menu.getSlots().get(3).set(_setstack);
 					_player.containerMenu.broadcastChanges();
 				}
-			} else if (((entity instanceof Player _entity11 && _entity11.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu11) ? _menu11.getMenuState(1, "bantrade", false) : false)
-					&& !((entity instanceof Player _entity12 && _entity12.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu12) ? _menu12.getMenuState(1, "scythetrade", false) : false)) {
+			} else if (((entity instanceof Player _entity20 && _entity20.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu20) ? _menu20.getMenuState(1, "bantrade", false) : false)
+					&& !((entity instanceof Player _entity21 && _entity21.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu21) ? _menu21.getMenuState(1, "scythetrade", false) : false)) {
 				if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
 					ItemStack _setstack = new ItemStack(EngiesChaosModItems.MINDSCAPE_ENGIES_BAN_HAMMER.get()).copy();
 					_setstack.setCount(1);
 					_menu.getSlots().get(3).set(_setstack);
 					_player.containerMenu.broadcastChanges();
 				}
-			} else if (!((entity instanceof Player _entity14 && _entity14.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu14) ? _menu14.getMenuState(1, "bantrade", false) : false)
-					&& !((entity instanceof Player _entity15 && _entity15.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu15) ? _menu15.getMenuState(1, "scythetrade", false) : false)) {
+			} else if (!((entity instanceof Player _entity23 && _entity23.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu23) ? _menu23.getMenuState(1, "bantrade", false) : false)
+					&& !((entity instanceof Player _entity24 && _entity24.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu24) ? _menu24.getMenuState(1, "scythetrade", false) : false)) {
 				if (EngiesChaosModVariables.MapVariables.get(world).itemswap1 == false) {
 					entity.getPersistentData().putDouble("itemswap1", (entity.getPersistentData().getDouble("itemswap1") + 0.05));
 					if (entity.getPersistentData().getDouble("itemswap1") >= 5) {
@@ -137,8 +157,8 @@ public class MindscapeTradeUITickProcedure {
 				_menu.getSlots().get(3).set(_setstack);
 				_player.containerMenu.broadcastChanges();
 			}
-		} else if (((entity instanceof Player _entity72 && _entity72.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu72) ? _menu72.getMenuState(1, "scythetrade", false) : false)
-				&& ((entity instanceof Player _entity73 && _entity73.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu73) ? _menu73.getMenuState(1, "bantrade", false) : false)) {
+		} else if (((entity instanceof Player _entity81 && _entity81.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu81) ? _menu81.getMenuState(1, "scythetrade", false) : false)
+				&& ((entity instanceof Player _entity82 && _entity82.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu82) ? _menu82.getMenuState(1, "bantrade", false) : false)) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
 				ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
 				_setstack.setCount(1);

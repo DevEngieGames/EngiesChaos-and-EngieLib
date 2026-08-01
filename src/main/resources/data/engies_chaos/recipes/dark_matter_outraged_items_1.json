@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "darkmatteroutragedengieblocktoitem",
+  "ingredients": [
+    {
+      "item": "engies_chaos:dark_matter_outraged_engie_block"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:dark_matter_outraged_engie_essence",
+    "count": 9
+  }
+}

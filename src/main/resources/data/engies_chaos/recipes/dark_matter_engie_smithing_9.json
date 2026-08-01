@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:x_engie_boots"
+  },
+  "addition": {
+    "item": "engies_chaos:dark_matter_mad_engie_block"
+  },
+  "result": {
+    "item": "engies_chaos:dark_matter_engies_boots"
+  }
+}

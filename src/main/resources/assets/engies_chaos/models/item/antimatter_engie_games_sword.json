@@ -1,7 +1,31 @@
 {
-  "parent": "engies_chaos:custom/engiegamesword",
-  "textures": {
-    "0": "engies_chaos:block/antimatterengiegames_sword",
-    "particle": "engies_chaos:item/antimatterengiegames_sword"
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "engies_chaos:custom/antimatterengiegames_sword_3d",
+    "textures": {
+      "0": "engies_chaos:block/antimatterengiegames_sword_3d",
+      "particle": "engies_chaos:item/antimatterengiegames_sword"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/antimatterengiegames_sword"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/antimatterengiegames_sword"
+      }
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/antimatterengiegames_sword"
+      }
+    }
   }
 }

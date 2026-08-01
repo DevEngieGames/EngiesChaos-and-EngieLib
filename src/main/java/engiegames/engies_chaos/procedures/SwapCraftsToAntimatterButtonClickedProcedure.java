@@ -8,17 +8,21 @@ public class SwapCraftsToAntimatterButtonClickedProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).recipebookantimattercraftstoggle == true) {
+		if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).recipebookantimattercraftstoggle == true) {
 			{
-				EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-				_vars.recipebookantimattercraftstoggle = false;
-				_vars.syncPlayerVariables(entity);
+				boolean _setval = false;
+				entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.recipebookantimattercraftstoggle = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
-		} else if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).recipebookantimattercraftstoggle == false) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).recipebookantimattercraftstoggle == false) {
 			{
-				EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-				_vars.recipebookantimattercraftstoggle = true;
-				_vars.syncPlayerVariables(entity);
+				boolean _setval = true;
+				entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.recipebookantimattercraftstoggle = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
 		}
 	}

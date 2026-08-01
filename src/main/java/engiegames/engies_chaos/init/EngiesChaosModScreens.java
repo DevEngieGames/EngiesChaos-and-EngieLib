@@ -3,10 +3,12 @@
  */
 package engiegames.engies_chaos.init;
 
-import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.api.distmarker.Dist;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.api.distmarker.Dist;
+
+import net.minecraft.client.gui.screens.MenuScreens;
 
 import engiegames.engies_chaos.client.gui.XEngieGamesTradeUIPickerScreen;
 import engiegames.engies_chaos.client.gui.UncommonTradeUIScreen;
@@ -54,55 +56,57 @@ import engiegames.engies_chaos.client.gui.AntimatterEngieGamesTradeUIScreen;
 import engiegames.engies_chaos.client.gui.AntimatterDoomsDayTradeUIScreen;
 import engiegames.engies_chaos.client.gui.AngryEngieBundleUIScreen;
 
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class EngiesChaosModScreens {
 	@SubscribeEvent
-	public static void clientLoad(RegisterMenuScreensEvent event) {
-		event.register(EngiesChaosModMenus.METAL_CHEST_UI.get(), MetalChestUIScreen::new);
-		event.register(EngiesChaosModMenus.ENGIE_BUNDLE_UI.get(), MetalBundleUIScreen::new);
-		event.register(EngiesChaosModMenus.ANGRY_ENGIE_BUNDLE_UI.get(), AngryEngieBundleUIScreen::new);
-		event.register(EngiesChaosModMenus.ENRAGED_ENGIE_BUNDLE_UI.get(), EnragedEngieBundleUIScreen::new);
-		event.register(EngiesChaosModMenus.OUTRAGED_ENGIE_BUNDLE_UI.get(), OutragedEngieBundleUIScreen::new);
-		event.register(EngiesChaosModMenus.BIBLICALLY_ACCURATE_ENGIE_BUNDLE_UI.get(), BiblicallyAccurateEngieBundleUIScreen::new);
-		event.register(EngiesChaosModMenus.MONSTROSITY_ENGIE_BUNDLE_UI.get(), MonstrosityEngieBundleUIScreen::new);
-		event.register(EngiesChaosModMenus.ETC_ENGIE_BUNDLE_UI.get(), ETCEngieBundleUIScreen::new);
-		event.register(EngiesChaosModMenus.CREATIVE_ENGIE_BUNDLE_UI.get(), CreativeEngieBundleUIScreen::new);
-		event.register(EngiesChaosModMenus.ENGIES_OWN_ENGIE_BUNDLE_UI.get(), EngiesOwnEngieBundleUIScreen::new);
-		event.register(EngiesChaosModMenus.ENGIES_BIRTHDAY_BUNDLE_UI.get(), EngiesBirthdayBundleUIScreen::new);
-		event.register(EngiesChaosModMenus.DOOMS_DAY_TRADE_UI.get(), DoomsDayTradeUIScreen::new);
-		event.register(EngiesChaosModMenus.SUPER_DOOMS_DAY_TRADE_UI.get(), SuperDoomsDayTradeUIScreen::new);
-		event.register(EngiesChaosModMenus.THE_END_TRADE_UI.get(), TheEndTradeUIScreen::new);
-		event.register(EngiesChaosModMenus.ENGIE_TRADE_UI.get(), EngieTradeUIScreen::new);
-		event.register(EngiesChaosModMenus.BIRTHDAY_BUNDLE_FOR_YOUNGEST_UI.get(), BirthdayBundleForYoungestUIScreen::new);
-		event.register(EngiesChaosModMenus.ENGIE_GAMES_TRADE_UI.get(), EngieGamesTradeUIScreen::new);
-		event.register(EngiesChaosModMenus.ANTIMATTER_DOOMS_DAY_TRADE_UI.get(), AntimatterDoomsDayTradeUIScreen::new);
-		event.register(EngiesChaosModMenus.ANTIMATTER_SUPER_DOOMS_DAY_TRADE_UI.get(), AntimatterSuperDoomsDayTradeUIScreen::new);
-		event.register(EngiesChaosModMenus.ANTIMATTER_THE_END_TRADE_UI.get(), AntimatterTheEndTradeUIScreen::new);
-		event.register(EngiesChaosModMenus.ANTIMATTER_ENGIE_TRADE_UI.get(), AntimatterEngieTradeUIScreen::new);
-		event.register(EngiesChaosModMenus.ANTIMATTER_ENGIE_GAMES_TRADE_UI.get(), AntimatterEngieGamesTradeUIScreen::new);
-		event.register(EngiesChaosModMenus.ROUGHIAN_ENGIE_GAMES_TRADE_UI.get(), RoughianEngieGamesTradeUIScreen::new);
-		event.register(EngiesChaosModMenus.COSMIC_ENGIE_GAMES_TRADE_UI.get(), CosmicEngieGamesTradeUIScreen::new);
-		event.register(EngiesChaosModMenus.ANTIMATTER_METAL_CHEST_UI.get(), AntimatterMetalChestUIScreen::new);
-		event.register(EngiesChaosModMenus.MINDSCAPE_TRADE_UI.get(), MindscapeTradeUIScreen::new);
-		event.register(EngiesChaosModMenus.REGULAR_METAL_BUNDLE_UI.get(), RegularMetalBundleUIScreen::new);
-		event.register(EngiesChaosModMenus.CONFIG.get(), ConfigScreen::new);
-		event.register(EngiesChaosModMenus.DEVELOPER_MODE_GUI.get(), DeveloperModeGUIScreen::new);
-		event.register(EngiesChaosModMenus.TRASH.get(), TrashScreen::new);
-		event.register(EngiesChaosModMenus.DARK_MATTER_METAL_CHEST_UI.get(), DarkMatterMetalChestUIScreen::new);
-		event.register(EngiesChaosModMenus.CODE_REDEMPTIONS.get(), CodeRedemptionsScreen::new);
-		event.register(EngiesChaosModMenus.GEAR_GIVER.get(), GearGiverScreen::new);
-		event.register(EngiesChaosModMenus.COMMON_TRADE_UI.get(), CommonTradeUIScreen::new);
-		event.register(EngiesChaosModMenus.UNCOMMON_TRADE_UI.get(), UncommonTradeUIScreen::new);
-		event.register(EngiesChaosModMenus.RARE_TRADE_UI.get(), RareTradeUIScreen::new);
-		event.register(EngiesChaosModMenus.EPIC_TRADE_UI.get(), EpicTradeUIScreen::new);
-		event.register(EngiesChaosModMenus.LEGENDARY_TRADE_UI.get(), LegendaryTradeUIScreen::new);
-		event.register(EngiesChaosModMenus.MYTHIC_TRADE_UI.get(), MythicTradeUIScreen::new);
-		event.register(EngiesChaosModMenus.EXOTIC_TRADE_UI.get(), ExoticTradeUIScreen::new);
-		event.register(EngiesChaosModMenus.X_ENGIE_GAMES_TRADE_UI_PICKER.get(), XEngieGamesTradeUIPickerScreen::new);
-		event.register(EngiesChaosModMenus.RECIPE_BOOK_VOL_1_GUI.get(), RecipeBookVol1GUIScreen::new);
-		event.register(EngiesChaosModMenus.RECIPE_BOOK_VOL_2_GUI.get(), RecipeBookVol2GUIScreen::new);
-		event.register(EngiesChaosModMenus.RECIPE_BOOK_VOL_3_GUI.get(), RecipeBookVol3GUIScreen::new);
-		event.register(EngiesChaosModMenus.RECIPE_BOOK_VOL_5_GUI.get(), RecipeBookVol5GUIScreen::new);
+	public static void clientLoad(FMLClientSetupEvent event) {
+		event.enqueueWork(() -> {
+			MenuScreens.register(EngiesChaosModMenus.METAL_CHEST_UI.get(), MetalChestUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.ENGIE_BUNDLE_UI.get(), MetalBundleUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.ANGRY_ENGIE_BUNDLE_UI.get(), AngryEngieBundleUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.ENRAGED_ENGIE_BUNDLE_UI.get(), EnragedEngieBundleUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.OUTRAGED_ENGIE_BUNDLE_UI.get(), OutragedEngieBundleUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.BIBLICALLY_ACCURATE_ENGIE_BUNDLE_UI.get(), BiblicallyAccurateEngieBundleUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.MONSTROSITY_ENGIE_BUNDLE_UI.get(), MonstrosityEngieBundleUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.ETC_ENGIE_BUNDLE_UI.get(), ETCEngieBundleUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.CREATIVE_ENGIE_BUNDLE_UI.get(), CreativeEngieBundleUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.ENGIES_OWN_ENGIE_BUNDLE_UI.get(), EngiesOwnEngieBundleUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.ENGIES_BIRTHDAY_BUNDLE_UI.get(), EngiesBirthdayBundleUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.DOOMS_DAY_TRADE_UI.get(), DoomsDayTradeUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.SUPER_DOOMS_DAY_TRADE_UI.get(), SuperDoomsDayTradeUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.THE_END_TRADE_UI.get(), TheEndTradeUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.ENGIE_TRADE_UI.get(), EngieTradeUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.BIRTHDAY_BUNDLE_FOR_YOUNGEST_UI.get(), BirthdayBundleForYoungestUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.ENGIE_GAMES_TRADE_UI.get(), EngieGamesTradeUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.ANTIMATTER_DOOMS_DAY_TRADE_UI.get(), AntimatterDoomsDayTradeUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.ANTIMATTER_SUPER_DOOMS_DAY_TRADE_UI.get(), AntimatterSuperDoomsDayTradeUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.ANTIMATTER_THE_END_TRADE_UI.get(), AntimatterTheEndTradeUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.ANTIMATTER_ENGIE_TRADE_UI.get(), AntimatterEngieTradeUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.ANTIMATTER_ENGIE_GAMES_TRADE_UI.get(), AntimatterEngieGamesTradeUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.ROUGHIAN_ENGIE_GAMES_TRADE_UI.get(), RoughianEngieGamesTradeUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.COSMIC_ENGIE_GAMES_TRADE_UI.get(), CosmicEngieGamesTradeUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.ANTIMATTER_METAL_CHEST_UI.get(), AntimatterMetalChestUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.MINDSCAPE_TRADE_UI.get(), MindscapeTradeUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.REGULAR_METAL_BUNDLE_UI.get(), RegularMetalBundleUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.CONFIG.get(), ConfigScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.DEVELOPER_MODE_GUI.get(), DeveloperModeGUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.TRASH.get(), TrashScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.DARK_MATTER_METAL_CHEST_UI.get(), DarkMatterMetalChestUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.CODE_REDEMPTIONS.get(), CodeRedemptionsScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.GEAR_GIVER.get(), GearGiverScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.COMMON_TRADE_UI.get(), CommonTradeUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.UNCOMMON_TRADE_UI.get(), UncommonTradeUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.RARE_TRADE_UI.get(), RareTradeUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.EPIC_TRADE_UI.get(), EpicTradeUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.LEGENDARY_TRADE_UI.get(), LegendaryTradeUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.MYTHIC_TRADE_UI.get(), MythicTradeUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.EXOTIC_TRADE_UI.get(), ExoticTradeUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.X_ENGIE_GAMES_TRADE_UI_PICKER.get(), XEngieGamesTradeUIPickerScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.RECIPE_BOOK_VOL_1_GUI.get(), RecipeBookVol1GUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.RECIPE_BOOK_VOL_2_GUI.get(), RecipeBookVol2GUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.RECIPE_BOOK_VOL_3_GUI.get(), RecipeBookVol3GUIScreen::new);
+			MenuScreens.register(EngiesChaosModMenus.RECIPE_BOOK_VOL_5_GUI.get(), RecipeBookVol5GUIScreen::new);
+		});
 	}
 
 	public interface ScreenAccessor {

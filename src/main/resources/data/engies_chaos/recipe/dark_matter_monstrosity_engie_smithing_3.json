@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "template": [],
-  "base": "engies_chaos:dark_matter_biblically_accurate_engie_axe",
-  "addition": "engies_chaos:dark_matter_monstrosity_engie_block",
-  "result": {
-    "id": "engies_chaos:dark_matter_monstrosity_engie_axe"
-  }
-}

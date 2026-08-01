@@ -1,8 +1,9 @@
 package engiegames.engies_chaos.entity;
 
-import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.network.PlayMessages;
+import net.minecraftforge.network.NetworkHooks;
 
-import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
@@ -18,16 +19,15 @@ import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.SpawnGroupData;
-import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.PathfinderMob;
+import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.EntitySpawnReason;
-import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.InteractionResult;
@@ -35,21 +35,25 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.nbt.CompoundTag;
 
 import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.procedures.TraderOnEntitySpawnProcedure;
-import engiegames.engies_chaos.procedures.NegativeDifficultyAICheckProcedure;
-import engiegames.engies_chaos.procedures.MobHitboxScalingProcedure;
 import engiegames.engies_chaos.procedures.CosmicNaturalSpawningProcedure;
 import engiegames.engies_chaos.procedures.CosmicEngieGamesRightClickedOnEntityTradeProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class CosmicTheRealEngieGamesEntity extends PathfinderMob {
+	public CosmicTheRealEngieGamesEntity(PlayMessages.SpawnEntity packet, Level world) {
+		this(EngiesChaosModEntities.COSMIC_THE_REAL_ENGIE_GAMES.get(), world);
+	}
+
 	public CosmicTheRealEngieGamesEntity(EntityType<CosmicTheRealEngieGamesEntity> type, Level world) {
 		super(type, world);
+		maxUpStep = 0.6f;
 		xpReward = 0;
 		setNoAi(false);
 		setPersistenceRequired();
@@ -62,40 +66,30 @@ public class CosmicTheRealEngieGamesEntity extends PathfinderMob {
 	}
 
 	@Override
+	public Packet<?> getAddEntityPacket() {
+		return NetworkHooks.getEntitySpawningPacket(this);
+	}
+
+	@Override
 	protected void registerGoals() {
 		super.registerGoals();
 		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.25, false) {
 			@Override
-			protected boolean canPerformAttack(LivingEntity entity) {
-				return this.isTimeToAttack() && this.mob.distanceToSqr(entity) < (this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth()) && this.mob.getSensing().hasLineOfSight(entity);
+			protected double getAttackReachSqr(LivingEntity entity) {
+				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
 		});
 		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
-		this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, (float) 12) {
-			@Override
-			public boolean canUse() {
-				double x = CosmicTheRealEngieGamesEntity.this.getX();
-				double y = CosmicTheRealEngieGamesEntity.this.getY();
-				double z = CosmicTheRealEngieGamesEntity.this.getZ();
-				Entity entity = CosmicTheRealEngieGamesEntity.this;
-				Level world = CosmicTheRealEngieGamesEntity.this.level();
-				return super.canUse() && NegativeDifficultyAICheckProcedure.execute(world);
-			}
-
-			@Override
-			public boolean canContinueToUse() {
-				double x = CosmicTheRealEngieGamesEntity.this.getX();
-				double y = CosmicTheRealEngieGamesEntity.this.getY();
-				double z = CosmicTheRealEngieGamesEntity.this.getZ();
-				Entity entity = CosmicTheRealEngieGamesEntity.this;
-				Level world = CosmicTheRealEngieGamesEntity.this.level();
-				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
-			}
-		});
+		this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, (float) 12));
 		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal(this, Monster.class, true, true));
 		this.targetSelector.addGoal(5, new HurtByTargetGoal(this));
 		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(7, new FloatGoal(this));
+	}
+
+	@Override
+	public MobType getMobType() {
+		return MobType.UNDEFINED;
 	}
 
 	@Override
@@ -104,23 +98,23 @@ public class CosmicTheRealEngieGamesEntity extends PathfinderMob {
 	}
 
 	@Override
-	public Vec3 getPassengerRidingPosition(Entity entity) {
-		return super.getPassengerRidingPosition(entity).add(0, -0.35F, 0);
+	public double getMyRidingOffset() {
+		return -0.35D;
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.hurt"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.death"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
 	}
 
 	@Override
-	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, EntitySpawnReason reason, @Nullable SpawnGroupData livingdata) {
-		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata);
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
+		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
 		TraderOnEntitySpawnProcedure.execute(world, this);
 		return retval;
 	}
@@ -128,41 +122,25 @@ public class CosmicTheRealEngieGamesEntity extends PathfinderMob {
 	@Override
 	public InteractionResult mobInteract(Player sourceentity, InteractionHand hand) {
 		ItemStack itemstack = sourceentity.getItemInHand(hand);
-		InteractionResult retval = InteractionResult.SUCCESS;
+		InteractionResult retval = InteractionResult.sidedSuccess(this.level.isClientSide());
 		super.mobInteract(sourceentity, hand);
 		double x = this.getX();
 		double y = this.getY();
 		double z = this.getZ();
 		Entity entity = this;
-		Level world = this.level();
+		Level world = this.level;
 
 		CosmicEngieGamesRightClickedOnEntityTradeProcedure.execute(world, x, y, z, entity, sourceentity);
 		return retval;
 	}
 
-	@Override
-	public void baseTick() {
-		super.baseTick();
-		this.refreshDimensions();
-	}
-
-	@Override
-	public EntityDimensions getDefaultDimensions(Pose pose) {
-		Entity entity = this;
-		Level world = this.level();
-		double x = this.getX();
-		double y = this.getY();
-		double z = this.getZ();
-		return super.getDefaultDimensions(pose).scale((float) MobHitboxScalingProcedure.execute());
-	}
-
-	public static void init(RegisterSpawnPlacementsEvent event) {
-		event.register(EngiesChaosModEntities.COSMIC_THE_REAL_ENGIE_GAMES.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
+	public static void init() {
+		SpawnPlacements.register(EngiesChaosModEntities.COSMIC_THE_REAL_ENGIE_GAMES.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
 			return CosmicNaturalSpawningProcedure.execute(world);
-		}, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+		});
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
@@ -172,7 +150,6 @@ public class CosmicTheRealEngieGamesEntity extends PathfinderMob {
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 1);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
-		builder = builder.add(Attributes.STEP_HEIGHT, 0.6);
 		return builder;
 	}
 }

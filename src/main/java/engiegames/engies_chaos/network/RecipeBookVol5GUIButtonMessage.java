@@ -1,19 +1,16 @@
 package engiegames.engies_chaos.network;
 
-import net.neoforged.neoforge.network.handling.IPayloadContext;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
+import net.minecraftforge.network.NetworkEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
-import net.minecraft.network.protocol.PacketFlow;
-import net.minecraft.network.codec.StreamCodec;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
+
+import java.util.function.Supplier;
 
 import engiegames.engies_chaos.procedures.RecipeBookVol5UpOnePageProcedure;
 import engiegames.engies_chaos.procedures.RecipeBookVol5UpMaxPagesProcedure;
@@ -23,32 +20,39 @@ import engiegames.engies_chaos.procedures.RecipeBookVol5DownFivePagesProcedure;
 import engiegames.engies_chaos.procedures.RecipeBookVol5DownAllPagesProcedure;
 import engiegames.engies_chaos.EngiesChaosMod;
 
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
-public record RecipeBookVol5GUIButtonMessage(int buttonID, int x, int y, int z) implements CustomPacketPayload {
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+public class RecipeBookVol5GUIButtonMessage {
+	private final int buttonID, x, y, z;
 
-	public static final Type<RecipeBookVol5GUIButtonMessage> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(EngiesChaosMod.MODID, "recipe_book_vol_5_gui_buttons"));
-	public static final StreamCodec<RegistryFriendlyByteBuf, RecipeBookVol5GUIButtonMessage> STREAM_CODEC = StreamCodec.of((RegistryFriendlyByteBuf buffer, RecipeBookVol5GUIButtonMessage message) -> {
+	public RecipeBookVol5GUIButtonMessage(FriendlyByteBuf buffer) {
+		this.buttonID = buffer.readInt();
+		this.x = buffer.readInt();
+		this.y = buffer.readInt();
+		this.z = buffer.readInt();
+	}
+
+	public RecipeBookVol5GUIButtonMessage(int buttonID, int x, int y, int z) {
+		this.buttonID = buttonID;
+		this.x = x;
+		this.y = y;
+		this.z = z;
+	}
+
+	public static void buffer(RecipeBookVol5GUIButtonMessage message, FriendlyByteBuf buffer) {
 		buffer.writeInt(message.buttonID);
 		buffer.writeInt(message.x);
 		buffer.writeInt(message.y);
 		buffer.writeInt(message.z);
-	}, (RegistryFriendlyByteBuf buffer) -> new RecipeBookVol5GUIButtonMessage(buffer.readInt(), buffer.readInt(), buffer.readInt(), buffer.readInt()));
-	@Override
-	public Type<RecipeBookVol5GUIButtonMessage> type() {
-		return TYPE;
 	}
 
-	public static void handleData(final RecipeBookVol5GUIButtonMessage message, final IPayloadContext context) {
-		if (context.flow() == PacketFlow.SERVERBOUND) {
-			context.enqueueWork(() -> handleButtonAction(context.player(), message.buttonID, message.x, message.y, message.z)).exceptionally(e -> {
-				context.connection().disconnect(Component.literal(e.getMessage()));
-				return null;
-			});
-		}
+	public static void handler(RecipeBookVol5GUIButtonMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
+		NetworkEvent.Context context = contextSupplier.get();
+		context.enqueueWork(() -> handleButtonAction(context.getSender(), message.buttonID, message.x, message.y, message.z));
+		context.setPacketHandled(true);
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level();
+		Level world = entity.level;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
@@ -80,6 +84,6 @@ public record RecipeBookVol5GUIButtonMessage(int buttonID, int x, int y, int z) 
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		EngiesChaosMod.addNetworkMessage(RecipeBookVol5GUIButtonMessage.TYPE, RecipeBookVol5GUIButtonMessage.STREAM_CODEC, RecipeBookVol5GUIButtonMessage::handleData);
+		EngiesChaosMod.addNetworkMessage(RecipeBookVol5GUIButtonMessage.class, RecipeBookVol5GUIButtonMessage::buffer, RecipeBookVol5GUIButtonMessage::new, RecipeBookVol5GUIButtonMessage::handler);
 	}
 }

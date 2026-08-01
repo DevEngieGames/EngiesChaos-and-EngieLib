@@ -15,9 +15,9 @@ public class TrueHardcoreCheckProcedure {
 		if (entity == null)
 			return false;
 		if (EngiesChaosModVariables.MapVariables.get(world).truehardcoreenabledonworld == true && (getEntityGameType(entity) == GameType.SURVIVAL || getEntityGameType(entity) == GameType.ADVENTURE)) {
-			if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).hphudtoggle == true) {
+			if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).hphudtoggle == true) {
 				return true;
-			} else if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).hphudtoggle == false) {
+			} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).hphudtoggle == false) {
 				return false;
 			}
 		}
@@ -27,7 +27,7 @@ public class TrueHardcoreCheckProcedure {
 	private static GameType getEntityGameType(Entity entity) {
 		if (entity instanceof ServerPlayer serverPlayer) {
 			return serverPlayer.gameMode.getGameModeForPlayer();
-		} else if (entity instanceof Player player && player.level().isClientSide()) {
+		} else if (entity instanceof Player player && player.level.isClientSide()) {
 			PlayerInfo playerInfo = Minecraft.getInstance().getConnection().getPlayerInfo(player.getGameProfile().getId());
 			if (playerInfo != null)
 				return playerInfo.getGameMode();

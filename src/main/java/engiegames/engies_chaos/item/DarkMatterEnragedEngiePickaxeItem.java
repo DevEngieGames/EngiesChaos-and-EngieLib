@@ -1,17 +1,40 @@
 package engiegames.engies_chaos.item;
 
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.PickaxeItem;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
-import net.minecraft.tags.TagKey;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.Registries;
+
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
+import engiegames.engies_chaos.init.EngiesChaosModItems;
 
 public class DarkMatterEnragedEngiePickaxeItem extends PickaxeItem {
-	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 42000, 112f, 0, 22, TagKey.create(Registries.ITEM, ResourceLocation.parse("engies_chaos:dark_matter_enraged_engie_pickaxe_repair_items")));
+	public DarkMatterEnragedEngiePickaxeItem() {
+		super(new Tier() {
+			public int getUses() {
+				return 42000;
+			}
 
-	public DarkMatterEnragedEngiePickaxeItem(Item.Properties properties) {
-		super(TOOL_MATERIAL, 1624f, 12.2f, properties);
+			public float getSpeed() {
+				return 112f;
+			}
+
+			public float getAttackDamageBonus() {
+				return 1623f;
+			}
+
+			public int getLevel() {
+				return 4;
+			}
+
+			public int getEnchantmentValue() {
+				return 22;
+			}
+
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.DARK_MATTER_ENRAGED_ENGIE_ESSENCE.get()));
+			}
+		}, 1, 12.2f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}
 }

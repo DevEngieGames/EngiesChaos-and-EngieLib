@@ -1,0 +1,60 @@
+{
+  "display": {
+    "icon": {
+      "item": "engies_chaos:antimatter_outraged_engie_essence"
+    },
+    "title": {
+      "translate": "advancements.antimatter_outraged_engie_essence_obtained.title"
+    },
+    "description": {
+      "translate": "advancements.antimatter_outraged_engie_essence_obtained.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "antimatter_outraged_engie_essence_obtained_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "engies_chaos:antimatter_outraged_engie_essence"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1000000000
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 40,
+    "recipes": [
+      "engies_chaos:antimatter_outraged_engie_sword_1",
+      "engies_chaos:antimatter_outraged_engie_pickaxe_1",
+      "engies_chaos:antimatter_outraged_engie_axe_1",
+      "engies_chaos:antimatter_outraged_engie_axe_2",
+      "engies_chaos:antimatter_outraged_engie_shovel_1",
+      "engies_chaos:antimatter_outraged_engie_hoe_1",
+      "engies_chaos:antimatter_outraged_engie_hoe_2",
+      "engies_chaos:antimatter_outraged_engie_paxel_craft",
+      "engies_chaos:antimatter_outraged_engie_helmet_1",
+      "engies_chaos:antimatter_outraged_engie_chestplate_1",
+      "engies_chaos:antimatter_outraged_engie_leggings_1",
+      "engies_chaos:antimatter_outraged_engie_boots_1",
+      "engies_chaos:antimatter_outraged_block_1",
+      "engies_chaos:antimatter_outraged_items_1",
+      "engies_chaos:antimatter_enormous_ban_craft",
+      "engies_chaos:antimatter_gigantic_ban_craft",
+      "engies_chaos:antimatter_massive_ban_craft",
+      "engies_chaos:antimatter_biblically_ban_craft",
+      "engies_chaos:antimatter_monstrosity_ban_craft"
+    ]
+  },
+  "parent": "engies_chaos:antimatter_enraged_engie_essence_obtained"
+}

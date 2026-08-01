@@ -1,7 +1,7 @@
 {
   "parent": "engies_chaos:custom/doomsdaycoin",
   "textures": {
-    "0": "engies_chaos:block/darkmatterdoomsdaycointexture",
+    "0": "engies_chaos:block/doomsdaycointexture",
     "particle": "engies_chaos:item/doomsdaybase"
   }
 }

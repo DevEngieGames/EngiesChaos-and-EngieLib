@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "darkmatterengiegamestesseracttoblock",
+  "ingredients": [
+    {
+      "item": "engies_chaos:dark_matter_engie_games_tesseract"
+    },
+    {
+      "item": "engies_chaos:dark_matter_engie_games_tesseract"
+    },
+    {
+      "item": "engies_chaos:dark_matter_engie_games_tesseract"
+    },
+    {
+      "item": "engies_chaos:dark_matter_engie_games_tesseract"
+    },
+    {
+      "item": "engies_chaos:dark_matter_engie_games_tesseract"
+    },
+    {
+      "item": "engies_chaos:dark_matter_engie_games_tesseract"
+    },
+    {
+      "item": "engies_chaos:dark_matter_engie_games_tesseract"
+    },
+    {
+      "item": "engies_chaos:dark_matter_engie_games_tesseract"
+    },
+    {
+      "item": "engies_chaos:dark_matter_engie_games_tesseract"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:dark_matter_roughian_engie_games_coin_block",
+    "count": 1
+  }
+}

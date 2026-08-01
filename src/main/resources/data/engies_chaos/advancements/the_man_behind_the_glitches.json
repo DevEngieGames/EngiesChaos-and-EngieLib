@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "engies_chaos:engie_games_tesseract"
+    },
+    "title": {
+      "translate": "advancements.the_man_behind_the_glitches.title"
+    },
+    "description": {
+      "translate": "advancements.the_man_behind_the_glitches.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "the_man_behind_the_glitches_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 50
+  },
+  "parent": "engies_chaos:who_was_that"
+}

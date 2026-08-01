@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:dark_matter_roughian_engie_games_aiot"
+  },
+  "addition": {
+    "item": "engies_chaos:x_engie_upgrade_aiot"
+  },
+  "result": {
+    "item": "engies_chaos:true_x_engie_aiot"
+  }
+}

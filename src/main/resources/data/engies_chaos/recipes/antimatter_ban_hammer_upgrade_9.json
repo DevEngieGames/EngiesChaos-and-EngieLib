@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:antimatter_massive_ban_hammer"
+  },
+  "addition": {
+    "item": "engies_chaos:antimatter_engie_upgrade"
+  },
+  "result": {
+    "item": "engies_chaos:antimatter_biblically_accurate_engie_ban_hammer"
+  }
+}

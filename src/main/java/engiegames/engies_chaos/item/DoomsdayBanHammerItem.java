@@ -2,23 +2,29 @@ package engiegames.engies_chaos.item;
 
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
 
+import java.util.List;
+
 import engiegames.engies_chaos.procedures.DoomsdayObtainProProcedure;
-import engiegames.engies_chaos.procedures.BanHammerParticleSpawnProcedure;
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
+
+import com.google.common.collect.Multimap;
+import com.google.common.collect.ImmutableMultimap;
 
 public class DoomsdayBanHammerItem extends Item {
-	public DoomsdayBanHammerItem(Item.Properties properties) {
-		super(properties.durability(20000).attributes(ItemAttributeModifiers.builder().add(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_ID, 2249, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
-				.add(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_ID, -3, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND).build()).enchantable(22));
+	public DoomsdayBanHammerItem() {
+		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_WEAPONS).durability(20000));
 	}
 
 	@Override
@@ -28,20 +34,42 @@ public class DoomsdayBanHammerItem extends Item {
 
 	@Override
 	public boolean mineBlock(ItemStack itemstack, Level world, BlockState blockstate, BlockPos pos, LivingEntity entity) {
-		itemstack.hurtAndBreak(1, entity, LivingEntity.getSlotForHand(entity.getUsedItemHand()));
+		itemstack.hurtAndBreak(1, entity, i -> i.broadcastBreakEvent(EquipmentSlot.MAINHAND));
 		return true;
 	}
 
 	@Override
 	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
-		itemstack.hurtAndBreak(2, entity, LivingEntity.getSlotForHand(entity.getUsedItemHand()));
-		BanHammerParticleSpawnProcedure.execute(entity.level(), entity);
+		itemstack.hurtAndBreak(2, entity, i -> i.broadcastBreakEvent(EquipmentSlot.MAINHAND));
 		return true;
+	}
+
+	@Override
+	public int getEnchantmentValue() {
+		return 22;
+	}
+
+	@Override
+	public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot equipmentSlot) {
+		if (equipmentSlot == EquipmentSlot.MAINHAND) {
+			ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
+			builder.putAll(super.getDefaultAttributeModifiers(equipmentSlot));
+			builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Tool modifier", 4999f, AttributeModifier.Operation.ADDITION));
+			builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Tool modifier", -3, AttributeModifier.Operation.ADDITION));
+			return builder.build();
+		}
+		return super.getDefaultAttributeModifiers(equipmentSlot);
+	}
+
+	@Override
+	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, level, list, flag);
+		list.add(Component.translatable("item.engies_chaos.doomsday_ban_hammer.description_0"));
 	}
 
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		DoomsdayObtainProProcedure.execute(world, entity, itemstack);
+		DoomsdayObtainProProcedure.execute(entity, itemstack);
 	}
 }

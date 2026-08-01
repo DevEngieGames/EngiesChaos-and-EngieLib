@@ -1,7 +1,7 @@
 package engiegames.engies_chaos.item;
 
-import net.neoforged.api.distmarker.OnlyIn;
-import net.neoforged.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.Rarity;
@@ -11,10 +11,11 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.entity.LivingEntity;
 
 import engiegames.engies_chaos.procedures.ExoenchcookfinishProcedure;
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
 
 public class EnchantedExoticCookieItem extends Item {
-	public EnchantedExoticCookieItem(Item.Properties properties) {
-		super(properties.rarity(Rarity.RARE).food((new FoodProperties.Builder()).nutrition(4).saturationModifier(0.3f).alwaysEdible().build()));
+	public EnchantedExoticCookieItem() {
+		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_AAE_ITEMS_FOOD).rarity(Rarity.RARE).food((new FoodProperties.Builder()).nutrition(4).saturationMod(0.3f).alwaysEat().build()));
 	}
 
 	@Override
@@ -26,6 +27,9 @@ public class EnchantedExoticCookieItem extends Item {
 	@Override
 	public ItemStack finishUsingItem(ItemStack itemstack, Level world, LivingEntity entity) {
 		ItemStack retval = super.finishUsingItem(itemstack, world, entity);
+		double x = entity.getX();
+		double y = entity.getY();
+		double z = entity.getZ();
 		ExoenchcookfinishProcedure.execute(entity);
 		return retval;
 	}

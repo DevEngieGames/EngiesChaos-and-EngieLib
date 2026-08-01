@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "crafting",
+  "pattern": [
+    "a a",
+    "bab",
+    "ccc"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:iron_ingot"
+    },
+    "b": {
+      "item": "engies_chaos:engie_gem"
+    },
+    "c": {
+      "item": "minecraft:warped_planks"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:metal_chest_warped",
+    "count": 1
+  }
+}

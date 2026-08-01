@@ -1,23 +1,44 @@
 package engiegames.engies_chaos.item;
 
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.tags.TagKey;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.Registries;
 
 import engiegames.engies_chaos.procedures.EngieToolObtainProcedure;
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
+import engiegames.engies_chaos.init.EngiesChaosModItems;
 
 public class BloodAxeItem extends AxeItem {
-	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 750, 10f, 0, 21, TagKey.create(Registries.ITEM, ResourceLocation.parse("engies_chaos:blood_axe_repair_items")));
+	public BloodAxeItem() {
+		super(new Tier() {
+			public int getUses() {
+				return 750;
+			}
 
-	public BloodAxeItem(Item.Properties properties) {
-		super(TOOL_MATERIAL, 15f, -3f, properties);
+			public float getSpeed() {
+				return 10f;
+			}
+
+			public float getAttackDamageBonus() {
+				return 14f;
+			}
+
+			public int getLevel() {
+				return 3;
+			}
+
+			public int getEnchantmentValue() {
+				return 21;
+			}
+
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.BLOOD_INGOT.get()));
+			}
+		}, 1, -3f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}
 
 	@Override

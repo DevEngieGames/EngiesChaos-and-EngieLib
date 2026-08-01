@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "superdoomsdaycoinblocktocoins",
+  "ingredients": [
+    {
+      "item": "engies_chaos:super_dooms_day_coin_block"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:super_dooms_day_coin",
+    "count": 9
+  }
+}

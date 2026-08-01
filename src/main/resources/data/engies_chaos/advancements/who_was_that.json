@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "engies_chaos:mindscape_advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.who_was_that.title"
+    },
+    "description": {
+      "translate": "advancements.who_was_that.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "who_was_that_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 25
+  },
+  "parent": "engies_chaos:secret_advancements"
+}

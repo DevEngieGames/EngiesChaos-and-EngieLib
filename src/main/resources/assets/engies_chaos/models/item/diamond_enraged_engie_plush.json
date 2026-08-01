@@ -1,7 +1,7 @@
 {
-  "parent": "engies_chaos:custom/hostileplush",
+  "parent": "engies_chaos:custom/enraged_diamond_plush",
   "textures": {
-    "0": "engies_chaos:block/diamondenragedengie",
+    "1": "engies_chaos:block/enrageddiamondwithcape",
     "particle": "engies_chaos:item/volc"
   }
 }

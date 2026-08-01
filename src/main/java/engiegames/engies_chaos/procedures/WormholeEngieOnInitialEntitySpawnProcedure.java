@@ -12,11 +12,11 @@ public class WormholeEngieOnInitialEntitySpawnProcedure {
 		if (entity == null)
 			return;
 		if (!world.getEntitiesOfClass(WormholeEngieEntity.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(250 / 2d), e -> true).isEmpty()) {
-			if (!entity.level().isClientSide())
+			if (!entity.level.isClientSide())
 				entity.discard();
 		} else if (!(!world.getEntitiesOfClass(WormholeEngieEntity.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(250 / 2d), e -> true).isEmpty())) {
-			if (Math.random() > 0.00005) {
-				if (!entity.level().isClientSide())
+			if (Math.random() > 0.1) {
+				if (!entity.level.isClientSide())
 					entity.discard();
 			}
 		}

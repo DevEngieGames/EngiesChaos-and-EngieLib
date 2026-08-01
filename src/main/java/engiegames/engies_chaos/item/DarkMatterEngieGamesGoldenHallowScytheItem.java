@@ -1,41 +1,57 @@
 package engiegames.engies_chaos.item;
 
-import net.neoforged.api.distmarker.OnlyIn;
-import net.neoforged.api.distmarker.Dist;
-
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.tags.TagKey;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.client.Minecraft;
 
 import java.util.List;
 
 import engiegames.engies_chaos.procedures.EngieGamesHallowScytheSpecialInformationProcedure;
 import engiegames.engies_chaos.procedures.DarkMatterEngieGamesGoldenHallowScytheToolInHandTickProcedure;
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
+import engiegames.engies_chaos.init.EngiesChaosModItems;
 
 public class DarkMatterEngieGamesGoldenHallowScytheItem extends SwordItem {
-	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 98000, 156f, 0, 22,
-			TagKey.create(Registries.ITEM, ResourceLocation.parse("engies_chaos:dark_matter_engie_games_golden_hallow_scythe_repair_items")));
+	public DarkMatterEngieGamesGoldenHallowScytheItem() {
+		super(new Tier() {
+			public int getUses() {
+				return 98000;
+			}
 
-	public DarkMatterEngieGamesGoldenHallowScytheItem(Item.Properties properties) {
-		super(TOOL_MATERIAL, 14049f, -3f, properties);
+			public float getSpeed() {
+				return 156f;
+			}
+
+			public float getAttackDamageBonus() {
+				return 14046f;
+			}
+
+			public int getLevel() {
+				return 4;
+			}
+
+			public int getEnchantmentValue() {
+				return 22;
+			}
+
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.ENGIE_GAMES_TESSERACT.get()));
+			}
+		}, 3, -3f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_WEAPONS));
 	}
 
 	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack itemstack, Item.TooltipContext context, List<Component> list, TooltipFlag flag) {
-		super.appendHoverText(itemstack, context, list, flag);
-		Entity entity = itemstack.getEntityRepresentation() != null ? itemstack.getEntityRepresentation() : Minecraft.getInstance().player;
-		String hoverText = EngieGamesHallowScytheSpecialInformationProcedure.execute(itemstack);
+	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, level, list, flag);
+		Entity entity = itemstack.getEntityRepresentation();
+		String hoverText = EngieGamesHallowScytheSpecialInformationProcedure.execute(level instanceof Level ? (LevelAccessor) level : null, itemstack);
 		if (hoverText != null) {
 			for (String line : hoverText.split("\n")) {
 				list.add(Component.literal(line));

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "darkmatterengiehelmet",
+  "pattern": [
+    "aaa",
+    "a a"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:dark_matter_mad_engie_essence"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:dark_matter_engies_helmet",
+    "count": 1
+  }
+}

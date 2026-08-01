@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aba",
+    "bcb",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:chain"
+    },
+    "b": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "c": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "result": {
+    "item": "minecraft:spawner",
+    "count": 1
+  }
+}

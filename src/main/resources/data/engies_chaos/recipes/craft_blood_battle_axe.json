@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "bloodbattleaxe",
+  "pattern": [
+    "aaa",
+    "aba",
+    " b "
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:blood_ingot"
+    },
+    "b": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:blood_battle_axe",
+    "count": 1
+  }
+}

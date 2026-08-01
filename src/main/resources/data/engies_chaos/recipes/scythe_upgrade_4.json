@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:large_scythe"
+  },
+  "addition": {
+    "item": "engies_chaos:engie_upgrade"
+  },
+  "result": {
+    "item": "engies_chaos:huge_scythe"
+  }
+}

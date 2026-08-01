@@ -20,7 +20,7 @@ public class DDayAvalancheOnEntityTickUpdateProcedure {
 				} else {
 					EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount = EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount - 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (!entity.level().isClientSide())
+					if (!entity.level.isClientSide())
 						entity.discard();
 				}
 			}

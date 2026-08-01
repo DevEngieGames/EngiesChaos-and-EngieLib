@@ -14,6 +14,26 @@ public class AntimatterSuperDoomsDayTradeUIWhileThisGUIIsOpenTickProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
+		if (!((entity instanceof Player _entity0 && _entity0.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu0) ? _menu0.getMenuState(1, "scythetrade", false) : false)
+				|| !((entity instanceof Player _entity1 && _entity1.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu1) ? _menu1.getMenuState(1, "bantrade", false) : false)) {
+			EngiesChaosModVariables.MapVariables.get(world).checkboxbothnomarked = true;
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			EngiesChaosModVariables.MapVariables.get(world).checkboxbothmarked = false;
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+		} else if (((entity instanceof Player _entity2 && _entity2.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu2) ? _menu2.getMenuState(1, "scythetrade", false) : false)
+				&& ((entity instanceof Player _entity3 && _entity3.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu3) ? _menu3.getMenuState(1, "bantrade", false) : false)) {
+			EngiesChaosModVariables.MapVariables.get(world).checkboxbothnomarked = false;
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			EngiesChaosModVariables.MapVariables.get(world).checkboxbothmarked = true;
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+		} else if (!((entity instanceof Player _entity4 && _entity4.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu4) ? _menu4.getMenuState(1, "scythetrade", false) : false)
+				&& !((entity instanceof Player _entity5 && _entity5.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu5) ? _menu5.getMenuState(1, "bantrade", false) : false) && getAmountInGUISlot(entity, 0) >= 64
+				&& getAmountInGUISlot(entity, 1) >= 60 && getAmountInGUISlot(entity, 1) < 64) {
+			EngiesChaosModVariables.MapVariables.get(world).checkboxbothnomarked = false;
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			EngiesChaosModVariables.MapVariables.get(world).checkboxbothmarked = true;
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+		}
 		if (getAmountInGUISlot(entity, 0) >= 64 && getAmountInGUISlot(entity, 1) >= 64) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
 				ItemStack _setstack = new ItemStack(EngiesChaosModItems.ANTIMATTER_SUPER_DOOMS_DAY_CRUCIFIX.get()).copy();
@@ -22,24 +42,24 @@ public class AntimatterSuperDoomsDayTradeUIWhileThisGUIIsOpenTickProcedure {
 				_player.containerMenu.broadcastChanges();
 			}
 		} else if (getAmountInGUISlot(entity, 0) >= 64 && getAmountInGUISlot(entity, 1) >= 60 && getAmountInGUISlot(entity, 1) < 64) {
-			if (((entity instanceof Player _entity6 && _entity6.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu6) ? _menu6.getMenuState(1, "scythetrade", false) : false)
-					&& !((entity instanceof Player _entity7 && _entity7.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu7) ? _menu7.getMenuState(1, "bantrade", false) : false)) {
+			if (((entity instanceof Player _entity15 && _entity15.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu15) ? _menu15.getMenuState(1, "scythetrade", false) : false)
+					&& !((entity instanceof Player _entity16 && _entity16.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu16) ? _menu16.getMenuState(1, "bantrade", false) : false)) {
 				if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
 					ItemStack _setstack = new ItemStack(EngiesChaosModItems.ANTIMATTER_SUPER_DOOMSDAY_SCYTHE.get()).copy();
 					_setstack.setCount(1);
 					_menu.getSlots().get(2).set(_setstack);
 					_player.containerMenu.broadcastChanges();
 				}
-			} else if (((entity instanceof Player _entity9 && _entity9.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu9) ? _menu9.getMenuState(1, "bantrade", false) : false)
-					&& !((entity instanceof Player _entity10 && _entity10.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu10) ? _menu10.getMenuState(1, "scythetrade", false) : false)) {
+			} else if (((entity instanceof Player _entity18 && _entity18.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu18) ? _menu18.getMenuState(1, "bantrade", false) : false)
+					&& !((entity instanceof Player _entity19 && _entity19.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu19) ? _menu19.getMenuState(1, "scythetrade", false) : false)) {
 				if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
 					ItemStack _setstack = new ItemStack(EngiesChaosModItems.ANTIMATTER_SUPER_DOOMSDAY_BAN_HAMMER.get()).copy();
 					_setstack.setCount(1);
 					_menu.getSlots().get(2).set(_setstack);
 					_player.containerMenu.broadcastChanges();
 				}
-			} else if (!((entity instanceof Player _entity12 && _entity12.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu12) ? _menu12.getMenuState(1, "bantrade", false) : false)
-					&& !((entity instanceof Player _entity13 && _entity13.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu13) ? _menu13.getMenuState(1, "scythetrade", false) : false)) {
+			} else if (!((entity instanceof Player _entity21 && _entity21.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu21) ? _menu21.getMenuState(1, "bantrade", false) : false)
+					&& !((entity instanceof Player _entity22 && _entity22.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu22) ? _menu22.getMenuState(1, "scythetrade", false) : false)) {
 				if (EngiesChaosModVariables.MapVariables.get(world).itemswap1 == false) {
 					entity.getPersistentData().putDouble("itemswap1", (entity.getPersistentData().getDouble("itemswap1") + 0.05));
 					if (entity.getPersistentData().getDouble("itemswap1") >= 5) {
@@ -137,8 +157,8 @@ public class AntimatterSuperDoomsDayTradeUIWhileThisGUIIsOpenTickProcedure {
 				_menu.getSlots().get(2).set(_setstack);
 				_player.containerMenu.broadcastChanges();
 			}
-		} else if (((entity instanceof Player _entity61 && _entity61.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu61) ? _menu61.getMenuState(1, "scythetrade", false) : false)
-				&& ((entity instanceof Player _entity62 && _entity62.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu62) ? _menu62.getMenuState(1, "bantrade", false) : false)) {
+		} else if (((entity instanceof Player _entity70 && _entity70.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu70) ? _menu70.getMenuState(1, "scythetrade", false) : false)
+				&& ((entity instanceof Player _entity71 && _entity71.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu71) ? _menu71.getMenuState(1, "bantrade", false) : false)) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
 				ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
 				_setstack.setCount(1);

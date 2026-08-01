@@ -1,17 +1,38 @@
 package engiegames.engies_chaos.item;
 
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.tags.TagKey;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.Registries;
+
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
 
 public class RareShovelItem extends ShovelItem {
-	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_IRON_TOOL, 150, 6f, 0, 14, TagKey.create(Registries.ITEM, ResourceLocation.parse("engies_chaos:rare_shovel_repair_items")));
+	public RareShovelItem() {
+		super(new Tier() {
+			public int getUses() {
+				return 150;
+			}
 
-	public RareShovelItem(Item.Properties properties) {
-		super(TOOL_MATERIAL, 1.25f, -3f, properties);
+			public float getSpeed() {
+				return 6f;
+			}
+
+			public float getAttackDamageBonus() {
+				return 0.25f;
+			}
+
+			public int getLevel() {
+				return 2;
+			}
+
+			public int getEnchantmentValue() {
+				return 14;
+			}
+
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of();
+			}
+		}, 1, -3f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}
 }

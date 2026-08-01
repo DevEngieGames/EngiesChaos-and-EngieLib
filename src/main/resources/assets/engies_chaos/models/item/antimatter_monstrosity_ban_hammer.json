@@ -1,7 +1,31 @@
 {
-  "parent": "engies_chaos:custom/ban_hammer_monstrosity",
-  "textures": {
-    "0": "engies_chaos:block/antimattermonstrosity",
-    "particle": "engies_chaos:item/antimattermonstrositypixel"
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "engies_chaos:custom/ban_hammer_monstrosity",
+    "textures": {
+      "0": "engies_chaos:block/antimattermonstrosity",
+      "particle": "engies_chaos:item/antimattermonstrositypixel"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/antimattermonstrositypixel"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/antimattermonstrositypixel"
+      }
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/antimattermonstrositypixel"
+      }
+    }
   }
 }

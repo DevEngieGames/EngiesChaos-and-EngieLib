@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "darkmattermonstrositytoitems",
+  "ingredients": [
+    {
+      "item": "engies_chaos:dark_matter_monstrosity_engie_block"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:dark_matter_monstrosity_engie_essence",
+    "count": 9
+  }
+}

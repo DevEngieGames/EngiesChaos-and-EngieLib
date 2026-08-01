@@ -1,47 +1,26 @@
 package engiegames.engies_chaos.client.renderer;
 
-import net.minecraft.world.level.Level;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-import engiegames.engies_chaos.procedures.MobModelScalingProcedure;
 import engiegames.engies_chaos.entity.ProtogenEntity;
 import engiegames.engies_chaos.client.model.Modelprotogen;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 
-public class ProtogenRenderer extends MobRenderer<ProtogenEntity, LivingEntityRenderState, Modelprotogen> {
-	private ProtogenEntity entity = null;
-
+public class ProtogenRenderer extends MobRenderer<ProtogenEntity, Modelprotogen<ProtogenEntity>> {
 	public ProtogenRenderer(EntityRendererProvider.Context context) {
-		super(context, new Modelprotogen(context.bakeLayer(Modelprotogen.LAYER_LOCATION)), 0.5f);
+		super(context, new Modelprotogen<ProtogenEntity>(context.bakeLayer(Modelprotogen.LAYER_LOCATION)), 0.5f);
 	}
 
 	@Override
-	public LivingEntityRenderState createRenderState() {
-		return new LivingEntityRenderState();
+	protected void scale(ProtogenEntity entity, PoseStack poseStack, float f) {
+		poseStack.scale(0.93f, 0.93f, 0.93f);
 	}
 
 	@Override
-	public void extractRenderState(ProtogenEntity entity, LivingEntityRenderState state, float partialTicks) {
-		super.extractRenderState(entity, state, partialTicks);
-		this.entity = entity;
-	}
-
-	@Override
-	public ResourceLocation getTextureLocation(LivingEntityRenderState state) {
-		return ResourceLocation.parse("engies_chaos:textures/entities/protogen.png");
-	}
-
-	@Override
-	protected void scale(LivingEntityRenderState state, PoseStack poseStack) {
-		Level world = entity.level();
-		double x = entity.getX();
-		double y = entity.getY();
-		double z = entity.getZ();
-		float scale = (float) MobModelScalingProcedure.execute();
-		poseStack.scale(scale, scale, scale);
+	public ResourceLocation getTextureLocation(ProtogenEntity entity) {
+		return new ResourceLocation("engies_chaos:textures/entities/protogen.png");
 	}
 }

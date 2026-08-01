@@ -1,21 +1,19 @@
 package engiegames.engies_chaos.client.gui;
 
-import net.neoforged.neoforge.network.PacketDistributor;
-
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.GuiGraphics;
 
 import engiegames.engies_chaos.world.inventory.RareTradeUIMenu;
 import engiegames.engies_chaos.network.RareTradeUIButtonMessage;
 import engiegames.engies_chaos.init.EngiesChaosModScreens;
+import engiegames.engies_chaos.EngiesChaosMod;
 
+import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 public class RareTradeUIScreen extends AbstractContainerScreen<RareTradeUIMenu> implements EngiesChaosModScreens.ScreenAccessor {
@@ -42,20 +40,22 @@ public class RareTradeUIScreen extends AbstractContainerScreen<RareTradeUIMenu> 
 		menuStateUpdateActive = false;
 	}
 
-	private static final ResourceLocation texture = ResourceLocation.parse("engies_chaos:textures/screens/rare_trade_ui.png");
+	private static final ResourceLocation texture = new ResourceLocation("engies_chaos:textures/screens/rare_trade_ui.png");
 
 	@Override
-	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		super.render(guiGraphics, mouseX, mouseY, partialTicks);
-		this.renderTooltip(guiGraphics, mouseX, mouseY);
+	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
+		this.renderBackground(ms);
+		super.render(ms, mouseX, mouseY, partialTicks);
+		this.renderTooltip(ms, mouseX, mouseY);
 	}
 
 	@Override
-	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
+	protected void renderBg(PoseStack ms, float partialTicks, int mouseX, int mouseY) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		guiGraphics.blit(RenderType::guiTextured, texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		RenderSystem.setShaderTexture(0, texture);
+		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 		RenderSystem.disableBlend();
 	}
 
@@ -69,20 +69,20 @@ public class RareTradeUIScreen extends AbstractContainerScreen<RareTradeUIMenu> 
 	}
 
 	@Override
-	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+	protected void renderLabels(PoseStack ms, int mouseX, int mouseY) {
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		button_trade = Button.builder(Component.translatable("gui.engies_chaos.rare_trade_ui.button_trade"), e -> {
+		button_trade = new Button(this.leftPos + 11, this.topPos + 10, 51, 20, Component.translatable("gui.engies_chaos.rare_trade_ui.button_trade"), e -> {
 			int x = RareTradeUIScreen.this.x;
 			int y = RareTradeUIScreen.this.y;
 			if (true) {
-				PacketDistributor.sendToServer(new RareTradeUIButtonMessage(0, x, y, z));
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new RareTradeUIButtonMessage(0, x, y, z));
 				RareTradeUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}).bounds(this.leftPos + 11, this.topPos + 10, 51, 20).build();
+		});
 		this.addRenderableWidget(button_trade);
 	}
 }

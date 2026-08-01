@@ -1,7 +1,7 @@
 package engiegames.engies_chaos.world.inventory;
 
-import net.neoforged.neoforge.items.ItemStackHandler;
-import net.neoforged.neoforge.items.IItemHandler;
+import net.minecraftforge.items.ItemStackHandler;
+import net.minecraftforge.items.IItemHandler;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.Level;
@@ -45,7 +45,7 @@ public class CodeRedemptionsMenu extends AbstractContainerMenu implements Engies
 	public CodeRedemptionsMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
 		super(EngiesChaosModMenus.CODE_REDEMPTIONS.get(), id);
 		this.entity = inv.player;
-		this.world = inv.player.level();
+		this.world = inv.player.level;
 		this.internal = new ItemStackHandler(0);
 		BlockPos pos = null;
 		if (extraData != null) {

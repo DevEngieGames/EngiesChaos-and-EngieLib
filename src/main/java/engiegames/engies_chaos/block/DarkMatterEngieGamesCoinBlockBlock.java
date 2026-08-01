@@ -3,6 +3,7 @@ package engiegames.engies_chaos.block;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.SoundType;
@@ -11,17 +12,17 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.core.BlockPos;
 
 public class DarkMatterEngieGamesCoinBlockBlock extends Block {
-	public DarkMatterEngieGamesCoinBlockBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.METAL).strength(21f, 210f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public DarkMatterEngieGamesCoinBlockBlock() {
+		super(BlockBehaviour.Properties.of(Material.BUILDABLE_GLASS).sound(SoundType.METAL).strength(21f, 210f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state) {
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return true;
 	}
 
 	@Override
-	public int getLightBlock(BlockState state) {
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
 	}
 

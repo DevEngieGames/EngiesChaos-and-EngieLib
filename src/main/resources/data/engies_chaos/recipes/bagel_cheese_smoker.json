@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "experience": 10,
+  "cookingtime": 100,
+  "ingredient": {
+    "item": "engies_chaos:bagel_cheese"
+  },
+  "result": "engies_chaos:bagel_cheese_cooked"
+}

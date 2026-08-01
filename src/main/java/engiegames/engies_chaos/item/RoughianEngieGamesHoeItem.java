@@ -1,28 +1,40 @@
 package engiegames.engies_chaos.item;
 
-import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.HoeItem;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.tags.TagKey;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.Registries;
 
-import engiegames.engies_chaos.procedures.RoughianEngieGamesToolObtainProcedure;
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
+import engiegames.engies_chaos.init.EngiesChaosModItems;
 
 public class RoughianEngieGamesHoeItem extends HoeItem {
-	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 35000, 125f, 0, 22, TagKey.create(Registries.ITEM, ResourceLocation.parse("engies_chaos:roughian_engie_games_hoe_repair_items")));
+	public RoughianEngieGamesHoeItem() {
+		super(new Tier() {
+			public int getUses() {
+				return 100000;
+			}
 
-	public RoughianEngieGamesHoeItem(Item.Properties properties) {
-		super(TOOL_MATERIAL, 1499f, 11f, properties);
-	}
+			public float getSpeed() {
+				return 125f;
+			}
 
-	@Override
-	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
-		super.inventoryTick(itemstack, world, entity, slot, selected);
-		RoughianEngieGamesToolObtainProcedure.execute(entity);
+			public float getAttackDamageBonus() {
+				return 1499f;
+			}
+
+			public int getLevel() {
+				return 4;
+			}
+
+			public int getEnchantmentValue() {
+				return 22;
+			}
+
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.ENGIE_GAMES_TESSERACT.get()));
+			}
+		}, 0, 11f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}
 }

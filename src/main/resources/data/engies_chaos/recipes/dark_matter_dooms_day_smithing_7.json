@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:dark_matter_hostile_engies_helmet"
+  },
+  "addition": {
+    "item": "engies_chaos:dark_matter_dooms_day_coin_block"
+  },
+  "result": {
+    "item": "engies_chaos:dark_matter_doomsdays_helmet"
+  }
+}

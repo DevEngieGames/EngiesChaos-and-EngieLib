@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:dark_matter_super_doomsdays_leggings"
+  },
+  "addition": {
+    "item": "engies_chaos:dark_matter_the_end_coin_block"
+  },
+  "result": {
+    "item": "engies_chaos:dark_matter_the_ends_leggings"
+  }
+}

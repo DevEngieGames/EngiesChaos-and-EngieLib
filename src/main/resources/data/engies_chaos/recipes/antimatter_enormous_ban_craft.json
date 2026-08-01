@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "antimatterenormousbanhammer",
+  "pattern": [
+    "aba",
+    "cdc",
+    " e "
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:antimatter_enraged_engie_block"
+    },
+    "b": {
+      "item": "engies_chaos:antimatter_angry_engie_block"
+    },
+    "c": {
+      "item": "engies_chaos:antimatter_outraged_engie_essence"
+    },
+    "d": {
+      "item": "engies_chaos:antimatter_huge_ban_hammer"
+    },
+    "e": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:antimatter_enormous_ban_hammer",
+    "count": 1
+  }
+}

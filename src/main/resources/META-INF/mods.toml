@@ -1,29 +1,29 @@
 modLoader="javafml"
 loaderVersion="[43,)"
-license="MIT License"
+license="Apache License version 2.0"
 
 [[mods]]
-modId="allaboutengie"
-version="11.14.25"
-displayName="RE:All About Engie"
-updateJSONURL="https://raw.githubusercontent.com/DevEngieGames/RE-All-About-Engie/refs/heads/Update-Check/REAAE.json"
-displayURL="https://modrinth.com/project/re-all-about-engie"
+modId="engies_chaos"
+version="21.53.54"
+displayName="Engie's Chaos"
+updateJSONURL="https://raw.githubusercontent.com/DevEngieGames/EngiesChaos-and-EngieLib/refs/heads/Update-Check/EngiesChaos.json"
+displayURL="https://github.com/DevEngieGames/EngiesChaos-and-EngieLib"
 logoFile="logo.png"
-credits="DevEngie (Original Mod Creator)"
-authors="EngieGames"
+credits="DevEngie (All About Engie Creator)"
+authors="EngieGames(aka xEngieGames/xEngie)"
 description="A Reworked version of All About Engie by EngieGames with full permission from DevEngie to reupload All About Engie. If you find issues, report them on the GitHub page for the mod please and thank you."
 
 # Start of user code block mod configuration
 # End of user code block mod configuration
 
-[[dependencies.allaboutengie]]
+[[dependencies.engies_chaos]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.19.2]"
     ordering="AFTER"
     side="BOTH"
 
-[[dependencies.allaboutengie]]
+[[dependencies.engies_chaos]]
     modId="engielib"
     mandatory=true
     versionRange="[0,)"

@@ -8,6 +8,6 @@ public class NormalScaleProcedure {
 	public static double execute(Entity entity) {
 		if (entity == null)
 			return 0;
-		return entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).missilenormalscale;
+		return (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).missilenormalscale;
 	}
 }

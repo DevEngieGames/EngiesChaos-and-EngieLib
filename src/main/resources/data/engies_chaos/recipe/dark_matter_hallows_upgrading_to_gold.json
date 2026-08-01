@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "template": [],
-  "base": "engies_chaos:dark_matter_engie_games_hallow_scythe",
-  "addition": "engies_chaos:hallow_upgrade_to_gold",
-  "result": {
-    "id": "engies_chaos:dark_matter_engie_games_golden_hallow_scythe"
-  }
-}

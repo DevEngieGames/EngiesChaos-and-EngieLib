@@ -1,6 +1,6 @@
 package engiegames.engies_chaos.procedures;
 
-import net.neoforged.neoforge.items.ItemHandlerHelper;
+import net.minecraftforge.items.ItemHandlerHelper;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
@@ -13,7 +13,7 @@ public class BrowniesOpenedInventoryTickProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).browniescount >= 16) {
+		if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).browniescount >= 16) {
 			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = new ItemStack(EngiesChaosModItems.BROWNIES_OPENED.get());
 				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
@@ -24,9 +24,11 @@ public class BrowniesOpenedInventoryTickProcedure {
 				ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 			}
 			{
-				EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-				_vars.browniescount = 0;
-				_vars.syncPlayerVariables(entity);
+				double _setval = 0;
+				entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.browniescount = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
 		}
 	}

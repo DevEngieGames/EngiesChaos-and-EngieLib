@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "darkmatterdoomsdaycoinblocktocoins",
+  "ingredients": [
+    {
+      "item": "engies_chaos:dark_matter_dooms_day_coin_block"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:dark_matter_dooms_day_coin",
+    "count": 9
+  }
+}

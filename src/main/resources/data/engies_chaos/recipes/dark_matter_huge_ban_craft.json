@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "darkmatterhugebanhammer",
+  "pattern": [
+    "aba",
+    "aca",
+    " d "
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:dark_matter_enraged_engie_block"
+    },
+    "b": {
+      "item": "engies_chaos:dark_matter_angry_engie_block"
+    },
+    "c": {
+      "item": "engies_chaos:dark_matter_large_ban_hammer"
+    },
+    "d": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:dark_matter_huge_ban_hammer",
+    "count": 1
+  }
+}

@@ -1,7 +1,8 @@
 package engiegames.engies_chaos.entity;
 
-import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
-import net.neoforged.neoforge.event.EventHooks;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.network.PlayMessages;
+import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.Level;
@@ -10,7 +11,6 @@ import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
@@ -25,14 +25,14 @@ import net.minecraft.world.entity.ai.goal.BreedGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.TamableAnimal;
-import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
@@ -43,9 +43,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.component.DataComponents;
 
 import engiegames.engies_chaos.procedures.AprilFoolsSpawningProcedure;
 import engiegames.engies_chaos.procedures.AprilFoolsSharkoRightClickedProcedure;
@@ -55,17 +54,27 @@ import engiegames.engies_chaos.init.EngiesChaosModEntities;
 public class AprilFoolsLegendarySharkoEntity extends TamableAnimal {
 	public static final EntityDataAccessor<Boolean> DATA_laying = SynchedEntityData.defineId(AprilFoolsLegendarySharkoEntity.class, EntityDataSerializers.BOOLEAN);
 
+	public AprilFoolsLegendarySharkoEntity(PlayMessages.SpawnEntity packet, Level world) {
+		this(EngiesChaosModEntities.APRIL_FOOLS_LEGENDARY_SHARKO.get(), world);
+	}
+
 	public AprilFoolsLegendarySharkoEntity(EntityType<AprilFoolsLegendarySharkoEntity> type, Level world) {
 		super(type, world);
+		maxUpStep = 0.6f;
 		xpReward = 0;
 		setNoAi(false);
 		setPersistenceRequired();
 	}
 
 	@Override
-	protected void defineSynchedData(SynchedEntityData.Builder builder) {
-		super.defineSynchedData(builder);
-		builder.define(DATA_laying, false);
+	public Packet<?> getAddEntityPacket() {
+		return NetworkHooks.getEntitySpawningPacket(this);
+	}
+
+	@Override
+	protected void defineSynchedData() {
+		super.defineSynchedData();
+		this.entityData.define(DATA_laying, false);
 	}
 
 	@Override
@@ -78,7 +87,7 @@ public class AprilFoolsLegendarySharkoEntity extends TamableAnimal {
 				double y = AprilFoolsLegendarySharkoEntity.this.getY();
 				double z = AprilFoolsLegendarySharkoEntity.this.getZ();
 				Entity entity = AprilFoolsLegendarySharkoEntity.this;
-				Level world = AprilFoolsLegendarySharkoEntity.this.level();
+				Level world = AprilFoolsLegendarySharkoEntity.this.level;
 				return super.canUse() && AprilFoolsSharkoLayingCheckProcedure.execute(entity);
 			}
 
@@ -88,7 +97,7 @@ public class AprilFoolsLegendarySharkoEntity extends TamableAnimal {
 				double y = AprilFoolsLegendarySharkoEntity.this.getY();
 				double z = AprilFoolsLegendarySharkoEntity.this.getZ();
 				Entity entity = AprilFoolsLegendarySharkoEntity.this;
-				Level world = AprilFoolsLegendarySharkoEntity.this.level();
+				Level world = AprilFoolsLegendarySharkoEntity.this.level;
 				return super.canContinueToUse() && AprilFoolsSharkoLayingCheckProcedure.execute(entity);
 			}
 		});
@@ -99,7 +108,7 @@ public class AprilFoolsLegendarySharkoEntity extends TamableAnimal {
 				double y = AprilFoolsLegendarySharkoEntity.this.getY();
 				double z = AprilFoolsLegendarySharkoEntity.this.getZ();
 				Entity entity = AprilFoolsLegendarySharkoEntity.this;
-				Level world = AprilFoolsLegendarySharkoEntity.this.level();
+				Level world = AprilFoolsLegendarySharkoEntity.this.level;
 				return super.canUse() && AprilFoolsSharkoLayingCheckProcedure.execute(entity);
 			}
 
@@ -109,7 +118,7 @@ public class AprilFoolsLegendarySharkoEntity extends TamableAnimal {
 				double y = AprilFoolsLegendarySharkoEntity.this.getY();
 				double z = AprilFoolsLegendarySharkoEntity.this.getZ();
 				Entity entity = AprilFoolsLegendarySharkoEntity.this;
-				Level world = AprilFoolsLegendarySharkoEntity.this.level();
+				Level world = AprilFoolsLegendarySharkoEntity.this.level;
 				return super.canContinueToUse() && AprilFoolsSharkoLayingCheckProcedure.execute(entity);
 			}
 		});
@@ -120,7 +129,7 @@ public class AprilFoolsLegendarySharkoEntity extends TamableAnimal {
 				double y = AprilFoolsLegendarySharkoEntity.this.getY();
 				double z = AprilFoolsLegendarySharkoEntity.this.getZ();
 				Entity entity = AprilFoolsLegendarySharkoEntity.this;
-				Level world = AprilFoolsLegendarySharkoEntity.this.level();
+				Level world = AprilFoolsLegendarySharkoEntity.this.level;
 				return super.canUse() && AprilFoolsSharkoLayingCheckProcedure.execute(entity);
 			}
 
@@ -130,14 +139,14 @@ public class AprilFoolsLegendarySharkoEntity extends TamableAnimal {
 				double y = AprilFoolsLegendarySharkoEntity.this.getY();
 				double z = AprilFoolsLegendarySharkoEntity.this.getZ();
 				Entity entity = AprilFoolsLegendarySharkoEntity.this;
-				Level world = AprilFoolsLegendarySharkoEntity.this.level();
+				Level world = AprilFoolsLegendarySharkoEntity.this.level;
 				return super.canContinueToUse() && AprilFoolsSharkoLayingCheckProcedure.execute(entity);
 			}
 		});
 		this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.2, true) {
 			@Override
-			protected boolean canPerformAttack(LivingEntity entity) {
-				return this.isTimeToAttack() && this.mob.distanceToSqr(entity) < (this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth()) && this.mob.getSensing().hasLineOfSight(entity);
+			protected double getAttackReachSqr(LivingEntity entity) {
+				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
 
 			@Override
@@ -146,7 +155,7 @@ public class AprilFoolsLegendarySharkoEntity extends TamableAnimal {
 				double y = AprilFoolsLegendarySharkoEntity.this.getY();
 				double z = AprilFoolsLegendarySharkoEntity.this.getZ();
 				Entity entity = AprilFoolsLegendarySharkoEntity.this;
-				Level world = AprilFoolsLegendarySharkoEntity.this.level();
+				Level world = AprilFoolsLegendarySharkoEntity.this.level;
 				return super.canUse() && AprilFoolsSharkoLayingCheckProcedure.execute(entity);
 			}
 
@@ -156,19 +165,19 @@ public class AprilFoolsLegendarySharkoEntity extends TamableAnimal {
 				double y = AprilFoolsLegendarySharkoEntity.this.getY();
 				double z = AprilFoolsLegendarySharkoEntity.this.getZ();
 				Entity entity = AprilFoolsLegendarySharkoEntity.this;
-				Level world = AprilFoolsLegendarySharkoEntity.this.level();
+				Level world = AprilFoolsLegendarySharkoEntity.this.level;
 				return super.canContinueToUse() && AprilFoolsSharkoLayingCheckProcedure.execute(entity);
 			}
 
 		});
-		this.goalSelector.addGoal(5, new FollowOwnerGoal(this, 1, (float) 10, (float) 2) {
+		this.goalSelector.addGoal(5, new FollowOwnerGoal(this, 1, (float) 10, (float) 2, false) {
 			@Override
 			public boolean canUse() {
 				double x = AprilFoolsLegendarySharkoEntity.this.getX();
 				double y = AprilFoolsLegendarySharkoEntity.this.getY();
 				double z = AprilFoolsLegendarySharkoEntity.this.getZ();
 				Entity entity = AprilFoolsLegendarySharkoEntity.this;
-				Level world = AprilFoolsLegendarySharkoEntity.this.level();
+				Level world = AprilFoolsLegendarySharkoEntity.this.level;
 				return super.canUse() && AprilFoolsSharkoLayingCheckProcedure.execute(entity);
 			}
 
@@ -178,7 +187,7 @@ public class AprilFoolsLegendarySharkoEntity extends TamableAnimal {
 				double y = AprilFoolsLegendarySharkoEntity.this.getY();
 				double z = AprilFoolsLegendarySharkoEntity.this.getZ();
 				Entity entity = AprilFoolsLegendarySharkoEntity.this;
-				Level world = AprilFoolsLegendarySharkoEntity.this.level();
+				Level world = AprilFoolsLegendarySharkoEntity.this.level;
 				return super.canContinueToUse() && AprilFoolsSharkoLayingCheckProcedure.execute(entity);
 			}
 		});
@@ -189,7 +198,7 @@ public class AprilFoolsLegendarySharkoEntity extends TamableAnimal {
 				double y = AprilFoolsLegendarySharkoEntity.this.getY();
 				double z = AprilFoolsLegendarySharkoEntity.this.getZ();
 				Entity entity = AprilFoolsLegendarySharkoEntity.this;
-				Level world = AprilFoolsLegendarySharkoEntity.this.level();
+				Level world = AprilFoolsLegendarySharkoEntity.this.level;
 				return super.canUse() && AprilFoolsSharkoLayingCheckProcedure.execute(entity);
 			}
 
@@ -199,7 +208,7 @@ public class AprilFoolsLegendarySharkoEntity extends TamableAnimal {
 				double y = AprilFoolsLegendarySharkoEntity.this.getY();
 				double z = AprilFoolsLegendarySharkoEntity.this.getZ();
 				Entity entity = AprilFoolsLegendarySharkoEntity.this;
-				Level world = AprilFoolsLegendarySharkoEntity.this.level();
+				Level world = AprilFoolsLegendarySharkoEntity.this.level;
 				return super.canContinueToUse() && AprilFoolsSharkoLayingCheckProcedure.execute(entity);
 			}
 		});
@@ -211,29 +220,34 @@ public class AprilFoolsLegendarySharkoEntity extends TamableAnimal {
 	}
 
 	@Override
+	public MobType getMobType() {
+		return MobType.UNDEFINED;
+	}
+
+	@Override
 	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
 		return false;
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.panda.hurt"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.panda.hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.panda.death"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.panda.death"));
 	}
 
 	@Override
-	public boolean hurtServer(ServerLevel level, DamageSource damagesource, float amount) {
-		if (damagesource.is(DamageTypes.FALL))
+	public boolean hurt(DamageSource damagesource, float amount) {
+		if (damagesource == DamageSource.FALL)
 			return false;
-		if (damagesource.is(DamageTypes.CACTUS))
+		if (damagesource == DamageSource.CACTUS)
 			return false;
-		if (damagesource.is(DamageTypes.DROWN))
+		if (damagesource == DamageSource.DROWN)
 			return false;
-		return super.hurtServer(level, damagesource, amount);
+		return super.hurt(damagesource, amount);
 	}
 
 	@Override
@@ -252,39 +266,37 @@ public class AprilFoolsLegendarySharkoEntity extends TamableAnimal {
 	@Override
 	public InteractionResult mobInteract(Player sourceentity, InteractionHand hand) {
 		ItemStack itemstack = sourceentity.getItemInHand(hand);
-		InteractionResult retval = InteractionResult.SUCCESS;
+		InteractionResult retval = InteractionResult.sidedSuccess(this.level.isClientSide());
 		Item item = itemstack.getItem();
 		if (itemstack.getItem() instanceof SpawnEggItem) {
 			retval = super.mobInteract(sourceentity, hand);
-		} else if (this.level().isClientSide()) {
-			retval = (this.isTame() && this.isOwnedBy(sourceentity) || this.isFood(itemstack)) ? InteractionResult.SUCCESS : InteractionResult.PASS;
+		} else if (this.level.isClientSide()) {
+			retval = (this.isTame() && this.isOwnedBy(sourceentity) || this.isFood(itemstack)) ? InteractionResult.sidedSuccess(this.level.isClientSide()) : InteractionResult.PASS;
 		} else {
 			if (this.isTame()) {
 				if (this.isOwnedBy(sourceentity)) {
-					if (this.isFood(itemstack) && this.getHealth() < this.getMaxHealth()) {
+					if (item.isEdible() && this.isFood(itemstack) && this.getHealth() < this.getMaxHealth()) {
 						this.usePlayerItem(sourceentity, hand, itemstack);
-						FoodProperties foodproperties = itemstack.get(DataComponents.FOOD);
-						float nutrition = foodproperties != null ? (float) foodproperties.nutrition() : 1;
-						this.heal(nutrition);
-						retval = InteractionResult.SUCCESS;
+						this.heal((float) item.getFoodProperties().getNutrition());
+						retval = InteractionResult.sidedSuccess(this.level.isClientSide());
 					} else if (this.isFood(itemstack) && this.getHealth() < this.getMaxHealth()) {
 						this.usePlayerItem(sourceentity, hand, itemstack);
 						this.heal(4);
-						retval = InteractionResult.SUCCESS;
+						retval = InteractionResult.sidedSuccess(this.level.isClientSide());
 					} else {
 						retval = super.mobInteract(sourceentity, hand);
 					}
 				}
 			} else if (this.isFood(itemstack)) {
 				this.usePlayerItem(sourceentity, hand, itemstack);
-				if (this.random.nextInt(3) == 0 && !EventHooks.onAnimalTame(this, sourceentity)) {
+				if (this.random.nextInt(3) == 0 && !net.minecraftforge.event.ForgeEventFactory.onAnimalTame(this, sourceentity)) {
 					this.tame(sourceentity);
-					this.level().broadcastEntityEvent(this, (byte) 7);
+					this.level.broadcastEntityEvent(this, (byte) 7);
 				} else {
-					this.level().broadcastEntityEvent(this, (byte) 6);
+					this.level.broadcastEntityEvent(this, (byte) 6);
 				}
 				this.setPersistenceRequired();
-				retval = InteractionResult.SUCCESS;
+				retval = InteractionResult.sidedSuccess(this.level.isClientSide());
 			} else {
 				retval = super.mobInteract(sourceentity, hand);
 				if (retval == InteractionResult.SUCCESS || retval == InteractionResult.CONSUME)
@@ -295,7 +307,7 @@ public class AprilFoolsLegendarySharkoEntity extends TamableAnimal {
 		double y = this.getY();
 		double z = this.getZ();
 		Entity entity = this;
-		Level world = this.level();
+		Level world = this.level;
 
 		AprilFoolsSharkoRightClickedProcedure.execute(world, x, y, z, entity, sourceentity);
 		return retval;
@@ -303,23 +315,23 @@ public class AprilFoolsLegendarySharkoEntity extends TamableAnimal {
 
 	@Override
 	public AgeableMob getBreedOffspring(ServerLevel serverWorld, AgeableMob ageable) {
-		AprilFoolsLegendarySharkoEntity retval = EngiesChaosModEntities.APRIL_FOOLS_LEGENDARY_SHARKO.get().create(serverWorld, EntitySpawnReason.BREEDING);
-		retval.finalizeSpawn(serverWorld, serverWorld.getCurrentDifficultyAt(retval.blockPosition()), EntitySpawnReason.BREEDING, null);
+		AprilFoolsLegendarySharkoEntity retval = EngiesChaosModEntities.APRIL_FOOLS_LEGENDARY_SHARKO.get().create(serverWorld);
+		retval.finalizeSpawn(serverWorld, serverWorld.getCurrentDifficultyAt(retval.blockPosition()), MobSpawnType.BREEDING, null, null);
 		return retval;
 	}
 
 	@Override
 	public boolean isFood(ItemStack stack) {
-		return Ingredient.of(Items.COOKIE).test(stack);
+		return Ingredient.of(new ItemStack(Items.COOKIE)).test(stack);
 	}
 
-	public static void init(RegisterSpawnPlacementsEvent event) {
-		event.register(EngiesChaosModEntities.APRIL_FOOLS_LEGENDARY_SHARKO.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
+	public static void init() {
+		SpawnPlacements.register(EngiesChaosModEntities.APRIL_FOOLS_LEGENDARY_SHARKO.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			return AprilFoolsSpawningProcedure.execute(world, x, y, z);
-		}, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+			return AprilFoolsSpawningProcedure.execute(world);
+		});
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
@@ -329,7 +341,6 @@ public class AprilFoolsLegendarySharkoEntity extends TamableAnimal {
 		builder = builder.add(Attributes.ARMOR, 20);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 20);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
-		builder = builder.add(Attributes.STEP_HEIGHT, 0.6);
 		return builder;
 	}
 }

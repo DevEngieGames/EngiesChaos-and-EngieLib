@@ -1,24 +1,22 @@
 package engiegames.engies_chaos.client.gui;
 
-import net.neoforged.neoforge.network.PacketDistributor;
-
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.Minecraft;
 
 import engiegames.engies_chaos.world.inventory.CodeRedemptionsMenu;
 import engiegames.engies_chaos.procedures.StarCheckForCodeRedempProcedure;
 import engiegames.engies_chaos.network.CodeRedemptionsButtonMessage;
 import engiegames.engies_chaos.init.EngiesChaosModScreens;
+import engiegames.engies_chaos.EngiesChaosMod;
 
+import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 public class CodeRedemptionsScreen extends AbstractContainerScreen<CodeRedemptionsMenu> implements EngiesChaosModScreens.ScreenAccessor {
@@ -52,21 +50,23 @@ public class CodeRedemptionsScreen extends AbstractContainerScreen<CodeRedemptio
 		menuStateUpdateActive = false;
 	}
 
-	private static final ResourceLocation texture = ResourceLocation.parse("engies_chaos:textures/screens/code_redemptions.png");
+	private static final ResourceLocation texture = new ResourceLocation("engies_chaos:textures/screens/code_redemptions.png");
 
 	@Override
-	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		super.render(guiGraphics, mouseX, mouseY, partialTicks);
-		codeinput.render(guiGraphics, mouseX, mouseY, partialTicks);
-		this.renderTooltip(guiGraphics, mouseX, mouseY);
+	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
+		this.renderBackground(ms);
+		super.render(ms, mouseX, mouseY, partialTicks);
+		codeinput.render(ms, mouseX, mouseY, partialTicks);
+		this.renderTooltip(ms, mouseX, mouseY);
 	}
 
 	@Override
-	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
+	protected void renderBg(PoseStack ms, float partialTicks, int mouseX, int mouseY) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		guiGraphics.blit(RenderType::guiTextured, texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		RenderSystem.setShaderTexture(0, texture);
+		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 		RenderSystem.disableBlend();
 	}
 
@@ -89,18 +89,18 @@ public class CodeRedemptionsScreen extends AbstractContainerScreen<CodeRedemptio
 	}
 
 	@Override
-	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
-		guiGraphics.drawString(this.font, Component.translatable("gui.engies_chaos.code_redemptions.label_reall_about_engie_configuration"), 4, 4, -16777216, false);
-		guiGraphics.drawString(this.font, Component.translatable("gui.engies_chaos.code_redemptions.label_yearly_codes"), 3, 23, -16777216, false);
-		guiGraphics.drawString(this.font, Component.translatable("gui.engies_chaos.code_redemptions.label_happynewyears"), 3, 34, -16777216, false);
-		guiGraphics.drawString(this.font, Component.translatable("gui.engies_chaos.code_redemptions.label_merrychristmas"), 3, 45, -16777216, false);
-		guiGraphics.drawString(this.font, Component.translatable("gui.engies_chaos.code_redemptions.label_happybirthdayengie"), 3, 56, -16777216, false);
+	protected void renderLabels(PoseStack ms, int mouseX, int mouseY) {
+		this.font.draw(ms, Component.translatable("gui.engies_chaos.code_redemptions.label_reall_about_engie_configuration"), 4, 4, -16777216);
+		this.font.draw(ms, Component.translatable("gui.engies_chaos.code_redemptions.label_yearly_codes"), 3, 23, -16777216);
+		this.font.draw(ms, Component.translatable("gui.engies_chaos.code_redemptions.label_happynewyears"), 3, 34, -16777216);
+		this.font.draw(ms, Component.translatable("gui.engies_chaos.code_redemptions.label_merrychristmas"), 3, 45, -16777216);
+		this.font.draw(ms, Component.translatable("gui.engies_chaos.code_redemptions.label_happybirthdayengie"), 3, 56, -16777216);
 		if (StarCheckForCodeRedempProcedure.execute(entity))
-			guiGraphics.drawString(this.font, Component.translatable("gui.engies_chaos.code_redemptions.label_for_star"), 200, 23, -16777216, false);
+			this.font.draw(ms, Component.translatable("gui.engies_chaos.code_redemptions.label_for_star"), 200, 23, -16777216);
 		if (StarCheckForCodeRedempProcedure.execute(entity))
-			guiGraphics.drawString(this.font, Component.translatable("gui.engies_chaos.code_redemptions.label_phantom"), 200, 34, -16777216, false);
+			this.font.draw(ms, Component.translatable("gui.engies_chaos.code_redemptions.label_phantom"), 200, 34, -16777216);
 		if (StarCheckForCodeRedempProcedure.execute(entity))
-			guiGraphics.drawString(this.font, Component.translatable("gui.engies_chaos.code_redemptions.label_scarlet"), 200, 45, -16777216, false);
+			this.font.draw(ms, Component.translatable("gui.engies_chaos.code_redemptions.label_scarlet"), 200, 45, -16777216);
 	}
 
 	@Override
@@ -112,34 +112,40 @@ public class CodeRedemptionsScreen extends AbstractContainerScreen<CodeRedemptio
 			if (!menuStateUpdateActive)
 				menu.sendMenuStateUpdate(entity, 0, "codeinput", content, false);
 		});
-		codeinput.setHint(Component.translatable("gui.engies_chaos.code_redemptions.codeinput"));
+		codeinput.setSuggestion(Component.translatable("gui.engies_chaos.code_redemptions.codeinput").getString());
 		this.addWidget(this.codeinput);
-		button_x = Button.builder(Component.translatable("gui.engies_chaos.code_redemptions.button_x"), e -> {
+		button_x = new Button(this.leftPos + 217, this.topPos + 3, 30, 20, Component.translatable("gui.engies_chaos.code_redemptions.button_x"), e -> {
 			int x = CodeRedemptionsScreen.this.x;
 			int y = CodeRedemptionsScreen.this.y;
 			if (true) {
-				PacketDistributor.sendToServer(new CodeRedemptionsButtonMessage(0, x, y, z));
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new CodeRedemptionsButtonMessage(0, x, y, z));
 				CodeRedemptionsButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}).bounds(this.leftPos + 217, this.topPos + 3, 30, 20).build();
+		});
 		this.addRenderableWidget(button_x);
-		button_empty = Button.builder(Component.translatable("gui.engies_chaos.code_redemptions.button_empty"), e -> {
+		button_empty = new Button(this.leftPos + 3, this.topPos + 143, 28, 20, Component.translatable("gui.engies_chaos.code_redemptions.button_empty"), e -> {
 			int x = CodeRedemptionsScreen.this.x;
 			int y = CodeRedemptionsScreen.this.y;
 			if (true) {
-				PacketDistributor.sendToServer(new CodeRedemptionsButtonMessage(1, x, y, z));
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new CodeRedemptionsButtonMessage(1, x, y, z));
 				CodeRedemptionsButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
-		}).bounds(this.leftPos + 3, this.topPos + 143, 28, 20).build();
+		});
 		this.addRenderableWidget(button_empty);
-		button_redeem = Button.builder(Component.translatable("gui.engies_chaos.code_redemptions.button_redeem"), e -> {
+		button_redeem = new Button(this.leftPos + 96, this.topPos + 89, 56, 20, Component.translatable("gui.engies_chaos.code_redemptions.button_redeem"), e -> {
 			int x = CodeRedemptionsScreen.this.x;
 			int y = CodeRedemptionsScreen.this.y;
 			if (true) {
-				PacketDistributor.sendToServer(new CodeRedemptionsButtonMessage(2, x, y, z));
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new CodeRedemptionsButtonMessage(2, x, y, z));
 				CodeRedemptionsButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
-		}).bounds(this.leftPos + 96, this.topPos + 89, 56, 20).build();
+		});
 		this.addRenderableWidget(button_redeem);
+	}
+
+	@Override
+	protected void containerTick() {
+		super.containerTick();
+		codeinput.tick();
 	}
 }

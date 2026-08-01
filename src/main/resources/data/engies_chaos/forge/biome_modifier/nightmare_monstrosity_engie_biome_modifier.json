@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": {
+    "type": "forge:any"
+  },
+  "spawners": {
+    "type": "engies_chaos:nightmare_monstrosity_engie",
+    "weight": 5,
+    "minCount": 2,
+    "maxCount": 8
+  }
+}

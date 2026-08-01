@@ -1,46 +1,69 @@
 package engiegames.engies_chaos.item;
 
-import net.neoforged.neoforge.common.ItemAbility;
-import net.neoforged.neoforge.common.ItemAbilities;
+import net.minecraftforge.common.ToolActions;
+import net.minecraftforge.common.ToolAction;
 
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.item.component.ItemAttributeModifiers;
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.TieredItem;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.tags.TagKey;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.core.BlockPos;
 
 import engiegames.engies_chaos.procedures.AIOTRightClickBlockProcedure;
 
-public class StoneAiotItem extends Item {
-	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_STONE_TOOL, 655, 4f, 0, 5, TagKey.create(Registries.ITEM, ResourceLocation.parse("engies_chaos:stone_aiot_repair_items")));
+import com.google.common.collect.Multimap;
+import com.google.common.collect.ImmutableMultimap;
 
-	public StoneAiotItem(Item.Properties properties) {
-		super(TOOL_MATERIAL.applyToolProperties(properties, BlockTags.MINEABLE_WITH_PICKAXE, 8f, -2.4f)
-				.attributes(ItemAttributeModifiers.builder().add(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_ID, 8, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
-						.add(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_ID, -2.4, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND).build()));
+public class StoneAiotItem extends TieredItem {
+	public StoneAiotItem() {
+		super(new Tier() {
+			public int getUses() {
+				return 655;
+			}
+
+			public float getSpeed() {
+				return 4f;
+			}
+
+			public float getAttackDamageBonus() {
+				return 7f;
+			}
+
+			public int getLevel() {
+				return 1;
+			}
+
+			public int getEnchantmentValue() {
+				return 5;
+			}
+
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of();
+			}
+		}, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT));
 	}
 
 	@Override
-	public boolean isCorrectToolForDrops(ItemStack itemstack, BlockState blockstate) {
+	public boolean isCorrectToolForDrops(BlockState blockstate) {
 		return !blockstate.is(BlockTags.NEEDS_IRON_TOOL) && !blockstate.is(BlockTags.NEEDS_DIAMOND_TOOL);
 	}
 
 	@Override
-	public boolean canPerformAction(ItemStack stack, ItemAbility toolAction) {
-		return ItemAbilities.DEFAULT_AXE_ACTIONS.contains(toolAction) || ItemAbilities.DEFAULT_HOE_ACTIONS.contains(toolAction) || ItemAbilities.DEFAULT_SHOVEL_ACTIONS.contains(toolAction) || ItemAbilities.DEFAULT_PICKAXE_ACTIONS.contains(toolAction)
-				|| ItemAbilities.DEFAULT_SWORD_ACTIONS.contains(toolAction);
+	public boolean canPerformAction(ItemStack stack, ToolAction toolAction) {
+		return ToolActions.DEFAULT_AXE_ACTIONS.contains(toolAction) || ToolActions.DEFAULT_HOE_ACTIONS.contains(toolAction) || ToolActions.DEFAULT_SHOVEL_ACTIONS.contains(toolAction) || ToolActions.DEFAULT_PICKAXE_ACTIONS.contains(toolAction)
+				|| ToolActions.DEFAULT_SWORD_ACTIONS.contains(toolAction);
 	}
 
 	@Override
@@ -49,14 +72,26 @@ public class StoneAiotItem extends Item {
 	}
 
 	@Override
+	public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot equipmentSlot) {
+		if (equipmentSlot == EquipmentSlot.MAINHAND) {
+			ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
+			builder.putAll(super.getDefaultAttributeModifiers(equipmentSlot));
+			builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Tool modifier", 8f, AttributeModifier.Operation.ADDITION));
+			builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Tool modifier", -2.4, AttributeModifier.Operation.ADDITION));
+			return builder.build();
+		}
+		return super.getDefaultAttributeModifiers(equipmentSlot);
+	}
+
+	@Override
 	public boolean mineBlock(ItemStack itemstack, Level world, BlockState blockstate, BlockPos pos, LivingEntity entity) {
-		itemstack.hurtAndBreak(1, entity, LivingEntity.getSlotForHand(entity.getUsedItemHand()));
+		itemstack.hurtAndBreak(1, entity, i -> i.broadcastBreakEvent(EquipmentSlot.MAINHAND));
 		return true;
 	}
 
 	@Override
 	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
-		itemstack.hurtAndBreak(2, entity, LivingEntity.getSlotForHand(entity.getUsedItemHand()));
+		itemstack.hurtAndBreak(2, entity, i -> i.broadcastBreakEvent(EquipmentSlot.MAINHAND));
 		return true;
 	}
 

@@ -1,86 +1,105 @@
 package engiegames.engies_chaos.item;
 
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
-import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
+import net.minecraftforge.registries.ForgeRegistries;
 
-import net.minecraft.world.item.equipment.EquipmentAssets;
-import net.minecraft.world.item.equipment.ArmorType;
-import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ArmorItem;
-import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.client.resources.model.EquipmentClientInfo;
 
-import java.util.Map;
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
 
-import engiegames.engies_chaos.init.EngiesChaosModItems;
-
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
 public abstract class EngieSharkItem extends ArmorItem {
-	public static ArmorMaterial ARMOR_MATERIAL = new ArmorMaterial(35, Map.of(ArmorType.BOOTS, 35, ArmorType.LEGGINGS, 35, ArmorType.CHESTPLATE, 35, ArmorType.HELMET, 35, ArmorType.BODY, 35), 11,
-			DeferredHolder.create(Registries.SOUND_EVENT, ResourceLocation.parse("item.armor.equip_leather")), 10f, 0.6f, TagKey.create(Registries.ITEM, ResourceLocation.parse("engies_chaos:engie_shark_repair_items")),
-			ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.parse("engies_chaos:engie_shark")));
+	public EngieSharkItem(EquipmentSlot slot, Item.Properties properties) {
+		super(new ArmorMaterial() {
+			@Override
+			public int getDurabilityForSlot(EquipmentSlot slot) {
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 35;
+			}
 
-	@SubscribeEvent
-	public static void registerItemExtensions(RegisterClientExtensionsEvent event) {
-		event.registerItem(new IClientItemExtensions() {
 			@Override
-			public ResourceLocation getArmorTexture(ItemStack stack, EquipmentClientInfo.LayerType type, EquipmentClientInfo.Layer layer, ResourceLocation _default) {
-				return ResourceLocation.parse("engies_chaos:textures/models/armor/engiesharko__layer_1.png");
+			public int getDefenseForSlot(EquipmentSlot slot) {
+				return new int[]{35, 35, 35, 35}[slot.getIndex()];
 			}
-		}, EngiesChaosModItems.ENGIE_SHARK_HELMET.get());
-		event.registerItem(new IClientItemExtensions() {
-			@Override
-			public ResourceLocation getArmorTexture(ItemStack stack, EquipmentClientInfo.LayerType type, EquipmentClientInfo.Layer layer, ResourceLocation _default) {
-				return ResourceLocation.parse("engies_chaos:textures/models/armor/engiesharko__layer_1.png");
-			}
-		}, EngiesChaosModItems.ENGIE_SHARK_CHESTPLATE.get());
-		event.registerItem(new IClientItemExtensions() {
-			@Override
-			public ResourceLocation getArmorTexture(ItemStack stack, EquipmentClientInfo.LayerType type, EquipmentClientInfo.Layer layer, ResourceLocation _default) {
-				return ResourceLocation.parse("engies_chaos:textures/models/armor/engiesharko__layer_2.png");
-			}
-		}, EngiesChaosModItems.ENGIE_SHARK_LEGGINGS.get());
-		event.registerItem(new IClientItemExtensions() {
-			@Override
-			public ResourceLocation getArmorTexture(ItemStack stack, EquipmentClientInfo.LayerType type, EquipmentClientInfo.Layer layer, ResourceLocation _default) {
-				return ResourceLocation.parse("engies_chaos:textures/models/armor/engiesharko__layer_1.png");
-			}
-		}, EngiesChaosModItems.ENGIE_SHARK_BOOTS.get());
-	}
 
-	private EngieSharkItem(ArmorType type, Item.Properties properties) {
-		super(ARMOR_MATERIAL, type, properties);
+			@Override
+			public int getEnchantmentValue() {
+				return 11;
+			}
+
+			@Override
+			public SoundEvent getEquipSound() {
+				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_leather"));
+			}
+
+			@Override
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of();
+			}
+
+			@Override
+			public String getName() {
+				return "engie_shark";
+			}
+
+			@Override
+			public float getToughness() {
+				return 10f;
+			}
+
+			@Override
+			public float getKnockbackResistance() {
+				return 0.6f;
+			}
+		}, slot, properties);
 	}
 
 	public static class Helmet extends EngieSharkItem {
-		public Helmet(Item.Properties properties) {
-			super(ArmorType.HELMET, properties);
+		public Helmet() {
+			super(EquipmentSlot.HEAD, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR));
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "engies_chaos:textures/models/armor/engiesharko__layer_1.png";
 		}
 	}
 
 	public static class Chestplate extends EngieSharkItem {
-		public Chestplate(Item.Properties properties) {
-			super(ArmorType.CHESTPLATE, properties);
+		public Chestplate() {
+			super(EquipmentSlot.CHEST, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR));
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "engies_chaos:textures/models/armor/engiesharko__layer_1.png";
 		}
 	}
 
 	public static class Leggings extends EngieSharkItem {
-		public Leggings(Item.Properties properties) {
-			super(ArmorType.LEGGINGS, properties);
+		public Leggings() {
+			super(EquipmentSlot.LEGS, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR));
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "engies_chaos:textures/models/armor/engiesharko__layer_2.png";
 		}
 	}
 
 	public static class Boots extends EngieSharkItem {
-		public Boots(Item.Properties properties) {
-			super(ArmorType.BOOTS, properties);
+		public Boots() {
+			super(EquipmentSlot.FEET, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR));
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "engies_chaos:textures/models/armor/engiesharko__layer_1.png";
 		}
 	}
 }

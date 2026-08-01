@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:antimatter_monstrosity_scythe"
+  },
+  "addition": {
+    "item": "engies_chaos:antimatter_engie_upgrade"
+  },
+  "result": {
+    "item": "engies_chaos:antimatter_doomsday_scythe"
+  }
+}

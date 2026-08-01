@@ -3,7 +3,7 @@ package engiegames.engies_chaos.item;
 import net.minecraft.world.item.Item;
 
 public class DoomsDayAdvancementIconItem extends Item {
-	public DoomsDayAdvancementIconItem(Item.Properties properties) {
-		super(properties.fireResistant());
+	public DoomsDayAdvancementIconItem() {
+		super(new Item.Properties().tab(null).fireResistant());
 	}
 }

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:dark_matter_angry_engie_sword"
+  },
+  "addition": {
+    "item": "engies_chaos:dark_matter_enraged_engie_block"
+  },
+  "result": {
+    "item": "engies_chaos:dark_matter_enraged_engie_sword"
+  }
+}

@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "template": [],
-  "base": "minecraft:book",
-  "addition": "engies_chaos:dark_matter_mad_engie_block",
-  "result": {
-    "id": "engies_chaos:engies_chaos_recipe_book_volume_3"
-  }
-}

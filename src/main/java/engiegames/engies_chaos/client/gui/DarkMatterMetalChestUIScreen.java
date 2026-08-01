@@ -5,13 +5,12 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.gui.GuiGraphics;
 
 import engiegames.engies_chaos.world.inventory.DarkMatterMetalChestUIMenu;
 import engiegames.engies_chaos.init.EngiesChaosModScreens;
 
+import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 public class DarkMatterMetalChestUIScreen extends AbstractContainerScreen<DarkMatterMetalChestUIMenu> implements EngiesChaosModScreens.ScreenAccessor {
@@ -38,17 +37,19 @@ public class DarkMatterMetalChestUIScreen extends AbstractContainerScreen<DarkMa
 	}
 
 	@Override
-	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		super.render(guiGraphics, mouseX, mouseY, partialTicks);
-		this.renderTooltip(guiGraphics, mouseX, mouseY);
+	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
+		this.renderBackground(ms);
+		super.render(ms, mouseX, mouseY, partialTicks);
+		this.renderTooltip(ms, mouseX, mouseY);
 	}
 
 	@Override
-	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
+	protected void renderBg(PoseStack ms, float partialTicks, int mouseX, int mouseY) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		guiGraphics.blit(RenderType::guiTextured, ResourceLocation.parse("engies_chaos:textures/screens/dark_matter_metal_chest_ui_bg.png"), this.leftPos + 0, this.topPos + 0, 0, 0, 296, 220, 296, 220);
+		RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/dark_matter_metal_chest_ui_bg.png"));
+		this.blit(ms, this.leftPos + 0, this.topPos + 0, 0, 0, 296, 220, 296, 220);
 		RenderSystem.disableBlend();
 	}
 
@@ -62,7 +63,7 @@ public class DarkMatterMetalChestUIScreen extends AbstractContainerScreen<DarkMa
 	}
 
 	@Override
-	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+	protected void renderLabels(PoseStack ms, int mouseX, int mouseY) {
 	}
 
 	@Override

@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "engies_chaos:roughian_engie_games_pickaxe"
+    },
+    "title": {
+      "translate": "advancements.pickaxe_only_all_fully_done.title"
+    },
+    "description": {
+      "translate": "advancements.pickaxe_only_all_fully_done.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "pickaxe_only_all_fully_done_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 1999
+  },
+  "parent": "engies_chaos:all_fully_done"
+}

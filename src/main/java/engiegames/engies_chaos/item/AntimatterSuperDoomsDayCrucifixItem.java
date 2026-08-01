@@ -3,8 +3,15 @@ package engiegames.engies_chaos.item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Item;
 
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
+
 public class AntimatterSuperDoomsDayCrucifixItem extends Item {
-	public AntimatterSuperDoomsDayCrucifixItem(Item.Properties properties) {
-		super(properties.rarity(Rarity.RARE).durability(200).enchantable(22));
+	public AntimatterSuperDoomsDayCrucifixItem() {
+		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS).durability(200).rarity(Rarity.RARE));
+	}
+
+	@Override
+	public int getEnchantmentValue() {
+		return 22;
 	}
 }

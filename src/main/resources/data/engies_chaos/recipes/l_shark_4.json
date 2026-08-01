@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "legendarysharko",
+  "pattern": [
+    "a a",
+    "a a"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:legendary_sharko_cloth"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:legendary_shark_boots",
+    "count": 1
+  }
+}

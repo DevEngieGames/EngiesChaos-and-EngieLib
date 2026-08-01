@@ -3,7 +3,7 @@ package engiegames.engies_chaos.item;
 import net.minecraft.world.item.Item;
 
 public class PickaxeBaseItem extends Item {
-	public PickaxeBaseItem(Item.Properties properties) {
-		super(properties);
+	public PickaxeBaseItem() {
+		super(new Item.Properties().tab(null));
 	}
 }

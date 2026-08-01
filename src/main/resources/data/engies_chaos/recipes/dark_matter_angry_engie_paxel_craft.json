@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "darkmatterangryengieaiot",
+  "ingredients": [
+    {
+      "item": "engies_chaos:dark_matter_angry_engie_sword"
+    },
+    {
+      "item": "engies_chaos:dark_matter_angry_engie_axe"
+    },
+    {
+      "item": "engies_chaos:dark_matter_angry_engie_shovel"
+    },
+    {
+      "item": "engies_chaos:dark_matter_angry_engie_hoe"
+    },
+    {
+      "item": "engies_chaos:dark_matter_angry_engie_pickaxe"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:dark_matter_angry_engie_aiot",
+    "count": 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:antimatter_engie_games_sword"
+  },
+  "addition": {
+    "item": "engies_chaos:antimatter_engie_upgrade"
+  },
+  "result": {
+    "item": "engies_chaos:cosmic_engie_games_sword"
+  }
+}

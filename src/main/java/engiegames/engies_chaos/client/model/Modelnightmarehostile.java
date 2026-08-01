@@ -1,8 +1,8 @@
 package engiegames.engies_chaos.client.model;
 
+import net.minecraft.world.entity.Entity;
 import net.minecraft.util.Mth;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
@@ -13,13 +13,16 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.EntityModel;
 
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.blaze3d.vertex.PoseStack;
+
 // Made with Blockbench 5.0.7
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
-public class Modelnightmarehostile extends EntityModel<LivingEntityRenderState> {
+public class Modelnightmarehostile<T extends Entity> extends EntityModel<T> {
 	// This layer location should be baked with EntityRendererProvider.Context in
 	// the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath("engies_chaos", "modelnightmarehostile"), "main");
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation("engies_chaos", "modelnightmarehostile"), "main");
 	public final ModelPart bone;
 	public final ModelPart Head;
 	public final ModelPart Body;
@@ -49,7 +52,6 @@ public class Modelnightmarehostile extends EntityModel<LivingEntityRenderState> 
 	public final ModelPart LeftArm;
 
 	public Modelnightmarehostile(ModelPart root) {
-		super(root);
 		this.bone = root.getChild("bone");
 		this.Head = this.bone.getChild("Head");
 		this.Body = this.bone.getChild("Body");
@@ -213,13 +215,12 @@ public class Modelnightmarehostile extends EntityModel<LivingEntityRenderState> 
 		return LayerDefinition.create(meshdefinition, 96, 64);
 	}
 
-	public void setupAnim(LivingEntityRenderState state) {
-		float limbSwing = state.walkAnimationPos;
-		float limbSwingAmount = state.walkAnimationSpeed;
-		float ageInTicks = state.ageInTicks;
-		float netHeadYaw = state.yRot;
-		float headPitch = state.xRot;
+	@Override
+	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+		bone.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+	}
 
+	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.RightArm.xRot = Mth.cos(limbSwing * 0.6662F + (float) Math.PI) * limbSwingAmount;
 		this.LeftLeg.xRot = Mth.cos(limbSwing * 1.0F) * -1.0F * limbSwingAmount;
 		this.Head.yRot = netHeadYaw / (180F / (float) Math.PI);

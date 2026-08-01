@@ -1,6 +1,8 @@
 package engiegames.engies_chaos.entity;
 
-import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.network.PlayMessages;
+import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.Level;
@@ -15,20 +17,19 @@ import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.Pose;
+import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.protocol.Packet;
 
 import engiegames.engies_chaos.procedures.NegativeDifficultyAICheckProcedure;
 import engiegames.engies_chaos.procedures.MobHitboxScalingProcedure;
@@ -37,10 +38,20 @@ import engiegames.engies_chaos.procedures.AnyEngieDiesAddCountProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class EngiePocMonstrosityEngieEntity extends Monster {
+	public EngiePocMonstrosityEngieEntity(PlayMessages.SpawnEntity packet, Level world) {
+		this(EngiesChaosModEntities.ENGIE_POC_MONSTROSITY_ENGIE.get(), world);
+	}
+
 	public EngiePocMonstrosityEngieEntity(EntityType<EngiePocMonstrosityEngieEntity> type, Level world) {
 		super(type, world);
+		maxUpStep = 1f;
 		xpReward = 55;
 		setNoAi(false);
+	}
+
+	@Override
+	public Packet<?> getAddEntityPacket() {
+		return NetworkHooks.getEntitySpawningPacket(this);
 	}
 
 	@Override
@@ -48,8 +59,8 @@ public class EngiePocMonstrosityEngieEntity extends Monster {
 		super.registerGoals();
 		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 2.4, false) {
 			@Override
-			protected boolean canPerformAttack(LivingEntity entity) {
-				return this.isTimeToAttack() && this.mob.distanceToSqr(entity) < (this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth()) && this.mob.getSensing().hasLineOfSight(entity);
+			protected double getAttackReachSqr(LivingEntity entity) {
+				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
 		});
 		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
@@ -60,7 +71,7 @@ public class EngiePocMonstrosityEngieEntity extends Monster {
 				double y = EngiePocMonstrosityEngieEntity.this.getY();
 				double z = EngiePocMonstrosityEngieEntity.this.getZ();
 				Entity entity = EngiePocMonstrosityEngieEntity.this;
-				Level world = EngiePocMonstrosityEngieEntity.this.level();
+				Level world = EngiePocMonstrosityEngieEntity.this.level;
 				return super.canUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 
@@ -70,7 +81,7 @@ public class EngiePocMonstrosityEngieEntity extends Monster {
 				double y = EngiePocMonstrosityEngieEntity.this.getY();
 				double z = EngiePocMonstrosityEngieEntity.this.getZ();
 				Entity entity = EngiePocMonstrosityEngieEntity.this;
-				Level world = EngiePocMonstrosityEngieEntity.this.level();
+				Level world = EngiePocMonstrosityEngieEntity.this.level;
 				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 		});
@@ -81,7 +92,7 @@ public class EngiePocMonstrosityEngieEntity extends Monster {
 				double y = EngiePocMonstrosityEngieEntity.this.getY();
 				double z = EngiePocMonstrosityEngieEntity.this.getZ();
 				Entity entity = EngiePocMonstrosityEngieEntity.this;
-				Level world = EngiePocMonstrosityEngieEntity.this.level();
+				Level world = EngiePocMonstrosityEngieEntity.this.level;
 				return super.canUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 
@@ -91,7 +102,7 @@ public class EngiePocMonstrosityEngieEntity extends Monster {
 				double y = EngiePocMonstrosityEngieEntity.this.getY();
 				double z = EngiePocMonstrosityEngieEntity.this.getZ();
 				Entity entity = EngiePocMonstrosityEngieEntity.this;
-				Level world = EngiePocMonstrosityEngieEntity.this.level();
+				Level world = EngiePocMonstrosityEngieEntity.this.level;
 				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 		});
@@ -102,7 +113,7 @@ public class EngiePocMonstrosityEngieEntity extends Monster {
 				double y = EngiePocMonstrosityEngieEntity.this.getY();
 				double z = EngiePocMonstrosityEngieEntity.this.getZ();
 				Entity entity = EngiePocMonstrosityEngieEntity.this;
-				Level world = EngiePocMonstrosityEngieEntity.this.level();
+				Level world = EngiePocMonstrosityEngieEntity.this.level;
 				return super.canUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 
@@ -112,7 +123,7 @@ public class EngiePocMonstrosityEngieEntity extends Monster {
 				double y = EngiePocMonstrosityEngieEntity.this.getY();
 				double z = EngiePocMonstrosityEngieEntity.this.getZ();
 				Entity entity = EngiePocMonstrosityEngieEntity.this;
-				Level world = EngiePocMonstrosityEngieEntity.this.level();
+				Level world = EngiePocMonstrosityEngieEntity.this.level;
 				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 		});
@@ -123,7 +134,7 @@ public class EngiePocMonstrosityEngieEntity extends Monster {
 				double y = EngiePocMonstrosityEngieEntity.this.getY();
 				double z = EngiePocMonstrosityEngieEntity.this.getZ();
 				Entity entity = EngiePocMonstrosityEngieEntity.this;
-				Level world = EngiePocMonstrosityEngieEntity.this.level();
+				Level world = EngiePocMonstrosityEngieEntity.this.level;
 				return super.canUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 
@@ -133,7 +144,7 @@ public class EngiePocMonstrosityEngieEntity extends Monster {
 				double y = EngiePocMonstrosityEngieEntity.this.getY();
 				double z = EngiePocMonstrosityEngieEntity.this.getZ();
 				Entity entity = EngiePocMonstrosityEngieEntity.this;
-				Level world = EngiePocMonstrosityEngieEntity.this.level();
+				Level world = EngiePocMonstrosityEngieEntity.this.level;
 				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 		});
@@ -143,35 +154,33 @@ public class EngiePocMonstrosityEngieEntity extends Monster {
 	}
 
 	@Override
+	public MobType getMobType() {
+		return MobType.UNDEFINED;
+	}
+
+	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.hurt"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.death"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
 	}
 
 	@Override
-	public boolean hurtServer(ServerLevel level, DamageSource damagesource, float amount) {
-		if (damagesource.is(DamageTypes.IN_FIRE))
+	public boolean hurt(DamageSource damagesource, float amount) {
+		if (damagesource == DamageSource.CACTUS)
 			return false;
-		if (damagesource.is(DamageTypes.CACTUS))
+		if (damagesource == DamageSource.LIGHTNING_BOLT)
 			return false;
-		if (damagesource.is(DamageTypes.LIGHTNING_BOLT))
+		if (damagesource == DamageSource.ANVIL)
 			return false;
-		if (damagesource.is(DamageTypes.FALLING_ANVIL))
+		if (damagesource == DamageSource.DRAGON_BREATH)
 			return false;
-		if (damagesource.is(DamageTypes.DRAGON_BREATH))
+		if (damagesource == DamageSource.WITHER || damagesource.getMsgId().equals("witherSkull"))
 			return false;
-		if (damagesource.is(DamageTypes.WITHER) || damagesource.is(DamageTypes.WITHER_SKULL))
-			return false;
-		return super.hurtServer(level, damagesource, amount);
-	}
-
-	@Override
-	public boolean fireImmune() {
-		return true;
+		return super.hurt(damagesource, amount);
 	}
 
 	@Override
@@ -187,22 +196,22 @@ public class EngiePocMonstrosityEngieEntity extends Monster {
 	}
 
 	@Override
-	public EntityDimensions getDefaultDimensions(Pose pose) {
+	public EntityDimensions getDimensions(Pose pose) {
 		Entity entity = this;
-		Level world = this.level();
+		Level world = this.level;
 		double x = this.getX();
 		double y = this.getY();
 		double z = this.getZ();
-		return super.getDefaultDimensions(pose).scale((float) MobHitboxScalingProcedure.execute());
+		return super.getDimensions(pose).scale((float) MobHitboxScalingProcedure.execute());
 	}
 
-	public static void init(RegisterSpawnPlacementsEvent event) {
-		event.register(EngiesChaosModEntities.ENGIE_POC_MONSTROSITY_ENGIE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
+	public static void init() {
+		SpawnPlacements.register(EngiesChaosModEntities.ENGIE_POC_MONSTROSITY_ENGIE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
 			return EngiePocHostileEngieSpawningConditionProcedure.execute(world);
-		}, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+		});
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
@@ -212,7 +221,6 @@ public class EngiePocMonstrosityEngieEntity extends Monster {
 		builder = builder.add(Attributes.ARMOR, 35);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 55);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 64);
-		builder = builder.add(Attributes.STEP_HEIGHT, 1);
 		return builder;
 	}
 }

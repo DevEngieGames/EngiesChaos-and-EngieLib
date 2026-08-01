@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "darkmattertheendcointoblock",
+  "ingredients": [
+    {
+      "item": "engies_chaos:dark_matter_the_end_coin"
+    },
+    {
+      "item": "engies_chaos:dark_matter_the_end_coin"
+    },
+    {
+      "item": "engies_chaos:dark_matter_the_end_coin"
+    },
+    {
+      "item": "engies_chaos:dark_matter_the_end_coin"
+    },
+    {
+      "item": "engies_chaos:dark_matter_the_end_coin"
+    },
+    {
+      "item": "engies_chaos:dark_matter_the_end_coin"
+    },
+    {
+      "item": "engies_chaos:dark_matter_the_end_coin"
+    },
+    {
+      "item": "engies_chaos:dark_matter_the_end_coin"
+    },
+    {
+      "item": "engies_chaos:dark_matter_the_end_coin"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:dark_matter_the_end_coin_block",
+    "count": 1
+  }
+}

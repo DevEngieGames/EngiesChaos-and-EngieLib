@@ -9,7 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 import net.minecraft.advancements.AdvancementProgress;
-import net.minecraft.advancements.AdvancementHolder;
+import net.minecraft.advancements.Advancement;
 
 import java.util.Calendar;
 
@@ -21,46 +21,46 @@ public class CodesProcedure {
 		if (entity == null)
 			return;
 		if (((entity instanceof Player _entity0 && _entity0.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu0) ? _menu0.getMenuState(0, "codeinput", "") : "").equals("ByeByeThere")) {
-			if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).coderedeemblock == false) {
+			if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).coderedeemblock == false) {
 				{
 					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:comically_massive_ban_hammer");
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:comically_massive_ban_hammer");
 					}
 				}
 				{
 					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:bye_bye_there");
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:bye_bye_there");
 					}
 				}
-				if ((entity instanceof ServerPlayer _plr3 && _plr3.level() instanceof ServerLevel
-						&& _plr3.getAdvancements().getOrStartProgress(_plr3.server.getAdvancements().get(ResourceLocation.parse("engies_chaos:comically_massive_obtain"))).isDone()) == false) {
+				if ((entity instanceof ServerPlayer _plr3 && _plr3.level instanceof ServerLevel
+						&& _plr3.getAdvancements().getOrStartProgress(_plr3.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:comically_massive_obtain"))).isDone()) == false) {
 					if (entity instanceof ServerPlayer _player) {
-						AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("engies_chaos:comically_massive_obtain"));
-						if (_adv != null) {
-							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-							if (!_ap.isDone()) {
-								for (String criteria : _ap.getRemainingCriteria())
-									_player.getAdvancements().award(_adv, criteria);
-							}
+						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:comically_massive_obtain"));
+						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+						if (!_ap.isDone()) {
+							for (String criteria : _ap.getRemainingCriteria())
+								_player.getAdvancements().award(_adv, criteria);
 						}
 					}
 				}
 				{
-					EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-					_vars.coderedeemblock = true;
-					_vars.syncPlayerVariables(entity);
+					boolean _setval = true;
+					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.coderedeemblock = _setval;
+						capability.syncPlayerVariables(entity);
+					});
 				}
-			} else if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).coderedeemblock == true) {
+			} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).coderedeemblock == true) {
 				{
 					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 						_ent.getServer().getCommands().performPrefixedCommand(
-								new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
-										_ent.level().getServer(), _ent),
+								new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
+										_ent.level.getServer(), _ent),
 								"tellraw @p {\"text\":\"Hey... Sorry, but you can't redeem the secret code again.. If you want to do it again please create/join a new world that doesn't have the code redeemed.\",\"bold\":true,\"color\":\"gold\"}");
 					}
 				}
@@ -70,17 +70,17 @@ public class CodesProcedure {
 			if (EngiesChaosModVariables.MapVariables.get(world).hewhowatches == false) {
 				{
 					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:engies_scythe");
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:engies_scythe");
 					}
 				}
 				{
 					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 						_ent.getServer().getCommands().performPrefixedCommand(
-								new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
-										_ent.level().getServer(), _ent),
+								new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
+										_ent.level.getServer(), _ent),
 								"tellraw @p [\"\",{\"text\":\"You start to see figures...\",\"bold\":true,\"color\":\"black\"},{\"text\":\"\\n\"},{\"text\":\"Are these figures what made Engie lock the scythe behind a command?\",\"color\":\"dark_red\"}]");
 					}
 				}
@@ -89,9 +89,9 @@ public class CodesProcedure {
 			} else if (EngiesChaosModVariables.MapVariables.get(world).hewhowatches == true) {
 				{
 					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "tellraw @p {\"text\":\"There is no going back now...\",\"bold\":true,\"color\":\"black\"}");
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "tellraw @p {\"text\":\"There is no going back now...\",\"bold\":true,\"color\":\"black\"}");
 					}
 				}
 			}
@@ -101,79 +101,79 @@ public class CodesProcedure {
 				|| ((entity instanceof Player _entity12 && _entity12.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu12) ? _menu12.getMenuState(0, "codeinput", "") : "").equals("engieschaos")) {
 			{
 				Entity _ent = entity;
-				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:code_redeemers_helmet");
+				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:code_redeemers_helmet");
 				}
 			}
 			{
 				Entity _ent = entity;
-				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:code_redeemers_chestplate");
+				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:code_redeemers_chestplate");
 				}
 			}
 			{
 				Entity _ent = entity;
-				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:code_redeemers_leggings");
+				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:code_redeemers_leggings");
 				}
 			}
 			{
 				Entity _ent = entity;
-				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:code_redeemers_boots");
+				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:code_redeemers_boots");
 				}
 			}
 			{
 				Entity _ent = entity;
-				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:code_redeemers_hammer");
+				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:code_redeemers_hammer");
 				}
 			}
 			{
 				Entity _ent = entity;
-				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:code_redeemers_scythe");
+				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:code_redeemers_scythe");
 				}
 			}
 			{
 				Entity _ent = entity;
-				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:code_redeemers_sword");
+				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:code_redeemers_sword");
 				}
 			}
 			{
 				Entity _ent = entity;
-				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:code_redeemers_pickaxe");
+				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:code_redeemers_pickaxe");
 				}
 			}
 			{
 				Entity _ent = entity;
-				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:code_redeemers_axe");
+				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:code_redeemers_axe");
 				}
 			}
 			{
 				Entity _ent = entity;
-				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:code_redeemers_shovel");
+				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:code_redeemers_shovel");
 				}
 			}
 			{
 				Entity _ent = entity;
-				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:code_redeemers_hoe");
+				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:code_redeemers_hoe");
 				}
 			}
 		}
@@ -183,9 +183,9 @@ public class CodesProcedure {
 			if (Calendar.getInstance().get(Calendar.MONTH) == 0 && Calendar.getInstance().get(Calendar.DAY_OF_MONTH) < 6) {
 				{
 					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:angel_hatted_present 18");
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:angel_hatted_present 18");
 					}
 				}
 			}
@@ -196,9 +196,9 @@ public class CodesProcedure {
 			if (Calendar.getInstance().get(Calendar.MONTH) == 11 && Calendar.getInstance().get(Calendar.DAY_OF_MONTH) >= 25) {
 				{
 					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:angel_hatted_present 18");
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:angel_hatted_present 18");
 					}
 				}
 			}
@@ -210,39 +210,39 @@ public class CodesProcedure {
 				if (EngiesChaosModVariables.MapVariables.get(world).Birthday == true) {
 					{
 						Entity _ent = entity;
-						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:engies_own_engie_bundle");
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:engies_own_engie_bundle");
 						}
 					}
 					{
 						Entity _ent = entity;
-						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:angel_hatted_present 18");
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:angel_hatted_present 18");
 						}
 					}
 					{
 						Entity _ent = entity;
-						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:dev_engie_plush");
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:dev_engie_plush");
 						}
 					}
 					{
 						Entity _ent = entity;
-						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:engie_plush");
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:engie_plush");
 						}
 					}
 				} else if (EngiesChaosModVariables.MapVariables.get(world).Birthday == false) {
 					{
 						Entity _ent = entity;
-						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 							_ent.getServer().getCommands().performPrefixedCommand(
-									new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
-											_ent.level().getServer(), _ent),
+									new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
+											_ent.level.getServer(), _ent),
 									"tellraw @p [\"\",{\"text\":\"<\"},{\"text\":\"[\",\"color\":\"red\"},{\"text\":\"All \",\"color\":\"green\"},{\"text\":\"About\",\"color\":\"yellow\"},{\"text\":\" Engie \",\"color\":\"red\"},{\"text\":\"Content Creator\",\"color\":\"gold\"},{\"text\":\"]\",\"color\":\"red\"},{\"text\":\" EngieGamesOnTTV\",\"color\":\"gold\"},{\"text\":\"> 5/25 (MM/DD).\"}]");
 						}
 					}
@@ -251,39 +251,39 @@ public class CodesProcedure {
 				if (EngiesChaosModVariables.MapVariables.get(world).Birthday == true) {
 					{
 						Entity _ent = entity;
-						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p allaboutengie:engies_birthday_bundle");
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:engies_birthday_bundle");
 						}
 					}
 					{
 						Entity _ent = entity;
-						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p allaboutengie:angel_hatted_present 5");
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:angel_hatted_present 5");
 						}
 					}
 					{
 						Entity _ent = entity;
-						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p allaboutengie:dev_engie_plush");
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:dev_engie_plush");
 						}
 					}
 					{
 						Entity _ent = entity;
-						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p allaboutengie:engie_plush");
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:engie_plush");
 						}
 					}
 				} else if (EngiesChaosModVariables.MapVariables.get(world).Birthday == false) {
 					{
 						Entity _ent = entity;
-						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 							_ent.getServer().getCommands().performPrefixedCommand(
-									new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
-											_ent.level().getServer(), _ent),
+									new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
+											_ent.level.getServer(), _ent),
 									"tellraw @p [\"\",{\"text\":\"<\"},{\"text\":\"[\",\"color\":\"red\"},{\"text\":\"All \",\"color\":\"green\"},{\"text\":\"About\",\"color\":\"yellow\"},{\"text\":\" Engie \",\"color\":\"red\"},{\"text\":\"Content Creator\",\"color\":\"gold\"},{\"text\":\"]\",\"color\":\"red\"},{\"text\":\" EngieGamesOnTTV\",\"color\":\"gold\"},{\"text\":\"> 5/25 (MM/DD).\"}]");
 						}
 					}
@@ -295,9 +295,9 @@ public class CodesProcedure {
 				|| ((entity instanceof Player _entity48 && _entity48.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu48) ? _menu48.getMenuState(0, "codeinput", "") : "").equals("hotlinemiami2")) {
 			{
 				Entity _ent = entity;
-				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:hotline_miami_2_run");
+				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:hotline_miami_2_run");
 				}
 			}
 		}
@@ -307,16 +307,16 @@ public class CodesProcedure {
 			if ((entity.getDisplayName().getString()).equals("Two_Dragons15")) {
 				{
 					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:engie_birthday_bundle_for_youngest");
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:engie_birthday_bundle_for_youngest");
 					}
 				}
 				{
 					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:engie_plush");
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:engie_plush");
 					}
 				}
 			}
@@ -326,9 +326,9 @@ public class CodesProcedure {
 				|| ((entity instanceof Player _entity58 && _entity58.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu58) ? _menu58.getMenuState(0, "codeinput", "") : "").equals("punisher")) {
 			{
 				Entity _ent = entity;
-				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:punisher_plush");
+				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:punisher_plush");
 				}
 			}
 		}
@@ -337,9 +337,9 @@ public class CodesProcedure {
 				|| ((entity instanceof Player _entity62 && _entity62.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu62) ? _menu62.getMenuState(0, "codeinput", "") : "").equals("phantom")) {
 			{
 				Entity _ent = entity;
-				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:phantom_and_nutter_butter");
+				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:phantom_and_nutter_butter");
 				}
 			}
 		}
@@ -348,9 +348,9 @@ public class CodesProcedure {
 				|| ((entity instanceof Player _entity66 && _entity66.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu66) ? _menu66.getMenuState(0, "codeinput", "") : "").equals("scarlet")) {
 			{
 				Entity _ent = entity;
-				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:scarlet");
+				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:scarlet");
 				}
 			}
 		}
@@ -359,9 +359,9 @@ public class CodesProcedure {
 				|| ((entity instanceof Player _entity70 && _entity70.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu70) ? _menu70.getMenuState(0, "codeinput", "") : "").equals("ceasar")) {
 			{
 				Entity _ent = entity;
-				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @p engies_chaos:ceasar");
+				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:ceasar");
 				}
 			}
 		}

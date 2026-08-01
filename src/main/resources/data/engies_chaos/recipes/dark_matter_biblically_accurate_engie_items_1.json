@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "darkmatterbiblicallyaccurateengieblocktoitem",
+  "ingredients": [
+    {
+      "item": "engies_chaos:dark_matter_biblically_accurate_block"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:dark_matter_biblically_accurate_engie_essence",
+    "count": 9
+  }
+}

@@ -1,7 +1,9 @@
 {
   "replace": false,
   "values": [
-    "allaboutengie:mad_engie_cold_season",
-    "allaboutengie:mad_engie"
+    "engies_chaos:nightmare_mad_engie",
+    "engies_chaos:insanity_mad_engie",
+    "engies_chaos:engie_poc_mad_engie",
+    "engies_chaos:mad_engie"
   ]
 }

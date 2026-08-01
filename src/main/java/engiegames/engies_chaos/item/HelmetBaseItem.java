@@ -3,7 +3,7 @@ package engiegames.engies_chaos.item;
 import net.minecraft.world.item.Item;
 
 public class HelmetBaseItem extends Item {
-	public HelmetBaseItem(Item.Properties properties) {
-		super(properties);
+	public HelmetBaseItem() {
+		super(new Item.Properties().tab(null));
 	}
 }

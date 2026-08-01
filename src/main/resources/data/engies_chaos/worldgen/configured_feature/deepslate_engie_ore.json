@@ -1,7 +1,7 @@
 {
   "type": "minecraft:ore",
   "config": {
-    "size": 3,
+    "size": 5,
     "discard_chance_on_air_exposure": 0,
     "targets": [
       {
@@ -12,17 +12,6 @@
             "Properties": {
               "axis": "y"
             }
-          }
-        },
-        "state": {
-          "Name": "engies_chaos:deepslate_engie_ore"
-        }
-      },
-      {
-        "target": {
-          "predicate_type": "blockstate_match",
-          "block_state": {
-            "Name": "minecraft:tuff"
           }
         },
         "state": {

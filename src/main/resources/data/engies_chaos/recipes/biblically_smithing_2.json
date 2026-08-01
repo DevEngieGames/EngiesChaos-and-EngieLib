@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:outraged_engie_pickaxe"
+  },
+  "addition": {
+    "item": "engies_chaos:biblically_accurate_block"
+  },
+  "result": {
+    "item": "engies_chaos:biblically_accurate_engie_pickaxe"
+  }
+}

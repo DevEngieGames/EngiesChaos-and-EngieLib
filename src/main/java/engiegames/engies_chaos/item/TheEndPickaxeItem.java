@@ -1,28 +1,51 @@
 package engiegames.engies_chaos.item;
 
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.tags.TagKey;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 
-import engiegames.engies_chaos.procedures.TheEndToolObtainProcedure;
+import java.util.List;
+
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
+import engiegames.engies_chaos.init.EngiesChaosModItems;
 
 public class TheEndPickaxeItem extends PickaxeItem {
-	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 7000, 39f, 0, 13, TagKey.create(Registries.ITEM, ResourceLocation.parse("engies_chaos:the_end_pickaxe_repair_items")));
+	public TheEndPickaxeItem() {
+		super(new Tier() {
+			public int getUses() {
+				return 7000;
+			}
 
-	public TheEndPickaxeItem(Item.Properties properties) {
-		super(TOOL_MATERIAL, 324f, 0.2f, properties);
+			public float getSpeed() {
+				return 39f;
+			}
+
+			public float getAttackDamageBonus() {
+				return 323f;
+			}
+
+			public int getLevel() {
+				return 4;
+			}
+
+			public int getEnchantmentValue() {
+				return 13;
+			}
+
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
+			}
+		}, 1, 0.2f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}
 
 	@Override
-	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
-		super.inventoryTick(itemstack, world, entity, slot, selected);
-		TheEndToolObtainProcedure.execute(entity, itemstack);
+	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, level, list, flag);
+		list.add(Component.translatable("item.engies_chaos.the_end_pickaxe.description_0"));
 	}
 }

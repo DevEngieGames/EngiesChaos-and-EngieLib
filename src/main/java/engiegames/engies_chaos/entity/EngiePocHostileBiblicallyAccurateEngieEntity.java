@@ -1,10 +1,11 @@
 package engiegames.engies_chaos.entity;
 
-import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.network.PlayMessages;
+import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.Explosion;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
@@ -16,20 +17,19 @@ import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.Pose;
+import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.protocol.Packet;
 
 import engiegames.engies_chaos.procedures.NegativeDifficultyAICheckProcedure;
 import engiegames.engies_chaos.procedures.MobHitboxScalingProcedure;
@@ -38,10 +38,20 @@ import engiegames.engies_chaos.procedures.AnyEngieDiesAddCountProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class EngiePocHostileBiblicallyAccurateEngieEntity extends Monster {
+	public EngiePocHostileBiblicallyAccurateEngieEntity(PlayMessages.SpawnEntity packet, Level world) {
+		this(EngiesChaosModEntities.ENGIE_POC_HOSTILE_BIBLICALLY_ACCURATE_ENGIE.get(), world);
+	}
+
 	public EngiePocHostileBiblicallyAccurateEngieEntity(EntityType<EngiePocHostileBiblicallyAccurateEngieEntity> type, Level world) {
 		super(type, world);
+		maxUpStep = 1f;
 		xpReward = 45;
 		setNoAi(false);
+	}
+
+	@Override
+	public Packet<?> getAddEntityPacket() {
+		return NetworkHooks.getEntitySpawningPacket(this);
 	}
 
 	@Override
@@ -49,8 +59,8 @@ public class EngiePocHostileBiblicallyAccurateEngieEntity extends Monster {
 		super.registerGoals();
 		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 2.25, false) {
 			@Override
-			protected boolean canPerformAttack(LivingEntity entity) {
-				return this.isTimeToAttack() && this.mob.distanceToSqr(entity) < (this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth()) && this.mob.getSensing().hasLineOfSight(entity);
+			protected double getAttackReachSqr(LivingEntity entity) {
+				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
 		});
 		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
@@ -61,7 +71,7 @@ public class EngiePocHostileBiblicallyAccurateEngieEntity extends Monster {
 				double y = EngiePocHostileBiblicallyAccurateEngieEntity.this.getY();
 				double z = EngiePocHostileBiblicallyAccurateEngieEntity.this.getZ();
 				Entity entity = EngiePocHostileBiblicallyAccurateEngieEntity.this;
-				Level world = EngiePocHostileBiblicallyAccurateEngieEntity.this.level();
+				Level world = EngiePocHostileBiblicallyAccurateEngieEntity.this.level;
 				return super.canUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 
@@ -71,7 +81,7 @@ public class EngiePocHostileBiblicallyAccurateEngieEntity extends Monster {
 				double y = EngiePocHostileBiblicallyAccurateEngieEntity.this.getY();
 				double z = EngiePocHostileBiblicallyAccurateEngieEntity.this.getZ();
 				Entity entity = EngiePocHostileBiblicallyAccurateEngieEntity.this;
-				Level world = EngiePocHostileBiblicallyAccurateEngieEntity.this.level();
+				Level world = EngiePocHostileBiblicallyAccurateEngieEntity.this.level;
 				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 		});
@@ -82,7 +92,7 @@ public class EngiePocHostileBiblicallyAccurateEngieEntity extends Monster {
 				double y = EngiePocHostileBiblicallyAccurateEngieEntity.this.getY();
 				double z = EngiePocHostileBiblicallyAccurateEngieEntity.this.getZ();
 				Entity entity = EngiePocHostileBiblicallyAccurateEngieEntity.this;
-				Level world = EngiePocHostileBiblicallyAccurateEngieEntity.this.level();
+				Level world = EngiePocHostileBiblicallyAccurateEngieEntity.this.level;
 				return super.canUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 
@@ -92,7 +102,7 @@ public class EngiePocHostileBiblicallyAccurateEngieEntity extends Monster {
 				double y = EngiePocHostileBiblicallyAccurateEngieEntity.this.getY();
 				double z = EngiePocHostileBiblicallyAccurateEngieEntity.this.getZ();
 				Entity entity = EngiePocHostileBiblicallyAccurateEngieEntity.this;
-				Level world = EngiePocHostileBiblicallyAccurateEngieEntity.this.level();
+				Level world = EngiePocHostileBiblicallyAccurateEngieEntity.this.level;
 				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 		});
@@ -103,7 +113,7 @@ public class EngiePocHostileBiblicallyAccurateEngieEntity extends Monster {
 				double y = EngiePocHostileBiblicallyAccurateEngieEntity.this.getY();
 				double z = EngiePocHostileBiblicallyAccurateEngieEntity.this.getZ();
 				Entity entity = EngiePocHostileBiblicallyAccurateEngieEntity.this;
-				Level world = EngiePocHostileBiblicallyAccurateEngieEntity.this.level();
+				Level world = EngiePocHostileBiblicallyAccurateEngieEntity.this.level;
 				return super.canUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 
@@ -113,7 +123,7 @@ public class EngiePocHostileBiblicallyAccurateEngieEntity extends Monster {
 				double y = EngiePocHostileBiblicallyAccurateEngieEntity.this.getY();
 				double z = EngiePocHostileBiblicallyAccurateEngieEntity.this.getZ();
 				Entity entity = EngiePocHostileBiblicallyAccurateEngieEntity.this;
-				Level world = EngiePocHostileBiblicallyAccurateEngieEntity.this.level();
+				Level world = EngiePocHostileBiblicallyAccurateEngieEntity.this.level;
 				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 		});
@@ -124,7 +134,7 @@ public class EngiePocHostileBiblicallyAccurateEngieEntity extends Monster {
 				double y = EngiePocHostileBiblicallyAccurateEngieEntity.this.getY();
 				double z = EngiePocHostileBiblicallyAccurateEngieEntity.this.getZ();
 				Entity entity = EngiePocHostileBiblicallyAccurateEngieEntity.this;
-				Level world = EngiePocHostileBiblicallyAccurateEngieEntity.this.level();
+				Level world = EngiePocHostileBiblicallyAccurateEngieEntity.this.level;
 				return super.canUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 
@@ -134,7 +144,7 @@ public class EngiePocHostileBiblicallyAccurateEngieEntity extends Monster {
 				double y = EngiePocHostileBiblicallyAccurateEngieEntity.this.getY();
 				double z = EngiePocHostileBiblicallyAccurateEngieEntity.this.getZ();
 				Entity entity = EngiePocHostileBiblicallyAccurateEngieEntity.this;
-				Level world = EngiePocHostileBiblicallyAccurateEngieEntity.this.level();
+				Level world = EngiePocHostileBiblicallyAccurateEngieEntity.this.level;
 				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 		});
@@ -144,28 +154,33 @@ public class EngiePocHostileBiblicallyAccurateEngieEntity extends Monster {
 	}
 
 	@Override
+	public MobType getMobType() {
+		return MobType.UNDEFINED;
+	}
+
+	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.hurt"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.death"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
 	}
 
 	@Override
-	public boolean hurtServer(ServerLevel level, DamageSource damagesource, float amount) {
-		if (damagesource.is(DamageTypes.FALL))
+	public boolean hurt(DamageSource damagesource, float amount) {
+		if (damagesource == DamageSource.FALL)
 			return false;
-		if (damagesource.is(DamageTypes.DROWN))
+		if (damagesource == DamageSource.DROWN)
 			return false;
-		if (damagesource.is(DamageTypes.EXPLOSION) || damagesource.is(DamageTypes.PLAYER_EXPLOSION))
+		if (damagesource.isExplosion())
 			return false;
-		return super.hurtServer(level, damagesource, amount);
+		return super.hurt(damagesource, amount);
 	}
 
 	@Override
-	public boolean ignoreExplosion(Explosion explosion) {
+	public boolean ignoreExplosion() {
 		return true;
 	}
 
@@ -182,22 +197,22 @@ public class EngiePocHostileBiblicallyAccurateEngieEntity extends Monster {
 	}
 
 	@Override
-	public EntityDimensions getDefaultDimensions(Pose pose) {
+	public EntityDimensions getDimensions(Pose pose) {
 		Entity entity = this;
-		Level world = this.level();
+		Level world = this.level;
 		double x = this.getX();
 		double y = this.getY();
 		double z = this.getZ();
-		return super.getDefaultDimensions(pose).scale((float) MobHitboxScalingProcedure.execute());
+		return super.getDimensions(pose).scale((float) MobHitboxScalingProcedure.execute());
 	}
 
-	public static void init(RegisterSpawnPlacementsEvent event) {
-		event.register(EngiesChaosModEntities.ENGIE_POC_HOSTILE_BIBLICALLY_ACCURATE_ENGIE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
+	public static void init() {
+		SpawnPlacements.register(EngiesChaosModEntities.ENGIE_POC_HOSTILE_BIBLICALLY_ACCURATE_ENGIE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
 			return EngiePocHostileEngieSpawningConditionProcedure.execute(world);
-		}, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+		});
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
@@ -207,7 +222,6 @@ public class EngiePocHostileBiblicallyAccurateEngieEntity extends Monster {
 		builder = builder.add(Attributes.ARMOR, 25);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 45);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 64);
-		builder = builder.add(Attributes.STEP_HEIGHT, 1);
 		return builder;
 	}
 }

@@ -1,8 +1,5 @@
 package engiegames.engies_chaos.item;
 
-import net.neoforged.api.distmarker.OnlyIn;
-import net.neoforged.api.distmarker.Dist;
-
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.ItemStack;
@@ -15,14 +12,13 @@ import java.util.List;
 import engiegames.engies_chaos.procedures.AllAboutEngieXXLWitherRoseSecretItemInInventoryTickProcedure;
 
 public class AllAboutEngieXXLWitherRoseSecretItem extends Item {
-	public AllAboutEngieXXLWitherRoseSecretItem(Item.Properties properties) {
-		super(properties.fireResistant());
+	public AllAboutEngieXXLWitherRoseSecretItem() {
+		super(new Item.Properties().tab(null).fireResistant());
 	}
 
 	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack itemstack, Item.TooltipContext context, List<Component> list, TooltipFlag flag) {
-		super.appendHoverText(itemstack, context, list, flag);
+	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, level, list, flag);
 		list.add(Component.translatable("item.engies_chaos.xxl_wither_rose_secret.description_0"));
 	}
 

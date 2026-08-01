@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "template": [],
-  "base": "engies_chaos:biblically_accurate_engie_pickaxe",
-  "addition": "engies_chaos:monstrosity_engie_block",
-  "result": {
-    "id": "engies_chaos:monstrosity_engie_pickaxe"
-  }
-}

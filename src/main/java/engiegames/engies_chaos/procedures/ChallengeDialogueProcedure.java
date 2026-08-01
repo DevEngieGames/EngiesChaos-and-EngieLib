@@ -15,48 +15,48 @@ public class ChallengeDialogueProcedure {
 			return;
 		{
 			Entity _ent = entity;
-			if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-				_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-						_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "tellraw @a {\"text\":\"What a glorious day.\",\"bold\":true,\"color\":\"gray\"}");
+			if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+				_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+						_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "tellraw @a {\"text\":\"What a glorious day.\",\"bold\":true,\"color\":\"gray\"}");
 			}
 		}
 		EngiesChaosMod.queueServerWork(60, () -> {
 			{
 				Entity _ent = entity;
-				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "tellraw @a {\"text\":\"And what a beautiful world this is.\",\"bold\":true,\"color\":\"gray\"}");
+				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "tellraw @a {\"text\":\"And what a beautiful world this is.\",\"bold\":true,\"color\":\"gray\"}");
 				}
 			}
 			EngiesChaosMod.queueServerWork(120, () -> {
 				{
 					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "tellraw @a {\"text\":\"Do you know what you just did?\",\"bold\":true,\"color\":\"gray\"}");
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "tellraw @a {\"text\":\"Do you know what you just did?\",\"bold\":true,\"color\":\"gray\"}");
 					}
 				}
 				EngiesChaosMod.queueServerWork(100, () -> {
 					{
 						Entity _ent = entity;
-						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "tellraw @a {\"text\":\"You have started the inevitable.\",\"bold\":true,\"color\":\"gray\"}");
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "tellraw @a {\"text\":\"You have started the inevitable.\",\"bold\":true,\"color\":\"gray\"}");
 						}
 					}
 					EngiesChaosMod.queueServerWork(120, () -> {
 						{
 							Entity _ent = entity;
-							if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "tellraw @a {\"text\":\"GOODBYE.\",\"bold\":true,\"color\":\"dark_red\"}");
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "tellraw @a {\"text\":\"GOODBYE.\",\"bold\":true,\"color\":\"dark_red\"}");
 							}
 						}
 						{
 							Entity _ent = entity;
-							if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "EngieLib REAAE startchallenge");
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "EngieLib REAAE startchallenge");
 							}
 						}
 						EngiesChaosMod.queueServerWork(2, () -> {

@@ -1,86 +1,106 @@
 package engiegames.engies_chaos.item;
 
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
-import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
+import net.minecraftforge.registries.ForgeRegistries;
 
-import net.minecraft.world.item.equipment.EquipmentAssets;
-import net.minecraft.world.item.equipment.ArmorType;
-import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ArmorItem;
-import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.client.resources.model.EquipmentClientInfo;
 
-import java.util.Map;
-
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
 public abstract class DarkMatterAngryEngiesItem extends ArmorItem {
-	public static ArmorMaterial ARMOR_MATERIAL = new ArmorMaterial(700, Map.of(ArmorType.BOOTS, 700, ArmorType.LEGGINGS, 700, ArmorType.CHESTPLATE, 700, ArmorType.HELMET, 700, ArmorType.BODY, 700), 22,
-			DeferredHolder.create(Registries.SOUND_EVENT, ResourceLocation.parse("item.armor.equip_iron")), 125f, 5f, TagKey.create(Registries.ITEM, ResourceLocation.parse("engies_chaos:dark_matter_angry_engies_repair_items")),
-			ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.parse("engies_chaos:dark_matter_angry_engies")));
+	public DarkMatterAngryEngiesItem(EquipmentSlot slot, Item.Properties properties) {
+		super(new ArmorMaterial() {
+			@Override
+			public int getDurabilityForSlot(EquipmentSlot slot) {
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 700;
+			}
 
-	@SubscribeEvent
-	public static void registerItemExtensions(RegisterClientExtensionsEvent event) {
-		event.registerItem(new IClientItemExtensions() {
 			@Override
-			public ResourceLocation getArmorTexture(ItemStack stack, EquipmentClientInfo.LayerType type, EquipmentClientInfo.Layer layer, ResourceLocation _default) {
-				return ResourceLocation.parse("engies_chaos:textures/models/armor/darkmatterangryengi_layer_1.png");
+			public int getDefenseForSlot(EquipmentSlot slot) {
+				return new int[]{700, 700, 700, 700}[slot.getIndex()];
 			}
-		}, EngiesChaosModItems.DARK_MATTER_ANGRY_ENGIES_HELMET.get());
-		event.registerItem(new IClientItemExtensions() {
-			@Override
-			public ResourceLocation getArmorTexture(ItemStack stack, EquipmentClientInfo.LayerType type, EquipmentClientInfo.Layer layer, ResourceLocation _default) {
-				return ResourceLocation.parse("engies_chaos:textures/models/armor/darkmatterangryengi_layer_1.png");
-			}
-		}, EngiesChaosModItems.DARK_MATTER_ANGRY_ENGIES_CHESTPLATE.get());
-		event.registerItem(new IClientItemExtensions() {
-			@Override
-			public ResourceLocation getArmorTexture(ItemStack stack, EquipmentClientInfo.LayerType type, EquipmentClientInfo.Layer layer, ResourceLocation _default) {
-				return ResourceLocation.parse("engies_chaos:textures/models/armor/darkmatterangryengi_layer_2.png");
-			}
-		}, EngiesChaosModItems.DARK_MATTER_ANGRY_ENGIES_LEGGINGS.get());
-		event.registerItem(new IClientItemExtensions() {
-			@Override
-			public ResourceLocation getArmorTexture(ItemStack stack, EquipmentClientInfo.LayerType type, EquipmentClientInfo.Layer layer, ResourceLocation _default) {
-				return ResourceLocation.parse("engies_chaos:textures/models/armor/darkmatterangryengi_layer_1.png");
-			}
-		}, EngiesChaosModItems.DARK_MATTER_ANGRY_ENGIES_BOOTS.get());
-	}
 
-	private DarkMatterAngryEngiesItem(ArmorType type, Item.Properties properties) {
-		super(ARMOR_MATERIAL, type, properties);
+			@Override
+			public int getEnchantmentValue() {
+				return 22;
+			}
+
+			@Override
+			public SoundEvent getEquipSound() {
+				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_iron"));
+			}
+
+			@Override
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.ANTIMATTER_ANGRY_ENGIE_ESSENCE.get()));
+			}
+
+			@Override
+			public String getName() {
+				return "dark_matter_angry_engies";
+			}
+
+			@Override
+			public float getToughness() {
+				return 125f;
+			}
+
+			@Override
+			public float getKnockbackResistance() {
+				return 5f;
+			}
+		}, slot, properties);
 	}
 
 	public static class Helmet extends DarkMatterAngryEngiesItem {
-		public Helmet(Item.Properties properties) {
-			super(ArmorType.HELMET, properties);
+		public Helmet() {
+			super(EquipmentSlot.HEAD, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR));
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "engies_chaos:textures/models/armor/darkmatterangryengi_layer_1.png";
 		}
 	}
 
 	public static class Chestplate extends DarkMatterAngryEngiesItem {
-		public Chestplate(Item.Properties properties) {
-			super(ArmorType.CHESTPLATE, properties);
+		public Chestplate() {
+			super(EquipmentSlot.CHEST, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR));
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "engies_chaos:textures/models/armor/darkmatterangryengi_layer_1.png";
 		}
 	}
 
 	public static class Leggings extends DarkMatterAngryEngiesItem {
-		public Leggings(Item.Properties properties) {
-			super(ArmorType.LEGGINGS, properties);
+		public Leggings() {
+			super(EquipmentSlot.LEGS, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR));
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "engies_chaos:textures/models/armor/darkmatterangryengi_layer_2.png";
 		}
 	}
 
 	public static class Boots extends DarkMatterAngryEngiesItem {
-		public Boots(Item.Properties properties) {
-			super(ArmorType.BOOTS, properties);
+		public Boots() {
+			super(EquipmentSlot.FEET, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR));
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "engies_chaos:textures/models/armor/darkmatterangryengi_layer_1.png";
 		}
 	}
 }

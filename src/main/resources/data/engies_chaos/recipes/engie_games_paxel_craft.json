@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "engiegamesaiot",
+  "ingredients": [
+    {
+      "item": "engies_chaos:engiegames_sword"
+    },
+    {
+      "item": "engies_chaos:engie_games_axe"
+    },
+    {
+      "item": "engies_chaos:engie_games_shovel"
+    },
+    {
+      "item": "engies_chaos:engie_games_hoe"
+    },
+    {
+      "item": "engies_chaos:engie_games_pickaxe"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:engie_games_aiot",
+    "count": 1
+  }
+}

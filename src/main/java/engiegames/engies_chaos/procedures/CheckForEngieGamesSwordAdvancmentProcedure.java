@@ -8,7 +8,7 @@ public class CheckForEngieGamesSwordAdvancmentProcedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerHasEngieGamesSwordAdvancement == true) {
+		if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerHasEngieGamesSwordAdvancement == true) {
 			return true;
 		}
 		return false;

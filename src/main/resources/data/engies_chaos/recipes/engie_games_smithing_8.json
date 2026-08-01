@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:mindscape_engies_chestplate"
+  },
+  "addition": {
+    "item": "engies_chaos:engie_games_coin_block"
+  },
+  "result": {
+    "item": "engies_chaos:the_real_engie_gamess_chestplate"
+  }
+}

@@ -300,37 +300,6 @@ public class DifficultyIncreaseProcedure {
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 				}
-				if (EngiesChaosModVariables.MapVariables.get(world).playerobtainedcosmicswordcount >= world.players().size()) {
-					if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty < 30) {
-						EngiesChaosModVariables.MapVariables.get(world).MobDifficulty = 30;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).playerobtainedcosmicswordcount = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					} else {
-						EngiesChaosModVariables.MapVariables.get(world).playerobtainedcosmicswordcount = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).playerobtainedhallowscythecount >= world.players().size()) {
-					if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty < 31) {
-						EngiesChaosModVariables.MapVariables.get(world).MobDifficulty = 31;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).playerobtainedhallowscythecount = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					} else {
-						EngiesChaosModVariables.MapVariables.get(world).playerobtainedhallowscythecount = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).playerobtainedcollectorshallowscythe >= world.players().size()) {
-					if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty < 32) {
-						EngiesChaosModVariables.MapVariables.get(world).MobDifficulty = 32;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).playerobtainedcollectorshallowscythe = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					} else {
-						EngiesChaosModVariables.MapVariables.get(world).playerobtainedcollectorshallowscythe = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					}
-				}
 			}
 		}
 	}

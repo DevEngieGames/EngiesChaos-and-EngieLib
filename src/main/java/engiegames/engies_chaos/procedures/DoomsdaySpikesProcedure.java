@@ -22,9 +22,8 @@ public class DoomsdaySpikesProcedure {
 						EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount = EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount + 1;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands()
-									.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getSpawnPos().getX()), (world.getLevelData().getSpawnPos().getY()), (world.getLevelData().getSpawnPos().getZ())),
-											Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos spike");
+							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
+									Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos spike");
 					});
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 2) {
@@ -34,10 +33,8 @@ public class DoomsdaySpikesProcedure {
 							EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount = EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount + 1;
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							if (world instanceof ServerLevel _level)
-								_level.getServer().getCommands().performPrefixedCommand(
-										new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getSpawnPos().getX()), (world.getLevelData().getSpawnPos().getY()), (world.getLevelData().getSpawnPos().getZ())), Vec2.ZERO, _level, 4,
-												"", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-										"EngieLib EChaos spike");
+								_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
+										Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos spike");
 						});
 					}
 				}
@@ -48,10 +45,8 @@ public class DoomsdaySpikesProcedure {
 							EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount = EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount + 1;
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							if (world instanceof ServerLevel _level)
-								_level.getServer().getCommands().performPrefixedCommand(
-										new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getSpawnPos().getX()), (world.getLevelData().getSpawnPos().getY()), (world.getLevelData().getSpawnPos().getZ())), Vec2.ZERO, _level, 4,
-												"", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-										"EngieLib EChaos spike");
+								_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
+										Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos spike");
 						});
 					}
 				}
@@ -62,10 +57,8 @@ public class DoomsdaySpikesProcedure {
 							EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount = EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount + 1;
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							if (world instanceof ServerLevel _level)
-								_level.getServer().getCommands().performPrefixedCommand(
-										new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getSpawnPos().getX()), (world.getLevelData().getSpawnPos().getY()), (world.getLevelData().getSpawnPos().getZ())), Vec2.ZERO, _level, 4,
-												"", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-										"EngieLib EChaos spike");
+								_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
+										Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos spike");
 						});
 					}
 				}

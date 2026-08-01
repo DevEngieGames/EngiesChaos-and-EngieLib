@@ -1,7 +1,31 @@
 {
-  "parent": "engies_chaos:custom/engiesscythe",
-  "textures": {
-    "0": "engies_chaos:block/pixelscytheengiesnew",
-    "particle": "engies_chaos:item/pixelscytheengiesnew"
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "engies_chaos:custom/engiesscythe",
+    "textures": {
+      "0": "engies_chaos:block/engiesscythe",
+      "particle": "engies_chaos:item/engiesscythe"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/engiesscythe"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/engiesscythe"
+      }
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/engiesscythe"
+      }
+    }
   }
 }

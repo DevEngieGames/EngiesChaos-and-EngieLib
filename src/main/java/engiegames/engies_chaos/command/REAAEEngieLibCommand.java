@@ -1,9 +1,9 @@
 package engiegames.engies_chaos.command;
 
-import net.neoforged.neoforge.event.RegisterCommandsEvent;
-import net.neoforged.neoforge.common.util.FakePlayerFactory;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.event.RegisterCommandsEvent;
+import net.minecraftforge.common.util.FakePlayerFactory;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.Entity;
@@ -15,11 +15,11 @@ import engiegames.engies_chaos.procedures.EngieLibNeedProcedure;
 
 import com.mojang.brigadier.arguments.StringArgumentType;
 
-@EventBusSubscriber
+@Mod.EventBusSubscriber
 public class REAAEEngieLibCommand {
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {
-		event.getDispatcher().register(Commands.literal("EChaos")
+		event.getDispatcher().register(Commands.literal("REAAE")
 
 				.then(Commands.argument("EngieLib", StringArgumentType.word()).then(Commands.argument("Type", StringArgumentType.word()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();

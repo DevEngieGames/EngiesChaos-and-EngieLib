@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "antimattercraft",
+  "pattern": [
+    "aaa",
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:antimatter_fragment"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:antimatter",
+    "count": 1
+  }
+}

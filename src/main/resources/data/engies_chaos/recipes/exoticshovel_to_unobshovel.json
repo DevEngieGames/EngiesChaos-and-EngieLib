@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:exotic_shovel"
+  },
+  "addition": {
+    "item": "engies_chaos:unobtanium"
+  },
+  "result": {
+    "item": "engies_chaos:unobtainium_shovel"
+  }
+}

@@ -1,6 +1,6 @@
 package engiegames.engies_chaos.procedures;
 
-import net.neoforged.neoforge.items.ItemHandlerHelper;
+import net.minecraftforge.items.ItemHandlerHelper;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.ItemStack;

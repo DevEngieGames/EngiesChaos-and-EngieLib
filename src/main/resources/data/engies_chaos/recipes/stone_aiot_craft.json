@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "stoneaiot",
+  "ingredients": [
+    {
+      "item": "minecraft:stone_sword"
+    },
+    {
+      "item": "minecraft:stone_pickaxe"
+    },
+    {
+      "item": "minecraft:stone_axe"
+    },
+    {
+      "item": "minecraft:stone_shovel"
+    },
+    {
+      "item": "minecraft:stone_hoe"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:stone_aiot",
+    "count": 1
+  }
+}

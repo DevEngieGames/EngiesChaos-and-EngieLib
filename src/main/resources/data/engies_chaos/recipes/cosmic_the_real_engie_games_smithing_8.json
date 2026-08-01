@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:antimatter_the_real_engie_gamess_chestplate"
+  },
+  "addition": {
+    "item": "engies_chaos:cosmic_engie_games_coin_block"
+  },
+  "result": {
+    "item": "engies_chaos:cosmic_engie_gamess_chestplate"
+  }
+}

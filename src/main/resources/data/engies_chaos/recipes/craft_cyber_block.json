@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:cyber_ingot"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:cyber_block",
+    "count": 1
+  }
+}

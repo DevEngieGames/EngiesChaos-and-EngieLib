@@ -1,8 +1,8 @@
 package engiegames.engies_chaos.client.model;
 
+import net.minecraft.world.entity.Entity;
 import net.minecraft.util.Mth;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
@@ -13,13 +13,18 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.EntityModel;
 
-// Made with Blockbench 4.12.6
+import net.engiegames.reallaboutengie.client.model.Modelhostile;
+
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.blaze3d.vertex.PoseStack;
+
+// Made with Blockbench 5.0.4
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
-public class Modelhostile extends EntityModel<LivingEntityRenderState> {
+public class Modelhostile<T extends Entity> extends EntityModel<T> {
 	// This layer location should be baked with EntityRendererProvider.Context in
 	// the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath("engies_chaos", "modelhostile"), "main");
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation("engies_chaos", "modelhostile"), "main");
 	public final ModelPart Head;
 	public final ModelPart Body;
 	public final ModelPart RightLeg;
@@ -28,7 +33,6 @@ public class Modelhostile extends EntityModel<LivingEntityRenderState> {
 	public final ModelPart LeftArm;
 
 	public Modelhostile(ModelPart root) {
-		super(root);
 		this.Head = root.getChild("Head");
 		this.Body = root.getChild("Body");
 		this.RightLeg = root.getChild("RightLeg");
@@ -55,16 +59,16 @@ public class Modelhostile extends EntityModel<LivingEntityRenderState> {
 						.addBox(4.05F, -5.2F, -1.2F, 1.4F, 2.4F, 2.4F, new CubeDeformation(0.025F)).texOffs(0, 41).addBox(4.0F, -6.0F, -2.0F, 1.3F, 4.0F, 4.0F, new CubeDeformation(0.025F)),
 				PartPose.offset(0.0F, 0.0F, 0.0F));
 		PartDefinition Body = partdefinition.addOrReplaceChild("Body",
-				CubeListBuilder.create().texOffs(48, 16).addBox(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)).texOffs(48, 32).addBox(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, new CubeDeformation(0.25F)).texOffs(0, 9)
-						.addBox(-4.275F, -2.0F, -4.125F, 8.55F, 2.0F, 8.55F, new CubeDeformation(0.0F)).texOffs(0, 9).addBox(0.725F, 2.5F, -2.6F, 2.55F, 2.5F, 0.325F, new CubeDeformation(0.0F)).texOffs(0, 9)
-						.addBox(0.625F, 5.0F, -2.6F, 2.75F, 2.5F, 0.325F, new CubeDeformation(0.0F)).texOffs(0, 9).addBox(0.525F, 7.5F, -2.6F, 2.95F, 2.5F, 0.325F, new CubeDeformation(0.0F)).texOffs(0, 9)
-						.addBox(0.425F, 10.0F, -2.6F, 3.15F, 2.5F, 0.325F, new CubeDeformation(0.0F)).texOffs(0, 9).addBox(-3.275F, -3.0F, -3.125F, 6.55F, 1.0F, 6.55F, new CubeDeformation(0.0F)).texOffs(0, 9)
-						.addBox(-4.25F, -0.5F, -3.475F, 8.5F, 2.0F, 6.725F, new CubeDeformation(0.0F)),
+				CubeListBuilder.create().texOffs(48, 16).addBox(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)).texOffs(48, 32).addBox(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, new CubeDeformation(0.25F)).texOffs(-1, 8)
+						.addBox(-4.275F, -2.0F, -4.5F, 8.55F, 2.0F, 9.0F, new CubeDeformation(0.0F)).texOffs(0, 9).addBox(0.725F, 1.85F, -2.6F, 2.55F, 2.5F, 0.325F, new CubeDeformation(0.0F)).texOffs(0, 9)
+						.addBox(0.625F, 4.35F, -2.6F, 2.75F, 2.5F, 0.325F, new CubeDeformation(0.0F)).texOffs(0, 9).addBox(0.525F, 6.85F, -2.6F, 2.95F, 2.5F, 0.325F, new CubeDeformation(0.0F)).texOffs(0, 9)
+						.addBox(0.425F, 9.35F, -2.6F, 3.15F, 2.5F, 0.325F, new CubeDeformation(0.0F)).texOffs(0, 9).addBox(-3.275F, -3.0F, -3.125F, 6.55F, 1.0F, 6.55F, new CubeDeformation(0.0F)).texOffs(0, 9)
+						.addBox(-4.25F, -0.5F, -3.0F, 8.5F, 2.0F, 6.0F, new CubeDeformation(0.0F)),
 				PartPose.offset(0.0F, 0.0F, 0.0F));
-		PartDefinition cube_r1 = Body.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(0, 9).addBox(-4.225F, -0.6625F, -2.0F, 8.45F, 3.0F, 4.0F, new CubeDeformation(0.0F)),
-				PartPose.offsetAndRotation(0.0F, 1.4315F, 2.4042F, -2.3562F, 0.0F, 0.0F));
-		PartDefinition cube_r2 = Body.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(0, 9).addBox(-4.225F, -2.3375F, -2.0F, 8.45F, 3.0F, 4.0F, new CubeDeformation(0.0F)),
-				PartPose.offsetAndRotation(0.0F, 1.4315F, -2.5958F, -0.7854F, 0.0F, 0.0F));
+		PartDefinition cube_r1 = Body.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(-2, 8).addBox(-4.225F, -1.5F, -2.5F, 8.45F, 3.0F, 5.0F, new CubeDeformation(0.0F)),
+				PartPose.offsetAndRotation(0.0F, 0.6858F, -1.6594F, 2.3562F, 0.0F, 0.0F));
+		PartDefinition cube_r2 = Body.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(-2, 8).addBox(-4.225F, -1.5F, -2.5F, 8.45F, 3.0F, 5.0F, new CubeDeformation(0.0F)),
+				PartPose.offsetAndRotation(0.0F, 0.6858F, 1.6656F, -2.3562F, 0.0F, 0.0F));
 		PartDefinition cube_r3 = Body.addOrReplaceChild("cube_r3", CubeListBuilder.create().texOffs(0, 9).addBox(-0.5F, -0.725F, -3.7625F, 1.0F, 1.45F, 7.525F, new CubeDeformation(0.0F)),
 				PartPose.offsetAndRotation(0.0F, -2.1409F, 3.5534F, -1.5708F, 0.7854F, 1.5708F));
 		PartDefinition cube_r4 = Body.addOrReplaceChild("cube_r4", CubeListBuilder.create().texOffs(0, 9).addBox(-0.5F, -0.725F, -3.7625F, 1.0F, 1.45F, 7.525F, new CubeDeformation(0.0F)),
@@ -88,13 +92,17 @@ public class Modelhostile extends EntityModel<LivingEntityRenderState> {
 		return LayerDefinition.create(meshdefinition, 96, 64);
 	}
 
-	public void setupAnim(LivingEntityRenderState state) {
-		float limbSwing = state.walkAnimationPos;
-		float limbSwingAmount = state.walkAnimationSpeed;
-		float ageInTicks = state.ageInTicks;
-		float netHeadYaw = state.yRot;
-		float headPitch = state.xRot;
+	@Override
+	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+		Head.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+		Body.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+		RightLeg.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+		LeftLeg.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+		RightArm.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+		LeftArm.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+	}
 
+	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.LeftLeg.xRot = Mth.cos(limbSwing * 1.0F) * -1.0F * limbSwingAmount;
 		this.RightArm.xRot = Mth.cos(limbSwing * 0.6662F + (float) Math.PI) * limbSwingAmount;
 		this.Head.yRot = netHeadYaw / (180F / (float) Math.PI);

@@ -1,23 +1,44 @@
 package engiegames.engies_chaos.item;
 
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.tags.TagKey;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.Registries;
 
 import engiegames.engies_chaos.procedures.OutragedEngieToolObtainProcedure;
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
+import engiegames.engies_chaos.init.EngiesChaosModItems;
 
 public class OutragedEngieAxeItem extends AxeItem {
-	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 2000, 22f, 0, 8, TagKey.create(Registries.ITEM, ResourceLocation.parse("engies_chaos:outraged_engie_axe_repair_items")));
+	public OutragedEngieAxeItem() {
+		super(new Tier() {
+			public int getUses() {
+				return 2000;
+			}
 
-	public OutragedEngieAxeItem(Item.Properties properties) {
-		super(TOOL_MATERIAL, 99f, -1.8f, properties);
+			public float getSpeed() {
+				return 22f;
+			}
+
+			public float getAttackDamageBonus() {
+				return 98f;
+			}
+
+			public int getLevel() {
+				return 2;
+			}
+
+			public int getEnchantmentValue() {
+				return 8;
+			}
+
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.OUTRAGED_ENGIE_ESSENCE.get()));
+			}
+		}, 1, -1.8f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}
 
 	@Override

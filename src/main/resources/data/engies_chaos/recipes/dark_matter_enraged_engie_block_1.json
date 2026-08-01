@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "darkmatterenragedengieitemtoblock",
+  "pattern": [
+    "aaa",
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:dark_matter_enraged_engie_essence"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:dark_matter_enraged_engie_block",
+    "count": 1
+  }
+}

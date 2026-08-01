@@ -8,9 +8,9 @@ public class ConfigButton7ShowProcedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).DoomsdayRiskTrackToggle == true) {
+		if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayRiskTrackToggle == true) {
 			return true;
-		} else if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).DoomsdayRiskTrackToggle == false) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayRiskTrackToggle == false) {
 			return false;
 		}
 		return false;

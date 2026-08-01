@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "biblicallybanhammer",
+  "pattern": [
+    "aba",
+    "cdc",
+    " e "
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:outraged_engie_block"
+    },
+    "b": {
+      "item": "engies_chaos:enraged_engie_block"
+    },
+    "c": {
+      "item": "engies_chaos:biblically_accurate_engie_essence"
+    },
+    "d": {
+      "item": "engies_chaos:massive_ban_hammer"
+    },
+    "e": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:biblically_accurate_engie_ban_hammer",
+    "count": 1
+  }
+}

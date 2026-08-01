@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "engies_chaos:x_engie_upgrade_leggings_recipe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_ingredient_0": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "engies_chaos:leggings_base"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ingredient_0"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "engies_chaos:x_engie_upgrade_leggings_recipe"
+    ]
+  }
+}

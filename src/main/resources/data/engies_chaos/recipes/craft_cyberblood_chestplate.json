@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "a a",
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:cyberblood_ingot"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:cyberblood_chestplate",
+    "count": 1
+  }
+}

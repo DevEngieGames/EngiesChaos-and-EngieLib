@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:rare_sharko_cloth"
+  },
+  "addition": {
+    "item": "minecraft:amethyst_shard"
+  },
+  "result": {
+    "item": "engies_chaos:epic_sharko_cloth"
+  }
+}

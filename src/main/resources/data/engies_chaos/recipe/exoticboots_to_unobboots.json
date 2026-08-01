@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "template": [],
-  "base": "engies_chaos:exotic_boots",
-  "addition": "engies_chaos:unobtanium",
-  "result": {
-    "id": "engies_chaos:unobtainium_boots"
-  }
-}

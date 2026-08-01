@@ -5,13 +5,12 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.gui.GuiGraphics;
 
 import engiegames.engies_chaos.world.inventory.MetalChestUIMenu;
 import engiegames.engies_chaos.init.EngiesChaosModScreens;
 
+import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 public class MetalChestUIScreen extends AbstractContainerScreen<MetalChestUIMenu> implements EngiesChaosModScreens.ScreenAccessor {
@@ -37,18 +36,22 @@ public class MetalChestUIScreen extends AbstractContainerScreen<MetalChestUIMenu
 		menuStateUpdateActive = false;
 	}
 
+	private static final ResourceLocation texture = new ResourceLocation("engies_chaos:textures/screens/metal_chest_ui.png");
+
 	@Override
-	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		super.render(guiGraphics, mouseX, mouseY, partialTicks);
-		this.renderTooltip(guiGraphics, mouseX, mouseY);
+	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
+		this.renderBackground(ms);
+		super.render(ms, mouseX, mouseY, partialTicks);
+		this.renderTooltip(ms, mouseX, mouseY);
 	}
 
 	@Override
-	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
+	protected void renderBg(PoseStack ms, float partialTicks, int mouseX, int mouseY) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		guiGraphics.blit(RenderType::guiTextured, ResourceLocation.parse("engies_chaos:textures/screens/metal_chest_ui_bg.png"), this.leftPos + 0, this.topPos + 0, 0, 0, 226, 190, 226, 190);
+		RenderSystem.setShaderTexture(0, texture);
+		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 		RenderSystem.disableBlend();
 	}
 
@@ -62,7 +65,7 @@ public class MetalChestUIScreen extends AbstractContainerScreen<MetalChestUIMenu
 	}
 
 	@Override
-	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+	protected void renderLabels(PoseStack ms, int mouseX, int mouseY) {
 	}
 
 	@Override

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "raresharkocloth",
+  "ingredients": [
+    {
+      "item": "engies_chaos:albino_sharko_cloth"
+    },
+    {
+      "item": "minecraft:lapis_lazuli"
+    },
+    {
+      "item": "minecraft:lapis_lazuli"
+    },
+    {
+      "item": "minecraft:lapis_lazuli"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:rare_sharko_cloth",
+    "count": 1
+  }
+}

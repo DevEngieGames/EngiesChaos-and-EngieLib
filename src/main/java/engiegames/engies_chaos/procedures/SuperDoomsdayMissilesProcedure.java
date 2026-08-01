@@ -20,36 +20,32 @@ public class SuperDoomsdayMissilesProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount = EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					if (world instanceof ServerLevel _level)
-						_level.getServer().getCommands()
-								.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getSpawnPos().getX()), (world.getLevelData().getSpawnPos().getY()), (world.getLevelData().getSpawnPos().getZ())),
-										Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos missile");
+						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
+								Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos missile");
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 2) {
 				for (int index1 = 0; index1 < (int) Mth.nextDouble(RandomSource.create(), 1, 4); index1++) {
 					EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount = EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					if (world instanceof ServerLevel _level)
-						_level.getServer().getCommands()
-								.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getSpawnPos().getX()), (world.getLevelData().getSpawnPos().getY()), (world.getLevelData().getSpawnPos().getZ())),
-										Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos missile");
+						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
+								Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos missile");
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 3) {
 				for (int index2 = 0; index2 < (int) Mth.nextDouble(RandomSource.create(), 1, 8); index2++) {
 					EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount = EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					if (world instanceof ServerLevel _level)
-						_level.getServer().getCommands()
-								.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getSpawnPos().getX()), (world.getLevelData().getSpawnPos().getY()), (world.getLevelData().getSpawnPos().getZ())),
-										Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos missile");
+						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
+								Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos missile");
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 4) {
 				for (int index3 = 0; index3 < (int) Mth.nextDouble(RandomSource.create(), 1, 16); index3++) {
 					EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount = EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					if (world instanceof ServerLevel _level)
-						_level.getServer().getCommands()
-								.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getSpawnPos().getX()), (world.getLevelData().getSpawnPos().getY()), (world.getLevelData().getSpawnPos().getZ())),
-										Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos missile");
+						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
+								Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos missile");
 				}
 			}
 		}

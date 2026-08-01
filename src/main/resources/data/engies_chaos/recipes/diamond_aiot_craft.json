@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "diamondaiot",
+  "ingredients": [
+    {
+      "item": "minecraft:diamond_sword"
+    },
+    {
+      "item": "minecraft:diamond_pickaxe"
+    },
+    {
+      "item": "minecraft:diamond_axe"
+    },
+    {
+      "item": "minecraft:diamond_shovel"
+    },
+    {
+      "item": "minecraft:diamond_hoe"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:diamond_aiot",
+    "count": 1
+  }
+}

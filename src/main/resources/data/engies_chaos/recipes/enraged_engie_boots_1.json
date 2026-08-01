@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "enragedengieboots",
+  "pattern": [
+    "a a",
+    "a a"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:enraged_engie_essence"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:enraged_engies_boots",
+    "count": 1
+  }
+}

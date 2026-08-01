@@ -1,6 +1,6 @@
 package engiegames.engies_chaos.procedures;
 
-import net.neoforged.neoforge.items.ItemHandlerHelper;
+import net.minecraftforge.items.ItemHandlerHelper;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
@@ -29,15 +29,17 @@ public class BrowniesOpenedRightclickedProcedure {
 		} else {
 			{
 				Entity _ent = entity;
-				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @s engies_chaos:brownie");
+				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @s allaboutengie:brownie");
 				}
 			}
 			{
-				EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-				_vars.browniescount = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).browniescount + 1;
-				_vars.syncPlayerVariables(entity);
+				double _setval = (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).browniescount + 1;
+				entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.browniescount = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
 		}
 	}

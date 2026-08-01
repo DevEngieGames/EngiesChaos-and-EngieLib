@@ -1,10 +1,9 @@
 {
   "replace": false,
   "values": [
-    "allaboutengie:enraged_engie_cold_season",
-    "allaboutengie:enraged_engie_halloween",
-    "allaboutengie:enraged_engie_style_3",
-    "allaboutengie:enraged_engie",
-    "allaboutengie:enraged_engie_style_2"
+    "engies_chaos:engie_poc_enraged_engie",
+    "engies_chaos:nightmare_enraged_engie",
+    "engies_chaos:insanity_enraged_engie",
+    "engies_chaos:enraged_engie"
   ]
 }

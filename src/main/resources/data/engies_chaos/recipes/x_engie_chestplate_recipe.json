@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:x_engie_upgrade_chestplate"
+  },
+  "addition": {
+    "item": "engies_chaos:roughian_engie_gamess_chestplate"
+  },
+  "result": {
+    "item": "engies_chaos:x_engie_chestplate"
+  }
+}

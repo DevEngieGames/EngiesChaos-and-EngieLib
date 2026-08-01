@@ -1,7 +1,7 @@
 {
-  "parent": "engies_chaos:custom/hostileplush",
+  "parent": "engies_chaos:custom/outraged_netherite_plush",
   "textures": {
-    "0": "engies_chaos:block/netheriteoutragedengie",
+    "1": "engies_chaos:block/outragednetheritewithcape",
     "particle": "engies_chaos:item/volc"
   }
 }

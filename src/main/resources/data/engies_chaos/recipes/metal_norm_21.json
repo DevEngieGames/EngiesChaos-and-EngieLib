@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "metalwoodtometal",
+  "pattern": [
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:metal_chest_cherry"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:metal_chest",
+    "count": 1
+  }
+}

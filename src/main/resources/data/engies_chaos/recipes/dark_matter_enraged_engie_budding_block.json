@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "darkmatterenragedengiebuddingblock",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "b": {
+      "item": "engies_chaos:dark_matter_enraged_engie_block"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:budding_dark_matter_enraged_engie_block",
+    "count": 1
+  }
+}

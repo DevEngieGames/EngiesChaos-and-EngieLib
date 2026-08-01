@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:engie_scythe"
+  },
+  "addition": {
+    "item": "engies_chaos:engie_upgrade"
+  },
+  "result": {
+    "item": "engies_chaos:mindscape_engie_scythe"
+  }
+}

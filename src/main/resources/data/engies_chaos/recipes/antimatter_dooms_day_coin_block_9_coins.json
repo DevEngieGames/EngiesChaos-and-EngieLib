@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "antimatterdoomsdaycoinblocktocoins",
+  "ingredients": [
+    {
+      "item": "engies_chaos:antimatter_dooms_day_coin_block"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:antimatter_doomsday_coin",
+    "count": 9
+  }
+}

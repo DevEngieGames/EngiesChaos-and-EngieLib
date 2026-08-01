@@ -13,35 +13,46 @@ public class CallBackProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerDeathX != 0 && entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerDeathY != -250 && entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerDeathZ != 0) {
+		if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerDeathX != 0
+				&& (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerDeathY != -250
+				&& (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerDeathZ != 0) {
 			{
 				Entity _ent = entity;
-				_ent.teleportTo(entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerDeathX, entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerDeathY, entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerDeathZ);
+				_ent.teleportTo(((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerDeathX),
+						((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerDeathY),
+						((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerDeathZ));
 				if (_ent instanceof ServerPlayer _serverPlayer)
-					_serverPlayer.connection.teleport(entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerDeathX, entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerDeathY,
-							entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).PlayerDeathZ, _ent.getYRot(), _ent.getXRot());
+					_serverPlayer.connection.teleport(((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerDeathX),
+							((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerDeathY),
+							((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerDeathZ), _ent.getYRot(), _ent.getXRot());
 			}
-			if (entity instanceof Player _player && !_player.level().isClientSide())
+			if (entity instanceof Player _player && !_player.level.isClientSide())
 				_player.displayClientMessage(Component.literal("\u00A76Teleported you back to your death point!"), false);
 			EngiesChaosMod.queueServerWork(1, () -> {
 				{
-					EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-					_vars.PlayerDeathX = 0;
-					_vars.syncPlayerVariables(entity);
+					double _setval = 0;
+					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.PlayerDeathX = _setval;
+						capability.syncPlayerVariables(entity);
+					});
 				}
 				{
-					EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-					_vars.PlayerDeathY = -250;
-					_vars.syncPlayerVariables(entity);
+					double _setval = -250;
+					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.PlayerDeathY = _setval;
+						capability.syncPlayerVariables(entity);
+					});
 				}
 				{
-					EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-					_vars.PlayerDeathZ = 0;
-					_vars.syncPlayerVariables(entity);
+					double _setval = 0;
+					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.PlayerDeathZ = _setval;
+						capability.syncPlayerVariables(entity);
+					});
 				}
 			});
 		} else {
-			if (entity instanceof Player _player && !_player.level().isClientSide())
+			if (entity instanceof Player _player && !_player.level.isClientSide())
 				_player.displayClientMessage(Component.literal("\u00A7cYou cannot teleport back to your death point as you haven't died yet!"), false);
 		}
 	}

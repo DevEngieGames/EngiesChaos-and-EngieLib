@@ -1,182 +1,132 @@
 package engiegames.engies_chaos.item;
 
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
-import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.api.distmarker.OnlyIn;
-import net.neoforged.api.distmarker.Dist;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.equipment.EquipmentAssets;
-import net.minecraft.world.item.equipment.ArmorType;
-import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.tags.TagKey;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.client.resources.model.EquipmentClientInfo;
-import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.model.Model;
-import net.minecraft.client.model.HumanoidModel;
-import net.minecraft.client.Minecraft;
 
-import java.util.Map;
 import java.util.List;
-import java.util.Collections;
 
-import engiegames.engies_chaos.procedures.MEChestplateProcedure;
-import engiegames.engies_chaos.init.EngiesChaosModItems;
-import engiegames.engies_chaos.client.model.Modelengiearmor;
-
-import com.google.common.collect.Iterables;
-
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
 public abstract class CodeRedeemersItem extends ArmorItem {
-	public static ArmorMaterial ARMOR_MATERIAL = new ArmorMaterial(150, Map.of(ArmorType.BOOTS, 150, ArmorType.LEGGINGS, 150, ArmorType.CHESTPLATE, 150, ArmorType.HELMET, 150, ArmorType.BODY, 150), 28,
-			DeferredHolder.create(Registries.SOUND_EVENT, ResourceLocation.parse("item.armor.equip_netherite")), 12f, 0.6f, TagKey.create(Registries.ITEM, ResourceLocation.parse("engies_chaos:code_redeemers_repair_items")),
-			ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.parse("engies_chaos:code_redeemers")));
-
-	@SubscribeEvent
-	public static void registerItemExtensions(RegisterClientExtensionsEvent event) {
-		event.registerItem(new IClientItemExtensions() {
+	public CodeRedeemersItem(EquipmentSlot slot, Item.Properties properties) {
+		super(new ArmorMaterial() {
 			@Override
-			@OnlyIn(Dist.CLIENT)
-			public HumanoidModel getHumanoidArmorModel(ItemStack itemStack, EquipmentClientInfo.LayerType layerType, Model original) {
-				return new HumanoidModel(new ModelPart(Collections.emptyList(),
-						Map.of("head",
-								new ModelPart(Collections.emptyList(),
-										Map.of("head", new Modelengiearmor(Minecraft.getInstance().getEntityModels().bakeLayer(Modelengiearmor.LAYER_LOCATION)).Head, "hat", new ModelPart(Collections.emptyList(), Collections.emptyMap()))),
-								"body", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "right_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "left_arm",
-								new ModelPart(Collections.emptyList(), Collections.emptyMap()), "right_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "left_leg",
-								new ModelPart(Collections.emptyList(), Collections.emptyMap()))));
+			public int getDurabilityForSlot(EquipmentSlot slot) {
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 50;
 			}
 
 			@Override
-			public ResourceLocation getArmorTexture(ItemStack stack, EquipmentClientInfo.LayerType type, EquipmentClientInfo.Layer layer, ResourceLocation _default) {
-				return ResourceLocation.parse("engies_chaos:textures/entities/coderedeemerarmorlayer1.png");
-			}
-		}, EngiesChaosModItems.CODE_REDEEMERS_HELMET.get());
-		event.registerItem(new IClientItemExtensions() {
-			@Override
-			@OnlyIn(Dist.CLIENT)
-			public HumanoidModel getHumanoidArmorModel(ItemStack itemStack, EquipmentClientInfo.LayerType layerType, Model original) {
-				return new HumanoidModel(new ModelPart(Collections.emptyList(),
-						Map.of("body", new Modelengiearmor(Minecraft.getInstance().getEntityModels().bakeLayer(Modelengiearmor.LAYER_LOCATION)).Body, "left_arm",
-								new Modelengiearmor(Minecraft.getInstance().getEntityModels().bakeLayer(Modelengiearmor.LAYER_LOCATION)).LeftArm, "right_arm",
-								new Modelengiearmor(Minecraft.getInstance().getEntityModels().bakeLayer(Modelengiearmor.LAYER_LOCATION)).RightArm, "head",
-								new ModelPart(Collections.emptyList(), Map.of("hat", new ModelPart(Collections.emptyList(), Collections.emptyMap()))), "right_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "left_leg",
-								new ModelPart(Collections.emptyList(), Collections.emptyMap()))));
+			public int getDefenseForSlot(EquipmentSlot slot) {
+				return new int[]{50, 50, 50, 50}[slot.getIndex()];
 			}
 
 			@Override
-			public ResourceLocation getArmorTexture(ItemStack stack, EquipmentClientInfo.LayerType type, EquipmentClientInfo.Layer layer, ResourceLocation _default) {
-				return ResourceLocation.parse("engies_chaos:textures/entities/coderedeemerarmorlayer1.png");
-			}
-		}, EngiesChaosModItems.CODE_REDEEMERS_CHESTPLATE.get());
-		event.registerItem(new IClientItemExtensions() {
-			@Override
-			@OnlyIn(Dist.CLIENT)
-			public HumanoidModel getHumanoidArmorModel(ItemStack itemStack, EquipmentClientInfo.LayerType layerType, Model original) {
-				return new HumanoidModel(new ModelPart(Collections.emptyList(),
-						Map.of("left_leg", new Modelengiearmor(Minecraft.getInstance().getEntityModels().bakeLayer(Modelengiearmor.LAYER_LOCATION)).LeftLeg2, "right_leg",
-								new Modelengiearmor(Minecraft.getInstance().getEntityModels().bakeLayer(Modelengiearmor.LAYER_LOCATION)).RightLeg2, "head",
-								new ModelPart(Collections.emptyList(), Map.of("hat", new ModelPart(Collections.emptyList(), Collections.emptyMap()))), "body", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "right_arm",
-								new ModelPart(Collections.emptyList(), Collections.emptyMap()), "left_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()))));
+			public int getEnchantmentValue() {
+				return 12;
 			}
 
 			@Override
-			public ResourceLocation getArmorTexture(ItemStack stack, EquipmentClientInfo.LayerType type, EquipmentClientInfo.Layer layer, ResourceLocation _default) {
-				return ResourceLocation.parse("engies_chaos:textures/entities/coderedeemerarmorlayer2.png");
-			}
-		}, EngiesChaosModItems.CODE_REDEEMERS_LEGGINGS.get());
-		event.registerItem(new IClientItemExtensions() {
-			@Override
-			@OnlyIn(Dist.CLIENT)
-			public HumanoidModel getHumanoidArmorModel(ItemStack itemStack, EquipmentClientInfo.LayerType layerType, Model original) {
-				return new HumanoidModel(new ModelPart(Collections.emptyList(),
-						Map.of("left_leg", new Modelengiearmor(Minecraft.getInstance().getEntityModels().bakeLayer(Modelengiearmor.LAYER_LOCATION)).LeftLeg, "right_leg",
-								new Modelengiearmor(Minecraft.getInstance().getEntityModels().bakeLayer(Modelengiearmor.LAYER_LOCATION)).RightLeg, "head",
-								new ModelPart(Collections.emptyList(), Map.of("hat", new ModelPart(Collections.emptyList(), Collections.emptyMap()))), "body", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "right_arm",
-								new ModelPart(Collections.emptyList(), Collections.emptyMap()), "left_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()))));
+			public SoundEvent getEquipSound() {
+				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_netherite"));
 			}
 
 			@Override
-			public ResourceLocation getArmorTexture(ItemStack stack, EquipmentClientInfo.LayerType type, EquipmentClientInfo.Layer layer, ResourceLocation _default) {
-				return ResourceLocation.parse("engies_chaos:textures/entities/coderedeemerarmorlayer1.png");
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of();
 			}
-		}, EngiesChaosModItems.CODE_REDEEMERS_BOOTS.get());
-	}
 
-	private CodeRedeemersItem(ArmorType type, Item.Properties properties) {
-		super(ARMOR_MATERIAL, type, properties);
+			@Override
+			public String getName() {
+				return "code_redeemers";
+			}
+
+			@Override
+			public float getToughness() {
+				return 2.5f;
+			}
+
+			@Override
+			public float getKnockbackResistance() {
+				return 0.2f;
+			}
+		}, slot, properties);
 	}
 
 	public static class Helmet extends CodeRedeemersItem {
-		public Helmet(Item.Properties properties) {
-			super(ArmorType.HELMET, properties);
+		public Helmet() {
+			super(EquipmentSlot.HEAD, new Item.Properties().tab(null));
 		}
 
 		@Override
-		@OnlyIn(Dist.CLIENT)
-		public void appendHoverText(ItemStack itemstack, Item.TooltipContext context, List<Component> list, TooltipFlag flag) {
-			super.appendHoverText(itemstack, context, list, flag);
+		public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
+			super.appendHoverText(itemstack, level, list, flag);
 			list.add(Component.translatable("item.engies_chaos.code_redeemers_helmet.description_0"));
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "engies_chaos:textures/models/armor/coderedeemer__layer_1.png";
 		}
 	}
 
 	public static class Chestplate extends CodeRedeemersItem {
-		public Chestplate(Item.Properties properties) {
-			super(ArmorType.CHESTPLATE, properties);
+		public Chestplate() {
+			super(EquipmentSlot.CHEST, new Item.Properties().tab(null));
 		}
 
 		@Override
-		@OnlyIn(Dist.CLIENT)
-		public void appendHoverText(ItemStack itemstack, Item.TooltipContext context, List<Component> list, TooltipFlag flag) {
-			super.appendHoverText(itemstack, context, list, flag);
+		public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
+			super.appendHoverText(itemstack, level, list, flag);
 			list.add(Component.translatable("item.engies_chaos.code_redeemers_chestplate.description_0"));
 		}
 
 		@Override
-		public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
-			super.inventoryTick(itemstack, world, entity, slot, selected);
-			if (entity instanceof Player player && Iterables.contains(player.getArmorSlots(), itemstack)) {
-				MEChestplateProcedure.execute(entity);
-			}
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "engies_chaos:textures/models/armor/coderedeemer__layer_1.png";
 		}
 	}
 
 	public static class Leggings extends CodeRedeemersItem {
-		public Leggings(Item.Properties properties) {
-			super(ArmorType.LEGGINGS, properties);
+		public Leggings() {
+			super(EquipmentSlot.LEGS, new Item.Properties().tab(null));
 		}
 
 		@Override
-		@OnlyIn(Dist.CLIENT)
-		public void appendHoverText(ItemStack itemstack, Item.TooltipContext context, List<Component> list, TooltipFlag flag) {
-			super.appendHoverText(itemstack, context, list, flag);
+		public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
+			super.appendHoverText(itemstack, level, list, flag);
 			list.add(Component.translatable("item.engies_chaos.code_redeemers_leggings.description_0"));
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "engies_chaos:textures/models/armor/coderedeemer__layer_2.png";
 		}
 	}
 
 	public static class Boots extends CodeRedeemersItem {
-		public Boots(Item.Properties properties) {
-			super(ArmorType.BOOTS, properties);
+		public Boots() {
+			super(EquipmentSlot.FEET, new Item.Properties().tab(null));
 		}
 
 		@Override
-		@OnlyIn(Dist.CLIENT)
-		public void appendHoverText(ItemStack itemstack, Item.TooltipContext context, List<Component> list, TooltipFlag flag) {
-			super.appendHoverText(itemstack, context, list, flag);
+		public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
+			super.appendHoverText(itemstack, level, list, flag);
 			list.add(Component.translatable("item.engies_chaos.code_redeemers_boots.description_0"));
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "engies_chaos:textures/models/armor/coderedeemer__layer_1.png";
 		}
 	}
 }

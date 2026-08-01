@@ -2,8 +2,10 @@ package engiegames.engies_chaos.item;
 
 import net.minecraft.world.item.Item;
 
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
+
 public class AntimatterItem extends Item {
-	public AntimatterItem(Item.Properties properties) {
-		super(properties);
+	public AntimatterItem() {
+		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}
 }

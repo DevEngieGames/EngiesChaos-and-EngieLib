@@ -1,22 +1,22 @@
 package engiegames.engies_chaos.client.gui;
 
-import net.neoforged.neoforge.network.PacketDistributor;
-
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.Checkbox;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.GuiGraphics;
 
 import engiegames.engies_chaos.world.inventory.SuperDoomsDayTradeUIMenu;
+import engiegames.engies_chaos.procedures.DenymarkdisplayconditionProcedure;
+import engiegames.engies_chaos.procedures.CheckmarkdisplayconditionProcedure;
 import engiegames.engies_chaos.network.SuperDoomsDayTradeUIButtonMessage;
 import engiegames.engies_chaos.init.EngiesChaosModScreens;
+import engiegames.engies_chaos.EngiesChaosMod;
 
+import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 public class SuperDoomsDayTradeUIScreen extends AbstractContainerScreen<SuperDoomsDayTradeUIMenu> implements EngiesChaosModScreens.ScreenAccessor {
@@ -26,6 +26,7 @@ public class SuperDoomsDayTradeUIScreen extends AbstractContainerScreen<SuperDoo
 	private boolean menuStateUpdateActive = false;
 	Checkbox scythetrade;
 	Checkbox bantrade;
+	Button button_trade;
 	Button button_swap;
 
 	public SuperDoomsDayTradeUIScreen(SuperDoomsDayTradeUIMenu container, Inventory inventory, Component text) {
@@ -45,30 +46,40 @@ public class SuperDoomsDayTradeUIScreen extends AbstractContainerScreen<SuperDoo
 		menuStateUpdateActive = false;
 	}
 
-	private static final ResourceLocation texture = ResourceLocation.parse("engies_chaos:textures/screens/super_dooms_day_trade_ui.png");
+	private static final ResourceLocation texture = new ResourceLocation("engies_chaos:textures/screens/super_dooms_day_trade_ui.png");
 
 	@Override
-	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		super.render(guiGraphics, mouseX, mouseY, partialTicks);
+	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
+		this.renderBackground(ms);
+		super.render(ms, mouseX, mouseY, partialTicks);
 		boolean customTooltipShown = false;
 		if (mouseX > leftPos + 69 && mouseX < leftPos + 93 && mouseY > topPos + 4 && mouseY < topPos + 28) {
-			guiGraphics.renderTooltip(font, Component.translatable("gui.engies_chaos.super_dooms_day_trade_ui.tooltip_check_this_to_trade_for_a_scythe"), mouseX, mouseY);
+			this.renderTooltip(ms, Component.translatable("gui.engies_chaos.super_dooms_day_trade_ui.tooltip_check_this_to_trade_for_a_scythe"), mouseX, mouseY);
 			customTooltipShown = true;
 		}
 		if (mouseX > leftPos + 96 && mouseX < leftPos + 120 && mouseY > topPos + 4 && mouseY < topPos + 28) {
-			guiGraphics.renderTooltip(font, Component.translatable("gui.engies_chaos.super_dooms_day_trade_ui.tooltip_check_this_to_trade_for_a_ban_ha"), mouseX, mouseY);
+			this.renderTooltip(ms, Component.translatable("gui.engies_chaos.super_dooms_day_trade_ui.tooltip_check_this_to_trade_for_a_ban_ha"), mouseX, mouseY);
 			customTooltipShown = true;
 		}
 		if (!customTooltipShown)
-			this.renderTooltip(guiGraphics, mouseX, mouseY);
+			this.renderTooltip(ms, mouseX, mouseY);
 	}
 
 	@Override
-	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
+	protected void renderBg(PoseStack ms, float partialTicks, int mouseX, int mouseY) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		guiGraphics.blit(RenderType::guiTextured, texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		RenderSystem.setShaderTexture(0, texture);
+		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		if (CheckmarkdisplayconditionProcedure.execute(world)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/checkmark.png"));
+			this.blit(ms, this.leftPos + 154, this.topPos + 8, 0, 0, 16, 16, 16, 16);
+		}
+		if (DenymarkdisplayconditionProcedure.execute(world)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/denymark.png"));
+			this.blit(ms, this.leftPos + 127, this.topPos + 8, 0, 0, 16, 16, 16, 16);
+		}
 		RenderSystem.disableBlend();
 	}
 
@@ -82,30 +93,48 @@ public class SuperDoomsDayTradeUIScreen extends AbstractContainerScreen<SuperDoo
 	}
 
 	@Override
-	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+	protected void renderLabels(PoseStack ms, int mouseX, int mouseY) {
+		this.font.draw(ms, Component.translatable("gui.engies_chaos.super_dooms_day_trade_ui.label_trade_ui_state_normal"), 5, -11, -1);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		button_swap = Button.builder(Component.translatable("gui.engies_chaos.super_dooms_day_trade_ui.button_swap"), e -> {
+		button_trade = new Button(this.leftPos + 9, this.topPos + 29, 51, 20, Component.translatable("gui.engies_chaos.super_dooms_day_trade_ui.button_trade"), e -> {
 			int x = SuperDoomsDayTradeUIScreen.this.x;
 			int y = SuperDoomsDayTradeUIScreen.this.y;
 			if (true) {
-				PacketDistributor.sendToServer(new SuperDoomsDayTradeUIButtonMessage(0, x, y, z));
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new SuperDoomsDayTradeUIButtonMessage(0, x, y, z));
 				SuperDoomsDayTradeUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}).bounds(this.leftPos + 9, this.topPos + 29, 51, 20).build();
+		});
+		this.addRenderableWidget(button_trade);
+		button_swap = new Button(this.leftPos + 9, this.topPos + 6, 51, 20, Component.translatable("gui.engies_chaos.super_dooms_day_trade_ui.button_swap"), e -> {
+			int x = SuperDoomsDayTradeUIScreen.this.x;
+			int y = SuperDoomsDayTradeUIScreen.this.y;
+			if (true) {
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new SuperDoomsDayTradeUIButtonMessage(1, x, y, z));
+				SuperDoomsDayTradeUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
+			}
+		});
 		this.addRenderableWidget(button_swap);
-		scythetrade = Checkbox.builder(Component.translatable("gui.engies_chaos.super_dooms_day_trade_ui.scythetrade"), this.font).pos(this.leftPos + 71, this.topPos + 6).onValueChange((checkbox, value) -> {
-			if (!menuStateUpdateActive)
-				menu.sendMenuStateUpdate(entity, 1, "scythetrade", value, false);
-		}).build();
+		scythetrade = new Checkbox(this.leftPos + 71, this.topPos + 6, 20, 20, Component.translatable("gui.engies_chaos.super_dooms_day_trade_ui.scythetrade"), false) {
+			@Override
+			public void onPress() {
+				super.onPress();
+				if (!menuStateUpdateActive)
+					menu.sendMenuStateUpdate(entity, 1, "scythetrade", this.selected(), false);
+			}
+		};
 		this.addRenderableWidget(scythetrade);
-		bantrade = Checkbox.builder(Component.translatable("gui.engies_chaos.super_dooms_day_trade_ui.bantrade"), this.font).pos(this.leftPos + 98, this.topPos + 6).onValueChange((checkbox, value) -> {
-			if (!menuStateUpdateActive)
-				menu.sendMenuStateUpdate(entity, 1, "bantrade", value, false);
-		}).build();
+		bantrade = new Checkbox(this.leftPos + 98, this.topPos + 6, 20, 20, Component.translatable("gui.engies_chaos.super_dooms_day_trade_ui.bantrade"), false) {
+			@Override
+			public void onPress() {
+				super.onPress();
+				if (!menuStateUpdateActive)
+					menu.sendMenuStateUpdate(entity, 1, "bantrade", this.selected(), false);
+			}
+		};
 		this.addRenderableWidget(bantrade);
 	}
 }

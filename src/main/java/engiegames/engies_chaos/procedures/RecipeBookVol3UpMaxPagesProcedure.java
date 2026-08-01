@@ -9,9 +9,11 @@ public class RecipeBookVol3UpMaxPagesProcedure {
 		if (entity == null)
 			return;
 		{
-			EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-			_vars.pageNumber = 29;
-			_vars.syncPlayerVariables(entity);
+			double _setval = 29;
+			entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.pageNumber = _setval;
+				capability.syncPlayerVariables(entity);
+			});
 		}
 	}
 }

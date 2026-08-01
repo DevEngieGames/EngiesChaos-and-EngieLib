@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "coderedeemersaiot",
+  "ingredients": [
+    {
+      "item": "engies_chaos:code_redeemers_sword"
+    },
+    {
+      "item": "engies_chaos:code_redeemers_pickaxe"
+    },
+    {
+      "item": "engies_chaos:code_redeemers_axe"
+    },
+    {
+      "item": "engies_chaos:code_redeemers_shovel"
+    },
+    {
+      "item": "engies_chaos:code_redeemers_hoe"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:code_redeemers_aiot",
+    "count": 1
+  }
+}

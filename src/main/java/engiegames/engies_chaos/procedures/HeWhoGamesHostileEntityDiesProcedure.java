@@ -53,16 +53,16 @@ public class HeWhoGamesHostileEntityDiesProcedure {
 		}
 		{
 			Entity _ent = entity;
-			if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+			if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 				_ent.getServer().getCommands().performPrefixedCommand(
-						new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
-								_ent.level().getServer(), _ent),
+						new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
+								_ent.level.getServer(), _ent),
 						"tellraw @p [\"\",{\"text\":\"No longer being haunted by the Spirit, you find yourself some items in return.\",\"bold\":true,\"color\":\"gray\"},{\"text\":\"\\n\",\"bold\":true},{\"text\":\"Congratulations \",\"bold\":true,\"color\":\"gold\"},{\"selector\":\"@p\",\"bold\":true,\"underlined\":true},{\"text\":\".\",\"bold\":true,\"color\":\"gold\"}]");
 			}
 		}
-		if (!(findEntityInWorldRange(world, HeWhoGamesEntity.class, x, y, z, 100000)).level().isClientSide())
+		if (!(findEntityInWorldRange(world, HeWhoGamesEntity.class, x, y, z, 100000)).level.isClientSide())
 			(findEntityInWorldRange(world, HeWhoGamesEntity.class, x, y, z, 100000)).discard();
-		if (!(findEntityInWorldRange(world, HeWhoGamesHostileEntity.class, x, y, z, 100000)).level().isClientSide())
+		if (!(findEntityInWorldRange(world, HeWhoGamesHostileEntity.class, x, y, z, 100000)).level.isClientSide())
 			(findEntityInWorldRange(world, HeWhoGamesHostileEntity.class, x, y, z, 100000)).discard();
 		EngiesChaosModVariables.MapVariables.get(world).hewhowatches = false;
 		EngiesChaosModVariables.MapVariables.get(world).syncData(world);

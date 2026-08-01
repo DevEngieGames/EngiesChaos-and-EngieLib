@@ -1,28 +1,40 @@
 package engiegames.engies_chaos.item;
 
-import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.tags.TagKey;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.Registries;
 
-import engiegames.engies_chaos.procedures.SuperDoomsDayToolObtainProcedure;
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
+import engiegames.engies_chaos.init.EngiesChaosModItems;
 
 public class AntimatterSuperDoomsdaySwordItem extends SwordItem {
-	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 18000, 84f, 0, 22, TagKey.create(Registries.ITEM, ResourceLocation.parse("engies_chaos:antimatter_super_doomsday_sword_repair_items")));
+	public AntimatterSuperDoomsdaySwordItem() {
+		super(new Tier() {
+			public int getUses() {
+				return 18000;
+			}
 
-	public AntimatterSuperDoomsdaySwordItem(Item.Properties properties) {
-		super(TOOL_MATERIAL, 899f, 4.6f, properties);
-	}
+			public float getSpeed() {
+				return 84f;
+			}
 
-	@Override
-	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
-		super.inventoryTick(itemstack, world, entity, slot, selected);
-		SuperDoomsDayToolObtainProcedure.execute(entity, itemstack);
+			public float getAttackDamageBonus() {
+				return 896f;
+			}
+
+			public int getLevel() {
+				return 4;
+			}
+
+			public int getEnchantmentValue() {
+				return 22;
+			}
+
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.ANTIMATTER_SUPER_DOOMSDAY_COIN.get()));
+			}
+		}, 3, 4.6f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}
 }

@@ -1,23 +1,44 @@
 package engiegames.engies_chaos.item;
 
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.tags.TagKey;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.Registries;
 
 import engiegames.engies_chaos.procedures.BiblicallyAccurateToolObtainProcedure;
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
+import engiegames.engies_chaos.init.EngiesChaosModBlocks;
 
 public class BiblicallyAccurateEngieSwordItem extends SwordItem {
-	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 2250, 27f, 0, 9, TagKey.create(Registries.ITEM, ResourceLocation.parse("engies_chaos:biblically_accurate_engie_sword_repair_items")));
+	public BiblicallyAccurateEngieSwordItem() {
+		super(new Tier() {
+			public int getUses() {
+				return 2250;
+			}
 
-	public BiblicallyAccurateEngieSwordItem(Item.Properties properties) {
-		super(TOOL_MATERIAL, 124f, -1.4f, properties);
+			public float getSpeed() {
+				return 27f;
+			}
+
+			public float getAttackDamageBonus() {
+				return 121f;
+			}
+
+			public int getLevel() {
+				return 3;
+			}
+
+			public int getEnchantmentValue() {
+				return 9;
+			}
+
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of(new ItemStack(EngiesChaosModBlocks.BIBLICALLY_ACCURATE_BLOCK.get()));
+			}
+		}, 3, -1.4f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}
 
 	@Override

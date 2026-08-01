@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "template": [],
-  "base": "engies_chaos:roughian_engie_games_aiot",
-  "addition": "engies_chaos:x_engie_upgrade_aiot",
-  "result": {
-    "id": "engies_chaos:x_engie_aiot"
-  }
-}

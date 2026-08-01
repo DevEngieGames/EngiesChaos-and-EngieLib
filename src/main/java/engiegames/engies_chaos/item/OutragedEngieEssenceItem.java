@@ -3,8 +3,10 @@ package engiegames.engies_chaos.item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Item;
 
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
+
 public class OutragedEngieEssenceItem extends Item {
-	public OutragedEngieEssenceItem(Item.Properties properties) {
-		super(properties.rarity(Rarity.UNCOMMON));
+	public OutragedEngieEssenceItem() {
+		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS).rarity(Rarity.EPIC));
 	}
 }

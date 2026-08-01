@@ -1,9 +1,9 @@
 package engiegames.engies_chaos.procedures;
 
-import net.neoforged.neoforge.event.tick.LevelTickEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.bus.api.Event;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.TickEvent;
 
 import net.minecraft.world.level.LevelAccessor;
 
@@ -11,11 +11,13 @@ import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 
-@EventBusSubscriber
+@Mod.EventBusSubscriber
 public class DayNightCheckProcedure {
 	@SubscribeEvent
-	public static void onWorldTick(LevelTickEvent.Post event) {
-		execute(event, event.getLevel());
+	public static void onWorldTick(TickEvent.LevelTickEvent event) {
+		if (event.phase == TickEvent.Phase.END) {
+			execute(event, event.level);
+		}
 	}
 
 	public static void execute(LevelAccessor world) {

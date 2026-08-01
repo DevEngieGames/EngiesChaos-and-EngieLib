@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "darkmattersuperdoomsdaycointoblock",
+  "ingredients": [
+    {
+      "item": "engies_chaos:dark_matter_super_dooms_day_coin"
+    },
+    {
+      "item": "engies_chaos:dark_matter_super_dooms_day_coin"
+    },
+    {
+      "item": "engies_chaos:dark_matter_super_dooms_day_coin"
+    },
+    {
+      "item": "engies_chaos:dark_matter_super_dooms_day_coin"
+    },
+    {
+      "item": "engies_chaos:dark_matter_super_dooms_day_coin"
+    },
+    {
+      "item": "engies_chaos:dark_matter_super_dooms_day_coin"
+    },
+    {
+      "item": "engies_chaos:dark_matter_super_dooms_day_coin"
+    },
+    {
+      "item": "engies_chaos:dark_matter_super_dooms_day_coin"
+    },
+    {
+      "item": "engies_chaos:dark_matter_super_dooms_day_coin"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:dark_matter_super_dooms_day_coin_block",
+    "count": 1
+  }
+}

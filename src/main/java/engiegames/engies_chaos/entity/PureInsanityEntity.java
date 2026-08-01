@@ -1,6 +1,8 @@
 package engiegames.engies_chaos.entity;
 
-import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.network.PlayMessages;
+import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
@@ -16,44 +18,55 @@ import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.SpawnGroupData;
-import net.minecraft.world.entity.Pose;
+import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.EntitySpawnReason;
-import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.nbt.CompoundTag;
 
 import javax.annotation.Nullable;
 
-import engiegames.engies_chaos.procedures.MobHitboxScalingProcedure;
 import engiegames.engies_chaos.procedures.EntitySpawnsProcedure;
 import engiegames.engies_chaos.procedures.DoomsDayMobsFightEachotherToggleProcedure;
-import engiegames.engies_chaos.procedures.AnyEngieDiesDropItemProcedure;
+import engiegames.engies_chaos.procedures.AnyEngieDiesAddCountProcedure;
+import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class PureInsanityEntity extends Monster {
+	public final AnimationState animationState0 = new AnimationState();
+
+	public PureInsanityEntity(PlayMessages.SpawnEntity packet, Level world) {
+		this(EngiesChaosModEntities.PURE_INSANITY.get(), world);
+	}
+
 	public PureInsanityEntity(EntityType<PureInsanityEntity> type, Level world) {
 		super(type, world);
+		maxUpStep = 1f;
 		xpReward = 525;
 		setNoAi(false);
 		setPersistenceRequired();
 	}
 
 	@Override
+	public Packet<?> getAddEntityPacket() {
+		return NetworkHooks.getEntitySpawningPacket(this);
+	}
+
+	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 3.3, false) {
+		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1, false) {
 			@Override
-			protected boolean canPerformAttack(LivingEntity entity) {
-				return this.isTimeToAttack() && this.mob.distanceToSqr(entity) < (this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth()) && this.mob.getSensing().hasLineOfSight(entity);
+			protected double getAttackReachSqr(LivingEntity entity) {
+				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
 		});
 		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
@@ -66,7 +79,7 @@ public class PureInsanityEntity extends Monster {
 				double y = PureInsanityEntity.this.getY();
 				double z = PureInsanityEntity.this.getZ();
 				Entity entity = PureInsanityEntity.this;
-				Level world = PureInsanityEntity.this.level();
+				Level world = PureInsanityEntity.this.level;
 				return super.canUse() && DoomsDayMobsFightEachotherToggleProcedure.execute(world);
 			}
 
@@ -76,7 +89,7 @@ public class PureInsanityEntity extends Monster {
 				double y = PureInsanityEntity.this.getY();
 				double z = PureInsanityEntity.this.getZ();
 				Entity entity = PureInsanityEntity.this;
-				Level world = PureInsanityEntity.this.level();
+				Level world = PureInsanityEntity.this.level;
 				return super.canContinueToUse() && DoomsDayMobsFightEachotherToggleProcedure.execute(world);
 			}
 		});
@@ -88,74 +101,56 @@ public class PureInsanityEntity extends Monster {
 	}
 
 	@Override
+	public MobType getMobType() {
+		return MobType.UNDEFINED;
+	}
+
+	@Override
 	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
 		return false;
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.hurt"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.death"));
-	}
-
-	@Override
-	public boolean hurtServer(ServerLevel level, DamageSource damagesource, float amount) {
-		if (damagesource.is(DamageTypes.IN_FIRE))
-			return false;
-		if (damagesource.is(DamageTypes.LIGHTNING_BOLT))
-			return false;
-		return super.hurtServer(level, damagesource, amount);
-	}
-
-	@Override
-	public boolean fireImmune() {
-		return true;
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
 	}
 
 	@Override
 	public void die(DamageSource source) {
 		super.die(source);
-		AnyEngieDiesDropItemProcedure.execute(this.level(), this, source.getEntity());
+		AnyEngieDiesAddCountProcedure.execute(this, source.getEntity());
 	}
 
 	@Override
-	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, EntitySpawnReason reason, @Nullable SpawnGroupData livingdata) {
-		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata);
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
+		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
 		EntitySpawnsProcedure.execute(world, this);
 		return retval;
 	}
 
 	@Override
-	public void baseTick() {
-		super.baseTick();
-		this.refreshDimensions();
+	public void tick() {
+		super.tick();
+		if (this.level.isClientSide()) {
+			this.animationState0.startIfStopped(this.tickCount);
+		}
 	}
 
-	@Override
-	public EntityDimensions getDefaultDimensions(Pose pose) {
-		Entity entity = this;
-		Level world = this.level();
-		double x = this.getX();
-		double y = this.getY();
-		double z = this.getZ();
-		return super.getDefaultDimensions(pose).scale((float) MobHitboxScalingProcedure.execute());
-	}
-
-	public static void init(RegisterSpawnPlacementsEvent event) {
+	public static void init() {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
-		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.25);
+		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.5);
 		builder = builder.add(Attributes.MAX_HEALTH, 1024);
 		builder = builder.add(Attributes.ARMOR, 50);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 125);
-		builder = builder.add(Attributes.FOLLOW_RANGE, 48);
-		builder = builder.add(Attributes.STEP_HEIGHT, 1);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 100);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
 		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 3);
 		return builder;
 	}

@@ -1,9 +1,9 @@
 package engiegames.engies_chaos.procedures;
 
-import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.bus.api.Event;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.ItemStack;
@@ -19,12 +19,12 @@ import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 import engiegames.engies_chaos.init.EngiesChaosModAttributes;
 
-@EventBusSubscriber
+@Mod.EventBusSubscriber
 public class AntimatterDropsProcedure {
 	@SubscribeEvent
 	public static void onEntityDeath(LivingDeathEvent event) {
-		if (event.getEntity() != null) {
-			execute(event, event.getEntity().level(), event.getEntity(), event.getSource().getEntity());
+		if (event != null && event.getEntity() != null) {
+			execute(event, event.getEntity().level, event.getEntity(), event.getSource().getEntity());
 		}
 	}
 
@@ -37,8 +37,8 @@ public class AntimatterDropsProcedure {
 			return;
 		if (EngiesChaosModVariables.MapVariables.get(world).antimatterdropcheck == true) {
 			if (sourceentity instanceof Player) {
-				if (Math.random() <= (entity instanceof LivingEntity _livingEntity1 && _livingEntity1.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER)
-						? _livingEntity1.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER).getValue()
+				if (Math.random() <= (entity instanceof LivingEntity _livingEntity1 && _livingEntity1.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
+						? _livingEntity1.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getValue()
 						: 0)) {
 					if (world instanceof ServerLevel _level) {
 						ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ANTIMATTER_FRAGMENT.get()));

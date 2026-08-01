@@ -1,9 +1,9 @@
 package engiegames.engies_chaos.procedures;
 
-import net.neoforged.neoforge.event.tick.LevelTickEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.bus.api.Event;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.TickEvent;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
@@ -24,11 +24,13 @@ import javax.annotation.Nullable;
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.EngiesChaosMod;
 
-@EventBusSubscriber
+@Mod.EventBusSubscriber
 public class EngiesWrathDialogueProcedure {
 	@SubscribeEvent
-	public static void onWorldTick(LevelTickEvent.Post event) {
-		execute(event, event.getLevel());
+	public static void onWorldTick(TickEvent.LevelTickEvent event) {
+		if (event.phase == TickEvent.Phase.END) {
+			execute(event, event.level);
+		}
 	}
 
 	public static void execute(LevelAccessor world) {
@@ -45,8 +47,7 @@ public class EngiesWrathDialogueProcedure {
 						EngiesChaosModVariables.MapVariables.get(world).TimeUntilNight = EngiesChaosModVariables.MapVariables.get(world).TimeUntilNight + 0.05;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						if (EngiesChaosModVariables.MapVariables.get(world).TimeUntilNight >= 43) {
-							if (world instanceof ServerLevel _serverLevel)
-								_serverLevel.getGameRules().getRule(GameRules.RULE_DOMOBSPAWNING).set(false, world.getServer());
+							world.getLevelData().getGameRules().getRule(GameRules.RULE_DOMOBSPAWNING).set(false, world.getServer());
 							if (world instanceof Level _lvl5 && _lvl5.isDay()) {
 								if (world instanceof ServerLevel _level)
 									_level.getServer().getCommands().performPrefixedCommand(
@@ -253,12 +254,9 @@ public class EngiesWrathDialogueProcedure {
 																	EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 																	EngiesChaosModVariables.MapVariables.get(world).BYEBYE = true;
 																	EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-																	if (world instanceof ServerLevel _serverLevel)
-																		_serverLevel.getGameRules().getRule(GameRules.RULE_DOMOBSPAWNING).set(true, world.getServer());
-																	if (world instanceof ServerLevel _serverLevel)
-																		_serverLevel.getGameRules().getRule(GameRules.RULE_DOFIRETICK).set(false, world.getServer());
-																	if (world instanceof ServerLevel _serverLevel)
-																		_serverLevel.getGameRules().getRule(GameRules.RULE_FIRE_DAMAGE).set(false, world.getServer());
+																	world.getLevelData().getGameRules().getRule(GameRules.RULE_DOMOBSPAWNING).set(true, world.getServer());
+																	world.getLevelData().getGameRules().getRule(GameRules.RULE_DOFIRETICK).set(false, world.getServer());
+																	world.getLevelData().getGameRules().getRule(GameRules.RULE_FIRE_DAMAGE).set(false, world.getServer());
 																});
 															});
 														});

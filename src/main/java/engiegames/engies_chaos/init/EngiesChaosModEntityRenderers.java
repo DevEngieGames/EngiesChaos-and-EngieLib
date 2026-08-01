@@ -3,10 +3,18 @@
  */
 package engiegames.engies_chaos.init;
 
-import net.neoforged.neoforge.client.event.EntityRenderersEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.api.distmarker.Dist;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.api.distmarker.Dist;
+
+import net.engiegames.reallaboutengie.client.renderer.OutragedEngieStyle2Renderer;
+import net.engiegames.reallaboutengie.client.renderer.MonstrosityEngieStyle2Renderer;
+import net.engiegames.reallaboutengie.client.renderer.HostileBiblicallyAccurateEngieStyle2Renderer;
+import net.engiegames.reallaboutengie.client.renderer.EnragedEngieStyle3Renderer;
+import net.engiegames.reallaboutengie.client.renderer.EnragedEngieStyle2Renderer;
+import net.engiegames.reallaboutengie.client.renderer.BiblicallyAccurateEngieStyle2Renderer;
+import net.engiegames.reallaboutengie.client.renderer.AngryEngieStyle2Renderer;
 
 import engiegames.engies_chaos.client.renderer.YellowLightningRenderer;
 import engiegames.engies_chaos.client.renderer.XEngieSharkoRenderer;
@@ -151,7 +159,7 @@ import engiegames.engies_chaos.client.renderer.AngryCreatorRiftedRenderer;
 import engiegames.engies_chaos.client.renderer.AngryCreatorRenderer;
 import engiegames.engies_chaos.client.renderer.AlienSharkoRenderer;
 
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class EngiesChaosModEntityRenderers {
 	@SubscribeEvent
 	public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
@@ -284,6 +292,13 @@ public class EngiesChaosModEntityRenderers {
 		event.registerEntityRenderer(EngiesChaosModEntities.APRIL_FOOLS_ENGIE_SHARKO.get(), AprilFoolsEngieSharkoRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.APRIL_FOOLS_RARE_ENGIE_SHARKO.get(), AprilFoolsRareEngieSharkoRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.APRIL_FOOLS_TIGER_SHARKO.get(), AprilFoolsTigerSharkoRenderer::new);
+		event.registerEntityRenderer(EngiesChaosModEntities.ANGRY_ENGIE_STYLE_2.get(), AngryEngieStyle2Renderer::new);
+		event.registerEntityRenderer(EngiesChaosModEntities.ENRAGED_ENGIE_STYLE_2.get(), EnragedEngieStyle2Renderer::new);
+		event.registerEntityRenderer(EngiesChaosModEntities.ENRAGED_ENGIE_STYLE_3.get(), EnragedEngieStyle3Renderer::new);
+		event.registerEntityRenderer(EngiesChaosModEntities.OUTRAGED_ENGIE_STYLE_2.get(), OutragedEngieStyle2Renderer::new);
+		event.registerEntityRenderer(EngiesChaosModEntities.BIBLICALLY_ACCURATE_ENGIE_STYLE_2.get(), BiblicallyAccurateEngieStyle2Renderer::new);
+		event.registerEntityRenderer(EngiesChaosModEntities.HOSTILE_BIBLICALLY_ACCURATE_ENGIE_STYLE_2.get(), HostileBiblicallyAccurateEngieStyle2Renderer::new);
+		event.registerEntityRenderer(EngiesChaosModEntities.MONSTROSITY_ENGIE_STYLE_2.get(), MonstrosityEngieStyle2Renderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.UNCOMMON_SHARKO.get(), UncommonSharkoRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.X_ENGIE_GAMES.get(), XEngieGamesRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.RIFT_BALL.get(), RiftBallRenderer::new);

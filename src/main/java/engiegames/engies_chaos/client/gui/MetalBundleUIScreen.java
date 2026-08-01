@@ -1,24 +1,22 @@
 package engiegames.engies_chaos.client.gui;
 
-import net.neoforged.neoforge.network.PacketDistributor;
-
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.Minecraft;
 
 import engiegames.engies_chaos.world.inventory.MetalBundleUIMenu;
 import engiegames.engies_chaos.procedures.BundleDisplayNameCheckProcedure;
 import engiegames.engies_chaos.network.MetalBundleUIButtonMessage;
 import engiegames.engies_chaos.init.EngiesChaosModScreens;
+import engiegames.engies_chaos.EngiesChaosMod;
 
+import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 public class MetalBundleUIScreen extends AbstractContainerScreen<MetalBundleUIMenu> implements EngiesChaosModScreens.ScreenAccessor {
@@ -50,21 +48,23 @@ public class MetalBundleUIScreen extends AbstractContainerScreen<MetalBundleUIMe
 		menuStateUpdateActive = false;
 	}
 
-	private static final ResourceLocation texture = ResourceLocation.parse("engies_chaos:textures/screens/engie_bundle_ui.png");
+	private static final ResourceLocation texture = new ResourceLocation("engies_chaos:textures/screens/engie_bundle_ui.png");
 
 	@Override
-	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		super.render(guiGraphics, mouseX, mouseY, partialTicks);
-		ChangeBundleName.render(guiGraphics, mouseX, mouseY, partialTicks);
-		this.renderTooltip(guiGraphics, mouseX, mouseY);
+	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
+		this.renderBackground(ms);
+		super.render(ms, mouseX, mouseY, partialTicks);
+		ChangeBundleName.render(ms, mouseX, mouseY, partialTicks);
+		this.renderTooltip(ms, mouseX, mouseY);
 	}
 
 	@Override
-	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
+	protected void renderBg(PoseStack ms, float partialTicks, int mouseX, int mouseY) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		guiGraphics.blit(RenderType::guiTextured, texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		RenderSystem.setShaderTexture(0, texture);
+		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 		RenderSystem.disableBlend();
 	}
 
@@ -87,8 +87,8 @@ public class MetalBundleUIScreen extends AbstractContainerScreen<MetalBundleUIMe
 	}
 
 	@Override
-	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
-		guiGraphics.drawString(this.font, BundleDisplayNameCheckProcedure.execute(entity), 5, 28, -12829636, false);
+	protected void renderLabels(PoseStack ms, int mouseX, int mouseY) {
+		this.font.draw(ms, BundleDisplayNameCheckProcedure.execute(entity), 5, 28, -12829636);
 	}
 
 	@Override
@@ -100,16 +100,22 @@ public class MetalBundleUIScreen extends AbstractContainerScreen<MetalBundleUIMe
 			if (!menuStateUpdateActive)
 				menu.sendMenuStateUpdate(entity, 0, "ChangeBundleName", content, false);
 		});
-		ChangeBundleName.setHint(Component.translatable("gui.engies_chaos.engie_bundle_ui.ChangeBundleName"));
+		ChangeBundleName.setSuggestion(Component.translatable("gui.engies_chaos.engie_bundle_ui.ChangeBundleName").getString());
 		this.addWidget(this.ChangeBundleName);
-		button_set_name = Button.builder(Component.translatable("gui.engies_chaos.engie_bundle_ui.button_set_name"), e -> {
+		button_set_name = new Button(this.leftPos + 130, this.topPos + 5, 66, 20, Component.translatable("gui.engies_chaos.engie_bundle_ui.button_set_name"), e -> {
 			int x = MetalBundleUIScreen.this.x;
 			int y = MetalBundleUIScreen.this.y;
 			if (true) {
-				PacketDistributor.sendToServer(new MetalBundleUIButtonMessage(0, x, y, z));
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new MetalBundleUIButtonMessage(0, x, y, z));
 				MetalBundleUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}).bounds(this.leftPos + 130, this.topPos + 5, 66, 20).build();
+		});
 		this.addRenderableWidget(button_set_name);
+	}
+
+	@Override
+	protected void containerTick() {
+		super.containerTick();
+		ChangeBundleName.tick();
 	}
 }

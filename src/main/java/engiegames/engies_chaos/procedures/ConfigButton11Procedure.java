@@ -8,17 +8,21 @@ public class ConfigButton11Procedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).hphudtoggle == true) {
+		if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).hphudtoggle == true) {
 			{
-				EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-				_vars.hphudtoggle = false;
-				_vars.syncPlayerVariables(entity);
+				boolean _setval = false;
+				entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.hphudtoggle = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
-		} else if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).hphudtoggle == false) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).hphudtoggle == false) {
 			{
-				EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-				_vars.hphudtoggle = true;
-				_vars.syncPlayerVariables(entity);
+				boolean _setval = true;
+				entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.hphudtoggle = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
 		}
 	}

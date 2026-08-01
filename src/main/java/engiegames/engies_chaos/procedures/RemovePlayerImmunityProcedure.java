@@ -9,9 +9,11 @@ public class RemovePlayerImmunityProcedure {
 		if (entity == null)
 			return;
 		{
-			EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-			_vars.playerhasimmunity = false;
-			_vars.syncPlayerVariables(entity);
+			boolean _setval = false;
+			entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.playerhasimmunity = _setval;
+				capability.syncPlayerVariables(entity);
+			});
 		}
 	}
 }

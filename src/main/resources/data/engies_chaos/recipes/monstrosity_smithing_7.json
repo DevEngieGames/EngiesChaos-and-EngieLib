@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:biblically_accurate_engies_leggings"
+  },
+  "addition": {
+    "item": "engies_chaos:monstrosity_engie_block"
+  },
+  "result": {
+    "item": "engies_chaos:monstrosity_engies_leggings"
+  }
+}

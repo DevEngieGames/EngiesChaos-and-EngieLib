@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "template": [],
-  "base": "engies_chaos:dark_matter_the_real_engie_gamess_helmet",
-  "addition": "engies_chaos:dark_matter_cosmic_engie_games_coin_block",
-  "result": {
-    "id": "engies_chaos:dark_matter_cosmic_engie_gamess_helmet"
-  }
-}

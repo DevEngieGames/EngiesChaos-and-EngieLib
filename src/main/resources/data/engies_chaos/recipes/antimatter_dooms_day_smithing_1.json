@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:antimatter_monstrosity_engie_sword"
+  },
+  "addition": {
+    "item": "engies_chaos:antimatter_dooms_day_coin_block"
+  },
+  "result": {
+    "item": "engies_chaos:antimatter_doomsday_sword"
+  }
+}

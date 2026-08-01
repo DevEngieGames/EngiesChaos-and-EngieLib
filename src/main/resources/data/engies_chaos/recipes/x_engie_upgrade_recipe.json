@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:engie_head"
+    },
+    "b": {
+      "item": "minecraft:netherite_block"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:x_engie_upgrade",
+    "count": 1
+  }
+}

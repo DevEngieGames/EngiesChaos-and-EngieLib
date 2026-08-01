@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:monstrosity_ban_hammer"
+  },
+  "addition": {
+    "item": "engies_chaos:engie_upgrade"
+  },
+  "result": {
+    "item": "engies_chaos:doomsday_ban_hammer"
+  }
+}

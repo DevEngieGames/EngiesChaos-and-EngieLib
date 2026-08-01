@@ -1,7 +1,12 @@
 {
-  "parent": "engies_chaos:custom/engieplush",
+  "parent": "engies_chaos:custom/devengieplush",
   "textures": {
     "0": "engies_chaos:block/devengie",
+    "1": "engies_chaos:block/boxengiesface",
+    "2": "engies_chaos:block/engiegamescard2",
+    "3": "engies_chaos:block/engieplayscard2",
+    "4": "engies_chaos:block/angelhatandextra",
+    "5": "engies_chaos:block/scarfdevengie",
     "particle": "engies_chaos:item/volc"
   }
 }

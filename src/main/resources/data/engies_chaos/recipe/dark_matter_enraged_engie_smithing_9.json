@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "template": [],
-  "base": "engies_chaos:dark_matter_angry_engies_leggings",
-  "addition": "engies_chaos:dark_matter_enraged_engie_block",
-  "result": {
-    "id": "engies_chaos:dark_matter_enraged_engies_leggings"
-  }
-}

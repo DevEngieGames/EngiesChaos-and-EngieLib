@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "antimatterhostileengieaiot",
+  "ingredients": [
+    {
+      "item": "engies_chaos:antimatter_hostile_engie_sword"
+    },
+    {
+      "item": "engies_chaos:antimatter_hostile_engie_pickaxe"
+    },
+    {
+      "item": "engies_chaos:antimatter_hostile_engie_axe"
+    },
+    {
+      "item": "engies_chaos:antimatter_hostile_engie_hoe"
+    },
+    {
+      "item": "engies_chaos:antimatter_hostile_engie_shovel"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:antimatter_hostile_engie_paxel",
+    "count": 1
+  }
+}

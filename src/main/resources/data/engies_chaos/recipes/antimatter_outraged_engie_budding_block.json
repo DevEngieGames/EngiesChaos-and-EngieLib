@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "antimatteroutragedengiebuddingblock",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "b": {
+      "item": "engies_chaos:antimatter_outraged_engie_block"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:budding_antimatter_outraged_engie_block",
+    "count": 1
+  }
+}

@@ -1,7 +1,31 @@
 {
-  "parent": "engies_chaos:custom/engiegamesanchor",
-  "textures": {
-    "0": "engies_chaos:block/anchor3",
-    "particle": "engies_chaos:item/engiegamesgoldanchor2d"
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "engies_chaos:custom/engiegamesanchor",
+    "textures": {
+      "0": "engies_chaos:block/anchor3",
+      "particle": "engies_chaos:item/engiegamesgoldanchor2d"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/engiegamesgoldanchor2d"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/engiegamesgoldanchor2d"
+      }
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/engiegamesgoldanchor2d"
+      }
+    }
   }
 }

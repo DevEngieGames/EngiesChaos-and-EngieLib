@@ -1,6 +1,8 @@
 package engiegames.engies_chaos.entity;
 
-import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.network.PlayMessages;
+import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.Level;
@@ -16,32 +18,40 @@ import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.SpawnPlacementTypes;
-import net.minecraft.world.entity.Pose;
+import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.PathfinderMob;
+import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.protocol.Packet;
 
-import engiegames.engies_chaos.procedures.MobHitboxScalingProcedure;
 import engiegames.engies_chaos.procedures.EngieGamesRightClickedOnEntityProcedure;
 import engiegames.engies_chaos.procedures.EngieGamesDetectiveNaturalEntitySpawningConditionProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class EngieGamesDetectiveEntity extends PathfinderMob {
+	public EngieGamesDetectiveEntity(PlayMessages.SpawnEntity packet, Level world) {
+		this(EngiesChaosModEntities.ENGIE_GAMES_DETECTIVE.get(), world);
+	}
+
 	public EngieGamesDetectiveEntity(EntityType<EngieGamesDetectiveEntity> type, Level world) {
 		super(type, world);
+		maxUpStep = 0.6f;
 		xpReward = 0;
 		setNoAi(false);
 		setPersistenceRequired();
+	}
+
+	@Override
+	public Packet<?> getAddEntityPacket() {
+		return NetworkHooks.getEntitySpawningPacket(this);
 	}
 
 	@Override
@@ -49,8 +59,8 @@ public class EngieGamesDetectiveEntity extends PathfinderMob {
 		super.registerGoals();
 		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.2, false) {
 			@Override
-			protected boolean canPerformAttack(LivingEntity entity) {
-				return this.isTimeToAttack() && this.mob.distanceToSqr(entity) < (this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth()) && this.mob.getSensing().hasLineOfSight(entity);
+			protected double getAttackReachSqr(LivingEntity entity) {
+				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
 		});
 		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
@@ -62,58 +72,47 @@ public class EngieGamesDetectiveEntity extends PathfinderMob {
 	}
 
 	@Override
+	public MobType getMobType() {
+		return MobType.UNDEFINED;
+	}
+
+	@Override
 	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
 		return false;
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.hurt"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.death"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
 	}
 
 	@Override
 	public InteractionResult mobInteract(Player sourceentity, InteractionHand hand) {
 		ItemStack itemstack = sourceentity.getItemInHand(hand);
-		InteractionResult retval = InteractionResult.SUCCESS;
+		InteractionResult retval = InteractionResult.sidedSuccess(this.level.isClientSide());
 		super.mobInteract(sourceentity, hand);
 		double x = this.getX();
 		double y = this.getY();
 		double z = this.getZ();
 		Entity entity = this;
-		Level world = this.level();
+		Level world = this.level;
 
 		EngieGamesRightClickedOnEntityProcedure.execute(world, entity);
 		return retval;
 	}
 
-	@Override
-	public void baseTick() {
-		super.baseTick();
-		this.refreshDimensions();
-	}
-
-	@Override
-	public EntityDimensions getDefaultDimensions(Pose pose) {
-		Entity entity = this;
-		Level world = this.level();
-		double x = this.getX();
-		double y = this.getY();
-		double z = this.getZ();
-		return super.getDefaultDimensions(pose).scale((float) MobHitboxScalingProcedure.execute());
-	}
-
-	public static void init(RegisterSpawnPlacementsEvent event) {
-		event.register(EngiesChaosModEntities.ENGIE_GAMES_DETECTIVE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
+	public static void init() {
+		SpawnPlacements.register(EngiesChaosModEntities.ENGIE_GAMES_DETECTIVE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
 			return EngieGamesDetectiveNaturalEntitySpawningConditionProcedure.execute(world);
-		}, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+		});
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
@@ -123,7 +122,6 @@ public class EngieGamesDetectiveEntity extends PathfinderMob {
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 50);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
-		builder = builder.add(Attributes.STEP_HEIGHT, 0.6);
 		return builder;
 	}
 }

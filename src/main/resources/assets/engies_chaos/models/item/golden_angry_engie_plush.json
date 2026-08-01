@@ -1,7 +1,7 @@
 {
-  "parent": "engies_chaos:custom/hostileplush",
+  "parent": "engies_chaos:custom/angry_gold_plush",
   "textures": {
-    "0": "engies_chaos:block/goldangryengie",
+    "1": "engies_chaos:block/angrygoldwithcape",
     "particle": "engies_chaos:item/volc"
   }
 }

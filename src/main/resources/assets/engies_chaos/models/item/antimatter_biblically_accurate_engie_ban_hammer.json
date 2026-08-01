@@ -1,7 +1,31 @@
 {
-  "parent": "engies_chaos:custom/ban_hammer_biblicallyaccurate",
-  "textures": {
-    "0": "engies_chaos:block/antimatterbiblicallyaccurateyeah",
-    "particle": "engies_chaos:item/antimatterbiblicallyaccuratepixel"
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "engies_chaos:custom/ban_hammer_biblicallyaccurate",
+    "textures": {
+      "0": "engies_chaos:block/antimatterbiblicallyaccurateyeah",
+      "particle": "engies_chaos:item/antimatterbiblicallyaccuratepixel"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/antimatterbiblicallyaccuratepixel"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/antimatterbiblicallyaccuratepixel"
+      }
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/antimatterbiblicallyaccuratepixel"
+      }
+    }
   }
 }

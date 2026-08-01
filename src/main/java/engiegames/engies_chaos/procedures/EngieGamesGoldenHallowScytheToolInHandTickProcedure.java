@@ -1,152 +1,89 @@
 package engiegames.engies_chaos.procedures;
 
-import net.neoforged.neoforge.items.ItemHandlerHelper;
+import net.minecraftforge.items.ItemHandlerHelper;
 
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.tags.ItemTags;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.component.DataComponents;
-import net.minecraft.advancements.AdvancementProgress;
-import net.minecraft.advancements.AdvancementHolder;
+import net.minecraft.nbt.CompoundTag;
 
 import engiegames.engies_chaos.init.EngiesChaosModItems;
+import engiegames.engies_chaos.EngiesChaosMod;
 
 public class EngieGamesGoldenHallowScytheToolInHandTickProcedure {
 	public static void execute(LevelAccessor world, Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
-		if (!(entity instanceof ServerPlayer _plr0 && _plr0.level() instanceof ServerLevel
-				&& _plr0.getAdvancements().getOrStartProgress(_plr0.server.getAdvancements().get(ResourceLocation.parse("engies_chaos:gold_roughian_scythe_obtained"))).isDone())) {
-			if (entity instanceof ServerPlayer _player) {
-				AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("engies_chaos:gold_roughian_scythe_obtained"));
-				if (_adv != null) {
-					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-					if (!_ap.isDone()) {
-						for (String criteria : _ap.getRemainingCriteria())
-							_player.getAdvancements().award(_adv, criteria);
-					}
-				}
+		if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 10) {
+			itemstack.setHoverName(Component.literal(("\u00A76" + "Strange" + " " + "EngieGames's Golden Hallow Scythe")));
+		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 10 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 25) {
+			itemstack.setHoverName(Component.literal(("\u00A76" + "Unremarkable" + " " + "EngieGames's Golden Hallow Scythe")));
+		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 25 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 45) {
+			itemstack.setHoverName(Component.literal(("\u00A76" + "Scarcely Lethal" + " " + "EngieGames's Golden Hallow Scythe")));
+		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 45 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 70) {
+			itemstack.setHoverName(Component.literal(("\u00A76" + "Mildly Menacing" + " " + "EngieGames's Golden Hallow Scythe")));
+		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 70 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 100) {
+			itemstack.setHoverName(Component.literal(("\u00A76" + "Somewhat Threatening" + " " + "EngieGames's Golden Hallow Scythe")));
+		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 100 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 135) {
+			itemstack.setHoverName(Component.literal(("\u00A76" + "Uncharitable" + " " + "EngieGames's Golden Hallow Scythe")));
+		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 135 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 175) {
+			itemstack.setHoverName(Component.literal(("\u00A76" + "Notably Dangerous" + " " + "EngieGames's Golden Hallow Scythe")));
+		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 175 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 225) {
+			itemstack.setHoverName(Component.literal(("\u00A76" + "Sufficiently Lethal" + " " + "EngieGames's Golden Hallow Scythe")));
+		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 225 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 275) {
+			itemstack.setHoverName(Component.literal(("\u00A76" + "Truly Feared" + " " + "EngieGames's Golden Hallow Scythe")));
+		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 275 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 350) {
+			itemstack.setHoverName(Component.literal(("\u00A76" + "Spectacularly Lethal" + " " + "EngieGames's Golden Hallow Scythe")));
+		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 350 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 500) {
+			itemstack.setHoverName(Component.literal(("\u00A76" + "Essence Spattered" + " " + "EngieGames's Golden Hallow Scythe")));
+		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 500 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 750) {
+			itemstack.setHoverName(Component.literal(("\u00A76" + "Wicked Nasty" + " " + "EngieGames's Golden Hallow Scythe")));
+		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 750 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 999) {
+			itemstack.setHoverName(Component.literal(("\u00A76" + "Positively Inhumane" + " " + "EngieGames's Golden Hallow Scythe")));
+		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 999 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 1000) {
+			itemstack.setHoverName(Component.literal(("\u00A76" + "Totally Ordinary" + " " + "EngieGames's Golden Hallow Scythe")));
+		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 1000 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 1500) {
+			itemstack.setHoverName(Component.literal(("\u00A76" + "Engie Destroying" + " " + "EngieGames's Golden Hallow Scythe")));
+		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 1500 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 2500) {
+			itemstack.setHoverName(Component.literal(("\u00A76" + "Rage Inducing" + " " + "EngieGames's Golden Hallow Scythe")));
+		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 2500 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 5000) {
+			itemstack.setHoverName(Component.literal(("\u00A76" + "World Clearing" + " " + "EngieGames's Golden Hallow Scythe")));
+		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 5000 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 7500) {
+			itemstack.setHoverName(Component.literal(("\u00A76" + "Rare" + " " + "EngieGames's Golden Hallow Scythe")));
+		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 7500 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 10000) {
+			itemstack.setHoverName(Component.literal(("\u00A76" + "Epic" + " " + "EngieGames's Golden Hallow Scythe")));
+		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 10000 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 12500) {
+			itemstack.setHoverName(Component.literal(("\u00A76" + "Legendary" + " " + "EngieGames's Golden Hallow Scythe")));
+		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 12500 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 15000) {
+			itemstack.setHoverName(Component.literal(("\u00A76" + "Mythic" + " " + "EngieGames's Golden Hallow Scythe")));
+		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 17500 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 20000) {
+			itemstack.setHoverName(Component.literal(("\u00A76" + "Exotic" + " " + "EngieGames's Golden Hallow Scythe")));
+		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 20000 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 25000) {
+			itemstack.setHoverName(Component.literal(("\u00A76" + "Engie" + " " + "EngieGames's Golden Hallow Scythe")));
+		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 25000 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 50525) {
+			itemstack.setHoverName(Component.literal(("\u00A76" + "DevEngie's Own" + " " + "EngieGames's Golden Hallow Scythe")));
+		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 50525) {
+			if (entity instanceof Player _player) {
+				ItemStack _stktoremove = new ItemStack(EngiesChaosModItems.ENGIE_GAMES_GOLDEN_HALLOW_SCYTHE.get());
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 			}
-		}
-		if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 50525) {
-			{
-				final String _tagName = "engiegameshallowscythestatclockcount";
-				final double _tagValue = 50525;
-				CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putDouble(_tagName, _tagValue));
+			if (entity instanceof Player _player) {
+				ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_GAMES_ENGIE_HALLOW_SCYTHE.get()).copy();
+				_setstack.setCount(1);
+				ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 			}
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 50525
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 50535) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "Strange" + " " + "Golden Hallow's Scythe")));
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 50535
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 50550) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "Unremarkable" + " " + "Golden Hallow's Scythe")));
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 50550
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 50570) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "Scarcely Lethal" + " " + "Golden Hallow's Scythe")));
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 50570
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 50595) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "Mildly Menacing" + " " + "Golden Hallow's Scythe")));
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 50595
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 50625) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "Somewhat Threatening" + " " + "Golden Hallow's Scythe")));
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 50625
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 50660) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "Uncharitable" + " " + "Golden Hallow's Scythe")));
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 50660
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 50700) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "Notably Dangerous" + " " + "Golden Hallow's Scythe")));
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 50700
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 50750) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "Sufficiently Lethal" + " " + "Golden Hallow's Scythe")));
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 50750
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 50800) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "Truly Feared" + " " + "Golden Hallow's Scythe")));
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 50800
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 50875) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "Spectacularly Lethal" + " " + "Golden Hallow's Scythe")));
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 50875
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 51025) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "Essence Spattered" + " " + "Golden Hallow's Scythe")));
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 51025
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 51275) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "Wicked Nasty" + " " + "Golden Hallow's Scythe")));
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 51275
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 51524) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "Positively Inhumane" + " " + "Golden Hallow's Scythe")));
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 51524
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 51525) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "Totally Ordinary" + " " + "Golden Hallow's Scythe")));
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 51525
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 52025) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "Engie Destroying" + " " + "Golden Hallow's Scythe")));
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 52025
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 53025) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "Rage Inducing" + " " + "Golden Hallow's Scythe")));
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 53025
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 55525) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "World Clearing" + " " + "Golden Hallow's Scythe")));
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 55525
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 58025) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "Rare" + " " + "Golden Hallow's Scythe")));
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 58025
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 60525) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "Epic" + " " + "Golden Hallow's Scythe")));
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 60525
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 63025) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "Legendary" + " " + "Golden Hallow's Scythe")));
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 63025
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 65525) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "Mythic" + " " + "Golden Hallow's Scythe")));
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 65525
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 70525) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "Exotic" + " " + "Golden Hallow's Scythe")));
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 70525
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 75525) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "Engie" + " " + "Golden Hallow's Scythe")));
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 75525
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 101050) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "DevEngie's Own" + " " + "Golden Hallow's Scythe")));
-			{
-				final String _tagName = "givenupgradeitem";
-				final boolean _tagValue = false;
-				CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putBoolean(_tagName, _tagValue));
-			}
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 101050
-				&& itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") < 101052) {
-			itemstack.set(DataComponents.CUSTOM_NAME, Component.literal(("\u00A76" + "EngieGames's Own" + " " + "Golden Hallow's Scythe")));
-			{
-				final String _tagName = "engiegameshallowscythestatclockcount";
-				final double _tagValue = 101050;
-				CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putDouble(_tagName, _tagValue));
-			}
-			if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getBoolean("givenupgradeitem") == false) {
-				if (entity instanceof Player _player) {
-					ItemStack _setstack = new ItemStack(EngiesChaosModItems.GOLD_HALLOW_UPGRADE_TO_COLLECTOR.get()).copy();
-					_setstack.setCount(1);
-					ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-				}
+			EngiesChaosMod.queueServerWork(1, () -> {
 				{
-					final String _tagName = "givenupgradeitem";
-					final boolean _tagValue = true;
-					CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putBoolean(_tagName, _tagValue));
+					CompoundTag _nbtTag = new ItemStack(EngiesChaosModItems.ENGIE_GAMES_GOLDEN_HALLOW_SCYTHE.get()).getTag();
+					if (_nbtTag != null)
+						new ItemStack(EngiesChaosModItems.ENGIE_GAMES_ENGIE_HALLOW_SCYTHE.get()).setTag(_nbtTag.copy());
 				}
-			}
-		} else if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("engiegameshallowscythestatclockcount") >= 101052) {
-			{
-				final String _tagName = "engiegameshallowscythestatclockcount";
-				final double _tagValue = 0;
-				CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putDouble(_tagName, _tagValue));
-			}
-		}
-		if (itemstack.is(ItemTags.create(ResourceLocation.parse("allaboutengie:items/stunavilible")))) {
-			StunKeyTickProcedure.execute(world, entity, itemstack);
+			});
+			EngiesChaosMod.queueServerWork(2, () -> {
+				new ItemStack(EngiesChaosModItems.ENGIE_GAMES_ENGIE_HALLOW_SCYTHE.get()).getOrCreateTag().putDouble("engiegameshallowscythestatclockcount", 10105);
+			});
 		}
 	}
 }

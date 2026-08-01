@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "template": [],
-  "base": "engies_chaos:roughian_engie_games_pickaxe",
-  "addition": "engies_chaos:x_engie_upgrade_pickaxe",
-  "result": {
-    "id": "engies_chaos:x_engie_pickaxe"
-  }
-}

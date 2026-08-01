@@ -22,21 +22,20 @@ public class MindscapeEngieOnInitialEntitySpawnProcedure {
 		if (entity == null)
 			return;
 		if (!world.getEntitiesOfClass(MindscapeEngieEntity.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(250 / 2d), e -> true).isEmpty()) {
-			if (!entity.level().isClientSide())
+			if (!entity.level.isClientSide())
 				entity.discard();
 		} else if (!(!world.getEntitiesOfClass(MindscapeEngieEntity.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(250 / 2d), e -> true).isEmpty())) {
-			if (Math.random() > 0.05) {
-				if (!entity.level().isClientSide())
+			if (Math.random() > 0.1) {
+				if (!entity.level.isClientSide())
 					entity.discard();
 			} else {
-				if (Math.random() <= 0.05) {
+				if (Math.random() <= 0.15 && Math.random() > 0.05) {
 					entity.getPersistentData().putBoolean("mindscapecandespawn", false);
 					entity.getPersistentData().putBoolean("CanDespawn", true);
 					EngiesChaosModVariables.MapVariables.get(world).numberofmindscapetradeable = EngiesChaosModVariables.MapVariables.get(world).numberofmindscapetradeable + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				} else if (Math.random() > 0.05) {
+				} else if (Math.random() > 0.15) {
 					entity.getPersistentData().putBoolean("mindscapecandespawn", true);
-					entity.getPersistentData().putBoolean("CanDespawn", true);
 				}
 				if (Mth.nextDouble(RandomSource.create(), 1, 30) == 1) {
 					if (Math.random() <= 0.5) {

@@ -1,48 +1,48 @@
 package engiegames.engies_chaos.network;
 
-import net.neoforged.neoforge.network.handling.IPayloadContext;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
+import net.minecraftforge.network.NetworkEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
-import net.minecraft.network.protocol.PacketFlow;
-import net.minecraft.network.codec.StreamCodec;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
+
+import java.util.function.Supplier;
 
 import engiegames.engies_chaos.procedures.TrashGUIOnKeyReleasedProcedure;
 import engiegames.engies_chaos.EngiesChaosMod;
 
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
-public record TrashGUIMessage(int eventType, int pressedms) implements CustomPacketPayload {
-	public static final Type<TrashGUIMessage> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(EngiesChaosMod.MODID, "key_trash_gui"));
-	public static final StreamCodec<RegistryFriendlyByteBuf, TrashGUIMessage> STREAM_CODEC = StreamCodec.of((RegistryFriendlyByteBuf buffer, TrashGUIMessage message) -> {
-		buffer.writeInt(message.eventType);
-		buffer.writeInt(message.pressedms);
-	}, (RegistryFriendlyByteBuf buffer) -> new TrashGUIMessage(buffer.readInt(), buffer.readInt()));
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+public class TrashGUIMessage {
+	int type, pressedms;
 
-	@Override
-	public Type<TrashGUIMessage> type() {
-		return TYPE;
+	public TrashGUIMessage(int type, int pressedms) {
+		this.type = type;
+		this.pressedms = pressedms;
 	}
 
-	public static void handleData(final TrashGUIMessage message, final IPayloadContext context) {
-		if (context.flow() == PacketFlow.SERVERBOUND) {
-			context.enqueueWork(() -> {
-				pressAction(context.player(), message.eventType, message.pressedms);
-			}).exceptionally(e -> {
-				context.connection().disconnect(Component.literal(e.getMessage()));
-				return null;
-			});
-		}
+	public TrashGUIMessage(FriendlyByteBuf buffer) {
+		this.type = buffer.readInt();
+		this.pressedms = buffer.readInt();
+	}
+
+	public static void buffer(TrashGUIMessage message, FriendlyByteBuf buffer) {
+		buffer.writeInt(message.type);
+		buffer.writeInt(message.pressedms);
+	}
+
+	public static void handler(TrashGUIMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
+		NetworkEvent.Context context = contextSupplier.get();
+		context.enqueueWork(() -> {
+			pressAction(context.getSender(), message.type, message.pressedms);
+		});
+		context.setPacketHandled(true);
 	}
 
 	public static void pressAction(Player entity, int type, int pressedms) {
-		Level world = entity.level();
+		Level world = entity.level;
 		double x = entity.getX();
 		double y = entity.getY();
 		double z = entity.getZ();
@@ -57,6 +57,6 @@ public record TrashGUIMessage(int eventType, int pressedms) implements CustomPac
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		EngiesChaosMod.addNetworkMessage(TrashGUIMessage.TYPE, TrashGUIMessage.STREAM_CODEC, TrashGUIMessage::handleData);
+		EngiesChaosMod.addNetworkMessage(TrashGUIMessage.class, TrashGUIMessage::buffer, TrashGUIMessage::new, TrashGUIMessage::handler);
 	}
 }

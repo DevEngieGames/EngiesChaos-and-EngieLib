@@ -1,9 +1,9 @@
 package engiegames.engies_chaos.procedures;
 
-import net.neoforged.neoforge.event.tick.PlayerTickEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.bus.api.Event;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.TickEvent;
 
 import net.minecraft.world.level.LevelAccessor;
 
@@ -13,11 +13,13 @@ import java.util.Calendar;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 
-@EventBusSubscriber
+@Mod.EventBusSubscriber
 public class DateCheckProcedure {
 	@SubscribeEvent
-	public static void onPlayerTick(PlayerTickEvent.Post event) {
-		execute(event, event.getEntity().level());
+	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+		if (event.phase == TickEvent.Phase.END) {
+			execute(event, event.player.level);
+		}
 	}
 
 	public static void execute(LevelAccessor world) {
@@ -26,7 +28,7 @@ public class DateCheckProcedure {
 
 	private static void execute(@Nullable Event event, LevelAccessor world) {
 		if (!world.isClientSide()) {
-			if (Calendar.getInstance().get(Calendar.MONTH) >= 4 && Calendar.getInstance().get(Calendar.MONTH) < 5) {
+			if (Calendar.getInstance().get(Calendar.MONTH) >= 4 && Calendar.getInstance().get(Calendar.MONTH) <= 5) {
 				if (Calendar.getInstance().get(Calendar.DAY_OF_MONTH) >= 25) {
 					EngiesChaosModVariables.MapVariables.get(world).Birthday = true;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -34,7 +36,7 @@ public class DateCheckProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).Birthday = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				}
-			} else if (!(Calendar.getInstance().get(Calendar.MONTH) >= 4 && Calendar.getInstance().get(Calendar.MONTH) < 5)) {
+			} else if (!(Calendar.getInstance().get(Calendar.MONTH) >= 4 && Calendar.getInstance().get(Calendar.MONTH) <= 5)) {
 				EngiesChaosModVariables.MapVariables.get(world).Birthday = false;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			}

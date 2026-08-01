@@ -1,33 +1,19 @@
 package engiegames.engies_chaos.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
 import engiegames.engies_chaos.entity.EnragedTNT7Entity;
 import engiegames.engies_chaos.client.model.Modelenragedzombie;
 
-public class EnragedTNT7Renderer extends MobRenderer<EnragedTNT7Entity, LivingEntityRenderState, Modelenragedzombie> {
-	private EnragedTNT7Entity entity = null;
-
+public class EnragedTNT7Renderer extends MobRenderer<EnragedTNT7Entity, Modelenragedzombie<EnragedTNT7Entity>> {
 	public EnragedTNT7Renderer(EntityRendererProvider.Context context) {
-		super(context, new Modelenragedzombie(context.bakeLayer(Modelenragedzombie.LAYER_LOCATION)), 0.5f);
+		super(context, new Modelenragedzombie<EnragedTNT7Entity>(context.bakeLayer(Modelenragedzombie.LAYER_LOCATION)), 0.5f);
 	}
 
 	@Override
-	public LivingEntityRenderState createRenderState() {
-		return new LivingEntityRenderState();
-	}
-
-	@Override
-	public void extractRenderState(EnragedTNT7Entity entity, LivingEntityRenderState state, float partialTicks) {
-		super.extractRenderState(entity, state, partialTicks);
-		this.entity = entity;
-	}
-
-	@Override
-	public ResourceLocation getTextureLocation(LivingEntityRenderState state) {
-		return ResourceLocation.parse("engies_chaos:textures/entities/enragedboom7.png");
+	public ResourceLocation getTextureLocation(EnragedTNT7Entity entity) {
+		return new ResourceLocation("engies_chaos:textures/entities/enragedboom7.png");
 	}
 }

@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "template": [],
-  "base": "engies_chaos:the_real_engie_gamess_boots",
-  "addition": "engies_chaos:antimatter_mad_engie_block",
-  "result": {
-    "id": "engies_chaos:antimatter_engies_boots"
-  }
-}

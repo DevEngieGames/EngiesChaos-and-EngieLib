@@ -134,22 +134,6 @@ public class DifficultyDebugChangeProcedure {
 			EngiesChaosModVariables.MapVariables.get(world).MobDifficulty = 30;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 		}
-		if (DoubleArgumentType.getDouble(arguments, "number") == 31) {
-			EngiesChaosModVariables.MapVariables.get(world).MobDifficulty = 31;
-			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-		}
-		if (DoubleArgumentType.getDouble(arguments, "number") == 32) {
-			EngiesChaosModVariables.MapVariables.get(world).MobDifficulty = 32;
-			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-		}
-		if (DoubleArgumentType.getDouble(arguments, "number") == 33) {
-			EngiesChaosModVariables.MapVariables.get(world).MobDifficulty = 33;
-			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-		}
-		if (DoubleArgumentType.getDouble(arguments, "number") == 34) {
-			EngiesChaosModVariables.MapVariables.get(world).MobDifficulty = 34;
-			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-		}
 		if (DoubleArgumentType.getDouble(arguments, "number") == 525) {
 			EngiesChaosModVariables.MapVariables.get(world).MobDifficulty = 525;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -160,10 +144,6 @@ public class DifficultyDebugChangeProcedure {
 		}
 		if (DoubleArgumentType.getDouble(arguments, "number") == 250000) {
 			EngiesChaosModVariables.MapVariables.get(world).MobDifficulty = 250000;
-			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-		}
-		if (DoubleArgumentType.getDouble(arguments, "number") == 500000) {
-			EngiesChaosModVariables.MapVariables.get(world).MobDifficulty = 500000;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 		}
 		if (DoubleArgumentType.getDouble(arguments, "number") == 525000) {

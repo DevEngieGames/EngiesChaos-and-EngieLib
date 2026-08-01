@@ -13,16 +13,16 @@ public class GearGiverStarterProcedure {
 		StarterItemsCommandProProcedure.execute(world, entity);
 		{
 			Entity _ent = entity;
-			if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-				_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-						_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @s engies_chaos:regular_engie_bundle");
+			if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+				_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+						_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @s engies_chaos:regular_engie_bundle");
 			}
 		}
 		{
 			Entity _ent = entity;
-			if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-				_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-						_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @s engies_chaos:engies_chaos_recipe_book_volume_1");
+			if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+				_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+						_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @s engies_chaos:engies_chaos_recipe_book_volume_1");
 			}
 		}
 	}

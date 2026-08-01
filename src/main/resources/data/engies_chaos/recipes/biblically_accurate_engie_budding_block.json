@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "biblicallyaccurateengiebuddingblock",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "b": {
+      "item": "engies_chaos:biblically_accurate_block"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:budding_biblically_accurate_engie_block",
+    "count": 1
+  }
+}

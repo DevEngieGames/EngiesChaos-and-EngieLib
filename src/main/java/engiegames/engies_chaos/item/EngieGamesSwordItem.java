@@ -1,28 +1,51 @@
 package engiegames.engies_chaos.item;
 
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.tags.TagKey;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 
-import engiegames.engies_chaos.procedures.EngieSwordsTickProcedure;
+import java.util.List;
+
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
+import engiegames.engies_chaos.init.EngiesChaosModItems;
 
 public class EngieGamesSwordItem extends SwordItem {
-	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 40000, 52f, 0, 16, TagKey.create(Registries.ITEM, ResourceLocation.parse("engies_chaos:engiegames_sword_repair_items")));
+	public EngieGamesSwordItem() {
+		super(new Tier() {
+			public int getUses() {
+				return 100000;
+			}
 
-	public EngieGamesSwordItem(Item.Properties properties) {
-		super(TOOL_MATERIAL, 3499f, -3f, properties);
+			public float getSpeed() {
+				return 52f;
+			}
+
+			public float getAttackDamageBonus() {
+				return 24996f;
+			}
+
+			public int getLevel() {
+				return 4;
+			}
+
+			public int getEnchantmentValue() {
+				return 16;
+			}
+
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.ENGIE_COIN.get()));
+			}
+		}, 3, -3f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}
 
 	@Override
-	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
-		super.inventoryTick(itemstack, world, entity, slot, selected);
-		EngieSwordsTickProcedure.execute(world, entity, itemstack);
+	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, level, list, flag);
+		list.add(Component.translatable("item.engies_chaos.engiegames_sword.description_0"));
 	}
 }

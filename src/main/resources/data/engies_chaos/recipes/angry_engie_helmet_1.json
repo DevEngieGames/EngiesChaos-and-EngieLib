@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "angryengiehelmet",
+  "pattern": [
+    "a a",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:angry_engie_essence"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:angry_engies_helmet",
+    "count": 1
+  }
+}

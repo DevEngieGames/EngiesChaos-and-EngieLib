@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:biblically_accurate_engie_essence"
+  },
+  "addition": {
+    "item": "engies_chaos:antimatter"
+  },
+  "result": {
+    "item": "engies_chaos:antimatter_biblically_accurate_engie_essence"
+  }
+}

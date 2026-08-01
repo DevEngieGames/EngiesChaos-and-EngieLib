@@ -1,28 +1,43 @@
 package engiegames.engies_chaos.item;
 
-import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.tags.TagKey;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.Registries;
 
-import engiegames.engies_chaos.procedures.MindscapeEngieGamesToolObtainProcedure;
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
+import engiegames.engies_chaos.init.EngiesChaosModItems;
 
 public class MindscapeEngiesPickaxeItem extends PickaxeItem {
-	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 10000, 48f, 0, 15, TagKey.create(Registries.ITEM, ResourceLocation.parse("engies_chaos:mindscape_engies_pickaxe_repair_items")));
+	public MindscapeEngiesPickaxeItem() {
+		super(new Tier() {
+			public int getUses() {
+				return 10000;
+			}
 
-	public MindscapeEngiesPickaxeItem(Item.Properties properties) {
-		super(TOOL_MATERIAL, 474f, 1.4f, properties);
-	}
+			public float getSpeed() {
+				return 48f;
+			}
 
-	@Override
-	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
-		super.inventoryTick(itemstack, world, entity, slot, selected);
-		MindscapeEngieGamesToolObtainProcedure.execute(entity);
+			public float getAttackDamageBonus() {
+				return 473f;
+			}
+
+			public int getLevel() {
+				return 4;
+			}
+
+			public int getEnchantmentValue() {
+				return 15;
+			}
+
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.ENGIE_COIN.get()), new ItemStack(EngiesChaosModItems.ENRAGED_COIN.get()), new ItemStack(EngiesChaosModItems.DOOMS_DAY_COIN.get()),
+						new ItemStack(EngiesChaosModItems.SUPER_DOOMS_DAY_COIN.get()), new ItemStack(EngiesChaosModItems.THE_END_COIN.get()), new ItemStack(EngiesChaosModItems.ANGRY_ENGIE_ESSENCE.get()),
+						new ItemStack(EngiesChaosModItems.ENRAGED_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.OUTRAGED_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.BIBLICALLY_ACCURATE_ENGIE_ESSENCE.get()),
+						new ItemStack(EngiesChaosModItems.MONSTROSITY_ENGIE_ESSENCE.get()));
+			}
+		}, 1, 1.4f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}
 }

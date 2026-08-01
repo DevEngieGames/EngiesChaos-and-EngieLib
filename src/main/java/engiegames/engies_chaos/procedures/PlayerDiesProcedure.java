@@ -1,9 +1,9 @@
 package engiegames.engies_chaos.procedures;
 
-import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.bus.api.Event;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
@@ -12,11 +12,11 @@ import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 
-@EventBusSubscriber
+@Mod.EventBusSubscriber
 public class PlayerDiesProcedure {
 	@SubscribeEvent
 	public static void onEntityDeath(LivingDeathEvent event) {
-		if (event.getEntity() != null) {
+		if (event != null && event.getEntity() != null) {
 			execute(event, event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity());
 		}
 	}
@@ -30,19 +30,25 @@ public class PlayerDiesProcedure {
 			return;
 		if (entity instanceof Player) {
 			{
-				EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-				_vars.PlayerDeathX = x;
-				_vars.syncPlayerVariables(entity);
+				double _setval = x;
+				entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.PlayerDeathX = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
 			{
-				EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-				_vars.PlayerDeathY = y;
-				_vars.syncPlayerVariables(entity);
+				double _setval = y;
+				entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.PlayerDeathY = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
 			{
-				EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-				_vars.PlayerDeathZ = z;
-				_vars.syncPlayerVariables(entity);
+				double _setval = z;
+				entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.PlayerDeathZ = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
 		}
 	}

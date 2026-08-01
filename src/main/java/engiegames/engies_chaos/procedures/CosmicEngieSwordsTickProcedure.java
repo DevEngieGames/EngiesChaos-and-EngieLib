@@ -10,7 +10,7 @@ public class CosmicEngieSwordsTickProcedure {
 	public static void execute(LevelAccessor world, Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
-		if (itemstack.is(ItemTags.create(ResourceLocation.parse("allaboutengie:items/stunavilible")))) {
+		if (itemstack.is(ItemTags.create(new ResourceLocation("allaboutengie:items/stunavilible")))) {
 			StunKeyTickProcedure.execute(world, entity, itemstack);
 		}
 	}

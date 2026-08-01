@@ -2,7 +2,6 @@ package engiegames.engies_chaos.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
 import net.minecraft.client.renderer.entity.HumanoidMobRenderer;
@@ -17,46 +16,33 @@ import engiegames.engies_chaos.entity.OMENEntity;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.PoseStack;
 
-public class OMENRenderer extends HumanoidMobRenderer<OMENEntity, HumanoidRenderState, HumanoidModel<HumanoidRenderState>> {
-	private OMENEntity entity = null;
-
+public class OMENRenderer extends HumanoidMobRenderer<OMENEntity, HumanoidModel<OMENEntity>> {
 	public OMENRenderer(EntityRendererProvider.Context context) {
-		super(context, new HumanoidModel<HumanoidRenderState>(context.bakeLayer(ModelLayers.PLAYER)), 0.5f);
-		this.addLayer(new HumanoidArmorLayer(this, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_INNER_ARMOR)), new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_OUTER_ARMOR)), context.getEquipmentRenderer()));
-		this.addLayer(new RenderLayer<>(this) {
-			final ResourceLocation LAYER_TEXTURE = ResourceLocation.parse("engies_chaos:textures/entities/omen.png");
+		super(context, new HumanoidModel<OMENEntity>(context.bakeLayer(ModelLayers.PLAYER)), 0.5f);
+		this.addLayer(new HumanoidArmorLayer(this, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_INNER_ARMOR)), new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_OUTER_ARMOR))));
+		this.addLayer(new RenderLayer<OMENEntity, HumanoidModel<OMENEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/omen.png");
 
 			@Override
-			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, HumanoidRenderState state, float headYaw, float headPitch) {
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, OMENEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
 				VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.eyes(LAYER_TEXTURE));
-				this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, OverlayTexture.NO_OVERLAY);
+				this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, OverlayTexture.NO_OVERLAY, 1, 1, 1, 1);
 			}
 		});
 	}
 
 	@Override
-	public HumanoidRenderState createRenderState() {
-		return new HumanoidRenderState();
-	}
-
-	@Override
-	public void extractRenderState(OMENEntity entity, HumanoidRenderState state, float partialTicks) {
-		super.extractRenderState(entity, state, partialTicks);
-		this.entity = entity;
-	}
-
-	@Override
-	public ResourceLocation getTextureLocation(HumanoidRenderState state) {
-		return ResourceLocation.parse("engies_chaos:textures/entities/omen.png");
-	}
-
-	@Override
-	protected void scale(HumanoidRenderState state, PoseStack poseStack) {
+	protected void scale(OMENEntity entity, PoseStack poseStack, float f) {
 		poseStack.scale(1.93f, 1.93f, 1.93f);
 	}
 
 	@Override
-	protected boolean isShaking(HumanoidRenderState state) {
+	public ResourceLocation getTextureLocation(OMENEntity entity) {
+		return new ResourceLocation("engies_chaos:textures/entities/omen.png");
+	}
+
+	@Override
+	protected boolean isShaking(OMENEntity entity) {
 		return true;
 	}
 }

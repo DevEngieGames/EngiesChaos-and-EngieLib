@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:antimatter_outraged_engie_aiot"
+  },
+  "addition": {
+    "item": "engies_chaos:antimatter_biblically_accurate_block"
+  },
+  "result": {
+    "item": "engies_chaos:antimatter_biblically_accurate_engie_aiot"
+  }
+}

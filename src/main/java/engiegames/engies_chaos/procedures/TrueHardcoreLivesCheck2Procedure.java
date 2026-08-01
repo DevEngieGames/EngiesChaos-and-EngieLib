@@ -8,7 +8,7 @@ public class TrueHardcoreLivesCheck2Procedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).TrueHardcoreLifeCount > 1) {
+		if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).TrueHardcoreLifeCount > 1) {
 			return true;
 		}
 		return false;

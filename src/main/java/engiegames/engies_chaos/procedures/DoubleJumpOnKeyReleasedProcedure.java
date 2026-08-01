@@ -1,9 +1,9 @@
 package engiegames.engies_chaos.procedures;
 
-import net.neoforged.neoforge.event.tick.PlayerTickEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.bus.api.Event;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.TickEvent;
 
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
@@ -24,11 +24,13 @@ import javax.annotation.Nullable;
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 
-@EventBusSubscriber
+@Mod.EventBusSubscriber
 public class DoubleJumpOnKeyReleasedProcedure {
 	@SubscribeEvent
-	public static void onPlayerTick(PlayerTickEvent.Post event) {
-		execute(event, event.getEntity().level(), event.getEntity());
+	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+		if (event.phase == TickEvent.Phase.END) {
+			execute(event, event.player.level, event.player);
+		}
 	}
 
 	public static void execute(LevelAccessor world, Entity entity) {
@@ -38,61 +40,55 @@ public class DoubleJumpOnKeyReleasedProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(ResourceLocation.parse("engies_chaos:weapons/antimatter")))
+		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(new ResourceLocation("allaboutengie:weapons/antimatter")))
 				|| (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.COSMIC_ENGIE_GAMES_SWORD.get()
-				|| (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.ENGIE_GAMES_GOLDEN_HALLOW_SCYTHE.get()
-				|| (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.ENGIE_GAMES_GOLDEN_ANCHOR.get()) {
-			if ((getEntityGameType(entity) == GameType.SURVIVAL || getEntityGameType(entity) == GameType.ADVENTURE) && !((world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.AIR
-					|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.VOID_AIR
-					|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.CAVE_AIR
-					|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.SHORT_GRASS
-					|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.FERN
-					|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.TALL_GRASS
-					|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.SEAGRASS
-					|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.TALL_SEAGRASS
-					|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.SNOW) && entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).doublejumpcount < 1) {
+				|| (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.ENGIE_GAMES_GOLDEN_HALLOW_SCYTHE.get()) {
+			if ((getEntityGameType(entity) == GameType.SURVIVAL || getEntityGameType(entity) == GameType.ADVENTURE)
+					&& !((world.getBlockState(new BlockPos(entity.getX(), entity.getY() - 1, entity.getZ()))).getBlock() == Blocks.AIR
+							|| (world.getBlockState(new BlockPos(entity.getX(), entity.getY() - 1, entity.getZ()))).getBlock() == Blocks.VOID_AIR
+							|| (world.getBlockState(new BlockPos(entity.getX(), entity.getY() - 1, entity.getZ()))).getBlock() == Blocks.CAVE_AIR)
+					&& (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).doublejumpcount < 1) {
 				{
-					EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-					_vars.doublejumpcount = 1;
-					_vars.syncPlayerVariables(entity);
+					double _setval = 1;
+					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.doublejumpcount = _setval;
+						capability.syncPlayerVariables(entity);
+					});
 				}
-			} else if ((getEntityGameType(entity) == GameType.SURVIVAL || getEntityGameType(entity) == GameType.ADVENTURE) && !((world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.AIR
-					|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.VOID_AIR
-					|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.CAVE_AIR
-					|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.SHORT_GRASS
-					|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.FERN
-					|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.TALL_GRASS
-					|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.SEAGRASS
-					|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.TALL_SEAGRASS
-					|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.SNOW) && entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).doublejumpcount > 1) {
+			} else if ((getEntityGameType(entity) == GameType.SURVIVAL || getEntityGameType(entity) == GameType.ADVENTURE)
+					&& !((world.getBlockState(new BlockPos(entity.getX(), entity.getY() - 1, entity.getZ()))).getBlock() == Blocks.AIR
+							|| (world.getBlockState(new BlockPos(entity.getX(), entity.getY() - 1, entity.getZ()))).getBlock() == Blocks.VOID_AIR
+							|| (world.getBlockState(new BlockPos(entity.getX(), entity.getY() - 1, entity.getZ()))).getBlock() == Blocks.CAVE_AIR)
+					&& (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).doublejumpcount > 1) {
 				{
-					EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-					_vars.doublejumpcount = 1;
-					_vars.syncPlayerVariables(entity);
+					double _setval = 1;
+					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.doublejumpcount = _setval;
+						capability.syncPlayerVariables(entity);
+					});
 				}
 			}
-		} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(ResourceLocation.parse("engies_chaos:weapons/darkmatter")))
-				|| (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.ENGIE_GAMES_ENGIE_HALLOW_SCYTHE.get()
-				|| (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.ENGIE_GAMES_ENGIE_ANCHOR.get()) {
-			if ((getEntityGameType(entity) == GameType.SURVIVAL || getEntityGameType(entity) == GameType.ADVENTURE) && !((world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.AIR
-					|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.VOID_AIR
-					|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.CAVE_AIR
-					|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.SHORT_GRASS
-					|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.FERN
-					|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.TALL_GRASS
-					|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.SEAGRASS
-					|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.TALL_SEAGRASS
-					|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.5, entity.getZ()))).getBlock() == Blocks.SNOW) && entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).doublejumpcount < 2) {
+		} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.ENGIE_GAMES_ENGIE_HALLOW_SCYTHE.get()) {
+			if ((getEntityGameType(entity) == GameType.SURVIVAL || getEntityGameType(entity) == GameType.ADVENTURE)
+					&& !((world.getBlockState(new BlockPos(entity.getX(), entity.getY() - 1, entity.getZ()))).getBlock() == Blocks.AIR
+							|| (world.getBlockState(new BlockPos(entity.getX(), entity.getY() - 1, entity.getZ()))).getBlock() == Blocks.VOID_AIR
+							|| (world.getBlockState(new BlockPos(entity.getX(), entity.getY() - 1, entity.getZ()))).getBlock() == Blocks.CAVE_AIR)
+					&& (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).doublejumpcount < 2) {
 				{
-					EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-					_vars.doublejumpcount = 2;
-					_vars.syncPlayerVariables(entity);
+					double _setval = 2;
+					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.doublejumpcount = _setval;
+						capability.syncPlayerVariables(entity);
+					});
 				}
-			} else if ((getEntityGameType(entity) == GameType.SURVIVAL || getEntityGameType(entity) == GameType.ADVENTURE) && entity.onGround() && entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).doublejumpcount > 2) {
+			} else if ((getEntityGameType(entity) == GameType.SURVIVAL || getEntityGameType(entity) == GameType.ADVENTURE) && entity.isOnGround()
+					&& (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).doublejumpcount > 2) {
 				{
-					EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-					_vars.doublejumpcount = 2;
-					_vars.syncPlayerVariables(entity);
+					double _setval = 2;
+					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.doublejumpcount = _setval;
+						capability.syncPlayerVariables(entity);
+					});
 				}
 			}
 		}
@@ -101,7 +97,7 @@ public class DoubleJumpOnKeyReleasedProcedure {
 	private static GameType getEntityGameType(Entity entity) {
 		if (entity instanceof ServerPlayer serverPlayer) {
 			return serverPlayer.gameMode.getGameModeForPlayer();
-		} else if (entity instanceof Player player && player.level().isClientSide()) {
+		} else if (entity instanceof Player player && player.level.isClientSide()) {
 			PlayerInfo playerInfo = Minecraft.getInstance().getConnection().getPlayerInfo(player.getGameProfile().getId());
 			if (playerInfo != null)
 				return playerInfo.getGameMode();

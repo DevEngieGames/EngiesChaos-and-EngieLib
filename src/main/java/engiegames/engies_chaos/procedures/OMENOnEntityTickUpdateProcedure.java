@@ -25,7 +25,7 @@ public class OMENOnEntityTickUpdateProcedure {
 				if (entity instanceof Mob _entity)
 					_entity.getNavigation().stop();
 				if (!world.getEntitiesOfClass(Player.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(10 / 2d), e -> true).isEmpty()) {
-					if (!entity.level().isClientSide())
+					if (!entity.level.isClientSide())
 						entity.discard();
 				}
 			}

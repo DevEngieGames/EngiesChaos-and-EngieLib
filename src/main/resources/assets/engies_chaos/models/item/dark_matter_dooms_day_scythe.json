@@ -1,7 +1,31 @@
 {
-  "parent": "engies_chaos:custom/doomsdayscythe",
-  "textures": {
-    "0": "engies_chaos:block/pixeldarkmatterscythedday",
-    "particle": "engies_chaos:item/pixeldarkmatterscythedday"
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "engies_chaos:custom/doomsdayscythe",
+    "textures": {
+      "0": "engies_chaos:block/doomsdayscythe",
+      "particle": "engies_chaos:item/pixeldarkmatterscythedday"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/pixeldarkmatterscythedday"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/pixeldarkmatterscythedday"
+      }
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/pixeldarkmatterscythedday"
+      }
+    }
   }
 }

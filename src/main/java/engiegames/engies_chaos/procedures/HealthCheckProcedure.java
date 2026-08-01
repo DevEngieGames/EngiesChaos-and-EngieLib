@@ -7,6 +7,6 @@ public class HealthCheckProcedure {
 	public static String execute(Entity entity) {
 		if (entity == null)
 			return "";
-		return new java.text.DecimalFormat("###,###").format(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
+		return new java.text.DecimalFormat("####").format(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
 	}
 }

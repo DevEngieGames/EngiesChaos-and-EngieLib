@@ -8,7 +8,7 @@ public class GivePlayerImmunityShowProcedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).playerhasimmunity == false) {
+		if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).playerhasimmunity == false) {
 			return true;
 		}
 		return false;

@@ -1,7 +1,7 @@
 {
   "parent": "engies_chaos:custom/cosmicengiecoin",
   "textures": {
-    "0": "engies_chaos:block/darkmattercosmicengiegamescointext",
+    "0": "engies_chaos:block/cosmiccointexture",
     "particle": "engies_chaos:item/cosmicengiebase"
   }
 }

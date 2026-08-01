@@ -1,6 +1,6 @@
 package engiegames.engies_chaos.procedures;
 
-import net.neoforged.neoforge.items.ItemHandlerHelper;
+import net.minecraftforge.items.ItemHandlerHelper;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
@@ -29,15 +29,17 @@ public class CheesePuffsOpenedRightclickedProcedure {
 		} else {
 			{
 				Entity _ent = entity;
-				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "give @s engies_chaos:cheese_ball");
+				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @s allaboutengie:cheese_ball");
 				}
 			}
 			{
-				EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-				_vars.cheeseballcount = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).cheeseballcount + 1;
-				_vars.syncPlayerVariables(entity);
+				double _setval = (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).cheeseballcount + 1;
+				entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.cheeseballcount = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
 		}
 	}

@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "template": [],
-  "base": "engies_chaos:gigantic_scythe",
-  "addition": "engies_chaos:engie_upgrade",
-  "result": {
-    "id": "engies_chaos:massive_scythe"
-  }
-}

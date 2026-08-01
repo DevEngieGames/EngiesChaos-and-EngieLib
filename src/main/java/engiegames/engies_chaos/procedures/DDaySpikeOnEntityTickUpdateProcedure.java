@@ -23,7 +23,7 @@ public class DDaySpikeOnEntityTickUpdateProcedure {
 		if ((entity instanceof DDaySpikeEntity _datEntI ? _datEntI.getEntityData().get(DDaySpikeEntity.DATA_spikelifespan) : 0) <= 0) {
 			EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount = EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount - 1;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-			if (!entity.level().isClientSide())
+			if (!entity.level.isClientSide())
 				entity.discard();
 		}
 	}

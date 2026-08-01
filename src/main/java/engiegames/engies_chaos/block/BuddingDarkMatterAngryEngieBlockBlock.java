@@ -1,5 +1,6 @@
 package engiegames.engies_chaos.block;
 
+import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -7,6 +8,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.util.RandomSource;
 import net.minecraft.server.level.ServerLevel;
@@ -16,12 +18,12 @@ import engiegames.engies_chaos.procedures.BuddingDarkMatterAngryEngieBlockOnTick
 import engiegames.engies_chaos.block.entity.BuddingDarkMatterAngryEngieBlockBlockEntity;
 
 public class BuddingDarkMatterAngryEngieBlockBlock extends Block implements EntityBlock {
-	public BuddingDarkMatterAngryEngieBlockBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.AMETHYST).strength(6f, 45f).requiresCorrectToolForDrops());
+	public BuddingDarkMatterAngryEngieBlockBlock() {
+		super(BlockBehaviour.Properties.of(Material.BUILDABLE_GLASS).sound(SoundType.AMETHYST).strength(6f, 45f).requiresCorrectToolForDrops());
 	}
 
 	@Override
-	public int getLightBlock(BlockState state) {
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 15;
 	}
 
@@ -34,7 +36,10 @@ public class BuddingDarkMatterAngryEngieBlockBlock extends Block implements Enti
 	@Override
 	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
 		super.tick(blockstate, world, pos, random);
-		BuddingDarkMatterAngryEngieBlockOnTickUpdateProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		int x = pos.getX();
+		int y = pos.getY();
+		int z = pos.getZ();
+		BuddingDarkMatterAngryEngieBlockOnTickUpdateProcedure.execute(world, x, y, z);
 		world.scheduleTick(pos, this, 20);
 	}
 

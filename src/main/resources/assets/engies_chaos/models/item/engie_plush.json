@@ -2,6 +2,7 @@
   "parent": "engies_chaos:custom/engieplush",
   "textures": {
     "0": "engies_chaos:block/roughianengie",
+    "1": "engies_chaos:block/16101613",
     "particle": "engies_chaos:item/volc"
   }
 }

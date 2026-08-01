@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "madengieblocktoitem",
+  "ingredients": [
+    {
+      "item": "engies_chaos:antimatter_mad_engie_block"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:antimatter_mad_engie_essence",
+    "count": 9
+  }
+}

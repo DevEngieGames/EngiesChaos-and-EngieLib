@@ -1,7 +1,31 @@
 {
-  "parent": "engies_chaos:custom/ban_hammer_theend",
-  "textures": {
-    "0": "engies_chaos:block/darkmattertheendbanhammer",
-    "particle": "engies_chaos:item/darkmattertheendbanhammerpixel"
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "engies_chaos:custom/ban_hammer_theend",
+    "textures": {
+      "0": "engies_chaos:block/theendbanhammer",
+      "particle": "engies_chaos:item/darkmattertheendbanhammerpixel"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/darkmattertheendbanhammerpixel"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/darkmattertheendbanhammerpixel"
+      }
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/darkmattertheendbanhammerpixel"
+      }
+    }
   }
 }

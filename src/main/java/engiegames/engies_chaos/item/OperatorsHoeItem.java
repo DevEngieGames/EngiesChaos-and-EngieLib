@@ -1,17 +1,36 @@
 package engiegames.engies_chaos.item;
 
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.HoeItem;
-import net.minecraft.tags.TagKey;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.Registries;
 
 public class OperatorsHoeItem extends HoeItem {
-	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 128000, 128000f, 0, 22, TagKey.create(Registries.ITEM, ResourceLocation.parse("engies_chaos:operators_hoe_repair_items")));
+	public OperatorsHoeItem() {
+		super(new Tier() {
+			public int getUses() {
+				return 128000;
+			}
 
-	public OperatorsHoeItem(Item.Properties properties) {
-		super(TOOL_MATERIAL, 127999f, -3f, properties.fireResistant());
+			public float getSpeed() {
+				return 128000f;
+			}
+
+			public float getAttackDamageBonus() {
+				return 127999f;
+			}
+
+			public int getLevel() {
+				return 4;
+			}
+
+			public int getEnchantmentValue() {
+				return 22;
+			}
+
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of();
+			}
+		}, 0, -3f, new Item.Properties().tab(null).fireResistant());
 	}
 }

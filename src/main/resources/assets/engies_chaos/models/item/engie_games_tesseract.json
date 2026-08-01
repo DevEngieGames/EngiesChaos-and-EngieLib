@@ -3,6 +3,6 @@
   "textures": {
     "0": "engies_chaos:block/engiegamestesseractouter",
     "1": "engies_chaos:block/engiegamestesseractcube",
-    "particle": "engies_chaos:item/engiebase"
+    "particle": "engies_chaos:item/engiegamesbase"
   }
 }

@@ -1,23 +1,44 @@
 package engiegames.engies_chaos.item;
 
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.tags.TagKey;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.Registries;
 
 import engiegames.engies_chaos.procedures.EngieToolObtainProcedure;
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
+import engiegames.engies_chaos.init.EngiesChaosModItems;
 
 public class CyberbloodHoeItem extends HoeItem {
-	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 1000, 13f, 0, 24, TagKey.create(Registries.ITEM, ResourceLocation.parse("engies_chaos:cyberblood_hoe_repair_items")));
+	public CyberbloodHoeItem() {
+		super(new Tier() {
+			public int getUses() {
+				return 1000;
+			}
 
-	public CyberbloodHoeItem(Item.Properties properties) {
-		super(TOOL_MATERIAL, 10f, -3f, properties);
+			public float getSpeed() {
+				return 13f;
+			}
+
+			public float getAttackDamageBonus() {
+				return 10f;
+			}
+
+			public int getLevel() {
+				return 4;
+			}
+
+			public int getEnchantmentValue() {
+				return 24;
+			}
+
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.CYBERBLOOD_INGOT.get()));
+			}
+		}, 0, -3f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}
 
 	@Override

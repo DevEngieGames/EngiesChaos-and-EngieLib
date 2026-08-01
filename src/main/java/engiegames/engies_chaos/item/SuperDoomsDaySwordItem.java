@@ -1,28 +1,51 @@
 package engiegames.engies_chaos.item;
 
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.tags.TagKey;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 
-import engiegames.engies_chaos.procedures.SuperDoomsDayToolObtainProcedure;
+import java.util.List;
+
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
+import engiegames.engies_chaos.init.EngiesChaosModItems;
 
 public class SuperDoomsDaySwordItem extends SwordItem {
-	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 6000, 36f, 0, 12, TagKey.create(Registries.ITEM, ResourceLocation.parse("engies_chaos:super_dooms_day_sword_repair_items")));
+	public SuperDoomsDaySwordItem() {
+		super(new Tier() {
+			public int getUses() {
+				return 6000;
+			}
 
-	public SuperDoomsDaySwordItem(Item.Properties properties) {
-		super(TOOL_MATERIAL, 299f, -0.2f, properties);
+			public float getSpeed() {
+				return 36f;
+			}
+
+			public float getAttackDamageBonus() {
+				return 296f;
+			}
+
+			public int getLevel() {
+				return 4;
+			}
+
+			public int getEnchantmentValue() {
+				return 12;
+			}
+
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.SUPER_DOOMS_DAY_COIN.get()));
+			}
+		}, 3, -0.2f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}
 
 	@Override
-	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
-		super.inventoryTick(itemstack, world, entity, slot, selected);
-		SuperDoomsDayToolObtainProcedure.execute(entity, itemstack);
+	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, level, list, flag);
+		list.add(Component.translatable("item.engies_chaos.super_dooms_day_sword.description_0"));
 	}
 }

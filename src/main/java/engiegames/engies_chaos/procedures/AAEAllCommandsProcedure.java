@@ -1,25 +1,22 @@
 package engiegames.engies_chaos.procedures;
 
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.GameType;
+import net.minecraft.world.level.GameRules;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.util.RandomSource;
-import net.minecraft.util.Mth;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
-import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
-import net.minecraft.client.multiplayer.PlayerInfo;
-import net.minecraft.client.Minecraft;
+import net.minecraft.advancements.AdvancementProgress;
+import net.minecraft.advancements.Advancement;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.init.EngiesChaosModGameRules;
 import engiegames.engies_chaos.EngiesChaosMod;
 
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.arguments.DoubleArgumentType;
@@ -28,86 +25,612 @@ public class AAEAllCommandsProcedure {
 	public static void execute(LevelAccessor world, CommandContext<CommandSourceStack> arguments, Entity entity) {
 		if (entity == null)
 			return;
-		if ((StringArgumentType.getString(arguments, "MainType")).equals("Doomsday") || (StringArgumentType.getString(arguments, "MainType")).equals("doomsday")) {
-			if ((StringArgumentType.getString(arguments, "AltType")).equals("Summon") || (StringArgumentType.getString(arguments, "AltType")).equals("summon")) {
-				if (entity.getPersistentData().getBoolean("EngiesChaos_Dev") == true) {
-					if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == true) {
-						DoomsdayManualCleanupProcedure.execute(world);
-						{
-							Entity _ent = entity;
-							if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "stopsound @a");
-							}
-						}
-						EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = 6.25;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						if (EngiesChaosModVariables.MapVariables.get(world).timecheckstop == true) {
-							if (world instanceof ServerLevel _level)
-								_level.setDayTime((int) EngiesChaosModVariables.MapVariables.get(world).timebeforespecial);
-							EngiesChaosMod.queueServerWork(5, () -> {
-								EngiesChaosModVariables.MapVariables.get(world).timecheckstop = false;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							});
-						}
-					} else if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == false) {
-						{
-							Entity _ent = entity;
-							if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(
-										new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-												_ent.getDisplayName(), _ent.level().getServer(), _ent),
-										"tellraw @a [\"\",{\"selector\":\"@p\",\"bold\":true,\"color\":\"gold\"},{\"text\":\" has summoned DoomsDay! It will occur shortly for this world.\",\"bold\":true,\"color\":\"gold\"}]");
-							}
-						}
-						EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = Mth.nextDouble(RandomSource.create(), 75, 100);
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+		if ((StringArgumentType.getString(arguments, "MainType")).equals("Gear") || (StringArgumentType.getString(arguments, "MainType")).equals("gear")) {
+			if ((StringArgumentType.getString(arguments, "AltType")).equals("Operator") || (StringArgumentType.getString(arguments, "AltType")).equals("operator")) {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "EngieLib REAAE giveoperatorgear");
 					}
-				} else if (world.players().size() == 1) {
-					if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == true) {
-						DoomsdayManualCleanupProcedure.execute(world);
-						{
-							Entity _ent = entity;
-							if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "stopsound @a");
-							}
-						}
-						EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = 6.25;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						if (EngiesChaosModVariables.MapVariables.get(world).timecheckstop == true) {
-							if (world instanceof ServerLevel _level)
-								_level.setDayTime((int) EngiesChaosModVariables.MapVariables.get(world).timebeforespecial);
-							EngiesChaosMod.queueServerWork(5, () -> {
-								EngiesChaosModVariables.MapVariables.get(world).timecheckstop = false;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							});
-						}
-					} else if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == false) {
-						{
-							Entity _ent = entity;
-							if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(
-										new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-												_ent.getDisplayName(), _ent.level().getServer(), _ent),
-										"tellraw @a [\"\",{\"selector\":\"@p\",\"bold\":true,\"color\":\"gold\"},{\"text\":\" has summoned DoomsDay! It will occur shortly for this world.\",\"bold\":true,\"color\":\"gold\"}]");
-							}
-						}
-						EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = Mth.nextDouble(RandomSource.create(), 75, 100);
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+				}
+			} else if ((StringArgumentType.getString(arguments, "AltType")).equals("Starter") || (StringArgumentType.getString(arguments, "AltType")).equals("starter")) {
+				StarterItemsCommandProProcedure.execute(world, entity);
+			} else if ((StringArgumentType.getString(arguments, "AltType")).equals("Developer") || (StringArgumentType.getString(arguments, "AltType")).equals("developer")) {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "EngieLib REAAE giveodevelopergear");
 					}
-				} else if (world.players().size() > 1) {
-					if (entity instanceof Player _playerCmd17 && _playerCmd17.hasPermissions(4)) {
-						if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == true) {
-							DoomsdayManualCleanupProcedure.execute(world);
+				}
+			} else if ((StringArgumentType.getString(arguments, "AltType")).equals("IdeaGiver") || (StringArgumentType.getString(arguments, "AltType")).equals("ideagiver")) {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "EngieLib REAAE giveideagivergear");
+					}
+				}
+			} else if ((StringArgumentType.getString(arguments, "AltType")).equals("BetaTester") || (StringArgumentType.getString(arguments, "AltType")).equals("betatester")) {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "EngieLib REAAE givebetatestergear");
+					}
+				}
+			} else if ((StringArgumentType.getString(arguments, "AltType")).equals("Tester") || (StringArgumentType.getString(arguments, "AltType")).equals("tester")) {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "EngieLib REAAE givetestergear");
+					}
+				}
+			} else if ((StringArgumentType.getString(arguments, "AltType")).equals("ContentCreator") || (StringArgumentType.getString(arguments, "AltType")).equals("contentcreator")) {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "EngieLib REAAE givecontentcreatorgear");
+					}
+				}
+			} else if ((StringArgumentType.getString(arguments, "AltType")).equals("RecipeBook") || (StringArgumentType.getString(arguments, "AltType")).equals("recipebook")) {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @s allaboutengie:all_about_engie_recipe_book");
+					}
+				}
+			} else if ((StringArgumentType.getString(arguments, "AltType")).equals("StarterBundle") || (StringArgumentType.getString(arguments, "AltType")).equals("starterbundle")) {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @s allaboutengie:regular_engie_bundle");
+					}
+				}
+			}
+		} else if ((StringArgumentType.getString(arguments, "MainType")).equals("Code") || (StringArgumentType.getString(arguments, "MainType")).equals("code")) {
+			if ((StringArgumentType.getString(arguments, "MainType")).equals("Redeem") || (StringArgumentType.getString(arguments, "MainType")).equals("redeem")) {
+				if ((StringArgumentType.getString(arguments, "TriType")).equals("ByeByeThere")) {
+					if (EngiesChaosModVariables.WorldVariables.get(world).yeah == false) {
+						if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).coderedeemblock == false) {
 							{
 								Entity _ent = entity;
-								if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null,
-											4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "stopsound @a");
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:comically_massive_ban_hammer");
 								}
 							}
-							EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = 6.25;
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:bye_bye_there");
+								}
+							}
+							if ((entity instanceof ServerPlayer _plr35 && _plr35.level instanceof ServerLevel
+									&& _plr35.getAdvancements().getOrStartProgress(_plr35.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:comically_massive_obtain"))).isDone()) == false) {
+								if (entity instanceof ServerPlayer _player) {
+									Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:comically_massive_obtain"));
+									AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+									if (!_ap.isDone()) {
+										for (String criteria : _ap.getRemainingCriteria())
+											_player.getAdvancements().award(_adv, criteria);
+									}
+								}
+							}
+							{
+								boolean _setval = true;
+								entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.coderedeemblock = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+						} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).coderedeemblock == true) {
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
+											"tellraw @p {\"text\":\"Hey... Sorry, but you can't redeem the secret code again.. If you want to do it again please create/join a new world that doesn't have the code redeemed.\",\"bold\":true,\"color\":\"gold\"}");
+								}
+							}
+						}
+					} else if (EngiesChaosModVariables.WorldVariables.get(world).yeah == true) {
+						if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).coderedeemblock == false) {
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:comically_massive_ban_hammer_pixel");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:bye_bye_there");
+								}
+							}
+							if ((entity instanceof ServerPlayer _plr40 && _plr40.level instanceof ServerLevel
+									&& _plr40.getAdvancements().getOrStartProgress(_plr40.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:comically_massive_obtain"))).isDone()) == false) {
+								if (entity instanceof ServerPlayer _player) {
+									Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:comically_massive_obtain"));
+									AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+									if (!_ap.isDone()) {
+										for (String criteria : _ap.getRemainingCriteria())
+											_player.getAdvancements().award(_adv, criteria);
+									}
+								}
+							}
+							{
+								boolean _setval = true;
+								entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.coderedeemblock = _setval;
+									capability.syncPlayerVariables(entity);
+								});
+							}
+						} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).coderedeemblock == true) {
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
+											"tellraw @p {\"text\":\"Hey... Sorry, but you can't redeem the secret code again.. If you want to do it again please create/join a new world that doesn't have the code redeemed.\",\"bold\":true,\"color\":\"gold\"}");
+								}
+							}
+						}
+					}
+				}
+				if ((StringArgumentType.getString(arguments, "TriType")).equals("HeWhoGames")) {
+					if (EngiesChaosModVariables.WorldVariables.get(world).yeah == false) {
+						if (EngiesChaosModVariables.MapVariables.get(world).hewhowatches == false) {
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:engies_scythe");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
+											"tellraw @p [\"\",{\"text\":\"You start to see figures...\",\"bold\":true,\"color\":\"black\"},{\"text\":\"\\n\"},{\"text\":\"Are these figures what made Engie lock the scythe behind a command?\",\"color\":\"dark_red\"}]");
+								}
+							}
+							EngiesChaosModVariables.MapVariables.get(world).hewhowatches = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						} else if (EngiesChaosModVariables.MapVariables.get(world).hewhowatches == true) {
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "tellraw @p {\"text\":\"There is no going back now...\",\"bold\":true,\"color\":\"black\"}");
+								}
+							}
+						}
+					} else if (EngiesChaosModVariables.WorldVariables.get(world).yeah == true) {
+						if (EngiesChaosModVariables.MapVariables.get(world).hewhowatches == false) {
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:engies_scythe_pixel");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
+											"tellraw @p [\"\",{\"text\":\"You start to see figures...\",\"bold\":true,\"color\":\"black\"},{\"text\":\"\\n\"},{\"text\":\"Are these figures what made Engie lock the scythe behind a command?\",\"color\":\"dark_red\"}]");
+								}
+							}
+							EngiesChaosModVariables.MapVariables.get(world).hewhowatches = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						} else if (EngiesChaosModVariables.MapVariables.get(world).hewhowatches == true) {
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "tellraw @p {\"text\":\"There is no going back now...\",\"bold\":true,\"color\":\"black\"}");
+								}
+							}
+						}
+					}
+				}
+				if ((StringArgumentType.getString(arguments, "TriType")).equals("BigSharko") || (StringArgumentType.getString(arguments, "TriType")).equals("BIGSHARKO") || (StringArgumentType.getString(arguments, "TriType")).equals("bigsharko")) {
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:code_redeemers_helmet");
+						}
+					}
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:code_redeemers_chestplate");
+						}
+					}
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:code_redeemers_leggings");
+						}
+					}
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:code_redeemers_boots");
+						}
+					}
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:code_redeemers_hammer");
+						}
+					}
+				}
+				if ((StringArgumentType.getString(arguments, "TriType")).equals("AnAllAboutEngieChristmas") || (StringArgumentType.getString(arguments, "TriType")).equals("ANALLABOUTENGIECHRISTMAS")
+						|| (StringArgumentType.getString(arguments, "TriType")).equals("anallaboutengiechristmas")) {
+					if (EngiesChaosModVariables.decembercodeblock == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:angel_hatted_present 17");
+							}
+						}
+					}
+				}
+				if ((StringArgumentType.getString(arguments, "TriType")).equals("HappyBirthdayEngie") || (StringArgumentType.getString(arguments, "TriType")).equals("HAPPYBIRTHDAYENGIE")
+						|| (StringArgumentType.getString(arguments, "TriType")).equals("happybirthdayengie")) {
+					if ((entity.getDisplayName().getString()).equals("DevEngie")) {
+						if (EngiesChaosModVariables.MapVariables.get(world).Birthday == true) {
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:engies_own_engie_bundle");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:angel_hatted_present 17");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:dev_engie_plush");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:engie_plush");
+								}
+							}
+						} else if (EngiesChaosModVariables.MapVariables.get(world).Birthday == false) {
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
+											"tellraw @p [\"\",{\"text\":\"<\"},{\"text\":\"[\",\"color\":\"red\"},{\"text\":\"All \",\"color\":\"green\"},{\"text\":\"About\",\"color\":\"yellow\"},{\"text\":\" Engie \",\"color\":\"red\"},{\"text\":\"Content Creator\",\"color\":\"gold\"},{\"text\":\"]\",\"color\":\"red\"},{\"text\":\" EngieGamesOnTTV\",\"color\":\"gold\"},{\"text\":\"> 5/25 (MM/DD).\"}]");
+								}
+							}
+						}
+					} else if ((entity.getDisplayName().getString()).equals("[All About Engie Developer] DevEngie")) {
+						if (EngiesChaosModVariables.MapVariables.get(world).Birthday == true) {
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:engies_own_engie_bundle");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:angel_hatted_present 17");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:dev_engie_plush");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:engie_plush");
+								}
+							}
+						} else if (EngiesChaosModVariables.MapVariables.get(world).Birthday == false) {
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
+											"tellraw @p [\"\",{\"text\":\"<\"},{\"text\":\"[\",\"color\":\"red\"},{\"text\":\"All \",\"color\":\"green\"},{\"text\":\"About\",\"color\":\"yellow\"},{\"text\":\" Engie \",\"color\":\"red\"},{\"text\":\"Content Creator\",\"color\":\"gold\"},{\"text\":\"]\",\"color\":\"red\"},{\"text\":\" EngieGamesOnTTV\",\"color\":\"gold\"},{\"text\":\"> 5/25 (MM/DD).\"}]");
+								}
+							}
+						}
+					} else if ((entity.getDisplayName().getString()).equals("EngieGamesOnTTV")) {
+						if (EngiesChaosModVariables.MapVariables.get(world).Birthday == true) {
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:engies_own_engie_bundle");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:angel_hatted_present 17");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:dev_engie_plush");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:engie_plush");
+								}
+							}
+						} else if (EngiesChaosModVariables.MapVariables.get(world).Birthday == false) {
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
+											"tellraw @p [\"\",{\"text\":\"<\"},{\"text\":\"[\",\"color\":\"red\"},{\"text\":\"All \",\"color\":\"green\"},{\"text\":\"About\",\"color\":\"yellow\"},{\"text\":\" Engie \",\"color\":\"red\"},{\"text\":\"Content Creator\",\"color\":\"gold\"},{\"text\":\"]\",\"color\":\"red\"},{\"text\":\" EngieGamesOnTTV\",\"color\":\"gold\"},{\"text\":\"> 5/25 (MM/DD).\"}]");
+								}
+							}
+						}
+					} else if ((entity.getDisplayName().getString()).equals("[All About Engie Content Creator] EngieGamesOnTTV")) {
+						if (EngiesChaosModVariables.MapVariables.get(world).Birthday == true) {
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:engies_own_engie_bundle");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:angel_hatted_present 17");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:dev_engie_plush");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:engie_plush");
+								}
+							}
+						} else if (EngiesChaosModVariables.MapVariables.get(world).Birthday == false) {
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
+											"tellraw @p [\"\",{\"text\":\"<\"},{\"text\":\"[\",\"color\":\"red\"},{\"text\":\"All \",\"color\":\"green\"},{\"text\":\"About\",\"color\":\"yellow\"},{\"text\":\" Engie \",\"color\":\"red\"},{\"text\":\"Content Creator\",\"color\":\"gold\"},{\"text\":\"]\",\"color\":\"red\"},{\"text\":\" EngieGamesOnTTV\",\"color\":\"gold\"},{\"text\":\"> 5/25 (MM/DD).\"}]");
+								}
+							}
+						}
+					} else {
+						if (EngiesChaosModVariables.MapVariables.get(world).Birthday == true) {
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:engies_birthday_bundle25");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:angel_hatted_present 5");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:dev_engie_plush");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:engie_plush");
+								}
+							}
+						} else if (EngiesChaosModVariables.MapVariables.get(world).Birthday == false) {
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
+											"tellraw @p [\"\",{\"text\":\"<\"},{\"text\":\"[\",\"color\":\"red\"},{\"text\":\"All \",\"color\":\"green\"},{\"text\":\"About\",\"color\":\"yellow\"},{\"text\":\" Engie \",\"color\":\"red\"},{\"text\":\"Content Creator\",\"color\":\"gold\"},{\"text\":\"]\",\"color\":\"red\"},{\"text\":\" EngieGamesOnTTV\",\"color\":\"gold\"},{\"text\":\"> 5/25 (MM/DD).\"}]");
+								}
+							}
+						}
+					}
+				}
+				if ((StringArgumentType.getString(arguments, "TriType")).equals("HotlineMiami2") || (StringArgumentType.getString(arguments, "TriType")).equals("HOTLINEMIAMI2")
+						|| (StringArgumentType.getString(arguments, "TriType")).equals("hotlinemiami2")) {
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:hotline_miami_2_run");
+						}
+					}
+				}
+				if ((StringArgumentType.getString(arguments, "TriType")).equals("HappyBirthdaySaph") || (StringArgumentType.getString(arguments, "TriType")).equals("HAPPYBIRTHDAYSAPH")
+						|| (StringArgumentType.getString(arguments, "TriType")).equals("happybirthdaysaph")) {
+					if ((entity.getDisplayName().getString()).equals("Two_Dragons15")) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:engie_birthday_bundle_for_youngest");
+							}
+						}
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:engie_plush");
+							}
+						}
+					}
+				}
+				if ((StringArgumentType.getString(arguments, "TriType")).equals("Punisher") || (StringArgumentType.getString(arguments, "TriType")).equals("PUNISHER") || (StringArgumentType.getString(arguments, "TriType")).equals("punisher")) {
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p allaboutengie:punisher_plush");
+						}
+					}
+				}
+			}
+		} else if ((StringArgumentType.getString(arguments, "MainType")).equals("Debug") || (StringArgumentType.getString(arguments, "MainType")).equals("debug")) {
+			if ((StringArgumentType.getString(arguments, "AltType")).equals("Doomsday") || (StringArgumentType.getString(arguments, "AltType")).equals("doomsday")) {
+				if ((StringArgumentType.getString(arguments, "TriType")).equals("Track") || (StringArgumentType.getString(arguments, "TriType")).equals("track")) {
+					if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
+						{
+							boolean _setval = false;
+							entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.DoomsdayTrackToggle = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+					} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == false) {
+						{
+							boolean _setval = true;
+							entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.DoomsdayTrackToggle = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+					}
+				} else if ((StringArgumentType.getString(arguments, "TriType")).equals("Summon") || (StringArgumentType.getString(arguments, "TriType")).equals("summon")) {
+					if ((entity.getDisplayName().getString()).equals("DevEngie")) {
+						if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == true) {
+							EngiesChaosModVariables.MapVariables.get(world).ddaystart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaystart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).thestart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).OHBOY = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).riskcooldown = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddaywait = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaywait = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).theendwait = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).DoomsdayEeriePlayOnce = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddaytimenighttimerblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddaydialoguetimeblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayEeriePlayOnce = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaytimenighttimerblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaydialoguetimeblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).TheEndStart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).TheEndEeriePlayOnce = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).theendtimenighttimerblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).theenddialoguetimeblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(true, world.getServer());
+							entity.getPersistentData().putDouble("TimeUntilNightDDAY", 0);
+							entity.getPersistentData().putDouble("DialogueCooldownStart", 0);
+							entity.getPersistentData().putDouble("SDDAYDialogueCooldownStart", 0);
+							entity.getPersistentData().putDouble("TimeUntilNightSDDAY", 0);
+							entity.getPersistentData().putDouble("TheEndDialogueCooldownStart", 0);
+							entity.getPersistentData().putDouble("TimeUntilNightTHEEND", 0);
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a ambient allaboutengie:doomsday_start");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a ambient allaboutengie:doomsday_eerie");
+								}
+							}
+							EngiesChaosModVariables.MapVariables.get(world).Risk = 1;
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							if (EngiesChaosModVariables.MapVariables.get(world).timecheckstop == true) {
 								if (world instanceof ServerLevel _level)
@@ -120,155 +643,825 @@ public class AAEAllCommandsProcedure {
 						} else if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == false) {
 							{
 								Entity _ent = entity;
-								if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-													_ent.getDisplayName(), _ent.level().getServer(), _ent),
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
 											"tellraw @a [\"\",{\"selector\":\"@p\",\"bold\":true,\"color\":\"gold\"},{\"text\":\" has summoned DoomsDay! It will occur shortly for this world.\",\"bold\":true,\"color\":\"gold\"}]");
 								}
 							}
-							EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = Mth.nextDouble(RandomSource.create(), 75, 100);
+							EngiesChaosModVariables.MapVariables.get(world).Risk = 5;
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						}
-					}
-				} else {
-					{
-						Entity _ent = entity;
-						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "tellraw @p {\"text\":\"You do not have permission to run this command!\",\"color\":\"red\"}");
-						}
-					}
-				}
-			} else if ((StringArgumentType.getString(arguments, "AltType")).equals("CleanUp") || (StringArgumentType.getString(arguments, "AltType")).equals("cleanup")) {
-				if (entity.getPersistentData().getBoolean("EngiesChaos_Dev") == true) {
-					EngiesChaosModVariables.MapVariables.get(world).DDAYCleanup = true;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				} else if (world.players().size() == 1) {
-					EngiesChaosModVariables.MapVariables.get(world).DDAYCleanup = true;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				} else if (world.players().size() > 1) {
-					EngiesChaosModVariables.MapVariables.get(world).DDAYCleanup = true;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				} else {
-					{
-						Entity _ent = entity;
-						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "tellraw @p {\"text\":\"You do not have permission to run this command!\",\"color\":\"red\"}");
-						}
-					}
-				}
-			} else if ((StringArgumentType.getString(arguments, "AltType")).equals("GetRisk") || (StringArgumentType.getString(arguments, "AltType")).equals("getrisk")) {
-				RiskCheckProcedure.execute(world, entity);
-			} else if ((StringArgumentType.getString(arguments, "AltType")).equals("ToggleAll") || (StringArgumentType.getString(arguments, "AltType")).equals("toggleall")) {
-				if (EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart || EngiesChaosModVariables.MapVariables.get(world).TheEndStart
-						|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart) {
-					if ((world instanceof ServerLevel _serverLevelGR34 && _serverLevelGR34.getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_HARDCORE)) == true) {
-						if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).healthreductiondday == false) {
+					} else if ((entity.getDisplayName().getString()).equals("Dev")) {
+						if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == true) {
+							EngiesChaosModVariables.MapVariables.get(world).ddaystart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaystart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).thestart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).OHBOY = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).riskcooldown = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddaywait = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaywait = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).theendwait = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).DoomsdayEeriePlayOnce = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddaytimenighttimerblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddaydialoguetimeblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayEeriePlayOnce = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaytimenighttimerblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaydialoguetimeblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).TheEndStart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).TheEndEeriePlayOnce = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).theendtimenighttimerblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).theenddialoguetimeblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(true, world.getServer());
+							entity.getPersistentData().putDouble("TimeUntilNightDDAY", 0);
+							entity.getPersistentData().putDouble("DialogueCooldownStart", 0);
+							entity.getPersistentData().putDouble("SDDAYDialogueCooldownStart", 0);
+							entity.getPersistentData().putDouble("TimeUntilNightSDDAY", 0);
+							entity.getPersistentData().putDouble("TheEndDialogueCooldownStart", 0);
+							entity.getPersistentData().putDouble("TimeUntilNightTHEEND", 0);
 							{
-								EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-								_vars.healthreductiondday = true;
-								_vars.syncPlayerVariables(entity);
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a ambient allaboutengie:doomsday_start");
+								}
 							}
-						} else if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).healthreductiondday == true) {
 							{
-								EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-								_vars.healthreductiondday = false;
-								_vars.syncPlayerVariables(entity);
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a ambient allaboutengie:doomsday_eerie");
+								}
+							}
+							EngiesChaosModVariables.MapVariables.get(world).Risk = 1;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							if (EngiesChaosModVariables.MapVariables.get(world).timecheckstop == true) {
+								if (world instanceof ServerLevel _level)
+									_level.setDayTime((int) EngiesChaosModVariables.MapVariables.get(world).timebeforespecial);
+								EngiesChaosMod.queueServerWork(5, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).timecheckstop = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
+							}
+						} else if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == false) {
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
+											"tellraw @a [\"\",{\"selector\":\"@p\",\"bold\":true,\"color\":\"gold\"},{\"text\":\" has summoned DoomsDay! It will occur shortly for this world.\",\"bold\":true,\"color\":\"gold\"}]");
+								}
+							}
+							EngiesChaosModVariables.MapVariables.get(world).Risk = 5;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						}
+					} else if ((entity.getDisplayName().getString()).equals("EngieGamesOnTTV")) {
+						if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == true) {
+							EngiesChaosModVariables.MapVariables.get(world).ddaystart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaystart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).thestart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).OHBOY = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).riskcooldown = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddaywait = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaywait = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).theendwait = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).DoomsdayEeriePlayOnce = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddaytimenighttimerblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddaydialoguetimeblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayEeriePlayOnce = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaytimenighttimerblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaydialoguetimeblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).TheEndStart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).TheEndEeriePlayOnce = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).theendtimenighttimerblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).theenddialoguetimeblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(true, world.getServer());
+							entity.getPersistentData().putDouble("TimeUntilNightDDAY", 0);
+							entity.getPersistentData().putDouble("DialogueCooldownStart", 0);
+							entity.getPersistentData().putDouble("SDDAYDialogueCooldownStart", 0);
+							entity.getPersistentData().putDouble("TimeUntilNightSDDAY", 0);
+							entity.getPersistentData().putDouble("TheEndDialogueCooldownStart", 0);
+							entity.getPersistentData().putDouble("TimeUntilNightTHEEND", 0);
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a ambient allaboutengie:doomsday_start");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a ambient allaboutengie:doomsday_eerie");
+								}
+							}
+							EngiesChaosModVariables.MapVariables.get(world).Risk = 1;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							if (EngiesChaosModVariables.MapVariables.get(world).timecheckstop == true) {
+								if (world instanceof ServerLevel _level)
+									_level.setDayTime((int) EngiesChaosModVariables.MapVariables.get(world).timebeforespecial);
+								EngiesChaosMod.queueServerWork(5, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).timecheckstop = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
+							}
+						} else if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == false) {
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
+											"tellraw @a [\"\",{\"selector\":\"@p\",\"bold\":true,\"color\":\"gold\"},{\"text\":\" has summoned DoomsDay! It will occur shortly for this world.\",\"bold\":true,\"color\":\"gold\"}]");
+								}
+							}
+							EngiesChaosModVariables.MapVariables.get(world).Risk = 5;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						}
+					} else if ((entity.getDisplayName().getString()).equals("playedbyengie")) {
+						if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == true) {
+							EngiesChaosModVariables.MapVariables.get(world).ddaystart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaystart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).thestart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).OHBOY = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).riskcooldown = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddaywait = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaywait = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).theendwait = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).DoomsdayEeriePlayOnce = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddaytimenighttimerblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddaydialoguetimeblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayEeriePlayOnce = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaytimenighttimerblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaydialoguetimeblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).TheEndStart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).TheEndEeriePlayOnce = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).theendtimenighttimerblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).theenddialoguetimeblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(true, world.getServer());
+							entity.getPersistentData().putDouble("TimeUntilNightDDAY", 0);
+							entity.getPersistentData().putDouble("DialogueCooldownStart", 0);
+							entity.getPersistentData().putDouble("SDDAYDialogueCooldownStart", 0);
+							entity.getPersistentData().putDouble("TimeUntilNightSDDAY", 0);
+							entity.getPersistentData().putDouble("TheEndDialogueCooldownStart", 0);
+							entity.getPersistentData().putDouble("TimeUntilNightTHEEND", 0);
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a ambient allaboutengie:doomsday_start");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a ambient allaboutengie:doomsday_eerie");
+								}
+							}
+							EngiesChaosModVariables.MapVariables.get(world).Risk = 1;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							if (EngiesChaosModVariables.MapVariables.get(world).timecheckstop == true) {
+								if (world instanceof ServerLevel _level)
+									_level.setDayTime((int) EngiesChaosModVariables.MapVariables.get(world).timebeforespecial);
+								EngiesChaosMod.queueServerWork(5, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).timecheckstop = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
+							}
+						} else if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == false) {
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
+											"tellraw @a [\"\",{\"selector\":\"@p\",\"bold\":true,\"color\":\"gold\"},{\"text\":\" has summoned DoomsDay! It will occur shortly for this world.\",\"bold\":true,\"color\":\"gold\"}]");
+								}
+							}
+							EngiesChaosModVariables.MapVariables.get(world).Risk = 5;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						}
+					} else if ((entity.getDisplayName().getString()).equals("[All About Engie Developer] DevEngie")) {
+						if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == true) {
+							EngiesChaosModVariables.MapVariables.get(world).ddaystart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaystart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).thestart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).OHBOY = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).riskcooldown = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddaywait = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaywait = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).theendwait = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).DoomsdayEeriePlayOnce = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddaytimenighttimerblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddaydialoguetimeblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayEeriePlayOnce = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaytimenighttimerblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaydialoguetimeblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).TheEndStart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).TheEndEeriePlayOnce = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).theendtimenighttimerblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).theenddialoguetimeblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(true, world.getServer());
+							entity.getPersistentData().putDouble("TimeUntilNightDDAY", 0);
+							entity.getPersistentData().putDouble("DialogueCooldownStart", 0);
+							entity.getPersistentData().putDouble("SDDAYDialogueCooldownStart", 0);
+							entity.getPersistentData().putDouble("TimeUntilNightSDDAY", 0);
+							entity.getPersistentData().putDouble("TheEndDialogueCooldownStart", 0);
+							entity.getPersistentData().putDouble("TimeUntilNightTHEEND", 0);
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a ambient allaboutengie:doomsday_start");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a ambient allaboutengie:doomsday_eerie");
+								}
+							}
+							EngiesChaosModVariables.MapVariables.get(world).Risk = 1;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							if (EngiesChaosModVariables.MapVariables.get(world).timecheckstop == true) {
+								if (world instanceof ServerLevel _level)
+									_level.setDayTime((int) EngiesChaosModVariables.MapVariables.get(world).timebeforespecial);
+								EngiesChaosMod.queueServerWork(5, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).timecheckstop = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
+							}
+						} else if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == false) {
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
+											"tellraw @a [\"\",{\"selector\":\"@p\",\"bold\":true,\"color\":\"gold\"},{\"text\":\" has summoned DoomsDay! It will occur shortly for this world.\",\"bold\":true,\"color\":\"gold\"}]");
+								}
+							}
+							EngiesChaosModVariables.MapVariables.get(world).Risk = 5;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						}
+					} else if ((entity.getDisplayName().getString()).equals("[All About Engie Content Creator] EngieGamesOnTTV")) {
+						if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == true) {
+							EngiesChaosModVariables.MapVariables.get(world).ddaystart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaystart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).thestart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).OHBOY = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).riskcooldown = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddaywait = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaywait = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).theendwait = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).DoomsdayEeriePlayOnce = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddaytimenighttimerblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddaydialoguetimeblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayEeriePlayOnce = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaytimenighttimerblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaydialoguetimeblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).TheEndStart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).TheEndEeriePlayOnce = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).theendtimenighttimerblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).theenddialoguetimeblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(true, world.getServer());
+							entity.getPersistentData().putDouble("TimeUntilNightDDAY", 0);
+							entity.getPersistentData().putDouble("DialogueCooldownStart", 0);
+							entity.getPersistentData().putDouble("SDDAYDialogueCooldownStart", 0);
+							entity.getPersistentData().putDouble("TimeUntilNightSDDAY", 0);
+							entity.getPersistentData().putDouble("TheEndDialogueCooldownStart", 0);
+							entity.getPersistentData().putDouble("TimeUntilNightTHEEND", 0);
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a ambient allaboutengie:doomsday_start");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a ambient allaboutengie:doomsday_eerie");
+								}
+							}
+							EngiesChaosModVariables.MapVariables.get(world).Risk = 1;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							if (EngiesChaosModVariables.MapVariables.get(world).timecheckstop == true) {
+								if (world instanceof ServerLevel _level)
+									_level.setDayTime((int) EngiesChaosModVariables.MapVariables.get(world).timebeforespecial);
+								EngiesChaosMod.queueServerWork(5, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).timecheckstop = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
+							}
+						} else if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == false) {
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
+											"tellraw @a [\"\",{\"selector\":\"@p\",\"bold\":true,\"color\":\"gold\"},{\"text\":\" has summoned DoomsDay! It will occur shortly for this world.\",\"bold\":true,\"color\":\"gold\"}]");
+								}
+							}
+							EngiesChaosModVariables.MapVariables.get(world).Risk = 5;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						}
+					} else if ((entity.getDisplayName().getString()).equals("[All About Engie Developer] Dev")) {
+						if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == true) {
+							EngiesChaosModVariables.MapVariables.get(world).ddaystart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaystart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).thestart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).OHBOY = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).riskcooldown = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddaywait = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaywait = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).theendwait = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).DoomsdayEeriePlayOnce = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddaytimenighttimerblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddaydialoguetimeblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayEeriePlayOnce = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaytimenighttimerblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaydialoguetimeblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).TheEndStart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).TheEndEeriePlayOnce = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).theendtimenighttimerblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).theenddialoguetimeblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(true, world.getServer());
+							entity.getPersistentData().putDouble("TimeUntilNightDDAY", 0);
+							entity.getPersistentData().putDouble("DialogueCooldownStart", 0);
+							entity.getPersistentData().putDouble("SDDAYDialogueCooldownStart", 0);
+							entity.getPersistentData().putDouble("TimeUntilNightSDDAY", 0);
+							entity.getPersistentData().putDouble("TheEndDialogueCooldownStart", 0);
+							entity.getPersistentData().putDouble("TimeUntilNightTHEEND", 0);
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a ambient allaboutengie:doomsday_start");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a ambient allaboutengie:doomsday_eerie");
+								}
+							}
+							EngiesChaosModVariables.MapVariables.get(world).Risk = 1;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							if (EngiesChaosModVariables.MapVariables.get(world).timecheckstop == true) {
+								if (world instanceof ServerLevel _level)
+									_level.setDayTime((int) EngiesChaosModVariables.MapVariables.get(world).timebeforespecial);
+								EngiesChaosMod.queueServerWork(5, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).timecheckstop = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
+							}
+						} else if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == false) {
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
+											"tellraw @a [\"\",{\"selector\":\"@p\",\"bold\":true,\"color\":\"gold\"},{\"text\":\" has summoned DoomsDay! It will occur shortly for this world.\",\"bold\":true,\"color\":\"gold\"}]");
+								}
+							}
+							EngiesChaosModVariables.MapVariables.get(world).Risk = 5;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						}
+					} else if ((entity.getDisplayName().getString()).equals("[RE:All About Engie Developer] playedbyengie")) {
+						if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == true) {
+							EngiesChaosModVariables.MapVariables.get(world).ddaystart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaystart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).thestart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).OHBOY = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).riskcooldown = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddaywait = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaywait = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).theendwait = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).DoomsdayEeriePlayOnce = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddaytimenighttimerblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddaydialoguetimeblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayEeriePlayOnce = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaytimenighttimerblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).sddaydialoguetimeblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).TheEndStart = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).TheEndEeriePlayOnce = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).theendtimenighttimerblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).theenddialoguetimeblock = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(true, world.getServer());
+							entity.getPersistentData().putDouble("TimeUntilNightDDAY", 0);
+							entity.getPersistentData().putDouble("DialogueCooldownStart", 0);
+							entity.getPersistentData().putDouble("SDDAYDialogueCooldownStart", 0);
+							entity.getPersistentData().putDouble("TimeUntilNightSDDAY", 0);
+							entity.getPersistentData().putDouble("TheEndDialogueCooldownStart", 0);
+							entity.getPersistentData().putDouble("TimeUntilNightTHEEND", 0);
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a ambient allaboutengie:doomsday_start");
+								}
+							}
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a ambient allaboutengie:doomsday_eerie");
+								}
+							}
+							EngiesChaosModVariables.MapVariables.get(world).Risk = 1;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							if (EngiesChaosModVariables.MapVariables.get(world).timecheckstop == true) {
+								if (world instanceof ServerLevel _level)
+									_level.setDayTime((int) EngiesChaosModVariables.MapVariables.get(world).timebeforespecial);
+								EngiesChaosMod.queueServerWork(5, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).timecheckstop = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
+							}
+						} else if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == false) {
+							{
+								Entity _ent = entity;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
+											"tellraw @a [\"\",{\"selector\":\"@p\",\"bold\":true,\"color\":\"gold\"},{\"text\":\" has summoned DoomsDay! It will occur shortly for this world.\",\"bold\":true,\"color\":\"gold\"}]");
+								}
+							}
+							EngiesChaosModVariables.MapVariables.get(world).Risk = 5;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						}
+					} else if (world.players().size() == 1) {
+						if (entity.hasPermissions(4)) {
+							if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == true) {
+								EngiesChaosModVariables.MapVariables.get(world).ddaystart = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).sddaystart = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).thestart = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).OHBOY = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).riskcooldown = true;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).ddaywait = true;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).sddaywait = true;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).theendwait = true;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).DoomsdayEeriePlayOnce = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).ddaytimenighttimerblock = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).ddaydialoguetimeblock = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayEeriePlayOnce = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).sddaytimenighttimerblock = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).sddaydialoguetimeblock = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).TheEndStart = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).TheEndEeriePlayOnce = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).theendtimenighttimerblock = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).theenddialoguetimeblock = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(true, world.getServer());
+								entity.getPersistentData().putDouble("TimeUntilNightDDAY", 0);
+								entity.getPersistentData().putDouble("DialogueCooldownStart", 0);
+								entity.getPersistentData().putDouble("SDDAYDialogueCooldownStart", 0);
+								entity.getPersistentData().putDouble("TimeUntilNightSDDAY", 0);
+								entity.getPersistentData().putDouble("TheEndDialogueCooldownStart", 0);
+								entity.getPersistentData().putDouble("TimeUntilNightTHEEND", 0);
+								{
+									Entity _ent = entity;
+									if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+										_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null,
+												4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a ambient allaboutengie:doomsday_start");
+									}
+								}
+								{
+									Entity _ent = entity;
+									if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+										_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null,
+												4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a ambient allaboutengie:doomsday_eerie");
+									}
+								}
+								EngiesChaosModVariables.MapVariables.get(world).Risk = 1;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								if (EngiesChaosModVariables.MapVariables.get(world).timecheckstop == true) {
+									if (world instanceof ServerLevel _level)
+										_level.setDayTime((int) EngiesChaosModVariables.MapVariables.get(world).timebeforespecial);
+									EngiesChaosMod.queueServerWork(5, () -> {
+										EngiesChaosModVariables.MapVariables.get(world).timecheckstop = false;
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									});
+								}
+							} else if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == false) {
+								{
+									Entity _ent = entity;
+									if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+										_ent.getServer().getCommands().performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @a [\"\",{\"selector\":\"@p\",\"bold\":true,\"color\":\"gold\"},{\"text\":\" has summoned DoomsDay! It will occur shortly for this world.\",\"bold\":true,\"color\":\"gold\"}]");
+									}
+								}
+								EngiesChaosModVariables.MapVariables.get(world).Risk = 5;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							}
+						}
+					} else if (world.players().size() > 1) {
+						if (entity.hasPermissions(4)) {
+							if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == true) {
+								EngiesChaosModVariables.MapVariables.get(world).ddaystart = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).sddaystart = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).thestart = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).OHBOY = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).riskcooldown = true;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).ddaywait = true;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).sddaywait = true;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).theendwait = true;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).DoomsdayEeriePlayOnce = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).ddaytimenighttimerblock = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).ddaydialoguetimeblock = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayEeriePlayOnce = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).sddaytimenighttimerblock = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).sddaydialoguetimeblock = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).TheEndStart = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).TheEndEeriePlayOnce = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).theendtimenighttimerblock = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).theenddialoguetimeblock = false;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(true, world.getServer());
+								entity.getPersistentData().putDouble("TimeUntilNightDDAY", 0);
+								entity.getPersistentData().putDouble("DialogueCooldownStart", 0);
+								entity.getPersistentData().putDouble("SDDAYDialogueCooldownStart", 0);
+								entity.getPersistentData().putDouble("TimeUntilNightSDDAY", 0);
+								entity.getPersistentData().putDouble("TheEndDialogueCooldownStart", 0);
+								entity.getPersistentData().putDouble("TimeUntilNightTHEEND", 0);
+								{
+									Entity _ent = entity;
+									if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+										_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null,
+												4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a ambient allaboutengie:doomsday_start");
+									}
+								}
+								{
+									Entity _ent = entity;
+									if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+										_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null,
+												4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a ambient allaboutengie:doomsday_eerie");
+									}
+								}
+								EngiesChaosModVariables.MapVariables.get(world).Risk = 1;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								if (EngiesChaosModVariables.MapVariables.get(world).timecheckstop == true) {
+									if (world instanceof ServerLevel _level)
+										_level.setDayTime((int) EngiesChaosModVariables.MapVariables.get(world).timebeforespecial);
+									EngiesChaosMod.queueServerWork(5, () -> {
+										EngiesChaosModVariables.MapVariables.get(world).timecheckstop = false;
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									});
+								}
+							} else if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == false) {
+								{
+									Entity _ent = entity;
+									if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+										_ent.getServer().getCommands().performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @a [\"\",{\"selector\":\"@p\",\"bold\":true,\"color\":\"gold\"},{\"text\":\" has summoned DoomsDay! It will occur shortly for this world.\",\"bold\":true,\"color\":\"gold\"}]");
+									}
+								}
+								EngiesChaosModVariables.MapVariables.get(world).Risk = 5;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							}
+						}
+					} else {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "tellraw @p {\"text\":\"You do not have permission to run this command!\",\"color\":\"red\"}");
 							}
 						}
 					}
-					if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).DoomsdayAlive == false) {
-						{
-							EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-							_vars.DoomsdayAlive = true;
-							_vars.syncPlayerVariables(entity);
-						}
-					} else if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).DoomsdayAlive == true) {
-						{
-							EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-							_vars.DoomsdayAlive = false;
-							_vars.syncPlayerVariables(entity);
-						}
+				}
+			} else if ((StringArgumentType.getString(arguments, "AltType")).equals("CheckTime") || (StringArgumentType.getString(arguments, "AltType")).equals("checktime")) {
+				if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).timeoverlaytoggle == true) {
+					{
+						boolean _setval = false;
+						entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.timeoverlaytoggle = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).timeoverlaytoggle == false) {
+					{
+						boolean _setval = true;
+						entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.timeoverlaytoggle = _setval;
+							capability.syncPlayerVariables(entity);
+						});
 					}
 				}
-			}
-		} else if ((StringArgumentType.getString(arguments, "MainType")).equals("ResetPickaxeOnly") || (StringArgumentType.getString(arguments, "MainType")).equals("resetpickaxeonly")) {
-			if (entity.getPersistentData().getBoolean("EngiesChaos_Dev") == true) {
-				EngiesChaosModVariables.MapVariables.get(world).playerkilledmobswithoutpickaxeonlycount = 0;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				if (entity instanceof Player _player && !_player.level().isClientSide())
-					_player.displayClientMessage(Component.literal("Successfully reset pickaxe only counts."), false);
-				for (int index0 = 0; index0 < 10; index0++) {
-					EngiesChaosModVariables.MapVariables.get(world).playerkilledmobswithoutpickaxeonlycount = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				}
-			} else if (world.players().size() == 1) {
-				if (entity instanceof Player _playerCmd40 && _playerCmd40.hasPermissions(4)) {
-					EngiesChaosModVariables.MapVariables.get(world).playerkilledmobswithoutpickaxeonlycount = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (entity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal("Successfully reset pickaxe only counts."), false);
-					for (int index1 = 0; index1 < 10; index1++) {
-						EngiesChaosModVariables.MapVariables.get(world).playerkilledmobswithoutpickaxeonlycount = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					}
-				}
-			} else if (world.players().size() > 1) {
-				if (entity instanceof Player _playerCmd43 && _playerCmd43.hasPermissions(4)) {
-					EngiesChaosModVariables.MapVariables.get(world).playerkilledmobswithoutpickaxeonlycount = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (entity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal("Successfully reset pickaxe only counts."), false);
-					for (int index2 = 0; index2 < 10; index2++) {
-						EngiesChaosModVariables.MapVariables.get(world).playerkilledmobswithoutpickaxeonlycount = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					}
-				}
-			} else {
-				{
-					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "tellraw @p {\"text\":\"You do not have permission to run this command!\",\"color\":\"red\"}");
-					}
-				}
-			}
-		} else if ((StringArgumentType.getString(arguments, "MainType")).equals("ResetTraderCount") || (StringArgumentType.getString(arguments, "MainType")).equals("resettradercount")) {
-			if (entity.getPersistentData().getBoolean("EngiesChaos_Dev") == true) {
-				EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				if (entity instanceof Player _player && !_player.level().isClientSide())
-					_player.displayClientMessage(Component.literal("Successfully reset trader counts."), false);
-				for (int index3 = 0; index3 < 10; index3++) {
-					EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 10;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 10;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 10;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 10;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 10;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 10;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 10;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosMod.queueServerWork(1, () -> {
+			} else if ((StringArgumentType.getString(arguments, "AltType")).equals("TraderCount") || (StringArgumentType.getString(arguments, "AltType")).equals("tradercount")) {
+				if ((StringArgumentType.getString(arguments, "TriType")).equals("Reset") || (StringArgumentType.getString(arguments, "TriType")).equals("reset")) {
+					if ((entity.getDisplayName().getString()).equals("DevEngie")) {
 						EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
@@ -283,42 +1476,385 @@ public class AAEAllCommandsProcedure {
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					});
-				}
-			} else if (world.players().size() == 1) {
-				if (entity instanceof Player _playerCmd52 && _playerCmd52.hasPermissions(4)) {
-					EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (entity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal("Successfully reset trader counts."), false);
-					for (int index4 = 0; index4 < 10; index4++) {
-						EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 10;
+						if (entity instanceof Player _player && !_player.level.isClientSide())
+							_player.displayClientMessage(Component.literal("Successfully reset trader counts."), false);
+						for (int index0 = 0; index0 < 10; index0++) {
+							EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosMod.queueServerWork(1, () -> {
+								EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							});
+						}
+					} else if ((entity.getDisplayName().getString()).equals("Dev")) {
+						EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 10;
+						EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 10;
+						EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 10;
+						EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 10;
+						EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 10;
+						EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 10;
+						EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosMod.queueServerWork(1, () -> {
+						if (entity instanceof Player _player && !_player.level.isClientSide())
+							_player.displayClientMessage(Component.literal("Successfully reset trader counts."), false);
+						for (int index1 = 0; index1 < 10; index1++) {
+							EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosMod.queueServerWork(1, () -> {
+								EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							});
+						}
+					} else if ((entity.getDisplayName().getString()).equals("EngieGamesOnTTV")) {
+						EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						if (entity instanceof Player _player && !_player.level.isClientSide())
+							_player.displayClientMessage(Component.literal("Successfully reset trader counts."), false);
+						for (int index2 = 0; index2 < 10; index2++) {
+							EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosMod.queueServerWork(1, () -> {
+								EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							});
+						}
+					} else if ((entity.getDisplayName().getString()).equals("playedbyengie")) {
+						EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						if (entity instanceof Player _player && !_player.level.isClientSide())
+							_player.displayClientMessage(Component.literal("Successfully reset trader counts."), false);
+						for (int index3 = 0; index3 < 10; index3++) {
+							EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosMod.queueServerWork(1, () -> {
+								EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							});
+						}
+					} else if ((entity.getDisplayName().getString()).equals("[All About Engie Developer] DevEngie")) {
+						EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						if (entity instanceof Player _player && !_player.level.isClientSide())
+							_player.displayClientMessage(Component.literal("Successfully reset trader counts."), false);
+						for (int index4 = 0; index4 < 10; index4++) {
+							EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosMod.queueServerWork(1, () -> {
+								EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							});
+						}
+					} else if ((entity.getDisplayName().getString()).equals("[All About Engie Content Creator] EngieGamesOnTTV")) {
+						EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						if (entity instanceof Player _player && !_player.level.isClientSide())
+							_player.displayClientMessage(Component.literal("Successfully reset trader counts."), false);
+						for (int index5 = 0; index5 < 10; index5++) {
+							EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosMod.queueServerWork(1, () -> {
+								EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							});
+						}
+					} else if ((entity.getDisplayName().getString()).equals("[All About Engie Developer] Dev")) {
+						EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						if (entity instanceof Player _player && !_player.level.isClientSide())
+							_player.displayClientMessage(Component.literal("Successfully reset trader counts."), false);
+						for (int index6 = 0; index6 < 10; index6++) {
+							EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosMod.queueServerWork(1, () -> {
+								EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							});
+						}
+					} else if ((entity.getDisplayName().getString()).equals("[RE:All About Engie Developer] playedbyengie")) {
+						EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						if (entity instanceof Player _player && !_player.level.isClientSide())
+							_player.displayClientMessage(Component.literal("Successfully reset trader counts."), false);
+						for (int index7 = 0; index7 < 10; index7++) {
+							EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 10;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosMod.queueServerWork(1, () -> {
+								EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							});
+						}
+					} else if (world.players().size() == 1) {
+						if (entity.hasPermissions(4)) {
 							EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
@@ -333,43 +1869,43 @@ public class AAEAllCommandsProcedure {
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						});
-					}
-				}
-			} else if (world.players().size() > 1) {
-				if (entity instanceof Player _playerCmd56 && _playerCmd56.hasPermissions(4)) {
-					EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (entity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal("Successfully reset trader counts."), false);
-					for (int index5 = 0; index5 < 10; index5++) {
-						EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 10;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 10;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 10;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 10;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 10;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 10;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 10;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosMod.queueServerWork(1, () -> {
+							if (entity instanceof Player _player && !_player.level.isClientSide())
+								_player.displayClientMessage(Component.literal("Successfully reset trader counts."), false);
+							for (int index8 = 0; index8 < 10; index8++) {
+								EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 10;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 10;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 10;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 10;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 10;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 10;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 10;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosMod.queueServerWork(1, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
+							}
+						}
+					} else if (world.players().size() > 1) {
+						if (entity.hasPermissions(4)) {
 							EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
@@ -384,560 +1920,1226 @@ public class AAEAllCommandsProcedure {
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						});
+							if (entity instanceof Player _player && !_player.level.isClientSide())
+								_player.displayClientMessage(Component.literal("Successfully reset trader counts."), false);
+							for (int index9 = 0; index9 < 10; index9++) {
+								EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 10;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 10;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 10;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 10;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 10;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 10;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 10;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosMod.queueServerWork(1, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
+							}
+						}
+					} else {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "tellraw @p {\"text\":\"You do not have permission to run this command!\",\"color\":\"red\"}");
+							}
+						}
 					}
 				}
-			} else {
-				{
-					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "tellraw @p {\"text\":\"You do not have permission to run this command!\",\"color\":\"red\"}");
+			} else if ((StringArgumentType.getString(arguments, "AltType")).equals("Difficulty") || (StringArgumentType.getString(arguments, "AltType")).equals("difficulty")) {
+				if ((StringArgumentType.getString(arguments, "TriType")).equals("Set") || (StringArgumentType.getString(arguments, "TriType")).equals("set")) {
+					if ((entity.getDisplayName().getString()).equals("DevEngie")) {
+						DifficultyDebugChangeProcedure.execute(world, arguments);
+					} else if ((entity.getDisplayName().getString()).equals("Dev")) {
+						DifficultyDebugChangeProcedure.execute(world, arguments);
+					} else if ((entity.getDisplayName().getString()).equals("EngieGamesOnTTV")) {
+						DifficultyDebugChangeProcedure.execute(world, arguments);
+					} else if ((entity.getDisplayName().getString()).equals("playedbyengie")) {
+						DifficultyDebugChangeProcedure.execute(world, arguments);
+					} else if ((entity.getDisplayName().getString()).equals("[All About Engie Developer] DevEngie")) {
+						DifficultyDebugChangeProcedure.execute(world, arguments);
+					} else if ((entity.getDisplayName().getString()).equals("[All About Engie Content Creator] EngieGamesOnTTV")) {
+						DifficultyDebugChangeProcedure.execute(world, arguments);
+					} else if ((entity.getDisplayName().getString()).equals("[All About Engie Developer] Dev")) {
+						DifficultyDebugChangeProcedure.execute(world, arguments);
+					} else if ((entity.getDisplayName().getString()).equals("[RE:All About Engie Developer] playedbyengie")) {
+						DifficultyDebugChangeProcedure.execute(world, arguments);
+					} else if (world.players().size() == 1) {
+						if (entity.hasPermissions(4)) {
+							DifficultyDebugChangeProcedure.execute(world, arguments);
+						}
+					} else if (world.players().size() > 1) {
+						if (entity.hasPermissions(4)) {
+							DifficultyDebugChangeProcedure.execute(world, arguments);
+						}
+					} else {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "tellraw @p {\"text\":\"You do not have permission to run this command!\",\"color\":\"red\"}");
+							}
+						}
+					}
+				} else if ((StringArgumentType.getString(arguments, "TriType")).equals("Overlay") || (StringArgumentType.getString(arguments, "TriType")).equals("overlay")) {
+					if (DoubleArgumentType.getDouble(arguments, "number") == 0) {
+						{
+							double _setval = 0;
+							entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.difficultyoverlaytoggle = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+					} else if (DoubleArgumentType.getDouble(arguments, "number") == 1) {
+						{
+							double _setval = 1;
+							entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.difficultyoverlaytoggle = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+					} else if (DoubleArgumentType.getDouble(arguments, "number") == 2) {
+						{
+							double _setval = 2;
+							entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.difficultyoverlaytoggle = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+					} else if (DoubleArgumentType.getDouble(arguments, "number") == 3) {
+						{
+							double _setval = 3;
+							entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.difficultyoverlaytoggle = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+					} else if (DoubleArgumentType.getDouble(arguments, "number") == 4) {
+						{
+							double _setval = 4;
+							entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.difficultyoverlaytoggle = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
 					}
 				}
 			}
-		} else if ((StringArgumentType.getString(arguments, "MainType")).equals("DevMode") || (StringArgumentType.getString(arguments, "MainType")).equals("devmode")) {
-			if (entity.getPersistentData().getBoolean("EngiesChaos_Dev") == true || entity.getPersistentData().getBoolean("EngiesChaos_BetaTester") == true || entity.getPersistentData().getBoolean("EngiesChaos_Tester") == true) {
-				if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).playerdebugmode == true) {
+		} else if ((StringArgumentType.getString(arguments, "MainType")).equals("Risk") || (StringArgumentType.getString(arguments, "MainType")).equals("risk")) {
+			if ((StringArgumentType.getString(arguments, "AltType")).equals("Check") || (StringArgumentType.getString(arguments, "AltType")).equals("check")) {
+				RiskCheckProcedure.execute(world, entity);
+			} else if ((StringArgumentType.getString(arguments, "TriType")).equals("Track") || (StringArgumentType.getString(arguments, "TriType")).equals("track")) {
+				if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayRiskTrackToggle == true) {
 					{
-						EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-						_vars.playerdebugmode = false;
-						_vars.syncPlayerVariables(entity);
+						boolean _setval = false;
+						entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.DoomsdayRiskTrackToggle = _setval;
+							capability.syncPlayerVariables(entity);
+						});
 					}
-				} else if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).playerdebugmode == false) {
+				} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayRiskTrackToggle == false) {
 					{
-						EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-						_vars.playerdebugmode = true;
-						_vars.syncPlayerVariables(entity);
-					}
-				}
-			} else {
-				{
-					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "tellraw @p {\"text\":\"You do not have permission to run this command!\",\"color\":\"red\"}");
+						boolean _setval = true;
+						entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.DoomsdayRiskTrackToggle = _setval;
+							capability.syncPlayerVariables(entity);
+						});
 					}
 				}
 			}
 		} else if ((StringArgumentType.getString(arguments, "MainType")).equals("Modifier") || (StringArgumentType.getString(arguments, "MainType")).equals("modifier")) {
 			if ((StringArgumentType.getString(arguments, "AltType")).equals("SuperDoomsday") || (StringArgumentType.getString(arguments, "AltType")).equals("superdoomsday")) {
-				if (entity.getPersistentData().getBoolean("EngiesChaos_Dev") == true) {
-					if ((world instanceof ServerLevel _serverLevelGR71 && _serverLevelGR71.getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE)) == false) {
+				if ((entity.getDisplayName().getString()).equals("DevEngie")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == false) {
 						{
 							Entity _ent = entity;
-							if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(
-										new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-												_ent.getDisplayName(), _ent.level().getServer(), _ent),
-										"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Super Doomsday.\",\"bold\":true,\"color\":\"aqua\"}");
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Super Doomsday.\",\"bold\":true,\"color\":\"aqua\"}");
 							}
 						}
-						if (world instanceof ServerLevel _serverLevel)
-							_serverLevel.getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(true, world.getServer());
-					} else if ((world instanceof ServerLevel _serverLevelGR74 && _serverLevelGR74.getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE)) == true) {
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == true) {
 						{
 							Entity _ent = entity;
-							if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(
-										new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-												_ent.getDisplayName(), _ent.level().getServer(), _ent),
-										"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Super Doomsday.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Super Doomsday.\",\"bold\":true,\"color\":\"dark_aqua\"}");
 							}
 						}
-						if (world instanceof ServerLevel _serverLevel)
-							_serverLevel.getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(false, world.getServer());
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("Dev")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Super Doomsday.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Super Doomsday.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("EngieGamesOnTTV")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Super Doomsday.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Super Doomsday.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("playedbyengie")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Super Doomsday.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Super Doomsday.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("[All About Engie Developer] DevEngie")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Super Doomsday.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Super Doomsday.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("[All About Engie Content Creator] EngieGamesOnTTV")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Super Doomsday.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Super Doomsday.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("[All About Engie Developer] Dev")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Super Doomsday.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Super Doomsday.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("[RE:All About Engie Developer] playedbyengie")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Super Doomsday.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Super Doomsday.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(false, world.getServer());
 					}
 				} else if (world.players().size() == 1) {
-					if (entity instanceof Player _playerCmd78 && _playerCmd78.hasPermissions(4)) {
-						if ((world instanceof ServerLevel _serverLevelGR79 && _serverLevelGR79.getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE)) == false) {
+					if (entity.hasPermissions(4)) {
+						if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == false) {
 							{
 								Entity _ent = entity;
-								if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-													_ent.getDisplayName(), _ent.level().getServer(), _ent),
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
 											"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Super Doomsday.\",\"bold\":true,\"color\":\"aqua\"}");
 								}
 							}
-							if (world instanceof ServerLevel _serverLevel)
-								_serverLevel.getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(true, world.getServer());
-						} else if ((world instanceof ServerLevel _serverLevelGR82 && _serverLevelGR82.getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE)) == true) {
+							world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(true, world.getServer());
+						} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == true) {
 							{
 								Entity _ent = entity;
-								if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-													_ent.getDisplayName(), _ent.level().getServer(), _ent),
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
 											"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Super Doomsday.\",\"bold\":true,\"color\":\"dark_aqua\"}");
 								}
 							}
-							if (world instanceof ServerLevel _serverLevel)
-								_serverLevel.getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(false, world.getServer());
+							world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(false, world.getServer());
 						}
 					}
 				} else if (world.players().size() > 1) {
-					if (entity instanceof Player _playerCmd86 && _playerCmd86.hasPermissions(4)) {
-						if ((world instanceof ServerLevel _serverLevelGR87 && _serverLevelGR87.getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE)) == false) {
+					if (entity.hasPermissions(4)) {
+						if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == false) {
 							{
 								Entity _ent = entity;
-								if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-													_ent.getDisplayName(), _ent.level().getServer(), _ent),
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
 											"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Super Doomsday.\",\"bold\":true,\"color\":\"aqua\"}");
 								}
 							}
-							if (world instanceof ServerLevel _serverLevel)
-								_serverLevel.getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(true, world.getServer());
-						} else if ((world instanceof ServerLevel _serverLevelGR90 && _serverLevelGR90.getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE)) == true) {
+							world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(true, world.getServer());
+						} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == true) {
 							{
 								Entity _ent = entity;
-								if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-													_ent.getDisplayName(), _ent.level().getServer(), _ent),
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
 											"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Super Doomsday.\",\"bold\":true,\"color\":\"dark_aqua\"}");
 								}
 							}
-							if (world instanceof ServerLevel _serverLevel)
-								_serverLevel.getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(false, world.getServer());
+							world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(false, world.getServer());
 						}
 					}
 				} else {
 					{
 						Entity _ent = entity;
-						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "tellraw @p {\"text\":\"You do not have permission to run this command!\",\"color\":\"red\"}");
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "tellraw @p {\"text\":\"You do not have permission to run this command!\",\"color\":\"red\"}");
 						}
 					}
 				}
 			} else if ((StringArgumentType.getString(arguments, "AltType")).equals("ExtremeDoomsdayLightning") || (StringArgumentType.getString(arguments, "AltType")).equals("extremedoomsdaylightning")) {
-				if (entity.getPersistentData().getBoolean("EngiesChaos_Dev") == true) {
-					if ((world instanceof ServerLevel _serverLevelGR97 && _serverLevelGR97.getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING)) == false) {
+				if ((entity.getDisplayName().getString()).equals("DevEngie")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == false) {
 						{
 							Entity _ent = entity;
-							if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(
-										new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-												_ent.getDisplayName(), _ent.level().getServer(), _ent),
-										"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Extreme Doomsday Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Extreme Doomsday Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
 							}
 						}
-						if (world instanceof ServerLevel _serverLevel)
-							_serverLevel.getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(true, world.getServer());
-					} else if ((world instanceof ServerLevel _serverLevelGR100 && _serverLevelGR100.getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING)) == true) {
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == true) {
 						{
 							Entity _ent = entity;
-							if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 								_ent.getServer().getCommands().performPrefixedCommand(
-										new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-												_ent.getDisplayName(), _ent.level().getServer(), _ent),
+										new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
+												_ent.level.getServer(), _ent),
 										"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Extreme Doomsday Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
 							}
 						}
-						if (world instanceof ServerLevel _serverLevel)
-							_serverLevel.getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(false, world.getServer());
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("Dev")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Extreme Doomsday Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
+												_ent.level.getServer(), _ent),
+										"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Extreme Doomsday Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("EngieGamesOnTTV")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Extreme Doomsday Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
+												_ent.level.getServer(), _ent),
+										"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Extreme Doomsday Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("playedbyengie")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Extreme Doomsday Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
+												_ent.level.getServer(), _ent),
+										"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Extreme Doomsday Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("[All About Engie Developer] DevEngie")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Extreme Doomsday Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
+												_ent.level.getServer(), _ent),
+										"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Extreme Doomsday Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("[All About Engie Content Creator] EngieGamesOnTTV")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Extreme Doomsday Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
+												_ent.level.getServer(), _ent),
+										"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Extreme Doomsday Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("[All About Engie Developer] Dev")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Extreme Doomsday Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
+												_ent.level.getServer(), _ent),
+										"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Extreme Doomsday Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("[RE:All About Engie Developer] playedbyengie")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Extreme Doomsday Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
+												_ent.level.getServer(), _ent),
+										"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Extreme Doomsday Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(false, world.getServer());
 					}
 				} else if (world.players().size() == 1) {
-					if (entity instanceof Player _playerCmd104 && _playerCmd104.hasPermissions(4)) {
-						if ((world instanceof ServerLevel _serverLevelGR105 && _serverLevelGR105.getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING)) == false) {
+					if (entity.hasPermissions(4)) {
+						if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == false) {
 							{
 								Entity _ent = entity;
-								if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-													_ent.getDisplayName(), _ent.level().getServer(), _ent),
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
 											"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Extreme Doomsday Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
 								}
 							}
-							if (world instanceof ServerLevel _serverLevel)
-								_serverLevel.getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(true, world.getServer());
-						} else if ((world instanceof ServerLevel _serverLevelGR108 && _serverLevelGR108.getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING)) == true) {
+							world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(true, world.getServer());
+						} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == true) {
 							{
 								Entity _ent = entity;
-								if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-													_ent.getDisplayName(), _ent.level().getServer(), _ent),
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
 											"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Extreme Doomsday Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
 								}
 							}
-							if (world instanceof ServerLevel _serverLevel)
-								_serverLevel.getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(false, world.getServer());
+							world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(false, world.getServer());
 						}
 					}
 				} else if (world.players().size() > 1) {
-					if (entity instanceof Player _playerCmd112 && _playerCmd112.hasPermissions(4)) {
-						if ((world instanceof ServerLevel _serverLevelGR113 && _serverLevelGR113.getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING)) == false) {
+					if (entity.hasPermissions(4)) {
+						if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == false) {
 							{
 								Entity _ent = entity;
-								if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-													_ent.getDisplayName(), _ent.level().getServer(), _ent),
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
 											"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Extreme Doomsday Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
 								}
 							}
-							if (world instanceof ServerLevel _serverLevel)
-								_serverLevel.getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(true, world.getServer());
-						} else if ((world instanceof ServerLevel _serverLevelGR116 && _serverLevelGR116.getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING)) == true) {
+							world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(true, world.getServer());
+						} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == true) {
 							{
 								Entity _ent = entity;
-								if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-													_ent.getDisplayName(), _ent.level().getServer(), _ent),
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
 											"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Extreme Doomsday Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
 								}
 							}
-							if (world instanceof ServerLevel _serverLevel)
-								_serverLevel.getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(false, world.getServer());
+							world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(false, world.getServer());
 						}
 					}
 				} else {
 					{
 						Entity _ent = entity;
-						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "tellraw @p {\"text\":\"You do not have permission to run this command!\",\"color\":\"red\"}");
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "tellraw @p {\"text\":\"You do not have permission to run this command!\",\"color\":\"red\"}");
 						}
 					}
 				}
 			} else if ((StringArgumentType.getString(arguments, "AltType")).equals("HeavyLightning") || (StringArgumentType.getString(arguments, "AltType")).equals("heavylightning")) {
-				if (entity.getPersistentData().getBoolean("EngiesChaos_Dev") == true) {
-					if ((world instanceof ServerLevel _serverLevelGR123 && _serverLevelGR123.getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING)) == false) {
+				if ((entity.getDisplayName().getString()).equals("DevEngie")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == false) {
 						{
 							Entity _ent = entity;
-							if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(
-										new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-												_ent.getDisplayName(), _ent.level().getServer(), _ent),
-										"tellraw @p {\"text\":\"Getting ready for increased destruction and lag, you have Successfully toggled on Heavy Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for increased destruction and lag, you have Successfully toggled on Heavy Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
 							}
 						}
-						if (world instanceof ServerLevel _serverLevel)
-							_serverLevel.getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(true, world.getServer());
-					} else if ((world instanceof ServerLevel _serverLevelGR126 && _serverLevelGR126.getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING)) == true) {
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == true) {
 						{
 							Entity _ent = entity;
-							if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(
-										new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-												_ent.getDisplayName(), _ent.level().getServer(), _ent),
-										"tellraw @p {\"text\":\"Getting ready for decreased destruction and lag, you have Successfully toggled off Heavy Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for decreased destruction and lag, you have Successfully toggled off Heavy Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
 							}
 						}
-						if (world instanceof ServerLevel _serverLevel)
-							_serverLevel.getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(false, world.getServer());
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("Dev")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for increased destruction and lag, you have Successfully toggled on Heavy Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for decreased destruction and lag, you have Successfully toggled off Heavy Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("EngieGamesOnTTV")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for increased destruction and lag, you have Successfully toggled on Heavy Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for decreased destruction and lag, you have Successfully toggled off Heavy Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("playedbyengie")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for increased destruction and lag, you have Successfully toggled on Heavy Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for decreased destruction and lag, you have Successfully toggled off Heavy Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("[All About Engie Developer] DevEngie")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for increased destruction and lag, you have Successfully toggled on Heavy Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for decreased destruction and lag, you have Successfully toggled off Heavy Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("[All About Engie Content Creator] EngieGamesOnTTV")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for increased destruction and lag, you have Successfully toggled on Heavy Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for decreased destruction and lag, you have Successfully toggled off Heavy Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("[All About Engie Developer] Dev")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for increased destruction and lag, you have Successfully toggled on Heavy Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for decreased destruction and lag, you have Successfully toggled off Heavy Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("[RE:All About Engie Developer] playedbyengie")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for increased destruction and lag, you have Successfully toggled on Heavy Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for decreased destruction and lag, you have Successfully toggled off Heavy Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(false, world.getServer());
 					}
 				} else if (world.players().size() == 1) {
-					if (entity instanceof Player _playerCmd130 && _playerCmd130.hasPermissions(4)) {
-						if ((world instanceof ServerLevel _serverLevelGR131 && _serverLevelGR131.getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING)) == false) {
+					if (entity.hasPermissions(4)) {
+						if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == false) {
 							{
 								Entity _ent = entity;
-								if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-													_ent.getDisplayName(), _ent.level().getServer(), _ent),
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
 											"tellraw @p {\"text\":\"Getting ready for increased destruction and lag, you have Successfully toggled on Heavy Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
 								}
 							}
-							if (world instanceof ServerLevel _serverLevel)
-								_serverLevel.getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(true, world.getServer());
-						} else if ((world instanceof ServerLevel _serverLevelGR134 && _serverLevelGR134.getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING)) == true) {
+							world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(true, world.getServer());
+						} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == true) {
 							{
 								Entity _ent = entity;
-								if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-													_ent.getDisplayName(), _ent.level().getServer(), _ent),
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
 											"tellraw @p {\"text\":\"Getting ready for decreased destruction and lag, you have Successfully toggled off Heavy Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
 								}
 							}
-							if (world instanceof ServerLevel _serverLevel)
-								_serverLevel.getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(false, world.getServer());
+							world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(false, world.getServer());
 						}
 					}
 				} else if (world.players().size() > 1) {
-					if (entity instanceof Player _playerCmd138 && _playerCmd138.hasPermissions(4)) {
-						if ((world instanceof ServerLevel _serverLevelGR139 && _serverLevelGR139.getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING)) == false) {
+					if (entity.hasPermissions(4)) {
+						if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == false) {
 							{
 								Entity _ent = entity;
-								if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-													_ent.getDisplayName(), _ent.level().getServer(), _ent),
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
 											"tellraw @p {\"text\":\"Getting ready for increased destruction and lag, you have Successfully toggled on Heavy Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
 								}
 							}
-							if (world instanceof ServerLevel _serverLevel)
-								_serverLevel.getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(true, world.getServer());
-						} else if ((world instanceof ServerLevel _serverLevelGR142 && _serverLevelGR142.getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING)) == true) {
+							world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(true, world.getServer());
+						} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == true) {
 							{
 								Entity _ent = entity;
-								if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-													_ent.getDisplayName(), _ent.level().getServer(), _ent),
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
 											"tellraw @p {\"text\":\"Getting ready for decreased destruction and lag, you have Successfully toggled off Heavy Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
 								}
 							}
-							if (world instanceof ServerLevel _serverLevel)
-								_serverLevel.getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(false, world.getServer());
+							world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(false, world.getServer());
 						}
 					}
 				} else {
 					{
 						Entity _ent = entity;
-						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "tellraw @p {\"text\":\"You do not have permission to run this command!\",\"color\":\"red\"}");
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "tellraw @p {\"text\":\"You do not have permission to run this command!\",\"color\":\"red\"}");
 						}
 					}
 				}
 			} else if ((StringArgumentType.getString(arguments, "AltType")).equals("ExtremeLightning") || (StringArgumentType.getString(arguments, "AltType")).equals("extremelightning")) {
-				if (entity.getPersistentData().getBoolean("EngiesChaos_Dev") == true) {
-					if ((world instanceof ServerLevel _serverLevelGR149 && _serverLevelGR149.getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING)) == false) {
+				if ((entity.getDisplayName().getString()).equals("DevEngie")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == false) {
 						{
 							Entity _ent = entity;
-							if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(
-										new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-												_ent.getDisplayName(), _ent.level().getServer(), _ent),
-										"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Extreme Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Extreme Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
 							}
 						}
-						if (world instanceof ServerLevel _serverLevel)
-							_serverLevel.getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(true, world.getServer());
-					} else if ((world instanceof ServerLevel _serverLevelGR152 && _serverLevelGR152.getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING)) == true) {
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == true) {
 						{
 							Entity _ent = entity;
-							if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(
-										new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-												_ent.getDisplayName(), _ent.level().getServer(), _ent),
-										"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Extreme Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Extreme Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
 							}
 						}
-						if (world instanceof ServerLevel _serverLevel)
-							_serverLevel.getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(false, world.getServer());
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("Dev")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Extreme Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Extreme Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("EngieGamesOnTTV")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Extreme Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Extreme Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("playedbyengie")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Extreme Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Extreme Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("[All About Engie Developer] DevEngie")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Extreme Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Extreme Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("[All About Engie Content Creator] EngieGamesOnTTV")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Extreme Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Extreme Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("[All About Engie Developer] Dev")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Extreme Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Extreme Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(false, world.getServer());
+					}
+				} else if ((entity.getDisplayName().getString()).equals("[RE:All About Engie Developer] playedbyengie")) {
+					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == false) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Extreme Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(true, world.getServer());
+					} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == true) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+														_ent.getDisplayName(), _ent.level.getServer(), _ent),
+												"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Extreme Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
+							}
+						}
+						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(false, world.getServer());
 					}
 				} else if (world.players().size() == 1) {
-					if (entity instanceof Player _playerCmd156 && _playerCmd156.hasPermissions(4)) {
-						if ((world instanceof ServerLevel _serverLevelGR157 && _serverLevelGR157.getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING)) == false) {
+					if (entity.hasPermissions(4)) {
+						if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == false) {
 							{
 								Entity _ent = entity;
-								if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-													_ent.getDisplayName(), _ent.level().getServer(), _ent),
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
 											"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Extreme Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
 								}
 							}
-							if (world instanceof ServerLevel _serverLevel)
-								_serverLevel.getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(true, world.getServer());
-						} else if ((world instanceof ServerLevel _serverLevelGR160 && _serverLevelGR160.getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING)) == true) {
+							world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(true, world.getServer());
+						} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == true) {
 							{
 								Entity _ent = entity;
-								if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-													_ent.getDisplayName(), _ent.level().getServer(), _ent),
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
 											"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Extreme Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
 								}
 							}
-							if (world instanceof ServerLevel _serverLevel)
-								_serverLevel.getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(false, world.getServer());
+							world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(false, world.getServer());
 						}
 					}
 				} else if (world.players().size() > 1) {
-					if (entity instanceof Player _playerCmd164 && _playerCmd164.hasPermissions(4)) {
-						if ((world instanceof ServerLevel _serverLevelGR165 && _serverLevelGR165.getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING)) == false) {
+					if (entity.hasPermissions(4)) {
+						if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == false) {
 							{
 								Entity _ent = entity;
-								if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-													_ent.getDisplayName(), _ent.level().getServer(), _ent),
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
 											"tellraw @p {\"text\":\"Getting ready for mass destruction and lag, you have Successfully toggled on Extreme Lightning.\",\"bold\":true,\"color\":\"aqua\"}");
 								}
 							}
-							if (world instanceof ServerLevel _serverLevel)
-								_serverLevel.getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(true, world.getServer());
-						} else if ((world instanceof ServerLevel _serverLevelGR168 && _serverLevelGR168.getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING)) == true) {
+							world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(true, world.getServer());
+						} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == true) {
 							{
 								Entity _ent = entity;
-								if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(),
-													_ent.getDisplayName(), _ent.level().getServer(), _ent),
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
 											"tellraw @p {\"text\":\"Getting ready for less destruction and lag, you have Successfully toggled off Extreme Lightning.\",\"bold\":true,\"color\":\"dark_aqua\"}");
 								}
 							}
-							if (world instanceof ServerLevel _serverLevel)
-								_serverLevel.getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(false, world.getServer());
+							world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(false, world.getServer());
 						}
 					}
 				} else {
 					{
 						Entity _ent = entity;
-						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "tellraw @p {\"text\":\"You do not have permission to run this command!\",\"color\":\"red\"}");
-						}
-					}
-				}
-			}
-		} else if ((StringArgumentType.getString(arguments, "MainType")).equals("Lives") || (StringArgumentType.getString(arguments, "MainType")).equals("lives")) {
-			if ((StringArgumentType.getString(arguments, "AltType")).equals("Set") || (StringArgumentType.getString(arguments, "AltType")).equals("set")) {
-				if (entity.getPersistentData().getBoolean("EngiesChaos_Dev") == true) {
-					if (!((commandParameterEntity(arguments, "entity")) == null)) {
-						if ((commandParameterEntity(arguments, "entity")) instanceof Player) {
-							if (DoubleArgumentType.getDouble(arguments, "lives") > (world instanceof ServerLevel _serverLevelGR182 ? _serverLevelGR182.getGameRules().getInt(EngiesChaosModGameRules.TRUE_HARDCORE_LIFE_COUNT) : 0)) {
-								if (entity instanceof Player _player && !_player.level().isClientSide())
-									_player.displayClientMessage(Component.literal("\u00A7cYour number was over the max life count so it was set to the maximum from the gamerule!"), false);
-								{
-									EngiesChaosModVariables.PlayerVariables _vars = (commandParameterEntity(arguments, "entity")).getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-									_vars.TrueHardcoreLifeCount = (world instanceof ServerLevel _serverLevelGR184 ? _serverLevelGR184.getGameRules().getInt(EngiesChaosModGameRules.TRUE_HARDCORE_LIFE_COUNT) : 0);
-									_vars.syncPlayerVariables((commandParameterEntity(arguments, "entity")));
-								}
-							} else {
-								{
-									EngiesChaosModVariables.PlayerVariables _vars = (commandParameterEntity(arguments, "entity")).getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-									_vars.TrueHardcoreLifeCount = DoubleArgumentType.getDouble(arguments, "lives");
-									_vars.syncPlayerVariables((commandParameterEntity(arguments, "entity")));
-								}
-							}
-							if (getEntityGameType((commandParameterEntity(arguments, "entity"))) == GameType.SPECTATOR) {
-								if ((commandParameterEntity(arguments, "entity")) instanceof ServerPlayer _player)
-									_player.setGameMode(GameType.SURVIVAL);
-							}
-						} else {
-							if (entity instanceof Player _player && !_player.level().isClientSide())
-								_player.displayClientMessage(Component.literal("\u00A7cYou need a player to set the life count to!"), false);
-						}
-					} else {
-						if (entity instanceof Player _player && !_player.level().isClientSide())
-							_player.displayClientMessage(Component.literal("\u00A7cYou need a player to set the life count to!"), false);
-					}
-				} else if (world.players().size() == 1) {
-					if (entity instanceof Player _playerCmd195 && _playerCmd195.hasPermissions(4)) {
-						if (!((commandParameterEntity(arguments, "entity")) == null)) {
-							if ((commandParameterEntity(arguments, "entity")) instanceof Player) {
-								if (DoubleArgumentType.getDouble(arguments, "lives") > (world instanceof ServerLevel _serverLevelGR201 ? _serverLevelGR201.getGameRules().getInt(EngiesChaosModGameRules.TRUE_HARDCORE_LIFE_COUNT) : 0)) {
-									if (entity instanceof Player _player && !_player.level().isClientSide())
-										_player.displayClientMessage(Component.literal("\u00A7cYour number was over the max life count so it was set to the maximum from the gamerule!"), false);
-									{
-										EngiesChaosModVariables.PlayerVariables _vars = (commandParameterEntity(arguments, "entity")).getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-										_vars.TrueHardcoreLifeCount = (world instanceof ServerLevel _serverLevelGR203 ? _serverLevelGR203.getGameRules().getInt(EngiesChaosModGameRules.TRUE_HARDCORE_LIFE_COUNT) : 0);
-										_vars.syncPlayerVariables((commandParameterEntity(arguments, "entity")));
-									}
-								} else {
-									{
-										EngiesChaosModVariables.PlayerVariables _vars = (commandParameterEntity(arguments, "entity")).getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-										_vars.TrueHardcoreLifeCount = DoubleArgumentType.getDouble(arguments, "lives");
-										_vars.syncPlayerVariables((commandParameterEntity(arguments, "entity")));
-									}
-								}
-								if (getEntityGameType((commandParameterEntity(arguments, "entity"))) == GameType.SPECTATOR) {
-									if ((commandParameterEntity(arguments, "entity")) instanceof ServerPlayer _player)
-										_player.setGameMode(GameType.SURVIVAL);
-								}
-							} else {
-								if (entity instanceof Player _player && !_player.level().isClientSide())
-									_player.displayClientMessage(Component.literal("\u00A7cYou need a player to set the life count to!"), false);
-							}
-						} else {
-							if (entity instanceof Player _player && !_player.level().isClientSide())
-								_player.displayClientMessage(Component.literal("\u00A7cYou need a player to set the life count to!"), false);
-						}
-					}
-				} else if (world.players().size() > 1) {
-					if (entity instanceof Player _playerCmd214 && _playerCmd214.hasPermissions(4)) {
-						if (!((commandParameterEntity(arguments, "entity")) == null)) {
-							if ((commandParameterEntity(arguments, "entity")) instanceof Player) {
-								if (DoubleArgumentType.getDouble(arguments, "lives") > (world instanceof ServerLevel _serverLevelGR220 ? _serverLevelGR220.getGameRules().getInt(EngiesChaosModGameRules.TRUE_HARDCORE_LIFE_COUNT) : 0)) {
-									if (entity instanceof Player _player && !_player.level().isClientSide())
-										_player.displayClientMessage(Component.literal("\u00A7cYour number was over the max life count so it was set to the maximum from the gamerule!"), false);
-									{
-										EngiesChaosModVariables.PlayerVariables _vars = (commandParameterEntity(arguments, "entity")).getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-										_vars.TrueHardcoreLifeCount = (world instanceof ServerLevel _serverLevelGR222 ? _serverLevelGR222.getGameRules().getInt(EngiesChaosModGameRules.TRUE_HARDCORE_LIFE_COUNT) : 0);
-										_vars.syncPlayerVariables((commandParameterEntity(arguments, "entity")));
-									}
-								} else {
-									{
-										EngiesChaosModVariables.PlayerVariables _vars = (commandParameterEntity(arguments, "entity")).getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-										_vars.TrueHardcoreLifeCount = DoubleArgumentType.getDouble(arguments, "lives");
-										_vars.syncPlayerVariables((commandParameterEntity(arguments, "entity")));
-									}
-								}
-								if (getEntityGameType((commandParameterEntity(arguments, "entity"))) == GameType.SPECTATOR) {
-									if ((commandParameterEntity(arguments, "entity")) instanceof ServerPlayer _player)
-										_player.setGameMode(GameType.SURVIVAL);
-								}
-							} else {
-								if (entity instanceof Player _player && !_player.level().isClientSide())
-									_player.displayClientMessage(Component.literal("\u00A7cYou need a player to set the life count to!"), false);
-							}
-						} else {
-							if (entity instanceof Player _player && !_player.level().isClientSide())
-								_player.displayClientMessage(Component.literal("\u00A7cYou need a player to set the life count to!"), false);
-						}
-					}
-				} else {
-					{
-						Entity _ent = entity;
-						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "tellraw @p {\"text\":\"You do not have permission to run this command!\",\"color\":\"red\"}");
-						}
-					}
-				}
-			} else if ((StringArgumentType.getString(arguments, "AltType")).equals("Set2") || (StringArgumentType.getString(arguments, "AltType")).equals("set2")) {
-				if (!((commandParameterEntity(arguments, "entity")) == null)) {
-					if ((commandParameterEntity(arguments, "entity")) instanceof Player) {
-						if (DoubleArgumentType.getDouble(arguments, "lives") > (world instanceof ServerLevel _serverLevelGR240 ? _serverLevelGR240.getGameRules().getInt(EngiesChaosModGameRules.TRUE_HARDCORE_LIFE_COUNT) : 0)) {
-							{
-								EngiesChaosModVariables.PlayerVariables _vars = (commandParameterEntity(arguments, "entity")).getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-								_vars.TrueHardcoreLifeCount = (world instanceof ServerLevel _serverLevelGR241 ? _serverLevelGR241.getGameRules().getInt(EngiesChaosModGameRules.TRUE_HARDCORE_LIFE_COUNT) : 0);
-								_vars.syncPlayerVariables((commandParameterEntity(arguments, "entity")));
-							}
-						} else {
-							{
-								EngiesChaosModVariables.PlayerVariables _vars = (commandParameterEntity(arguments, "entity")).getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-								_vars.TrueHardcoreLifeCount = DoubleArgumentType.getDouble(arguments, "lives");
-								_vars.syncPlayerVariables((commandParameterEntity(arguments, "entity")));
-							}
-						}
-						if (getEntityGameType((commandParameterEntity(arguments, "entity"))) == GameType.SPECTATOR) {
-							if ((commandParameterEntity(arguments, "entity")) instanceof ServerPlayer _player)
-								_player.setGameMode(GameType.SURVIVAL);
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "tellraw @p {\"text\":\"You do not have permission to run this command!\",\"color\":\"red\"}");
 						}
 					}
 				}
 			}
 		}
-	}
-
-	private static Entity commandParameterEntity(CommandContext<CommandSourceStack> arguments, String parameter) {
-		try {
-			return EntityArgument.getEntity(arguments, parameter);
-		} catch (CommandSyntaxException e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
-
-	private static GameType getEntityGameType(Entity entity) {
-		if (entity instanceof ServerPlayer serverPlayer) {
-			return serverPlayer.gameMode.getGameModeForPlayer();
-		} else if (entity instanceof Player player && player.level().isClientSide()) {
-			PlayerInfo playerInfo = Minecraft.getInstance().getConnection().getPlayerInfo(player.getGameProfile().getId());
-			if (playerInfo != null)
-				return playerInfo.getGameMode();
-		}
-		return null;
 	}
 }

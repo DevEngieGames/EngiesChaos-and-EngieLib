@@ -1,9 +1,33 @@
 {
-  "parent": "engies_chaos:custom/hallowsscythe",
-  "textures": {
-    "0": "engies_chaos:block/pixeldarkmatterscytheengie",
-    "1": "engies_chaos:block/scythespikes1engie",
-    "2": "engies_chaos:block/scythespikes2engie",
-    "particle": "engies_chaos:item/pixeldarkmatterscytheengie"
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "engies_chaos:custom/hallowsscythe",
+    "textures": {
+      "0": "engies_chaos:block/pixeldarkmatterscytheengie",
+      "1": "engies_chaos:block/scythespikes1engie",
+      "2": "engies_chaos:block/scythespikes2engie",
+      "particle": "engies_chaos:item/pixeldarkmatterscytheengie"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/pixeldarkmatterscytheengie"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/pixeldarkmatterscytheengie"
+      }
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/pixeldarkmatterscytheengie"
+      }
+    }
   }
 }

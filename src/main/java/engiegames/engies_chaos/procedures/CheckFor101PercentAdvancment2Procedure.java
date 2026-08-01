@@ -1,9 +1,9 @@
 package engiegames.engies_chaos.procedures;
 
-import net.neoforged.neoforge.event.tick.PlayerTickEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.bus.api.Event;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.TickEvent;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.Entity;
@@ -15,11 +15,13 @@ import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 
-@EventBusSubscriber
+@Mod.EventBusSubscriber
 public class CheckFor101PercentAdvancment2Procedure {
 	@SubscribeEvent
-	public static void onPlayerTick(PlayerTickEvent.Post event) {
-		execute(event, event.getEntity().level(), event.getEntity());
+	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+		if (event.phase == TickEvent.Phase.END) {
+			execute(event, event.player.level, event.player);
+		}
 	}
 
 	public static void execute(LevelAccessor world, Entity entity) {
@@ -30,18 +32,22 @@ public class CheckFor101PercentAdvancment2Procedure {
 		if (entity == null)
 			return;
 		if (!world.isClientSide()) {
-			if (entity instanceof ServerPlayer _plr1 && _plr1.level() instanceof ServerLevel && _plr1.getAdvancements().getOrStartProgress(_plr1.server.getAdvancements().get(ResourceLocation.parse("engies_chaos:all_fully_done"))).isDone()) {
+			if (entity instanceof ServerPlayer _plr1 && _plr1.level instanceof ServerLevel && _plr1.getAdvancements().getOrStartProgress(_plr1.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()) {
 				{
-					EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-					_vars.PlayerHas101PercentAdvancement = true;
-					_vars.syncPlayerVariables(entity);
+					boolean _setval = true;
+					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.PlayerHas101PercentAdvancement = _setval;
+						capability.syncPlayerVariables(entity);
+					});
 				}
-			} else if (!(entity instanceof ServerPlayer _plr2 && _plr2.level() instanceof ServerLevel
-					&& _plr2.getAdvancements().getOrStartProgress(_plr2.server.getAdvancements().get(ResourceLocation.parse("engies_chaos:all_fully_done"))).isDone())) {
+			} else if (!(entity instanceof ServerPlayer _plr2 && _plr2.level instanceof ServerLevel
+					&& _plr2.getAdvancements().getOrStartProgress(_plr2.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone())) {
 				{
-					EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-					_vars.PlayerHas101PercentAdvancement = false;
-					_vars.syncPlayerVariables(entity);
+					boolean _setval = false;
+					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.PlayerHas101PercentAdvancement = _setval;
+						capability.syncPlayerVariables(entity);
+					});
 				}
 			}
 		}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:dark_matter_engie_games_golden_hallow_scythe"
+  },
+  "addition": {
+    "item": "engies_chaos:gold_hallow_upgrade_to_collector"
+  },
+  "result": {
+    "item": "engies_chaos:dark_matter_engie_games_engie_hallow_scythe"
+  }
+}

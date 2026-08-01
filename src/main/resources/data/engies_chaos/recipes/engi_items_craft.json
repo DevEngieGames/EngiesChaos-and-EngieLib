@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "engiblock",
+  "pattern": [
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:engi_block"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:engi_gem",
+    "count": 9
+  }
+}

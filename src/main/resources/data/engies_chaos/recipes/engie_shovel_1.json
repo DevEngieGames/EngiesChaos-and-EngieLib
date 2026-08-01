@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "engieshovel",
+  "pattern": [
+    "a",
+    "b",
+    "b"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:engie_gem"
+    },
+    "b": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:engie_shovel",
+    "count": 1
+  }
+}

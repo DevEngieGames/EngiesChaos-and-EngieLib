@@ -1,11 +1,11 @@
 package engiegames.engies_chaos.procedures;
 
-import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.bus.api.Event;
-import net.neoforged.api.distmarker.OnlyIn;
-import net.neoforged.api.distmarker.Dist;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.entity.player.ItemTooltipEvent;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.tags.ItemTags;
@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 
 import java.util.List;
 
-@EventBusSubscriber(value = {Dist.CLIENT})
+@Mod.EventBusSubscriber
 public class TooltipOfItemProcedure {
 	@OnlyIn(Dist.CLIENT)
 	@SubscribeEvent
@@ -32,7 +32,7 @@ public class TooltipOfItemProcedure {
 	private static void execute(@Nullable Event event, ItemStack itemstack, List<Component> tooltip) {
 		if (tooltip == null)
 			return;
-		if (itemstack.is(ItemTags.create(ResourceLocation.parse("minecraft:tools"))) || itemstack.is(ItemTags.create(ResourceLocation.parse("engies_chaos:crucifixes"))) || itemstack.is(ItemTags.create(ResourceLocation.parse("minecraft:armor")))) {
+		if (itemstack.is(ItemTags.create(new ResourceLocation("minecraft:tools"))) || itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:crucifixes"))) || itemstack.is(ItemTags.create(new ResourceLocation("minecraft:armor")))) {
 			if (Screen.hasShiftDown()) {
 				tooltip.add(1, Component.literal(("\u00A76Durability: " + (itemstack.getMaxDamage() - itemstack.getDamageValue()) + "/" + itemstack.getMaxDamage())));
 			} else {

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "mythicsharkocloth",
+  "ingredients": [
+    {
+      "item": "engies_chaos:legendary_sharko_cloth"
+    },
+    {
+      "item": "minecraft:gold_block"
+    },
+    {
+      "item": "minecraft:gold_block"
+    },
+    {
+      "item": "minecraft:gold_block"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:mythic_sharko_cloth",
+    "count": 1
+  }
+}

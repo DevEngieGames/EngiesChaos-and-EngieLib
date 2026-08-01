@@ -2,14 +2,13 @@ package engiegames.engies_chaos.procedures;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.Component;
 import net.minecraft.commands.CommandSourceStack;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
+import engiegames.engies_chaos.init.EngiesChaosModGameRules;
+import engiegames.engies_chaos.EngiesChaosMod;
 
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.StringArgumentType;
@@ -19,54 +18,286 @@ public class EngieLibNeedProcedure {
 		if (entity == null)
 			return;
 		if ((StringArgumentType.getString(arguments, "EngieLib")).equals("EngieLib")) {
-			if ((StringArgumentType.getString(arguments, "Type")).equals("DoomsdayCleanupPlayer")) {
-				if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).DoomsdayAlive == true) {
-					{
-						EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-						_vars.DoomsdayAlive = false;
-						_vars.syncPlayerVariables(entity);
-					}
-					{
-						EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-						_vars.healthreductiondday = false;
-						_vars.syncPlayerVariables(entity);
-					}
-				}
-				{
-					Entity _ent = entity;
-					_ent.teleportTo(
-							((entity instanceof ServerPlayer _player && !_player.level().isClientSide())
-									? ((_player.getRespawnDimension().equals(_player.level().dimension()) && _player.getRespawnPosition() != null) ? _player.getRespawnPosition().getX() : _player.level().getLevelData().getSpawnPos().getX())
-									: 0),
-							((entity instanceof ServerPlayer _player && !_player.level().isClientSide())
-									? ((_player.getRespawnDimension().equals(_player.level().dimension()) && _player.getRespawnPosition() != null) ? _player.getRespawnPosition().getY() : _player.level().getLevelData().getSpawnPos().getY())
-									: 0),
-							((entity instanceof ServerPlayer _player && !_player.level().isClientSide())
-									? ((_player.getRespawnDimension().equals(_player.level().dimension()) && _player.getRespawnPosition() != null) ? _player.getRespawnPosition().getZ() : _player.level().getLevelData().getSpawnPos().getZ())
-									: 0));
-					if (_ent instanceof ServerPlayer _serverPlayer)
-						_serverPlayer.connection.teleport(
-								((entity instanceof ServerPlayer _player && !_player.level().isClientSide())
-										? ((_player.getRespawnDimension().equals(_player.level().dimension()) && _player.getRespawnPosition() != null) ? _player.getRespawnPosition().getX() : _player.level().getLevelData().getSpawnPos().getX())
-										: 0),
-								((entity instanceof ServerPlayer _player && !_player.level().isClientSide())
-										? ((_player.getRespawnDimension().equals(_player.level().dimension()) && _player.getRespawnPosition() != null) ? _player.getRespawnPosition().getY() : _player.level().getLevelData().getSpawnPos().getY())
-										: 0),
-								((entity instanceof ServerPlayer _player && !_player.level().isClientSide())
-										? ((_player.getRespawnDimension().equals(_player.level().dimension()) && _player.getRespawnPosition() != null) ? _player.getRespawnPosition().getZ() : _player.level().getLevelData().getSpawnPos().getZ())
-										: 0),
-								_ent.getYRot(), _ent.getXRot());
+			if ((StringArgumentType.getString(arguments, "Type")).equals("DoomsdaySummon")) {
+				if (EngiesChaosModVariables.MapVariables.get(world).Risk == 1) {
+					EngiesChaosMod.queueServerWork(20, () -> {
+						if (Math.random() <= 0.05) {
+							EngiesChaosModVariables.MapVariables.get(world).TheEndStart = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosMod.queueServerWork(1, () -> {
+								if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
+									if (entity instanceof Player _player && !_player.level.isClientSide())
+										_player.displayClientMessage(
+												Component.literal(("DEBUG: Attempted to spawn The End with risk: " + "Low. " + "If failed to spawn Doomsday, run \"/AllAboutEngie debug doomsday summon\" twice to fix this issue.")), false);
+								}
+							});
+						} else if (Math.random() > 0.05) {
+							if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == true) {
+								if (EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle == true) {
+									EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								} else if (EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle == false) {
+									EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								}
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
+										if (entity instanceof Player _player && !_player.level.isClientSide())
+											_player.displayClientMessage(
+													Component.literal(("DEBUG: Attempted to spawn Super Doomsday with risk: " + "Low. " + "If failed to spawn Doomsday, run \"/AllAboutEngie debug doomsday summon\" twice to fix this issue.")), false);
+									}
+								});
+							} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == false) {
+								if (EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle == false) {
+									EngiesChaosModVariables.MapVariables.get(world).TheEndStart = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								} else if (EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle == true) {
+									EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								}
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
+										if (entity instanceof Player _player && !_player.level.isClientSide())
+											_player.displayClientMessage(
+													Component.literal(("DEBUG: Attempted to spawn Doomsday with risk: " + "Low. " + "If failed to spawn Doomsday, run \"/AllAboutEngie debug doomsday summon\" twice to fix this issue.")), false);
+									}
+								});
+							}
+						}
+					});
+				} else if (EngiesChaosModVariables.MapVariables.get(world).Risk == 2) {
+					EngiesChaosMod.queueServerWork(20, () -> {
+						if (Math.random() <= 0.05) {
+							EngiesChaosModVariables.MapVariables.get(world).TheEndStart = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosMod.queueServerWork(1, () -> {
+								if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
+									if (entity instanceof Player _player && !_player.level.isClientSide())
+										_player.displayClientMessage(
+												Component.literal(("DEBUG: Attempted to spawn The End with risk: " + "Medium. " + "If failed to spawn Doomsday, run \"/AllAboutEngie debug doomsday summon\" twice to fix this issue.")), false);
+								}
+							});
+						} else if (Math.random() > 0.05) {
+							if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == true) {
+								if (EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle == true) {
+									EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								} else if (EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle == false) {
+									EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								}
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
+										if (entity instanceof Player _player && !_player.level.isClientSide())
+											_player.displayClientMessage(
+													Component.literal(("DEBUG: Attempted to spawn Super Doomsday with risk: " + "Medium. " + "If failed to spawn Doomsday, run \"/AllAboutEngie debug doomsday summon\" twice to fix this issue.")),
+													false);
+									}
+								});
+							} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == false) {
+								if (EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle == false) {
+									EngiesChaosModVariables.MapVariables.get(world).TheEndStart = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								} else if (EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle == true) {
+									EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								}
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
+										if (entity instanceof Player _player && !_player.level.isClientSide())
+											_player.displayClientMessage(
+													Component.literal(("DEBUG: Attempted to spawn Doomsday with risk: " + "Medium. " + "If failed to spawn Doomsday, run \"/AllAboutEngie debug doomsday summon\" twice to fix this issue.")), false);
+									}
+								});
+							}
+						}
+					});
+				} else if (EngiesChaosModVariables.MapVariables.get(world).Risk == 3) {
+					EngiesChaosMod.queueServerWork(20, () -> {
+						if (Math.random() <= 0.05) {
+							EngiesChaosModVariables.MapVariables.get(world).TheEndStart = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosMod.queueServerWork(1, () -> {
+								if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
+									if (entity instanceof Player _player && !_player.level.isClientSide())
+										_player.displayClientMessage(
+												Component.literal(("DEBUG: Attempted to spawn The End with risk: " + "High. " + "If failed to spawn Doomsday, run \"/AllAboutEngie debug doomsday summon\" twice to fix this issue.")), false);
+								}
+							});
+						} else if (Math.random() > 0.05) {
+							if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == true) {
+								if (EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle == true) {
+									EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								} else if (EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle == false) {
+									EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								}
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
+										if (entity instanceof Player _player && !_player.level.isClientSide())
+											_player.displayClientMessage(
+													Component.literal(("DEBUG: Attempted to spawn Super Doomsday with risk: " + "High. " + "If failed to spawn Doomsday, run \"/AllAboutEngie debug doomsday summon\" twice to fix this issue.")), false);
+									}
+								});
+							} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == false) {
+								if (EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle == false) {
+									EngiesChaosModVariables.MapVariables.get(world).TheEndStart = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								} else if (EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle == true) {
+									EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								}
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
+										if (entity instanceof Player _player && !_player.level.isClientSide())
+											_player.displayClientMessage(
+													Component.literal(("DEBUG: Attempted to spawn Doomsday with risk: " + "High. " + "If failed to spawn Doomsday, run \"/AllAboutEngie debug doomsday summon\" twice to fix this issue.")), false);
+									}
+								});
+							}
+						}
+					});
+				} else if (EngiesChaosModVariables.MapVariables.get(world).Risk == 4) {
+					EngiesChaosMod.queueServerWork(20, () -> {
+						if (Math.random() <= 0.05) {
+							EngiesChaosModVariables.MapVariables.get(world).TheEndStart = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosMod.queueServerWork(1, () -> {
+								if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
+									if (entity instanceof Player _player && !_player.level.isClientSide())
+										_player.displayClientMessage(
+												Component.literal(("DEBUG: Attempted to spawn The End with risk: " + "Extreme. " + "If failed to spawn Doomsday, run \"/AllAboutEngie debug doomsday summon\" twice to fix this issue.")), false);
+								}
+							});
+						} else if (Math.random() > 0.05) {
+							if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == true) {
+								if (EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle == true) {
+									EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								} else if (EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle == false) {
+									EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								}
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
+										if (entity instanceof Player _player && !_player.level.isClientSide())
+											_player.displayClientMessage(
+													Component.literal(("DEBUG: Attempted to spawn Super Doomsday with risk: " + "Extreme. " + "If failed to spawn Doomsday, run \"/AllAboutEngie debug doomsday summon\" twice to fix this issue.")),
+													false);
+									}
+								});
+							} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == false) {
+								if (EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle == false) {
+									EngiesChaosModVariables.MapVariables.get(world).TheEndStart = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								} else if (EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle == true) {
+									EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								}
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
+										if (entity instanceof Player _player && !_player.level.isClientSide())
+											_player.displayClientMessage(
+													Component.literal(("DEBUG: Attempted to spawn Doomsday with risk: " + "Extreme. " + "If failed to spawn Doomsday, run \"/AllAboutEngie debug doomsday summon\" twice to fix this issue.")), false);
+									}
+								});
+							}
+						}
+					});
+				} else if (EngiesChaosModVariables.MapVariables.get(world).Risk == 5) {
+					EngiesChaosMod.queueServerWork(20, () -> {
+						if (Math.random() <= 0.05) {
+							EngiesChaosModVariables.MapVariables.get(world).TheEndStart = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosMod.queueServerWork(1, () -> {
+								if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
+									if (entity instanceof Player _player && !_player.level.isClientSide())
+										_player.displayClientMessage(
+												Component.literal(("DEBUG: Attempted to spawn The End with risk: " + "Guaranteed. " + "If failed to spawn Doomsday, run \"/AllAboutEngie debug doomsday summon\" twice to fix this issue.")), false);
+								}
+							});
+						} else if (Math.random() > 0.05) {
+							if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == true) {
+								if (EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle == true) {
+									EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								} else if (EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle == false) {
+									EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								}
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
+										if (entity instanceof Player _player && !_player.level.isClientSide())
+											_player.displayClientMessage(
+													Component.literal(("DEBUG: Attempted to spawn Super Doomsday with risk: " + "Guaranteed. " + "If failed to spawn Doomsday, run \"/AllAboutEngie debug doomsday summon\" twice to fix this issue.")),
+													false);
+									}
+								});
+							} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == false) {
+								if (EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle == false) {
+									EngiesChaosModVariables.MapVariables.get(world).TheEndStart = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								} else if (EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle == true) {
+									EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).SDDAYToggle = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								}
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
+										if (entity instanceof Player _player && !_player.level.isClientSide())
+											_player.displayClientMessage(
+													Component.literal(("DEBUG: Attempted to spawn Doomsday with risk: " + "Guaranteed. " + "If failed to spawn Doomsday, run \"/AllAboutEngie debug doomsday summon\" twice to fix this issue.")), false);
+									}
+								});
+							}
+						}
+					});
 				}
 			} else if ((StringArgumentType.getString(arguments, "Type")).equals("StartChallenge")) {
 				ChallengeDialogueProcedure.execute(world, entity);
 			} else if ((StringArgumentType.getString(arguments, "Type")).equals("StartEndgameLoot")) {
-				if (entity instanceof ServerPlayer _plr8 && _plr8.level() instanceof ServerLevel && _plr8.getAdvancements().getOrStartProgress(_plr8.server.getAdvancements().get(ResourceLocation.parse("minecraft:end/kill_dragon"))).isDone()
-						|| (entity instanceof LivingEntity _teamEnt && _teamEnt.level().getScoreboard().getPlayersTeam(_teamEnt instanceof Player _pl ? _pl.getGameProfile().getName() : _teamEnt.getStringUUID()) != null
-								? _teamEnt.level().getScoreboard().getPlayersTeam(_teamEnt instanceof Player _pl ? _pl.getGameProfile().getName() : _teamEnt.getStringUUID()).getName()
-								: "").equals("EngiesChaos_Dev")) {
-					EngiesChaosModVariables.MapVariables.get(world).antimatterdropcheck = true;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				}
+				EngiesChaosModVariables.MapVariables.get(world).antimatterdropcheck = true;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			}
 		}
 	}

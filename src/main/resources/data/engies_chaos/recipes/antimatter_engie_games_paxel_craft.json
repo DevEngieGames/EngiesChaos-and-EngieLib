@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "antimatterengiegamesaiot",
+  "ingredients": [
+    {
+      "item": "engies_chaos:antimatter_engie_games_sword"
+    },
+    {
+      "item": "engies_chaos:antimatter_engie_games_axe"
+    },
+    {
+      "item": "engies_chaos:antimatter_engie_games_shovel"
+    },
+    {
+      "item": "engies_chaos:antimatter_engie_games_hoe"
+    },
+    {
+      "item": "engies_chaos:antimatter_engie_games_pickaxe"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:antimatter_engie_games_aiot",
+    "count": 1
+  }
+}

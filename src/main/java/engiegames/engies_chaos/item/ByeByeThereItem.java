@@ -1,30 +1,26 @@
 package engiegames.engies_chaos.item;
 
-import net.neoforged.api.distmarker.OnlyIn;
-import net.neoforged.api.distmarker.Dist;
+import net.minecraftforge.registries.ForgeRegistries;
 
+import net.minecraft.world.level.Level;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.RecordItem;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.registries.Registries;
 
 import java.util.List;
 
-import engiegames.engies_chaos.EngiesChaosMod;
-
-public class ByeByeThereItem extends Item {
-	public ByeByeThereItem(Item.Properties properties) {
-		super(properties.rarity(Rarity.RARE).stacksTo(1).jukeboxPlayable(ResourceKey.create(Registries.JUKEBOX_SONG, ResourceLocation.fromNamespaceAndPath(EngiesChaosMod.MODID, "bye_bye_there"))));
+public class ByeByeThereItem extends RecordItem {
+	public ByeByeThereItem() {
+		super(15, () -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("engies_chaos:byebyethere")), new Item.Properties().tab(null).stacksTo(1).rarity(Rarity.RARE), 7560);
 	}
 
 	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack itemstack, Item.TooltipContext context, List<Component> list, TooltipFlag flag) {
-		super.appendHoverText(itemstack, context, list, flag);
+	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, level, list, flag);
 		list.add(Component.translatable("item.engies_chaos.bye_bye_there.description_0"));
 	}
 }

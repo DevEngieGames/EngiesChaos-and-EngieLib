@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:dark_matter_monstrosity_engie_shovel"
+  },
+  "addition": {
+    "item": "engies_chaos:dark_matter_engie_block"
+  },
+  "result": {
+    "item": "engies_chaos:dark_matter_hostile_engie_shovel"
+  }
+}

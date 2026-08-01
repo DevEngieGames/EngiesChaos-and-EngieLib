@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "template": [],
-  "base": "engies_chaos:monstrosity_engie_paxel",
-  "addition": "engies_chaos:engie_block",
-  "result": {
-    "id": "engies_chaos:hostile_engie_paxel"
-  }
-}

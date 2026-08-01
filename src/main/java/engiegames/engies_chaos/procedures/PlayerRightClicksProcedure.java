@@ -1,22 +1,22 @@
 package engiegames.engies_chaos.procedures;
 
-import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.bus.api.Event;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.core.registries.Registries;
 
 import javax.annotation.Nullable;
 
-@EventBusSubscriber
+@Mod.EventBusSubscriber
 public class PlayerRightClicksProcedure {
 	@SubscribeEvent
 	public static void onRightClickItem(PlayerInteractEvent.RightClickItem event) {
@@ -32,7 +32,7 @@ public class PlayerRightClicksProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(world.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.MENDING)) != 0 && entity.isShiftKeyDown()) {
+		if (EnchantmentHelper.getItemEnchantmentLevel(Enchantments.MENDING, (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0 && entity.isShiftKeyDown()) {
 			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).isDamaged()) {
 				if (entity instanceof Player _player)
 					_player.giveExperienceLevels(-(1));

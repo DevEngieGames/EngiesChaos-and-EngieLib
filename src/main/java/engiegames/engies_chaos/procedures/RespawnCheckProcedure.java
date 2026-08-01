@@ -1,9 +1,9 @@
 package engiegames.engies_chaos.procedures;
 
-import net.neoforged.neoforge.event.tick.PlayerTickEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.bus.api.Event;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.TickEvent;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.Entity;
@@ -16,11 +16,13 @@ import javax.annotation.Nullable;
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.init.EngiesChaosModGameRules;
 
-@EventBusSubscriber
+@Mod.EventBusSubscriber
 public class RespawnCheckProcedure {
 	@SubscribeEvent
-	public static void onPlayerTick(PlayerTickEvent.Post event) {
-		execute(event, event.getEntity().level(), event.getEntity());
+	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+		if (event.phase == TickEvent.Phase.END) {
+			execute(event, event.player.level, event.player);
+		}
 	}
 
 	public static void execute(LevelAccessor world, Entity entity) {
@@ -30,91 +32,39 @@ public class RespawnCheckProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if ((world instanceof ServerLevel _serverLevelGR0 && _serverLevelGR0.getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_HARDCORE)) == false) {
-			if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).RespawnNormInstantHealth == false) {
+		if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_HARDCORE) == false) {
+			if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).RespawnNormInstantHealth == false) {
 				{
-					EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-					_vars.RespawnNormInstantHealth = true;
-					_vars.syncPlayerVariables(entity);
+					boolean _setval = true;
+					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.RespawnNormInstantHealth = _setval;
+						capability.syncPlayerVariables(entity);
+					});
 				}
 				{
 					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "effect give @s instant_health 1 28 true");
-					}
-				}
-				{
-					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "effect give @s resistance 300 255 true");
-					}
-				}
-				{
-					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "effect give @s regeneration 300 255 true");
-					}
-				}
-				{
-					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "effect give @s fire_resistance 300 255 true");
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @s instant_health 1 28 true");
 					}
 				}
 			}
-		} else if ((world instanceof ServerLevel _serverLevelGR5 && _serverLevelGR5.getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_HARDCORE)) == true) {
-			if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).RespawnTrueHardcoreGraceStart == false) {
+		} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_HARDCORE) == true) {
+			if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).RespawnTrueHardcoreGraceStart == false) {
 				EngiesChaosModVariables.MapVariables.get(world).graceperiodbeforeplushangryagain = true;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				{
-					EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-					_vars.RespawnTrueHardcoreGraceStart = true;
-					_vars.syncPlayerVariables(entity);
+					boolean _setval = true;
+					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.RespawnTrueHardcoreGraceStart = _setval;
+						capability.syncPlayerVariables(entity);
+					});
 				}
 				{
 					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "effect give @s speed 300 1 true");
-					}
-				}
-				{
-					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "effect give @s strength 300 24 true");
-					}
-				}
-				{
-					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "effect give @s instant_health 1 28 true");
-					}
-				}
-				{
-					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "effect give @s resistance 300 255 true");
-					}
-				}
-				{
-					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "effect give @s regeneration 300 255 true");
-					}
-				}
-				{
-					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "effect give @s fire_resistance 300 255 true");
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @s instant_health 1 28 true");
 					}
 				}
 			}

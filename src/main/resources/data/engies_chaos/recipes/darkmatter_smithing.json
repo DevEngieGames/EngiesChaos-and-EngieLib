@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:book"
+  },
+  "addition": {
+    "item": "engies_chaos:dark_matter_mad_engie_block"
+  },
+  "result": {
+    "item": "engies_chaos:engies_chaos_recipe_book_volume_3"
+  }
+}

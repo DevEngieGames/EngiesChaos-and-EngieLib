@@ -1,6 +1,32 @@
 {
-  "parent": "item/handheld",
-  "textures": {
-    "layer0": "engies_chaos:item/cosmicengie_axe"
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "engies_chaos:custom/cosmicaxe",
+    "textures": {
+      "0": "engies_chaos:block/toolmain",
+      "1": "engies_chaos:block/tooloutline",
+      "particle": "engies_chaos:item/cosmicengie_axe"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/cosmicengie_axe"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/cosmicengie_axe"
+      }
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/cosmicengie_axe"
+      }
+    }
   }
 }

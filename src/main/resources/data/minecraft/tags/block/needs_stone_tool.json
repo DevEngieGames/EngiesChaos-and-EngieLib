@@ -1,14 +1,18 @@
 {
   "replace": false,
   "values": [
-    "allaboutengie:angry_engie_block",
-    "allaboutengie:deepslate_antimatter_engie_ore",
-    "allaboutengie:old_deepslate_engie_ore",
-    "allaboutengie:engie_ore",
-    "allaboutengie:engie_block",
-    "allaboutengie:engi_block",
-    "allaboutengie:antimatter_engie_ore",
-    "allaboutengie:old_engie_ore",
-    "allaboutengie:deepslate_engie_ore"
+    "engies_chaos:angry_engie_crystal",
+    "engies_chaos:angry_engie_block",
+    "engies_chaos:deepslate_mad_engie_ore",
+    "engies_chaos:budding_mad_engie_block",
+    "engies_chaos:mad_engie_ore",
+    "engies_chaos:budding_angry_engie_block",
+    "engies_chaos:mad_engie_block",
+    "engies_chaos:mad_engie_crystal",
+    "engies_chaos:angry_engie_crystal_full",
+    "engies_chaos:old_deepslate_engie_ore",
+    "engies_chaos:mad_engie_crystal_full",
+    "engies_chaos:engi_block",
+    "engies_chaos:old_engie_ore"
   ]
 }

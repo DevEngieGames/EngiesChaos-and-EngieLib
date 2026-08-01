@@ -1,7 +1,7 @@
 {
-  "parent": "engies_chaos:custom/crucifix",
+  "parent": "engies_chaos:custom/crucifixengiegamess",
   "textures": {
     "0": "engies_chaos:block/antimatterengiegamesscrucifix",
-    "particle": "engies_chaos:item/antimattercrucifixengiegamespixel"
+    "particle": "engies_chaos:item/engiegamescrucifixpixel"
   }
 }

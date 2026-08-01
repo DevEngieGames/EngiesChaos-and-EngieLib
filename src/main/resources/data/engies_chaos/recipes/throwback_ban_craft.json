@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "throwbackban",
+  "pattern": [
+    "aba",
+    "cdc",
+    " e "
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:engi_block"
+    },
+    "b": {
+      "item": "minecraft:iron_block"
+    },
+    "c": {
+      "item": "minecraft:diamond_block"
+    },
+    "d": {
+      "item": "engies_chaos:small_ban_hammer"
+    },
+    "e": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:throwback_ban_hammer",
+    "count": 1
+  }
+}

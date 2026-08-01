@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "engies_chaos:super_dooms_day_advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.super_doomsday_1hp_challenge_win.title"
+    },
+    "description": {
+      "translate": "advancements.super_doomsday_1hp_challenge_win.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "super_doomsday_1hp_challenge_win_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 1000
+  },
+  "parent": "engies_chaos:rise"
+}

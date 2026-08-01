@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "engies_chaos:antimatter_engies_ban_hammer"
+    },
+    "title": {
+      "translate": "advancements.antimatter_engies_ban_scythe_obtain.title"
+    },
+    "description": {
+      "translate": "advancements.antimatter_engies_ban_scythe_obtain.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "antimatter_engies_ban_scythe_obtain_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 70
+  },
+  "parent": "engies_chaos:antimatter_the_end_ban_scythe_obtain"
+}

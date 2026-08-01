@@ -1,7 +1,6 @@
 package engiegames.engies_chaos.client.renderer;
 
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
 import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
 import net.minecraft.client.renderer.entity.HumanoidMobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -12,32 +11,19 @@ import engiegames.engies_chaos.entity.QuizzetEntity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 
-public class QuizzetRenderer extends HumanoidMobRenderer<QuizzetEntity, HumanoidRenderState, HumanoidModel<HumanoidRenderState>> {
-	private QuizzetEntity entity = null;
-
+public class QuizzetRenderer extends HumanoidMobRenderer<QuizzetEntity, HumanoidModel<QuizzetEntity>> {
 	public QuizzetRenderer(EntityRendererProvider.Context context) {
-		super(context, new HumanoidModel<HumanoidRenderState>(context.bakeLayer(ModelLayers.PLAYER)), 0.5f);
-		this.addLayer(new HumanoidArmorLayer(this, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_INNER_ARMOR)), new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_OUTER_ARMOR)), context.getEquipmentRenderer()));
+		super(context, new HumanoidModel<QuizzetEntity>(context.bakeLayer(ModelLayers.PLAYER)), 0.5f);
+		this.addLayer(new HumanoidArmorLayer(this, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_INNER_ARMOR)), new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_OUTER_ARMOR))));
 	}
 
 	@Override
-	public HumanoidRenderState createRenderState() {
-		return new HumanoidRenderState();
-	}
-
-	@Override
-	public void extractRenderState(QuizzetEntity entity, HumanoidRenderState state, float partialTicks) {
-		super.extractRenderState(entity, state, partialTicks);
-		this.entity = entity;
-	}
-
-	@Override
-	public ResourceLocation getTextureLocation(HumanoidRenderState state) {
-		return ResourceLocation.parse("engies_chaos:textures/entities/58c08408b5d07cfff8a93c8d8ca58a94693fe7bb.png");
-	}
-
-	@Override
-	protected void scale(HumanoidRenderState state, PoseStack poseStack) {
+	protected void scale(QuizzetEntity entity, PoseStack poseStack, float f) {
 		poseStack.scale(0.93f, 0.93f, 0.93f);
+	}
+
+	@Override
+	public ResourceLocation getTextureLocation(QuizzetEntity entity) {
+		return new ResourceLocation("engies_chaos:textures/entities/58c08408b5d07cfff8a93c8d8ca58a94693fe7bb.png");
 	}
 }

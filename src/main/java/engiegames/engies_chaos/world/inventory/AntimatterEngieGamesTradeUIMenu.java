@@ -1,18 +1,15 @@
 package engiegames.engies_chaos.world.inventory;
 
-import net.neoforged.neoforge.network.PacketDistributor;
-import net.neoforged.neoforge.items.wrapper.InvWrapper;
-import net.neoforged.neoforge.items.SlotItemHandler;
-import net.neoforged.neoforge.items.ItemStackHandler;
-import net.neoforged.neoforge.items.IItemHandlerModifiable;
-import net.neoforged.neoforge.items.IItemHandler;
-import net.neoforged.neoforge.event.tick.PlayerTickEvent;
-import net.neoforged.neoforge.capabilities.Capabilities;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
+import net.minecraftforge.items.SlotItemHandler;
+import net.minecraftforge.items.ItemStackHandler;
+import net.minecraftforge.items.IItemHandlerModifiable;
+import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.Slot;
@@ -31,16 +28,15 @@ import java.util.HashMap;
 import java.util.Collections;
 
 import engiegames.engies_chaos.procedures.AntimatterEngieGamesTradeUITickProcedure;
-import engiegames.engies_chaos.network.AntimatterEngieGamesTradeUISlotMessage;
 import engiegames.engies_chaos.init.EngiesChaosModMenus;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 
-@EventBusSubscriber
+@Mod.EventBusSubscriber
 public class AntimatterEngieGamesTradeUIMenu extends AbstractContainerMenu implements EngiesChaosModMenus.MenuAccessor {
 	public final Map<String, Object> menuState = new HashMap<>() {
 		@Override
 		public Object put(String key, Object value) {
-			if (!this.containsKey(key) && this.size() >= 5)
+			if (!this.containsKey(key) && this.size() >= 8)
 				return null;
 			return super.put(key, value);
 		}
@@ -59,8 +55,8 @@ public class AntimatterEngieGamesTradeUIMenu extends AbstractContainerMenu imple
 	public AntimatterEngieGamesTradeUIMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
 		super(EngiesChaosModMenus.ANTIMATTER_ENGIE_GAMES_TRADE_UI.get(), id);
 		this.entity = inv.player;
-		this.world = inv.player.level();
-		this.internal = new ItemStackHandler(4);
+		this.world = inv.player.level;
+		this.internal = new ItemStackHandler(5);
 		BlockPos pos = null;
 		if (extraData != null) {
 			pos = extraData.readBlockPos();
@@ -74,30 +70,28 @@ public class AntimatterEngieGamesTradeUIMenu extends AbstractContainerMenu imple
 				byte hand = extraData.readByte();
 				ItemStack itemstack = hand == 0 ? this.entity.getMainHandItem() : this.entity.getOffhandItem();
 				this.boundItemMatcher = () -> itemstack == (hand == 0 ? this.entity.getMainHandItem() : this.entity.getOffhandItem());
-				IItemHandler cap = itemstack.getCapability(Capabilities.ItemHandler.ITEM);
-				if (cap != null) {
-					this.internal = cap;
+				itemstack.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					this.internal = capability;
 					this.bound = true;
-				}
+				});
 			} else if (extraData.readableBytes() > 1) { // bound to entity
 				extraData.readByte(); // drop padding
 				boundEntity = world.getEntity(extraData.readVarInt());
-				if (boundEntity != null) {
-					IItemHandler cap = boundEntity.getCapability(Capabilities.ItemHandler.ENTITY);
-					if (cap != null) {
-						this.internal = cap;
+				if (boundEntity != null)
+					boundEntity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+						this.internal = capability;
 						this.bound = true;
-					}
-				}
+					});
 			} else { // might be bound to block
 				boundBlockEntity = this.world.getBlockEntity(pos);
-				if (boundBlockEntity instanceof BaseContainerBlockEntity baseContainerBlockEntity) {
-					this.internal = new InvWrapper(baseContainerBlockEntity);
-					this.bound = true;
-				}
+				if (boundBlockEntity != null)
+					boundBlockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+						this.internal = capability;
+						this.bound = true;
+					});
 			}
 		}
-		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 71, 9) {
+		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 80, 8) {
 			private final int slot = 0;
 			private int x = AntimatterEngieGamesTradeUIMenu.this.x;
 			private int y = AntimatterEngieGamesTradeUIMenu.this.y;
@@ -107,7 +101,7 @@ public class AntimatterEngieGamesTradeUIMenu extends AbstractContainerMenu imple
 				return EngiesChaosModItems.ANTIMATTER_ENGIE_GAMES_COIN.get() == stack.getItem();
 			}
 		}));
-		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 98, 9) {
+		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 107, 8) {
 			private final int slot = 1;
 			private int x = AntimatterEngieGamesTradeUIMenu.this.x;
 			private int y = AntimatterEngieGamesTradeUIMenu.this.y;
@@ -117,15 +111,14 @@ public class AntimatterEngieGamesTradeUIMenu extends AbstractContainerMenu imple
 				return EngiesChaosModItems.ANTIMATTER_ENGIE_GAMES_COIN.get() == stack.getItem();
 			}
 		}));
-		this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 152, 9) {
+		this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 80, 31) {
 			private final int slot = 3;
 			private int x = AntimatterEngieGamesTradeUIMenu.this.x;
 			private int y = AntimatterEngieGamesTradeUIMenu.this.y;
 
 			@Override
-			public void onTake(Player entity, ItemStack stack) {
-				super.onTake(entity, stack);
-				slotChanged(3, 1, stack.getCount());
+			public boolean mayPickup(Player entity) {
+				return false;
 			}
 
 			@Override
@@ -133,7 +126,17 @@ public class AntimatterEngieGamesTradeUIMenu extends AbstractContainerMenu imple
 				return false;
 			}
 		}));
-		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 124, 9) {
+		this.customSlots.put(4, this.addSlot(new SlotItemHandler(internal, 4, 134, 31) {
+			private final int slot = 4;
+			private int x = AntimatterEngieGamesTradeUIMenu.this.x;
+			private int y = AntimatterEngieGamesTradeUIMenu.this.y;
+
+			@Override
+			public boolean mayPlace(ItemStack stack) {
+				return false;
+			}
+		}));
+		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 134, 8) {
 			private final int slot = 2;
 			private int x = AntimatterEngieGamesTradeUIMenu.this.x;
 			private int y = AntimatterEngieGamesTradeUIMenu.this.y;
@@ -145,9 +148,9 @@ public class AntimatterEngieGamesTradeUIMenu extends AbstractContainerMenu imple
 		}));
 		for (int si = 0; si < 3; ++si)
 			for (int sj = 0; sj < 9; ++sj)
-				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, -51 + 84 + si * 18));
+				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, -28 + 84 + si * 18));
 		for (int si = 0; si < 9; ++si)
-			this.addSlot(new Slot(inv, si, 0 + 8 + si * 18, -51 + 142));
+			this.addSlot(new Slot(inv, si, 0 + 8 + si * 18, -28 + 142));
 	}
 
 	@Override
@@ -170,22 +173,22 @@ public class AntimatterEngieGamesTradeUIMenu extends AbstractContainerMenu imple
 		if (slot != null && slot.hasItem()) {
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
-			if (index < 4) {
-				if (!this.moveItemStackTo(itemstack1, 4, this.slots.size(), true))
+			if (index < 5) {
+				if (!this.moveItemStackTo(itemstack1, 5, this.slots.size(), true))
 					return ItemStack.EMPTY;
 				slot.onQuickCraft(itemstack1, itemstack);
-			} else if (!this.moveItemStackTo(itemstack1, 0, 4, false)) {
-				if (index < 4 + 27) {
-					if (!this.moveItemStackTo(itemstack1, 4 + 27, this.slots.size(), true))
+			} else if (!this.moveItemStackTo(itemstack1, 0, 5, false)) {
+				if (index < 5 + 27) {
+					if (!this.moveItemStackTo(itemstack1, 5 + 27, this.slots.size(), true))
 						return ItemStack.EMPTY;
 				} else {
-					if (!this.moveItemStackTo(itemstack1, 4, 4 + 27, false))
+					if (!this.moveItemStackTo(itemstack1, 5, 5 + 27, false))
 						return ItemStack.EMPTY;
 				}
 				return ItemStack.EMPTY;
 			}
 			if (itemstack1.isEmpty()) {
-				slot.setByPlayer(ItemStack.EMPTY);
+				slot.set(ItemStack.EMPTY);
 			} else {
 				slot.setChanged();
 			}
@@ -205,28 +208,35 @@ public class AntimatterEngieGamesTradeUIMenu extends AbstractContainerMenu imple
 			i = p_38906_ - 1;
 		}
 		if (p_38904_.isStackable()) {
-			while (!p_38904_.isEmpty() && (p_38907_ ? i >= p_38905_ : i < p_38906_)) {
+			while (!p_38904_.isEmpty()) {
+				if (p_38907_) {
+					if (i < p_38905_) {
+						break;
+					}
+				} else if (i >= p_38906_) {
+					break;
+				}
 				Slot slot = this.slots.get(i);
 				ItemStack itemstack = slot.getItem();
-				if (slot.mayPlace(itemstack) && !itemstack.isEmpty() && ItemStack.isSameItemSameComponents(p_38904_, itemstack)) {
+				if (slot.mayPlace(itemstack) && !itemstack.isEmpty() && ItemStack.isSameItemSameTags(p_38904_, itemstack)) {
 					int j = itemstack.getCount() + p_38904_.getCount();
-					int k = slot.getMaxStackSize(itemstack);
-					if (j <= k) {
+					int maxSize = Math.min(slot.getMaxStackSize(), p_38904_.getMaxStackSize());
+					if (j <= maxSize) {
 						p_38904_.setCount(0);
 						itemstack.setCount(j);
 						slot.set(itemstack);
 						flag = true;
-					} else if (itemstack.getCount() < k) {
-						p_38904_.shrink(k - itemstack.getCount());
-						itemstack.setCount(k);
+					} else if (itemstack.getCount() < maxSize) {
+						p_38904_.shrink(maxSize - itemstack.getCount());
+						itemstack.setCount(maxSize);
 						slot.set(itemstack);
 						flag = true;
 					}
 				}
 				if (p_38907_) {
-					i--;
+					--i;
 				} else {
-					i++;
+					++i;
 				}
 			}
 		}
@@ -236,20 +246,30 @@ public class AntimatterEngieGamesTradeUIMenu extends AbstractContainerMenu imple
 			} else {
 				i = p_38905_;
 			}
-			while (p_38907_ ? i >= p_38905_ : i < p_38906_) {
+			while (true) {
+				if (p_38907_) {
+					if (i < p_38905_) {
+						break;
+					}
+				} else if (i >= p_38906_) {
+					break;
+				}
 				Slot slot1 = this.slots.get(i);
 				ItemStack itemstack1 = slot1.getItem();
 				if (itemstack1.isEmpty() && slot1.mayPlace(p_38904_)) {
-					int l = slot1.getMaxStackSize(p_38904_);
-					slot1.setByPlayer(p_38904_.split(Math.min(p_38904_.getCount(), l)));
+					if (p_38904_.getCount() > slot1.getMaxStackSize()) {
+						slot1.set(p_38904_.split(slot1.getMaxStackSize()));
+					} else {
+						slot1.set(p_38904_.split(p_38904_.getCount()));
+					}
 					slot1.setChanged();
 					flag = true;
 					break;
 				}
 				if (p_38907_) {
-					i--;
+					--i;
 				} else {
-					i++;
+					++i;
 				}
 			}
 		}
@@ -280,13 +300,6 @@ public class AntimatterEngieGamesTradeUIMenu extends AbstractContainerMenu imple
 		}
 	}
 
-	private void slotChanged(int slotid, int ctype, int meta) {
-		if (this.world != null && this.world.isClientSide()) {
-			PacketDistributor.sendToServer(new AntimatterEngieGamesTradeUISlotMessage(slotid, x, y, z, ctype, meta));
-			AntimatterEngieGamesTradeUISlotMessage.handleSlotAction(entity, slotid, ctype, meta, x, y, z);
-		}
-	}
-
 	@Override
 	public Map<Integer, Slot> getSlots() {
 		return Collections.unmodifiableMap(customSlots);
@@ -298,9 +311,9 @@ public class AntimatterEngieGamesTradeUIMenu extends AbstractContainerMenu imple
 	}
 
 	@SubscribeEvent
-	public static void onPlayerTick(PlayerTickEvent.Post event) {
-		Player entity = event.getEntity();
-		if (entity.containerMenu instanceof AntimatterEngieGamesTradeUIMenu menu) {
+	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+		Player entity = event.player;
+		if (event.phase == TickEvent.Phase.END && entity.containerMenu instanceof AntimatterEngieGamesTradeUIMenu menu) {
 			Level world = menu.world;
 			double x = menu.x;
 			double y = menu.y;

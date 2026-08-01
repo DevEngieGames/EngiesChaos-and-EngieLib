@@ -1,7 +1,31 @@
 {
-  "parent": "engies_chaos:custom/theendscythe",
-  "textures": {
-    "0": "engies_chaos:block/pixelantimatterscythetheendnew",
-    "particle": "engies_chaos:item/pixelantimatterscythetheendnew"
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "engies_chaos:custom/theendscythe",
+    "textures": {
+      "0": "engies_chaos:block/antimattertheendscythe",
+      "particle": "engies_chaos:item/antimattertheendscythe"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/antimattertheendscythe"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/antimattertheendscythe"
+      }
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/antimattertheendscythe"
+      }
+    }
   }
 }

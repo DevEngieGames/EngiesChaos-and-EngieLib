@@ -1,6 +1,8 @@
 package engiegames.engies_chaos.entity;
 
-import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.network.PlayMessages;
+import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.Level;
@@ -15,8 +17,9 @@ import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.Pose;
+import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
@@ -26,7 +29,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.protocol.Packet;
 
 import engiegames.engies_chaos.procedures.NegativeDifficultyAICheckProcedure;
 import engiegames.engies_chaos.procedures.MobHitboxScalingProcedure;
@@ -35,10 +38,20 @@ import engiegames.engies_chaos.procedures.AnyEngieDiesAddCountProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class HsotileEngieEntity extends Monster {
+	public HsotileEngieEntity(PlayMessages.SpawnEntity packet, Level world) {
+		this(EngiesChaosModEntities.HOSTILE_ENGIE.get(), world);
+	}
+
 	public HsotileEngieEntity(EntityType<HsotileEngieEntity> type, Level world) {
 		super(type, world);
+		maxUpStep = 1f;
 		xpReward = 65;
 		setNoAi(false);
+	}
+
+	@Override
+	public Packet<?> getAddEntityPacket() {
+		return NetworkHooks.getEntitySpawningPacket(this);
 	}
 
 	@Override
@@ -46,8 +59,8 @@ public class HsotileEngieEntity extends Monster {
 		super.registerGoals();
 		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 3, false) {
 			@Override
-			protected boolean canPerformAttack(LivingEntity entity) {
-				return this.isTimeToAttack() && this.mob.distanceToSqr(entity) < (this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth()) && this.mob.getSensing().hasLineOfSight(entity);
+			protected double getAttackReachSqr(LivingEntity entity) {
+				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
 		});
 		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
@@ -58,7 +71,7 @@ public class HsotileEngieEntity extends Monster {
 				double y = HsotileEngieEntity.this.getY();
 				double z = HsotileEngieEntity.this.getZ();
 				Entity entity = HsotileEngieEntity.this;
-				Level world = HsotileEngieEntity.this.level();
+				Level world = HsotileEngieEntity.this.level;
 				return super.canUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 
@@ -68,7 +81,7 @@ public class HsotileEngieEntity extends Monster {
 				double y = HsotileEngieEntity.this.getY();
 				double z = HsotileEngieEntity.this.getZ();
 				Entity entity = HsotileEngieEntity.this;
-				Level world = HsotileEngieEntity.this.level();
+				Level world = HsotileEngieEntity.this.level;
 				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 		});
@@ -79,7 +92,7 @@ public class HsotileEngieEntity extends Monster {
 				double y = HsotileEngieEntity.this.getY();
 				double z = HsotileEngieEntity.this.getZ();
 				Entity entity = HsotileEngieEntity.this;
-				Level world = HsotileEngieEntity.this.level();
+				Level world = HsotileEngieEntity.this.level;
 				return super.canUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 
@@ -89,7 +102,7 @@ public class HsotileEngieEntity extends Monster {
 				double y = HsotileEngieEntity.this.getY();
 				double z = HsotileEngieEntity.this.getZ();
 				Entity entity = HsotileEngieEntity.this;
-				Level world = HsotileEngieEntity.this.level();
+				Level world = HsotileEngieEntity.this.level;
 				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 		});
@@ -100,7 +113,7 @@ public class HsotileEngieEntity extends Monster {
 				double y = HsotileEngieEntity.this.getY();
 				double z = HsotileEngieEntity.this.getZ();
 				Entity entity = HsotileEngieEntity.this;
-				Level world = HsotileEngieEntity.this.level();
+				Level world = HsotileEngieEntity.this.level;
 				return super.canUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 
@@ -110,7 +123,7 @@ public class HsotileEngieEntity extends Monster {
 				double y = HsotileEngieEntity.this.getY();
 				double z = HsotileEngieEntity.this.getZ();
 				Entity entity = HsotileEngieEntity.this;
-				Level world = HsotileEngieEntity.this.level();
+				Level world = HsotileEngieEntity.this.level;
 				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 		});
@@ -121,7 +134,7 @@ public class HsotileEngieEntity extends Monster {
 				double y = HsotileEngieEntity.this.getY();
 				double z = HsotileEngieEntity.this.getZ();
 				Entity entity = HsotileEngieEntity.this;
-				Level world = HsotileEngieEntity.this.level();
+				Level world = HsotileEngieEntity.this.level;
 				return super.canUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 
@@ -131,7 +144,7 @@ public class HsotileEngieEntity extends Monster {
 				double y = HsotileEngieEntity.this.getY();
 				double z = HsotileEngieEntity.this.getZ();
 				Entity entity = HsotileEngieEntity.this;
-				Level world = HsotileEngieEntity.this.level();
+				Level world = HsotileEngieEntity.this.level;
 				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 		});
@@ -141,13 +154,18 @@ public class HsotileEngieEntity extends Monster {
 	}
 
 	@Override
+	public MobType getMobType() {
+		return MobType.UNDEFINED;
+	}
+
+	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.hurt"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.death"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
 	}
 
 	@Override
@@ -163,22 +181,22 @@ public class HsotileEngieEntity extends Monster {
 	}
 
 	@Override
-	public EntityDimensions getDefaultDimensions(Pose pose) {
+	public EntityDimensions getDimensions(Pose pose) {
 		Entity entity = this;
-		Level world = this.level();
+		Level world = this.level;
 		double x = this.getX();
 		double y = this.getY();
 		double z = this.getZ();
-		return super.getDefaultDimensions(pose).scale((float) MobHitboxScalingProcedure.execute());
+		return super.getDimensions(pose).scale((float) MobHitboxScalingProcedure.execute());
 	}
 
-	public static void init(RegisterSpawnPlacementsEvent event) {
-		event.register(EngiesChaosModEntities.HOSTILE_ENGIE.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
+	public static void init() {
+		SpawnPlacements.register(EngiesChaosModEntities.HOSTILE_ENGIE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
 			return HostileEngieSpawningConditionProcedure.execute(world);
-		}, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+		});
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
@@ -188,7 +206,6 @@ public class HsotileEngieEntity extends Monster {
 		builder = builder.add(Attributes.ARMOR, 45);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 65);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 32);
-		builder = builder.add(Attributes.STEP_HEIGHT, 1);
 		return builder;
 	}
 }

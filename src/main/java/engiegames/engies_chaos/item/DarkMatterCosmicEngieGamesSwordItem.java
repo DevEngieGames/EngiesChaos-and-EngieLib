@@ -1,24 +1,44 @@
 package engiegames.engies_chaos.item;
 
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.tags.TagKey;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.Registries;
 
 import engiegames.engies_chaos.procedures.CosmicEngieSwordsTickProcedure;
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
+import engiegames.engies_chaos.init.EngiesChaosModItems;
 
 public class DarkMatterCosmicEngieGamesSwordItem extends SwordItem {
-	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 94000, 148f, 0, 22,
-			TagKey.create(Registries.ITEM, ResourceLocation.parse("engies_chaos:dark_matter_cosmic_engie_games_sword_repair_items")));
+	public DarkMatterCosmicEngieGamesSwordItem() {
+		super(new Tier() {
+			public int getUses() {
+				return 94000;
+			}
 
-	public DarkMatterCosmicEngieGamesSwordItem(Item.Properties properties) {
-		super(TOOL_MATERIAL, 13549f, 15.8f, properties);
+			public float getSpeed() {
+				return 148f;
+			}
+
+			public float getAttackDamageBonus() {
+				return 13546f;
+			}
+
+			public int getLevel() {
+				return 4;
+			}
+
+			public int getEnchantmentValue() {
+				return 22;
+			}
+
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.DARK_MATTER_COSMIC_ENGIE_COIN.get()));
+			}
+		}, 3, 15.8f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}
 
 	@Override

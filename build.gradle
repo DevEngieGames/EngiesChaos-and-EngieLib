@@ -44,9 +44,9 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 mixin {
-    if (file("src/main/resources/allaboutengie.mixins.json").exists()) {
-        add sourceSets.main, "allaboutengie.refmap.json"
-        config "allaboutengie.mixins.json"
+    if (file("src/main/resources/engies_chaos.mixins.json").exists()) {
+        add sourceSets.main, "engies_chaos.refmap.json"
+        config "engies_chaos.mixins.json"
     }
 }
 
@@ -56,9 +56,9 @@ dependencies {
 }
 
 jar {
-    if (file("src/main/resources/allaboutengie.mixins.json").exists()) {
+    if (file("src/main/resources/engies_chaos.mixins.json").exists()) {
         manifest.attributes([
-                "MixinConfigs": "allaboutengie.mixins.json"
+                "MixinConfigs": "engies_chaos.mixins.json"
         ])
     }
 }

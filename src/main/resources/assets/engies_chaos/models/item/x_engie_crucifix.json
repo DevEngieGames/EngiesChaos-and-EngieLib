@@ -2,9 +2,9 @@
   "parent": "engies_chaos:custom/xengieplush",
   "textures": {
     "0": "engies_chaos:block/xengie",
-    "1": "engies_chaos:block/scarf",
-    "2": "engies_chaos:block/white",
-    "3": "engies_chaos:block/holster",
+    "1": "engies_chaos:block/16101613",
+    "2": "engies_chaos:block/scarf",
+    "3": "engies_chaos:block/angelhatnewforarmor",
     "particle": "engies_chaos:item/reaaelogo"
   }
 }

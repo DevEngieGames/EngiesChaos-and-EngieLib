@@ -1,7 +1,31 @@
 {
-  "parent": "engies_chaos:custom/ban_hammer_mindscapeengie",
-  "textures": {
-    "0": "engies_chaos:block/mindscapeengiebanhammer",
-    "particle": "engies_chaos:item/mindscapebanpixel"
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "engies_chaos:custom/ban_hammer_mindscapeengie",
+    "textures": {
+      "0": "engies_chaos:block/mindscapeengiebanhammer",
+      "particle": "engies_chaos:item/mindscapebanpixel"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/mindscapebanpixel"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/mindscapebanpixel"
+      }
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/mindscapebanpixel"
+      }
+    }
   }
 }

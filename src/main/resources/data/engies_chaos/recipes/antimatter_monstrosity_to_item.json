@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "antimattermonstrositytoitems",
+  "ingredients": [
+    {
+      "item": "engies_chaos:antimatter_monstrosity_engie_block"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:antimatter_monstrosity_engie_essence",
+    "count": 9
+  }
+}

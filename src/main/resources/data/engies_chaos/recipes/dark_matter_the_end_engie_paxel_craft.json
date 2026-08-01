@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "darkmattertheendengieaiot",
+  "ingredients": [
+    {
+      "item": "engies_chaos:dark_matter_the_end_sword"
+    },
+    {
+      "item": "engies_chaos:dark_matter_the_end_axe"
+    },
+    {
+      "item": "engies_chaos:dark_matter_the_end_shovel"
+    },
+    {
+      "item": "engies_chaos:dark_matter_the_end_hoe"
+    },
+    {
+      "item": "engies_chaos:dark_matter_the_end_pickaxe"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:dark_matter_the_end_aiot",
+    "count": 1
+  }
+}

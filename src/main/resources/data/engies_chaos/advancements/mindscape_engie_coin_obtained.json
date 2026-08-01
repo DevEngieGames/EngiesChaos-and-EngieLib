@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "engies_chaos:mindscape_coin"
+    },
+    "title": {
+      "translate": "advancements.mindscape_engie_coin_obtained.title"
+    },
+    "description": {
+      "translate": "advancements.mindscape_engie_coin_obtained.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "mindscape_engie_coin_obtained_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "engies_chaos:mindscape_coin"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1000000000
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 105
+  },
+  "parent": "engies_chaos:engie_coin_obtained"
+}

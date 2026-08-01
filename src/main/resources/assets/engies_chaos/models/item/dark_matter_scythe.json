@@ -1,7 +1,31 @@
 {
-  "parent": "engies_chaos:custom/scythe",
-  "textures": {
-    "0": "engies_chaos:block/pixeldarkmatterscythe",
-    "particle": "engies_chaos:item/pixeldarkmatterscythe"
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "engies_chaos:custom/scythe",
+    "textures": {
+      "0": "engies_chaos:block/normscythe",
+      "particle": "engies_chaos:item/pixeldarkmatterscythe"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/pixeldarkmatterscythe"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/pixeldarkmatterscythe"
+      }
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/pixeldarkmatterscythe"
+      }
+    }
   }
 }

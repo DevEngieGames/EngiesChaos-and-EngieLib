@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "template": [],
-  "base": "engies_chaos:antimatter_large_scythe",
-  "addition": "engies_chaos:antimatter_engie_upgrade",
-  "result": {
-    "id": "engies_chaos:antimatter_huge_scythe"
-  }
-}

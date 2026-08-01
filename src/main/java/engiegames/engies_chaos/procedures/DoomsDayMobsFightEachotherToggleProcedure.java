@@ -10,8 +10,6 @@ public class DoomsDayMobsFightEachotherToggleProcedure {
 			return true;
 		} else if (EngiesChaosModVariables.MapVariables.get(world).sddaystart == true) {
 			return true;
-		} else if (EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
-			return true;
 		}
 		return false;
 	}

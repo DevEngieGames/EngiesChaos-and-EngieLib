@@ -1,10 +1,9 @@
 package engiegames.engies_chaos.procedures;
 
-import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.bus.api.ICancellableEvent;
-import net.neoforged.bus.api.Event;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
 import net.minecraft.world.entity.Entity;
 
@@ -12,11 +11,11 @@ import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 
-@EventBusSubscriber
+@Mod.EventBusSubscriber
 public class ImmunityCheck2Procedure {
 	@SubscribeEvent
-	public static void onEntityAttacked(LivingIncomingDamageEvent event) {
-		if (event.getEntity() != null) {
+	public static void onEntityAttacked(LivingAttackEvent event) {
+		if (event != null && event.getEntity() != null) {
 			execute(event, event.getEntity());
 		}
 	}
@@ -28,9 +27,11 @@ public class ImmunityCheck2Procedure {
 	private static void execute(@Nullable Event event, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).playerhasimmunity == true) {
-			if (event instanceof ICancellableEvent _cancellable) {
-				_cancellable.setCanceled(true);
+		if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).playerhasimmunity == true) {
+			if (event != null && event.isCancelable()) {
+				event.setCanceled(true);
+			} else if (event != null && event.hasResult()) {
+				event.setResult(Event.Result.DENY);
 			}
 		}
 	}

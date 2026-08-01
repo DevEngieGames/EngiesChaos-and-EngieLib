@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "engieblocktoitem",
+  "ingredients": [
+    {
+      "item": "engies_chaos:engie_block"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:engie_gem",
+    "count": 9
+  }
+}

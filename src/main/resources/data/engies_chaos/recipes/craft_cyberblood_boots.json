@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "a a",
+    "a a"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:cyberblood_ingot"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:cyberblood_boots",
+    "count": 1
+  }
+}

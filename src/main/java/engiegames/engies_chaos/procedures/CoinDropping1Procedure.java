@@ -18,10 +18,10 @@ public class CoinDropping1Procedure {
 	public static void execute(LevelAccessor world, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
-		if ((world instanceof ServerLevel _serverLevelGR0 && _serverLevelGR0.getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_THROWBACK_TOGGLE)) == false) {
+		if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_THROWBACK_TOGGLE) == false) {
 			if (EngiesChaosModVariables.MapVariables.get(world).difficultytoggle == true) {
-				if ((sourceentity instanceof ServerPlayer _plr1 && _plr1.level() instanceof ServerLevel
-						&& _plr1.getAdvancements().getOrStartProgress(_plr1.server.getAdvancements().get(ResourceLocation.parse("engies_chaos:all_fully_done"))).isDone()) == true) {
+				if ((sourceentity instanceof ServerPlayer _plr1 && _plr1.level instanceof ServerLevel
+						&& _plr1.getAdvancements().getOrStartProgress(_plr1.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()) == true) {
 					if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty >= 30 && world.dimensionType().moonPhase(world.dayTime()) == 4
 							|| EngiesChaosModVariables.MapVariables.get(world).MobDifficulty == -1 && world.dimensionType().moonPhase(world.dayTime()) == 4) {
 						if (world instanceof Level _lvl4 && _lvl4.isDay()) {
@@ -1038,8 +1038,8 @@ public class CoinDropping1Procedure {
 					}
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).difficultytoggle == false) {
-				if ((sourceentity instanceof ServerPlayer _plr638 && _plr638.level() instanceof ServerLevel
-						&& _plr638.getAdvancements().getOrStartProgress(_plr638.server.getAdvancements().get(ResourceLocation.parse("engies_chaos:all_fully_done"))).isDone()) == true) {
+				if ((sourceentity instanceof ServerPlayer _plr638 && _plr638.level instanceof ServerLevel
+						&& _plr638.getAdvancements().getOrStartProgress(_plr638.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()) == true) {
 					if (world.dimensionType().moonPhase(world.dayTime()) == 4) {
 						if (world instanceof Level _lvl640 && _lvl640.isDay()) {
 							if (Math.random() < 0.5) {

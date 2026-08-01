@@ -1,100 +1,70 @@
 package engiegames.engies_chaos.procedures;
 
-import net.neoforged.neoforge.event.tick.PlayerTickEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.bus.api.Event;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.TickEvent;
 
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.entity.Entity;
 
 import javax.annotation.Nullable;
 
-import engiegames.engies_chaos.world.inventory.RecipeBookVol5GUIMenu;
-import engiegames.engies_chaos.world.inventory.RecipeBookVol3GUIMenu;
-import engiegames.engies_chaos.world.inventory.RecipeBookVol2GUIMenu;
-import engiegames.engies_chaos.world.inventory.RecipeBookVol1GUIMenu;
-import engiegames.engies_chaos.network.EngiesChaosModVariables;
+import java.util.Comparator;
 
-@EventBusSubscriber
+import engiegames.engies_chaos.network.EngiesChaosModVariables;
+import engiegames.engies_chaos.entity.ShadowSharkEngieBlindEntity;
+
+@Mod.EventBusSubscriber
 public class PlayerTick2Procedure {
 	@SubscribeEvent
-	public static void onPlayerTick(PlayerTickEvent.Post event) {
-		execute(event, event.getEntity().level(), event.getEntity());
+	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+		if (event.phase == TickEvent.Phase.END) {
+			execute(event, event.player.level, event.player.getX(), event.player.getY(), event.player.getZ(), event.player);
+		}
 	}
 
-	public static void execute(LevelAccessor world, Entity entity) {
-		execute(null, world, entity);
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+		execute(null, world, x, y, z, entity);
 	}
 
-	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
+	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (!world.isClientSide()) {
-			if (entity instanceof Player _plr1 && _plr1.containerMenu instanceof RecipeBookVol1GUIMenu) {
-				if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).pageNumber > 66) {
+		double raytrace_distance = 0;
+		double rx = 0;
+		double ry = 0;
+		double rz = 0;
+		boolean entity_found = false;
+		if (!world.getEntitiesOfClass(ShadowSharkEngieBlindEntity.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(200 / 2d), e -> true).isEmpty()) {
+			entity_found = false;
+			raytrace_distance = 0;
+			for (int index0 = 0; index0 < 101; index0++) {
+				rx = entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity)).getBlockPos().getX();
+				ry = entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity)).getBlockPos().getY();
+				rz = entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ();
+				if (!world.getEntitiesOfClass(ShadowSharkEngieBlindEntity.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(rx, ry, rz)).inflate(2 / 2d), e -> true).isEmpty()
+						&& !((findEntityInWorldRange(world, ShadowSharkEngieBlindEntity.class, rx, ry, rz, 2)) == entity)) {
 					{
-						EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-						_vars.pageNumber = 66;
-						_vars.syncPlayerVariables(entity);
+						boolean _setval = true;
+						entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.BlindShadowSharkEngieAttack = _setval;
+							capability.syncPlayerVariables(entity);
+						});
 					}
-				} else if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).pageNumber < 1) {
-					{
-						EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-						_vars.pageNumber = 1;
-						_vars.syncPlayerVariables(entity);
-					}
-				}
-			} else if (entity instanceof Player _plr2 && _plr2.containerMenu instanceof RecipeBookVol2GUIMenu) {
-				if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).pageNumber > 30) {
-					{
-						EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-						_vars.pageNumber = 30;
-						_vars.syncPlayerVariables(entity);
-					}
-				} else if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).pageNumber < 1) {
-					{
-						EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-						_vars.pageNumber = 1;
-						_vars.syncPlayerVariables(entity);
-					}
-				}
-			} else if (entity instanceof Player _plr3 && _plr3.containerMenu instanceof RecipeBookVol3GUIMenu) {
-				if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).pageNumber > 29) {
-					{
-						EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-						_vars.pageNumber = 29;
-						_vars.syncPlayerVariables(entity);
-					}
-				} else if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).pageNumber < 1) {
-					{
-						EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-						_vars.pageNumber = 1;
-						_vars.syncPlayerVariables(entity);
-					}
-				}
-			} else if (entity instanceof Player _plr4 && _plr4.containerMenu instanceof RecipeBookVol5GUIMenu) {
-				if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).pageNumber > 127) {
-					{
-						EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-						_vars.pageNumber = 127;
-						_vars.syncPlayerVariables(entity);
-					}
-				} else if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).pageNumber < 1) {
-					{
-						EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-						_vars.pageNumber = 1;
-						_vars.syncPlayerVariables(entity);
-					}
-				}
-			} else {
-				{
-					EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-					_vars.pageNumber = 1;
-					_vars.syncPlayerVariables(entity);
+					entity_found = true;
+				} else {
+					entity_found = false;
+					raytrace_distance = raytrace_distance + 1;
 				}
 			}
 		}
+	}
+
+	private static Entity findEntityInWorldRange(LevelAccessor world, Class<? extends Entity> clazz, double x, double y, double z, double range) {
+		return (Entity) world.getEntitiesOfClass(clazz, AABB.ofSize(new Vec3(x, y, z), range, range, range), e -> true).stream().sorted(Comparator.comparingDouble(e -> e.distanceToSqr(x, y, z))).findFirst().orElse(null);
 	}
 }

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "throwbackban",
+  "pattern": [
+    "aba",
+    "cdc",
+    " e "
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:engi_block"
+    },
+    "b": {
+      "item": "minecraft:totem_of_undying"
+    },
+    "c": {
+      "item": "minecraft:netherite_block"
+    },
+    "d": {
+      "item": "engies_chaos:throwback_ban_hammer"
+    },
+    "e": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:throwback_big_ban_hammer",
+    "count": 1
+  }
+}

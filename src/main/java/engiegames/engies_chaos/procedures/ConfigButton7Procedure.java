@@ -9,9 +9,11 @@ public class ConfigButton7Procedure {
 		if (entity == null)
 			return;
 		{
-			EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-			_vars.DoomsdayRiskTrackToggle = false;
-			_vars.syncPlayerVariables(entity);
+			boolean _setval = false;
+			entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.DoomsdayRiskTrackToggle = _setval;
+				capability.syncPlayerVariables(entity);
+			});
 		}
 	}
 }

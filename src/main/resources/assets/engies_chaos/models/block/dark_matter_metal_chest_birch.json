@@ -3,8 +3,8 @@
   "textures": {
     "all": "engies_chaos:block/darkmattermetalchest",
     "particle": "engies_chaos:block/darkmattermetalchest",
-    "0": "engies_chaos:block/darkmattermetalchest",
-    "1": "minecraft:block/birch_planks"
+    "0": "engies_chaos:block/metalchest",
+    "1": "minecraft:block/oak_planks"
   },
   "render_type": "solid"
 }

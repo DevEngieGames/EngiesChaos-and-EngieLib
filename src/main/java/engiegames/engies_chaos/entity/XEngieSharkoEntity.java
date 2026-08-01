@@ -1,18 +1,16 @@
 package engiegames.engies_chaos.entity;
 
-import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
-import net.neoforged.neoforge.event.EventHooks;
-import net.neoforged.neoforge.common.NeoForgeMod;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.network.PlayMessages;
+import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.Explosion;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.entity.projectile.ThrownPotion;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.player.Player;
@@ -29,17 +27,17 @@ import net.minecraft.world.entity.ai.goal.BreedGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.TamableAnimal;
-import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.Pose;
+import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
@@ -50,9 +48,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.component.DataComponents;
 
 import engiegames.engies_chaos.procedures.XEngieSharkoSpawningProcedure;
 import engiegames.engies_chaos.procedures.XEngieSharkoSleepCheckProcedure;
@@ -66,8 +63,13 @@ public class XEngieSharkoEntity extends TamableAnimal {
 	public static final EntityDataAccessor<Integer> DATA_SharkoState = SynchedEntityData.defineId(XEngieSharkoEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Boolean> DATA_AlternateState = SynchedEntityData.defineId(XEngieSharkoEntity.class, EntityDataSerializers.BOOLEAN);
 
+	public XEngieSharkoEntity(PlayMessages.SpawnEntity packet, Level world) {
+		this(EngiesChaosModEntities.X_ENGIE_SHARKO.get(), world);
+	}
+
 	public XEngieSharkoEntity(EntityType<XEngieSharkoEntity> type, Level world) {
 		super(type, world);
+		maxUpStep = 0.6f;
 		xpReward = 0;
 		setNoAi(false);
 		setPersistenceRequired();
@@ -75,10 +77,15 @@ public class XEngieSharkoEntity extends TamableAnimal {
 	}
 
 	@Override
-	protected void defineSynchedData(SynchedEntityData.Builder builder) {
-		super.defineSynchedData(builder);
-		builder.define(DATA_SharkoState, 0);
-		builder.define(DATA_AlternateState, false);
+	public Packet<?> getAddEntityPacket() {
+		return NetworkHooks.getEntitySpawningPacket(this);
+	}
+
+	@Override
+	protected void defineSynchedData() {
+		super.defineSynchedData();
+		this.entityData.define(DATA_SharkoState, 0);
+		this.entityData.define(DATA_AlternateState, false);
 	}
 
 	@Override
@@ -91,7 +98,7 @@ public class XEngieSharkoEntity extends TamableAnimal {
 				double y = XEngieSharkoEntity.this.getY();
 				double z = XEngieSharkoEntity.this.getZ();
 				Entity entity = XEngieSharkoEntity.this;
-				Level world = XEngieSharkoEntity.this.level();
+				Level world = XEngieSharkoEntity.this.level;
 				return super.canUse() && XEngieSharkoMoveAroundCheckProcedure.execute(entity);
 			}
 
@@ -101,7 +108,7 @@ public class XEngieSharkoEntity extends TamableAnimal {
 				double y = XEngieSharkoEntity.this.getY();
 				double z = XEngieSharkoEntity.this.getZ();
 				Entity entity = XEngieSharkoEntity.this;
-				Level world = XEngieSharkoEntity.this.level();
+				Level world = XEngieSharkoEntity.this.level;
 				return super.canContinueToUse() && XEngieSharkoMoveAroundCheckProcedure.execute(entity);
 			}
 		});
@@ -112,7 +119,7 @@ public class XEngieSharkoEntity extends TamableAnimal {
 				double y = XEngieSharkoEntity.this.getY();
 				double z = XEngieSharkoEntity.this.getZ();
 				Entity entity = XEngieSharkoEntity.this;
-				Level world = XEngieSharkoEntity.this.level();
+				Level world = XEngieSharkoEntity.this.level;
 				return super.canUse() && XEngieSharkoMoveAroundCheckProcedure.execute(entity);
 			}
 
@@ -122,7 +129,7 @@ public class XEngieSharkoEntity extends TamableAnimal {
 				double y = XEngieSharkoEntity.this.getY();
 				double z = XEngieSharkoEntity.this.getZ();
 				Entity entity = XEngieSharkoEntity.this;
-				Level world = XEngieSharkoEntity.this.level();
+				Level world = XEngieSharkoEntity.this.level;
 				return super.canContinueToUse() && XEngieSharkoMoveAroundCheckProcedure.execute(entity);
 			}
 		});
@@ -133,7 +140,7 @@ public class XEngieSharkoEntity extends TamableAnimal {
 				double y = XEngieSharkoEntity.this.getY();
 				double z = XEngieSharkoEntity.this.getZ();
 				Entity entity = XEngieSharkoEntity.this;
-				Level world = XEngieSharkoEntity.this.level();
+				Level world = XEngieSharkoEntity.this.level;
 				return super.canUse() && XEngieSharkoMoveAroundCheckProcedure.execute(entity);
 			}
 
@@ -143,14 +150,14 @@ public class XEngieSharkoEntity extends TamableAnimal {
 				double y = XEngieSharkoEntity.this.getY();
 				double z = XEngieSharkoEntity.this.getZ();
 				Entity entity = XEngieSharkoEntity.this;
-				Level world = XEngieSharkoEntity.this.level();
+				Level world = XEngieSharkoEntity.this.level;
 				return super.canContinueToUse() && XEngieSharkoMoveAroundCheckProcedure.execute(entity);
 			}
 		});
 		this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.2, true) {
 			@Override
-			protected boolean canPerformAttack(LivingEntity entity) {
-				return this.isTimeToAttack() && this.mob.distanceToSqr(entity) < (this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth()) && this.mob.getSensing().hasLineOfSight(entity);
+			protected double getAttackReachSqr(LivingEntity entity) {
+				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
 
 			@Override
@@ -159,7 +166,7 @@ public class XEngieSharkoEntity extends TamableAnimal {
 				double y = XEngieSharkoEntity.this.getY();
 				double z = XEngieSharkoEntity.this.getZ();
 				Entity entity = XEngieSharkoEntity.this;
-				Level world = XEngieSharkoEntity.this.level();
+				Level world = XEngieSharkoEntity.this.level;
 				return super.canUse() && XEngieSharkoMoveAroundCheckProcedure.execute(entity);
 			}
 
@@ -169,19 +176,19 @@ public class XEngieSharkoEntity extends TamableAnimal {
 				double y = XEngieSharkoEntity.this.getY();
 				double z = XEngieSharkoEntity.this.getZ();
 				Entity entity = XEngieSharkoEntity.this;
-				Level world = XEngieSharkoEntity.this.level();
+				Level world = XEngieSharkoEntity.this.level;
 				return super.canContinueToUse() && XEngieSharkoMoveAroundCheckProcedure.execute(entity);
 			}
 
 		});
-		this.goalSelector.addGoal(5, new FollowOwnerGoal(this, 1, (float) 10, (float) 2) {
+		this.goalSelector.addGoal(5, new FollowOwnerGoal(this, 1, (float) 10, (float) 2, false) {
 			@Override
 			public boolean canUse() {
 				double x = XEngieSharkoEntity.this.getX();
 				double y = XEngieSharkoEntity.this.getY();
 				double z = XEngieSharkoEntity.this.getZ();
 				Entity entity = XEngieSharkoEntity.this;
-				Level world = XEngieSharkoEntity.this.level();
+				Level world = XEngieSharkoEntity.this.level;
 				return super.canUse() && XEngieSharkoMoveAroundCheckProcedure.execute(entity);
 			}
 
@@ -191,7 +198,7 @@ public class XEngieSharkoEntity extends TamableAnimal {
 				double y = XEngieSharkoEntity.this.getY();
 				double z = XEngieSharkoEntity.this.getZ();
 				Entity entity = XEngieSharkoEntity.this;
-				Level world = XEngieSharkoEntity.this.level();
+				Level world = XEngieSharkoEntity.this.level;
 				return super.canContinueToUse() && XEngieSharkoMoveAroundCheckProcedure.execute(entity);
 			}
 		});
@@ -202,7 +209,7 @@ public class XEngieSharkoEntity extends TamableAnimal {
 				double y = XEngieSharkoEntity.this.getY();
 				double z = XEngieSharkoEntity.this.getZ();
 				Entity entity = XEngieSharkoEntity.this;
-				Level world = XEngieSharkoEntity.this.level();
+				Level world = XEngieSharkoEntity.this.level;
 				return super.canUse() && XEngieSharkoMoveAroundCheckProcedure.execute(entity);
 			}
 
@@ -212,7 +219,7 @@ public class XEngieSharkoEntity extends TamableAnimal {
 				double y = XEngieSharkoEntity.this.getY();
 				double z = XEngieSharkoEntity.this.getZ();
 				Entity entity = XEngieSharkoEntity.this;
-				Level world = XEngieSharkoEntity.this.level();
+				Level world = XEngieSharkoEntity.this.level;
 				return super.canContinueToUse() && XEngieSharkoMoveAroundCheckProcedure.execute(entity);
 			}
 		});
@@ -223,7 +230,7 @@ public class XEngieSharkoEntity extends TamableAnimal {
 				double y = XEngieSharkoEntity.this.getY();
 				double z = XEngieSharkoEntity.this.getZ();
 				Entity entity = XEngieSharkoEntity.this;
-				Level world = XEngieSharkoEntity.this.level();
+				Level world = XEngieSharkoEntity.this.level;
 				return super.canUse() && XEngieSharkoMoveAroundCheckProcedure.execute(entity);
 			}
 		});
@@ -234,7 +241,7 @@ public class XEngieSharkoEntity extends TamableAnimal {
 				double y = XEngieSharkoEntity.this.getY();
 				double z = XEngieSharkoEntity.this.getZ();
 				Entity entity = XEngieSharkoEntity.this;
-				Level world = XEngieSharkoEntity.this.level();
+				Level world = XEngieSharkoEntity.this.level;
 				return super.canUse() && XEngieSharkoSleepCheckProcedure.execute(entity);
 			}
 
@@ -244,7 +251,7 @@ public class XEngieSharkoEntity extends TamableAnimal {
 				double y = XEngieSharkoEntity.this.getY();
 				double z = XEngieSharkoEntity.this.getZ();
 				Entity entity = XEngieSharkoEntity.this;
-				Level world = XEngieSharkoEntity.this.level();
+				Level world = XEngieSharkoEntity.this.level;
 				return super.canContinueToUse() && XEngieSharkoSleepCheckProcedure.execute(entity);
 			}
 		});
@@ -255,7 +262,7 @@ public class XEngieSharkoEntity extends TamableAnimal {
 				double y = XEngieSharkoEntity.this.getY();
 				double z = XEngieSharkoEntity.this.getZ();
 				Entity entity = XEngieSharkoEntity.this;
-				Level world = XEngieSharkoEntity.this.level();
+				Level world = XEngieSharkoEntity.this.level;
 				return super.canUse() && XEngieSharkoSleepCheckProcedure.execute(entity);
 			}
 
@@ -265,7 +272,7 @@ public class XEngieSharkoEntity extends TamableAnimal {
 				double y = XEngieSharkoEntity.this.getY();
 				double z = XEngieSharkoEntity.this.getZ();
 				Entity entity = XEngieSharkoEntity.this;
-				Level world = XEngieSharkoEntity.this.level();
+				Level world = XEngieSharkoEntity.this.level;
 				return super.canContinueToUse() && XEngieSharkoSleepCheckProcedure.execute(entity);
 			}
 		});
@@ -276,7 +283,7 @@ public class XEngieSharkoEntity extends TamableAnimal {
 				double y = XEngieSharkoEntity.this.getY();
 				double z = XEngieSharkoEntity.this.getZ();
 				Entity entity = XEngieSharkoEntity.this;
-				Level world = XEngieSharkoEntity.this.level();
+				Level world = XEngieSharkoEntity.this.level;
 				return super.canUse() && XEngieSharkoSleepCheckProcedure.execute(entity);
 			}
 
@@ -286,11 +293,16 @@ public class XEngieSharkoEntity extends TamableAnimal {
 				double y = XEngieSharkoEntity.this.getY();
 				double z = XEngieSharkoEntity.this.getZ();
 				Entity entity = XEngieSharkoEntity.this;
-				Level world = XEngieSharkoEntity.this.level();
+				Level world = XEngieSharkoEntity.this.level;
 				return super.canContinueToUse() && XEngieSharkoSleepCheckProcedure.execute(entity);
 			}
 		});
 		this.goalSelector.addGoal(11, new FloatGoal(this));
+	}
+
+	@Override
+	public MobType getMobType() {
+		return MobType.UNDEFINED;
 	}
 
 	@Override
@@ -300,52 +312,45 @@ public class XEngieSharkoEntity extends TamableAnimal {
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.panda.hurt"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.panda.hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.panda.death"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.panda.death"));
 	}
 
 	@Override
-	public boolean hurtServer(ServerLevel level, DamageSource damagesource, float amount) {
-		if (damagesource.is(DamageTypes.IN_FIRE))
-			return false;
+	public boolean hurt(DamageSource damagesource, float amount) {
 		if (damagesource.getDirectEntity() instanceof AbstractArrow)
 			return false;
 		if (damagesource.getDirectEntity() instanceof Player)
 			return false;
-		if (damagesource.getDirectEntity() instanceof ThrownPotion || damagesource.getDirectEntity() instanceof AreaEffectCloud || damagesource.typeHolder().is(NeoForgeMod.POISON_DAMAGE))
+		if (damagesource.getDirectEntity() instanceof ThrownPotion || damagesource.getDirectEntity() instanceof AreaEffectCloud)
 			return false;
-		if (damagesource.is(DamageTypes.FALL))
+		if (damagesource == DamageSource.FALL)
 			return false;
-		if (damagesource.is(DamageTypes.CACTUS))
+		if (damagesource == DamageSource.CACTUS)
 			return false;
-		if (damagesource.is(DamageTypes.DROWN))
+		if (damagesource == DamageSource.DROWN)
 			return false;
-		if (damagesource.is(DamageTypes.LIGHTNING_BOLT))
+		if (damagesource == DamageSource.LIGHTNING_BOLT)
 			return false;
-		if (damagesource.is(DamageTypes.EXPLOSION) || damagesource.is(DamageTypes.PLAYER_EXPLOSION))
+		if (damagesource.isExplosion())
 			return false;
-		if (damagesource.is(DamageTypes.TRIDENT))
+		if (damagesource.getMsgId().equals("trident"))
 			return false;
-		if (damagesource.is(DamageTypes.FALLING_ANVIL))
+		if (damagesource == DamageSource.ANVIL)
 			return false;
-		if (damagesource.is(DamageTypes.DRAGON_BREATH))
+		if (damagesource == DamageSource.DRAGON_BREATH)
 			return false;
-		if (damagesource.is(DamageTypes.WITHER) || damagesource.is(DamageTypes.WITHER_SKULL))
+		if (damagesource == DamageSource.WITHER || damagesource.getMsgId().equals("witherSkull"))
 			return false;
-		return super.hurtServer(level, damagesource, amount);
+		return super.hurt(damagesource, amount);
 	}
 
 	@Override
-	public boolean ignoreExplosion(Explosion explosion) {
-		return true;
-	}
-
-	@Override
-	public boolean fireImmune() {
+	public boolean ignoreExplosion() {
 		return true;
 	}
 
@@ -368,39 +373,37 @@ public class XEngieSharkoEntity extends TamableAnimal {
 	@Override
 	public InteractionResult mobInteract(Player sourceentity, InteractionHand hand) {
 		ItemStack itemstack = sourceentity.getItemInHand(hand);
-		InteractionResult retval = InteractionResult.SUCCESS;
+		InteractionResult retval = InteractionResult.sidedSuccess(this.level.isClientSide());
 		Item item = itemstack.getItem();
 		if (itemstack.getItem() instanceof SpawnEggItem) {
 			retval = super.mobInteract(sourceentity, hand);
-		} else if (this.level().isClientSide()) {
-			retval = (this.isTame() && this.isOwnedBy(sourceentity) || this.isFood(itemstack)) ? InteractionResult.SUCCESS : InteractionResult.PASS;
+		} else if (this.level.isClientSide()) {
+			retval = (this.isTame() && this.isOwnedBy(sourceentity) || this.isFood(itemstack)) ? InteractionResult.sidedSuccess(this.level.isClientSide()) : InteractionResult.PASS;
 		} else {
 			if (this.isTame()) {
 				if (this.isOwnedBy(sourceentity)) {
-					if (this.isFood(itemstack) && this.getHealth() < this.getMaxHealth()) {
+					if (item.isEdible() && this.isFood(itemstack) && this.getHealth() < this.getMaxHealth()) {
 						this.usePlayerItem(sourceentity, hand, itemstack);
-						FoodProperties foodproperties = itemstack.get(DataComponents.FOOD);
-						float nutrition = foodproperties != null ? (float) foodproperties.nutrition() : 1;
-						this.heal(nutrition);
-						retval = InteractionResult.SUCCESS;
+						this.heal((float) item.getFoodProperties().getNutrition());
+						retval = InteractionResult.sidedSuccess(this.level.isClientSide());
 					} else if (this.isFood(itemstack) && this.getHealth() < this.getMaxHealth()) {
 						this.usePlayerItem(sourceentity, hand, itemstack);
 						this.heal(4);
-						retval = InteractionResult.SUCCESS;
+						retval = InteractionResult.sidedSuccess(this.level.isClientSide());
 					} else {
 						retval = super.mobInteract(sourceentity, hand);
 					}
 				}
 			} else if (this.isFood(itemstack)) {
 				this.usePlayerItem(sourceentity, hand, itemstack);
-				if (this.random.nextInt(3) == 0 && !EventHooks.onAnimalTame(this, sourceentity)) {
+				if (this.random.nextInt(3) == 0 && !net.minecraftforge.event.ForgeEventFactory.onAnimalTame(this, sourceentity)) {
 					this.tame(sourceentity);
-					this.level().broadcastEntityEvent(this, (byte) 7);
+					this.level.broadcastEntityEvent(this, (byte) 7);
 				} else {
-					this.level().broadcastEntityEvent(this, (byte) 6);
+					this.level.broadcastEntityEvent(this, (byte) 6);
 				}
 				this.setPersistenceRequired();
-				retval = InteractionResult.SUCCESS;
+				retval = InteractionResult.sidedSuccess(this.level.isClientSide());
 			} else {
 				retval = super.mobInteract(sourceentity, hand);
 				if (retval == InteractionResult.SUCCESS || retval == InteractionResult.CONSUME)
@@ -411,7 +414,7 @@ public class XEngieSharkoEntity extends TamableAnimal {
 		double y = this.getY();
 		double z = this.getZ();
 		Entity entity = this;
-		Level world = this.level();
+		Level world = this.level;
 
 		XEngieSharkoRightClickedOnEntityProcedure.execute(world, x, y, z, entity, sourceentity);
 		return retval;
@@ -420,36 +423,38 @@ public class XEngieSharkoEntity extends TamableAnimal {
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		XEngieSharkoOnEntityTickUpdateProcedure.execute(this.level(), this);
+		XEngieSharkoOnEntityTickUpdateProcedure.execute(this.level, this);
 	}
 
 	@Override
 	public AgeableMob getBreedOffspring(ServerLevel serverWorld, AgeableMob ageable) {
-		XEngieSharkoEntity retval = EngiesChaosModEntities.X_ENGIE_SHARKO.get().create(serverWorld, EntitySpawnReason.BREEDING);
-		retval.finalizeSpawn(serverWorld, serverWorld.getCurrentDifficultyAt(retval.blockPosition()), EntitySpawnReason.BREEDING, null);
+		XEngieSharkoEntity retval = EngiesChaosModEntities.X_ENGIE_SHARKO.get().create(serverWorld);
+		retval.finalizeSpawn(serverWorld, serverWorld.getCurrentDifficultyAt(retval.blockPosition()), MobSpawnType.BREEDING, null, null);
 		return retval;
 	}
 
 	@Override
 	public boolean isFood(ItemStack stack) {
-		return Ingredient.of(EngiesChaosModItems.GOLDEN_COOKIE.get(), EngiesChaosModItems.ENCHANTED_GOLDEN_COOKIE.get(), EngiesChaosModItems.EXOTIC_COOKIE.get(), EngiesChaosModItems.ENCHANTED_EXOTIC_COOKIE.get(),
-				EngiesChaosModItems.ENGIE_COOKIE.get(), EngiesChaosModItems.ENCHANTED_ENGIE_COOKIE.get(), Items.COOKIE, EngiesChaosModItems.ENGIE_HEAD.get(), Items.APPLE, Items.GOLDEN_APPLE, Items.GOLDEN_APPLE, Items.ENCHANTED_GOLDEN_APPLE,
-				Items.BONE, EngiesChaosModItems.PIZZA_SLICE.get(), EngiesChaosModItems.BAGEL.get(), EngiesChaosModItems.BAGEL_CHEESE.get(), EngiesChaosModItems.BAGEL_CHEESE_COOKED.get(), EngiesChaosModItems.BAGEL_COOKED.get(), Items.COOKED_COD,
-				Items.COOKED_SALMON, Items.COOKED_PORKCHOP, Items.COOKED_BEEF, Items.COOKED_CHICKEN, Items.COOKED_RABBIT, Items.COOKED_MUTTON, EngiesChaosModItems.CORNDOG.get()).test(stack);
+		return Ingredient.of(new ItemStack(EngiesChaosModItems.GOLDEN_COOKIE.get()), new ItemStack(EngiesChaosModItems.ENCHANTED_GOLDEN_COOKIE.get()), new ItemStack(EngiesChaosModItems.EXOTIC_COOKIE.get()),
+				new ItemStack(EngiesChaosModItems.ENCHANTED_EXOTIC_COOKIE.get()), new ItemStack(EngiesChaosModItems.ENGIE_COOKIE.get()), new ItemStack(EngiesChaosModItems.ENCHANTED_ENGIE_COOKIE.get()), new ItemStack(Items.COOKIE),
+				new ItemStack(EngiesChaosModItems.ENGIE_HEAD.get()), new ItemStack(Items.APPLE), new ItemStack(Items.GOLDEN_APPLE), new ItemStack(Items.GOLDEN_APPLE), new ItemStack(Items.ENCHANTED_GOLDEN_APPLE), new ItemStack(Items.BONE),
+				new ItemStack(EngiesChaosModItems.PIZZA_SLICE.get()), new ItemStack(EngiesChaosModItems.BAGEL.get()), new ItemStack(EngiesChaosModItems.BAGEL_CHEESE.get()), new ItemStack(EngiesChaosModItems.BAGEL_CHEESE_COOKED.get()),
+				new ItemStack(EngiesChaosModItems.BAGEL_COOKED.get()), new ItemStack(Items.COOKED_COD), new ItemStack(Items.COOKED_SALMON), new ItemStack(Items.COOKED_PORKCHOP), new ItemStack(Items.COOKED_BEEF), new ItemStack(Items.COOKED_CHICKEN),
+				new ItemStack(Items.COOKED_RABBIT), new ItemStack(Items.COOKED_MUTTON), new ItemStack(EngiesChaosModItems.CORNDOG.get())).test(stack);
 	}
 
 	@Override
-	public EntityDimensions getDefaultDimensions(Pose pose) {
-		return super.getDefaultDimensions(pose).scale(1.5f);
+	public EntityDimensions getDimensions(Pose pose) {
+		return super.getDimensions(pose).scale(1.5f);
 	}
 
-	public static void init(RegisterSpawnPlacementsEvent event) {
-		event.register(EngiesChaosModEntities.X_ENGIE_SHARKO.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
+	public static void init() {
+		SpawnPlacements.register(EngiesChaosModEntities.X_ENGIE_SHARKO.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
 			return XEngieSharkoSpawningProcedure.execute(world, x, y, z);
-		}, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+		});
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
@@ -459,7 +464,6 @@ public class XEngieSharkoEntity extends TamableAnimal {
 		builder = builder.add(Attributes.ARMOR, 100);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 100);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
-		builder = builder.add(Attributes.STEP_HEIGHT, 0.6);
 		return builder;
 	}
 }

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "darkmatterhostileengiechestplate",
+  "pattern": [
+    "a a",
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:dark_matter_engie_gem"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:dark_matter_hostile_engies_chestplate",
+    "count": 1
+  }
+}

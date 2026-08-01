@@ -8,7 +8,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.advancements.AdvancementProgress;
-import net.minecraft.advancements.AdvancementHolder;
+import net.minecraft.advancements.Advancement;
 
 import engiegames.engies_chaos.init.EngiesChaosModMenus;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
@@ -38,15 +38,14 @@ public class LegendaryTradeButtonClickedProcedure {
 					_menu.getSlots().get(3).set(_setstack);
 					_player.containerMenu.broadcastChanges();
 				}
-				if (!(entity instanceof ServerPlayer _plr6 && _plr6.level() instanceof ServerLevel && _plr6.getAdvancements().getOrStartProgress(_plr6.server.getAdvancements().get(ResourceLocation.parse("minecraft:adventure/trade"))).isDone())) {
+				if (!(entity instanceof ServerPlayer _plr6 && _plr6.level instanceof ServerLevel
+						&& _plr6.getAdvancements().getOrStartProgress(_plr6.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:adventure/trade"))).isDone())) {
 					if (entity instanceof ServerPlayer _player) {
-						AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("minecraft:adventure/trade"));
-						if (_adv != null) {
-							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-							if (!_ap.isDone()) {
-								for (String criteria : _ap.getRemainingCriteria())
-									_player.getAdvancements().award(_adv, criteria);
-							}
+						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:adventure/trade"));
+						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+						if (!_ap.isDone()) {
+							for (String criteria : _ap.getRemainingCriteria())
+								_player.getAdvancements().award(_adv, criteria);
 						}
 					}
 				}
@@ -72,15 +71,14 @@ public class LegendaryTradeButtonClickedProcedure {
 					_menu.getSlots().get(3).set(_setstack);
 					_player.containerMenu.broadcastChanges();
 				}
-				if (!(entity instanceof ServerPlayer _plr15 && _plr15.level() instanceof ServerLevel && _plr15.getAdvancements().getOrStartProgress(_plr15.server.getAdvancements().get(ResourceLocation.parse("minecraft:adventure/trade"))).isDone())) {
+				if (!(entity instanceof ServerPlayer _plr15 && _plr15.level instanceof ServerLevel
+						&& _plr15.getAdvancements().getOrStartProgress(_plr15.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:adventure/trade"))).isDone())) {
 					if (entity instanceof ServerPlayer _player) {
-						AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("minecraft:adventure/trade"));
-						if (_adv != null) {
-							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-							if (!_ap.isDone()) {
-								for (String criteria : _ap.getRemainingCriteria())
-									_player.getAdvancements().award(_adv, criteria);
-							}
+						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:adventure/trade"));
+						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+						if (!_ap.isDone()) {
+							for (String criteria : _ap.getRemainingCriteria())
+								_player.getAdvancements().award(_adv, criteria);
 						}
 					}
 				}
@@ -106,15 +104,14 @@ public class LegendaryTradeButtonClickedProcedure {
 					_menu.getSlots().get(3).set(_setstack);
 					_player.containerMenu.broadcastChanges();
 				}
-				if (!(entity instanceof ServerPlayer _plr24 && _plr24.level() instanceof ServerLevel && _plr24.getAdvancements().getOrStartProgress(_plr24.server.getAdvancements().get(ResourceLocation.parse("minecraft:adventure/trade"))).isDone())) {
+				if (!(entity instanceof ServerPlayer _plr24 && _plr24.level instanceof ServerLevel
+						&& _plr24.getAdvancements().getOrStartProgress(_plr24.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:adventure/trade"))).isDone())) {
 					if (entity instanceof ServerPlayer _player) {
-						AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("minecraft:adventure/trade"));
-						if (_adv != null) {
-							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-							if (!_ap.isDone()) {
-								for (String criteria : _ap.getRemainingCriteria())
-									_player.getAdvancements().award(_adv, criteria);
-							}
+						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:adventure/trade"));
+						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+						if (!_ap.isDone()) {
+							for (String criteria : _ap.getRemainingCriteria())
+								_player.getAdvancements().award(_adv, criteria);
 						}
 					}
 				}
@@ -140,15 +137,14 @@ public class LegendaryTradeButtonClickedProcedure {
 					_menu.getSlots().get(3).set(_setstack);
 					_player.containerMenu.broadcastChanges();
 				}
-				if (!(entity instanceof ServerPlayer _plr33 && _plr33.level() instanceof ServerLevel && _plr33.getAdvancements().getOrStartProgress(_plr33.server.getAdvancements().get(ResourceLocation.parse("minecraft:adventure/trade"))).isDone())) {
+				if (!(entity instanceof ServerPlayer _plr33 && _plr33.level instanceof ServerLevel
+						&& _plr33.getAdvancements().getOrStartProgress(_plr33.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:adventure/trade"))).isDone())) {
 					if (entity instanceof ServerPlayer _player) {
-						AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("minecraft:adventure/trade"));
-						if (_adv != null) {
-							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-							if (!_ap.isDone()) {
-								for (String criteria : _ap.getRemainingCriteria())
-									_player.getAdvancements().award(_adv, criteria);
-							}
+						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:adventure/trade"));
+						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+						if (!_ap.isDone()) {
+							for (String criteria : _ap.getRemainingCriteria())
+								_player.getAdvancements().award(_adv, criteria);
 						}
 					}
 				}
@@ -174,15 +170,14 @@ public class LegendaryTradeButtonClickedProcedure {
 					_menu.getSlots().get(3).set(_setstack);
 					_player.containerMenu.broadcastChanges();
 				}
-				if (!(entity instanceof ServerPlayer _plr42 && _plr42.level() instanceof ServerLevel && _plr42.getAdvancements().getOrStartProgress(_plr42.server.getAdvancements().get(ResourceLocation.parse("minecraft:adventure/trade"))).isDone())) {
+				if (!(entity instanceof ServerPlayer _plr42 && _plr42.level instanceof ServerLevel
+						&& _plr42.getAdvancements().getOrStartProgress(_plr42.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:adventure/trade"))).isDone())) {
 					if (entity instanceof ServerPlayer _player) {
-						AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("minecraft:adventure/trade"));
-						if (_adv != null) {
-							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-							if (!_ap.isDone()) {
-								for (String criteria : _ap.getRemainingCriteria())
-									_player.getAdvancements().award(_adv, criteria);
-							}
+						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:adventure/trade"));
+						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+						if (!_ap.isDone()) {
+							for (String criteria : _ap.getRemainingCriteria())
+								_player.getAdvancements().award(_adv, criteria);
 						}
 					}
 				}
@@ -208,15 +203,14 @@ public class LegendaryTradeButtonClickedProcedure {
 					_menu.getSlots().get(3).set(_setstack);
 					_player.containerMenu.broadcastChanges();
 				}
-				if (!(entity instanceof ServerPlayer _plr51 && _plr51.level() instanceof ServerLevel && _plr51.getAdvancements().getOrStartProgress(_plr51.server.getAdvancements().get(ResourceLocation.parse("minecraft:adventure/trade"))).isDone())) {
+				if (!(entity instanceof ServerPlayer _plr51 && _plr51.level instanceof ServerLevel
+						&& _plr51.getAdvancements().getOrStartProgress(_plr51.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:adventure/trade"))).isDone())) {
 					if (entity instanceof ServerPlayer _player) {
-						AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("minecraft:adventure/trade"));
-						if (_adv != null) {
-							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-							if (!_ap.isDone()) {
-								for (String criteria : _ap.getRemainingCriteria())
-									_player.getAdvancements().award(_adv, criteria);
-							}
+						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:adventure/trade"));
+						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+						if (!_ap.isDone()) {
+							for (String criteria : _ap.getRemainingCriteria())
+								_player.getAdvancements().award(_adv, criteria);
 						}
 					}
 				}
@@ -242,15 +236,14 @@ public class LegendaryTradeButtonClickedProcedure {
 					_menu.getSlots().get(3).set(_setstack);
 					_player.containerMenu.broadcastChanges();
 				}
-				if (!(entity instanceof ServerPlayer _plr60 && _plr60.level() instanceof ServerLevel && _plr60.getAdvancements().getOrStartProgress(_plr60.server.getAdvancements().get(ResourceLocation.parse("minecraft:adventure/trade"))).isDone())) {
+				if (!(entity instanceof ServerPlayer _plr60 && _plr60.level instanceof ServerLevel
+						&& _plr60.getAdvancements().getOrStartProgress(_plr60.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:adventure/trade"))).isDone())) {
 					if (entity instanceof ServerPlayer _player) {
-						AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("minecraft:adventure/trade"));
-						if (_adv != null) {
-							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-							if (!_ap.isDone()) {
-								for (String criteria : _ap.getRemainingCriteria())
-									_player.getAdvancements().award(_adv, criteria);
-							}
+						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:adventure/trade"));
+						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+						if (!_ap.isDone()) {
+							for (String criteria : _ap.getRemainingCriteria())
+								_player.getAdvancements().award(_adv, criteria);
 						}
 					}
 				}
@@ -276,15 +269,14 @@ public class LegendaryTradeButtonClickedProcedure {
 					_menu.getSlots().get(3).set(_setstack);
 					_player.containerMenu.broadcastChanges();
 				}
-				if (!(entity instanceof ServerPlayer _plr69 && _plr69.level() instanceof ServerLevel && _plr69.getAdvancements().getOrStartProgress(_plr69.server.getAdvancements().get(ResourceLocation.parse("minecraft:adventure/trade"))).isDone())) {
+				if (!(entity instanceof ServerPlayer _plr69 && _plr69.level instanceof ServerLevel
+						&& _plr69.getAdvancements().getOrStartProgress(_plr69.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:adventure/trade"))).isDone())) {
 					if (entity instanceof ServerPlayer _player) {
-						AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("minecraft:adventure/trade"));
-						if (_adv != null) {
-							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-							if (!_ap.isDone()) {
-								for (String criteria : _ap.getRemainingCriteria())
-									_player.getAdvancements().award(_adv, criteria);
-							}
+						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:adventure/trade"));
+						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+						if (!_ap.isDone()) {
+							for (String criteria : _ap.getRemainingCriteria())
+								_player.getAdvancements().award(_adv, criteria);
 						}
 					}
 				}
@@ -310,15 +302,14 @@ public class LegendaryTradeButtonClickedProcedure {
 					_menu.getSlots().get(3).set(_setstack);
 					_player.containerMenu.broadcastChanges();
 				}
-				if (!(entity instanceof ServerPlayer _plr78 && _plr78.level() instanceof ServerLevel && _plr78.getAdvancements().getOrStartProgress(_plr78.server.getAdvancements().get(ResourceLocation.parse("minecraft:adventure/trade"))).isDone())) {
+				if (!(entity instanceof ServerPlayer _plr78 && _plr78.level instanceof ServerLevel
+						&& _plr78.getAdvancements().getOrStartProgress(_plr78.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:adventure/trade"))).isDone())) {
 					if (entity instanceof ServerPlayer _player) {
-						AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("minecraft:adventure/trade"));
-						if (_adv != null) {
-							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-							if (!_ap.isDone()) {
-								for (String criteria : _ap.getRemainingCriteria())
-									_player.getAdvancements().award(_adv, criteria);
-							}
+						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:adventure/trade"));
+						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+						if (!_ap.isDone()) {
+							for (String criteria : _ap.getRemainingCriteria())
+								_player.getAdvancements().award(_adv, criteria);
 						}
 					}
 				}
@@ -344,15 +335,14 @@ public class LegendaryTradeButtonClickedProcedure {
 					_menu.getSlots().get(3).set(_setstack);
 					_player.containerMenu.broadcastChanges();
 				}
-				if (!(entity instanceof ServerPlayer _plr87 && _plr87.level() instanceof ServerLevel && _plr87.getAdvancements().getOrStartProgress(_plr87.server.getAdvancements().get(ResourceLocation.parse("minecraft:adventure/trade"))).isDone())) {
+				if (!(entity instanceof ServerPlayer _plr87 && _plr87.level instanceof ServerLevel
+						&& _plr87.getAdvancements().getOrStartProgress(_plr87.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:adventure/trade"))).isDone())) {
 					if (entity instanceof ServerPlayer _player) {
-						AdvancementHolder _adv = _player.server.getAdvancements().get(ResourceLocation.parse("minecraft:adventure/trade"));
-						if (_adv != null) {
-							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-							if (!_ap.isDone()) {
-								for (String criteria : _ap.getRemainingCriteria())
-									_player.getAdvancements().award(_adv, criteria);
-							}
+						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:adventure/trade"));
+						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+						if (!_ap.isDone()) {
+							for (String criteria : _ap.getRemainingCriteria())
+								_player.getAdvancements().award(_adv, criteria);
 						}
 					}
 				}

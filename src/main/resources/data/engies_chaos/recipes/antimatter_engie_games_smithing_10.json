@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:antimatter_the_ends_boots"
+  },
+  "addition": {
+    "item": "engies_chaos:antimatter_engie_coin_block"
+  },
+  "result": {
+    "item": "engies_chaos:antimatter_engie_gamess_boots"
+  }
+}

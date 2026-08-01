@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:dark_matter_cosmic_engie_games_sword"
+  },
+  "addition": {
+    "item": "engies_chaos:dark_matter_engie_upgrade"
+  },
+  "result": {
+    "item": "engies_chaos:dark_matter_engie_games_hallow_scythe"
+  }
+}

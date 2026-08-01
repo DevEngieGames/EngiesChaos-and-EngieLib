@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "antimatterbiblicallyaccurateengieboots",
+  "pattern": [
+    "a a",
+    "a a"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:antimatter_biblically_accurate_engie_essence"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:antimatter_biblically_accurate_engies_boots",
+    "count": 1
+  }
+}

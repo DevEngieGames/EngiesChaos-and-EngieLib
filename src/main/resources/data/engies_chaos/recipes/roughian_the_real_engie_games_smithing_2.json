@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:cosmic_engie_games_pickaxe"
+  },
+  "addition": {
+    "item": "engies_chaos:engie_games_tesseract_block"
+  },
+  "result": {
+    "item": "engies_chaos:roughian_engie_games_pickaxe"
+  }
+}

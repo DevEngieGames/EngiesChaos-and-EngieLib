@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "template": [],
-  "base": "engies_chaos:antimatter_angry_engie_axe",
-  "addition": "engies_chaos:antimatter_enraged_engie_block",
-  "result": {
-    "id": "engies_chaos:antimatter_enraged_engie_axe"
-  }
-}

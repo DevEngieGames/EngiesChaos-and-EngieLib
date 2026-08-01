@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:dooms_days_chestplate"
+  },
+  "addition": {
+    "item": "engies_chaos:super_dooms_day_coin_block"
+  },
+  "result": {
+    "item": "engies_chaos:super_dooms_days_chestplate"
+  }
+}

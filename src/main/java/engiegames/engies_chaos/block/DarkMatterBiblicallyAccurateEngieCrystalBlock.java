@@ -3,8 +3,9 @@ package engiegames.engies_chaos.block;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -30,20 +31,20 @@ import engiegames.engies_chaos.procedures.DarkMatterBiblicallyAccurateEngieCryst
 import engiegames.engies_chaos.block.entity.DarkMatterBiblicallyAccurateEngieCrystalBlockEntity;
 
 public class DarkMatterBiblicallyAccurateEngieCrystalBlock extends Block implements EntityBlock {
-	public static final EnumProperty<Direction> FACING = DirectionalBlock.FACING;
+	public static final DirectionProperty FACING = DirectionalBlock.FACING;
 
-	public DarkMatterBiblicallyAccurateEngieCrystalBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.AMETHYST_CLUSTER).strength(10.5f, 90f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public DarkMatterBiblicallyAccurateEngieCrystalBlock() {
+		super(BlockBehaviour.Properties.of(Material.BUILDABLE_GLASS).sound(SoundType.AMETHYST_CLUSTER).strength(10.5f, 90f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state) {
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return true;
 	}
 
 	@Override
-	public int getLightBlock(BlockState state) {
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
 	}
 
@@ -92,7 +93,10 @@ public class DarkMatterBiblicallyAccurateEngieCrystalBlock extends Block impleme
 	@Override
 	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
 		super.tick(blockstate, world, pos, random);
-		DarkMatterBiblicallyAccurateEngieCrystalOnTickUpdateProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		int x = pos.getX();
+		int y = pos.getY();
+		int z = pos.getZ();
+		DarkMatterBiblicallyAccurateEngieCrystalOnTickUpdateProcedure.execute(world, x, y, z);
 		world.scheduleTick(pos, this, 900);
 	}
 

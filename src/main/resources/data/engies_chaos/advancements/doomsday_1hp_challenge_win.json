@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "engies_chaos:dooms_day_advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.doomsday_1hp_challenge_win.title"
+    },
+    "description": {
+      "translate": "advancements.doomsday_1hp_challenge_win.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "doomsday_1hp_challenge_win_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 100
+  },
+  "parent": "engies_chaos:i_guess_this_is_dday"
+}

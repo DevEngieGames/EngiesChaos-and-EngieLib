@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "experience": 1,
+  "cookingtime": 100,
+  "ingredient": {
+    "item": "engies_chaos:blood_ore"
+  },
+  "result": "engies_chaos:blood_ingot"
+}

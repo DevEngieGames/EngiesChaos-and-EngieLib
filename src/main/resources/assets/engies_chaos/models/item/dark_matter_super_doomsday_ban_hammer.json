@@ -1,7 +1,31 @@
 {
-  "parent": "engies_chaos:custom/ban_hammer_superdoomsday",
-  "textures": {
-    "0": "engies_chaos:block/darkmattersuperdoomsdaybanhammer",
-    "particle": "engies_chaos:item/darkmattersuperdoomsdaybanhammerpixel"
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "engies_chaos:custom/ban_hammer_superdoomsday",
+    "textures": {
+      "0": "engies_chaos:block/superdoomsdaybanhammer",
+      "particle": "engies_chaos:item/darkmattersuperdoomsdaybanhammerpixel"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/darkmattersuperdoomsdaybanhammerpixel"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/darkmattersuperdoomsdaybanhammerpixel"
+      }
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/darkmattersuperdoomsdaybanhammerpixel"
+      }
+    }
   }
 }

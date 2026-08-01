@@ -1,6 +1,6 @@
 package engiegames.engies_chaos.procedures;
 
-import net.neoforged.neoforge.items.ItemHandlerHelper;
+import net.minecraftforge.items.ItemHandlerHelper;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
@@ -13,7 +13,7 @@ public class CheesePuffsOpenedItemInInventoryTickProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).cheeseballcount >= 109) {
+		if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).cheeseballcount >= 109) {
 			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = new ItemStack(EngiesChaosModItems.CHEESE_BALLS_OPENED.get());
 				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
@@ -24,9 +24,11 @@ public class CheesePuffsOpenedItemInInventoryTickProcedure {
 				ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 			}
 			{
-				EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-				_vars.cheeseballcount = 0;
-				_vars.syncPlayerVariables(entity);
+				double _setval = 0;
+				entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.cheeseballcount = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
 		}
 	}

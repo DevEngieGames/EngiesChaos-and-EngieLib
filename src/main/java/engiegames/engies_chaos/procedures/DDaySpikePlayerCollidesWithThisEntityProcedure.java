@@ -2,7 +2,6 @@ package engiegames.engies_chaos.procedures;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
@@ -14,14 +13,16 @@ public class DDaySpikePlayerCollidesWithThisEntityProcedure {
 		if (sourceentity == null)
 			return;
 		if (sourceentity.getPersistentData().getDouble("spikedmgcd") <= 0) {
-			if (sourceentity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).DoomsdayAlive == true) {
+			if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive == true) {
 				sourceentity.getPersistentData().putDouble("spikedmgcd", 40);
 				{
-					EngiesChaosModVariables.PlayerVariables _vars = sourceentity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-					_vars.crucifixbypass = true;
-					_vars.syncPlayerVariables(sourceentity);
+					boolean _setval = true;
+					sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.crucifixbypass = _setval;
+						capability.syncPlayerVariables(sourceentity);
+					});
 				}
-				sourceentity.hurt(new DamageSource(world.holderOrThrow(DamageTypes.FREEZE)), (float) Mth.nextDouble(RandomSource.create(), 20, 80));
+				sourceentity.hurt(DamageSource.FREEZE, (float) Mth.nextDouble(RandomSource.create(), 20, 80));
 			}
 		}
 	}

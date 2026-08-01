@@ -6,7 +6,6 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.core.registries.Registries;
 
 import engiegames.engies_chaos.init.EngiesChaosModMenus;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
@@ -22,8 +21,7 @@ public class AntimatterEngieGamesTradeUITickProcedure {
 				_menu.getSlots().get(3).set(_setstack);
 				_player.containerMenu.broadcastChanges();
 			}
-			(entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu4 ? _menu4.getSlots().get(3).getItem() : ItemStack.EMPTY)
-					.enchant(world.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.MENDING), 1);
+			(entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu4 ? _menu4.getSlots().get(3).getItem() : ItemStack.EMPTY).enchant(Enchantments.MENDING, 1);
 		} else if (getAmountInGUISlot(entity, 1) >= 64 && getAmountInGUISlot(entity, 2) >= 60 && getAmountInGUISlot(entity, 2) < 64 && getAmountInGUISlot(entity, 0) >= 64) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
 				ItemStack _setstack = new ItemStack(EngiesChaosModItems.ANTIMATTER_ENGIE_GAMES_SWORD.get()).copy();

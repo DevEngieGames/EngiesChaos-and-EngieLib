@@ -28,7 +28,7 @@ public class RiftedEntitiesOnTickUpdateProcedure {
 						if (entity instanceof RiftBallEntity _datEntSetI)
 							_datEntSetI.getEntityData().set(RiftBallEntity.DATA_size, (int) ((entity instanceof RiftBallEntity _datEntI ? _datEntI.getEntityData().get(RiftBallEntity.DATA_size) : 0) - 1));
 					} else {
-						if (!entity.level().isClientSide())
+						if (!entity.level.isClientSide())
 							entity.discard();
 						EngiesChaosModVariables.MapVariables.get(world).DDayRiftedEntityCount = EngiesChaosModVariables.MapVariables.get(world).DDayRiftedEntityCount - 1;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -37,7 +37,7 @@ public class RiftedEntitiesOnTickUpdateProcedure {
 			} else {
 				entity.getPersistentData().putDouble("riftedentitydespawntimer", (entity.getPersistentData().getDouble("riftedentitydespawntimer") + 0.05));
 				if (entity.getPersistentData().getDouble("riftedentitydespawntimer") >= 36) {
-					if (!entity.level().isClientSide())
+					if (!entity.level.isClientSide())
 						entity.discard();
 					EngiesChaosModVariables.MapVariables.get(world).DDayRiftedEntityCount = EngiesChaosModVariables.MapVariables.get(world).DDayRiftedEntityCount - 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -45,7 +45,7 @@ public class RiftedEntitiesOnTickUpdateProcedure {
 				if ((EngiesChaosModVariables.MapVariables.get(world).ddaystart || EngiesChaosModVariables.MapVariables.get(world).sddaystart || EngiesChaosModVariables.MapVariables.get(world).thestart
 						|| EngiesChaosModVariables.MapVariables.get(world).engieswrathstart) == true) {
 					for (Entity entityiterator : new ArrayList<>(world.players())) {
-						if (entityiterator.getData(EngiesChaosModVariables.PLAYER_VARIABLES).DoomsdayAlive) {
+						if ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive) {
 							if (getEntityGameType(entityiterator) == GameType.SURVIVAL || getEntityGameType(entityiterator) == GameType.ADVENTURE) {
 								if (entity instanceof Mob _entity && entityiterator instanceof LivingEntity _ent)
 									_entity.setTarget(_ent);
@@ -67,7 +67,7 @@ public class RiftedEntitiesOnTickUpdateProcedure {
 	private static GameType getEntityGameType(Entity entity) {
 		if (entity instanceof ServerPlayer serverPlayer) {
 			return serverPlayer.gameMode.getGameModeForPlayer();
-		} else if (entity instanceof Player player && player.level().isClientSide()) {
+		} else if (entity instanceof Player player && player.level.isClientSide()) {
 			PlayerInfo playerInfo = Minecraft.getInstance().getConnection().getPlayerInfo(player.getGameProfile().getId());
 			if (playerInfo != null)
 				return playerInfo.getGameMode();

@@ -5,13 +5,15 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.components.Button;
 
 import engiegames.engies_chaos.world.inventory.CosmicEngieGamesTradeUIMenu;
+import engiegames.engies_chaos.network.CosmicEngieGamesTradeUIButtonMessage;
 import engiegames.engies_chaos.init.EngiesChaosModScreens;
+import engiegames.engies_chaos.EngiesChaosMod;
 
+import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 public class CosmicEngieGamesTradeUIScreen extends AbstractContainerScreen<CosmicEngieGamesTradeUIMenu> implements EngiesChaosModScreens.ScreenAccessor {
@@ -19,6 +21,7 @@ public class CosmicEngieGamesTradeUIScreen extends AbstractContainerScreen<Cosmi
 	private final int x, y, z;
 	private final Player entity;
 	private boolean menuStateUpdateActive = false;
+	Button button_trade;
 
 	public CosmicEngieGamesTradeUIScreen(CosmicEngieGamesTradeUIMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -28,7 +31,7 @@ public class CosmicEngieGamesTradeUIScreen extends AbstractContainerScreen<Cosmi
 		this.z = container.z;
 		this.entity = container.entity;
 		this.imageWidth = 176;
-		this.imageHeight = 115;
+		this.imageHeight = 140;
 	}
 
 	@Override
@@ -37,20 +40,22 @@ public class CosmicEngieGamesTradeUIScreen extends AbstractContainerScreen<Cosmi
 		menuStateUpdateActive = false;
 	}
 
-	private static final ResourceLocation texture = ResourceLocation.parse("engies_chaos:textures/screens/cosmic_engie_games_trade_ui.png");
+	private static final ResourceLocation texture = new ResourceLocation("engies_chaos:textures/screens/cosmic_engie_games_trade_ui.png");
 
 	@Override
-	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		super.render(guiGraphics, mouseX, mouseY, partialTicks);
-		this.renderTooltip(guiGraphics, mouseX, mouseY);
+	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
+		this.renderBackground(ms);
+		super.render(ms, mouseX, mouseY, partialTicks);
+		this.renderTooltip(ms, mouseX, mouseY);
 	}
 
 	@Override
-	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
+	protected void renderBg(PoseStack ms, float partialTicks, int mouseX, int mouseY) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
-		guiGraphics.blit(RenderType::guiTextured, texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		RenderSystem.setShaderTexture(0, texture);
+		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 		RenderSystem.disableBlend();
 	}
 
@@ -64,11 +69,20 @@ public class CosmicEngieGamesTradeUIScreen extends AbstractContainerScreen<Cosmi
 	}
 
 	@Override
-	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+	protected void renderLabels(PoseStack ms, int mouseX, int mouseY) {
 	}
 
 	@Override
 	public void init() {
 		super.init();
+		button_trade = new Button(this.leftPos + 8, this.topPos + 29, 51, 20, Component.translatable("gui.engies_chaos.cosmic_engie_games_trade_ui.button_trade"), e -> {
+			int x = CosmicEngieGamesTradeUIScreen.this.x;
+			int y = CosmicEngieGamesTradeUIScreen.this.y;
+			if (true) {
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new CosmicEngieGamesTradeUIButtonMessage(0, x, y, z));
+				CosmicEngieGamesTradeUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
+			}
+		});
+		this.addRenderableWidget(button_trade);
 	}
 }

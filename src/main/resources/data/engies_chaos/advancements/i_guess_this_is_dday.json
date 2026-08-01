@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "engies_chaos:dooms_day_advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.i_guess_this_is_dday.title"
+    },
+    "description": {
+      "translate": "advancements.i_guess_this_is_dday.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "i_guess_this_is_dday_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 250
+  },
+  "parent": "engies_chaos:new_world"
+}

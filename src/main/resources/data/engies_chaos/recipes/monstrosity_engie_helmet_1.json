@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "monstrosityengiehelmet",
+  "pattern": [
+    "a a",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:monstrosity_engie_essence"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:monstrosity_engies_helmet",
+    "count": 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:dark_matter_outraged_engie_sword"
+  },
+  "addition": {
+    "item": "engies_chaos:dark_matter_biblically_accurate_block"
+  },
+  "result": {
+    "item": "engies_chaos:dark_matter_biblically_accurate_engie_sword"
+  }
+}

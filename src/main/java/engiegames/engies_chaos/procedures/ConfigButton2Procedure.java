@@ -9,9 +9,11 @@ public class ConfigButton2Procedure {
 		if (entity == null)
 			return;
 		{
-			EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
-			_vars.difficultyoverlaytoggle = 2;
-			_vars.syncPlayerVariables(entity);
+			double _setval = 2;
+			entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.difficultyoverlaytoggle = _setval;
+				capability.syncPlayerVariables(entity);
+			});
 		}
 	}
 }

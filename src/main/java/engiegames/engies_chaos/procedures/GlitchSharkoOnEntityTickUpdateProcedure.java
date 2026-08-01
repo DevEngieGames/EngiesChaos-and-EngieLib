@@ -6,7 +6,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.server.level.ServerLevel;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.init.EngiesChaosModGameRules;
@@ -19,7 +18,7 @@ public class GlitchSharkoOnEntityTickUpdateProcedure {
 		if (!world.isClientSide()) {
 			if ((entity instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false) && (entity instanceof GlitchSharkoEntity _datEntI ? _datEntI.getEntityData().get(GlitchSharkoEntity.DATA_SharkoState) : 0) != 0) {
 				entity.getPersistentData().putDouble("SharkoStateTimerForChance", (entity.getPersistentData().getDouble("SharkoStateTimerForChance") + 0.05));
-				if ((world instanceof ServerLevel _serverLevelGR5 && _serverLevelGR5.getGameRules().getBoolean(EngiesChaosModGameRules.ENGIE_POC)) == true) {
+				if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIE_POC) == true) {
 					if ((entity instanceof GlitchSharkoEntity _datEntI ? _datEntI.getEntityData().get(GlitchSharkoEntity.DATA_SharkoState) : 0) == 4) {
 						if (entity instanceof GlitchSharkoEntity _datEntSetI)
 							_datEntSetI.getEntityData().set(GlitchSharkoEntity.DATA_SharkoState, 3);

@@ -1,6 +1,6 @@
 package engiegames.engies_chaos.procedures;
 
-import net.neoforged.fml.ModList;
+import net.minecraftforge.fml.ModList;
 
 import net.minecraft.world.level.LevelAccessor;
 

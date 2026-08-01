@@ -18,10 +18,10 @@ public class StunNearbyMobsWithDurationProcedure {
 			return;
 		{
 			Entity _ent = entity;
-			if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+			if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 				_ent.getServer().getCommands().performPrefixedCommand(
-						new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
-								_ent.level().getServer(), _ent),
+						new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
+								_ent.level.getServer(), _ent),
 						("effect give @e[type=#allaboutengie:mobs/stunable,distance=.." + new java.text.DecimalFormat("##").format(EngiesChaosModVariables.MapVariables.get(world).stunmobsradiusnum) + "] engies_chaos:stunned "
 								+ (new java.text.DecimalFormat("##").format(new Object() {
 									double convert(String s) {

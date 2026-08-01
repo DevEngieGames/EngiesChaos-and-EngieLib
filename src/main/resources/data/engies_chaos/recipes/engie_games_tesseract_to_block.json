@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "engiegamestesseracttoblock",
+  "ingredients": [
+    {
+      "item": "engies_chaos:engie_games_tesseract"
+    },
+    {
+      "item": "engies_chaos:engie_games_tesseract"
+    },
+    {
+      "item": "engies_chaos:engie_games_tesseract"
+    },
+    {
+      "item": "engies_chaos:engie_games_tesseract"
+    },
+    {
+      "item": "engies_chaos:engie_games_tesseract"
+    },
+    {
+      "item": "engies_chaos:engie_games_tesseract"
+    },
+    {
+      "item": "engies_chaos:engie_games_tesseract"
+    },
+    {
+      "item": "engies_chaos:engie_games_tesseract"
+    },
+    {
+      "item": "engies_chaos:engie_games_tesseract"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:engie_games_tesseract_block",
+    "count": 1
+  }
+}

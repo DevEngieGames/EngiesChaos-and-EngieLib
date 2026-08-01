@@ -1,11 +1,11 @@
 package engiegames.engies_chaos.entity;
 
-import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
-import net.neoforged.neoforge.common.NeoForgeMod;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.network.PlayMessages;
+import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.Explosion;
 import net.minecraft.world.entity.projectile.ThrownPotion;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.player.Player;
@@ -13,31 +13,37 @@ import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.SpawnPlacementTypes;
-import net.minecraft.world.entity.Pose;
+import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.PathfinderMob;
+import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.AreaEffectCloud;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.protocol.Packet;
 
-import engiegames.engies_chaos.procedures.MobHitboxScalingProcedure;
 import engiegames.engies_chaos.procedures.HeWhoGamesOnEntityTickUpdateProcedure;
 import engiegames.engies_chaos.procedures.HeWhoGamesNaturalEntitySpawningConditionProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class HeWhoGamesEntity extends PathfinderMob {
+	public HeWhoGamesEntity(PlayMessages.SpawnEntity packet, Level world) {
+		this(EngiesChaosModEntities.HE_WHO_GAMES.get(), world);
+	}
+
 	public HeWhoGamesEntity(EntityType<HeWhoGamesEntity> type, Level world) {
 		super(type, world);
+		maxUpStep = 1f;
 		xpReward = 0;
 		setNoAi(false);
+	}
+
+	@Override
+	public Packet<?> getAddEntityPacket() {
+		return NetworkHooks.getEntitySpawningPacket(this);
 	}
 
 	@Override
@@ -48,61 +54,58 @@ public class HeWhoGamesEntity extends PathfinderMob {
 	}
 
 	@Override
+	public MobType getMobType() {
+		return MobType.UNDEFINED;
+	}
+
+	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.hurt"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.death"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
 	}
 
 	@Override
-	public boolean hurtServer(ServerLevel level, DamageSource damagesource, float amount) {
-		if (damagesource.is(DamageTypes.IN_FIRE))
-			return false;
+	public boolean hurt(DamageSource damagesource, float amount) {
 		if (damagesource.getDirectEntity() instanceof AbstractArrow)
 			return false;
 		if (damagesource.getDirectEntity() instanceof Player)
 			return false;
-		if (damagesource.getDirectEntity() instanceof ThrownPotion || damagesource.getDirectEntity() instanceof AreaEffectCloud || damagesource.typeHolder().is(NeoForgeMod.POISON_DAMAGE))
+		if (damagesource.getDirectEntity() instanceof ThrownPotion || damagesource.getDirectEntity() instanceof AreaEffectCloud)
 			return false;
-		if (damagesource.is(DamageTypes.FALL))
+		if (damagesource == DamageSource.FALL)
 			return false;
-		if (damagesource.is(DamageTypes.CACTUS))
+		if (damagesource == DamageSource.CACTUS)
 			return false;
-		if (damagesource.is(DamageTypes.DROWN))
+		if (damagesource == DamageSource.DROWN)
 			return false;
-		if (damagesource.is(DamageTypes.LIGHTNING_BOLT))
+		if (damagesource == DamageSource.LIGHTNING_BOLT)
 			return false;
-		if (damagesource.is(DamageTypes.EXPLOSION) || damagesource.is(DamageTypes.PLAYER_EXPLOSION))
+		if (damagesource.isExplosion())
 			return false;
-		if (damagesource.is(DamageTypes.TRIDENT))
+		if (damagesource.getMsgId().equals("trident"))
 			return false;
-		if (damagesource.is(DamageTypes.FALLING_ANVIL))
+		if (damagesource == DamageSource.ANVIL)
 			return false;
-		if (damagesource.is(DamageTypes.DRAGON_BREATH))
+		if (damagesource == DamageSource.DRAGON_BREATH)
 			return false;
-		if (damagesource.is(DamageTypes.WITHER) || damagesource.is(DamageTypes.WITHER_SKULL))
+		if (damagesource == DamageSource.WITHER || damagesource.getMsgId().equals("witherSkull"))
 			return false;
-		return super.hurtServer(level, damagesource, amount);
+		return super.hurt(damagesource, amount);
 	}
 
 	@Override
-	public boolean ignoreExplosion(Explosion explosion) {
-		return true;
-	}
-
-	@Override
-	public boolean fireImmune() {
+	public boolean ignoreExplosion() {
 		return true;
 	}
 
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		HeWhoGamesOnEntityTickUpdateProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
-		this.refreshDimensions();
+		HeWhoGamesOnEntityTickUpdateProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override
@@ -118,23 +121,13 @@ public class HeWhoGamesEntity extends PathfinderMob {
 	protected void pushEntities() {
 	}
 
-	@Override
-	public EntityDimensions getDefaultDimensions(Pose pose) {
-		Entity entity = this;
-		Level world = this.level();
-		double x = this.getX();
-		double y = this.getY();
-		double z = this.getZ();
-		return super.getDefaultDimensions(pose).scale((float) MobHitboxScalingProcedure.execute());
-	}
-
-	public static void init(RegisterSpawnPlacementsEvent event) {
-		event.register(EngiesChaosModEntities.HE_WHO_GAMES.get(), SpawnPlacementTypes.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
+	public static void init() {
+		SpawnPlacements.register(EngiesChaosModEntities.HE_WHO_GAMES.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
 			return HeWhoGamesNaturalEntitySpawningConditionProcedure.execute(world);
-		}, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+		});
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
@@ -144,7 +137,6 @@ public class HeWhoGamesEntity extends PathfinderMob {
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 0);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 128);
-		builder = builder.add(Attributes.STEP_HEIGHT, 1);
 		return builder;
 	}
 }

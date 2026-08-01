@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "engies_chaos:engies_chaos_recipe_book_volume_1"
+    },
+    {
+      "item": "engies_chaos:engies_chaos_recipe_book_volume_2"
+    },
+    {
+      "item": "engies_chaos:engies_chaos_recipe_book_volume_3"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:engies_chaos_recipe_book_volume_5",
+    "count": 1
+  }
+}

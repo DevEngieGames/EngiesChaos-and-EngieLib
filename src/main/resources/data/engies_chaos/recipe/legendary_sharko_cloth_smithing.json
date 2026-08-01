@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "template": [],
-  "base": "engies_chaos:epic_sharko_cloth",
-  "addition": "minecraft:gold_ingot",
-  "result": {
-    "id": "engies_chaos:legendary_sharko_cloth"
-  }
-}

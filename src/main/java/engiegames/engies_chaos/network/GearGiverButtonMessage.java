@@ -1,19 +1,16 @@
 package engiegames.engies_chaos.network;
 
-import net.neoforged.neoforge.network.handling.IPayloadContext;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
+import net.minecraftforge.network.NetworkEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
-import net.minecraft.network.protocol.PacketFlow;
-import net.minecraft.network.codec.StreamCodec;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
+
+import java.util.function.Supplier;
 
 import engiegames.engies_chaos.procedures.GearGiverTesterProcedure;
 import engiegames.engies_chaos.procedures.GearGiverStarterProcedure;
@@ -28,32 +25,39 @@ import engiegames.engies_chaos.procedures.GearGiverBetaTesterProcedure;
 import engiegames.engies_chaos.procedures.ConfigButton10Procedure;
 import engiegames.engies_chaos.EngiesChaosMod;
 
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
-public record GearGiverButtonMessage(int buttonID, int x, int y, int z) implements CustomPacketPayload {
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+public class GearGiverButtonMessage {
+	private final int buttonID, x, y, z;
 
-	public static final Type<GearGiverButtonMessage> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(EngiesChaosMod.MODID, "gear_giver_buttons"));
-	public static final StreamCodec<RegistryFriendlyByteBuf, GearGiverButtonMessage> STREAM_CODEC = StreamCodec.of((RegistryFriendlyByteBuf buffer, GearGiverButtonMessage message) -> {
+	public GearGiverButtonMessage(FriendlyByteBuf buffer) {
+		this.buttonID = buffer.readInt();
+		this.x = buffer.readInt();
+		this.y = buffer.readInt();
+		this.z = buffer.readInt();
+	}
+
+	public GearGiverButtonMessage(int buttonID, int x, int y, int z) {
+		this.buttonID = buttonID;
+		this.x = x;
+		this.y = y;
+		this.z = z;
+	}
+
+	public static void buffer(GearGiverButtonMessage message, FriendlyByteBuf buffer) {
 		buffer.writeInt(message.buttonID);
 		buffer.writeInt(message.x);
 		buffer.writeInt(message.y);
 		buffer.writeInt(message.z);
-	}, (RegistryFriendlyByteBuf buffer) -> new GearGiverButtonMessage(buffer.readInt(), buffer.readInt(), buffer.readInt(), buffer.readInt()));
-	@Override
-	public Type<GearGiverButtonMessage> type() {
-		return TYPE;
 	}
 
-	public static void handleData(final GearGiverButtonMessage message, final IPayloadContext context) {
-		if (context.flow() == PacketFlow.SERVERBOUND) {
-			context.enqueueWork(() -> handleButtonAction(context.player(), message.buttonID, message.x, message.y, message.z)).exceptionally(e -> {
-				context.connection().disconnect(Component.literal(e.getMessage()));
-				return null;
-			});
-		}
+	public static void handler(GearGiverButtonMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
+		NetworkEvent.Context context = contextSupplier.get();
+		context.enqueueWork(() -> handleButtonAction(context.getSender(), message.buttonID, message.x, message.y, message.z));
+		context.setPacketHandled(true);
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level();
+		Level world = entity.level;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
@@ -105,6 +109,6 @@ public record GearGiverButtonMessage(int buttonID, int x, int y, int z) implemen
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		EngiesChaosMod.addNetworkMessage(GearGiverButtonMessage.TYPE, GearGiverButtonMessage.STREAM_CODEC, GearGiverButtonMessage::handleData);
+		EngiesChaosMod.addNetworkMessage(GearGiverButtonMessage.class, GearGiverButtonMessage::buffer, GearGiverButtonMessage::new, GearGiverButtonMessage::handler);
 	}
 }

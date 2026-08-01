@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:rare_sharko_cloth"
+  },
+  "addition": {
+    "item": "minecraft:gold_ingot"
+  },
+  "result": {
+    "item": "engies_chaos:legendary_sharko_cloth"
+  }
+}

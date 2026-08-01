@@ -3,16 +3,15 @@ package engiegames.engies_chaos.procedures;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
-import net.minecraft.server.level.ServerLevel;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.init.EngiesChaosModGameRules;
 
 public class HostileSuperDoomsDayNaturalEntitySpawningConditionProcedure {
 	public static boolean execute(LevelAccessor world) {
-		if ((world instanceof ServerLevel _serverLevelGR0 && _serverLevelGR0.getGameRules().getBoolean(EngiesChaosModGameRules.ENGIES_CHAOS_TOGGLE)) == true) {
-			if ((world instanceof ServerLevel _serverLevelGR1 && _serverLevelGR1.getGameRules().getBoolean(EngiesChaosModGameRules.AMBIENCE_MODE)) == false) {
-				if ((world instanceof ServerLevel _serverLevelGR2 && _serverLevelGR2.getGameRules().getBoolean(EngiesChaosModGameRules.DOOMSDAY_TOGGLE)) == true) {
+		if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIES_CHAOS_TOGGLE) == true) {
+			if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.AMBIENCE_MODE) == false) {
+				if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DOOMSDAY_TOGGLE) == true) {
 					if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart == true || EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart == true) {
 						if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.OVERWORLD) {
 							return true;
@@ -24,7 +23,7 @@ public class HostileSuperDoomsDayNaturalEntitySpawningConditionProcedure {
 					} else if (!(EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart == true || EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart == true)) {
 						return false;
 					}
-				} else if ((world instanceof ServerLevel _serverLevelGR12 && _serverLevelGR12.getGameRules().getBoolean(EngiesChaosModGameRules.DOOMSDAY_TOGGLE)) == false) {
+				} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DOOMSDAY_TOGGLE) == false) {
 					if (world.getLevelData().isRaining() && world.getLevelData().isThundering()) {
 						if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.OVERWORLD) {
 							return true;
@@ -37,7 +36,7 @@ public class HostileSuperDoomsDayNaturalEntitySpawningConditionProcedure {
 						return false;
 					}
 				}
-			} else if ((world instanceof ServerLevel _serverLevelGR26 && _serverLevelGR26.getGameRules().getBoolean(EngiesChaosModGameRules.AMBIENCE_MODE)) == true) {
+			} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.AMBIENCE_MODE) == true) {
 				return false;
 			}
 		}

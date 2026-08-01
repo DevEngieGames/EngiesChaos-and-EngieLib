@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:antimatter_biblically_accurate_engies_boots"
+  },
+  "addition": {
+    "item": "engies_chaos:antimatter_monstrosity_engie_block"
+  },
+  "result": {
+    "item": "engies_chaos:antimatter_monstrosity_engies_boots"
+  }
+}

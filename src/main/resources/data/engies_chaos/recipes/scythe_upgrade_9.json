@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:biblically_accurate_engie_scythe"
+  },
+  "addition": {
+    "item": "engies_chaos:engie_upgrade"
+  },
+  "result": {
+    "item": "engies_chaos:monstrosity_scythe"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "darkmattermonstrosityengieboots",
+  "pattern": [
+    "a a",
+    "a a"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:dark_matter_monstrosity_engie_essence"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:dark_matter_monstrosity_engies_boots",
+    "count": 1
+  }
+}

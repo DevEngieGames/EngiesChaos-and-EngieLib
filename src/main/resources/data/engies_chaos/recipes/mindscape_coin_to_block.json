@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "mindscapecointoblock",
+  "ingredients": [
+    {
+      "item": "engies_chaos:mindscape_coin"
+    },
+    {
+      "item": "engies_chaos:mindscape_coin"
+    },
+    {
+      "item": "engies_chaos:mindscape_coin"
+    },
+    {
+      "item": "engies_chaos:mindscape_coin"
+    },
+    {
+      "item": "engies_chaos:mindscape_coin"
+    },
+    {
+      "item": "engies_chaos:mindscape_coin"
+    },
+    {
+      "item": "engies_chaos:mindscape_coin"
+    },
+    {
+      "item": "engies_chaos:mindscape_coin"
+    },
+    {
+      "item": "engies_chaos:mindscape_coin"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:mindscape_coin_block",
+    "count": 1
+  }
+}

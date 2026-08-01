@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "unobchunklet",
+  "pattern": [
+    "aaa",
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:unobtainium_chunklet"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:unobtanium",
+    "count": 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:dark_matter_the_end_scythe"
+  },
+  "addition": {
+    "item": "engies_chaos:dark_matter_engie_upgrade"
+  },
+  "result": {
+    "item": "engies_chaos:dark_matter_engie_scythe"
+  }
+}

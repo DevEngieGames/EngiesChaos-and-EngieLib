@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "template": [],
-  "base": "engies_chaos:rare_sharko_cloth",
-  "addition": "minecraft:amethyst_shard",
-  "result": {
-    "id": "engies_chaos:epic_sharko_cloth"
-  }
-}

@@ -1,0 +1,56 @@
+{
+  "display": {
+    "icon": {
+      "item": "engies_chaos:outraged_engie_essence"
+    },
+    "title": {
+      "translate": "advancements.outraged_engie_essence_obtained.title"
+    },
+    "description": {
+      "translate": "advancements.outraged_engie_essence_obtained.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "outraged_engie_essence_obtained_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "engies_chaos:outraged_engie_essence"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1000000000
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 40,
+    "recipes": [
+      "engies_chaos:outraged_engie_axe_1",
+      "engies_chaos:outraged_engie_pickaxe_1",
+      "engies_chaos:outraged_engie_shovel_1",
+      "engies_chaos:outraged_engie_hoe_1",
+      "engies_chaos:outraged_engie_helmet_1",
+      "engies_chaos:outraged_engie_chestplate_1",
+      "engies_chaos:outraged_engie_leggings_1",
+      "engies_chaos:outraged_engie_boots_1",
+      "engies_chaos:enormous_ban_craft",
+      "engies_chaos:gigantic_ban_craft",
+      "engies_chaos:massive_ban_craft",
+      "engies_chaos:outraged_engie_bundle_craft",
+      "engies_chaos:enormous_scythe_craft",
+      "engies_chaos:gigantic_scythe_craft",
+      "engies_chaos:massive_scythe_craft"
+    ]
+  },
+  "parent": "engies_chaos:enraged_engie_essence_obtained"
+}

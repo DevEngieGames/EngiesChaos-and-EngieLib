@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:engies_pickaxe"
+  },
+  "addition": {
+    "item": "engies_chaos:mindscape_coin_block"
+  },
+  "result": {
+    "item": "engies_chaos:mindscape_engies_pickaxe"
+  }
+}

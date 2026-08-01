@@ -1,49 +1,53 @@
 package engiegames.engies_chaos.network;
 
-import net.neoforged.neoforge.network.handling.IPayloadContext;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
+import net.minecraftforge.network.NetworkEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
-import net.minecraft.network.protocol.PacketFlow;
-import net.minecraft.network.codec.StreamCodec;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
+
+import java.util.function.Supplier;
 
 import engiegames.engies_chaos.procedures.ETCEngieBundleNameChangeProcedure;
 import engiegames.engies_chaos.EngiesChaosMod;
 
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
-public record ETCEngieBundleUIButtonMessage(int buttonID, int x, int y, int z) implements CustomPacketPayload {
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+public class ETCEngieBundleUIButtonMessage {
+	private final int buttonID, x, y, z;
 
-	public static final Type<ETCEngieBundleUIButtonMessage> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(EngiesChaosMod.MODID, "etc_engie_bundle_ui_buttons"));
-	public static final StreamCodec<RegistryFriendlyByteBuf, ETCEngieBundleUIButtonMessage> STREAM_CODEC = StreamCodec.of((RegistryFriendlyByteBuf buffer, ETCEngieBundleUIButtonMessage message) -> {
+	public ETCEngieBundleUIButtonMessage(FriendlyByteBuf buffer) {
+		this.buttonID = buffer.readInt();
+		this.x = buffer.readInt();
+		this.y = buffer.readInt();
+		this.z = buffer.readInt();
+	}
+
+	public ETCEngieBundleUIButtonMessage(int buttonID, int x, int y, int z) {
+		this.buttonID = buttonID;
+		this.x = x;
+		this.y = y;
+		this.z = z;
+	}
+
+	public static void buffer(ETCEngieBundleUIButtonMessage message, FriendlyByteBuf buffer) {
 		buffer.writeInt(message.buttonID);
 		buffer.writeInt(message.x);
 		buffer.writeInt(message.y);
 		buffer.writeInt(message.z);
-	}, (RegistryFriendlyByteBuf buffer) -> new ETCEngieBundleUIButtonMessage(buffer.readInt(), buffer.readInt(), buffer.readInt(), buffer.readInt()));
-	@Override
-	public Type<ETCEngieBundleUIButtonMessage> type() {
-		return TYPE;
 	}
 
-	public static void handleData(final ETCEngieBundleUIButtonMessage message, final IPayloadContext context) {
-		if (context.flow() == PacketFlow.SERVERBOUND) {
-			context.enqueueWork(() -> handleButtonAction(context.player(), message.buttonID, message.x, message.y, message.z)).exceptionally(e -> {
-				context.connection().disconnect(Component.literal(e.getMessage()));
-				return null;
-			});
-		}
+	public static void handler(ETCEngieBundleUIButtonMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
+		NetworkEvent.Context context = contextSupplier.get();
+		context.enqueueWork(() -> handleButtonAction(context.getSender(), message.buttonID, message.x, message.y, message.z));
+		context.setPacketHandled(true);
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level();
+		Level world = entity.level;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
@@ -55,6 +59,6 @@ public record ETCEngieBundleUIButtonMessage(int buttonID, int x, int y, int z) i
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		EngiesChaosMod.addNetworkMessage(ETCEngieBundleUIButtonMessage.TYPE, ETCEngieBundleUIButtonMessage.STREAM_CODEC, ETCEngieBundleUIButtonMessage::handleData);
+		EngiesChaosMod.addNetworkMessage(ETCEngieBundleUIButtonMessage.class, ETCEngieBundleUIButtonMessage::buffer, ETCEngieBundleUIButtonMessage::new, ETCEngieBundleUIButtonMessage::handler);
 	}
 }

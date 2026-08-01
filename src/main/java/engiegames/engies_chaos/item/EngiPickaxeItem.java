@@ -1,32 +1,51 @@
 package engiegames.engies_chaos.item;
 
-import net.neoforged.api.distmarker.OnlyIn;
-import net.neoforged.api.distmarker.Dist;
-
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
-import net.minecraft.tags.TagKey;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.registries.Registries;
 
 import java.util.List;
 
-public class EngiPickaxeItem extends PickaxeItem {
-	private static final ToolMaterial TOOL_MATERIAL = new ToolMaterial(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 750, 12f, 0, 10, TagKey.create(Registries.ITEM, ResourceLocation.parse("engies_chaos:engi_pickaxe_repair_items")));
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
+import engiegames.engies_chaos.init.EngiesChaosModItems;
 
-	public EngiPickaxeItem(Item.Properties properties) {
-		super(TOOL_MATERIAL, 14f, -3f, properties);
+public class EngiPickaxeItem extends PickaxeItem {
+	public EngiPickaxeItem() {
+		super(new Tier() {
+			public int getUses() {
+				return 750;
+			}
+
+			public float getSpeed() {
+				return 12f;
+			}
+
+			public float getAttackDamageBonus() {
+				return 13f;
+			}
+
+			public int getLevel() {
+				return 3;
+			}
+
+			public int getEnchantmentValue() {
+				return 10;
+			}
+
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.ENGIE_GEM.get()));
+			}
+		}, 1, -3f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}
 
 	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack itemstack, Item.TooltipContext context, List<Component> list, TooltipFlag flag) {
-		super.appendHoverText(itemstack, context, list, flag);
+	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, level, list, flag);
 		list.add(Component.translatable("item.engies_chaos.engi_pickaxe.description_0"));
 	}
 }

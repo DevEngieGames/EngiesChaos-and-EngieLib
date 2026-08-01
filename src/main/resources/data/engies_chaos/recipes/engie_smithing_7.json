@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:the_ends_helmet"
+  },
+  "addition": {
+    "item": "engies_chaos:engie_coin_block"
+  },
+  "result": {
+    "item": "engies_chaos:engie_gamess_helmet"
+  }
+}

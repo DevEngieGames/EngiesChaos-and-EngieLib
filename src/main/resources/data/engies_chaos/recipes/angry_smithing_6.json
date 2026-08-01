@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:engies_chestplate"
+  },
+  "addition": {
+    "item": "engies_chaos:angry_engie_block"
+  },
+  "result": {
+    "item": "engies_chaos:angry_engies_chestplate"
+  }
+}

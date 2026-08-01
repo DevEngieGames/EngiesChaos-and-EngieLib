@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "template": [],
-  "base": "engies_chaos:antimatter_engie_gamess_leggings",
-  "addition": "engies_chaos:antimatter_engie_games_coin_block",
-  "result": {
-    "id": "engies_chaos:antimatter_the_real_engie_gamess_leggings"
-  }
-}

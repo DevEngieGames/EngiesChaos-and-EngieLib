@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "template": [],
-  "base": "engies_chaos:engie_coin",
-  "addition": "engies_chaos:antimatter",
-  "result": {
-    "id": "engies_chaos:antimatter_engie_coin"
-  }
-}

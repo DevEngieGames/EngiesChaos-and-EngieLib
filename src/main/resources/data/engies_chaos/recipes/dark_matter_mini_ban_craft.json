@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "darkmatterminibanhammer",
+  "pattern": [
+    "aba",
+    "cdc",
+    " e "
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:dark_matter_mad_engie_essence"
+    },
+    "b": {
+      "item": "minecraft:iron_ingot"
+    },
+    "c": {
+      "item": "engies_chaos:dark_matter_angry_engie_essence"
+    },
+    "d": {
+      "item": "engies_chaos:engie_games_engie_hallow_scythe"
+    },
+    "e": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:dark_matter_mini_ban_hammer",
+    "count": 1
+  }
+}
