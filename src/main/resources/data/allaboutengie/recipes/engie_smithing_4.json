@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "allaboutengie:the_end_shovel"
+  },
+  "addition": {
+    "item": "allaboutengie:engie_coin_block"
+  },
+  "result": {
+    "item": "allaboutengie:engies_shovel"
+  }
+}

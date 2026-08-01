@@ -1,0 +1,41 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Spade",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "darkmatterroughianshovel",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "",
+    "name": "Dark Matter Roughian EngieGames' Shovel",
+    "specialInformation": {
+      "fixedValue": [],
+      "name": "DescriptionOfItem2"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsItems"
+      }
+    ],
+    "efficiency": 152.0,
+    "attackSpeed": 20.200000000000003,
+    "enchantability": 22,
+    "damageVsEntity": 2125.0,
+    "usageCount": 52000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:DarkMatterEngieGamesTesseract"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

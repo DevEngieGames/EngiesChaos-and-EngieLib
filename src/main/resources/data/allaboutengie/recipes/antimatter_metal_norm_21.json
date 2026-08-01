@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "metalwoodtometal",
+  "pattern": [
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "allaboutengie:antimatter_metal_chest_cherry"
+    }
+  },
+  "result": {
+    "item": "allaboutengie:antimatter_metal_chest",
+    "count": 1
+  }
+}

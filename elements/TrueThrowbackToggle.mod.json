@@ -1,0 +1,12 @@
+{
+  "_fv": 79,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Logic",
+    "displayName": "True Throwback Toggle",
+    "description": "In order for this to work YOU MUST TURN OFF ALL ABOUT ENGIE TOGGLE AND ENRAGED ZOMBIES TOGGLE!!!!!!",
+    "category": "MISC",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 0
+  }
+}

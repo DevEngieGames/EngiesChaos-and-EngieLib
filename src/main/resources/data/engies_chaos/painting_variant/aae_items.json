@@ -1,0 +1,11 @@
+{
+  "asset_id": "engies_chaos:aae_items",
+  "height": 1,
+  "width": 1,
+  "title": {
+    "translate": "painting.engies_chaos.aae_items.title"
+  },
+  "author": {
+    "translate": "painting.engies_chaos.aae_items.author"
+  }
+}

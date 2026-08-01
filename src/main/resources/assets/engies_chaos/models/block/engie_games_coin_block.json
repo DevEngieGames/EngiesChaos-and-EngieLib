@@ -1,0 +1,9 @@
+{
+  "parent": "engies_chaos:custom/engiegamescoinblock",
+  "textures": {
+    "all": "engies_chaos:block/engiegamescoinblocktext",
+    "particle": "engies_chaos:block/engiegamescoinblocktext",
+    "0": "engies_chaos:block/engiegamescoinblocktext"
+  },
+  "render_type": "cutout"
+}

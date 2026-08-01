@@ -1,0 +1,214 @@
+{
+  "_fv": 79,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 250,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_reall_about_engie_configuration",
+          "text": {
+            "fixedValue": "Engie's Chaos Gear Giver."
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 93,
+          "y": 41,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_x",
+          "text": "X",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ConfigButton10"
+          },
+          "width": 30,
+          "height": 20,
+          "x": 306,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_empty",
+          "text": "→",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "GearGiverGoBackToConfig"
+          },
+          "width": 28,
+          "height": 20,
+          "x": 308,
+          "y": 180,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_starter_kit",
+          "text": "Starter Kit",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "GearGiverStarter"
+          },
+          "width": 82,
+          "height": 20,
+          "x": 92,
+          "y": 61,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_bundle",
+          "text": "Bundle",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "GearGiverStarterBundle"
+          },
+          "width": 56,
+          "height": 20,
+          "x": 186,
+          "y": 61,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_recipe_book",
+          "text": "Recipe Book",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "GearGiverRecipeBook"
+          },
+          "width": 82,
+          "height": 20,
+          "x": 254,
+          "y": 61,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_operator",
+          "text": "Operator",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "GearGiverOperator"
+          },
+          "width": 67,
+          "height": 20,
+          "x": 92,
+          "y": 93,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_developer",
+          "text": "Developer",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "GearGiverDeveloper"
+          },
+          "width": 72,
+          "height": 20,
+          "x": 177,
+          "y": 93,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_idea_giver",
+          "text": "Idea Giver",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "GearGiverIdeaGiver"
+          },
+          "width": 77,
+          "height": 20,
+          "x": 259,
+          "y": 93,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_beta_tester",
+          "text": "Beta Tester",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "GearGiverBetaTester"
+          },
+          "width": 82,
+          "height": 20,
+          "x": 92,
+          "y": 125,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_tester",
+          "text": "Tester",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "GearGiverTester"
+          },
+          "width": 56,
+          "height": 20,
+          "x": 186,
+          "y": 125,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_creator",
+          "text": "Creator",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "GearGiverContentCreator"
+          },
+          "width": 61,
+          "height": 20,
+          "x": 275,
+          "y": 125,
+          "locked": false
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

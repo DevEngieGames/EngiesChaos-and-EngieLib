@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/bagelcheese",
+  "textures": {
+    "0": "engies_chaos:block/bagelcheese",
+    "particle": "engies_chaos:item/bagelcheese"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_fv": 79,
+  "_type": "achievement",
+  "definition": {
+    "achievementName": "OH MY GOD, HOW BIG DO THESE GET??????",
+    "achievementDescription": "Obtain a Massive Ban Hammer/Scythe.",
+    "achievementIcon": {
+      "value": "CUSTOM:MassiveBanHammer"
+    },
+    "background": "Default",
+    "disableDisplay": false,
+    "showPopup": true,
+    "announceToChat": true,
+    "hideIfNotCompleted": false,
+    "rewardLoot": [],
+    "rewardRecipes": [],
+    "rewardXP": 40,
+    "achievementType": "challenge",
+    "parent": {
+      "value": "CUSTOM:GiganticBanObtain"
+    },
+    "triggerxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"advancement_trigger\" deletable=\"false\" x=\"40\" y=\"80\"><next><block type=\"custom_trigger\"></block></next></block></xml>"
+  }
+}

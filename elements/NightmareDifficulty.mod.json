@@ -1,0 +1,12 @@
+{
+  "_fv": 79,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Logic",
+    "displayName": "[Engie's Chaos] Nightmare",
+    "description": "A challenge for the best of the best. \"Nightmare\"(Hardcore) is required to play this as intended!",
+    "category": "MOBS",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 0
+  }
+}

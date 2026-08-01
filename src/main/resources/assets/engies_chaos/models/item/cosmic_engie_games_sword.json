@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/cosmicengiegamesword",
+  "textures": {
+    "0": "engies_chaos:block/cosmicengie_sword",
+    "particle": "engies_chaos:item/cosmicengie_sword"
+  }
+}

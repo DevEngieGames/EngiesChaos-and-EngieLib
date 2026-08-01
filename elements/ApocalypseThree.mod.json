@@ -1,0 +1,12 @@
+{
+  "_fv": 79,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Logic",
+    "displayName": "[Engie's Chaos] Apocalypse 3",
+    "description": "Are you ready for the final Apocalypse challenge? No mob messes around anymore. \"Nightmare\"(Hardcore) is required to play this as intended!",
+    "category": "UPDATES",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 0
+  }
+}

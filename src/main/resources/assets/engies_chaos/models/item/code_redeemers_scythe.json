@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/redeemscythe",
+  "textures": {
+    "0": "engies_chaos:block/pixelscytheredeem",
+    "particle": "engies_chaos:item/pixelscytheredeem"
+  }
+}

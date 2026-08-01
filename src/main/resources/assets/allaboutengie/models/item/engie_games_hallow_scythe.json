@@ -1,0 +1,36 @@
+{
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "allaboutengie:custom/engieshallowscythe",
+    "textures": {
+      "0": "allaboutengie:block/scythemain",
+      "1": "allaboutengie:block/scythealt",
+      "2": "allaboutengie:block/scythespikes1",
+      "3": "allaboutengie:block/scythespikes2",
+      "4": "allaboutengie:block/scytheeye",
+      "5": "allaboutengie:block/scytheeyecolor",
+      "particle": "allaboutengie:item/hallowsscythe"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "allaboutengie:item/hallowsscythe"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "allaboutengie:item/hallowsscythe"
+      }
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "allaboutengie:item/hallowsscythe"
+      }
+    }
+  }
+}

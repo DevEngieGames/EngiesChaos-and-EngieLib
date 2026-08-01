@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "antimattertheendcointoblock",
+  "ingredients": [
+    {
+      "item": "allaboutengie:antimatter_the_end_coin"
+    },
+    {
+      "item": "allaboutengie:antimatter_the_end_coin"
+    },
+    {
+      "item": "allaboutengie:antimatter_the_end_coin"
+    },
+    {
+      "item": "allaboutengie:antimatter_the_end_coin"
+    },
+    {
+      "item": "allaboutengie:antimatter_the_end_coin"
+    },
+    {
+      "item": "allaboutengie:antimatter_the_end_coin"
+    },
+    {
+      "item": "allaboutengie:antimatter_the_end_coin"
+    },
+    {
+      "item": "allaboutengie:antimatter_the_end_coin"
+    },
+    {
+      "item": "allaboutengie:antimatter_the_end_coin"
+    }
+  ],
+  "result": {
+    "item": "allaboutengie:antimatter_the_end_coin_block",
+    "count": 1
+  }
+}

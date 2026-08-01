@@ -1,0 +1,41 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Hoe",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "darkmattercosmicengie_hoe",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "",
+    "name": "Dark Matter Cosmic EngieGames' Hoe",
+    "specialInformation": {
+      "fixedValue": [],
+      "name": "DescriptionOfItem2"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsItems"
+      }
+    ],
+    "efficiency": 148.0,
+    "attackSpeed": 19.8,
+    "enchantability": 22,
+    "damageVsEntity": 2075.0,
+    "usageCount": 51000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:DarkMatterCosmicEngieCoin"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

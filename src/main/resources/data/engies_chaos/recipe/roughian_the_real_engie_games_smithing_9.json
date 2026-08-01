@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "engies_chaos:cosmic_engie_gamess_leggings",
+  "addition": "engies_chaos:engie_games_tesseract_block",
+  "result": {
+    "id": "engies_chaos:roughian_engie_gamess_leggings"
+  }
+}

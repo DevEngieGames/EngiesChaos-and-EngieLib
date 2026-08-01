@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "antimatterhostileengieaiot",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:AntimatterHostileEngieSword"
+      },
+      {
+        "value": "CUSTOM:AntimatterHostileEngiePickaxe"
+      },
+      {
+        "value": "CUSTOM:AntimatterHostileEngieAxe"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:AntimatterHostileEngieHoe"
+      },
+      {
+        "value": "CUSTOM:AntimatterHostileEngieShovel"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:AntimatterHostileEngiePaxel"
+    },
+    "name": "antimatter_hostile_engie_paxel_craft",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "engiegamescointoblock",
+  "ingredients": [
+    {
+      "item": "allaboutengie:engie_games_coin"
+    },
+    {
+      "item": "allaboutengie:engie_games_coin"
+    },
+    {
+      "item": "allaboutengie:engie_games_coin"
+    },
+    {
+      "item": "allaboutengie:engie_games_coin"
+    },
+    {
+      "item": "allaboutengie:engie_games_coin"
+    },
+    {
+      "item": "allaboutengie:engie_games_coin"
+    },
+    {
+      "item": "allaboutengie:engie_games_coin"
+    },
+    {
+      "item": "allaboutengie:engie_games_coin"
+    },
+    {
+      "item": "allaboutengie:engie_games_coin"
+    }
+  ],
+  "result": {
+    "item": "allaboutengie:engie_games_coin_block",
+    "count": 1
+  }
+}

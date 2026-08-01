@@ -1,0 +1,12 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "xengienewplush",
+        "1": "truexengiescarf",
+        "2": "white"
+      },
+      "name": "default"
+    }
+  }
+}

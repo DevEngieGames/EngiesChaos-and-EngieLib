@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "antimattermonstrosityengiehelmet",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:AntimatterMonstrosityEngieEssence"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:AntimatterMonstrosityEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterMonstrosityEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterMonstrosityEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterMonstrosityEngieEssence"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:AntimatterMonstrosityEngies.helmet"
+    },
+    "name": "antimatter_monstrosity_engie_helmet_1",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "allaboutengie:antimatter_doomsdays_boots"
+  },
+  "addition": {
+    "item": "allaboutengie:antimatter_super_dooms_day_coin_block"
+  },
+  "result": {
+    "item": "allaboutengie:antimatter_super_doomsdays_boots"
+  }
+}

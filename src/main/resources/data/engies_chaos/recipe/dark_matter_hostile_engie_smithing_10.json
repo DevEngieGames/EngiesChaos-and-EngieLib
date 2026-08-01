@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "engies_chaos:dark_matter_monstrosity_engies_boots",
+  "addition": "engies_chaos:dark_matter_engie_block",
+  "result": {
+    "id": "engies_chaos:dark_matter_hostile_engies_boots"
+  }
+}

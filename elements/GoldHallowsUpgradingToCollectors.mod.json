@@ -1,0 +1,33 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:GoldHallowUpgradeToCollector"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:EngieGamesGoldenHallowScythe"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:GoldHallowUpgradeToCollector"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:EngieGamesEngieHallowScythe"
+    },
+    "name": "gold_hallows_upgrading_to_collectors",
+    "namespace": "mod"
+  }
+}

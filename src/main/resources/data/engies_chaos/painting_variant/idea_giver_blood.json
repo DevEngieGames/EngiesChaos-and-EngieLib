@@ -1,0 +1,11 @@
+{
+  "asset_id": "engies_chaos:idea_giver_blood",
+  "height": 1,
+  "width": 1,
+  "title": {
+    "translate": "painting.engies_chaos.idea_giver_blood.title"
+  },
+  "author": {
+    "translate": "painting.engies_chaos.idea_giver_blood.author"
+  }
+}

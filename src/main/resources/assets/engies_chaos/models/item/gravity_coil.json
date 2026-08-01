@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/gravitycoil",
+  "textures": {
+    "0": "engies_chaos:block/coil",
+    "particle": "engies_chaos:item/reaaeicon"
+  }
+}

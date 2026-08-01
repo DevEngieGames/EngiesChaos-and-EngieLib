@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "mindscapecoinblocktocoins",
+  "category": "misc",
+  "ingredients": [
+    "engies_chaos:mindscape_coin_block"
+  ],
+  "result": {
+    "id": "engies_chaos:mindscape_coin",
+    "count": 9
+  }
+}

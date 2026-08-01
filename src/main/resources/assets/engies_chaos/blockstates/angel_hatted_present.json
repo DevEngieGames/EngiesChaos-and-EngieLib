@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "engies_chaos:block/angel_hatted_present"
+    },
+    "facing=east": {
+      "model": "engies_chaos:block/angel_hatted_present",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "engies_chaos:block/angel_hatted_present",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "engies_chaos:block/angel_hatted_present",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "parent": "engies_chaos:custom/engiegamestesseractblock",
+  "textures": {
+    "all": "engies_chaos:block/engiecointexture",
+    "particle": "engies_chaos:block/engiecointexture",
+    "0": "engies_chaos:block/engiegamestesseractouter",
+    "1": "engies_chaos:block/engiegamestesseractcube"
+  },
+  "render_type": "cutout"
+}

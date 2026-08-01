@@ -1,0 +1,61 @@
+package engiegames.engies_chaos.client.renderer;
+
+import net.minecraft.world.level.Level;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
+import net.minecraft.client.renderer.entity.layers.RenderLayer;
+import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.client.renderer.entity.LivingEntityRenderer;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.MultiBufferSource;
+
+import engiegames.engies_chaos.procedures.MobModelScalingProcedure;
+import engiegames.engies_chaos.entity.HeWhoGamesHostileEntity;
+import engiegames.engies_chaos.client.model.ModelHeWhoGames;
+
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.blaze3d.vertex.PoseStack;
+
+public class HeWhoGamesHostileRenderer extends MobRenderer<HeWhoGamesHostileEntity, LivingEntityRenderState, ModelHeWhoGames> {
+	private HeWhoGamesHostileEntity entity = null;
+
+	public HeWhoGamesHostileRenderer(EntityRendererProvider.Context context) {
+		super(context, new ModelHeWhoGames(context.bakeLayer(ModelHeWhoGames.LAYER_LOCATION)), 0.5f);
+		this.addLayer(new RenderLayer<>(this) {
+			final ResourceLocation LAYER_TEXTURE = ResourceLocation.parse("engies_chaos:textures/entities/hewhogames_g.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, LivingEntityRenderState state, float headYaw, float headPitch) {
+				VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.eyes(LAYER_TEXTURE));
+				this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(state, 0));
+			}
+		});
+	}
+
+	@Override
+	public LivingEntityRenderState createRenderState() {
+		return new LivingEntityRenderState();
+	}
+
+	@Override
+	public void extractRenderState(HeWhoGamesHostileEntity entity, LivingEntityRenderState state, float partialTicks) {
+		super.extractRenderState(entity, state, partialTicks);
+		this.entity = entity;
+	}
+
+	@Override
+	public ResourceLocation getTextureLocation(LivingEntityRenderState state) {
+		return ResourceLocation.parse("engies_chaos:textures/entities/hewhogames.png");
+	}
+
+	@Override
+	protected void scale(LivingEntityRenderState state, PoseStack poseStack) {
+		Level world = entity.level();
+		double x = entity.getX();
+		double y = entity.getY();
+		double z = entity.getZ();
+		float scale = (float) MobModelScalingProcedure.execute();
+		poseStack.scale(scale, scale, scale);
+	}
+}

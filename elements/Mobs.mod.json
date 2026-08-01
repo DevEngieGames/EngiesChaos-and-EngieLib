@@ -1,0 +1,11 @@
+{
+  "_fv": 79,
+  "_type": "tab",
+  "definition": {
+    "name": "Mobs (AAE)",
+    "icon": {
+      "value": "CUSTOM:AAEEngie"
+    },
+    "showSearch": false
+  }
+}

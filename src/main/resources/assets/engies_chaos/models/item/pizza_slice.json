@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/pizza_slice",
+  "textures": {
+    "0": "engies_chaos:block/pizzaslice",
+    "particle": "engies_chaos:item/pizzaitem"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:XEngieUpgradePickaxe"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:DarkMatterRoughianEngieGamesPickaxe"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:XEngieUpgradePickaxe"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:TrueXEngiePickaxe"
+    },
+    "name": "true_x_engie_pickaxe_recipe",
+    "namespace": "mod"
+  }
+}

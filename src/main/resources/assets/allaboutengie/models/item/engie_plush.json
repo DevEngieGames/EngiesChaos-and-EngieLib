@@ -1,0 +1,8 @@
+{
+  "parent": "allaboutengie:custom/engieplush",
+  "textures": {
+    "0": "allaboutengie:block/roughianengie",
+    "1": "allaboutengie:block/16101613",
+    "particle": "allaboutengie:item/volc"
+  }
+}

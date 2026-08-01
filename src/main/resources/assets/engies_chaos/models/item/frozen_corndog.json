@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/corndog",
+  "textures": {
+    "0": "engies_chaos:block/frozencorndog",
+    "particle": "engies_chaos:item/corndog"
+  }
+}

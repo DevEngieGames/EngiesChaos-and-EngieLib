@@ -1,0 +1,12 @@
+{
+  "_fv": 79,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "T",
+    "keyBindingName": "[Engie's Chaos] Open Trash GUI",
+    "keyBindingCategoryKey": "gameplay",
+    "onKeyReleased": {
+      "name": "TrashGUIOnKeyReleased"
+    }
+  }
+}

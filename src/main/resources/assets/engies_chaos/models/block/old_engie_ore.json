@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "engies_chaos:block/oldengiore",
+    "up": "engies_chaos:block/oldengiore",
+    "north": "engies_chaos:block/oldengiore",
+    "east": "engies_chaos:block/oldengiore",
+    "south": "engies_chaos:block/oldengiore",
+    "west": "engies_chaos:block/oldengiore",
+    "particle": "engies_chaos:block/oldengiore"
+  },
+  "render_type": "solid"
+}

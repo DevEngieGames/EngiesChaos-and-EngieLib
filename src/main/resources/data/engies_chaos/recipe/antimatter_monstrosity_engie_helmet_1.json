@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "antimattermonstrosityengiehelmet",
+  "category": "misc",
+  "pattern": [
+    "a a",
+    "aaa"
+  ],
+  "key": {
+    "a": "engies_chaos:antimatter_monstrosity_engie_essence"
+  },
+  "result": {
+    "id": "engies_chaos:antimatter_monstrosity_engies_helmet",
+    "count": 1
+  }
+}

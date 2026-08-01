@@ -1,0 +1,46 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Special",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "theendbanpixel",
+    "customModelName": "ban_hammer_theend:default",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "theendbanpixel",
+    "name": "The End Ban Hammer",
+    "specialInformation": {
+      "fixedValue": [
+        "Congrats!"
+      ],
+      "name": "DescriptionOfItem"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:BanHammers"
+      }
+    ],
+    "efficiency": 4.0,
+    "attackSpeed": 1.0,
+    "enchantability": 22,
+    "damageVsEntity": 7000.0,
+    "usageCount": 28000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:TheEndCoin"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "STONE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "TheEndObtainPro"
+    }
+  }
+}

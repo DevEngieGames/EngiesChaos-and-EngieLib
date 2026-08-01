@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "ironaiot",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:iron_sword",
+    "minecraft:iron_pickaxe",
+    "minecraft:iron_axe",
+    "minecraft:iron_shovel",
+    "minecraft:iron_hoe"
+  ],
+  "result": {
+    "id": "engies_chaos:iron_aiot",
+    "count": 1
+  }
+}

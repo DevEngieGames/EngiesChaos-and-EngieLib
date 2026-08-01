@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "antimatterhugescythe",
+  "category": "equipment",
+  "pattern": [
+    "ab",
+    "ac",
+    " d"
+  ],
+  "key": {
+    "a": "engies_chaos:antimatter_enraged_engie_block",
+    "b": "engies_chaos:antimatter_angry_engie_block",
+    "c": "engies_chaos:antimatter_large_scythe",
+    "d": "#minecraft:planks"
+  },
+  "result": {
+    "id": "engies_chaos:antimatter_huge_scythe",
+    "count": 1
+  }
+}

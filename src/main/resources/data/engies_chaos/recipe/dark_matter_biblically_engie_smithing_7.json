@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "engies_chaos:dark_matter_outraged_engies_helmet",
+  "addition": "engies_chaos:dark_matter_biblically_accurate_block",
+  "result": {
+    "id": "engies_chaos:dark_matter_biblically_accurate_engies_helmet"
+  }
+}

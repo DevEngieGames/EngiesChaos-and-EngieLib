@@ -1,0 +1,11 @@
+{
+  "parent": "engies_chaos:custom/crystalsmalldarkmatter3d",
+  "textures": {
+    "all": "engies_chaos:block/crystaldarkmonstrosity",
+    "particle": "engies_chaos:block/crystaldarkmonstrosity",
+    "0": "engies_chaos:block/newcrystaldarkmatter",
+    "1": "engies_chaos:block/newcrystaldarkness",
+    "2": "engies_chaos:block/newcrystaloverlaymonstrosity"
+  },
+  "render_type": "cutout"
+}

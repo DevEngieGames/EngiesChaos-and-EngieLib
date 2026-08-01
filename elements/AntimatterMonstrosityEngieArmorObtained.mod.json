@@ -1,0 +1,24 @@
+{
+  "_fv": 79,
+  "_type": "achievement",
+  "definition": {
+    "achievementName": "Not as bad as I thought it would be.",
+    "achievementDescription": "Obtain Antimatter Monstrosity Engie Armor for the first time.",
+    "achievementIcon": {
+      "value": "CUSTOM:AntimatterMonstrosityEngies.helmet"
+    },
+    "background": "Default",
+    "disableDisplay": false,
+    "showPopup": true,
+    "announceToChat": true,
+    "hideIfNotCompleted": false,
+    "rewardLoot": [],
+    "rewardRecipes": [],
+    "rewardXP": 50,
+    "achievementType": "challenge",
+    "parent": {
+      "value": "CUSTOM:AntimatterMonstrosityEngieEssenceObtained"
+    },
+    "triggerxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"advancement_trigger\" deletable=\"false\" x=\"40\" y=\"80\"><next><block type=\"custom_trigger\"></block></next></block></xml>"
+  }
+}

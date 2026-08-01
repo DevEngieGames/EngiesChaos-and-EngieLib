@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "cosmicengiegamescointoblock",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:CosmicEngieCoin"
+      },
+      {
+        "value": "CUSTOM:CosmicEngieCoin"
+      },
+      {
+        "value": "CUSTOM:CosmicEngieCoin"
+      },
+      {
+        "value": "CUSTOM:CosmicEngieCoin"
+      },
+      {
+        "value": "CUSTOM:CosmicEngieCoin"
+      },
+      {
+        "value": "CUSTOM:CosmicEngieCoin"
+      },
+      {
+        "value": "CUSTOM:CosmicEngieCoin"
+      },
+      {
+        "value": "CUSTOM:CosmicEngieCoin"
+      },
+      {
+        "value": "CUSTOM:CosmicEngieCoin"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:CosmicEngieGamesCoinBlock"
+    },
+    "name": "cosmic_engie_games_coin_to_block",
+    "namespace": "mod"
+  }
+}

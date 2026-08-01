@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/ban_hammer_mindscapeengie",
+  "textures": {
+    "0": "engies_chaos:block/mindscapeengiebanhammer",
+    "particle": "engies_chaos:item/mindscapebanpixel"
+  }
+}

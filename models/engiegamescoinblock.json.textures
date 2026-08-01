@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "engiegamescoinblocktext"
+      },
+      "name": "default"
+    },
+    "antimatter": {
+      "map": {
+        "0": "antimatterengiegamescoinblocktext"
+      },
+      "name": "antimatter"
+    }
+  }
+}

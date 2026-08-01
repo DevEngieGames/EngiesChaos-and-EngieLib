@@ -1,0 +1,11 @@
+{
+  "asset_id": "engies_chaos:lock_in",
+  "height": 1,
+  "width": 1,
+  "title": {
+    "translate": "painting.engies_chaos.lock_in.title"
+  },
+  "author": {
+    "translate": "painting.engies_chaos.lock_in.author"
+  }
+}

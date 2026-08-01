@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/throwback_big_ban_hammer",
+  "textures": {
+    "0": "engies_chaos:block/throwbackbanhammer",
+    "particle": "engies_chaos:item/throwbackbanhammerpixel"
+  }
+}

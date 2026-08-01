@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/ban_hammer_biblicallyaccurate",
+  "textures": {
+    "0": "engies_chaos:block/antimatterbiblicallyaccurateyeah",
+    "particle": "engies_chaos:item/antimatterbiblicallyaccuratepixel"
+  }
+}

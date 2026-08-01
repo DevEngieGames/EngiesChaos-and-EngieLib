@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "allaboutengie:roughian_engie_games_pickaxe"
+  },
+  "addition": {
+    "item": "allaboutengie:x_engie_upgrade_pickaxe"
+  },
+  "result": {
+    "item": "allaboutengie:x_engie_pickaxe"
+  }
+}

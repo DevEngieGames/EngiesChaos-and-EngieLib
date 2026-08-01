@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "miniscythe",
+  "category": "equipment",
+  "pattern": [
+    "ab",
+    "cd",
+    " d"
+  ],
+  "key": {
+    "a": "engies_chaos:mad_engie_essence",
+    "b": "minecraft:iron_ingot",
+    "c": "engies_chaos:angry_engie_essence",
+    "d": "minecraft:stick"
+  },
+  "result": {
+    "id": "engies_chaos:mini_scythe",
+    "count": 1
+  }
+}

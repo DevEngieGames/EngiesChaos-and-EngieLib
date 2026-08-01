@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "madengieitemtoblock",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:AntimatterMadEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterMadEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterMadEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterMadEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterMadEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterMadEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterMadEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterMadEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterMadEngieEssence"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:AntimatterMadEngieBlock"
+    },
+    "name": "antimatter_mad_engie_block_1",
+    "namespace": "mod"
+  }
+}

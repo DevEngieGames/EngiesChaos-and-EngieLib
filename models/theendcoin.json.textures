@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "theendcointexture"
+      },
+      "name": "default"
+    },
+    "antimatter": {
+      "map": {
+        "0": "antimattertheendcointexture"
+      },
+      "name": "antimatter"
+    }
+  }
+}

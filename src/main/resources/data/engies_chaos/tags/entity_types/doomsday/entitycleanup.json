@@ -1,0 +1,37 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#allaboutengie:mobs/biblicallyhostile",
+      "required": false
+    },
+    {
+      "id": "#allaboutengie:mobs/outraged_engie",
+      "required": false
+    },
+    {
+      "id": "#allaboutengie:dday_related",
+      "required": false
+    },
+    {
+      "id": "#allaboutengie:mobs/angry_engie",
+      "required": false
+    },
+    {
+      "id": "#allaboutengie:mobs/enraged_engie",
+      "required": false
+    },
+    {
+      "id": "#allaboutengie:mobs/monstrosity_engie",
+      "required": false
+    },
+    {
+      "id": "#allaboutengie:mobs/mad_engie",
+      "required": false
+    },
+    {
+      "id": "#allaboutengie:mobs/hostile_engie",
+      "required": false
+    }
+  ]
+}

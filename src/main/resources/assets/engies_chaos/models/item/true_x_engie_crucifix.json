@@ -1,0 +1,10 @@
+{
+  "parent": "engies_chaos:custom/truexengieplush",
+  "textures": {
+    "0": "engies_chaos:block/truexengie",
+    "1": "engies_chaos:block/truexengiescarf",
+    "2": "engies_chaos:block/white",
+    "3": "engies_chaos:block/holster",
+    "particle": "engies_chaos:item/reaaelogo"
+  }
+}

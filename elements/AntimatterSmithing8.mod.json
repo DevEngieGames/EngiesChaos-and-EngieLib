@@ -1,0 +1,33 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "antimattersmithing8",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:Antimatter"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:SuperDoomsDayCoin"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:Antimatter"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:AntimatterSuperDoomsdayCoin"
+    },
+    "name": "antimatter_smithing_8",
+    "namespace": "mod"
+  }
+}

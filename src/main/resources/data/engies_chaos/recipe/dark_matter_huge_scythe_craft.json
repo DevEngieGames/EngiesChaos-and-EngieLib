@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "darkmatterhugescythe",
+  "category": "equipment",
+  "pattern": [
+    "ab",
+    "ac",
+    " d"
+  ],
+  "key": {
+    "a": "engies_chaos:dark_matter_enraged_engie_block",
+    "b": "engies_chaos:dark_matter_angry_engie_block",
+    "c": "engies_chaos:dark_matter_large_scythe",
+    "d": "minecraft:stick"
+  },
+  "result": {
+    "id": "engies_chaos:dark_matter_huge_scythe",
+    "count": 1
+  }
+}

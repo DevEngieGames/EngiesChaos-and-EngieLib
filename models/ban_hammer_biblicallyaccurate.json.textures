@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "biblicallyaccurateyeah"
+      },
+      "name": "default"
+    },
+    "antimatter": {
+      "map": {
+        "0": "antimatterbiblicallyaccurateyeah"
+      },
+      "name": "antimatter"
+    }
+  }
+}

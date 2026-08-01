@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "crafting",
+  "category": "misc",
+  "pattern": [
+    "a a",
+    "bab"
+  ],
+  "key": {
+    "a": "minecraft:iron_ingot",
+    "b": "engies_chaos:engie_gem"
+  },
+  "result": {
+    "id": "engies_chaos:metal_chest",
+    "count": 1
+  }
+}

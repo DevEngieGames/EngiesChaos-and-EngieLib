@@ -1,0 +1,46 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Special",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "antimattersuperdoomsdaybanpixel",
+    "customModelName": "ban_hammer_superdoomsday:antimatter",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "antimattersuperdoomsdaybanpixel",
+    "name": "Antimatter Super Doomsday Ban Hammer",
+    "specialInformation": {
+      "fixedValue": [
+        "Congrats!"
+      ],
+      "name": "DescriptionOfItem"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:BanHammers"
+      }
+    ],
+    "efficiency": 4.0,
+    "attackSpeed": 1.0,
+    "enchantability": 22,
+    "damageVsEntity": 16000.0,
+    "usageCount": 64000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:AntimatterSuperDoomsdayCoin"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "STONE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "SuperDoomsdayObtainPro"
+    }
+  }
+}

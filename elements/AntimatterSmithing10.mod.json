@@ -1,0 +1,33 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "antimattersmithing10",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:Antimatter"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:EngieCoin"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:Antimatter"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:AntimatterEngieCoin"
+    },
+    "name": "antimatter_smithing_10",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/bagelcooked",
+  "textures": {
+    "0": "engies_chaos:block/bagelcooked",
+    "particle": "engies_chaos:item/bagel"
+  }
+}

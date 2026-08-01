@@ -1,0 +1,40 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "antimatterregularscythe",
+    "customModelName": "giganticscythe:antimatter",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "antimatterregularscythe",
+    "name": "Antimatter Gigantic Scythe",
+    "specialInformation": {
+      "fixedValue": [],
+      "name": "DescriptionOfItem"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:BanHammers"
+      }
+    ],
+    "efficiency": 4.0,
+    "attackSpeed": 1.75,
+    "enchantability": 22,
+    "damageVsEntity": 11321.0,
+    "usageCount": 45284,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [],
+    "immuneToFire": false,
+    "blockDropsTier": "STONE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "GiganticBanObtainPro"
+    }
+  }
+}

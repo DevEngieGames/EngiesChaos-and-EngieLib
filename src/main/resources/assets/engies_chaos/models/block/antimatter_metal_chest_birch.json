@@ -1,0 +1,10 @@
+{
+  "parent": "engies_chaos:custom/metal_chest_wood",
+  "textures": {
+    "all": "engies_chaos:block/antimattermetalchest",
+    "particle": "engies_chaos:block/antimattermetalchest",
+    "0": "engies_chaos:block/antimattermetalchest",
+    "1": "minecraft:block/birch_planks"
+  },
+  "render_type": "solid"
+}

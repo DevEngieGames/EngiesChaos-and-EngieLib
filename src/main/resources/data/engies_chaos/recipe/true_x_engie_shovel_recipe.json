@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "engies_chaos:dark_matter_roughian_engie_games_shovel",
+  "addition": "engies_chaos:x_engie_upgrade_shovel",
+  "result": {
+    "id": "engies_chaos:true_x_engie_shovel"
+  }
+}

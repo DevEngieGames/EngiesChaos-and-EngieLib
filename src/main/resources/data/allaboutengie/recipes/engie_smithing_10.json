@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "allaboutengie:the_ends_boots"
+  },
+  "addition": {
+    "item": "allaboutengie:engie_coin_block"
+  },
+  "result": {
+    "item": "allaboutengie:engie_gamess_boots"
+  }
+}

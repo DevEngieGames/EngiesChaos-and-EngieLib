@@ -1,0 +1,41 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "cosmicengie_sword",
+    "customModelName": "cosmicengiegames_sword_3d:default",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "cosmicengie_sword",
+    "name": "Cosmic EngieGames' Sword",
+    "specialInformation": {
+      "fixedValue": [],
+      "name": "DescriptionOfItem"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsItems"
+      }
+    ],
+    "efficiency": 96.0,
+    "attackSpeed": 1.0,
+    "enchantability": 22,
+    "damageVsEntity": 50525.0,
+    "usageCount": 128000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:CosmicEngieCoin"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

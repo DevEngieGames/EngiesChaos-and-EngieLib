@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "engies_chaos:dooms_days_helmet",
+  "addition": "engies_chaos:super_dooms_day_coin_block",
+  "result": {
+    "id": "engies_chaos:super_dooms_days_helmet"
+  }
+}

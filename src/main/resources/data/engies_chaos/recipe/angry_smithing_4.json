@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "engies_chaos:engie_hoe",
+  "addition": "engies_chaos:angry_engie_block",
+  "result": {
+    "id": "engies_chaos:angry_engie_hoe"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "allaboutengie:super_dooms_days_chestplate"
+  },
+  "addition": {
+    "item": "allaboutengie:the_end_coin_block"
+  },
+  "result": {
+    "item": "allaboutengie:the_ends_chestplate"
+  }
+}

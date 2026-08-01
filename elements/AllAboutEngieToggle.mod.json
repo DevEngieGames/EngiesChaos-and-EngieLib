@@ -1,0 +1,12 @@
+{
+  "_fv": 79,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Logic",
+    "displayName": "All About Engie Toggle",
+    "description": "Toggle most of the mod with this. TURN THIS OFF WHEN PLAYING THROWBACK MODE!!!!",
+    "category": "MISC",
+    "defaultValueLogic": true,
+    "defaultValueNumber": 0
+  }
+}

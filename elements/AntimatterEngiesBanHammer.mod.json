@@ -1,0 +1,46 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Special",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "antimatterengiebanpixel",
+    "customModelName": "ban_hammer_engie:antimatter",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "antimatterengiebanpixel",
+    "name": "Antimatter Engies Ban Hammer",
+    "specialInformation": {
+      "fixedValue": [
+        "Congrats!"
+      ],
+      "name": "DescriptionOfItem"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:BanHammers"
+      }
+    ],
+    "efficiency": 4.0,
+    "attackSpeed": 1.0,
+    "enchantability": 22,
+    "damageVsEntity": 18000.0,
+    "usageCount": 72000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:AntimatterEngieCoin"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "STONE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "EngiesObtainPro"
+    }
+  }
+}

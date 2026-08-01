@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "antimatterdoomsdaycointoblock",
+  "category": "misc",
+  "ingredients": [
+    "engies_chaos:antimatter_doomsday_coin",
+    "engies_chaos:antimatter_doomsday_coin",
+    "engies_chaos:antimatter_doomsday_coin",
+    "engies_chaos:antimatter_doomsday_coin",
+    "engies_chaos:antimatter_doomsday_coin",
+    "engies_chaos:antimatter_doomsday_coin",
+    "engies_chaos:antimatter_doomsday_coin",
+    "engies_chaos:antimatter_doomsday_coin",
+    "engies_chaos:antimatter_doomsday_coin"
+  ],
+  "result": {
+    "id": "engies_chaos:antimatter_dooms_day_coin_block",
+    "count": 1
+  }
+}

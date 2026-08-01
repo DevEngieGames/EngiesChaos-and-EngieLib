@@ -1,0 +1,11 @@
+{
+  "_fv": 79,
+  "_type": "tab",
+  "definition": {
+    "name": "Zombies (AAE)",
+    "icon": {
+      "value": "CUSTOM:EnragedZombiesPlaque"
+    },
+    "showSearch": false
+  }
+}

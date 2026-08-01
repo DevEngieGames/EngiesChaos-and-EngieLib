@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "engiegamestesseracttoblock",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      },
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      },
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      },
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      },
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      },
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      },
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      },
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      },
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:RoughianEngieGamesCoinBlock"
+    },
+    "name": "engie_games_tesseract_to_block",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "antimatterenragedengiechestplate",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:AntimatterEnragedEngieEssence"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:AntimatterEnragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterEnragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterEnragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterEnragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterEnragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterEnragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterEnragedEngieEssence"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:AntimatterEnragedEngies.body"
+    },
+    "name": "antimatter_enraged_engie_chestplate_1",
+    "namespace": "mod"
+  }
+}

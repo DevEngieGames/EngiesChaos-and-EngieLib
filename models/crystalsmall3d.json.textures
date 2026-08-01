@@ -1,0 +1,60 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "newcrystalbase",
+        "1": "newcrystaloverlaybase"
+      },
+      "name": "default"
+    },
+    "mad": {
+      "map": {
+        "0": "newcrystalmainmad",
+        "1": "newcrystaloverlaymad"
+      },
+      "name": "mad"
+    },
+    "angry": {
+      "map": {
+        "0": "newcrystaldarkness",
+        "1": "newcrystaloverlayangry"
+      },
+      "name": "angry"
+    },
+    "enraged": {
+      "map": {
+        "0": "newcrystaldarkness",
+        "1": "newcrystaloverlayenraged"
+      },
+      "name": "enraged"
+    },
+    "outraged": {
+      "map": {
+        "0": "newcrystaldarkness",
+        "1": "newcrystaloverlayoutraged"
+      },
+      "name": "outraged"
+    },
+    "biblically": {
+      "map": {
+        "0": "newcrystalbrightness",
+        "1": "newcrystaloverlaybiblically"
+      },
+      "name": "biblically"
+    },
+    "monstrosity": {
+      "map": {
+        "0": "newcrystaldarkness",
+        "1": "newcrystaloverlaymonstrosity"
+      },
+      "name": "monstrosity"
+    },
+    "engie": {
+      "map": {
+        "0": "newcrystalengie",
+        "1": "newcrystaloverlayengie"
+      },
+      "name": "engie"
+    }
+  }
+}

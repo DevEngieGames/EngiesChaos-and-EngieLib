@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "id": "engies_chaos:dooms_day_coin"
+    },
+    "title": {
+      "translate": "advancements.doomsday_coin_obtained.title"
+    },
+    "description": {
+      "translate": "advancements.doomsday_coin_obtained.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "doomsday_coin_obtained_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "engies_chaos:dooms_day_coin"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1000000000
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 70
+  },
+  "parent": "engies_chaos:engie_gem_obtained"
+}

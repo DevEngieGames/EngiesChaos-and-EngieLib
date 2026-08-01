@@ -1,0 +1,14 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "2": "scarf",
+        "3": "minecraft:spruce_planks",
+        "4": "scytheeyeengie",
+        "5": "gradiant",
+        "6": "handle"
+      },
+      "name": "default"
+    }
+  }
+}

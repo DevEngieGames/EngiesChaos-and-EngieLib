@@ -1,0 +1,44 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "hallowsscythe",
+    "customModelName": "engieshallowscythe:default",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "hallowsscythe",
+    "name": "Roughian EngieGames's Hallow's Scythe",
+    "specialInformation": {
+      "fixedValue": [],
+      "name": "EngieGamesHallowScytheSpecialInformation"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:BanHammers"
+      }
+    ],
+    "efficiency": 125.0,
+    "attackSpeed": 1.0,
+    "enchantability": 22,
+    "damageVsEntity": 100000.0,
+    "usageCount": 128000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "EngieGamesHallowScytheToolInInventoryTick"
+    }
+  }
+}

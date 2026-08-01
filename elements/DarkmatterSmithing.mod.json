@@ -1,0 +1,33 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "darkmattermattersmithing",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:DarkMatterMadEngieBlock"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "Items.BOOK"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:DarkMatterMadEngieBlock"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:EngiesChaosRecipeBookVolume3"
+    },
+    "name": "darkmatter_smithing",
+    "namespace": "mod"
+  }
+}

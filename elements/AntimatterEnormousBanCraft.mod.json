@@ -1,0 +1,53 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "antimatterenormousbanhammer",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:AntimatterHugeBanHammer"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "EQUIPMENT",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:AntimatterEnragedEngieBlock"
+      },
+      {
+        "value": "CUSTOM:AntimatterAngryEngieBlock"
+      },
+      {
+        "value": "CUSTOM:AntimatterEnragedEngieBlock"
+      },
+      {
+        "value": "CUSTOM:AntimatterOutragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterHugeBanHammer"
+      },
+      {
+        "value": "CUSTOM:AntimatterOutragedEngieEssence"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "Blocks.PLANKS"
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:AntimatterEnormousBanHammer"
+    },
+    "name": "antimatter_enormous_ban_craft",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "largebanhammer",
+  "category": "equipment",
+  "pattern": [
+    "aba",
+    "cdc",
+    " e "
+  ],
+  "key": {
+    "a": "engies_chaos:angry_engie_block",
+    "b": "engies_chaos:mad_engie_block",
+    "c": "engies_chaos:enraged_engie_essence",
+    "d": "engies_chaos:big_ban_hammer",
+    "e": "minecraft:stick"
+  },
+  "result": {
+    "id": "engies_chaos:large_ban_hammer",
+    "count": 1
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "parent": "engies_chaos:custom/crystalantimatter3d",
+  "textures": {
+    "all": "engies_chaos:block/antimatteroutcrystalfull",
+    "particle": "engies_chaos:block/antimatteroutcrystalfull",
+    "0": "engies_chaos:block/newcrystalantimatter",
+    "1": "engies_chaos:block/newcrystaldarkness",
+    "2": "engies_chaos:block/newcrystaloverlayoutraged"
+  },
+  "render_type": "cutout"
+}

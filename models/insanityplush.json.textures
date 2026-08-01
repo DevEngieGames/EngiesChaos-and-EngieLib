@@ -1,0 +1,52 @@
+{
+  "mappings": {
+    "gold": {
+      "map": {
+        "0": "goldinsanityengie"
+      },
+      "name": "gold"
+    },
+    "challengeone": {
+      "map": {
+        "0": "insanityengiegames"
+      },
+      "name": "challengeone"
+    },
+    "default": {
+      "map": {
+        "0": "insanityengie"
+      },
+      "name": "default"
+    },
+    "diamond": {
+      "map": {
+        "0": "diamondinsanityengie"
+      },
+      "name": "diamond"
+    },
+    "iron": {
+      "map": {
+        "0": "ironinsanityengie"
+      },
+      "name": "iron"
+    },
+    "challengetwo": {
+      "map": {
+        "0": "insanityengiegames2"
+      },
+      "name": "challengetwo"
+    },
+    "pure": {
+      "map": {
+        "0": "pureinsanity"
+      },
+      "name": "pure"
+    },
+    "netherite": {
+      "map": {
+        "0": "netheriteinsanityengie"
+      },
+      "name": "netherite"
+    }
+  }
+}

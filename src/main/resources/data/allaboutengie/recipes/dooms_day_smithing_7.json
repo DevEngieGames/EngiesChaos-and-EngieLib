@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "allaboutengie:monstrosity_engies_helmet"
+  },
+  "addition": {
+    "item": "allaboutengie:dooms_day_coin_block"
+  },
+  "result": {
+    "item": "allaboutengie:dooms_days_helmet"
+  }
+}

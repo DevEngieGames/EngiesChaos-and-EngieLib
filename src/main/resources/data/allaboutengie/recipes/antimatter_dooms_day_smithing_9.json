@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "allaboutengie:antimatter_monstrosity_engies_leggings"
+  },
+  "addition": {
+    "item": "allaboutengie:antimatter_dooms_day_coin_block"
+  },
+  "result": {
+    "item": "allaboutengie:antimatter_doomsdays_leggings"
+  }
+}

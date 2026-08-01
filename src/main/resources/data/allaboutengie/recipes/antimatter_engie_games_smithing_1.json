@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "allaboutengie:antimatter_the_end_sword"
+  },
+  "addition": {
+    "item": "allaboutengie:antimatter_engie_coin_block"
+  },
+  "result": {
+    "item": "allaboutengie:antimatter_engies_sword"
+  }
+}

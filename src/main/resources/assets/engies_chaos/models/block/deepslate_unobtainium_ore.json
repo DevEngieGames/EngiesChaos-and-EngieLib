@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "engies_chaos:block/deepslateunobtainium",
+    "up": "engies_chaos:block/deepslateunobtainium",
+    "north": "engies_chaos:block/deepslateunobtainium",
+    "east": "engies_chaos:block/deepslateunobtainium",
+    "south": "engies_chaos:block/deepslateunobtainium",
+    "west": "engies_chaos:block/deepslateunobtainium",
+    "particle": "engies_chaos:block/deepslateunobtainium"
+  },
+  "render_type": "solid"
+}

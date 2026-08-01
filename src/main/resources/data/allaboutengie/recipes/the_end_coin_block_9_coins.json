@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "theendcoinblocktocoins",
+  "ingredients": [
+    {
+      "item": "allaboutengie:the_end_coin_block"
+    }
+  ],
+  "result": {
+    "item": "allaboutengie:the_end_coin",
+    "count": 9
+  }
+}

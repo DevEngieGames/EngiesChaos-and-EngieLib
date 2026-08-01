@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "engitool",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    " b ",
+    " b "
+  ],
+  "key": {
+    "a": "engies_chaos:engi_gem",
+    "b": "minecraft:stick"
+  },
+  "result": {
+    "id": "engies_chaos:engi_pickaxe",
+    "count": 1
+  }
+}

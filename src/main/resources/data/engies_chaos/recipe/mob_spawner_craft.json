@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "bcb",
+    "aba"
+  ],
+  "key": {
+    "a": "minecraft:chain",
+    "b": "minecraft:netherite_ingot",
+    "c": "minecraft:nether_star"
+  },
+  "result": {
+    "id": "minecraft:spawner",
+    "count": 1
+  }
+}

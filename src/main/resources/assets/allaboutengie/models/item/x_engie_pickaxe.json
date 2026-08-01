@@ -1,0 +1,11 @@
+{
+  "parent": "allaboutengie:custom/xengiepickaxe",
+  "textures": {
+    "2": "allaboutengie:block/scarf",
+    "3": "minecraft:block/spruce_planks",
+    "4": "allaboutengie:block/scytheeyeengie",
+    "5": "allaboutengie:block/gradiant",
+    "6": "allaboutengie:block/handle",
+    "particle": "allaboutengie:item/reaaelogo"
+  }
+}

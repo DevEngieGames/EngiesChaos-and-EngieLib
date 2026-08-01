@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "darkmatterbiblicallyaccurateengiechestplate",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:DarkMatterBiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:DarkMatterBiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterBiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterBiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterBiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterBiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterBiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterBiblicallyAccurateEngieEssence"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:DarkMatterBiblicallyAccurateEngies.body"
+    },
+    "name": "dark_matter_biblically_accurate_engie_chestplate_1",
+    "namespace": "mod"
+  }
+}

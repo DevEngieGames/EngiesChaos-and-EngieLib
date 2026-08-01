@@ -1,0 +1,9 @@
+{
+  "parent": "engies_chaos:custom/phantomandnutpainting",
+  "textures": {
+    "all": "engies_chaos:block/phantomnut",
+    "particle": "engies_chaos:block/phantomnut",
+    "0": "engies_chaos:block/phantomnut"
+  },
+  "render_type": "solid"
+}

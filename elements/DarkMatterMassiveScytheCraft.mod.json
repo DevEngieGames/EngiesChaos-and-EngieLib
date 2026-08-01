@@ -1,0 +1,53 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "darkmattermassivescythe",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:DarkMatterGiganticScythe"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "EQUIPMENT",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:DarkMatterOutragedEngieBlock"
+      },
+      {
+        "value": "CUSTOM:DarkMatterEnragedEngieBlock"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:DarkMatterOutragedEngieBlock"
+      },
+      {
+        "value": "CUSTOM:DarkMatterGiganticScythe"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "Items.STICK"
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:DarkMatterMassiveScythe"
+    },
+    "name": "dark_matter_massive_scythe_craft",
+    "namespace": "mod"
+  }
+}

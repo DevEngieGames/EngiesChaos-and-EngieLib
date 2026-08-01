@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "antimatterengieblocktoitem",
+  "category": "misc",
+  "ingredients": [
+    "engies_chaos:antimatter_engie_block"
+  ],
+  "result": {
+    "id": "engies_chaos:antimatter_engie_gem",
+    "count": 9
+  }
+}

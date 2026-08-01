@@ -1,0 +1,53 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "darkmattermonstrositybanhammer",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:DarkMatterBiblicallyAccuratEngieBanHammer"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "EQUIPMENT",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:DarkMatterBiblicallyAccurateBlock"
+      },
+      {
+        "value": "CUSTOM:DarkMatterOutragedEngieBlock"
+      },
+      {
+        "value": "CUSTOM:DarkMatterBiblicallyAccurateBlock"
+      },
+      {
+        "value": "CUSTOM:DarkMatterMonstrosityEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterBiblicallyAccuratEngieBanHammer"
+      },
+      {
+        "value": "CUSTOM:DarkMatterMonstrosityEngieEssence"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "Blocks.PLANKS"
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:DarkMatterMonstrosityBanHammer"
+    },
+    "name": "dark_matter_monstrosity_ban_craft",
+    "namespace": "mod"
+  }
+}

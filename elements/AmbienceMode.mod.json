@@ -1,0 +1,12 @@
+{
+  "_fv": 79,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Logic",
+    "displayName": "[Engie's Chaos] Ambience Mode",
+    "description": "Experience Engie's Chaos without any hostile mobs. This also works for the Enraged Zombies portion!",
+    "category": "MOBS",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 0
+  }
+}

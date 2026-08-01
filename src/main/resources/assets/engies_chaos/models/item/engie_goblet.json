@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/goblet",
+  "textures": {
+    "0": "engies_chaos:block/engiegoblet",
+    "particle": "engies_chaos:item/reaaeicon"
+  }
+}

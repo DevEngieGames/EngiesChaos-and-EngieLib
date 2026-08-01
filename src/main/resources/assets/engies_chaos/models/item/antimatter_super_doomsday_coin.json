@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/superdoomsdaycoin",
+  "textures": {
+    "0": "engies_chaos:block/antimattersuperdoomsdaycointexture",
+    "particle": "engies_chaos:item/superdoomsdaybase"
+  }
+}

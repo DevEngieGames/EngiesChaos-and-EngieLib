@@ -1,0 +1,8 @@
+{
+  "parent": "allaboutengie:custom/engieplushhardmode",
+  "textures": {
+    "0": "allaboutengie:block/roughianengie2",
+    "1": "allaboutengie:block/16101613",
+    "particle": "allaboutengie:item/insanityadvancementbg"
+  }
+}

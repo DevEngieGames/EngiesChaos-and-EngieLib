@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "abc",
+    " d ",
+    " d "
+  ],
+  "key": {
+    "a": {
+      "item": "allaboutengie:roughian_engie_games_axe"
+    },
+    "b": {
+      "item": "allaboutengie:roughian_engie_games_pickaxe"
+    },
+    "c": {
+      "item": "allaboutengie:roughian_engie_games_shovel"
+    },
+    "d": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "allaboutengie:roughian_engie_games_paxel",
+    "count": 1
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "allaboutengie:custom/minifridge2",
+  "textures": {
+    "all": "allaboutengie:block/minifridge",
+    "particle": "allaboutengie:block/minifridge",
+    "0": "allaboutengie:block/minifridge"
+  },
+  "render_type": "translucent"
+}

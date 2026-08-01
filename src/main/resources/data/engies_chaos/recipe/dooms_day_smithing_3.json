@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "engies_chaos:hostile_engie_axe",
+  "addition": "engies_chaos:dooms_day_coin_block",
+  "result": {
+    "id": "engies_chaos:dooms_day_axe"
+  }
+}

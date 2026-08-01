@@ -1,0 +1,10 @@
+{
+  "parent": "allaboutengie:custom/metal_chest_wood",
+  "textures": {
+    "all": "allaboutengie:block/metalchest",
+    "particle": "allaboutengie:block/metalchest",
+    "0": "allaboutengie:block/metalchest",
+    "1": "minecraft:block/mangrove_planks"
+  },
+  "render_type": "solid"
+}

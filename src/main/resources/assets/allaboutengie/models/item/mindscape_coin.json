@@ -1,0 +1,7 @@
+{
+  "parent": "allaboutengie:custom/mindscapeengiecoin",
+  "textures": {
+    "0": "allaboutengie:block/mindscapeengiecointexture",
+    "particle": "allaboutengie:item/mindscapebase"
+  }
+}

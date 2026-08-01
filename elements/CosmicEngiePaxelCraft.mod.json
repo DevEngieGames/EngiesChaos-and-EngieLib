@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "cosmicengiegamesaiot",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:CosmicEngieGamesSword"
+      },
+      {
+        "value": "CUSTOM:CosmicEngieGamesAxe"
+      },
+      {
+        "value": "CUSTOM:CosmicEngieGamesShovel"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:CosmicEngieGamesHoe"
+      },
+      {
+        "value": "CUSTOM:CosmicEngieGamesPickaxe"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:CosmicEngieGamesPaxel"
+    },
+    "name": "cosmic_engie_paxel_craft",
+    "namespace": "mod"
+  }
+}

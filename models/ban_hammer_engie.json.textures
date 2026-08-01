@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "engiebanhammer"
+      },
+      "name": "default"
+    },
+    "antimatter": {
+      "map": {
+        "0": "antimatterengiebanhammer"
+      },
+      "name": "antimatter"
+    }
+  }
+}

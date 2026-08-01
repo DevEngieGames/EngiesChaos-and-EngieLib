@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "minecraft:dark_oak_planks"
+      },
+      "name": "default"
+    },
+    "engie": {
+      "map": {
+        "0": "engiegoblet"
+      },
+      "name": "engie"
+    }
+  }
+}

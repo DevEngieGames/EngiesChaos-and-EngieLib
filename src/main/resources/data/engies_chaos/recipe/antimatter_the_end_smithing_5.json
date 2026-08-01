@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "engies_chaos:antimatter_super_doomsday_hoe",
+  "addition": "engies_chaos:antimatter_the_end_coin_block",
+  "result": {
+    "id": "engies_chaos:antimatter_the_end_hoe"
+  }
+}

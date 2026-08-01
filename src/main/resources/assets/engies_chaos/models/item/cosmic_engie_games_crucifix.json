@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/crucifixcosmicengiegamess",
+  "textures": {
+    "0": "engies_chaos:block/cosmicengiegamesscrucifix",
+    "particle": "engies_chaos:item/crucifixcosmicpixel"
+  }
+}

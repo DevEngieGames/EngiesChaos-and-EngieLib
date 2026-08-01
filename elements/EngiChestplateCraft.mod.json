@@ -1,0 +1,53 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "engichestplate",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:EngiGem"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:EngiGem"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:EngiGem"
+      },
+      {
+        "value": "CUSTOM:EngiGem"
+      },
+      {
+        "value": "CUSTOM:EngiGem"
+      },
+      {
+        "value": "CUSTOM:EngiGem"
+      },
+      {
+        "value": "CUSTOM:EngiGem"
+      },
+      {
+        "value": "CUSTOM:EngiGem"
+      },
+      {
+        "value": "CUSTOM:EngiGem"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Engis.body"
+    },
+    "name": "engi_chestplate_craft",
+    "namespace": "mod"
+  }
+}

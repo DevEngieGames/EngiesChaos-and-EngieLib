@@ -1,0 +1,112 @@
+{
+  "_fv": 79,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "engiegameshelmbase",
+    "enableBody": true,
+    "textureBody": "engiegameschestplatebase",
+    "enableLeggings": true,
+    "textureLeggings": "engiegamesleggingsbase",
+    "enableBoots": true,
+    "textureBoots": "engiegamesbootsbase",
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsArmor"
+      }
+    ],
+    "armorTextureFile": "backup_",
+    "helmetName": "Dark Matter Engies Helmet",
+    "bodyName": "Dark Matter Engies Chestplate",
+    "leggingsName": "Dark Matter Engies Leggings",
+    "bootsName": "Dark Matter Engies Boots",
+    "helmetSpecialInformation": {
+      "fixedValue": [
+        "Congratulations!"
+      ]
+    },
+    "bodySpecialInformation": {
+      "fixedValue": [
+        "Congratulations"
+      ]
+    },
+    "leggingsSpecialInformation": {
+      "fixedValue": [
+        "Congratulations"
+      ]
+    },
+    "bootsSpecialInformation": {
+      "fixedValue": [
+        "Congratulations"
+      ]
+    },
+    "helmetModelName": "Modelengiearmor",
+    "helmetModelPart": "Head",
+    "helmetModelTexture": "darkmatterengiegamesarmorlayer1.png",
+    "bodyModelName": "Modelengiearmor",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "LeftArm",
+    "armsModelPartR": "RightArm",
+    "bodyModelTexture": "darkmatterengiegamesarmorlayer1.png",
+    "leggingsModelName": "Modelengiearmor",
+    "leggingsModelPartL": "LeftLeg2",
+    "leggingsModelPartR": "RightLeg2",
+    "leggingsModelTexture": "darkmatterengiegamesarmorlayer2.png",
+    "bootsModelName": "Modelengiearmor",
+    "bootsModelPartL": "LeftLeg",
+    "bootsModelPartR": "RightLeg",
+    "bootsModelTexture": "darkmatterengiegamesarmorlayer1.png",
+    "helmetItemRenderType": 0,
+    "helmetItemCustomModelName": "Normal",
+    "bodyItemRenderType": 0,
+    "bodyItemCustomModelName": "Normal",
+    "leggingsItemRenderType": 0,
+    "leggingsItemCustomModelName": "Normal",
+    "bootsItemRenderType": 0,
+    "bootsItemCustomModelName": "Normal",
+    "helmetImmuneToFire": true,
+    "bodyImmuneToFire": true,
+    "leggingsImmuneToFire": true,
+    "bootsImmuneToFire": true,
+    "helmetGlowCondition": {
+      "fixedValue": false
+    },
+    "bodyGlowCondition": {
+      "fixedValue": false
+    },
+    "leggingsGlowCondition": {
+      "fixedValue": false
+    },
+    "bootsGlowCondition": {
+      "fixedValue": false
+    },
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "maxDamage": 925,
+    "damageValueHelmet": 925,
+    "damageValueBody": 925,
+    "damageValueLeggings": 925,
+    "damageValueBoots": 925,
+    "enchantability": 22,
+    "toughness": 170.0,
+    "knockbackResistance": 5.0,
+    "equipSound": {
+      "value": ""
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:AntimatterEngieCoin"
+      }
+    ]
+  }
+}

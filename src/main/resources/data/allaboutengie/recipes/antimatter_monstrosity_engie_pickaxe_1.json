@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "antimattermonstrosityengiepickaxe",
+  "pattern": [
+    "aaa",
+    " b ",
+    " b "
+  ],
+  "key": {
+    "a": {
+      "item": "allaboutengie:antimatter_monstrosity_engie_essence"
+    },
+    "b": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "allaboutengie:antimatter_monstrosity_engie_pickaxe",
+    "count": 1
+  }
+}

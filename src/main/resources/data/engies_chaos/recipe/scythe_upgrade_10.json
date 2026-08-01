@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "engies_chaos:monstrosity_scythe",
+  "addition": "engies_chaos:engie_upgrade",
+  "result": {
+    "id": "engies_chaos:doomsday_scythe"
+  }
+}

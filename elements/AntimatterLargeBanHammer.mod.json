@@ -1,0 +1,40 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Special",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "antimatterbanhammerpixel",
+    "customModelName": "ban_hammer_large:antimatter",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "antimatterbanhammerpixel",
+    "name": "Antimatter Large Ban Hammer",
+    "specialInformation": {
+      "fixedValue": [],
+      "name": "DescriptionOfItem"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:BanHammers"
+      }
+    ],
+    "efficiency": 4.0,
+    "attackSpeed": 2.5,
+    "enchantability": 22,
+    "damageVsEntity": 10528.0,
+    "usageCount": 42112,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [],
+    "immuneToFire": false,
+    "blockDropsTier": "STONE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "LargeBanObtainPro"
+    }
+  }
+}

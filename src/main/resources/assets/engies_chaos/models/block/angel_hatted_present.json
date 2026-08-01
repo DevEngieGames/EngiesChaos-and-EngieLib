@@ -1,0 +1,9 @@
+{
+  "parent": "engies_chaos:custom/angelhattedpresent",
+  "textures": {
+    "all": "engies_chaos:block/heh",
+    "particle": "engies_chaos:block/heh",
+    "0": "engies_chaos:block/present"
+  },
+  "render_type": "translucent"
+}

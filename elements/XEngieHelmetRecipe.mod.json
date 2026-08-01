@@ -1,0 +1,33 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:XEngieUpgradeHelmet"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:XEngieUpgradeHelmet"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:RoughianEngieGamess.helmet"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:XEngie.helmet"
+    },
+    "name": "x_engie_helmet_recipe",
+    "namespace": "mod"
+  }
+}

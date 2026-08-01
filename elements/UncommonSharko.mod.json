@@ -1,0 +1,258 @@
+{
+  "_fv": 79,
+  "_type": "livingentity",
+  "definition": {
+    "mobName": "Uncommon Sharko",
+    "mobLabel": "",
+    "mobModelName": "Modelboyo",
+    "mobModelTexture": "nothingsharko.png",
+    "transparentModelCondition": {
+      "fixedValue": false
+    },
+    "isShakingCondition": {
+      "fixedValue": false
+    },
+    "solidBoundingBox": {
+      "fixedValue": false
+    },
+    "visualScale": {
+      "fixedValue": 1.0
+    },
+    "boundingBoxScale": {
+      "fixedValue": 1.0
+    },
+    "modelLayers": [
+      {
+        "model": "Modelboyo",
+        "texture": "uncommonsharkonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "UncommonSharkoDisplayCondition"
+        }
+      },
+      {
+        "model": "Modelboyotamed",
+        "texture": "uncommonsharkonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "UncommonSharkoTDisplayCondition"
+        }
+      },
+      {
+        "model": "Modelboyosit",
+        "texture": "uncommonsharkonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "UncommonSharkoTDisplayCondition2"
+        }
+      },
+      {
+        "model": "Modelboyolay",
+        "texture": "uncommonsharkonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "UncommonSharkoTDisplayCondition3"
+        }
+      },
+      {
+        "model": "Modelboyolayonside",
+        "texture": "uncommonsharkonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "UncommonSharkoTDisplayCondition4"
+        }
+      },
+      {
+        "model": "Modelboyosleep",
+        "texture": "uncommonsharkonewtired.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "UncommonSharkoTDisplayCondition5"
+        }
+      },
+      {
+        "model": "Modelboyolayalt",
+        "texture": "uncommonsharkonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "UncommonSharkoTDisplayCondition6"
+        }
+      },
+      {
+        "model": "Modelboyosleepalt",
+        "texture": "uncommonsharkonewtired.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "UncommonSharkoTDisplayCondition7"
+        }
+      }
+    ],
+    "animations": [],
+    "modelWidth": 0.7,
+    "modelHeight": 0.9,
+    "modelShadowSize": 0.5,
+    "mountedYOffset": 0.0,
+    "hasSpawnEgg": true,
+    "spawnEggBaseColor": {
+      "value": -16725231,
+      "falpha": 0.0
+    },
+    "spawnEggDotColor": {
+      "value": -1,
+      "falpha": 0.0
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:Sharkos"
+      }
+    ],
+    "isBoss": false,
+    "bossBarColor": "PINK",
+    "bossBarType": "PROGRESS",
+    "equipmentMainHand": {
+      "value": ""
+    },
+    "equipmentOffHand": {
+      "value": ""
+    },
+    "equipmentHelmet": {
+      "value": ""
+    },
+    "equipmentBody": {
+      "value": ""
+    },
+    "equipmentLeggings": {
+      "value": ""
+    },
+    "equipmentBoots": {
+      "value": ""
+    },
+    "mobBehaviourType": "Creature",
+    "mobCreatureType": "UNDEFINED",
+    "attackStrength": 10,
+    "attackKnockback": 0.0,
+    "knockbackResistance": 0.0,
+    "movementSpeed": 0.5,
+    "stepHeight": 0.6,
+    "armorBaseValue": 10.0,
+    "trackingRange": 64,
+    "followRange": 16,
+    "health": 250,
+    "xpAmount": 0,
+    "waterMob": false,
+    "breatheUnderwater": {
+      "fixedValue": false
+    },
+    "pushedByFluids": {
+      "fixedValue": true
+    },
+    "flyingMob": false,
+    "inventorySize": 9,
+    "inventoryStackSize": 64,
+    "disableCollisions": false,
+    "ridable": false,
+    "canControlForward": false,
+    "canControlStrafe": false,
+    "immuneToFire": false,
+    "immuneToArrows": false,
+    "immuneToFallDamage": true,
+    "immuneToCactus": true,
+    "immuneToDrowning": true,
+    "immuneToLightning": false,
+    "immuneToPotions": false,
+    "immuneToPlayer": false,
+    "immuneToExplosion": false,
+    "immuneToTrident": false,
+    "immuneToAnvil": false,
+    "immuneToWither": false,
+    "immuneToDragonBreath": false,
+    "mobDrop": {
+      "value": ""
+    },
+    "livingSound": {
+      "value": ""
+    },
+    "hurtSound": {
+      "value": "entity.panda.hurt"
+    },
+    "deathSound": {
+      "value": "entity.panda.death"
+    },
+    "stepSound": {
+      "value": ""
+    },
+    "raidCelebrationSound": {
+      "value": ""
+    },
+    "entityDataEntries": [
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "SharkoState",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "name": "AlternateState",
+        "type": "logic",
+        "value": false
+      }
+    ],
+    "onRightClickedOn": {
+      "name": "UncommonSharkoRightClickedOnEntity"
+    },
+    "onMobTickUpdate": {
+      "name": "UncommonSharkoOnEntityTickUpdate"
+    },
+    "hasAI": true,
+    "aiBase": "(none)",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"protect_owner\"><field name=\"condition\">UncommonSharkoMoveAroundCheck,UncommonSharkoMoveAroundCheck</field><next><block type=\"fight_as_owner\"><field name=\"condition\">UncommonSharkoMoveAroundCheck,UncommonSharkoMoveAroundCheck</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">UncommonSharkoMoveAroundCheck,UncommonSharkoMoveAroundCheck</field><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">TRUE</field><field name=\"condition\">UncommonSharkoMoveAroundCheck,UncommonSharkoMoveAroundCheck</field><next><block type=\"follow_owner\"><field name=\"speed\">1</field><field name=\"min_distance\">10</field><field name=\"max_distance\">2</field><field name=\"condition\">UncommonSharkoMoveAroundCheck,UncommonSharkoMoveAroundCheck</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">UncommonSharkoMoveAroundCheck,UncommonSharkoMoveAroundCheck</field><next><block type=\"breed\"><field name=\"speed\">1</field><field name=\"condition\">UncommonSharkoMoveAroundCheck,null</field><next><block type=\"watch_closest_entity\"><field name=\"entity\">EntityPlayer</field><field name=\"radius\">12</field><field name=\"condition\">UncommonSharkoSleepCheck,UncommonSharkoSleepCheck</field><next><block type=\"watch_closest_entity\"><field name=\"entity\">EntityPlayerMP</field><field name=\"radius\">12</field><field name=\"condition\">UncommonSharkoSleepCheck,UncommonSharkoSleepCheck</field><next><block type=\"look_around\"><field name=\"condition\">UncommonSharkoSleepCheck,UncommonSharkoSleepCheck</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
+    "breedable": true,
+    "tameable": true,
+    "breedTriggerItems": [
+      {
+        "value": "Items.COOKIE"
+      }
+    ],
+    "ranged": false,
+    "rangedAttackItem": {
+      "value": ""
+    },
+    "rangedItemType": "Default item",
+    "rangedAttackInterval": 20,
+    "rangedAttackRadius": 10.0,
+    "spawnThisMob": true,
+    "doesDespawnWhenIdle": false,
+    "spawningCondition": {
+      "name": "AprilFoolsDespawning"
+    },
+    "spawningProbability": 30,
+    "mobSpawningType": "creature",
+    "minNumberOfMobsPerGroup": 1,
+    "maxNumberOfMobsPerGroup": 4,
+    "restrictionBiomes": [],
+    "spawnInDungeons": false,
+    "raidSpawnsCount": [
+      4,
+      3,
+      3,
+      4,
+      4,
+      4,
+      2
+    ],
+    "sensitiveToVibration": false,
+    "vibrationalEvents": [],
+    "vibrationSensitivityRadius": {
+      "fixedValue": 7.0
+    }
+  }
+}

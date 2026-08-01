@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "darkmatterengiegamestesseracttoblock",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:DarkMatterEngieGamesTesseract"
+      },
+      {
+        "value": "CUSTOM:DarkMatterEngieGamesTesseract"
+      },
+      {
+        "value": "CUSTOM:DarkMatterEngieGamesTesseract"
+      },
+      {
+        "value": "CUSTOM:DarkMatterEngieGamesTesseract"
+      },
+      {
+        "value": "CUSTOM:DarkMatterEngieGamesTesseract"
+      },
+      {
+        "value": "CUSTOM:DarkMatterEngieGamesTesseract"
+      },
+      {
+        "value": "CUSTOM:DarkMatterEngieGamesTesseract"
+      },
+      {
+        "value": "CUSTOM:DarkMatterEngieGamesTesseract"
+      },
+      {
+        "value": "CUSTOM:DarkMatterEngieGamesTesseract"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:DarkMatterRoughianEngieGamesCoinBlock"
+    },
+    "name": "dark_matter_engie_games_tesseract_to_block",
+    "namespace": "mod"
+  }
+}

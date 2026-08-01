@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "darkmatterenragedengieleggings",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:DarkMatterEnragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterEnragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterEnragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterEnragedEngieEssence"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:DarkMatterEnragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterEnragedEngieEssence"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:DarkMatterEnragedEngieEssence"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:DarkMatterEnragedEngies.legs"
+    },
+    "name": "dark_matter_enraged_engie_leggings_1",
+    "namespace": "mod"
+  }
+}

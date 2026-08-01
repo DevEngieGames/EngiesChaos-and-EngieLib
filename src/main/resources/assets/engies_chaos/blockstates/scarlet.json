@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "engies_chaos:block/scarlet"
+    },
+    "facing=east": {
+      "model": "engies_chaos:block/scarlet",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "engies_chaos:block/scarlet",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "engies_chaos:block/scarlet",
+      "y": 270
+    }
+  }
+}

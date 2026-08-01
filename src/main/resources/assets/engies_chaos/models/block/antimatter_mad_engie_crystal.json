@@ -1,0 +1,11 @@
+{
+  "parent": "engies_chaos:custom/crystalsmallantimatter3d",
+  "textures": {
+    "all": "engies_chaos:block/antimattermadcrystal",
+    "particle": "engies_chaos:block/antimattermadcrystal",
+    "0": "engies_chaos:block/newcrystalantimatter",
+    "1": "engies_chaos:block/newcrystalmainmad",
+    "2": "engies_chaos:block/newcrystaloverlaymad"
+  },
+  "render_type": "cutout"
+}

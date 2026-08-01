@@ -1,0 +1,39 @@
+{
+  "description": {
+    "translate": "enchantment.engies_chaos.engies_true_blessing"
+  },
+  "supported_items": "#allaboutengie:enchantable/engiestrueblessing",
+  "weight": 1,
+  "max_level": 50,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 10
+  },
+  "max_cost": {
+    "base": 6,
+    "per_level_above_first": 10
+  },
+  "anvil_cost": 1,
+  "slots": [
+    "any"
+  ],
+  "exclusive_set": [
+    "binding_curse",
+    "silk_touch",
+    "vanishing_curse"
+  ],
+  "effects": {
+    "minecraft:damage_protection": [
+      {
+        "effect": {
+          "type": "minecraft:add",
+          "value": {
+            "type": "minecraft:linear",
+            "base": 50,
+            "per_level_above_first": 50
+          }
+        }
+      }
+    ]
+  }
+}

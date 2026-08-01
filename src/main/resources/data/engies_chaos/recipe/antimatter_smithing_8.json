@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "engies_chaos:super_dooms_day_coin",
+  "addition": "engies_chaos:antimatter",
+  "result": {
+    "id": "engies_chaos:antimatter_super_doomsday_coin"
+  }
+}

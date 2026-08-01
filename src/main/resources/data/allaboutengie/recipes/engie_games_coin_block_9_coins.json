@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "engiegamecoinblocktocoins",
+  "ingredients": [
+    {
+      "item": "allaboutengie:engie_games_coin_block"
+    }
+  ],
+  "result": {
+    "item": "allaboutengie:engie_games_coin",
+    "count": 9
+  }
+}

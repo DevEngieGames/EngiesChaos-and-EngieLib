@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "doomsdayengieaiot",
+  "category": "misc",
+  "ingredients": [
+    "engies_chaos:antimatter_doomsday_sword",
+    "engies_chaos:antimatter_doomsday_axe",
+    "engies_chaos:antimatter_doomsday_shovel",
+    "engies_chaos:antimatter_doomsday_hoe",
+    "engies_chaos:antimatter_doomsday_pickaxe"
+  ],
+  "result": {
+    "id": "engies_chaos:antimatter_doomsday_aiot",
+    "count": 1
+  }
+}

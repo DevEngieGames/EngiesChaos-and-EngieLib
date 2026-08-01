@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "antimattermonstrositybanhammer",
+  "pattern": [
+    "aba",
+    "cdc",
+    " e "
+  ],
+  "key": {
+    "a": {
+      "item": "allaboutengie:antimatter_biblically_accurate_block"
+    },
+    "b": {
+      "item": "allaboutengie:antimatter_outraged_engie_block"
+    },
+    "c": {
+      "item": "allaboutengie:antimatter_monstrosity_engie_essence"
+    },
+    "d": {
+      "item": "allaboutengie:antimatter_biblically_accurate_engie_ban_hammer"
+    },
+    "e": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "result": {
+    "item": "allaboutengie:antimatter_monstrosity_ban_hammer",
+    "count": 1
+  }
+}

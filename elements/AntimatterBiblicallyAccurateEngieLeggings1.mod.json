@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "antimatterbiblicallyaccurateengieleggings",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:AntimatterBiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterBiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterBiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterBiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:AntimatterBiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterBiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:AntimatterBiblicallyAccurateEngieEssence"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:AntimatterBiblicallyAccurateEngies.legs"
+    },
+    "name": "antimatter_biblically_accurate_engie_leggings_1",
+    "namespace": "mod"
+  }
+}

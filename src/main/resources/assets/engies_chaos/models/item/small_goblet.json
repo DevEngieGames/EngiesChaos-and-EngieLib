@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/smallgoblet",
+  "textures": {
+    "0": "minecraft:block/spruce_planks",
+    "particle": "engies_chaos:item/reaaeicon"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "darkmattercosmicengiegamescointoblock",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:DarkMatterCosmicEngieCoin"
+      },
+      {
+        "value": "CUSTOM:DarkMatterCosmicEngieCoin"
+      },
+      {
+        "value": "CUSTOM:DarkMatterCosmicEngieCoin"
+      },
+      {
+        "value": "CUSTOM:DarkMatterCosmicEngieCoin"
+      },
+      {
+        "value": "CUSTOM:DarkMatterCosmicEngieCoin"
+      },
+      {
+        "value": "CUSTOM:DarkMatterCosmicEngieCoin"
+      },
+      {
+        "value": "CUSTOM:DarkMatterCosmicEngieCoin"
+      },
+      {
+        "value": "CUSTOM:DarkMatterCosmicEngieCoin"
+      },
+      {
+        "value": "CUSTOM:DarkMatterCosmicEngieCoin"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:DarkMatterCosmicEngieGamesCoinBlock"
+    },
+    "name": "dark_matter_cosmic_engie_games_coin_to_block",
+    "namespace": "mod"
+  }
+}

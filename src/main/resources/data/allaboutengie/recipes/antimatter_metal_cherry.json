@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "crafting",
+  "pattern": [
+    "a a",
+    "bab",
+    "ccc"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:iron_ingot"
+    },
+    "b": {
+      "item": "allaboutengie:antimatter_engie_gem"
+    },
+    "c": {
+      "item": "minecraft:air"
+    }
+  },
+  "result": {
+    "item": "allaboutengie:antimatter_metal_chest_cherry",
+    "count": 1
+  }
+}

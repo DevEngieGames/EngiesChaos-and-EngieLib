@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "engies_chaos:block/antimatter_ore",
+    "up": "engies_chaos:block/antimatter_ore",
+    "north": "engies_chaos:block/antimatter_ore",
+    "east": "engies_chaos:block/antimatter_ore",
+    "south": "engies_chaos:block/antimatter_ore",
+    "west": "engies_chaos:block/antimatter_ore",
+    "particle": "engies_chaos:block/antimatter_ore"
+  },
+  "render_type": "solid"
+}

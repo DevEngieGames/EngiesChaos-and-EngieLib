@@ -1,0 +1,43 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "antimatterengiegames_sword",
+    "customModelName": "antimatterengiegames_sword_3d:default",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "antimatterengiegames_sword",
+    "name": "Antimatter EngieGames' Sword",
+    "specialInformation": {
+      "fixedValue": [
+        "Looks like a crescendo honestly."
+      ],
+      "name": "DescriptionOfItem"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsItems"
+      }
+    ],
+    "efficiency": 96.0,
+    "attackSpeed": 1.0,
+    "enchantability": 22,
+    "damageVsEntity": 35000.0,
+    "usageCount": 128000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:AntimatterEngieCoin"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

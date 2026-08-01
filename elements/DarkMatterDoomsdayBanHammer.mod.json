@@ -1,0 +1,46 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Special",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "darkmatterdoomsdaybanhammerpixel",
+    "customModelName": "ban_hammer_doomsday:dark",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "darkmatterdoomsdaybanhammerpixel",
+    "name": "Dark Matter Doomsday Ban Hammer",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:BanHammers"
+      }
+    ],
+    "efficiency": 4.0,
+    "attackSpeed": 1.0,
+    "enchantability": 22,
+    "damageVsEntity": 12300.0,
+    "usageCount": 83000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:DarkMatterDoomsDayCoin"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "STONE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onEntityHitWith": {
+      "name": "BanHammerParticleSpawn"
+    },
+    "onItemInInventoryTick": {
+      "name": "DoomsdayObtainPro"
+    }
+  }
+}

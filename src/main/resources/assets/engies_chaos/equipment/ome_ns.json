@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "engies_chaos:ome_ns"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "engies_chaos:ome_ns"
+      }
+    ]
+  }
+}

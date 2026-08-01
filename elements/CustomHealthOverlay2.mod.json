@@ -1,0 +1,67 @@
+{
+  "_fv": 79,
+  "_type": "overlay",
+  "definition": {
+    "priority": "HIGH",
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_true_hardcore_lives_check",
+          "text": {
+            "fixedValue": "",
+            "name": "TrueHardcoreLivesCheck"
+          },
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 7,
+          "y": 122,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "truehardcorelivesover1.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "TrueHardcoreLivesCheck2"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 0,
+          "y": 113,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "truehardcorelives1andunder.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "TrueHardcoreLivesCheck3"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 0,
+          "y": 113,
+          "locked": false
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "displayCondition": {
+      "name": "TrueHardcoreCheck"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 5,
+      "snapOnGrid": false
+    }
+  }
+}

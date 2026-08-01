@@ -1,0 +1,10 @@
+package engiegames.engies_chaos.item;
+
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.Item;
+
+public class DiamondEnragedEngiePlushItem extends Item {
+	public DiamondEnragedEngiePlushItem(Item.Properties properties) {
+		super(properties.rarity(Rarity.RARE));
+	}
+}

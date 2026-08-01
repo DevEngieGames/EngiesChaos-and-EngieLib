@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/oldenragedplush",
+  "textures": {
+    "0": "engies_chaos:block/oldenragedengie",
+    "particle": "engies_chaos:item/volc"
+  }
+}

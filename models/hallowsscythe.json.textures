@@ -1,0 +1,52 @@
+{
+  "mappings": {
+    "gold": {
+      "map": {
+        "0": "pixelscythehallowgoldnew",
+        "1": "scythespikes1gold",
+        "2": "scythespikes2gold"
+      },
+      "name": "gold"
+    },
+    "default": {
+      "map": {
+        "0": "pixelscythehallownew",
+        "1": "scythespikes1",
+        "2": "scythespikes2"
+      },
+      "name": "default"
+    },
+    "engie": {
+      "map": {
+        "0": "pixelscythehallowengienew",
+        "1": "scythespikes1engie",
+        "2": "scythespikes2engie"
+      },
+      "name": "engie"
+    },
+    "defaultdark": {
+      "map": {
+        "0": "pixeldarkmatterscythehallow",
+        "1": "scythespikes1",
+        "2": "scythespikes2"
+      },
+      "name": "defaultdark"
+    },
+    "golddark": {
+      "map": {
+        "0": "pixeldarkmatterscythegold",
+        "1": "scythespikes1gold",
+        "2": "scythespikes2gold"
+      },
+      "name": "golddark"
+    },
+    "engiedark": {
+      "map": {
+        "0": "pixeldarkmatterscytheengie",
+        "1": "scythespikes1engie",
+        "2": "scythespikes2engie"
+      },
+      "name": "engiedark"
+    }
+  }
+}

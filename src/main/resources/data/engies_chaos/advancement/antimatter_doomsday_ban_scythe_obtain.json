@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "engies_chaos:antimatter_doomsday_ban_hammer"
+    },
+    "title": {
+      "translate": "advancements.antimatter_doomsday_ban_scythe_obtain.title"
+    },
+    "description": {
+      "translate": "advancements.antimatter_doomsday_ban_scythe_obtain.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "antimatter_doomsday_ban_scythe_obtain_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 55
+  },
+  "parent": "engies_chaos:antimatter_monstrosity_ban_obtain"
+}

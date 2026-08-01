@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "engiegamesaiot",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:EngieGamesSword"
+      },
+      {
+        "value": "CUSTOM:EngieGamesAxe"
+      },
+      {
+        "value": "CUSTOM:EngieGamesShovel"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:EngieGamesHoe"
+      },
+      {
+        "value": "CUSTOM:EngieGamesPickaxe"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:EngieGamesPaxel"
+    },
+    "name": "engie_games_paxel_craft",
+    "namespace": "mod"
+  }
+}

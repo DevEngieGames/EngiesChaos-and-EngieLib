@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/reallaboutengieplaque",
+  "textures": {
+    "0": "engies_chaos:block/reaaeicon",
+    "particle": "engies_chaos:item/reaaeicon"
+  }
+}

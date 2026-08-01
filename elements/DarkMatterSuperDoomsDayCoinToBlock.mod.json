@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "darkmattersuperdoomsdaycointoblock",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:DarkMatterSuperDoomsDayCoin"
+      },
+      {
+        "value": "CUSTOM:DarkMatterSuperDoomsDayCoin"
+      },
+      {
+        "value": "CUSTOM:DarkMatterSuperDoomsDayCoin"
+      },
+      {
+        "value": "CUSTOM:DarkMatterSuperDoomsDayCoin"
+      },
+      {
+        "value": "CUSTOM:DarkMatterSuperDoomsDayCoin"
+      },
+      {
+        "value": "CUSTOM:DarkMatterSuperDoomsDayCoin"
+      },
+      {
+        "value": "CUSTOM:DarkMatterSuperDoomsDayCoin"
+      },
+      {
+        "value": "CUSTOM:DarkMatterSuperDoomsDayCoin"
+      },
+      {
+        "value": "CUSTOM:DarkMatterSuperDoomsDayCoin"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:DarkMatterSuperDoomsDayCoinBlock"
+    },
+    "name": "dark_matter_super_dooms_day_coin_to_block",
+    "namespace": "mod"
+  }
+}

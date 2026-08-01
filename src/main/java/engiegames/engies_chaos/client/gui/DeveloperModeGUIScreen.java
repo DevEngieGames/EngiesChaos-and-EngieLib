@@ -1,0 +1,253 @@
+package engiegames.engies_chaos.client.gui;
+
+import net.neoforged.neoforge.network.PacketDistributor;
+
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.Component;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.components.EditBox;
+import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.Minecraft;
+
+import engiegames.engies_chaos.world.inventory.DeveloperModeGUIMenu;
+import engiegames.engies_chaos.procedures.StunRadiusGetForDevGUIProcedure;
+import engiegames.engies_chaos.procedures.RemovePlayerImmunityShowProcedure;
+import engiegames.engies_chaos.procedures.GivePlayerImmunityShowProcedure;
+import engiegames.engies_chaos.network.DeveloperModeGUIButtonMessage;
+import engiegames.engies_chaos.init.EngiesChaosModScreens;
+
+import com.mojang.blaze3d.systems.RenderSystem;
+
+public class DeveloperModeGUIScreen extends AbstractContainerScreen<DeveloperModeGUIMenu> implements EngiesChaosModScreens.ScreenAccessor {
+	private final Level world;
+	private final int x, y, z;
+	private final Player entity;
+	private boolean menuStateUpdateActive = false;
+	EditBox statclocknum;
+	EditBox number;
+	Button button_raise;
+	Button button_lower;
+	Button button_heal_self;
+	Button button_set_difficulty;
+	Button button_duplicate_item;
+	Button button_give_immunity;
+	Button button_give_immunity1;
+	Button button_kill_mobs_nearby;
+	Button button_stun_nearby_mobs;
+	Button button_toggle_special_health;
+	Button button_confirm_stat_clock_number_count;
+
+	public DeveloperModeGUIScreen(DeveloperModeGUIMenu container, Inventory inventory, Component text) {
+		super(container, inventory, text);
+		this.world = container.world;
+		this.x = container.x;
+		this.y = container.y;
+		this.z = container.z;
+		this.entity = container.entity;
+		this.imageWidth = 245;
+		this.imageHeight = 240;
+	}
+
+	@Override
+	public void updateMenuState(int elementType, String name, Object elementState) {
+		menuStateUpdateActive = true;
+		if (elementType == 0 && elementState instanceof String stringState) {
+			if (name.equals("statclocknum"))
+				statclocknum.setValue(stringState);
+			else if (name.equals("number"))
+				number.setValue(stringState);
+		}
+		menuStateUpdateActive = false;
+	}
+
+	private static final ResourceLocation texture = ResourceLocation.parse("engies_chaos:textures/screens/developer_mode_gui.png");
+
+	@Override
+	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+		super.render(guiGraphics, mouseX, mouseY, partialTicks);
+		statclocknum.render(guiGraphics, mouseX, mouseY, partialTicks);
+		number.render(guiGraphics, mouseX, mouseY, partialTicks);
+		boolean customTooltipShown = false;
+		if (mouseX > leftPos + 128 && mouseX < leftPos + 152 && mouseY > topPos + 8 && mouseY < topPos + 32) {
+			guiGraphics.renderTooltip(font, Component.translatable("gui.engies_chaos.developer_mode_gui.tooltip_max_50525"), mouseX, mouseY);
+			customTooltipShown = true;
+		}
+		if (mouseX > leftPos + 152 && mouseX < leftPos + 176 && mouseY > topPos + 8 && mouseY < topPos + 32) {
+			guiGraphics.renderTooltip(font, Component.translatable("gui.engies_chaos.developer_mode_gui.tooltip_max_101050"), mouseX, mouseY);
+			customTooltipShown = true;
+		}
+		if (mouseX > leftPos + 176 && mouseX < leftPos + 200 && mouseY > topPos + 8 && mouseY < topPos + 32) {
+			guiGraphics.renderTooltip(font, Component.translatable("gui.engies_chaos.developer_mode_gui.tooltip_max_151575"), mouseX, mouseY);
+			customTooltipShown = true;
+		}
+		if (mouseX > leftPos + 206 && mouseX < leftPos + 230 && mouseY > topPos + 53 && mouseY < topPos + 77) {
+			guiGraphics.renderTooltip(font, Component.translatable("gui.engies_chaos.developer_mode_gui.tooltip_input_item_here"), mouseX, mouseY);
+			customTooltipShown = true;
+		}
+		if (!customTooltipShown)
+			this.renderTooltip(guiGraphics, mouseX, mouseY);
+	}
+
+	@Override
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
+		RenderSystem.setShaderColor(1, 1, 1, 1);
+		RenderSystem.enableBlend();
+		RenderSystem.defaultBlendFunc();
+		guiGraphics.blit(RenderType::guiTextured, texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		RenderSystem.disableBlend();
+	}
+
+	@Override
+	public boolean keyPressed(int key, int b, int c) {
+		if (key == 256) {
+			this.minecraft.player.closeContainer();
+			return true;
+		}
+		if (statclocknum.isFocused())
+			return statclocknum.keyPressed(key, b, c);
+		if (number.isFocused())
+			return number.keyPressed(key, b, c);
+		return super.keyPressed(key, b, c);
+	}
+
+	@Override
+	public void resize(Minecraft minecraft, int width, int height) {
+		String statclocknumValue = statclocknum.getValue();
+		String numberValue = number.getValue();
+		super.resize(minecraft, width, height);
+		statclocknum.setValue(statclocknumValue);
+		number.setValue(numberValue);
+	}
+
+	@Override
+	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+		guiGraphics.drawString(this.font, Component.translatable("gui.engies_chaos.developer_mode_gui.label_devgui"), 4, 1, -16777216, false);
+		guiGraphics.drawString(this.font, StunRadiusGetForDevGUIProcedure.execute(world), 117, 123, -16777216, false);
+	}
+
+	@Override
+	public void init() {
+		super.init();
+		statclocknum = new EditBox(this.font, this.leftPos + 9, this.topPos + 11, 118, 18, Component.translatable("gui.engies_chaos.developer_mode_gui.statclocknum"));
+		statclocknum.setMaxLength(8192);
+		statclocknum.setResponder(content -> {
+			if (!menuStateUpdateActive)
+				menu.sendMenuStateUpdate(entity, 0, "statclocknum", content, false);
+		});
+		statclocknum.setHint(Component.translatable("gui.engies_chaos.developer_mode_gui.statclocknum"));
+		this.addWidget(this.statclocknum);
+		number = new EditBox(this.font, this.leftPos + 4, this.topPos + 99, 118, 18, Component.translatable("gui.engies_chaos.developer_mode_gui.number"));
+		number.setMaxLength(8192);
+		number.setResponder(content -> {
+			if (!menuStateUpdateActive)
+				menu.sendMenuStateUpdate(entity, 0, "number", content, false);
+		});
+		number.setHint(Component.translatable("gui.engies_chaos.developer_mode_gui.number"));
+		this.addWidget(this.number);
+		button_raise = Button.builder(Component.translatable("gui.engies_chaos.developer_mode_gui.button_raise"), e -> {
+			int x = DeveloperModeGUIScreen.this.x;
+			int y = DeveloperModeGUIScreen.this.y;
+			if (true) {
+				PacketDistributor.sendToServer(new DeveloperModeGUIButtonMessage(0, x, y, z));
+				DeveloperModeGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
+			}
+		}).bounds(this.leftPos + 117, this.topPos + 140, 51, 20).build();
+		this.addRenderableWidget(button_raise);
+		button_lower = Button.builder(Component.translatable("gui.engies_chaos.developer_mode_gui.button_lower"), e -> {
+			int x = DeveloperModeGUIScreen.this.x;
+			int y = DeveloperModeGUIScreen.this.y;
+			if (true) {
+				PacketDistributor.sendToServer(new DeveloperModeGUIButtonMessage(1, x, y, z));
+				DeveloperModeGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
+			}
+		}).bounds(this.leftPos + 191, this.topPos + 140, 51, 20).build();
+		this.addRenderableWidget(button_lower);
+		button_heal_self = Button.builder(Component.translatable("gui.engies_chaos.developer_mode_gui.button_heal_self"), e -> {
+			int x = DeveloperModeGUIScreen.this.x;
+			int y = DeveloperModeGUIScreen.this.y;
+			if (true) {
+				PacketDistributor.sendToServer(new DeveloperModeGUIButtonMessage(2, x, y, z));
+				DeveloperModeGUIButtonMessage.handleButtonAction(entity, 2, x, y, z);
+			}
+		}).bounds(this.leftPos + 6, this.topPos + 55, 77, 20).build();
+		this.addRenderableWidget(button_heal_self);
+		button_set_difficulty = Button.builder(Component.translatable("gui.engies_chaos.developer_mode_gui.button_set_difficulty"), e -> {
+			int x = DeveloperModeGUIScreen.this.x;
+			int y = DeveloperModeGUIScreen.this.y;
+			if (true) {
+				PacketDistributor.sendToServer(new DeveloperModeGUIButtonMessage(3, x, y, z));
+				DeveloperModeGUIButtonMessage.handleButtonAction(entity, 3, x, y, z);
+			}
+		}).bounds(this.leftPos + 139, this.topPos + 98, 103, 20).build();
+		this.addRenderableWidget(button_set_difficulty);
+		button_duplicate_item = Button.builder(Component.translatable("gui.engies_chaos.developer_mode_gui.button_duplicate_item"), e -> {
+			int x = DeveloperModeGUIScreen.this.x;
+			int y = DeveloperModeGUIScreen.this.y;
+			if (true) {
+				PacketDistributor.sendToServer(new DeveloperModeGUIButtonMessage(4, x, y, z));
+				DeveloperModeGUIButtonMessage.handleButtonAction(entity, 4, x, y, z);
+			}
+		}).bounds(this.leftPos + 97, this.topPos + 55, 103, 20).build();
+		this.addRenderableWidget(button_duplicate_item);
+		button_give_immunity = Button.builder(Component.translatable("gui.engies_chaos.developer_mode_gui.button_give_immunity"), e -> {
+			int x = DeveloperModeGUIScreen.this.x;
+			int y = DeveloperModeGUIScreen.this.y;
+			if (GivePlayerImmunityShowProcedure.execute(entity)) {
+				PacketDistributor.sendToServer(new DeveloperModeGUIButtonMessage(5, x, y, z));
+				DeveloperModeGUIButtonMessage.handleButtonAction(entity, 5, x, y, z);
+			}
+		}).bounds(this.leftPos + 3, this.topPos + 77, 98, 20).build();
+		this.addRenderableWidget(button_give_immunity);
+		button_give_immunity1 = Button.builder(Component.translatable("gui.engies_chaos.developer_mode_gui.button_give_immunity1"), e -> {
+			int x = DeveloperModeGUIScreen.this.x;
+			int y = DeveloperModeGUIScreen.this.y;
+			if (RemovePlayerImmunityShowProcedure.execute(entity)) {
+				PacketDistributor.sendToServer(new DeveloperModeGUIButtonMessage(6, x, y, z));
+				DeveloperModeGUIButtonMessage.handleButtonAction(entity, 6, x, y, z);
+			}
+		}).bounds(this.leftPos + 3, this.topPos + 77, 98, 20).build();
+		this.addRenderableWidget(button_give_immunity1);
+		button_kill_mobs_nearby = Button.builder(Component.translatable("gui.engies_chaos.developer_mode_gui.button_kill_mobs_nearby"), e -> {
+		}).bounds(this.leftPos + 3, this.topPos + 140, 113, 20).build();
+		this.addRenderableWidget(button_kill_mobs_nearby);
+		button_stun_nearby_mobs = Button.builder(Component.translatable("gui.engies_chaos.developer_mode_gui.button_stun_nearby_mobs"), e -> {
+			int x = DeveloperModeGUIScreen.this.x;
+			int y = DeveloperModeGUIScreen.this.y;
+			if (true) {
+				PacketDistributor.sendToServer(new DeveloperModeGUIButtonMessage(8, x, y, z));
+				DeveloperModeGUIButtonMessage.handleButtonAction(entity, 8, x, y, z);
+			}
+		}).bounds(this.leftPos + 3, this.topPos + 119, 113, 20).build();
+		this.addRenderableWidget(button_stun_nearby_mobs);
+		button_toggle_special_health = Button.builder(Component.translatable("gui.engies_chaos.developer_mode_gui.button_toggle_special_health"), e -> {
+			int x = DeveloperModeGUIScreen.this.x;
+			int y = DeveloperModeGUIScreen.this.y;
+			if (true) {
+				PacketDistributor.sendToServer(new DeveloperModeGUIButtonMessage(9, x, y, z));
+				DeveloperModeGUIButtonMessage.handleButtonAction(entity, 9, x, y, z);
+			}
+		}).bounds(this.leftPos + 102, this.topPos + 77, 140, 20).build();
+		this.addRenderableWidget(button_toggle_special_health);
+		button_confirm_stat_clock_number_count = Button.builder(Component.translatable("gui.engies_chaos.developer_mode_gui.button_confirm_stat_clock_number_count"), e -> {
+			int x = DeveloperModeGUIScreen.this.x;
+			int y = DeveloperModeGUIScreen.this.y;
+			if (true) {
+				PacketDistributor.sendToServer(new DeveloperModeGUIButtonMessage(10, x, y, z));
+				DeveloperModeGUIButtonMessage.handleButtonAction(entity, 10, x, y, z);
+			}
+		}).bounds(this.leftPos + 8, this.topPos + 32, 192, 20).build();
+		this.addRenderableWidget(button_confirm_stat_clock_number_count);
+	}
+
+	@Override
+	protected void containerTick() {
+		super.containerTick();
+		this.button_give_immunity.visible = GivePlayerImmunityShowProcedure.execute(entity);
+		this.button_give_immunity1.visible = RemovePlayerImmunityShowProcedure.execute(entity);
+	}
+}

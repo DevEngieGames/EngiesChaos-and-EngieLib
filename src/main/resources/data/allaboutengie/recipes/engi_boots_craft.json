@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "engiboots",
+  "pattern": [
+    "a a",
+    "a a"
+  ],
+  "key": {
+    "a": {
+      "item": "allaboutengie:engi_gem"
+    }
+  },
+  "result": {
+    "item": "allaboutengie:engis_boots",
+    "count": 1
+  }
+}

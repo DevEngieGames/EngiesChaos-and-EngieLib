@@ -1,0 +1,29 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:BiblicallyAccurateEngies.helmet"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:MonstrosityEngieBlock"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:MonstrosityEngies.helmet"
+    },
+    "name": "monstrosity_smithing_5",
+    "namespace": "mod"
+  }
+}

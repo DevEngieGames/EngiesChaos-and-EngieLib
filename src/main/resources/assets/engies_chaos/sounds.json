@@ -1,0 +1,205 @@
+{
+  "byebyethere": {
+    "subtitle": "subtitles.byebyethere",
+    "sounds": [
+      {
+        "name": "engies_chaos:tctop",
+        "stream": true
+      }
+    ]
+  },
+  "doomsday_start": {
+    "subtitle": "subtitles.doomsday_start",
+    "sounds": [
+      {
+        "name": "engies_chaos:doomsdayphase1",
+        "stream": true
+      }
+    ]
+  },
+  "hotlinemiami2-run": {
+    "subtitle": "subtitles.hotlinemiami2-run",
+    "sounds": [
+      {
+        "name": "engies_chaos:hotline-miami-2-run",
+        "stream": true
+      }
+    ]
+  },
+  "riftopens": {
+    "subtitle": "subtitles.riftopens",
+    "sounds": [
+      {
+        "name": "engies_chaos:portalopen",
+        "stream": false
+      }
+    ]
+  },
+  "churchbells": {
+    "sounds": [
+      {
+        "name": "engies_chaos:churchbells",
+        "stream": false
+      }
+    ]
+  },
+  "churchbells2": {
+    "sounds": [
+      {
+        "name": "engies_chaos:churchbells2",
+        "stream": false
+      }
+    ]
+  },
+  "playerstunmobs": {
+    "subtitle": "subtitles.playerstunmobs",
+    "sounds": [
+      {
+        "name": "engies_chaos:bass",
+        "stream": false
+      }
+    ]
+  },
+  "playerstunabiloffcooldown": {
+    "subtitle": "subtitles.playerstunabiloffcooldown",
+    "sounds": [
+      {
+        "name": "engies_chaos:snap",
+        "stream": false
+      }
+    ]
+  },
+  "missile_explosion": {
+    "sounds": [
+      {
+        "name": "engies_chaos:explosionmissile",
+        "stream": false
+      }
+    ]
+  },
+  "engieswrath_eerie": {
+    "subtitle": "subtitles.engieswrath_eerie",
+    "sounds": [
+      {
+        "name": "engies_chaos:engieswratheerie",
+        "stream": false
+      }
+    ]
+  },
+  "doomsday_eerie": {
+    "sounds": [
+      {
+        "name": "engies_chaos:doomsdayeeriefadein",
+        "stream": false
+      }
+    ]
+  },
+  "nightmare_footstep": {
+    "subtitle": "subtitles.nightmare_footstep",
+    "sounds": [
+      {
+        "name": "engies_chaos:nightmarefootstep",
+        "stream": false
+      }
+    ]
+  },
+  "missile_spawn": {
+    "sounds": [
+      {
+        "name": "engies_chaos:missilewarning",
+        "stream": false
+      }
+    ]
+  },
+  "lightning_strike": {
+    "subtitle": "subtitles.lightning_strike",
+    "sounds": [
+      {
+        "name": "engies_chaos:lightning_bolt",
+        "stream": false
+      },
+      {
+        "name": "engies_chaos:lightning_strike",
+        "stream": false
+      }
+    ]
+  },
+  "extreme_lightning_strike": {
+    "subtitle": "subtitles.extreme_lightning_strike",
+    "sounds": [
+      {
+        "name": "engies_chaos:extremeddaylightningvar1",
+        "stream": false
+      },
+      {
+        "name": "engies_chaos:extremeddaylightningvar2",
+        "stream": false
+      }
+    ]
+  },
+  "ddaylightning": {
+    "subtitle": "subtitles.ddaylightning",
+    "sounds": [
+      {
+        "name": "engies_chaos:ddaylightning",
+        "stream": false
+      }
+    ]
+  },
+  "dialoguepromt": {
+    "sounds": [
+      {
+        "name": "engies_chaos:forecastnoti",
+        "stream": false
+      }
+    ]
+  },
+  "gobletheal": {
+    "sounds": [
+      {
+        "name": "engies_chaos:gobletheal",
+        "stream": false
+      }
+    ]
+  },
+  "avalanche": {
+    "sounds": [
+      {
+        "name": "engies_chaos:avalanche",
+        "stream": false
+      }
+    ]
+  },
+  "alarmfordday": {
+    "sounds": [
+      {
+        "name": "engies_chaos:alarmfordday",
+        "stream": true
+      }
+    ]
+  },
+  "noneshallive": {
+    "sounds": [
+      {
+        "name": "engies_chaos:noneshallive",
+        "stream": true
+      }
+    ]
+  },
+  "intobattle": {
+    "sounds": [
+      {
+        "name": "engies_chaos:intobattle",
+        "stream": true
+      }
+    ]
+  },
+  "doomsdaydisasterreveal": {
+    "sounds": [
+      {
+        "name": "engies_chaos:orchestrahitbnochoir",
+        "stream": false
+      }
+    ]
+  }
+}

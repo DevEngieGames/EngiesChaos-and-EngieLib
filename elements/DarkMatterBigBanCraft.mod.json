@@ -1,0 +1,53 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "darkmatterbigbanhammer",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:DarkMatterBanHammer"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "EQUIPMENT",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:DarkMatterAngryEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterMadEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterAngryEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterEnragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterBanHammer"
+      },
+      {
+        "value": "CUSTOM:DarkMatterEnragedEngieEssence"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "Items.STICK"
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:DarkMatterBigBanHammer"
+    },
+    "name": "dark_matter_big_ban_craft",
+    "namespace": "mod"
+  }
+}

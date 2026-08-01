@@ -1,0 +1,44 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "darkmatterengiegames_sword",
+    "customModelName": "engiegamesword:darkmatter",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "darkmatterengiegames_sword",
+    "name": "Dark Matter EngieGames' Sword",
+    "specialInformation": {
+      "fixedValue": [],
+      "name": "DescriptionOfItem"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsItems"
+      }
+    ],
+    "efficiency": 144.0,
+    "attackSpeed": 19.400000000000002,
+    "enchantability": 22,
+    "damageVsEntity": 13300.0,
+    "usageCount": 92000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:DarkMatterEngieGamesCoin"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "EngieSwordsTick"
+    }
+  }
+}

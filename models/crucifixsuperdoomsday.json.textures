@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "crucifixsuperdoomsday"
+      },
+      "name": "default"
+    },
+    "antimatter": {
+      "map": {
+        "0": "antimattercrucifixsuperdoomsday"
+      },
+      "name": "antimatter"
+    }
+  }
+}

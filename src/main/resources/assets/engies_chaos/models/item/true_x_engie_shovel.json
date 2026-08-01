@@ -1,0 +1,11 @@
+{
+  "parent": "engies_chaos:custom/xengieshovel",
+  "textures": {
+    "2": "engies_chaos:block/truexengiescarf",
+    "3": "minecraft:block/dark_oak_planks",
+    "4": "engies_chaos:block/scytheeyeengie",
+    "5": "engies_chaos:block/truexengiegradiant",
+    "6": "engies_chaos:block/handle",
+    "particle": "engies_chaos:item/reaaelogo"
+  }
+}

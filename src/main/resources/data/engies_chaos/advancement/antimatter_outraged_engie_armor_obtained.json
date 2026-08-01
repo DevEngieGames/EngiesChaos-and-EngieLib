@@ -1,0 +1,87 @@
+{
+  "display": {
+    "icon": {
+      "id": "engies_chaos:antimatter_outraged_engies_helmet"
+    },
+    "title": {
+      "translate": "advancements.antimatter_outraged_engie_armor_obtained.title"
+    },
+    "description": {
+      "translate": "advancements.antimatter_outraged_engie_armor_obtained.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "antimatter_outraged_engie_armor_obtained_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "engies_chaos:antimatter_outraged_engies_helmet"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
+    },
+    "antimatter_outraged_engie_armor_obtained_1": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "engies_chaos:antimatter_outraged_engies_chestplate"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
+    },
+    "antimatter_outraged_engie_armor_obtained_2": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "engies_chaos:antimatter_outraged_engies_leggings"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
+    },
+    "antimatter_outraged_engie_armor_obtained_3": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "engies_chaos:antimatter_outraged_engies_boots"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 40
+  },
+  "parent": "engies_chaos:antimatter_outraged_engie_essence_obtained"
+}

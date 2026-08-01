@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "sdoomsdayscythe"
+      },
+      "name": "default"
+    },
+    "antimatter": {
+      "map": {
+        "0": "antimattersdoomsdayscythe"
+      },
+      "name": "antimatter"
+    }
+  }
+}

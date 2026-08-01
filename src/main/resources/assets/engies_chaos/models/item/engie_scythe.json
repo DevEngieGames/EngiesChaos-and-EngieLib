@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/engiesscythe",
+  "textures": {
+    "0": "engies_chaos:block/pixelscytheengiesnew",
+    "particle": "engies_chaos:item/pixelscytheengiesnew"
+  }
+}

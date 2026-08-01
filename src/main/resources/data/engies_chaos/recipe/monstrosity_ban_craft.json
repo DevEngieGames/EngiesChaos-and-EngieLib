@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "monstrositybanhammer",
+  "category": "equipment",
+  "pattern": [
+    "aba",
+    "cdc",
+    " e "
+  ],
+  "key": {
+    "a": "engies_chaos:biblically_accurate_block",
+    "b": "engies_chaos:outraged_engie_block",
+    "c": "engies_chaos:monstrosity_engie_essence",
+    "d": "engies_chaos:biblically_accurate_engie_ban_hammer",
+    "e": "#minecraft:planks"
+  },
+  "result": {
+    "id": "engies_chaos:monstrosity_ban_hammer",
+    "count": 1
+  }
+}

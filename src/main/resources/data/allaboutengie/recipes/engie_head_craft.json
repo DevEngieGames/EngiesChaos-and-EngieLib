@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "allaboutengie:enchanted_engie_cookie"
+    },
+    "b": {
+      "tag": "allaboutengie:headsforengieheadcraft"
+    }
+  },
+  "result": {
+    "item": "allaboutengie:engie_head",
+    "count": 1
+  }
+}

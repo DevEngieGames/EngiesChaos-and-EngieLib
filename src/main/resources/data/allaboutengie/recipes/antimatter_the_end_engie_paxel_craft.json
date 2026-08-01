@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "theendengiepaxel",
+  "pattern": [
+    "abc",
+    " d ",
+    " d "
+  ],
+  "key": {
+    "a": {
+      "item": "allaboutengie:antimatter_the_end_axe"
+    },
+    "b": {
+      "item": "allaboutengie:antimatter_the_end_pickaxe"
+    },
+    "c": {
+      "item": "allaboutengie:antimatter_the_end_shovel"
+    },
+    "d": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "allaboutengie:antimatter_the_end_paxel",
+    "count": 1
+  }
+}

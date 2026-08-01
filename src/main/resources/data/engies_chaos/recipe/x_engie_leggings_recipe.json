@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "engies_chaos:roughian_engie_gamess_leggings",
+  "addition": "engies_chaos:x_engie_upgrade_leggings",
+  "result": {
+    "id": "engies_chaos:x_engie_leggings"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "darkmatterangryengieboots",
+  "category": "misc",
+  "pattern": [
+    "a a",
+    "a a"
+  ],
+  "key": {
+    "a": "engies_chaos:dark_matter_angry_engie_essence"
+  },
+  "result": {
+    "id": "engies_chaos:dark_matter_angry_engies_boots",
+    "count": 1
+  }
+}

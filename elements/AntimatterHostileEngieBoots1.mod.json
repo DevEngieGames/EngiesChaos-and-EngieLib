@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "antimatterhostileengieboots",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:AntimatterEngieGem"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:AntimatterEngieGem"
+      },
+      {
+        "value": "CUSTOM:AntimatterEngieGem"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:AntimatterEngieGem"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:AntimatterHostileEngies.boots"
+    },
+    "name": "antimatter_hostile_engie_boots_1",
+    "namespace": "mod"
+  }
+}

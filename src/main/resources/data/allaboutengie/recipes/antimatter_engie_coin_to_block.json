@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "antimatterengiecointoblock",
+  "ingredients": [
+    {
+      "item": "allaboutengie:antimatter_engie_coin"
+    },
+    {
+      "item": "allaboutengie:antimatter_engie_coin"
+    },
+    {
+      "item": "allaboutengie:antimatter_engie_coin"
+    },
+    {
+      "item": "allaboutengie:antimatter_engie_coin"
+    },
+    {
+      "item": "allaboutengie:antimatter_engie_coin"
+    },
+    {
+      "item": "allaboutengie:antimatter_engie_coin"
+    },
+    {
+      "item": "allaboutengie:antimatter_engie_coin"
+    },
+    {
+      "item": "allaboutengie:antimatter_engie_coin"
+    },
+    {
+      "item": "allaboutengie:antimatter_engie_coin"
+    }
+  ],
+  "result": {
+    "item": "allaboutengie:antimatter_engie_coin_block",
+    "count": 1
+  }
+}

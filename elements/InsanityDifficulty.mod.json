@@ -1,0 +1,12 @@
+{
+  "_fv": 79,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Logic",
+    "displayName": "[Engie's Chaos] Insanity",
+    "description": "Feeling brave? These mobs don't mess around... \"Nightmare\"(Hardcore) is required to play this as intended!",
+    "category": "MOBS",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 0
+  }
+}

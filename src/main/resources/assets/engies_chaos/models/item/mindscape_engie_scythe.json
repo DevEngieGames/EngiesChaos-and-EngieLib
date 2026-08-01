@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/mindscapeengiesscythe",
+  "textures": {
+    "0": "engies_chaos:block/pixelscythemindscapenew",
+    "particle": "engies_chaos:item/pixelscythemindscapenew"
+  }
+}

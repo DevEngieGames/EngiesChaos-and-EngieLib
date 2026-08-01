@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "cosmicengiegamecoinblocktocoins",
+  "category": "misc",
+  "ingredients": [
+    "engies_chaos:cosmic_engie_games_coin_block"
+  ],
+  "result": {
+    "id": "engies_chaos:cosmic_engie_coin",
+    "count": 9
+  }
+}

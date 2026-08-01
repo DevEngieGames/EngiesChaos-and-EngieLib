@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "crafting",
+  "category": "misc",
+  "pattern": [
+    "a a",
+    "bab",
+    "ccc"
+  ],
+  "key": {
+    "a": "minecraft:iron_ingot",
+    "b": "engies_chaos:dark_matter_engie_gem",
+    "c": "minecraft:jungle_planks"
+  },
+  "result": {
+    "id": "engies_chaos:dark_matter_metal_chest_jungle",
+    "count": 1
+  }
+}

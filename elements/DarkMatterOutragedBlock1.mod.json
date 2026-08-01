@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "darkmatteroutrageditemstoblock",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:DarkMatterOutragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterOutragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterOutragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterOutragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterOutragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterOutragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterOutragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterOutragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterOutragedEngieEssence"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:DarkMatterOutragedEngieBlock"
+    },
+    "name": "dark_matter_outraged_block_1",
+    "namespace": "mod"
+  }
+}

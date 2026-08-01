@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "coderedeemersaiot",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:CodeRedeemersSword"
+      },
+      {
+        "value": "CUSTOM:CodeRedeemersPickaxe"
+      },
+      {
+        "value": "CUSTOM:CodeRedeemersAxe"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:CodeRedeemersShovel"
+      },
+      {
+        "value": "CUSTOM:CodeRedeemersHoe"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:CodeRedeemersAIOT"
+    },
+    "name": "code_redeemers_aiot_craft",
+    "namespace": "mod"
+  }
+}

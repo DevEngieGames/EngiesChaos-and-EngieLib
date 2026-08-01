@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "bab",
+    "aba"
+  ],
+  "key": {
+    "a": "engies_chaos:antimatter_biblically_accurate_engie_essence",
+    "b": "engies_chaos:antimatter_engie_gem"
+  },
+  "result": {
+    "id": "engies_chaos:antimatter_engie_upgrade",
+    "count": 1
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "antimatterengiegamescointoblock",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:AntimatterEngieGamesCoin"
+      },
+      {
+        "value": "CUSTOM:AntimatterEngieGamesCoin"
+      },
+      {
+        "value": "CUSTOM:AntimatterEngieGamesCoin"
+      },
+      {
+        "value": "CUSTOM:AntimatterEngieGamesCoin"
+      },
+      {
+        "value": "CUSTOM:AntimatterEngieGamesCoin"
+      },
+      {
+        "value": "CUSTOM:AntimatterEngieGamesCoin"
+      },
+      {
+        "value": "CUSTOM:AntimatterEngieGamesCoin"
+      },
+      {
+        "value": "CUSTOM:AntimatterEngieGamesCoin"
+      },
+      {
+        "value": "CUSTOM:AntimatterEngieGamesCoin"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:AntimatterEngieGamesCoinBlock"
+    },
+    "name": "antimatter_engie_games_coin_to_block",
+    "namespace": "mod"
+  }
+}

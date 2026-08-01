@@ -1,0 +1,22 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "phantomnut"
+      },
+      "name": "default"
+    },
+    "scarlet": {
+      "map": {
+        "0": "scarlet"
+      },
+      "name": "scarlet"
+    },
+    "ceasar": {
+      "map": {
+        "0": "ceasar"
+      },
+      "name": "ceasar"
+    }
+  }
+}

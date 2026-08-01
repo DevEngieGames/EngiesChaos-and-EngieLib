@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "netheriteaiot",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:netherite_sword",
+    "minecraft:netherite_pickaxe",
+    "minecraft:netherite_axe",
+    "minecraft:netherite_shovel",
+    "minecraft:netherite_hoe"
+  ],
+  "result": {
+    "id": "engies_chaos:netherite_aiot",
+    "count": 1
+  }
+}

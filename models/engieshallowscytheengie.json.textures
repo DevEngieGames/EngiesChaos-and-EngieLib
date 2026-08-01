@@ -1,0 +1,15 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "scythemainengie",
+        "1": "scythealtengie",
+        "2": "scythespikes1engie",
+        "3": "scythespikes2engie",
+        "4": "scytheeyeengie",
+        "5": "scytheeyecolorengie"
+      },
+      "name": "default"
+    }
+  }
+}

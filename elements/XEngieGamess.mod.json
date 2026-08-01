@@ -1,0 +1,208 @@
+{
+  "_fv": 79,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "xengiehelmet",
+    "enableBody": true,
+    "textureBody": "truexengiechestplate",
+    "enableLeggings": true,
+    "textureLeggings": "xengieleggings",
+    "enableBoots": true,
+    "textureBoots": "xengieboots",
+    "creativeTabs": [],
+    "armorTextureFile": "backup_",
+    "helmetName": "xEngieGames Helmet",
+    "bodyName": "xEngieGames Chestplate",
+    "leggingsName": "xEngieGames Leggings",
+    "bootsName": "xEngieGames Boots",
+    "helmetSpecialInformation": {
+      "fixedValue": []
+    },
+    "bodySpecialInformation": {
+      "fixedValue": []
+    },
+    "leggingsSpecialInformation": {
+      "fixedValue": []
+    },
+    "bootsSpecialInformation": {
+      "fixedValue": []
+    },
+    "helmetModelName": "Modelxengiegamesarmor",
+    "helmetModelPart": "Head",
+    "helmetModelTexture": "xengiegamesarmor.png",
+    "bodyModelName": "Modelxengiegamesarmor",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "LeftArm",
+    "armsModelPartR": "RightArm",
+    "bodyModelTexture": "xengiegamesarmor.png",
+    "leggingsModelName": "Modelxengiegamesarmor",
+    "leggingsModelPartL": "LeftLeg",
+    "leggingsModelPartR": "RightLeg",
+    "leggingsModelTexture": "xengiegamesarmor.png",
+    "bootsModelName": "Modelxengiegamesarmor",
+    "bootsModelPartL": "LeftBoot",
+    "bootsModelPartR": "RightBoot",
+    "bootsModelTexture": "xengiegamesarmor.png",
+    "helmetItemRenderType": 0,
+    "helmetItemCustomModelName": "Normal",
+    "bodyItemRenderType": 0,
+    "bodyItemCustomModelName": "Normal",
+    "leggingsItemRenderType": 0,
+    "leggingsItemCustomModelName": "Normal",
+    "bootsItemRenderType": 0,
+    "bootsItemCustomModelName": "Normal",
+    "helmetImmuneToFire": true,
+    "bodyImmuneToFire": true,
+    "leggingsImmuneToFire": true,
+    "bootsImmuneToFire": true,
+    "helmetGlowCondition": {
+      "fixedValue": false
+    },
+    "bodyGlowCondition": {
+      "fixedValue": false
+    },
+    "leggingsGlowCondition": {
+      "fixedValue": false
+    },
+    "bootsGlowCondition": {
+      "fixedValue": false
+    },
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "maxDamage": 1024,
+    "damageValueHelmet": 1024,
+    "damageValueBody": 1024,
+    "damageValueLeggings": 1024,
+    "damageValueBoots": 1024,
+    "enchantability": 22,
+    "toughness": 200.0,
+    "knockbackResistance": 5.0,
+    "equipSound": {
+      "value": ""
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:EngieGem"
+      },
+      {
+        "value": "CUSTOM:AngryEngieEssence"
+      },
+      {
+        "value": "CUSTOM:EnragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:OutragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:BiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": "CUSTOM:MonstrosityEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterAngryEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterEnragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterOutragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterBiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterMonstrosityEngieEssence"
+      },
+      {
+        "value": "CUSTOM:EnragedCoin"
+      },
+      {
+        "value": "CUSTOM:DoomsDayCoin"
+      },
+      {
+        "value": "CUSTOM:SuperDoomsDayCoin"
+      },
+      {
+        "value": "CUSTOM:TheEndCoin"
+      },
+      {
+        "value": "CUSTOM:EngieCoin"
+      },
+      {
+        "value": "CUSTOM:AntimatterTheEndCoin"
+      },
+      {
+        "value": "CUSTOM:AntimatterEngieCoin"
+      },
+      {
+        "value": "CUSTOM:AntimatterDoomsdayCoin"
+      },
+      {
+        "value": "CUSTOM:AntimatterSuperDoomsdayCoin"
+      },
+      {
+        "value": "CUSTOM:CosmicEngieCoin"
+      },
+      {
+        "value": "CUSTOM:EngieGamesCoin"
+      },
+      {
+        "value": "CUSTOM:AntimatterEngieGamesCoin"
+      },
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      },
+      {
+        "value": "CUSTOM:DarkMatterEngieGem"
+      },
+      {
+        "value": "CUSTOM:DarkMatterAngryEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterEnragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterOutragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterBiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterMonstrosityEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterDoomsDayCoin"
+      },
+      {
+        "value": "CUSTOM:DarkMatterSuperDoomsDayCoin"
+      },
+      {
+        "value": "CUSTOM:DarkMatterTheEndCoin"
+      },
+      {
+        "value": "CUSTOM:DarkMatterEngieCoin"
+      },
+      {
+        "value": "CUSTOM:DarkMatterEngieGamesCoin"
+      },
+      {
+        "value": "CUSTOM:DarkMatterEngieGamesTesseract"
+      },
+      {
+        "value": "CUSTOM:DarkMatterCosmicEngieCoin"
+      }
+    ]
+  }
+}

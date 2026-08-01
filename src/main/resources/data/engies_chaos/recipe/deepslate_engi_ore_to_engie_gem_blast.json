@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "experience": 1,
+  "cookingtime": 100,
+  "ingredient": "engies_chaos:deepslate_mad_engie_ore",
+  "result": {
+    "id": "engies_chaos:mad_engie_essence"
+  }
+}

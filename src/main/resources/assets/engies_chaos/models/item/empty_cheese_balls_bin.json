@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/cheeseballsempty",
+  "textures": {
+    "0": "engies_chaos:block/cheeseballs",
+    "particle": "engies_chaos:item/emptybin"
+  }
+}

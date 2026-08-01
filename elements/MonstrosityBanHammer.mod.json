@@ -1,0 +1,42 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Special",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "monstrositypixel",
+    "customModelName": "ban_hammer_monstrosity:default",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "monstrositypixel",
+    "name": "Monstrosity Ban Hammer",
+    "specialInformation": {
+      "fixedValue": [
+        "You could say this ban hammer is a Monstrosity.. Heh? Alright I know that was a terrible joke anyway."
+      ],
+      "name": "DescriptionOfItem"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:BanHammers"
+      }
+    ],
+    "efficiency": 10.0,
+    "attackSpeed": 1.0,
+    "enchantability": 15,
+    "damageVsEntity": 2400.0,
+    "usageCount": 12000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [],
+    "immuneToFire": false,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "MonstrosityBanObtainPro"
+    }
+  }
+}

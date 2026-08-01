@@ -1,0 +1,7 @@
+{
+  "parent": "allaboutengie:custom/roughianengiegameshoe",
+  "textures": {
+    "0": "allaboutengie:block/roughianengiegameshoetext",
+    "particle": "allaboutengie:item/cosmicengie_hoe"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "biblicallyscythe"
+      },
+      "name": "default"
+    },
+    "antimatter": {
+      "map": {
+        "0": "antimatterbiblicallyscythe"
+      },
+      "name": "antimatter"
+    }
+  }
+}

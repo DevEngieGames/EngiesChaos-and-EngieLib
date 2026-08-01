@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": "minecraft:diamond_block",
+    "b": "minecraft:cookie"
+  },
+  "result": {
+    "id": "engies_chaos:enchanted_exotic_cookie",
+    "count": 1
+  }
+}

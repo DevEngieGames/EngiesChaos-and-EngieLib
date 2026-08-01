@@ -1,0 +1,14 @@
+{
+  "_fv": 79,
+  "_type": "attribute",
+  "definition": {
+    "name": "Engies Antimatter Blessing Chance For Player",
+    "minValue": 0.05,
+    "maxValue": 0.55,
+    "defaultValue": 0.5,
+    "sentiment": "POSITIVE",
+    "addToAllEntities": false,
+    "addToPlayers": true,
+    "entities": []
+  }
+}

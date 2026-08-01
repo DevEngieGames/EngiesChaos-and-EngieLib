@@ -1,0 +1,16 @@
+package net.engiegames.reallaboutengie.procedures;
+
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+
+public class HealthBelow40butabove35Procedure {
+	public static boolean execute(Entity entity) {
+		if (entity == null)
+			return false;
+		if (Math.round(((double) (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) / (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1)) * 100) <= 40
+				&& Math.round(((double) (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) / (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1)) * 100) > 35) {
+			return true;
+		}
+		return false;
+	}
+}

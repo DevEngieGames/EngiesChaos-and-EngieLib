@@ -1,0 +1,33 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Pickaxe",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "operatorpickaxe",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "",
+    "name": "Operators Pickaxe",
+    "specialInformation": {
+      "fixedValue": [],
+      "name": "DescriptionOfItem3"
+    },
+    "creativeTabs": [],
+    "efficiency": 128000.0,
+    "attackSpeed": 1.0,
+    "enchantability": 22,
+    "damageVsEntity": 128000.0,
+    "usageCount": 128000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [],
+    "immuneToFire": true,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

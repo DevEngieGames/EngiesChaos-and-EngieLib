@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": "minecraft:gold_ingot",
+    "b": "minecraft:cookie"
+  },
+  "result": {
+    "id": "engies_chaos:golden_cookie",
+    "count": 1
+  }
+}

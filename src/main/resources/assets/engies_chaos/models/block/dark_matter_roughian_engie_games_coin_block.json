@@ -1,0 +1,10 @@
+{
+  "parent": "engies_chaos:custom/engiegamestesseractblock",
+  "textures": {
+    "all": "engies_chaos:block/darkmatterengiecointexture",
+    "particle": "engies_chaos:block/darkmatterengiecointexture",
+    "0": "engies_chaos:block/darkmatterengiegamestesseractouter",
+    "1": "engies_chaos:block/engiegamestesseractcube"
+  },
+  "render_type": "cutout"
+}

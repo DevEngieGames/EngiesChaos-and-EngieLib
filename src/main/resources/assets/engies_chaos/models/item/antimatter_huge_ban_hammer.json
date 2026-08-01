@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/ban_hammer_huge",
+  "textures": {
+    "0": "engies_chaos:block/antimatterregular",
+    "particle": "engies_chaos:item/antimatterbanhammerpixel"
+  }
+}

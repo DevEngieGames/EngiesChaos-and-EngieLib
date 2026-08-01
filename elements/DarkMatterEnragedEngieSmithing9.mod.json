@@ -1,0 +1,29 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:DarkMatterAngryEngies.legs"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:DarkMatterEnragedEngieBlock"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:DarkMatterEnragedEngies.legs"
+    },
+    "name": "dark_matter_enraged_engie_smithing_9",
+    "namespace": "mod"
+  }
+}

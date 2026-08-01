@@ -1,0 +1,29 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:AntimatterOutragedEngieShovel"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:AntimatterBiblicallyAccurateBlock"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:AntimatterBiblicallyAccurateEngieShovel"
+    },
+    "name": "antimatter_biblically_smithing_4",
+    "namespace": "mod"
+  }
+}

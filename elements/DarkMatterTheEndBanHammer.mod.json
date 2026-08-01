@@ -1,0 +1,46 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Special",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "darkmattertheendbanhammerpixel",
+    "customModelName": "ban_hammer_theend:dark",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "darkmattertheendbanhammerpixel",
+    "name": "Dark Matter The End Ban Hammer",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:BanHammers"
+      }
+    ],
+    "efficiency": 4.0,
+    "attackSpeed": 1.0,
+    "enchantability": 22,
+    "damageVsEntity": 12800.0,
+    "usageCount": 87000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:DarkMatterTheEndCoin"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "STONE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onEntityHitWith": {
+      "name": "BanHammerParticleSpawn"
+    },
+    "onItemInInventoryTick": {
+      "name": "TheEndObtainPro"
+    }
+  }
+}

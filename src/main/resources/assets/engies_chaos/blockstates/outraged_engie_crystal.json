@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "engies_chaos:block/outraged_engie_crystal"
+    },
+    "facing=east": {
+      "model": "engies_chaos:block/outraged_engie_crystal",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "engies_chaos:block/outraged_engie_crystal",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "engies_chaos:block/outraged_engie_crystal",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "engies_chaos:block/outraged_engie_crystal",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "engies_chaos:block/outraged_engie_crystal",
+      "x": 90
+    }
+  }
+}

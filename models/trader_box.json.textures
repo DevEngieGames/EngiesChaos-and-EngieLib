@@ -1,0 +1,46 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "commontraderbox"
+      },
+      "name": "default"
+    },
+    "uncommon": {
+      "map": {
+        "0": "uncommontraderbox"
+      },
+      "name": "uncommon"
+    },
+    "mythic": {
+      "map": {
+        "0": "mythictraderbox"
+      },
+      "name": "mythic"
+    },
+    "legendary": {
+      "map": {
+        "0": "legendarytraderbox"
+      },
+      "name": "legendary"
+    },
+    "rare": {
+      "map": {
+        "0": "raretraderbox"
+      },
+      "name": "rare"
+    },
+    "epic": {
+      "map": {
+        "0": "epictraderbox"
+      },
+      "name": "epic"
+    },
+    "exotic": {
+      "map": {
+        "0": "exotictraderbox"
+      },
+      "name": "exotic"
+    }
+  }
+}

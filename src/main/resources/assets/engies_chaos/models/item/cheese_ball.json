@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/cheeseball",
+  "textures": {
+    "1": "engies_chaos:block/cheesepuffseattext",
+    "particle": "engies_chaos:item/cheeseball"
+  }
+}

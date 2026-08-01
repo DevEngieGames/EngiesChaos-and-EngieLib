@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "engies_chaos:engiegames_sword",
+  "addition": "engies_chaos:antimatter_engie_upgrade",
+  "result": {
+    "id": "engies_chaos:antimatter_mini_scythe"
+  }
+}

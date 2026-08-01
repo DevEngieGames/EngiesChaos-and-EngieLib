@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "legendarysharko",
+  "category": "misc",
+  "pattern": [
+    "a a",
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": "engies_chaos:legendary_sharko_cloth"
+  },
+  "result": {
+    "id": "engies_chaos:legendary_shark_chestplate",
+    "count": 1
+  }
+}

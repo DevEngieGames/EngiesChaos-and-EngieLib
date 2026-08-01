@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "engies_chaos:legendary_shark"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "engies_chaos:legendary_shark"
+      }
+    ]
+  }
+}

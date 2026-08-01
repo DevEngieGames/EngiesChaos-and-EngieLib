@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/engiegamesanchor",
+  "textures": {
+    "0": "engies_chaos:block/anchor2",
+    "particle": "engies_chaos:item/engiegamesanchor2d"
+  }
+}

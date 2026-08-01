@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "superdoomsdaycointexture"
+      },
+      "name": "default"
+    },
+    "antimatter": {
+      "map": {
+        "0": "antimattersuperdoomsdaycointexture"
+      },
+      "name": "antimatter"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "allaboutengie:roughian_engie_games_shovel"
+  },
+  "addition": {
+    "item": "allaboutengie:x_engie_upgrade_shovel"
+  },
+  "result": {
+    "item": "allaboutengie:x_engie_shovel"
+  }
+}

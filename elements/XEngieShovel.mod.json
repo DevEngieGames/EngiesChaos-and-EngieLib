@@ -1,0 +1,107 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Spade",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "reaaelogo",
+    "customModelName": "xengieshovel:default",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "",
+    "name": "xEngie Shovel",
+    "specialInformation": {
+      "fixedValue": [],
+      "name": "DescriptionOfItem2"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsItems"
+      }
+    ],
+    "efficiency": 250.0,
+    "attackSpeed": 25.0,
+    "enchantability": 22,
+    "damageVsEntity": 2500.0,
+    "usageCount": 128000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:EngieGem"
+      },
+      {
+        "value": "CUSTOM:AngryEngieEssence"
+      },
+      {
+        "value": "CUSTOM:EnragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:OutragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:BiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": "CUSTOM:MonstrosityEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterAngryEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterEnragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterOutragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterBiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterMonstrosityEngieEssence"
+      },
+      {
+        "value": "CUSTOM:EnragedCoin"
+      },
+      {
+        "value": "CUSTOM:DoomsDayCoin"
+      },
+      {
+        "value": "CUSTOM:SuperDoomsDayCoin"
+      },
+      {
+        "value": "CUSTOM:TheEndCoin"
+      },
+      {
+        "value": "CUSTOM:EngieCoin"
+      },
+      {
+        "value": "CUSTOM:AntimatterTheEndCoin"
+      },
+      {
+        "value": "CUSTOM:AntimatterEngieCoin"
+      },
+      {
+        "value": "CUSTOM:AntimatterDoomsdayCoin"
+      },
+      {
+        "value": "CUSTOM:AntimatterSuperDoomsdayCoin"
+      },
+      {
+        "value": "CUSTOM:CosmicEngieCoin"
+      },
+      {
+        "value": "CUSTOM:EngieGamesCoin"
+      },
+      {
+        "value": "CUSTOM:AntimatterEngieGamesCoin"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

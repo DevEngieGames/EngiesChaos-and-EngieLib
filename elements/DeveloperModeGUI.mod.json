@@ -1,0 +1,509 @@
+{
+  "_fv": 79,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 245,
+    "height": 240,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 41,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_devgui",
+          "text": {
+            "fixedValue": "DevGUI"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 95,
+          "y": 1,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_stun_radius_get_for_dev_gui",
+          "text": {
+            "fixedValue": "",
+            "name": "StunRadiusGetForDevGUI"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 208,
+          "y": 123,
+          "locked": false
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_max_50525",
+          "text": {
+            "fixedValue": "Max: 50525"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 219,
+          "y": 8,
+          "locked": false
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": "TAG:allaboutengie:roughtools"
+          },
+          "disablePlacement": {
+            "fixedValue": false
+          },
+          "color": {
+            "value": -5854549,
+            "falpha": 0.0
+          },
+          "id": 0,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 222,
+          "y": 11,
+          "locked": false
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_max_101050",
+          "text": {
+            "fixedValue": "Max: 101050"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 243,
+          "y": 8,
+          "locked": false
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": "TAG:allaboutengie:goldtools"
+          },
+          "disablePlacement": {
+            "fixedValue": false
+          },
+          "color": {
+            "value": -8384,
+            "falpha": 0.0
+          },
+          "id": 1,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 246,
+          "y": 11,
+          "locked": false
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_max_151575",
+          "text": {
+            "fixedValue": "Max: 151575"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 267,
+          "y": 8,
+          "locked": false
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": "TAG:allaboutengie:engietools"
+          },
+          "disablePlacement": {
+            "fixedValue": false
+          },
+          "color": {
+            "value": -2125238,
+            "falpha": 0.0
+          },
+          "id": 2,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 270,
+          "y": 11,
+          "locked": false
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_input_item_here",
+          "text": {
+            "fixedValue": "Input item here."
+          },
+          "width": 24,
+          "height": 24,
+          "x": 297,
+          "y": 53,
+          "locked": false
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "disablePlacement": {
+            "fixedValue": false
+          },
+          "id": 3,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 300,
+          "y": 56,
+          "locked": false
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "id": 4,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": false,
+          "x": 295,
+          "y": 161,
+          "locked": false
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "color": {
+            "value": -256,
+            "falpha": 0.0
+          },
+          "id": 5,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": false,
+          "x": 313,
+          "y": 161,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_raise",
+          "text": "Raise",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "RaiseStunRadiusDevGUI"
+          },
+          "width": 51,
+          "height": 20,
+          "x": 208,
+          "y": 140,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_lower",
+          "text": "Lower",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "LowerStunRadiusDevGUI"
+          },
+          "width": 51,
+          "height": 20,
+          "x": 282,
+          "y": 140,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_heal_self",
+          "text": "Heal self.",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SetHealthToMax"
+          },
+          "width": 77,
+          "height": 20,
+          "x": 97,
+          "y": 55,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_set_difficulty",
+          "text": "Set Difficulty.",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SetDifficultyDevMode"
+          },
+          "width": 103,
+          "height": 20,
+          "x": 230,
+          "y": 98,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_duplicate_item",
+          "text": "Duplicate item.",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "DuplicateItem"
+          },
+          "width": 103,
+          "height": 20,
+          "x": 188,
+          "y": 55,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_give_immunity",
+          "text": "Give immunity.",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "GivePlayerImmunity"
+          },
+          "displayCondition": {
+            "name": "GivePlayerImmunityShow"
+          },
+          "width": 98,
+          "height": 20,
+          "x": 94,
+          "y": 77,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_give_immunity1",
+          "text": "Remove immunity.",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "RemovePlayerImmunity"
+          },
+          "displayCondition": {
+            "name": "RemovePlayerImmunityShow"
+          },
+          "width": 98,
+          "height": 20,
+          "x": 94,
+          "y": 77,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_kill_mobs_nearby",
+          "text": "Kill nearby hostiles.",
+          "isUndecorated": false,
+          "width": 113,
+          "height": 20,
+          "x": 94,
+          "y": 140,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_stun_nearby_mobs",
+          "text": "Stun nearby hostiles.",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "StunNearbyMobsWithDuration"
+          },
+          "width": 113,
+          "height": 20,
+          "x": 94,
+          "y": 119,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_toggle_special_health",
+          "text": "Toggle special health.",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ToggleSpecialHealthButton"
+          },
+          "width": 140,
+          "height": 20,
+          "x": 193,
+          "y": 77,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_confirm_stat_clock_number_count",
+          "text": "Confirm Stat Clock Number count.",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SetStatClockNum"
+          },
+          "width": 192,
+          "height": 20,
+          "x": 99,
+          "y": 32,
+          "locked": false
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Stat Clock Number",
+          "name": "statclocknum",
+          "width": 120,
+          "height": 20,
+          "x": 99,
+          "y": 10,
+          "locked": false
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Number",
+          "name": "number",
+          "width": 120,
+          "height": 20,
+          "x": 94,
+          "y": 98,
+          "locked": false
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 6,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": false,
+          "x": 295,
+          "y": 179,
+          "locked": false
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 7,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": false,
+          "x": 313,
+          "y": 179,
+          "locked": false
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 8,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": false,
+          "x": 295,
+          "y": 197,
+          "locked": false
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 9,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": false,
+          "x": 313,
+          "y": 197,
+          "locked": false
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "color": {
+            "value": -2143665,
+            "falpha": 0.0
+          },
+          "id": 10,
+          "disablePickup": {
+            "fixedValue": false,
+            "name": "DevPlushAllowCheck"
+          },
+          "dropItemsWhenNotBound": false,
+          "x": 115,
+          "y": 161,
+          "locked": false
+        }
+      }
+    ],
+    "onTick": {
+      "name": "DeveloperModeGUIWhileThisGUIIsOpenTick"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

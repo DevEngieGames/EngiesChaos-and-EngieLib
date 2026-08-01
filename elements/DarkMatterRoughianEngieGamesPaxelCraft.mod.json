@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "darkmatterroughianengiegamesaiot",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:DarkMatterEngieGamesHallowScythe"
+      },
+      {
+        "value": "CUSTOM:DarkMatterRoughianEngieGamesAxe"
+      },
+      {
+        "value": "CUSTOM:DarkMatterRoughianEngieGamesShovel"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:DarkMatterRoughianEngieGamesHoe"
+      },
+      {
+        "value": "CUSTOM:DarkMatterRoughianEngieGamesPickaxe"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:DarkMatterRoughianEngieGamesPaxel"
+    },
+    "name": "dark_matter_roughian_engie_games_paxel_craft",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "parent": "engies_chaos:custom/crystal3d",
+  "textures": {
+    "all": "engies_chaos:block/aecrystalfull",
+    "particle": "engies_chaos:block/aecrystalfull",
+    "0": "engies_chaos:block/newcrystaldarkness",
+    "1": "engies_chaos:block/newcrystaloverlayangry"
+  },
+  "render_type": "cutout"
+}

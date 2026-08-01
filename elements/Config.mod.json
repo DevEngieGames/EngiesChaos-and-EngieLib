@@ -1,0 +1,475 @@
+{
+  "_fv": 79,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 250,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_reall_about_engie_configuration",
+          "text": {
+            "fixedValue": "Engie's Chaos Configuration."
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 93,
+          "y": 41,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_difficulty_overlay",
+          "text": {
+            "fixedValue": "Difficulty overlay:"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 93,
+          "y": 55,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_1",
+          "text": "1",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ConfigButton1"
+          },
+          "width": 30,
+          "height": 20,
+          "x": 93,
+          "y": 64,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_2",
+          "text": "2",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ConfigButton2"
+          },
+          "width": 30,
+          "height": 20,
+          "x": 124,
+          "y": 64,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_3",
+          "text": "3",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ConfigButton3"
+          },
+          "width": 30,
+          "height": 20,
+          "x": 155,
+          "y": 64,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_4",
+          "text": "4",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ConfigButton4"
+          },
+          "width": 30,
+          "height": 20,
+          "x": 186,
+          "y": 64,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_1111111",
+          "text": "None",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ConfigButton5"
+          },
+          "width": 61,
+          "height": 20,
+          "x": 217,
+          "y": 64,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_doomsday",
+          "text": {
+            "fixedValue": "Doomsday:"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 93,
+          "y": 84,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_x",
+          "text": "X",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ConfigButton10"
+          },
+          "width": 30,
+          "height": 20,
+          "x": 306,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_difficulty",
+          "text": {
+            "fixedValue": "Difficulty:"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 93,
+          "y": 114,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_toggle_off",
+          "text": "Toggle Off",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "DifficultyToggleOff"
+          },
+          "displayCondition": {
+            "name": "DifficultyToggledOnCheck"
+          },
+          "width": 77,
+          "height": 20,
+          "x": 93,
+          "y": 124,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_toggle_off1",
+          "text": "Toggle On",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "DifficultyToggleOn"
+          },
+          "displayCondition": {
+            "name": "DifficultyToggledOffCheck"
+          },
+          "width": 77,
+          "height": 20,
+          "x": 93,
+          "y": 124,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_you_do_not_have_attributefix_ins",
+          "text": {
+            "fixedValue": "You do not have attributefix installed,"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "AttributeFixCheck"
+          },
+          "x": 93,
+          "y": 124,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_this_config_is_disabled_until_th",
+          "text": {
+            "fixedValue": "this config is disabled until then."
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "AttributeFixCheck"
+          },
+          "x": 93,
+          "y": 134,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_you_do_not_have_access_to_toggle",
+          "text": {
+            "fixedValue": "You do not have permission to change this."
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DifficultyToggleCheckForOP"
+          },
+          "x": 93,
+          "y": 124,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_empty",
+          "text": "→",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ConfigGoToCodeRedemptions"
+          },
+          "width": 28,
+          "height": 20,
+          "x": 308,
+          "y": 180,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_empty1",
+          "text": "←",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ConfigGoToGearGiver"
+          },
+          "width": 28,
+          "height": 20,
+          "x": 92,
+          "y": 180,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_raise",
+          "text": "Raise",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ConfigRaiseDiff1"
+          },
+          "displayCondition": {
+            "name": "DifficultyToggledOnCheck2"
+          },
+          "width": 51,
+          "height": 20,
+          "x": 171,
+          "y": 124,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_lower",
+          "text": "Lower",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ConfigLowerDiff1"
+          },
+          "displayCondition": {
+            "name": "DifficultyToggledOnCheck3"
+          },
+          "width": 51,
+          "height": 20,
+          "x": 223,
+          "y": 124,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_525000",
+          "text": {
+            "fixedValue": "525,000",
+            "name": "ConfigShowDiff"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 153,
+          "y": 114,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_toggle",
+          "text": "Toggle",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ConfigButton11"
+          },
+          "displayCondition": {
+            "name": "HealthOverlayButtonDisplay"
+          },
+          "width": 56,
+          "height": 20,
+          "x": 93,
+          "y": 155,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_toggle_custom_hp_hud",
+          "text": {
+            "fixedValue": "Custom HP Hud:"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 93,
+          "y": 145,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_untrack_risk",
+          "text": "Track Risk",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ConfigButton6"
+          },
+          "displayCondition": {
+            "name": "ConfigButton6Show"
+          },
+          "width": 87,
+          "height": 20,
+          "x": 93,
+          "y": 94,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_untrack_risk1",
+          "text": "Untrack Risk",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ConfigButton7"
+          },
+          "displayCondition": {
+            "name": "ConfigButton7Show"
+          },
+          "width": 87,
+          "height": 20,
+          "x": 93,
+          "y": 94,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_untrack",
+          "text": "Track",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ConfigButton8"
+          },
+          "displayCondition": {
+            "name": "ConfigButton8Show"
+          },
+          "width": 61,
+          "height": 20,
+          "x": 181,
+          "y": 94,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_untrack1",
+          "text": "Untrack",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ConfigButton9"
+          },
+          "displayCondition": {
+            "name": "ConfigButton9Show"
+          },
+          "width": 61,
+          "height": 20,
+          "x": 181,
+          "y": 94,
+          "locked": false
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "engies_chaos:doomsday_ban_hammer",
+  "addition": "engies_chaos:engie_upgrade",
+  "result": {
+    "id": "engies_chaos:super_doomsday_ban_hammer"
+  }
+}

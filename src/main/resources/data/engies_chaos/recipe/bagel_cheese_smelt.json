@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "experience": 10,
+  "cookingtime": 200,
+  "ingredient": "engies_chaos:bagel_cheese",
+  "result": {
+    "id": "engies_chaos:bagel_cheese_cooked"
+  }
+}

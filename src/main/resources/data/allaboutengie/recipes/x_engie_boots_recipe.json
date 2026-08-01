@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "allaboutengie:x_engie_upgrade_boots"
+  },
+  "addition": {
+    "item": "allaboutengie:roughian_engie_gamess_boots"
+  },
+  "result": {
+    "item": "allaboutengie:x_engie_boots"
+  }
+}

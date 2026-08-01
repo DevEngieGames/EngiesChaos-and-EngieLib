@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "metalchest"
+      },
+      "name": "default"
+    },
+    "antimatter": {
+      "map": {
+        "0": "antimattermetalchest"
+      },
+      "name": "antimatter"
+    }
+  }
+}

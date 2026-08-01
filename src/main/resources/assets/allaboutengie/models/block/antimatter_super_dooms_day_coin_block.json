@@ -1,0 +1,9 @@
+{
+  "parent": "allaboutengie:custom/coinblockregular",
+  "textures": {
+    "all": "allaboutengie:block/antimattersuperdoomsdaycoinblocktext",
+    "particle": "allaboutengie:block/antimattersuperdoomsdaycoinblocktext",
+    "0": "allaboutengie:block/antimattersuperdoomsdaycoinblocktext"
+  },
+  "render_type": "cutout"
+}

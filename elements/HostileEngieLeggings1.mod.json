@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "hostileengieleggings",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:EngieGem"
+      },
+      {
+        "value": "CUSTOM:EngieGem"
+      },
+      {
+        "value": "CUSTOM:EngieGem"
+      },
+      {
+        "value": "CUSTOM:EngieGem"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:EngieGem"
+      },
+      {
+        "value": "CUSTOM:EngieGem"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:EngieGem"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:HostileEngies.legs"
+    },
+    "name": "hostile_engie_leggings_1",
+    "namespace": "mod"
+  }
+}

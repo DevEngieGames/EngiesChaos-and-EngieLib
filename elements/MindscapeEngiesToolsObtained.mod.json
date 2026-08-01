@@ -1,0 +1,24 @@
+{
+  "_fv": 79,
+  "_type": "achievement",
+  "definition": {
+    "achievementName": "He does not abide by the new tool looks.",
+    "achievementDescription": "Obtain your first Mindscape Engie tool.",
+    "achievementIcon": {
+      "value": "CUSTOM:MindscapeEngiesPickaxe"
+    },
+    "background": "Default",
+    "disableDisplay": false,
+    "showPopup": true,
+    "announceToChat": true,
+    "hideIfNotCompleted": true,
+    "rewardLoot": [],
+    "rewardRecipes": [],
+    "rewardXP": 115,
+    "achievementType": "challenge",
+    "parent": {
+      "value": "CUSTOM:MindscapeEngieCoinObtained"
+    },
+    "triggerxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"advancement_trigger\" deletable=\"false\" x=\"40\" y=\"80\"><next><block type=\"custom_trigger\"></block></next></block></xml>"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "antimattermonstrositytoblock",
+  "category": "misc",
+  "ingredients": [
+    "engies_chaos:antimatter_monstrosity_engie_essence",
+    "engies_chaos:antimatter_monstrosity_engie_essence",
+    "engies_chaos:antimatter_monstrosity_engie_essence",
+    "engies_chaos:antimatter_monstrosity_engie_essence",
+    "engies_chaos:antimatter_monstrosity_engie_essence",
+    "engies_chaos:antimatter_monstrosity_engie_essence",
+    "engies_chaos:antimatter_monstrosity_engie_essence",
+    "engies_chaos:antimatter_monstrosity_engie_essence",
+    "engies_chaos:antimatter_monstrosity_engie_essence"
+  ],
+  "result": {
+    "id": "engies_chaos:antimatter_monstrosity_engie_block",
+    "count": 1
+  }
+}

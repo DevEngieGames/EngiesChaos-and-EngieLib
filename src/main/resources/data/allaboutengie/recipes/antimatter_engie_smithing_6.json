@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "allaboutengie:mindscape_engies_paxel"
+  },
+  "addition": {
+    "item": "allaboutengie:antimatter_engie_block"
+  },
+  "result": {
+    "item": "allaboutengie:antimatter_engie_paxel"
+  }
+}

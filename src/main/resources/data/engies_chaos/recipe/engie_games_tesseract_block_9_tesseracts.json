@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "engiegamestesseractblocktotesseracts",
+  "category": "misc",
+  "ingredients": [
+    "engies_chaos:engie_games_tesseract_block"
+  ],
+  "result": {
+    "id": "engies_chaos:engie_games_tesseract",
+    "count": 9
+  }
+}

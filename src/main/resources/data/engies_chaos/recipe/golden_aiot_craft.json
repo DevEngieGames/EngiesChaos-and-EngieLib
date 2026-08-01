@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "goldenaiot",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:golden_sword",
+    "minecraft:golden_pickaxe",
+    "minecraft:golden_axe",
+    "minecraft:golden_shovel",
+    "minecraft:golden_hoe"
+  ],
+  "result": {
+    "id": "engies_chaos:golden_aiot",
+    "count": 1
+  }
+}

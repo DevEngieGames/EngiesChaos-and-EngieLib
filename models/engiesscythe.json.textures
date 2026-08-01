@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "engiesscythe"
+      },
+      "name": "default"
+    },
+    "antimatter": {
+      "map": {
+        "0": "antimatterengiesscythe"
+      },
+      "name": "antimatter"
+    }
+  }
+}

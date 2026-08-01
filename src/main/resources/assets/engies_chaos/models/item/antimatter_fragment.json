@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/antimatterfragment",
+  "textures": {
+    "0": "engies_chaos:block/antimatter",
+    "particle": "engies_chaos:item/reaaeicon"
+  }
+}

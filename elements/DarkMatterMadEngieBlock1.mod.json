@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "madengieitemtoblock",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:DarkMatterMadEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterMadEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterMadEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterMadEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterMadEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterMadEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterMadEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterMadEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterMadEngieEssence"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:DarkMatterMadEngieBlock"
+    },
+    "name": "dark_matter_mad_engie_block_1",
+    "namespace": "mod"
+  }
+}

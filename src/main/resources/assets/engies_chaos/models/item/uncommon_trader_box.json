@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/trader_box",
+  "textures": {
+    "0": "engies_chaos:block/uncommontraderbox",
+    "particle": "engies_chaos:item/reaaeicon"
+  }
+}

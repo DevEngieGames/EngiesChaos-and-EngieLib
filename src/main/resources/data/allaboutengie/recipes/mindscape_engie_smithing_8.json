@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "allaboutengie:engie_gamess_chestplate"
+  },
+  "addition": {
+    "item": "allaboutengie:mindscape_coin_block"
+  },
+  "result": {
+    "item": "allaboutengie:mindscape_engies_chestplate"
+  }
+}

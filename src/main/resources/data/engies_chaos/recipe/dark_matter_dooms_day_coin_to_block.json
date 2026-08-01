@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "darkmatterdoomsdaycointoblock",
+  "category": "misc",
+  "ingredients": [
+    "engies_chaos:dark_matter_dooms_day_coin",
+    "engies_chaos:dark_matter_dooms_day_coin",
+    "engies_chaos:dark_matter_dooms_day_coin",
+    "engies_chaos:dark_matter_dooms_day_coin",
+    "engies_chaos:dark_matter_dooms_day_coin",
+    "engies_chaos:dark_matter_dooms_day_coin",
+    "engies_chaos:dark_matter_dooms_day_coin",
+    "engies_chaos:dark_matter_dooms_day_coin",
+    "engies_chaos:dark_matter_dooms_day_coin"
+  ],
+  "result": {
+    "id": "engies_chaos:dark_matter_dooms_day_coin_block",
+    "count": 1
+  }
+}

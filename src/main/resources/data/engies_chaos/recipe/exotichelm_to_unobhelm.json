@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "engies_chaos:exotic_helmet",
+  "addition": "engies_chaos:unobtanium",
+  "result": {
+    "id": "engies_chaos:unobtainium_helmet"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "engies_chaos:custom/coinblockregular",
+  "textures": {
+    "all": "engies_chaos:block/theendcoinblocktext",
+    "particle": "engies_chaos:block/theendcoinblocktext",
+    "0": "engies_chaos:block/theendcoinblocktext"
+  },
+  "render_type": "cutout"
+}

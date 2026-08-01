@@ -1,0 +1,8 @@
+{
+  "_fv": 79,
+  "_type": "procedure",
+  "definition": {
+    "procedurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"event_trigger\" deletable=\"false\" x=\"40\" y=\"40\"><field name=\"trigger\">no_ext_trigger</field><next><block type=\"controls_if\"><value name=\"IF0\"><block type=\"logic_binary_ops\" inline=\"false\"><field name=\"OP\">OR</field><value name=\"A\"><block type=\"uuid_equals\"><value name=\"uuid\"><block type=\"entity_get_literal_uuid\"><value name=\"entity\"><block type=\"entity_from_deps\"></block></value></block></value><value name=\"uuid2\"><block type=\"uuid_from_string\"><value name=\"string\"><block type=\"text\"><field name=\"TEXT\">29930f5dd23e47b6aad6e04406663341</field></block></value></block></value></block></value><value name=\"B\"><block type=\"uuid_equals\"><value name=\"uuid\"><block type=\"entity_get_literal_uuid\"><value name=\"entity\"><block type=\"entity_from_deps\"></block></value></block></value><value name=\"uuid2\"><block type=\"uuid_from_string\"><value name=\"string\"><block type=\"text\"><field name=\"TEXT\">29930f5d-d23e-47b6-aad6-e04406663341</field></block></value></block></value></block></value></block></value><statement name=\"DO0\"><block type=\"return_logic\"><value name=\"return\"><block type=\"logic_boolean\"><field name=\"BOOL\">TRUE</field></block></value></block></statement><next><block type=\"return_logic\"><value name=\"return\"><block type=\"logic_boolean\"><field name=\"BOOL\">FALSE</field></block></value></block></next></block></next></block></xml>",
+    "skipDependencyNullCheck": false
+  }
+}

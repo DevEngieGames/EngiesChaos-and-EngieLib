@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "engies_chaos:engies_chaos_advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.goodbye.title"
+    },
+    "description": {
+      "translate": "advancements.goodbye.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "goodbye_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 1250
+  },
+  "parent": "engies_chaos:the_one"
+}

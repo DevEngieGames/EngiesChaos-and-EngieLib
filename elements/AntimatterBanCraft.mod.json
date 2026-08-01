@@ -1,0 +1,53 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "antimatterbanhammer",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:AntimatterMiniBanHammer"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "EQUIPMENT",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:AntimatterEngieGem"
+      },
+      {
+        "value": "Items.IRON_INGOT"
+      },
+      {
+        "value": "CUSTOM:AntimatterEngieGem"
+      },
+      {
+        "value": "CUSTOM:AntimatterAngryEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterMiniBanHammer"
+      },
+      {
+        "value": "CUSTOM:AntimatterAngryEngieEssence"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "Items.STICK"
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:AntimatterBanHammer"
+    },
+    "name": "antimatter_ban_craft",
+    "namespace": "mod"
+  }
+}

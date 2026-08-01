@@ -1,0 +1,22 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "anchor"
+      },
+      "name": "default"
+    },
+    "rough": {
+      "map": {
+        "0": "anchor2"
+      },
+      "name": "rough"
+    },
+    "gold": {
+      "map": {
+        "0": "anchor3"
+      },
+      "name": "gold"
+    }
+  }
+}

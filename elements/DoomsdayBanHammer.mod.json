@@ -1,0 +1,46 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Special",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "doomsdaybanpixel",
+    "customModelName": "ban_hammer_doomsday:default",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "doomsdaybanpixel",
+    "name": "Doomsday Ban Hammer",
+    "specialInformation": {
+      "fixedValue": [
+        "Congrats!"
+      ],
+      "name": "DescriptionOfItem"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:BanHammers"
+      }
+    ],
+    "efficiency": 4.0,
+    "attackSpeed": 1.0,
+    "enchantability": 22,
+    "damageVsEntity": 5000.0,
+    "usageCount": 20000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:DoomsDayCoin"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "STONE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "DoomsdayObtainPro"
+    }
+  }
+}

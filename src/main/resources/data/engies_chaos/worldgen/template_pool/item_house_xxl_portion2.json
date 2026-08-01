@@ -1,0 +1,17 @@
+{
+  "name": "engies_chaos:item_house_xxl_portion2",
+  "fallback": "engies_chaos:item_house_xxl_portion2",
+  "elements": [
+    {
+      "weight": 150,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "engies_chaos:itemhousexxl3",
+        "projection": "rigid",
+        "processors": {
+          "processors": []
+        }
+      }
+    }
+  ]
+}

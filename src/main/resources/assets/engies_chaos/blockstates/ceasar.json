@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "engies_chaos:block/ceasar"
+    },
+    "facing=east": {
+      "model": "engies_chaos:block/ceasar",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "engies_chaos:block/ceasar",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "engies_chaos:block/ceasar",
+      "y": 270
+    }
+  }
+}

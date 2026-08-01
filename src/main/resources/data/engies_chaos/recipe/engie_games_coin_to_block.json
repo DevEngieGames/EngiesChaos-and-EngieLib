@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "engiegamescointoblock",
+  "category": "misc",
+  "ingredients": [
+    "engies_chaos:engie_games_coin",
+    "engies_chaos:engie_games_coin",
+    "engies_chaos:engie_games_coin",
+    "engies_chaos:engie_games_coin",
+    "engies_chaos:engie_games_coin",
+    "engies_chaos:engie_games_coin",
+    "engies_chaos:engie_games_coin",
+    "engies_chaos:engie_games_coin",
+    "engies_chaos:engie_games_coin"
+  ],
+  "result": {
+    "id": "engies_chaos:engie_games_coin_block",
+    "count": 1
+  }
+}

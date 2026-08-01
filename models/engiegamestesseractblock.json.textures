@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "engiegamestesseractouter",
+        "1": "engiegamestesseractcube"
+      },
+      "name": "default"
+    }
+  }
+}

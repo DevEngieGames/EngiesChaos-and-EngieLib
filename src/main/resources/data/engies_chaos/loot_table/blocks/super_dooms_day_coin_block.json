@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "engies_chaos:blocks/super_dooms_day_coin_block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "engies_chaos:super_dooms_day_coin_block"
+        }
+      ]
+    }
+  ]
+}

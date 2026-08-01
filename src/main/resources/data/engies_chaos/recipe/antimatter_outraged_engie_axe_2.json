@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    "ba",
+    "b "
+  ],
+  "key": {
+    "a": "engies_chaos:antimatter_outraged_engie_essence",
+    "b": "minecraft:stick"
+  },
+  "result": {
+    "id": "engies_chaos:antimatter_outraged_engie_axe",
+    "count": 1
+  }
+}

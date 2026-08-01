@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "engies_chaos:mindscape_engies_ban_hammer",
+  "addition": "engies_chaos:engie_games_coin_block",
+  "result": {
+    "id": "engies_chaos:engiegames_sword"
+  }
+}

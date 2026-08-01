@@ -1,0 +1,259 @@
+{
+  "_fv": 79,
+  "_type": "overlay",
+  "definition": {
+    "priority": "HIGHEST",
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "diff012new.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty012ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff3new.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty3ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff4new.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty4ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff5new.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty5ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff6new.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty6ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff7new.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty7ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff8new.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty8ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff9new.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty9ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff10new.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty10ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff11new.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty11ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff12new.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty12ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff13new.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty13ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff14new.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty14ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diffantimatternew.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty15to29ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diffcosmicnew.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty30ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diffroughiannew.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty31ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "difffinalnew.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty32ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "displayCondition": {
+      "name": "DifficultyOverlayShow"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

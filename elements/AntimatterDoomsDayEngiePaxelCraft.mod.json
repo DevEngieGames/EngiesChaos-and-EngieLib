@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "doomsdayengiepaxel",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:AntimatterDoomsdayAxe"
+      },
+      {
+        "value": "CUSTOM:AntimatterDoomsdayPickaxe"
+      },
+      {
+        "value": "CUSTOM:AntimatterDoomsdayShovel"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "Items.STICK"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "Items.STICK"
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:AntimatterDoomsdayPaxel"
+    },
+    "name": "antimatter_dooms_day_engie_paxel_craft",
+    "namespace": "mod"
+  }
+}

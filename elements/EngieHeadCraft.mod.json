@@ -1,0 +1,56 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      {
+        "value": "TAG:allaboutengie:headsforengieheadcraft"
+      },
+      {
+        "value": "CUSTOM:EnchantedEngieCookie"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:EnchantedEngieCookie"
+      },
+      {
+        "value": "CUSTOM:EnchantedEngieCookie"
+      },
+      {
+        "value": "CUSTOM:EnchantedEngieCookie"
+      },
+      {
+        "value": "CUSTOM:EnchantedEngieCookie"
+      },
+      {
+        "value": "TAG:allaboutengie:headsforengieheadcraft"
+      },
+      {
+        "value": "CUSTOM:EnchantedEngieCookie"
+      },
+      {
+        "value": "CUSTOM:EnchantedEngieCookie"
+      },
+      {
+        "value": "CUSTOM:EnchantedEngieCookie"
+      },
+      {
+        "value": "CUSTOM:EnchantedEngieCookie"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:EngieHead"
+    },
+    "name": "engie_head_craft",
+    "namespace": "mod"
+  }
+}

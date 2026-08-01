@@ -1,0 +1,51 @@
+{
+  "_fv": 79,
+  "_type": "structure",
+  "definition": {
+    "structure": "bloodhouse",
+    "projection": "rigid",
+    "ignoredBlocks": [
+      {
+        "value": "Blocks.STRUCTURE_BLOCK"
+      },
+      {
+        "value": "Blocks.AIR"
+      },
+      {
+        "value": "Blocks.VOID_AIR"
+      },
+      {
+        "value": "Blocks.CAVE_AIR"
+      }
+    ],
+    "spacing": 50,
+    "separation": 5,
+    "restrictionBiomes": [
+      {
+        "value": "basalt_deltas"
+      },
+      {
+        "value": "crimson_forest"
+      },
+      {
+        "value": "nether"
+      },
+      {
+        "value": "soul_sand_valley"
+      },
+      {
+        "value": "warped_forest"
+      }
+    ],
+    "terrainAdaptation": "beard_thin",
+    "generationStep": "SURFACE_STRUCTURES",
+    "surfaceDetectionType": "WORLD_SURFACE_WG",
+    "useStartHeight": true,
+    "startHeightProviderType": "UNIFORM",
+    "startHeightMin": 5,
+    "startHeightMax": 100,
+    "size": 1,
+    "maxDistanceFromCenter": 64,
+    "jigsawPools": []
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/enragedzombiesplaque",
+  "textures": {
+    "0": "engies_chaos:block/enraged_zombies_logo",
+    "particle": "engies_chaos:item/backuptext"
+  }
+}

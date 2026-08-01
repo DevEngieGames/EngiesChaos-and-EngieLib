@@ -1,0 +1,46 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "mindscapeengiecoinblocktext"
+      },
+      "name": "default"
+    },
+    "dday": {
+      "map": {
+        "0": "doomsdaycoinblocktext"
+      },
+      "name": "dday"
+    },
+    "adday": {
+      "map": {
+        "0": "antimatterdoomsdaycoinblocktext"
+      },
+      "name": "adday"
+    },
+    "sdday": {
+      "map": {
+        "0": "superdoomsdaycoinblocktext"
+      },
+      "name": "sdday"
+    },
+    "asdday": {
+      "map": {
+        "0": "antimattersuperdoomsdaycoinblocktext"
+      },
+      "name": "asdday"
+    },
+    "theend": {
+      "map": {
+        "0": "theendcoinblocktext"
+      },
+      "name": "theend"
+    },
+    "athend": {
+      "map": {
+        "0": "antimattertheendcoinblocktext"
+      },
+      "name": "athend"
+    }
+  }
+}

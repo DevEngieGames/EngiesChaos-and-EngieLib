@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "darkmattermonstrosityengiechestplate",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:DarkMatterMonstrosityEngieEssence"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:DarkMatterMonstrosityEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterMonstrosityEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterMonstrosityEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterMonstrosityEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterMonstrosityEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterMonstrosityEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterMonstrosityEngieEssence"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:DarkMatterMonstrosityEngies.body"
+    },
+    "name": "dark_matter_monstrosity_engie_chestplate_1",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "allaboutengie:dooms_day_hoe"
+  },
+  "addition": {
+    "item": "allaboutengie:super_dooms_day_coin_block"
+  },
+  "result": {
+    "item": "allaboutengie:super_dooms_day_hoe"
+  }
+}

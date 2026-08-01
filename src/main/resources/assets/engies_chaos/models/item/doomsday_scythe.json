@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/doomsdayscythe",
+  "textures": {
+    "0": "engies_chaos:block/pixelscytheddaynew",
+    "particle": "engies_chaos:item/pixelscytheddaynew"
+  }
+}

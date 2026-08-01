@@ -1,0 +1,190 @@
+{
+  "_fv": 79,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 160,
+    "height": 190,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_pick_any_trade_ui",
+          "text": {
+            "fixedValue": "Pick any Trade UI"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 171,
+          "y": 26,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_doomsday_trade_ui",
+          "text": "Doomsday Trade UI",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "DoomsdayButtonClicked"
+          },
+          "displayCondition": {
+            "name": "DoomsdayButtonShow"
+          },
+          "width": 113,
+          "height": 20,
+          "x": 157,
+          "y": 35,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_super_doomsday_trade_ui",
+          "text": "Super Doomsday Trade UI",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SuperDoomsdayButtonClicked"
+          },
+          "displayCondition": {
+            "name": "SuperDoomsdayButtonShow"
+          },
+          "width": 145,
+          "height": 20,
+          "x": 141,
+          "y": 57,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_the_end_trade_ui",
+          "text": "The End Trade UI",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "TheEndButtonClicked"
+          },
+          "displayCondition": {
+            "name": "TheEndButtonShow"
+          },
+          "width": 108,
+          "height": 20,
+          "x": 159,
+          "y": 79,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_engie_trade_ui",
+          "text": "Engie Trade UI",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "EngieButtonClicked"
+          },
+          "displayCondition": {
+            "name": "EngieButtonShow"
+          },
+          "width": 98,
+          "height": 20,
+          "x": 164,
+          "y": 101,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_mindscape_trade_ui",
+          "text": "Mindscape Trade UI",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "MindscapeButtonClicked"
+          },
+          "displayCondition": {
+            "name": "MindscapeButtonShow"
+          },
+          "width": 119,
+          "height": 20,
+          "x": 154,
+          "y": 123,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_engiegames_trade_ui",
+          "text": "EngieGames Trade UI",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "EngieGamesButtonClicked"
+          },
+          "displayCondition": {
+            "name": "EngieGamesButtonShow"
+          },
+          "width": 124,
+          "height": 20,
+          "x": 152,
+          "y": 145,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_cosmic_trade_ui",
+          "text": "Cosmic Trade UI",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "CosmicButtonClicked"
+          },
+          "displayCondition": {
+            "name": "CosmicButtonShow"
+          },
+          "width": 103,
+          "height": 20,
+          "x": 162,
+          "y": 167,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_roughian_trade_ui",
+          "text": "Roughian Trade UI",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "RoughianButtonClicked"
+          },
+          "displayCondition": {
+            "name": "RoughianButtonShow"
+          },
+          "width": 113,
+          "height": 20,
+          "x": 157,
+          "y": 189,
+          "locked": false
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

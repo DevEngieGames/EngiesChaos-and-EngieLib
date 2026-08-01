@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/aaeitemsplaque",
+  "textures": {
+    "0": "engies_chaos:block/aae_items_logo",
+    "particle": "engies_chaos:item/backuptext"
+  }
+}

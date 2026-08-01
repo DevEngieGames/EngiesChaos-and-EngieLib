@@ -1,0 +1,9 @@
+{
+  "parent": "engies_chaos:custom/xengiegamesplush",
+  "textures": {
+    "0": "engies_chaos:block/xengienewplush",
+    "1": "engies_chaos:block/truexengiescarf",
+    "2": "engies_chaos:block/white",
+    "particle": "engies_chaos:item/volc"
+  }
+}

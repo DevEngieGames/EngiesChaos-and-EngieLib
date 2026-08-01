@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "theendcointoblock",
+  "ingredients": [
+    {
+      "item": "allaboutengie:the_end_coin"
+    },
+    {
+      "item": "allaboutengie:the_end_coin"
+    },
+    {
+      "item": "allaboutengie:the_end_coin"
+    },
+    {
+      "item": "allaboutengie:the_end_coin"
+    },
+    {
+      "item": "allaboutengie:the_end_coin"
+    },
+    {
+      "item": "allaboutengie:the_end_coin"
+    },
+    {
+      "item": "allaboutengie:the_end_coin"
+    },
+    {
+      "item": "allaboutengie:the_end_coin"
+    },
+    {
+      "item": "allaboutengie:the_end_coin"
+    }
+  ],
+  "result": {
+    "item": "allaboutengie:the_end_coin_block",
+    "count": 1
+  }
+}

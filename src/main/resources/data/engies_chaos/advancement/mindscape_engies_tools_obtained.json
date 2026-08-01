@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "engies_chaos:mindscape_engies_pickaxe"
+    },
+    "title": {
+      "translate": "advancements.mindscape_engies_tools_obtained.title"
+    },
+    "description": {
+      "translate": "advancements.mindscape_engies_tools_obtained.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "mindscape_engies_tools_obtained_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 115
+  },
+  "parent": "engies_chaos:mindscape_engie_coin_obtained"
+}

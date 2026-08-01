@@ -1,0 +1,469 @@
+{
+  "_fv": 79,
+  "_type": "overlay",
+  "definition": {
+    "priority": "HIGHEST",
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "diff0.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty0ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff1.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty1ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff2.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty2ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff3.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty3ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff4.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty4ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff5.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty5ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff6.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty6ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff7.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty7ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff8.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty8ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff9.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty9ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff10.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty10ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff11.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty11ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff12.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty12ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff13.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty14ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff15.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty15ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff16.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty16ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff17.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty17ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff18.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty18ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff19.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty19ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff20.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty20ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff21.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty21ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff22.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty22ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff23.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty23ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff24.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty24ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff25.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty25ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff26.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty26ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff27.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty27ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff28.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty28ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff29.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty29ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff30.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty30ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff31.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty31ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff32.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty32ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 302,
+          "y": 0,
+          "locked": false
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "displayCondition": {
+      "name": "DifficultyOverlayShow3"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

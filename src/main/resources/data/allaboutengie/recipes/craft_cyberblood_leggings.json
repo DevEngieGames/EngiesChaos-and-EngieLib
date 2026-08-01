@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "a a",
+    "a a"
+  ],
+  "key": {
+    "a": {
+      "item": "allaboutengie:cyberblood_ingot"
+    }
+  },
+  "result": {
+    "item": "allaboutengie:cyberblood_leggings",
+    "count": 1
+  }
+}

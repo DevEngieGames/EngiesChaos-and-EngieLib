@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "engies_chaos:the_end_advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.theendofyourstory.title"
+    },
+    "description": {
+      "translate": "advancements.theendofyourstory.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "theendofyourstory_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 3000
+  },
+  "parent": "engies_chaos:sdday_conqueror"
+}

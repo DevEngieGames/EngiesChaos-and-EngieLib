@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "antimatterminiscythe",
+  "pattern": [
+    "ab",
+    "cd",
+    " e"
+  ],
+  "key": {
+    "a": {
+      "item": "allaboutengie:antimatter_engie_gem"
+    },
+    "b": {
+      "item": "minecraft:iron_ingot"
+    },
+    "c": {
+      "item": "allaboutengie:antimatter_angry_engie_essence"
+    },
+    "d": {
+      "item": "allaboutengie:engiegames_sword"
+    },
+    "e": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "allaboutengie:antimatter_mini_scythe",
+    "count": 1
+  }
+}

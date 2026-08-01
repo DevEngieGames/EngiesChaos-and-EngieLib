@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "engies_chaos:antimatter_super_doomsdays_leggings",
+  "addition": "engies_chaos:antimatter_the_end_coin_block",
+  "result": {
+    "id": "engies_chaos:antimatter_the_ends_leggings"
+  }
+}

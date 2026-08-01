@@ -1,0 +1,44 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Pickaxe",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "engiegamesengieanchor2d",
+    "customModelName": "engiegamesanchor:default",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "engiegamesengieanchor2d",
+    "name": "Collectors EngieGames Anchor",
+    "specialInformation": {
+      "fixedValue": [],
+      "name": "EngieGamesAnchorSpecialInformation"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:BanHammers"
+      }
+    ],
+    "efficiency": 125.0,
+    "attackSpeed": 1.0,
+    "enchantability": 22,
+    "damageVsEntity": 9500.0,
+    "usageCount": 71000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "EngieGamesEngieAnchorToolInHandTick"
+    }
+  }
+}

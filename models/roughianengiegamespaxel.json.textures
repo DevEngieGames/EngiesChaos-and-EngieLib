@@ -1,0 +1,12 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "roughianengiegamespicktext",
+        "1": "roughianengiegamesaxetext",
+        "2": "roughianengiegamesshoveltext"
+      },
+      "name": "default"
+    }
+  }
+}

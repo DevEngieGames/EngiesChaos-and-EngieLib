@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "cosmicengiegames_sword_3d",
+        "1": "cosmicengiegames_sword_3d_outline"
+      },
+      "name": "default"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "_fv": 79,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "SPACE",
+    "keyBindingName": "Double Jump (DO NOT REBIND) [AAE]",
+    "keyBindingCategoryKey": "gameplay",
+    "onKeyPressed": {
+      "name": "DoubleJumpOnKeyPressed"
+    },
+    "onKeyReleased": {
+      "name": "DoubleJumpOnKeyReleased"
+    }
+  }
+}

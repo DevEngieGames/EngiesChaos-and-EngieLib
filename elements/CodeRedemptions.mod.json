@@ -1,0 +1,219 @@
+{
+  "_fv": 79,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 250,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_reall_about_engie_configuration",
+          "text": {
+            "fixedValue": "Engie's Chaos Code Redemptions."
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 93,
+          "y": 41,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_x",
+          "text": "X",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ConfigButton10"
+          },
+          "width": 30,
+          "height": 20,
+          "x": 306,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_empty",
+          "text": "←",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "CodeRedemptionsGoBackToConfig"
+          },
+          "width": 28,
+          "height": 20,
+          "x": 92,
+          "y": 180,
+          "locked": false
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Input Code",
+          "name": "codeinput",
+          "width": 120,
+          "height": 20,
+          "x": 153,
+          "y": 105,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_yearly_codes",
+          "text": {
+            "fixedValue": "Yearly codes:"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 92,
+          "y": 60,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_happynewyears",
+          "text": {
+            "fixedValue": "\"HappyNewYears\""
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 92,
+          "y": 71,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_merrychristmas",
+          "text": {
+            "fixedValue": "\"MerryChristmas\""
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 92,
+          "y": 82,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_happybirthdayengie",
+          "text": {
+            "fixedValue": "\"HappyBirthdayEngie\""
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 92,
+          "y": 93,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_redeem",
+          "text": "Redeem",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "Codes"
+          },
+          "width": 56,
+          "height": 20,
+          "x": 185,
+          "y": 126,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_for_star",
+          "text": {
+            "fixedValue": "For Star:"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "StarCheckForCodeRedemp"
+          },
+          "x": 289,
+          "y": 60,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_phantom",
+          "text": {
+            "fixedValue": "\"Phantom\""
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "StarCheckForCodeRedemp"
+          },
+          "x": 289,
+          "y": 71,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_scarlet",
+          "text": {
+            "fixedValue": "\"Scarlet\""
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "StarCheckForCodeRedemp"
+          },
+          "x": 289,
+          "y": 82,
+          "locked": false
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

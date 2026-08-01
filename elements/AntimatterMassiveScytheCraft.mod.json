@@ -1,0 +1,53 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "antimattermassivescythe",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:AntimatterGiganticScythe"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "EQUIPMENT",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:AntimatterOutragedEngieBlock"
+      },
+      {
+        "value": "CUSTOM:AntimatterEnragedEngieBlock"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:AntimatterOutragedEngieBlock"
+      },
+      {
+        "value": "CUSTOM:AntimatterGiganticScythe"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "Blocks.PLANKS"
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:AntimatterMassiveScythe"
+    },
+    "name": "antimatter_massive_scythe_craft",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:HallowUpgradeToGold"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:DarkMatterEngieGamesHallowScythe"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:HallowUpgradeToGold"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:DarkMatterEngieGamesGoldenHallowScythe"
+    },
+    "name": "dark_matter_hallows_upgrading_to_gold",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "engies_chaos:antimatter_the_end_pickaxe"
+    },
+    "title": {
+      "translate": "advancements.antimatter_the_end_tools_obtained.title"
+    },
+    "description": {
+      "translate": "advancements.antimatter_the_end_tools_obtained.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "antimatter_the_end_tools_obtained_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 100
+  },
+  "parent": "engies_chaos:antimatter_the_end_coin_obtained"
+}

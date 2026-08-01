@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/engies_birthday_bundle",
+  "textures": {
+    "0": "engies_chaos:block/engiesbirthdaybundletext1",
+    "particle": "engies_chaos:item/engie_bundle"
+  }
+}

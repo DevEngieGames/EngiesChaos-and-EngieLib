@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "antimattermonstrosityengiepaxel",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:AntimatterMonstrosityEngieAxe"
+      },
+      {
+        "value": "CUSTOM:AntimatterMonstrosityEngiePickaxe"
+      },
+      {
+        "value": "CUSTOM:AntimatterMonstrosityEngieShovel"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "Items.STICK"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "Items.STICK"
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:AntimatterMonstrosityEngiePaxel"
+    },
+    "name": "antimatter_monstrosity_engie_paxel_craft",
+    "namespace": "mod"
+  }
+}

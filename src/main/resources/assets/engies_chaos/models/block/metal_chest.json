@@ -1,0 +1,9 @@
+{
+  "parent": "engies_chaos:custom/metal_chest",
+  "textures": {
+    "all": "engies_chaos:block/metalchest",
+    "particle": "engies_chaos:block/metalchest",
+    "0": "engies_chaos:block/metalchest"
+  },
+  "render_type": "solid"
+}

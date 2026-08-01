@@ -1,0 +1,11 @@
+{
+  "asset_id": "engies_chaos:broken_code",
+  "height": 1,
+  "width": 1,
+  "title": {
+    "translate": "painting.engies_chaos.broken_code.title"
+  },
+  "author": {
+    "translate": "painting.engies_chaos.broken_code.author"
+  }
+}

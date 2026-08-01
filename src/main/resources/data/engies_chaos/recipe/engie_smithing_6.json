@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "engies_chaos:the_end_aiot",
+  "addition": "engies_chaos:engie_coin_block",
+  "result": {
+    "id": "engies_chaos:engies_aiot"
+  }
+}

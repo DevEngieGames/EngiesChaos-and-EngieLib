@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "doomsdaycoinblocktocoins",
+  "ingredients": [
+    {
+      "item": "allaboutengie:dooms_day_coin_block"
+    }
+  ],
+  "result": {
+    "item": "allaboutengie:dooms_day_coin",
+    "count": 9
+  }
+}

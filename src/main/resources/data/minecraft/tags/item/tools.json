@@ -1,0 +1,46 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#engies_chaos:anchors",
+      "required": false
+    },
+    "minecraft:carrot_on_a_stick",
+    {
+      "id": "#engies_chaos:banhammers",
+      "required": false
+    },
+    {
+      "id": "#minecraft:hoes",
+      "required": false
+    },
+    "minecraft:crossbow",
+    {
+      "id": "#engies_chaos:scythes",
+      "required": false
+    },
+    "minecraft:bow",
+    {
+      "id": "#minecraft:shovels",
+      "required": false
+    },
+    "minecraft:warped_fungus_on_a_stick",
+    {
+      "id": "#minecraft:pickaxes",
+      "required": false
+    },
+    {
+      "id": "#minecraft:axes",
+      "required": false
+    },
+    {
+      "id": "#minecraft:swords",
+      "required": false
+    },
+    {
+      "id": "#engies_chaos:aiots",
+      "required": false
+    },
+    "minecraft:elytra"
+  ]
+}

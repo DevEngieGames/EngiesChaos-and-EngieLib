@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "engies_chaos:throwback_house",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 75,
+    "separation": 5,
+    "salt": 1202188509
+  }
+}

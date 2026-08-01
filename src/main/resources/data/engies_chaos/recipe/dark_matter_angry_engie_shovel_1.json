@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "darkmatterangryengieshovel",
+  "category": "misc",
+  "pattern": [
+    "a",
+    "b",
+    "b"
+  ],
+  "key": {
+    "a": "engies_chaos:dark_matter_angry_engie_essence",
+    "b": "minecraft:stick"
+  },
+  "result": {
+    "id": "engies_chaos:dark_matter_angry_engie_shovel",
+    "count": 1
+  }
+}

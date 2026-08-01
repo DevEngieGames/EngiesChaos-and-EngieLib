@@ -1,0 +1,112 @@
+{
+  "_fv": 79,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "superdoomsdayhelmetbase",
+    "enableBody": true,
+    "textureBody": "superdoomsdaychestplatebase",
+    "enableLeggings": true,
+    "textureLeggings": "superdoomsdayleggingsbase",
+    "enableBoots": true,
+    "textureBoots": "superdoomsdaybootsbase",
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsArmor"
+      }
+    ],
+    "armorTextureFile": "backup_",
+    "helmetName": "Dark Matter Super DoomsDay Helmet",
+    "bodyName": "Dark Matter Super DoomsDay Chestplate",
+    "leggingsName": "Dark Matter Super DoomsDay Leggings",
+    "bootsName": "Dark Matter Super DoomsDay Boots",
+    "helmetSpecialInformation": {
+      "fixedValue": [
+        "Congratulations!"
+      ]
+    },
+    "bodySpecialInformation": {
+      "fixedValue": [
+        "Congratulations"
+      ]
+    },
+    "leggingsSpecialInformation": {
+      "fixedValue": [
+        "Congratulations"
+      ]
+    },
+    "bootsSpecialInformation": {
+      "fixedValue": [
+        "Congratulations"
+      ]
+    },
+    "helmetModelName": "Modelengiearmor",
+    "helmetModelPart": "Head",
+    "helmetModelTexture": "darkmattersuperdoomsdayarmorlayer1.png",
+    "bodyModelName": "Modelengiearmor",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "LeftArm",
+    "armsModelPartR": "RightArm",
+    "bodyModelTexture": "darkmattersuperdoomsdayarmorlayer1.png",
+    "leggingsModelName": "Modelengiearmor",
+    "leggingsModelPartL": "LeftLeg2",
+    "leggingsModelPartR": "RightLeg2",
+    "leggingsModelTexture": "darkmattersuperdoomsdayarmorlayer2.png",
+    "bootsModelName": "Modelengiearmor",
+    "bootsModelPartL": "LeftLeg",
+    "bootsModelPartR": "RightLeg",
+    "bootsModelTexture": "darkmattersuperdoomsdayarmorlayer1.png",
+    "helmetItemRenderType": 0,
+    "helmetItemCustomModelName": "Normal",
+    "bodyItemRenderType": 0,
+    "bodyItemCustomModelName": "Normal",
+    "leggingsItemRenderType": 0,
+    "leggingsItemCustomModelName": "Normal",
+    "bootsItemRenderType": 0,
+    "bootsItemCustomModelName": "Normal",
+    "helmetImmuneToFire": true,
+    "bodyImmuneToFire": true,
+    "leggingsImmuneToFire": true,
+    "bootsImmuneToFire": true,
+    "helmetGlowCondition": {
+      "fixedValue": false
+    },
+    "bodyGlowCondition": {
+      "fixedValue": false
+    },
+    "leggingsGlowCondition": {
+      "fixedValue": false
+    },
+    "bootsGlowCondition": {
+      "fixedValue": false
+    },
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "maxDamage": 875,
+    "damageValueHelmet": 875,
+    "damageValueBody": 875,
+    "damageValueLeggings": 875,
+    "damageValueBoots": 875,
+    "enchantability": 22,
+    "toughness": 160.0,
+    "knockbackResistance": 5.0,
+    "equipSound": {
+      "value": ""
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:AntimatterSuperDoomsdayCoin"
+      }
+    ]
+  }
+}

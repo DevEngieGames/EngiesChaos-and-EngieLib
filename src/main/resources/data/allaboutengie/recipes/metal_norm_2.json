@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "metalwoodtometal",
+  "pattern": [
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "allaboutengie:metal_chest_oak"
+    }
+  },
+  "result": {
+    "item": "allaboutengie:metal_chest",
+    "count": 1
+  }
+}

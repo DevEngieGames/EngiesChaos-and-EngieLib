@@ -1,0 +1,9 @@
+{
+  "parent": "engies_chaos:custom/phantomandnutpainting",
+  "textures": {
+    "all": "engies_chaos:block/ceasar",
+    "particle": "engies_chaos:block/ceasar",
+    "0": "engies_chaos:block/ceasar"
+  },
+  "render_type": "solid"
+}

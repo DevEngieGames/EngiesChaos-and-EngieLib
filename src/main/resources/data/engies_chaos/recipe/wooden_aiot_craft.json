@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "woodaiot",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:wooden_sword",
+    "minecraft:wooden_pickaxe",
+    "minecraft:wooden_axe",
+    "minecraft:wooden_shovel",
+    "minecraft:wooden_hoe"
+  ],
+  "result": {
+    "id": "engies_chaos:wooden_aiot",
+    "count": 1
+  }
+}

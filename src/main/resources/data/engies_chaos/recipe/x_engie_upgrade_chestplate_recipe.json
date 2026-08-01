@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "engies_chaos:chestplate_base",
+  "addition": "engies_chaos:x_engie_upgrade",
+  "result": {
+    "id": "engies_chaos:x_engie_upgrade_chestplate"
+  }
+}

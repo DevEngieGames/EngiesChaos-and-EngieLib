@@ -1,0 +1,43 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Special",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "darkmatterbanhammerpixel",
+    "customModelName": "ban_hammer:dark",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "darkmatterbanhammerpixel",
+    "name": "Dark Matter Ban Hammer",
+    "specialInformation": {
+      "fixedValue": [],
+      "name": "DescriptionOfItem"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:BanHammers"
+      }
+    ],
+    "efficiency": 4.0,
+    "attackSpeed": 3.0,
+    "enchantability": 22,
+    "damageVsEntity": 9800.0,
+    "usageCount": 73576,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [],
+    "immuneToFire": false,
+    "blockDropsTier": "STONE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onEntityHitWith": {
+      "name": "BanHammerParticleSpawn"
+    },
+    "onItemInInventoryTick": {
+      "name": "BanObtainPro"
+    }
+  }
+}

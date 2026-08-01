@@ -1,0 +1,39 @@
+package engiegames.engies_chaos.item;
+
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionHand;
+
+import engiegames.engies_chaos.procedures.CheesePuffsOpenedRightclickedProcedure;
+import engiegames.engies_chaos.procedures.CheesePuffsOpenedItemInInventoryTickProcedure;
+
+public class CheesePuffsOpenedItem extends Item {
+	public CheesePuffsOpenedItem(Item.Properties properties) {
+		super(properties);
+	}
+
+	@Override
+	public InteractionResult use(Level world, Player entity, InteractionHand hand) {
+		InteractionResult ar = super.use(world, entity, hand);
+		CheesePuffsOpenedRightclickedProcedure.execute(entity);
+		return ar;
+	}
+
+	@Override
+	public InteractionResult useOn(UseOnContext context) {
+		super.useOn(context);
+		CheesePuffsOpenedRightclickedProcedure.execute(context.getPlayer());
+		return InteractionResult.SUCCESS;
+	}
+
+	@Override
+	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
+		super.inventoryTick(itemstack, world, entity, slot, selected);
+		CheesePuffsOpenedItemInInventoryTickProcedure.execute(entity);
+	}
+}

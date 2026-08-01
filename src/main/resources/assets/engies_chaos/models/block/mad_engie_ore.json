@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "engies_chaos:block/madore",
+    "up": "engies_chaos:block/madore",
+    "north": "engies_chaos:block/madore",
+    "east": "engies_chaos:block/madore",
+    "south": "engies_chaos:block/madore",
+    "west": "engies_chaos:block/madore",
+    "particle": "engies_chaos:block/madore"
+  },
+  "render_type": "solid"
+}

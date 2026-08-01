@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "engies_chaos:block/madblock",
+    "up": "engies_chaos:block/madblock",
+    "north": "engies_chaos:block/madblock",
+    "east": "engies_chaos:block/madblock",
+    "south": "engies_chaos:block/madblock",
+    "west": "engies_chaos:block/madblock",
+    "particle": "engies_chaos:block/madblock"
+  },
+  "render_type": "solid"
+}

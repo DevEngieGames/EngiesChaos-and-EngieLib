@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    "b ",
+    "b "
+  ],
+  "key": {
+    "a": "engies_chaos:dark_matter_outraged_engie_essence",
+    "b": "minecraft:stick"
+  },
+  "result": {
+    "id": "engies_chaos:dark_matter_outraged_engie_hoe",
+    "count": 1
+  }
+}

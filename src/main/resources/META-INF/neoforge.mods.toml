@@ -1,0 +1,47 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="Apache License version 2.0"
+
+[[mods]]
+modId="engies_chaos"
+version="21.52.54"
+displayName="Engie's Chaos"
+updateJSONURL="https://raw.githubusercontent.com/DevEngieGames/EngiesChaos-and-EngieLib/refs/heads/Update-Check/EngiesChaos.json"
+displayURL="https://github.com/DevEngieGames/EngiesChaos-and-EngieLib"
+logoFile="logo.png"
+credits="DevEngie (All About Engie Creator)"
+authors="EngieGames(aka xEngieGames/xEngie)"
+description="A Reworked version of All About Engie by EngieGames with full permission from DevEngie to reupload All About Engie. If you find issues, report them on the GitHub page for the mod please and thank you."
+
+# Start of user code block mod configuration
+# End of user code block mod configuration
+
+
+# Start of user code block custom mixins
+# End of user code block custom mixins
+
+[[dependencies.engies_chaos]]
+    modId="neoforge"
+    type="required"
+    versionRange="[21.4.137,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.engies_chaos]]
+    modId="minecraft"
+    type="required"
+    versionRange="[1.21.4]"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.engies_chaos]]
+    modId="engielib"
+    type="required"
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
+
+
+
+# Start of user code block dependencies configuration
+# End of user code block dependencies configuration

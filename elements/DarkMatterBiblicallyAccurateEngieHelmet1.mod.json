@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "darkmatterbiblicallyaccurateengiehelmet",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:DarkMatterBiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:DarkMatterBiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterBiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterBiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterBiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:DarkMatterBiblicallyAccurateEngies.helmet"
+    },
+    "name": "dark_matter_biblically_accurate_engie_helmet_1",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "antimattercraft",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:AntimatterFragment"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:AntimatterFragment"
+      },
+      {
+        "value": "CUSTOM:AntimatterFragment"
+      },
+      {
+        "value": "CUSTOM:AntimatterFragment"
+      },
+      {
+        "value": "CUSTOM:AntimatterFragment"
+      },
+      {
+        "value": "CUSTOM:AntimatterFragment"
+      },
+      {
+        "value": "CUSTOM:AntimatterFragment"
+      },
+      {
+        "value": "CUSTOM:AntimatterFragment"
+      },
+      {
+        "value": "CUSTOM:AntimatterFragment"
+      },
+      {
+        "value": "CUSTOM:AntimatterFragment"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Antimatter"
+    },
+    "name": "antimatter_craft",
+    "namespace": "mod"
+  }
+}

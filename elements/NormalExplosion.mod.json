@@ -1,0 +1,12 @@
+{
+  "_fv": 79,
+  "_type": "damagetype",
+  "definition": {
+    "exhaustion": 0.09999999999999999,
+    "scaling": "never",
+    "effects": "hurt",
+    "normalDeathMessage": "%1$s was unable to run away from a Normal.",
+    "itemDeathMessage": "%1$s was killed by %2$s using %3$s",
+    "playerDeathMessage": "%1$s died to a Normal whilst trying to escape %2$s"
+  }
+}

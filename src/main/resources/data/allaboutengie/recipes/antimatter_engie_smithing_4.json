@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "allaboutengie:mindscape_engies_shovel"
+  },
+  "addition": {
+    "item": "allaboutengie:antimatter_engie_block"
+  },
+  "result": {
+    "item": "allaboutengie:antimatter_engie_shovel"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "engies_chaos:the_ends_chestplate",
+  "addition": "engies_chaos:engie_coin_block",
+  "result": {
+    "id": "engies_chaos:engie_gamess_chestplate"
+  }
+}

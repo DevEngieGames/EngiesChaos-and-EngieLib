@@ -1,0 +1,19 @@
+package engiegames.engies_chaos.procedures;
+
+import net.minecraft.world.entity.Entity;
+
+import engiegames.engies_chaos.network.EngiesChaosModVariables;
+
+public class RecipeBookVol1UpFivePagesProcedure {
+	public static void execute(Entity entity) {
+		if (entity == null)
+			return;
+		if (entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).pageNumber < 66) {
+			{
+				EngiesChaosModVariables.PlayerVariables _vars = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES);
+				_vars.pageNumber = entity.getData(EngiesChaosModVariables.PLAYER_VARIABLES).pageNumber + 5;
+				_vars.syncPlayerVariables(entity);
+			}
+		}
+	}
+}

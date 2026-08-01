@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "allaboutengie:monstrosity_engie_shovel"
+  },
+  "addition": {
+    "item": "allaboutengie:dooms_day_coin_block"
+  },
+  "result": {
+    "item": "allaboutengie:dooms_day_shovel"
+  }
+}

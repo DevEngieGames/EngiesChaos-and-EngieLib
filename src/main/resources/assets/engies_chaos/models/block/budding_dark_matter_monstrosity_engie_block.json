@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "engies_chaos:block/buddingdarkmattermeblock",
+    "up": "engies_chaos:block/buddingdarkmattermeblock",
+    "north": "engies_chaos:block/buddingdarkmattermeblock",
+    "east": "engies_chaos:block/buddingdarkmattermeblock",
+    "south": "engies_chaos:block/buddingdarkmattermeblock",
+    "west": "engies_chaos:block/buddingdarkmattermeblock",
+    "particle": "engies_chaos:block/buddingdarkmattermeblock"
+  },
+  "render_type": "solid"
+}

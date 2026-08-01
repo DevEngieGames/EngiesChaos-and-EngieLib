@@ -1,0 +1,8 @@
+{
+  "parent": "engies_chaos:custom/crackersinbowl",
+  "textures": {
+    "0": "engies_chaos:block/spruce",
+    "1": "engies_chaos:block/crackertexture",
+    "particle": "engies_chaos:item/crackertexture"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "hostileengieaiot",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:HostileEngieSword"
+      },
+      {
+        "value": "CUSTOM:HostileEngieAxe"
+      },
+      {
+        "value": "CUSTOM:HostileEngieShovel"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:HostileEngieHoe"
+      },
+      {
+        "value": "CUSTOM:HostileEngiePickaxe"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:HostileEngiePaxel"
+    },
+    "name": "hostile_engie_paxel_craft",
+    "namespace": "mod"
+  }
+}

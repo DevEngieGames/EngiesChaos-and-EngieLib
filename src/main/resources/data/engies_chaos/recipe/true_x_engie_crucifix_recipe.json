@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "engies_chaos:x_engie_crucifix",
+  "addition": "engies_chaos:x_engie_upgrade_crucifix",
+  "result": {
+    "id": "engies_chaos:true_x_engie_crucifix"
+  }
+}

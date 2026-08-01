@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "engies_chaos:hostile_engies_leggings",
+  "addition": "engies_chaos:dooms_day_coin_block",
+  "result": {
+    "id": "engies_chaos:dooms_days_leggings"
+  }
+}

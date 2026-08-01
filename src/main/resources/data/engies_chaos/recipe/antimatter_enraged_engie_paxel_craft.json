@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "antimatterenragedengieaiot",
+  "category": "misc",
+  "ingredients": [
+    "engies_chaos:antimatter_enraged_engie_sword",
+    "engies_chaos:antimatter_enraged_engie_axe",
+    "engies_chaos:antimatter_enraged_engie_shovel",
+    "engies_chaos:antimatter_enraged_engie_hoe",
+    "engies_chaos:antimatter_enraged_engie_pickaxe"
+  ],
+  "result": {
+    "id": "engies_chaos:antimatter_enraged_engie_aiot",
+    "count": 1
+  }
+}

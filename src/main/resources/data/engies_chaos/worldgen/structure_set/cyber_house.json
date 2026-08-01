@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "engies_chaos:cyber_house",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 50,
+    "separation": 5,
+    "salt": 1466583351
+  }
+}

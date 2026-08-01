@@ -1,0 +1,8 @@
+{
+  "parent": "allaboutengie:custom/engiehead",
+  "textures": {
+    "0": "allaboutengie:block/engiehead",
+    "1": "allaboutengie:block/16101613_2",
+    "particle": "allaboutengie:item/engieheadeatparticle"
+  }
+}

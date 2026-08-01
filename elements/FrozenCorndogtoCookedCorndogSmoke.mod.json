@@ -1,0 +1,27 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smoking",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:FrozenCorndog"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 2.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smokingInputStack": {
+      "value": "CUSTOM:FrozenCorndog"
+    },
+    "smokingReturnStack": {
+      "value": "CUSTOM:Corndog"
+    },
+    "name": "frozen_corndogto_cooked_corndog_smoke",
+    "namespace": "mod"
+  }
+}

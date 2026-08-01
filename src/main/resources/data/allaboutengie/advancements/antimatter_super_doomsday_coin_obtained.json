@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "item": "allaboutengie:super_dooms_day_coin"
+    },
+    "title": {
+      "translate": "advancements.antimatter_super_doomsday_coin_obtained.title"
+    },
+    "description": {
+      "translate": "advancements.antimatter_super_doomsday_coin_obtained.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "antimatter_super_doomsday_coin_obtained_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allaboutengie:antimatter_super_doomsday_coin"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1000000000
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "allaboutengie:antimatter_doomsday_coin_obtained"
+}

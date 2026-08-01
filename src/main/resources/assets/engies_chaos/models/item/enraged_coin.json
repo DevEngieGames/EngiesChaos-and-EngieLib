@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/enragedcoin",
+  "textures": {
+    "0": "engies_chaos:block/cointexture",
+    "particle": "engies_chaos:item/enragedcoin"
+  }
+}

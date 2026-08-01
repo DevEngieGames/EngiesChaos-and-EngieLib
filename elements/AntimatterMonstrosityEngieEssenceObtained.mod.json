@@ -1,0 +1,41 @@
+{
+  "_fv": 79,
+  "_type": "achievement",
+  "definition": {
+    "achievementName": "Who even shudders at this point.",
+    "achievementDescription": "Obtain an Antimatter Monstrosity Engie Essence for the first time.",
+    "achievementIcon": {
+      "value": "CUSTOM:AntimatterMonstrosityEngieEssence"
+    },
+    "background": "Default",
+    "disableDisplay": false,
+    "showPopup": true,
+    "announceToChat": true,
+    "hideIfNotCompleted": false,
+    "rewardLoot": [],
+    "rewardRecipes": [
+      "AntimatterMonstrosityBanCraft",
+      "AntimatterMonstrosityScytheCraft",
+      "AntimatterMonstrosityEngieSword1",
+      "AntimatterMonstrosityEngiePickaxe1",
+      "AntimatterMonstrosityEngieAxe1",
+      "AntimatterMonstrosityEngieAxe2",
+      "AntimatterMonstrosityEngieShovel1",
+      "AntimatterMonstrosityEngieHoe1",
+      "AntimatterMonstrosityEngieHoe2",
+      "AntimatterMonstrosityEngiePaxelCraft",
+      "AntimatterMonstrosityEngieHelmet1",
+      "AntimatterMonstrosityEngieChestplate1",
+      "AntimatterMonstrosityEngieLeggings1",
+      "AntimatterMonstrosityEngieBoots1",
+      "AntimatterMonstrosityToBlock",
+      "AntimatterMonstrosityToItem"
+    ],
+    "rewardXP": 60,
+    "achievementType": "challenge",
+    "parent": {
+      "value": "CUSTOM:AntimatterBiblicallyAccurateEssenceObtained"
+    },
+    "triggerxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"advancement_trigger\" deletable=\"false\" x=\"40\" y=\"80\"><next><block type=\"item_in_inventory\"><value name=\"amount_l\"><block type=\"math_number\"><field name=\"NUM\">1</field></block></value><value name=\"amount_h\"><block type=\"math_number\"><field name=\"NUM\">1000000000</field></block></value><value name=\"item\"><block type=\"mcitem_all\"><field name=\"value\">CUSTOM:AntimatterMonstrosityEngieEssence</field></block></value></block></next></block></xml>"
+  }
+}

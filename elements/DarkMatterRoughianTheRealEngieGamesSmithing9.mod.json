@@ -1,0 +1,29 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:DarkMatterCosmicEngieGamess.legs"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:DarkMatterRoughianEngieGamesCoinBlock"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:DarkMatterRoughianEngieGamess.legs"
+    },
+    "name": "dark_matter_roughian_the_real_engie_games_smithing_9",
+    "namespace": "mod"
+  }
+}

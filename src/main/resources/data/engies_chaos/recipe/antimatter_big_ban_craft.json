@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "antimatterbigbanhammer",
+  "category": "equipment",
+  "pattern": [
+    "aba",
+    "cdc",
+    " e "
+  ],
+  "key": {
+    "a": "engies_chaos:antimatter_angry_engie_essence",
+    "b": "engies_chaos:antimatter_mad_engie_essence",
+    "c": "engies_chaos:antimatter_enraged_engie_essence",
+    "d": "engies_chaos:antimatter_ban_hammer",
+    "e": "minecraft:stick"
+  },
+  "result": {
+    "id": "engies_chaos:antimatter_big_ban_hammer",
+    "count": 1
+  }
+}

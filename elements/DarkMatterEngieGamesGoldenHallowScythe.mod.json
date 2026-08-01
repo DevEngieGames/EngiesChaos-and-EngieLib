@@ -1,0 +1,44 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "pixeldarkmatterscythegold",
+    "customModelName": "hallowsscythe:golddark",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "pixeldarkmatterscythegold",
+    "name": "Dark Matter Golden Hallow's Scythe",
+    "specialInformation": {
+      "fixedValue": [],
+      "name": "EngieGamesHallowScytheSpecialInformation"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:BanHammers"
+      }
+    ],
+    "efficiency": 156.0,
+    "attackSpeed": 1.0,
+    "enchantability": 22,
+    "damageVsEntity": 14050.0,
+    "usageCount": 98000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "DarkMatterEngieGamesGoldenHallowScytheToolInHandTick"
+    }
+  }
+}

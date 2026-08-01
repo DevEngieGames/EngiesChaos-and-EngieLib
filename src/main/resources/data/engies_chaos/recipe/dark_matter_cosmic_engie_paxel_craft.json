@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "darkmattercosmicengiegamesaiot",
+  "category": "misc",
+  "ingredients": [
+    "engies_chaos:dark_matter_cosmic_engie_games_sword",
+    "engies_chaos:dark_matter_cosmic_engie_games_axe",
+    "engies_chaos:dark_matter_cosmic_engie_games_shovel",
+    "engies_chaos:dark_matter_cosmic_engie_games_hoe",
+    "engies_chaos:dark_matter_cosmic_engie_games_pickaxe",
+    "minecraft:stick"
+  ],
+  "result": {
+    "id": "engies_chaos:dark_matter_cosmic_engie_games_aiot",
+    "count": 1
+  }
+}

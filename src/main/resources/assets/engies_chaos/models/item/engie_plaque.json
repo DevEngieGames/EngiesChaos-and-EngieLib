@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/engieplaque",
+  "textures": {
+    "0": "engies_chaos:block/newengiepfp",
+    "particle": "engies_chaos:item/newengiepfp"
+  }
+}

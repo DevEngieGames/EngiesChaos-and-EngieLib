@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "darkmattermonstrosityengieaiot",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:DarkMatterMonstrosityEngieSword"
+      },
+      {
+        "value": "CUSTOM:DarkMatterMonstrosityEngieAxe"
+      },
+      {
+        "value": "CUSTOM:DarkMatterMonstrosityEngieShovel"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:DarkMatterMonstrosityEngieHoe"
+      },
+      {
+        "value": "CUSTOM:DarkMatterMonstrosityEngiePickaxe"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:DarkMatterMonstrosityEngiePaxel"
+    },
+    "name": "dark_matter_monstrosity_engie_paxel_craft",
+    "namespace": "mod"
+  }
+}

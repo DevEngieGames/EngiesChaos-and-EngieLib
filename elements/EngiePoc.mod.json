@@ -1,0 +1,12 @@
+{
+  "_fv": 79,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Logic",
+    "displayName": "[Engie's Chaos] EngiePoc",
+    "description": "Are you brave enough to face Engie's own Apocalypse challenge? \"Nightmare\"(Hardcore) is required to play this as intended!",
+    "category": "UPDATES",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 0
+  }
+}

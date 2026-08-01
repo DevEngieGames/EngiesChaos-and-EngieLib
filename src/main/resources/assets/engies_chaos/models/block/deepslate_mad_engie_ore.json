@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "engies_chaos:block/deepslatemad",
+    "up": "engies_chaos:block/deepslatemad",
+    "north": "engies_chaos:block/deepslatemad",
+    "east": "engies_chaos:block/deepslatemad",
+    "south": "engies_chaos:block/deepslatemad",
+    "west": "engies_chaos:block/deepslatemad",
+    "particle": "engies_chaos:block/deepslatemad"
+  },
+  "render_type": "solid"
+}

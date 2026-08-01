@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "angryengiepaxel",
+  "category": "misc",
+  "ingredients": [
+    "engies_chaos:angry_engie_sword",
+    "engies_chaos:angry_engie_axe",
+    "engies_chaos:angry_engie_shovel",
+    "engies_chaos:angry_engie_hoe",
+    "engies_chaos:angry_engie_pickaxe"
+  ],
+  "result": {
+    "id": "engies_chaos:angry_engie_aiot",
+    "count": 1
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "engies_chaos:item/superdoomsday_pickaxe"
+  }
+}

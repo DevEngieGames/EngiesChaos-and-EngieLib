@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "engies_chaos:blocks/antimatter_engie_crystal_full",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "engies_chaos:antimatter_engie_gem",
+          "functions": [
+            {
+              "count": 25,
+              "function": "minecraft:set_count"
+            },
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

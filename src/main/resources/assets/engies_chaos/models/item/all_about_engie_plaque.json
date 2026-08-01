@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/allaboutengieplaque",
+  "textures": {
+    "0": "engies_chaos:block/allaboutengie",
+    "particle": "engies_chaos:item/backuptext"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "display": {
+    "icon": {
+      "item": "allaboutengie:antimatter_angry_engie_essence"
+    },
+    "title": {
+      "translate": "advancements.antimatter_angry_engie_essence_obtained.title"
+    },
+    "description": {
+      "translate": "advancements.antimatter_angry_engie_essence_obtained.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "antimatter_angry_engie_essence_obtained_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allaboutengie:antimatter_angry_engie_essence"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1000000000
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 20,
+    "recipes": [
+      "allaboutengie:antimatter_angry_engie_sword_1",
+      "allaboutengie:antimatter_angry_engie_pickaxe_1",
+      "allaboutengie:antimatter_angry_engie_axe_1",
+      "allaboutengie:antimatter_angry_engie_axe_2",
+      "allaboutengie:antimatter_angry_engie_shovel_1",
+      "allaboutengie:antimatter_angry_engie_hoe_1",
+      "allaboutengie:antimatter_angry_engie_hoe_2",
+      "allaboutengie:antimatter_angry_engie_paxel_craft",
+      "allaboutengie:antimatter_angry_engie_helmet_1",
+      "allaboutengie:antimatter_angry_engie_chestplate_1",
+      "allaboutengie:antimatter_angry_engie_leggings_1",
+      "allaboutengie:antimatter_angry_engie_boots_1",
+      "allaboutengie:antimatter_angry_engie_block_1",
+      "allaboutengie:antimatter_angry_engie_essence_9items",
+      "allaboutengie:antimatter_mini_ban_craft_1",
+      "allaboutengie:antimatter_mini_ban_craft_2",
+      "allaboutengie:antimatter_mini_ban_craft_3",
+      "allaboutengie:antimatter_ban_craft",
+      "allaboutengie:antimatter_big_ban_craft",
+      "allaboutengie:antimatter_large_ban_craft",
+      "allaboutengie:antimatter_huge_ban_craft",
+      "allaboutengie:antimatter_enormous_ban_craft",
+      "allaboutengie:antimatter_gigantic_ban_craft",
+      "allaboutengie:antimatter_massive_ban_craft",
+      "allaboutengie:antimatter_biblically_ban_craft",
+      "allaboutengie:antimatter_monstrosity_ban_craft",
+      "allaboutengie:antimatter_mini_scythe_craft_1",
+      "allaboutengie:antimatter_mini_scythe_craft_2",
+      "allaboutengie:antimatter_mini_scythe_craft_3",
+      "allaboutengie:antimatter_scythe_craft",
+      "allaboutengie:antimatter_big_scythe_craft",
+      "allaboutengie:antimatter_large_scythe_craft",
+      "allaboutengie:antimatter_huge_scythe_craft",
+      "allaboutengie:antimatter_enormous_scythe_craft",
+      "allaboutengie:antimatter_gigantic_scythe_craft"
+    ]
+  },
+  "parent": "allaboutengie:antimatter_engie_gem_obtained"
+}

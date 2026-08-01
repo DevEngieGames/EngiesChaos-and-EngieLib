@@ -1,0 +1,11 @@
+{
+  "asset_id": "engies_chaos:fatalerror",
+  "height": 1,
+  "width": 1,
+  "title": {
+    "translate": "painting.engies_chaos.fatalerror.title"
+  },
+  "author": {
+    "translate": "painting.engies_chaos.fatalerror.author"
+  }
+}

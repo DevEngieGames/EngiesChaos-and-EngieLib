@@ -1,0 +1,8 @@
+{
+  "parent": "engies_chaos:custom/engieplushhardmode",
+  "textures": {
+    "0": "engies_chaos:block/roughianengie2",
+    "1": "engies_chaos:block/16101613",
+    "particle": "engies_chaos:item/insanityadvancementbg"
+  }
+}

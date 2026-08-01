@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "1": "oreo",
+        "2": "signatures"
+      },
+      "name": "default"
+    }
+  }
+}

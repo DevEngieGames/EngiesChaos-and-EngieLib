@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": "engies_chaos:engies_axe",
+  "addition": "engies_chaos:mindscape_coin_block",
+  "result": {
+    "id": "engies_chaos:mindscape_engies_axe"
+  }
+}

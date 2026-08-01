@@ -1,0 +1,9 @@
+{
+  "parent": "allaboutengie:custom/coinblockregular",
+  "textures": {
+    "all": "allaboutengie:block/mindscapeengiecoinblocktext",
+    "particle": "allaboutengie:block/mindscapeengiecoinblocktext",
+    "0": "allaboutengie:block/mindscapeengiecoinblocktext"
+  },
+  "render_type": "cutout"
+}

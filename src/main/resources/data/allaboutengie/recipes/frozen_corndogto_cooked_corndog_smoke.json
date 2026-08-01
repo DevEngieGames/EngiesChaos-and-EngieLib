@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "experience": 2,
+  "cookingtime": 200,
+  "ingredient": {
+    "item": "allaboutengie:frozen_corndog"
+  },
+  "result": "allaboutengie:corndog"
+}

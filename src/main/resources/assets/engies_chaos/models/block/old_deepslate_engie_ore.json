@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "engies_chaos:block/olddeepslateengi",
+    "up": "engies_chaos:block/olddeepslateengi",
+    "north": "engies_chaos:block/olddeepslateengi",
+    "east": "engies_chaos:block/olddeepslateengi",
+    "south": "engies_chaos:block/olddeepslateengi",
+    "west": "engies_chaos:block/olddeepslateengi",
+    "particle": "engies_chaos:block/olddeepslateengi"
+  },
+  "render_type": "solid"
+}

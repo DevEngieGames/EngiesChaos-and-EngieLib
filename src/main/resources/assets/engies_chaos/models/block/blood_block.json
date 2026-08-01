@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "engies_chaos:block/bloodblockbottom",
+    "up": "engies_chaos:block/bloodblocktop",
+    "north": "engies_chaos:block/bloodblockside",
+    "east": "engies_chaos:block/bloodblockside",
+    "south": "engies_chaos:block/bloodblockside",
+    "west": "engies_chaos:block/bloodblockside",
+    "particle": "engies_chaos:block/bloodblockbottom"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "engies_chaos:custom/hallowsscythe",
+  "textures": {
+    "0": "engies_chaos:block/pixelscythehallowengienew",
+    "1": "engies_chaos:block/scythespikes1engie",
+    "2": "engies_chaos:block/scythespikes2engie",
+    "particle": "engies_chaos:item/pixelscythehallowengienew"
+  }
+}

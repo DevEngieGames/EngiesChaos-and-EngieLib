@@ -1,0 +1,36 @@
+modLoader="javafml"
+loaderVersion="[43,)"
+license="MIT License"
+
+[[mods]]
+modId="allaboutengie"
+version="11.14.25"
+displayName="RE:All About Engie"
+updateJSONURL="https://raw.githubusercontent.com/DevEngieGames/RE-All-About-Engie/refs/heads/Update-Check/REAAE.json"
+displayURL="https://modrinth.com/project/re-all-about-engie"
+logoFile="logo.png"
+credits="DevEngie (Original Mod Creator)"
+authors="EngieGames"
+description="A Reworked version of All About Engie by EngieGames with full permission from DevEngie to reupload All About Engie. If you find issues, report them on the GitHub page for the mod please and thank you."
+
+# Start of user code block mod configuration
+# End of user code block mod configuration
+
+[[dependencies.allaboutengie]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19.2]"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.allaboutengie]]
+    modId="engielib"
+    mandatory=true
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
+
+
+
+# Start of user code block dependencies configuration
+# End of user code block dependencies configuration

@@ -1,0 +1,298 @@
+{
+  "_fv": 79,
+  "_type": "overlay",
+  "definition": {
+    "priority": "HIGH",
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecast.png",
+          "use1Xscale": true,
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecastdaytime.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Daycheck"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecastnighttime.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Nightcheck"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecaststatementtext.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ForecastDisplay15"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecaststatementtext2.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ForecastDisplay16"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecaststatement.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ForecastDisplay17"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecaststatementdooms1.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ForecastDisplay1"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecaststatementdooms2.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ForecastDisplay2"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecaststatementdooms3.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ForecastDisplay3"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecaststatementdooms4single.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ForecastDisplay4"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecaststatementdooms4multi.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ForecastDisplay5"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecaststatementsuperdooms1.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ForecastDisplay6"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecaststatementsuperdooms2.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ForecastDisplay7"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecaststatementtheend1.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ForecastDisplay8"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecaststatementtheend2.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ForecastDisplay9"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecaststatementengieswrath1.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ForecastDisplay10"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecaststatementengieswrath2.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ForecastDisplay11"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecaststatementengieswrath3.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ForecastDisplay12"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecaststatementengieswrath4single.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ForecastDisplay13"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecaststatementengieswrath4multi.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ForecastDisplay14"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "displayCondition": {
+      "name": "ForecastDisplayOverlayIngame"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

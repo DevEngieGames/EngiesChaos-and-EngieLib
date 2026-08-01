@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "antimatterbigscythe",
+  "category": "equipment",
+  "pattern": [
+    "ab",
+    "cd",
+    " e"
+  ],
+  "key": {
+    "a": "engies_chaos:antimatter_angry_engie_essence",
+    "b": "engies_chaos:antimatter_mad_engie_essence",
+    "c": "engies_chaos:antimatter_enraged_engie_essence",
+    "d": "engies_chaos:antimatter_scythe",
+    "e": "minecraft:stick"
+  },
+  "result": {
+    "id": "engies_chaos:antimatter_big_scythe",
+    "count": 1
+  }
+}

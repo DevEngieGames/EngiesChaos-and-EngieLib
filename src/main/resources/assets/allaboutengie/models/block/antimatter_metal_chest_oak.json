@@ -1,0 +1,10 @@
+{
+  "parent": "allaboutengie:custom/metal_chest_wood",
+  "textures": {
+    "all": "allaboutengie:block/antimattermetalchest",
+    "particle": "allaboutengie:block/antimattermetalchest",
+    "0": "allaboutengie:block/antimattermetalchest",
+    "1": "minecraft:block/oak_planks"
+  },
+  "render_type": "solid"
+}

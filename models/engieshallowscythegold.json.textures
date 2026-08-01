@@ -1,0 +1,15 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "scythemaingold",
+        "1": "scythealtgold",
+        "2": "scythespikes1gold",
+        "3": "scythespikes2gold",
+        "4": "scytheeye",
+        "5": "scytheeyecolorgold"
+      },
+      "name": "default"
+    }
+  }
+}

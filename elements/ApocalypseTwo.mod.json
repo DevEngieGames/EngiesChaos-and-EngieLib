@@ -1,0 +1,12 @@
+{
+  "_fv": 79,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Logic",
+    "displayName": "[Engie's Chaos] Apocalypse 2",
+    "description": "Ready to take on the second Apocalypse challenge? Mobs slightly mess around now. \"Nightmare\"(Hardcore) is required to play this as intended!",
+    "category": "UPDATES",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 0
+  }
+}

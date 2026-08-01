@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "corndog"
+      },
+      "name": "default"
+    },
+    "frozen": {
+      "map": {
+        "0": "frozencorndog"
+      },
+      "name": "frozen"
+    }
+  }
+}

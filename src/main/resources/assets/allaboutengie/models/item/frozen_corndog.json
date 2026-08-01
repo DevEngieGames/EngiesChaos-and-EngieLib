@@ -1,0 +1,7 @@
+{
+  "parent": "allaboutengie:custom/corndog",
+  "textures": {
+    "0": "allaboutengie:block/frozencorndog",
+    "particle": "allaboutengie:item/corndog"
+  }
+}

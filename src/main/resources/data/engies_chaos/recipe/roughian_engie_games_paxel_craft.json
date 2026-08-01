@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "roughianengiegamesaiot",
+  "category": "misc",
+  "ingredients": [
+    "engies_chaos:engie_games_hallow_scythe",
+    "engies_chaos:roughian_engie_games_axe",
+    "engies_chaos:roughian_engie_games_shovel",
+    "engies_chaos:roughian_engie_games_hoe",
+    "engies_chaos:roughian_engie_games_pickaxe"
+  ],
+  "result": {
+    "id": "engies_chaos:roughian_engie_games_aiot",
+    "count": 1
+  }
+}

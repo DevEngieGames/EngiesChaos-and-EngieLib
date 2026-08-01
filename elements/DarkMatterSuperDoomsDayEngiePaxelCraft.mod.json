@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "darkmattersuperdoomsdayengieaiot",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:DarkMatterSuperDoomsDaySword"
+      },
+      {
+        "value": "CUSTOM:DarkMatterSuperDoomsDayAxe"
+      },
+      {
+        "value": "CUSTOM:DarkMatterSuperDoomsDayShovel"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:DarkMatterSuperDoomsDayHoe"
+      },
+      {
+        "value": "CUSTOM:DarkMatterSuperDoomsDayPickaxe"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:DarkMatterSuperDoomsDayPaxel"
+    },
+    "name": "dark_matter_super_dooms_day_engie_paxel_craft",
+    "namespace": "mod"
+  }
+}

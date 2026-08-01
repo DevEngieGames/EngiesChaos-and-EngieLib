@@ -1,0 +1,301 @@
+{
+  "_fv": 79,
+  "_type": "overlay",
+  "definition": {
+    "priority": "HIGHEST",
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "doomsdayproph.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DDAYProphNone"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "doomsdayprophmult1.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DDAYProphMult1"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "doomsdayprophmult2.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DDAYProphMult2"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "doomsdayprophmult3.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DDAYProphMult3"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "doomsdayprophmult4.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DDAYProphMult4"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "superdoomsdayproph.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "SDDAYProphNone"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "superdoomsdayprophmult1.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "SDDAYProphMult1"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "superdoomsdayprophmult2.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "SDDAYProphMult2"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "superdoomsdayprophmult3.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "SDDAYProphMult3"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "superdoomsdayprophmult4.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "SDDAYProphMult4"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "theendproph.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "THEENDProphNone"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "theendprophmult1.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "THEENDProphMult1"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "theendprophmult2.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "THEENDProphMult2"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "theendprophmult3.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "THEENDProphMult3"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "theendprophmult4.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "THEENDProphMult4"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "engiegamesproph.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ENGIEGAMESProphNone"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "engiegamesprophmult1.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ENGIEGAMESProphMult1"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "engiegamesprophmult2.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ENGIEGAMESProphMult2"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "engiegamesprophmult3.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ENGIEGAMESProphMult3"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "engiegamesprophmult4.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ENGIEGAMESProphMult4"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "displayCondition": {
+      "name": "ProphecyDisplayOverlayIngame"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

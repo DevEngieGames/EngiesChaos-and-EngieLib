@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "engies_chaos:content_creator"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "engies_chaos:content_creator"
+      }
+    ]
+  }
+}

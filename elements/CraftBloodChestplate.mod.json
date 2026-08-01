@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "bloodchestplate",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:BloodIngot"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:BloodIngot"
+      },
+      {
+        "value": "CUSTOM:BloodIngot"
+      },
+      {
+        "value": "CUSTOM:BloodIngot"
+      },
+      {
+        "value": "CUSTOM:BloodIngot"
+      },
+      {
+        "value": "CUSTOM:BloodIngot"
+      },
+      {
+        "value": "CUSTOM:BloodIngot"
+      },
+      {
+        "value": "CUSTOM:BloodIngot"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Blood.body"
+    },
+    "name": "craft_blood_chestplate",
+    "namespace": "mod"
+  }
+}

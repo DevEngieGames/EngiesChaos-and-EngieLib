@@ -1,0 +1,7 @@
+{
+  "parent": "engies_chaos:custom/brownie",
+  "textures": {
+    "1": "engies_chaos:block/brownie",
+    "particle": "engies_chaos:item/brownie"
+  }
+}
