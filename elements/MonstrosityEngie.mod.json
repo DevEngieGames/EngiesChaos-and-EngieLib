@@ -5,7 +5,7 @@
     "mobName": "Monstrosity Engie",
     "mobLabel": "",
     "mobModelName": "Modelmonstrositynew",
-    "mobModelTexture": "monstrositynew_style1.png",
+    "mobModelTexture": "nothingness.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -21,7 +21,44 @@
     "boundingBoxScale": {
       "fixedValue": 1.0
     },
-    "modelLayers": [],
+    "modelLayers": [
+      {
+        "model": "Modelhostile",
+        "texture": "monstrositynew_style1.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "MonstrosityEngieStyle1Display"
+        }
+      },
+      {
+        "model": "Modelhostile",
+        "texture": "monstrositynew_style2.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "MonstrosityEngieStyle2Display"
+        }
+      },
+      {
+        "model": "Modelcoldseason",
+        "texture": "monstrositynewcoldseason.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "MonstrosityEngieColdSeasonedDisplay"
+        }
+      },
+      {
+        "model": "Modelmonstrositynewhalloween",
+        "texture": "monstrositynewhalloween.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "MonstrosityEngieHalloweenedDisplay"
+        }
+      }
+    ],
     "animations": [],
     "modelWidth": 0.6,
     "modelHeight": 1.9000000000000001,
@@ -119,12 +156,33 @@
     "raidCelebrationSound": {
       "value": ""
     },
-    "entityDataEntries": [],
+    "entityDataEntries": [
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "variant",
+        "type": "integer",
+        "value": 1
+      },
+      {
+        "name": "coldseasoned",
+        "type": "logic",
+        "value": false
+      },
+      {
+        "name": "holloweened",
+        "type": "logic",
+        "value": false
+      }
+    ],
     "whenMobDies": {
       "name": "AnyEngieDiesAddCount"
     },
+    "onMobTickUpdate": {
+      "name": "MonstrosityEngieTick"
+    },
     "onInitialSpawn": {
-      "name": "EntitySpawns"
+      "name": "MonstrosityEngieOnInitialEntitySpawn"
     },
     "hasAI": true,
     "aiBase": "(none)",
@@ -141,6 +199,9 @@
     "rangedAttackRadius": 10.0,
     "spawnThisMob": true,
     "doesDespawnWhenIdle": true,
+    "spawningCondition": {
+      "name": "HostileEngieSpawningCondition"
+    },
     "spawningProbability": 2,
     "mobSpawningType": "monster",
     "minNumberOfMobsPerGroup": 1,

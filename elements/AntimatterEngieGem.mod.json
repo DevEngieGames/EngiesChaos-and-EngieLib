@@ -3,7 +3,7 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "antimatterengiegemnew",
+    "texture": "antimatterengiegem",
     "customModelName": "Normal",
     "guiTexture": "",
     "customProperties": {},
@@ -31,9 +31,7 @@
     "damageVsEntity": 0.0,
     "specialInformation": {
       "fixedValue": [
-        "Cyclone EngieGames",
-        "Category 50",
-        "4650 MPH"
+        "niche fire"
       ]
     },
     "glowCondition": {

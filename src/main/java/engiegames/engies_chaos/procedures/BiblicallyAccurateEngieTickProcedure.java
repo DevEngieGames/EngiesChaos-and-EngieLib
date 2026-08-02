@@ -16,22 +16,22 @@ public class BiblicallyAccurateEngieTickProcedure {
 			return;
 		if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty >= 1) {
 			if (entity instanceof LivingEntity _livingEntity0 && _livingEntity0.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE))
-				_livingEntity0.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue((75 * 2.5 * EngiesChaosModVariables.MapVariables.get(world).MobDifficulty));
+				_livingEntity0.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue((100 * 2.5 * EngiesChaosModVariables.MapVariables.get(world).MobDifficulty));
 		} else {
 			if (entity instanceof LivingEntity _livingEntity1 && _livingEntity1.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE))
-				_livingEntity1.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(75);
+				_livingEntity1.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(100);
 		}
 		if (EngiesChaosModVariables.MapVariables.get(world).seasonautumn == true || EngiesChaosModVariables.MapVariables.get(world).seasonwinter == true) {
 			if (Calendar.getInstance().get(Calendar.MONTH) == 9 && Calendar.getInstance().get(Calendar.DAY_OF_MONTH) >= 25) {
 				if (entity instanceof BiblicallyAccurateEngieEntity _datEntSetL)
 					_datEntSetL.getEntityData().set(BiblicallyAccurateEngieEntity.DATA_coldseasoned, false);
 				if (entity instanceof BiblicallyAccurateEngieEntity _datEntSetL)
-					_datEntSetL.getEntityData().set(BiblicallyAccurateEngieEntity.DATA_halloweened, true);
+					_datEntSetL.getEntityData().set(BiblicallyAccurateEngieEntity.DATA_holloweened, true);
 			} else if (!(Calendar.getInstance().get(Calendar.MONTH) == 9 && Calendar.getInstance().get(Calendar.DAY_OF_MONTH) >= 25)) {
 				if (entity instanceof BiblicallyAccurateEngieEntity _datEntSetL)
 					_datEntSetL.getEntityData().set(BiblicallyAccurateEngieEntity.DATA_coldseasoned, true);
 				if (entity instanceof BiblicallyAccurateEngieEntity _datEntSetL)
-					_datEntSetL.getEntityData().set(BiblicallyAccurateEngieEntity.DATA_halloweened, false);
+					_datEntSetL.getEntityData().set(BiblicallyAccurateEngieEntity.DATA_holloweened, false);
 			}
 		} else {
 			if (entity instanceof BiblicallyAccurateEngieEntity _datEntSetL)

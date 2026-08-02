@@ -8,7 +8,7 @@ import engiegames.engies_chaos.init.EngiesChaosModGameRules;
 
 public class NPCNaturalEntitySpawningProcedure {
 	public static boolean execute(LevelAccessor world) {
-		if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DELETED_MOD_ELEMENT) == true) {
+		if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIES_CHAOS_TOGGLE) == true) {
 			if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.OVERWORLD) {
 				return true;
 			} else if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.NETHER) {

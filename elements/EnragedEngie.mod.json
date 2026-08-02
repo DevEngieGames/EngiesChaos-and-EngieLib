@@ -21,7 +21,53 @@
     "boundingBoxScale": {
       "fixedValue": 1.0
     },
-    "modelLayers": [],
+    "modelLayers": [
+      {
+        "model": "Modelhostile",
+        "texture": "enragednew_style1.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "EnragedEngieStyle1Display"
+        }
+      },
+      {
+        "model": "Modelhostile",
+        "texture": "enragednew_style2.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "EnragedEngieStyle2Display"
+        }
+      },
+      {
+        "model": "Modelhostile",
+        "texture": "enragednew_style3.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "EnragedEngieStyle3Display"
+        }
+      },
+      {
+        "model": "Modelcoldseason",
+        "texture": "enragednewcoldseason.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "EnragedEngieColdSeasonedDisplay"
+        }
+      },
+      {
+        "model": "Modelhalloweenenraged",
+        "texture": "enragednewhalloween.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "EnragedEngieHalloweenedDisplay"
+        }
+      }
+    ],
     "animations": [],
     "modelWidth": 0.6,
     "modelHeight": 1.9000000000000001,
@@ -119,12 +165,33 @@
     "raidCelebrationSound": {
       "value": ""
     },
-    "entityDataEntries": [],
+    "entityDataEntries": [
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "style",
+        "type": "integer",
+        "value": 1
+      },
+      {
+        "name": "coldseasoned",
+        "type": "logic",
+        "value": false
+      },
+      {
+        "name": "holloweened",
+        "type": "logic",
+        "value": false
+      }
+    ],
     "whenMobDies": {
       "name": "AnyEngieDiesAddCount"
     },
+    "onMobTickUpdate": {
+      "name": "EnragedEngieTick"
+    },
     "onInitialSpawn": {
-      "name": "EntitySpawns"
+      "name": "EnragedEngieOnInitialEntitySpawn"
     },
     "hasAI": true,
     "aiBase": "(none)",
@@ -141,7 +208,10 @@
     "rangedAttackRadius": 10.0,
     "spawnThisMob": true,
     "doesDespawnWhenIdle": true,
-    "spawningProbability": 10,
+    "spawningCondition": {
+      "name": "HostileEngieSpawningCondition"
+    },
+    "spawningProbability": 20,
     "mobSpawningType": "monster",
     "minNumberOfMobsPerGroup": 1,
     "maxNumberOfMobsPerGroup": 4,

@@ -28,21 +28,29 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.Difficulty;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
 import javax.annotation.Nullable;
 
-import engiegames.engies_chaos.procedures.EntitySpawnsProcedure;
+import engiegames.engies_chaos.procedures.HostileEngieSpawningConditionProcedure;
+import engiegames.engies_chaos.procedures.EnragedEngieTickProcedure;
+import engiegames.engies_chaos.procedures.EnragedEngieOnInitialEntitySpawnProcedure;
 import engiegames.engies_chaos.procedures.DoomsDayMobsFightEachotherToggleProcedure;
 import engiegames.engies_chaos.procedures.AnyEngieDiesAddCountProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class EnragedEngieEntity extends Monster {
+	public static final EntityDataAccessor<Integer> DATA_style = SynchedEntityData.defineId(EnragedEngieEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_coldseasoned = SynchedEntityData.defineId(EnragedEngieEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_holloweened = SynchedEntityData.defineId(EnragedEngieEntity.class, EntityDataSerializers.BOOLEAN);
+
 	public EnragedEngieEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(EngiesChaosModEntities.ENRAGED_ENGIE.get(), world);
 	}
@@ -57,6 +65,14 @@ public class EnragedEngieEntity extends Monster {
 	@Override
 	public Packet<?> getAddEntityPacket() {
 		return NetworkHooks.getEntitySpawningPacket(this);
+	}
+
+	@Override
+	protected void defineSynchedData() {
+		super.defineSynchedData();
+		this.entityData.define(DATA_style, 1);
+		this.entityData.define(DATA_coldseasoned, false);
+		this.entityData.define(DATA_holloweened, false);
 	}
 
 	@Override
@@ -123,13 +139,42 @@ public class EnragedEngieEntity extends Monster {
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		EntitySpawnsProcedure.execute(world, this);
+		EnragedEngieOnInitialEntitySpawnProcedure.execute(world, this);
 		return retval;
 	}
 
+	@Override
+	public void addAdditionalSaveData(CompoundTag compound) {
+		super.addAdditionalSaveData(compound);
+		compound.putInt("Datastyle", this.entityData.get(DATA_style));
+		compound.putBoolean("Datacoldseasoned", this.entityData.get(DATA_coldseasoned));
+		compound.putBoolean("Dataholloweened", this.entityData.get(DATA_holloweened));
+	}
+
+	@Override
+	public void readAdditionalSaveData(CompoundTag compound) {
+		super.readAdditionalSaveData(compound);
+		if (compound.contains("Datastyle"))
+			this.entityData.set(DATA_style, compound.getInt("Datastyle"));
+		if (compound.contains("Datacoldseasoned"))
+			this.entityData.set(DATA_coldseasoned, compound.getBoolean("Datacoldseasoned"));
+		if (compound.contains("Dataholloweened"))
+			this.entityData.set(DATA_holloweened, compound.getBoolean("Dataholloweened"));
+	}
+
+	@Override
+	public void baseTick() {
+		super.baseTick();
+		EnragedEngieTickProcedure.execute(this.level, this);
+	}
+
 	public static void init() {
-		SpawnPlacements.register(EngiesChaosModEntities.ENRAGED_ENGIE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL && Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)));
+		SpawnPlacements.register(EngiesChaosModEntities.ENRAGED_ENGIE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			return HostileEngieSpawningConditionProcedure.execute(world);
+		});
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

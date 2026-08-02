@@ -32,7 +32,7 @@ public class NoOresInNonSelectedGamerulesProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DELETED_MOD_ELEMENT) == true && world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENRAGED_ZOMBIES_TOGGLE) == false
+		if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIES_CHAOS_TOGGLE) == true && world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENRAGED_ZOMBIES_TOGGLE) == false
 				&& world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_THROWBACK_TOGGLE) == false) {
 			if (EngiesChaosModVariables.MapVariables.get(world).antimatterdropcheck == false) {
 				{
@@ -78,7 +78,7 @@ public class NoOresInNonSelectedGamerulesProcedure {
 							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "fill ~15 ~15 ~15 ~-15 ~-15 ~-15 allaboutengie:engie_ore replace allaboutengie:old_deepslate_engie_ore");
 				}
 			}
-		} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DELETED_MOD_ELEMENT) == true && world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENRAGED_ZOMBIES_TOGGLE) == true
+		} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIES_CHAOS_TOGGLE) == true && world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENRAGED_ZOMBIES_TOGGLE) == true
 				&& world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_THROWBACK_TOGGLE) == false) {
 			if (EngiesChaosModVariables.MapVariables.get(world).antimatterdropcheck == false) {
 				{
@@ -110,7 +110,7 @@ public class NoOresInNonSelectedGamerulesProcedure {
 							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "fill ~15 ~15 ~15 ~-15 ~-15 ~-15 allaboutengie:deepslate_engie_ore replace allaboutengie:old_deepslate_engie_ore");
 				}
 			}
-		} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DELETED_MOD_ELEMENT) == false && world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENRAGED_ZOMBIES_TOGGLE) == false
+		} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIES_CHAOS_TOGGLE) == false && world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENRAGED_ZOMBIES_TOGGLE) == false
 				&& world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_THROWBACK_TOGGLE) == true) {
 			{
 				Entity _ent = entity;

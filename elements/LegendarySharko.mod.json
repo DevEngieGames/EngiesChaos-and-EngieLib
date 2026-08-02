@@ -199,6 +199,11 @@
         "name": "SharkoState",
         "type": "integer",
         "value": 0
+      },
+      {
+        "name": "AlternateState",
+        "type": "logic",
+        "value": false
       }
     ],
     "onRightClickedOn": {

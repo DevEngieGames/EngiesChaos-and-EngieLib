@@ -13,7 +13,6 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.OpenDoorGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
@@ -29,19 +28,26 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.Difficulty;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
 import javax.annotation.Nullable;
 
-import engiegames.engies_chaos.procedures.EntitySpawnsProcedure;
+import engiegames.engies_chaos.procedures.HostileEngieSpawningConditionProcedure;
+import engiegames.engies_chaos.procedures.HostileBiblicallyAccurateEngieTickProcedure;
+import engiegames.engies_chaos.procedures.HostileBiblicallyAccurateEngieOnInitialEntitySpawnProcedure;
 import engiegames.engies_chaos.procedures.BiblicallyAccurateEngieThisEntityKillsAnotherOneProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class HostileBiblicallyAccurateEngieEntity extends Monster {
+	public static final EntityDataAccessor<Integer> DATA_style = SynchedEntityData.defineId(HostileBiblicallyAccurateEngieEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_coldseasoned = SynchedEntityData.defineId(HostileBiblicallyAccurateEngieEntity.class, EntityDataSerializers.BOOLEAN);
+
 	public HostileBiblicallyAccurateEngieEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(EngiesChaosModEntities.HOSTILE_BIBLICALLY_ACCURATE_ENGIE.get(), world);
 	}
@@ -59,9 +65,15 @@ public class HostileBiblicallyAccurateEngieEntity extends Monster {
 	}
 
 	@Override
+	protected void defineSynchedData() {
+		super.defineSynchedData();
+		this.entityData.define(DATA_style, 1);
+		this.entityData.define(DATA_coldseasoned, false);
+	}
+
+	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.getNavigation().getNodeEvaluator().setCanOpenDoors(true);
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Player.class, true, false));
 		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 2, false) {
 			@Override
@@ -74,8 +86,6 @@ public class HostileBiblicallyAccurateEngieEntity extends Monster {
 		this.targetSelector.addGoal(5, new HurtByTargetGoal(this));
 		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(7, new FloatGoal(this));
-		this.goalSelector.addGoal(8, new OpenDoorGoal(this, true));
-		this.goalSelector.addGoal(9, new OpenDoorGoal(this, false));
 	}
 
 	@Override
@@ -112,8 +122,24 @@ public class HostileBiblicallyAccurateEngieEntity extends Monster {
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		EntitySpawnsProcedure.execute(world, this);
+		HostileBiblicallyAccurateEngieOnInitialEntitySpawnProcedure.execute(world, this);
 		return retval;
+	}
+
+	@Override
+	public void addAdditionalSaveData(CompoundTag compound) {
+		super.addAdditionalSaveData(compound);
+		compound.putInt("Datastyle", this.entityData.get(DATA_style));
+		compound.putBoolean("Datacoldseasoned", this.entityData.get(DATA_coldseasoned));
+	}
+
+	@Override
+	public void readAdditionalSaveData(CompoundTag compound) {
+		super.readAdditionalSaveData(compound);
+		if (compound.contains("Datastyle"))
+			this.entityData.set(DATA_style, compound.getInt("Datastyle"));
+		if (compound.contains("Datacoldseasoned"))
+			this.entityData.set(DATA_coldseasoned, compound.getBoolean("Datacoldseasoned"));
 	}
 
 	@Override
@@ -122,9 +148,19 @@ public class HostileBiblicallyAccurateEngieEntity extends Monster {
 		BiblicallyAccurateEngieThisEntityKillsAnotherOneProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), entity, this);
 	}
 
+	@Override
+	public void baseTick() {
+		super.baseTick();
+		HostileBiblicallyAccurateEngieTickProcedure.execute(this.level, this);
+	}
+
 	public static void init() {
-		SpawnPlacements.register(EngiesChaosModEntities.HOSTILE_BIBLICALLY_ACCURATE_ENGIE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL && Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)));
+		SpawnPlacements.register(EngiesChaosModEntities.HOSTILE_BIBLICALLY_ACCURATE_ENGIE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			return HostileEngieSpawningConditionProcedure.execute(world);
+		});
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

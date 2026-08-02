@@ -4,8 +4,8 @@
   "definition": {
     "mobName": "Engie",
     "mobLabel": "",
-    "mobModelName": "ModelEngie",
-    "mobModelTexture": "engienew.png",
+    "mobModelName": "Biped",
+    "mobModelTexture": "nothingness.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -21,10 +21,59 @@
     "boundingBoxScale": {
       "fixedValue": 1.0
     },
-    "modelLayers": [],
+    "modelLayers": [
+      {
+        "model": "ModelEngie",
+        "texture": "engienew.png",
+        "disableHurtOverlay": false,
+        "glow": false
+      },
+      {
+        "model": "Default",
+        "texture": "00ab310b3eec96bf.png",
+        "disableHurtOverlay": false,
+        "glow": false
+      },
+      {
+        "model": "Default",
+        "texture": "6c22ae11914e859c.png",
+        "disableHurtOverlay": false,
+        "glow": false
+      },
+      {
+        "model": "Default",
+        "texture": "0ebfdd674f8c4f95.png",
+        "disableHurtOverlay": false,
+        "glow": false
+      },
+      {
+        "model": "Default",
+        "texture": "ac3935ff9e9599e8.png",
+        "disableHurtOverlay": false,
+        "glow": false
+      },
+      {
+        "model": "Default",
+        "texture": "b6599d1b1cefd4ac.png",
+        "disableHurtOverlay": false,
+        "glow": false
+      },
+      {
+        "model": "Default",
+        "texture": "21db06ae607a5b6a.png",
+        "disableHurtOverlay": false,
+        "glow": false
+      },
+      {
+        "model": "Default",
+        "texture": "78c5d915f6017698e3d78166f211f09508db5a56.png",
+        "disableHurtOverlay": false,
+        "glow": false
+      }
+    ],
     "animations": [],
     "modelWidth": 0.6,
-    "modelHeight": 1.9000000000000001,
+    "modelHeight": 1.8,
     "modelShadowSize": 0.5,
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
@@ -119,7 +168,15 @@
     "raidCelebrationSound": {
       "value": ""
     },
-    "entityDataEntries": [],
+    "entityDataEntries": [
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "Variant",
+        "type": "integer",
+        "value": 1
+      }
+    ],
     "hasAI": true,
     "aiBase": "(none)",
     "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"watch_closest_entity\"><field name=\"entity\">EntityPlayer</field><field name=\"radius\">6</field><field name=\"condition\">null,null</field><next><block type=\"watch_closest_entity\"><field name=\"entity\">EntityPlayerMP</field><field name=\"radius\">6</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",

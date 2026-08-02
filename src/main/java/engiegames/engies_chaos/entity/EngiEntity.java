@@ -4,6 +4,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
 
+import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
@@ -26,13 +27,18 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.nbt.CompoundTag;
 
-import engiegames.engies_chaos.procedures.NPCNaturalEntitySpawningProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class EngiEntity extends PathfinderMob {
+	public static final EntityDataAccessor<Integer> DATA_Variant = SynchedEntityData.defineId(EngiEntity.class, EntityDataSerializers.INT);
+
 	public EngiEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(EngiesChaosModEntities.ENGIE.get(), world);
 	}
@@ -47,6 +53,12 @@ public class EngiEntity extends PathfinderMob {
 	@Override
 	public Packet<?> getAddEntityPacket() {
 		return NetworkHooks.getEntitySpawningPacket(this);
+	}
+
+	@Override
+	protected void defineSynchedData() {
+		super.defineSynchedData();
+		this.entityData.define(DATA_Variant, 1);
 	}
 
 	@Override
@@ -71,6 +83,11 @@ public class EngiEntity extends PathfinderMob {
 		return MobType.UNDEFINED;
 	}
 
+	@Override
+	public double getMyRidingOffset() {
+		return -0.35D;
+	}
+
 	protected void dropCustomDeathLoot(DamageSource source, int looting, boolean recentlyHitIn) {
 		super.dropCustomDeathLoot(source, looting, recentlyHitIn);
 		this.spawnAtLocation(new ItemStack(EngiesChaosModItems.ENGIE_GEM.get()));
@@ -86,13 +103,22 @@ public class EngiEntity extends PathfinderMob {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
 	}
 
+	@Override
+	public void addAdditionalSaveData(CompoundTag compound) {
+		super.addAdditionalSaveData(compound);
+		compound.putInt("DataVariant", this.entityData.get(DATA_Variant));
+	}
+
+	@Override
+	public void readAdditionalSaveData(CompoundTag compound) {
+		super.readAdditionalSaveData(compound);
+		if (compound.contains("DataVariant"))
+			this.entityData.set(DATA_Variant, compound.getInt("DataVariant"));
+	}
+
 	public static void init() {
-		SpawnPlacements.register(EngiesChaosModEntities.ENGIE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
-			int x = pos.getX();
-			int y = pos.getY();
-			int z = pos.getZ();
-			return NPCNaturalEntitySpawningProcedure.execute(world);
-		});
+		SpawnPlacements.register(EngiesChaosModEntities.ENGIE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+				(entityType, world, reason, pos, random) -> (world.getBlockState(pos.below()).getMaterial() == Material.GRASS && world.getRawBrightness(pos, 0) > 8));
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

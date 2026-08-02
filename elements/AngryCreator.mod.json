@@ -5,7 +5,7 @@
     "mobName": "Outraged Engie",
     "mobLabel": "",
     "mobModelName": "Modelhostile",
-    "mobModelTexture": "outragednew_style1.png",
+    "mobModelTexture": "nothingness.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -21,7 +21,35 @@
     "boundingBoxScale": {
       "fixedValue": 1.0
     },
-    "modelLayers": [],
+    "modelLayers": [
+      {
+        "model": "Modelhostile",
+        "texture": "outragednew_style1.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "OutragedEngieStyle1Display"
+        }
+      },
+      {
+        "model": "Modelhostile",
+        "texture": "outragednew_style2.png",
+        "disableHurtOverlay": false,
+        "glow": false
+      },
+      {
+        "model": "Modelcoldseason",
+        "texture": "outragednewcoldseason.png",
+        "disableHurtOverlay": false,
+        "glow": false
+      },
+      {
+        "model": "Modelhalloweenoutraged",
+        "texture": "outragednewhalloween.png",
+        "disableHurtOverlay": false,
+        "glow": false
+      }
+    ],
     "animations": [],
     "modelWidth": 0.6,
     "modelHeight": 1.9000000000000001,
@@ -119,12 +147,33 @@
     "raidCelebrationSound": {
       "value": ""
     },
-    "entityDataEntries": [],
+    "entityDataEntries": [
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "style",
+        "type": "integer",
+        "value": 1
+      },
+      {
+        "name": "coldseasoned",
+        "type": "logic",
+        "value": false
+      },
+      {
+        "name": "holloweened",
+        "type": "logic",
+        "value": false
+      }
+    ],
     "whenMobDies": {
       "name": "AnyEngieDiesAddCount"
     },
+    "onMobTickUpdate": {
+      "name": "OutragedEngieTick"
+    },
     "onInitialSpawn": {
-      "name": "EntitySpawns"
+      "name": "OutragedEngieOnInitialEntitySpawn"
     },
     "hasAI": true,
     "aiBase": "(none)",
@@ -141,7 +190,10 @@
     "rangedAttackRadius": 10.0,
     "spawnThisMob": true,
     "doesDespawnWhenIdle": true,
-    "spawningProbability": 5,
+    "spawningCondition": {
+      "name": "HostileEngieSpawningCondition"
+    },
+    "spawningProbability": 15,
     "mobSpawningType": "monster",
     "minNumberOfMobsPerGroup": 1,
     "maxNumberOfMobsPerGroup": 4,

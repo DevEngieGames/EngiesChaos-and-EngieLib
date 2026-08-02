@@ -33,6 +33,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.Difficulty;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.Packet;
@@ -41,7 +42,6 @@ import net.minecraft.nbt.CompoundTag;
 import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.procedures.TraderOnEntitySpawnProcedure;
-import engiegames.engies_chaos.procedures.CosmicNaturalSpawningProcedure;
 import engiegames.engies_chaos.procedures.CosmicEngieGamesRightClickedOnEntityTradeProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
@@ -135,12 +135,8 @@ public class CosmicTheRealEngieGamesEntity extends PathfinderMob {
 	}
 
 	public static void init() {
-		SpawnPlacements.register(EngiesChaosModEntities.COSMIC_THE_REAL_ENGIE_GAMES.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
-			int x = pos.getX();
-			int y = pos.getY();
-			int z = pos.getZ();
-			return CosmicNaturalSpawningProcedure.execute(world);
-		});
+		SpawnPlacements.register(EngiesChaosModEntities.COSMIC_THE_REAL_ENGIE_GAMES.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL && Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)));
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

@@ -4,8 +4,8 @@
   "definition": {
     "mobName": "Mad Engie",
     "mobLabel": "",
-    "mobModelName": "ModelMadEngie",
-    "mobModelTexture": "madengienew.png",
+    "mobModelName": "Modelhostile",
+    "mobModelTexture": "nothingness.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -21,7 +21,26 @@
     "boundingBoxScale": {
       "fixedValue": 1.0
     },
-    "modelLayers": [],
+    "modelLayers": [
+      {
+        "model": "Modelhostile",
+        "texture": "madengienew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "MadEngieNormDisplay"
+        }
+      },
+      {
+        "model": "Modelcoldseason",
+        "texture": "madnewcoldseason.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "MadEngieColdDisplay"
+        }
+      }
+    ],
     "animations": [],
     "modelWidth": 0.6,
     "modelHeight": 1.9,
@@ -119,9 +138,18 @@
     "raidCelebrationSound": {
       "value": ""
     },
-    "entityDataEntries": [],
+    "entityDataEntries": [
+      {
+        "name": "coldseasoned",
+        "type": "logic",
+        "value": false
+      }
+    ],
     "whenMobDies": {
       "name": "AnyEngieDiesAddCount"
+    },
+    "onMobTickUpdate": {
+      "name": "MadEngieTick"
     },
     "onInitialSpawn": {
       "name": "EntitySpawns"
@@ -141,6 +169,9 @@
     "rangedAttackRadius": 10.0,
     "spawnThisMob": true,
     "doesDespawnWhenIdle": true,
+    "spawningCondition": {
+      "name": "HostileEngieSpawningCondition"
+    },
     "spawningProbability": 20,
     "mobSpawningType": "monster",
     "minNumberOfMobsPerGroup": 1,

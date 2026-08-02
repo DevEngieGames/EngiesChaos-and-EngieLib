@@ -3,7 +3,7 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "engiegemnew",
+    "texture": "engiegem",
     "customModelName": "Normal",
     "guiTexture": "",
     "customProperties": {},
@@ -31,9 +31,7 @@
     "damageVsEntity": 0.0,
     "specialInformation": {
       "fixedValue": [
-        "Hurricane DevEngie",
-        "Category 25",
-        "2150 MPH"
+        "niche fire"
       ]
     },
     "glowCondition": {

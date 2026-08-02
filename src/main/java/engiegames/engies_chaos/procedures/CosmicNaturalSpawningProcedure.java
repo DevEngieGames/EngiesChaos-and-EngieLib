@@ -9,17 +9,15 @@ import engiegames.engies_chaos.init.EngiesChaosModGameRules;
 
 public class CosmicNaturalSpawningProcedure {
 	public static boolean execute(LevelAccessor world) {
-		if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DELETED_MOD_ELEMENT) == true) {
-			if (world.dimensionType().moonPhase(world.dayTime()) == 4 && EngiesChaosModVariables.MapVariables.get(world).MobDifficulty == 28) {
-				if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.OVERWORLD) {
-					if (!(world instanceof Level _lvl5 && _lvl5.isDay())) {
-						return true;
-					}
-				} else if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.NETHER) {
-					return false;
-				} else if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.END) {
-					return false;
+		if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIES_CHAOS_TOGGLE) == true) {
+			if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.OVERWORLD) {
+				if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty >= 29 && world.dimensionType().moonPhase(world.dayTime()) == 5) {
+					return true;
 				}
+			} else if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.NETHER) {
+				return false;
+			} else if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.END) {
+				return false;
 			}
 		}
 		return false;

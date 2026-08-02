@@ -28,21 +28,27 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.Difficulty;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
 import javax.annotation.Nullable;
 
+import engiegames.engies_chaos.procedures.MadEngieTickProcedure;
+import engiegames.engies_chaos.procedures.HostileEngieSpawningConditionProcedure;
 import engiegames.engies_chaos.procedures.EntitySpawnsProcedure;
 import engiegames.engies_chaos.procedures.DoomsDayMobsFightEachotherToggleProcedure;
 import engiegames.engies_chaos.procedures.AnyEngieDiesAddCountProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class MadEngieEntity extends Monster {
+	public static final EntityDataAccessor<Boolean> DATA_coldseasoned = SynchedEntityData.defineId(MadEngieEntity.class, EntityDataSerializers.BOOLEAN);
+
 	public MadEngieEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(EngiesChaosModEntities.MAD_ENGIE.get(), world);
 	}
@@ -57,6 +63,12 @@ public class MadEngieEntity extends Monster {
 	@Override
 	public Packet<?> getAddEntityPacket() {
 		return NetworkHooks.getEntitySpawningPacket(this);
+	}
+
+	@Override
+	protected void defineSynchedData() {
+		super.defineSynchedData();
+		this.entityData.define(DATA_coldseasoned, false);
 	}
 
 	@Override
@@ -127,9 +139,32 @@ public class MadEngieEntity extends Monster {
 		return retval;
 	}
 
+	@Override
+	public void addAdditionalSaveData(CompoundTag compound) {
+		super.addAdditionalSaveData(compound);
+		compound.putBoolean("Datacoldseasoned", this.entityData.get(DATA_coldseasoned));
+	}
+
+	@Override
+	public void readAdditionalSaveData(CompoundTag compound) {
+		super.readAdditionalSaveData(compound);
+		if (compound.contains("Datacoldseasoned"))
+			this.entityData.set(DATA_coldseasoned, compound.getBoolean("Datacoldseasoned"));
+	}
+
+	@Override
+	public void baseTick() {
+		super.baseTick();
+		MadEngieTickProcedure.execute(this.level, this);
+	}
+
 	public static void init() {
-		SpawnPlacements.register(EngiesChaosModEntities.MAD_ENGIE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL && Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)));
+		SpawnPlacements.register(EngiesChaosModEntities.MAD_ENGIE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			return HostileEngieSpawningConditionProcedure.execute(world);
+		});
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

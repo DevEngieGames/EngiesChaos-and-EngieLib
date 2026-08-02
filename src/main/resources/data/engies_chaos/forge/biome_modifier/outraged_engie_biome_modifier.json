@@ -5,7 +5,7 @@
   },
   "spawners": {
     "type": "engies_chaos:outraged_engie",
-    "weight": 5,
+    "weight": 15,
     "minCount": 1,
     "maxCount": 4
   }

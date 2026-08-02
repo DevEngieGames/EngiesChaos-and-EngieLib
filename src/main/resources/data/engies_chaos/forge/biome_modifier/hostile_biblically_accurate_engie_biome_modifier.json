@@ -5,8 +5,8 @@
   },
   "spawners": {
     "type": "engies_chaos:hostile_biblically_accurate_engie",
-    "weight": 1,
+    "weight": 10,
     "minCount": 1,
-    "maxCount": 1
+    "maxCount": 4
   }
 }

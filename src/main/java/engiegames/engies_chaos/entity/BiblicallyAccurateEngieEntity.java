@@ -13,7 +13,6 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.OpenDoorGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
@@ -32,17 +31,25 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
 import javax.annotation.Nullable;
 
+import engiegames.engies_chaos.procedures.BiblicallyAccurateEngieTickProcedure;
 import engiegames.engies_chaos.procedures.BiblicallyAccurateEngieThisEntityKillsAnotherOneProcedure;
 import engiegames.engies_chaos.procedures.BiblicallyAccurateEngieOnInitialEntitySpawnProcedure;
 import engiegames.engies_chaos.procedures.BiblicallyAccurateEngieNaturalEntitySpawningConditionProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class BiblicallyAccurateEngieEntity extends PathfinderMob {
+	public static final EntityDataAccessor<Integer> DATA_style = SynchedEntityData.defineId(BiblicallyAccurateEngieEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_coldseasoned = SynchedEntityData.defineId(BiblicallyAccurateEngieEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_holloweened = SynchedEntityData.defineId(BiblicallyAccurateEngieEntity.class, EntityDataSerializers.BOOLEAN);
+
 	public BiblicallyAccurateEngieEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(EngiesChaosModEntities.BIBLICALLY_ACCURATE_ENGIE.get(), world);
 	}
@@ -60,9 +67,16 @@ public class BiblicallyAccurateEngieEntity extends PathfinderMob {
 	}
 
 	@Override
+	protected void defineSynchedData() {
+		super.defineSynchedData();
+		this.entityData.define(DATA_style, 1);
+		this.entityData.define(DATA_coldseasoned, false);
+		this.entityData.define(DATA_holloweened, false);
+	}
+
+	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.getNavigation().getNodeEvaluator().setCanOpenDoors(true);
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Monster.class, false, false));
 		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 2, false) {
 			@Override
@@ -75,8 +89,6 @@ public class BiblicallyAccurateEngieEntity extends PathfinderMob {
 		this.targetSelector.addGoal(5, new HurtByTargetGoal(this));
 		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(7, new FloatGoal(this));
-		this.goalSelector.addGoal(8, new OpenDoorGoal(this, true));
-		this.goalSelector.addGoal(9, new OpenDoorGoal(this, false));
 	}
 
 	@Override
@@ -118,9 +130,34 @@ public class BiblicallyAccurateEngieEntity extends PathfinderMob {
 	}
 
 	@Override
+	public void addAdditionalSaveData(CompoundTag compound) {
+		super.addAdditionalSaveData(compound);
+		compound.putInt("Datastyle", this.entityData.get(DATA_style));
+		compound.putBoolean("Datacoldseasoned", this.entityData.get(DATA_coldseasoned));
+		compound.putBoolean("Dataholloweened", this.entityData.get(DATA_holloweened));
+	}
+
+	@Override
+	public void readAdditionalSaveData(CompoundTag compound) {
+		super.readAdditionalSaveData(compound);
+		if (compound.contains("Datastyle"))
+			this.entityData.set(DATA_style, compound.getInt("Datastyle"));
+		if (compound.contains("Datacoldseasoned"))
+			this.entityData.set(DATA_coldseasoned, compound.getBoolean("Datacoldseasoned"));
+		if (compound.contains("Dataholloweened"))
+			this.entityData.set(DATA_holloweened, compound.getBoolean("Dataholloweened"));
+	}
+
+	@Override
 	public void awardKillScore(Entity entity, int score, DamageSource damageSource) {
 		super.awardKillScore(entity, score, damageSource);
 		BiblicallyAccurateEngieThisEntityKillsAnotherOneProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), entity, this);
+	}
+
+	@Override
+	public void baseTick() {
+		super.baseTick();
+		BiblicallyAccurateEngieTickProcedure.execute(this.level, this);
 	}
 
 	public static void init() {

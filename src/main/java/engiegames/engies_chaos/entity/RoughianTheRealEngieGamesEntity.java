@@ -4,6 +4,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
 
+import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
@@ -42,7 +43,6 @@ import net.minecraft.nbt.CompoundTag;
 import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.procedures.TraderOnEntitySpawnProcedure;
-import engiegames.engies_chaos.procedures.RoughianNaturalSpawningProcedure;
 import engiegames.engies_chaos.procedures.RoughianEngieGamesRightClickedOnEntityTradeProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
@@ -138,12 +138,8 @@ public class RoughianTheRealEngieGamesEntity extends PathfinderMob {
 	}
 
 	public static void init() {
-		SpawnPlacements.register(EngiesChaosModEntities.ROUGHIAN_THE_REAL_ENGIE_GAMES.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
-			int x = pos.getX();
-			int y = pos.getY();
-			int z = pos.getZ();
-			return RoughianNaturalSpawningProcedure.execute(world);
-		});
+		SpawnPlacements.register(EngiesChaosModEntities.ROUGHIAN_THE_REAL_ENGIE_GAMES.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+				(entityType, world, reason, pos, random) -> (world.getBlockState(pos.below()).getMaterial() == Material.GRASS && world.getRawBrightness(pos, 0) > 8));
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

@@ -55,6 +55,7 @@ import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class LegendarySharkoEntity extends TamableAnimal {
 	public static final EntityDataAccessor<Integer> DATA_SharkoState = SynchedEntityData.defineId(LegendarySharkoEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_AlternateState = SynchedEntityData.defineId(LegendarySharkoEntity.class, EntityDataSerializers.BOOLEAN);
 
 	public LegendarySharkoEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(EngiesChaosModEntities.LEGENDARY_SHARKO.get(), world);
@@ -77,6 +78,7 @@ public class LegendarySharkoEntity extends TamableAnimal {
 	protected void defineSynchedData() {
 		super.defineSynchedData();
 		this.entityData.define(DATA_SharkoState, 0);
+		this.entityData.define(DATA_AlternateState, false);
 	}
 
 	@Override
@@ -326,6 +328,7 @@ public class LegendarySharkoEntity extends TamableAnimal {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putInt("DataSharkoState", this.entityData.get(DATA_SharkoState));
+		compound.putBoolean("DataAlternateState", this.entityData.get(DATA_AlternateState));
 	}
 
 	@Override
@@ -333,6 +336,8 @@ public class LegendarySharkoEntity extends TamableAnimal {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("DataSharkoState"))
 			this.entityData.set(DATA_SharkoState, compound.getInt("DataSharkoState"));
+		if (compound.contains("DataAlternateState"))
+			this.entityData.set(DATA_AlternateState, compound.getBoolean("DataAlternateState"));
 	}
 
 	@Override
