@@ -24,21 +24,12 @@
     "modelLayers": [
       {
         "model": "Default",
-        "texture": "insanity_e.png",
+        "texture": "insanity.png",
         "disableHurtOverlay": false,
         "glow": true
       }
     ],
-    "animations": [
-      {
-        "animation": {
-          "value": "CUSTOM:hostileAnimation.hostileidle"
-        },
-        "speed": 1.0,
-        "walking": false,
-        "amplitude": 1.0
-      }
-    ],
+    "animations": [],
     "modelWidth": 0.6,
     "modelHeight": 1.9000000000000001,
     "modelShadowSize": 0.5,
@@ -138,9 +129,6 @@
     "entityDataEntries": [],
     "whenMobDies": {
       "name": "AnyEngieDiesAddCount"
-    },
-    "onMobTickUpdate": {
-      "name": "EntityNameDisplayUpdateTick"
     },
     "onInitialSpawn": {
       "name": "EntitySpawns"

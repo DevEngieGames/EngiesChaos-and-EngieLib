@@ -5,7 +5,7 @@
     "mobName": "Engie Sharko",
     "mobLabel": "",
     "mobModelName": "Modelboyo",
-    "mobModelTexture": "engiesharkonew.png",
+    "mobModelTexture": "nothingsharko.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -21,17 +21,81 @@
     "boundingBoxScale": {
       "fixedValue": 1.0
     },
-    "modelLayers": [],
-    "animations": [
+    "modelLayers": [
       {
-        "animation": {
-          "value": "CUSTOM:boyoAnimation.SharkoIdle"
-        },
-        "speed": 1.0,
-        "walking": false,
-        "amplitude": 1.0
+        "model": "Modelboyo",
+        "texture": "engiesharkonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "EngieSharkoDisplayCondition"
+        }
+      },
+      {
+        "model": "Modelboyotamed",
+        "texture": "engiesharkonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "EngieSharkoTDisplayCondition"
+        }
+      },
+      {
+        "model": "Modelboyosit",
+        "texture": "engiesharkonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "EngieSharkoTDisplayCondition2"
+        }
+      },
+      {
+        "model": "Modelboyolay",
+        "texture": "engiesharkonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "EngieSharkoTDisplayCondition3"
+        }
+      },
+      {
+        "model": "Modelboyolayonside",
+        "texture": "engiesharkonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "SharkoTDisplayCondition4"
+        }
+      },
+      {
+        "model": "Modelboyosleep",
+        "texture": "engiesharkonewtired.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "SharkoTDisplayCondition5"
+        }
+      },
+      {
+        "model": "Modelboyolayalt",
+        "texture": "engiesharkonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "EngieSharkoTDisplayCondition6"
+        }
+      },
+      {
+        "model": "Modelboyosleepalt",
+        "texture": "engiesharkonewtired.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "EngieSharkoTDisplayCondition7"
+        }
       }
     ],
+    "animations": [],
     "modelWidth": 0.7,
     "modelHeight": 0.9,
     "modelShadowSize": 0.5,
@@ -73,15 +137,15 @@
     },
     "mobBehaviourType": "Creature",
     "mobCreatureType": "UNDEFINED",
-    "attackStrength": 20,
+    "attackStrength": 40,
     "attackKnockback": 0.0,
     "knockbackResistance": 0.0,
     "movementSpeed": 0.5,
     "stepHeight": 0.6,
-    "armorBaseValue": 20.0,
+    "armorBaseValue": 40.0,
     "trackingRange": 64,
     "followRange": 16,
-    "health": 1024,
+    "health": 850,
     "xpAmount": 0,
     "waterMob": false,
     "breatheUnderwater": {
@@ -128,22 +192,36 @@
     "raidCelebrationSound": {
       "value": ""
     },
-    "entityDataEntries": [],
-    "whenMobDies": {
-      "name": "SharkoKilledByPlayersCountUp"
-    },
+    "entityDataEntries": [
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "SharkoState",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "name": "AlternateState",
+        "type": "logic",
+        "value": false
+      }
+    ],
     "onRightClickedOn": {
-      "name": "EngieRCTame"
+      "name": "EngieSharkoRightClickedOnEntity"
     },
-    "onInitialSpawn": {
-      "name": "ChanceForBigSharko"
+    "onMobTickUpdate": {
+      "name": "EngieSharkoOnEntityTickUpdate"
     },
     "hasAI": true,
     "aiBase": "(none)",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></xml>",
-    "breedable": false,
-    "tameable": false,
-    "breedTriggerItems": [],
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"protect_owner\"><field name=\"condition\">EngieSharkoMoveAroundCheck,EngieSharkoMoveAroundCheck</field><next><block type=\"fight_as_owner\"><field name=\"condition\">EngieSharkoMoveAroundCheck,EngieSharkoMoveAroundCheck</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">EngieSharkoMoveAroundCheck,EngieSharkoMoveAroundCheck</field><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">TRUE</field><field name=\"condition\">EngieSharkoMoveAroundCheck,EngieSharkoMoveAroundCheck</field><next><block type=\"follow_owner\"><field name=\"speed\">1</field><field name=\"min_distance\">10</field><field name=\"max_distance\">2</field><field name=\"condition\">EngieSharkoMoveAroundCheck,EngieSharkoMoveAroundCheck</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">EngieSharkoMoveAroundCheck,EngieSharkoMoveAroundCheck</field><next><block type=\"breed\"><field name=\"speed\">1</field><field name=\"condition\">EngieSharkoMoveAroundCheck,null</field><next><block type=\"watch_closest_entity\"><field name=\"entity\">EntityPlayer</field><field name=\"radius\">12</field><field name=\"condition\">EngieSharkoSleepCheck,EngieSharkoSleepCheck</field><next><block type=\"watch_closest_entity\"><field name=\"entity\">EntityPlayerMP</field><field name=\"radius\">12</field><field name=\"condition\">EngieSharkoSleepCheck,EngieSharkoSleepCheck</field><next><block type=\"look_around\"><field name=\"condition\">EngieSharkoSleepCheck,EngieSharkoSleepCheck</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
+    "breedable": true,
+    "tameable": true,
+    "breedTriggerItems": [
+      {
+        "value": "CUSTOM:EngieCookie"
+      }
+    ],
     "ranged": false,
     "rangedAttackItem": {
       "value": ""
@@ -172,6 +250,9 @@
       2
     ],
     "sensitiveToVibration": false,
-    "vibrationalEvents": []
+    "vibrationalEvents": [],
+    "vibrationSensitivityRadius": {
+      "fixedValue": 7.0
+    }
   }
 }

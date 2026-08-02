@@ -15,7 +15,7 @@ import net.minecraft.client.model.EntityModel;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.PoseStack;
 
-// Made with Blockbench 5.0.7
+// Made with Blockbench 5.1.6
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 public class Modelboyolayonside<T extends Entity> extends EntityModel<T> {
@@ -127,19 +127,19 @@ public class Modelboyolayonside<T extends Entity> extends EntityModel<T> {
 				PartPose.offsetAndRotation(-0.4875F, 0.0F, 0.0F, 0.0F, 0.4363F, 0.0F));
 		PartDefinition Hat = Head
 				.addOrReplaceChild(
-						"Hat", CubeListBuilder.create().texOffs(0, 59).addBox(-7.0F, 0.6176F, -7.0F, 14.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 62).addBox(-6.0F, 0.1176F, -6.0F, 12.0F, 1.0F, 2.0F, new CubeDeformation(0.0F))
-								.texOffs(0, 65).addBox(-4.0F, -0.8824F, -4.0F, 8.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 68).addBox(-2.0F, -1.8824F, -2.0F, 4.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)),
-						PartPose.offset(0.0F, -5.8676F, -4.0F));
+						"Hat", CubeListBuilder.create().texOffs(0, 59).addBox(-7.0F, 0.6177F, -7.0F, 14.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 62).addBox(-6.0F, 0.1177F, -6.0F, 12.0F, 1.0F, 2.0F, new CubeDeformation(0.0F))
+								.texOffs(0, 65).addBox(-4.0F, -0.8823F, -4.0F, 8.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 68).addBox(-2.0F, -1.8823F, -2.0F, 4.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)),
+						PartPose.offset(0.0F, -5.8677F, -4.0F));
 		PartDefinition cube_r5 = Hat.addOrReplaceChild("cube_r5",
 				CubeListBuilder.create().texOffs(0, 48).addBox(-1.0F, -0.5F, -1.0F, 2.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 71).addBox(-3.0F, 0.5F, -3.0F, 6.0F, 1.0F, 6.0F, new CubeDeformation(0.0F)).texOffs(0, 48)
 						.addBox(-5.0F, 1.5F, -5.0F, 10.0F, 1.0F, 10.0F, new CubeDeformation(0.0F)).texOffs(0, 68).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 65)
 						.addBox(-4.0F, 1.0F, -4.0F, 8.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 62).addBox(-6.0F, 2.0F, -6.0F, 12.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 59)
 						.addBox(-7.0F, 2.5F, -7.0F, 14.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)),
-				PartPose.offsetAndRotation(0.0F, -1.8824F, 0.0F, 0.0F, 3.1416F, 0.0F));
+				PartPose.offsetAndRotation(0.0F, -1.8823F, 0.0F, 0.0F, 3.1416F, 0.0F));
 		PartDefinition cube_r6 = Hat.addOrReplaceChild("cube_r6", CubeListBuilder.create().texOffs(0, 65).addBox(-2.0F, -0.5F, -4.0F, 4.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 62)
-				.addBox(-4.0F, 0.5F, -6.0F, 8.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 59).addBox(-5.0F, 1.0F, -7.0F, 10.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.3824F, 0.0F, 0.0F, 1.5708F, 0.0F));
+				.addBox(-4.0F, 0.5F, -6.0F, 8.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 59).addBox(-5.0F, 1.0F, -7.0F, 10.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.3823F, 0.0F, 0.0F, 1.5708F, 0.0F));
 		PartDefinition cube_r7 = Hat.addOrReplaceChild("cube_r7", CubeListBuilder.create().texOffs(0, 65).addBox(-2.0F, -0.5F, -4.0F, 4.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 62)
-				.addBox(-4.0F, 0.5F, -6.0F, 8.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 59).addBox(-5.0F, 1.0F, -7.0F, 10.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.3824F, 0.0F, 0.0F, -1.5708F, 0.0F));
+				.addBox(-4.0F, 0.5F, -6.0F, 8.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 59).addBox(-5.0F, 1.0F, -7.0F, 10.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.3823F, 0.0F, 0.0F, -1.5708F, 0.0F));
 		PartDefinition TobyWhiskers = Head.addOrReplaceChild("TobyWhiskers", CubeListBuilder.create(), PartPose.offset(2.989F, -0.4881F, -8.0F));
 		PartDefinition TobyWhisker_r1 = TobyWhiskers.addOrReplaceChild("TobyWhisker_r1", CubeListBuilder.create().texOffs(71, 35).addBox(-2.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.0F, new CubeDeformation(0.0F)),
 				PartPose.offsetAndRotation(-6.0F, 0.0F, 0.0F, 0.0F, -0.2618F, 0.0F));

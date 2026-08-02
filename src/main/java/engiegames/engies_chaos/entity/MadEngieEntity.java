@@ -26,7 +26,6 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.Difficulty;
@@ -44,8 +43,6 @@ import engiegames.engies_chaos.procedures.AnyEngieDiesAddCountProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class MadEngieEntity extends Monster {
-	public final AnimationState animationState0 = new AnimationState();
-
 	public MadEngieEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(EngiesChaosModEntities.MAD_ENGIE.get(), world);
 	}
@@ -128,14 +125,6 @@ public class MadEngieEntity extends Monster {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
 		EntitySpawnsProcedure.execute(world, this);
 		return retval;
-	}
-
-	@Override
-	public void tick() {
-		super.tick();
-		if (this.level.isClientSide()) {
-			this.animationState0.startIfStopped(this.tickCount);
-		}
 	}
 
 	public static void init() {

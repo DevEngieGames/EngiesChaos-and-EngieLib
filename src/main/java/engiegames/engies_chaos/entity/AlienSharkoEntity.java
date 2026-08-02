@@ -413,7 +413,7 @@ public class AlienSharkoEntity extends TamableAnimal {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			return NonAprilFoolsSharkoVarSpawningProcedure.execute(world);
+			return NonAprilFoolsSharkoVarSpawningProcedure.execute(world, x, y, z);
 		});
 	}
 

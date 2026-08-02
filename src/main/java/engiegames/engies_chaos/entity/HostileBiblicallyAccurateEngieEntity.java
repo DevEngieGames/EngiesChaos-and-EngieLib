@@ -27,7 +27,6 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.Difficulty;
@@ -43,8 +42,6 @@ import engiegames.engies_chaos.procedures.BiblicallyAccurateEngieThisEntityKills
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class HostileBiblicallyAccurateEngieEntity extends Monster {
-	public final AnimationState animationState0 = new AnimationState();
-
 	public HostileBiblicallyAccurateEngieEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(EngiesChaosModEntities.HOSTILE_BIBLICALLY_ACCURATE_ENGIE.get(), world);
 	}
@@ -123,14 +120,6 @@ public class HostileBiblicallyAccurateEngieEntity extends Monster {
 	public void awardKillScore(Entity entity, int score, DamageSource damageSource) {
 		super.awardKillScore(entity, score, damageSource);
 		BiblicallyAccurateEngieThisEntityKillsAnotherOneProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), entity, this);
-	}
-
-	@Override
-	public void tick() {
-		super.tick();
-		if (this.level.isClientSide()) {
-			this.animationState0.startIfStopped(this.tickCount);
-		}
 	}
 
 	public static void init() {

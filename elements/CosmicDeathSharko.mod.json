@@ -5,7 +5,7 @@
     "mobName": "Cosmic Death Sharko",
     "mobLabel": "",
     "mobModelName": "Modelboyo",
-    "mobModelTexture": "cosmicboyountamed.png",
+    "mobModelTexture": "nothingsharko.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -21,7 +21,206 @@
     "boundingBoxScale": {
       "fixedValue": 1.5
     },
-    "modelLayers": [],
+    "modelLayers": [
+      {
+        "model": "Modelbigboyo",
+        "texture": "cosmicnew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "CosmicDeathSharkoDisplayCondition"
+        }
+      },
+      {
+        "model": "Modelbigboyotamed",
+        "texture": "cosmicnew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "CosmicDeathSharkoTDisplayCondition"
+        }
+      },
+      {
+        "model": "Modelbigboyosit",
+        "texture": "cosmicnew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "CosmicDeathSharkoTDisplayCondition2"
+        }
+      },
+      {
+        "model": "Modelbigboyolay",
+        "texture": "cosmicnew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "CosmicDeathSharkoTDisplayCondition3"
+        }
+      },
+      {
+        "model": "Modelbigboyolayonside",
+        "texture": "cosmicnew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "CosmicDeathSharkoTDisplayCondition4"
+        }
+      },
+      {
+        "model": "Modelbigboyosleep",
+        "texture": "cosmicnewtired.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "CosmicDeathSharkoTDisplayCondition5"
+        }
+      },
+      {
+        "model": "Modelbigboyolayalt",
+        "texture": "cosmicnew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "CosmicDeathSharkoTDisplayCondition6"
+        }
+      },
+      {
+        "model": "Modelbigboyosleepalt",
+        "texture": "cosmicnewtired.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "CosmicDeathSharkoTDisplayCondition7"
+        }
+      },
+      {
+        "model": "Modelbigboyotamed",
+        "texture": "cosmonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "CosmoDisplayCondition"
+        }
+      },
+      {
+        "model": "Modelbigboyosit",
+        "texture": "cosmonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "CosmoDisplayCondition2"
+        }
+      },
+      {
+        "model": "Modelbigboyolay",
+        "texture": "cosmonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "CosmoDisplayCondition3"
+        }
+      },
+      {
+        "model": "Modelbigboyolayonside",
+        "texture": "cosmonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "CosmoDisplayCondition4"
+        }
+      },
+      {
+        "model": "Modelbigboyosleep",
+        "texture": "cosmonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "CosmoDisplayCondition5"
+        }
+      },
+      {
+        "model": "Modelbigboyolayalt",
+        "texture": "cosmonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "CosmoDisplayCondition6"
+        }
+      },
+      {
+        "model": "Modelbigboyosleepalt",
+        "texture": "cosmonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "CosmoDisplayCondition7"
+        }
+      },
+      {
+        "model": "Modelbigboyotamed",
+        "texture": "constellationnew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ConstellationDisplayCondition"
+        }
+      },
+      {
+        "model": "Modelbigboyosit",
+        "texture": "constellationnew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ConstellationDisplayCondition2"
+        }
+      },
+      {
+        "model": "Modelbigboyolay",
+        "texture": "constellationnew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ConstellationDisplayCondition3"
+        }
+      },
+      {
+        "model": "Modelbigboyolayonside",
+        "texture": "constellationnew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ConstellationDisplayCondition4"
+        }
+      },
+      {
+        "model": "Modelbigboyosleep",
+        "texture": "constellationnew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ConstellationDisplayCondition5"
+        }
+      },
+      {
+        "model": "Modelbigboyolayalt",
+        "texture": "constellationnew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ConstellationDisplayCondition6"
+        }
+      },
+      {
+        "model": "Modelbigboyosleepalt",
+        "texture": "constellationnew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ConstellationDisplayCondition7"
+        }
+      }
+    ],
     "animations": [],
     "modelWidth": 0.7,
     "modelHeight": 0.9,
@@ -64,12 +263,12 @@
     },
     "mobBehaviourType": "Creature",
     "mobCreatureType": "UNDEFINED",
-    "attackStrength": 50,
+    "attackStrength": 85,
     "attackKnockback": 0.0,
     "knockbackResistance": 0.0,
     "movementSpeed": 0.5,
     "stepHeight": 0.6,
-    "armorBaseValue": 50.0,
+    "armorBaseValue": 85.0,
     "trackingRange": 64,
     "followRange": 16,
     "health": 1024,
@@ -119,12 +318,25 @@
     "raidCelebrationSound": {
       "value": ""
     },
-    "entityDataEntries": [],
-    "whenMobDies": {
-      "name": "SharkoKilledByPlayersCountUp"
-    },
+    "entityDataEntries": [
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "SharkoState",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "name": "AlternateState",
+        "type": "logic",
+        "value": false
+      }
+    ],
     "onRightClickedOn": {
-      "name": "CosmicDeathSharkoRC"
+      "name": "CosmicDeathSharkoRightClickedOnEntity"
+    },
+    "onMobTickUpdate": {
+      "name": "CosmicDeathSharkoOnEntityTickUpdate"
     },
     "hasAI": true,
     "aiBase": "(none)",

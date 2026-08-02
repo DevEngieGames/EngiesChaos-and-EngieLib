@@ -427,7 +427,7 @@ public class TigerSharkoEntity extends TamableAnimal {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			return AprilFoolsDespawningProcedure.execute(world);
+			return AprilFoolsDespawningProcedure.execute(world, x, y, z);
 		});
 	}
 

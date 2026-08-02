@@ -22,16 +22,7 @@
       "fixedValue": 1.0
     },
     "modelLayers": [],
-    "animations": [
-      {
-        "animation": {
-          "value": "CUSTOM:hostileAnimation.hostileidle"
-        },
-        "speed": 1.0,
-        "walking": false,
-        "amplitude": 1.0
-      }
-    ],
+    "animations": [],
     "modelWidth": 0.6,
     "modelHeight": 1.9000000000000001,
     "modelShadowSize": 0.5,
@@ -131,9 +122,6 @@
     "entityDataEntries": [],
     "whenThisMobKillsAnother": {
       "name": "BiblicallyAccurateEngieThisEntityKillsAnotherOne"
-    },
-    "onMobTickUpdate": {
-      "name": "BiblicallyAccurateEngieOnEntityTickUpdate"
     },
     "onInitialSpawn": {
       "name": "BiblicallyAccurateEngieOnInitialEntitySpawn"

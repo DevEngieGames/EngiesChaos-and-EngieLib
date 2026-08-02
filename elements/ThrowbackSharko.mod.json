@@ -139,9 +139,6 @@
     "rangedAttackRadius": 10.0,
     "spawnThisMob": true,
     "doesDespawnWhenIdle": false,
-    "spawningCondition": {
-      "name": "ThrowbackSharkoNaturalEntitySpawningCondition"
-    },
     "spawningProbability": 20,
     "mobSpawningType": "creature",
     "minNumberOfMobsPerGroup": 4,

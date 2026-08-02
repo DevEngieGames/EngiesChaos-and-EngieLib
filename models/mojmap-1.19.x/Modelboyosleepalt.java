@@ -1,4 +1,4 @@
-// Made with Blockbench 5.1.3
+// Made with Blockbench 5.1.6
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
@@ -190,8 +190,8 @@ public class Modelboyosleepalt<T extends Entity> extends EntityModel<T> {
 				CubeListBuilder.create().texOffs(0, 59)
 						.addBox(-7.0F, 0.6176F, -7.0F, 14.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 62)
 						.addBox(-6.0F, 0.1176F, -6.0F, 12.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 65)
-						.addBox(-4.0F, -0.8823F, -4.0F, 8.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 68)
-						.addBox(-2.0F, -1.8823F, -2.0F, 4.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)),
+						.addBox(-4.0F, -0.8824F, -4.0F, 8.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 68)
+						.addBox(-2.0F, -1.8824F, -2.0F, 4.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)),
 				PartPose.offsetAndRotation(0.0F, -7.6176F, -5.0F, -0.3927F, 0.0F, 0.0F));
 
 		PartDefinition cube_r5 = Hat.addOrReplaceChild("cube_r5",
@@ -203,21 +203,21 @@ public class Modelboyosleepalt<T extends Entity> extends EntityModel<T> {
 						.addBox(-4.0F, 1.0F, -4.0F, 8.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 62)
 						.addBox(-6.0F, 2.0F, -6.0F, 12.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 59)
 						.addBox(-7.0F, 2.5F, -7.0F, 14.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)),
-				PartPose.offsetAndRotation(0.0F, -1.8823F, 0.0F, 0.0F, 3.1416F, 0.0F));
+				PartPose.offsetAndRotation(0.0F, -1.8824F, 0.0F, 0.0F, 3.1416F, 0.0F));
 
 		PartDefinition cube_r6 = Hat.addOrReplaceChild("cube_r6",
 				CubeListBuilder.create().texOffs(0, 65)
 						.addBox(-2.0F, -0.5F, -4.0F, 4.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 62)
 						.addBox(-4.0F, 0.5F, -6.0F, 8.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 59)
 						.addBox(-5.0F, 1.0F, -7.0F, 10.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)),
-				PartPose.offsetAndRotation(0.0F, -0.3823F, 0.0F, 0.0F, 1.5708F, 0.0F));
+				PartPose.offsetAndRotation(0.0F, -0.3824F, 0.0F, 0.0F, 1.5708F, 0.0F));
 
 		PartDefinition cube_r7 = Hat.addOrReplaceChild("cube_r7",
 				CubeListBuilder.create().texOffs(0, 65)
 						.addBox(-2.0F, -0.5F, -4.0F, 4.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 62)
 						.addBox(-4.0F, 0.5F, -6.0F, 8.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 59)
 						.addBox(-5.0F, 1.0F, -7.0F, 10.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)),
-				PartPose.offsetAndRotation(0.0F, -0.3823F, 0.0F, 0.0F, -1.5708F, 0.0F));
+				PartPose.offsetAndRotation(0.0F, -0.3824F, 0.0F, 0.0F, -1.5708F, 0.0F));
 
 		PartDefinition Body = Root.addOrReplaceChild("Body",
 				CubeListBuilder.create().texOffs(0, 16)
@@ -290,7 +290,7 @@ public class Modelboyosleepalt<T extends Entity> extends EntityModel<T> {
 		PartDefinition shark_r1 = tip2.addOrReplaceChild("shark_r1",
 				CubeListBuilder.create().texOffs(61, 25).addBox(-0.5F, -2.0F, -4.0F, 1.0F, 4.0F, 6.0F,
 						new CubeDeformation(-0.025F)),
-				PartPose.offsetAndRotation(-0.1188F, 2.0963F, 2.6376F, -0.7854F, 0.0F, 0.0F));
+				PartPose.offsetAndRotation(-0.1187F, 2.0963F, 2.6376F, -0.7854F, 0.0F, 0.0F));
 
 		PartDefinition shark_r2 = tip2.addOrReplaceChild("shark_r2",
 				CubeListBuilder.create().texOffs(75, 31).addBox(-0.5F, -3.5F, -2.0F, 1.0F, 9.0F, 4.0F,

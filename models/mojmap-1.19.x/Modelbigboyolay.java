@@ -1,4 +1,4 @@
-// Made with Blockbench 5.1.4
+// Made with Blockbench 5.1.6
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 

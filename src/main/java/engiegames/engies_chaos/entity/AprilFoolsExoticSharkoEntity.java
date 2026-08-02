@@ -330,7 +330,7 @@ public class AprilFoolsExoticSharkoEntity extends TamableAnimal {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			return AprilFoolsSpawningProcedure.execute(world);
+			return AprilFoolsSpawningProcedure.execute(world, x, y, z);
 		});
 	}
 

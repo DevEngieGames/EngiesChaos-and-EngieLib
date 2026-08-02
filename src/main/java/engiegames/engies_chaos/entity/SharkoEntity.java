@@ -5,31 +5,59 @@ import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.goal.BreedGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.SpawnPlacements;
-import net.minecraft.world.entity.PathfinderMob;
+import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.AnimationState;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.nbt.CompoundTag;
 
+import javax.annotation.Nullable;
+
+import engiegames.engies_chaos.procedures.SharkoSleepCheckProcedure;
+import engiegames.engies_chaos.procedures.SharkoRightClickedOnEntityProcedure;
+import engiegames.engies_chaos.procedures.SharkoOnInitialEntitySpawnProcedure;
+import engiegames.engies_chaos.procedures.SharkoOnEntityTickUpdateProcedure;
+import engiegames.engies_chaos.procedures.SharkoMoveAroundCheckProcedure;
 import engiegames.engies_chaos.procedures.AprilFoolsDespawningProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
-public class SharkoEntity extends PathfinderMob {
-	public final AnimationState animationState0 = new AnimationState();
+public class SharkoEntity extends Animal {
+	public static final EntityDataAccessor<Boolean> DATA_Albino = SynchedEntityData.defineId(SharkoEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_SharkoState = SynchedEntityData.defineId(SharkoEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_AlternateState = SynchedEntityData.defineId(SharkoEntity.class, EntityDataSerializers.BOOLEAN);
 
 	public SharkoEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(EngiesChaosModEntities.SHARKO.get(), world);
@@ -49,18 +77,160 @@ public class SharkoEntity extends PathfinderMob {
 	}
 
 	@Override
+	protected void defineSynchedData() {
+		super.defineSynchedData();
+		this.entityData.define(DATA_Albino, false);
+		this.entityData.define(DATA_SharkoState, 0);
+		this.entityData.define(DATA_AlternateState, false);
+	}
+
+	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.2, false) {
+		this.targetSelector.addGoal(3, new HurtByTargetGoal(this) {
+			@Override
+			public boolean canUse() {
+				double x = SharkoEntity.this.getX();
+				double y = SharkoEntity.this.getY();
+				double z = SharkoEntity.this.getZ();
+				Entity entity = SharkoEntity.this;
+				Level world = SharkoEntity.this.level;
+				return super.canUse() && SharkoMoveAroundCheckProcedure.execute(entity);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = SharkoEntity.this.getX();
+				double y = SharkoEntity.this.getY();
+				double z = SharkoEntity.this.getZ();
+				Entity entity = SharkoEntity.this;
+				Level world = SharkoEntity.this.level;
+				return super.canContinueToUse() && SharkoMoveAroundCheckProcedure.execute(entity);
+			}
+		});
+		this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.2, true) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
+
+			@Override
+			public boolean canUse() {
+				double x = SharkoEntity.this.getX();
+				double y = SharkoEntity.this.getY();
+				double z = SharkoEntity.this.getZ();
+				Entity entity = SharkoEntity.this;
+				Level world = SharkoEntity.this.level;
+				return super.canUse() && SharkoMoveAroundCheckProcedure.execute(entity);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = SharkoEntity.this.getX();
+				double y = SharkoEntity.this.getY();
+				double z = SharkoEntity.this.getZ();
+				Entity entity = SharkoEntity.this;
+				Level world = SharkoEntity.this.level;
+				return super.canContinueToUse() && SharkoMoveAroundCheckProcedure.execute(entity);
+			}
+
 		});
-		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
-		this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
-		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(5, new FloatGoal(this));
+		this.goalSelector.addGoal(6, new RandomStrollGoal(this, 1) {
+			@Override
+			public boolean canUse() {
+				double x = SharkoEntity.this.getX();
+				double y = SharkoEntity.this.getY();
+				double z = SharkoEntity.this.getZ();
+				Entity entity = SharkoEntity.this;
+				Level world = SharkoEntity.this.level;
+				return super.canUse() && SharkoMoveAroundCheckProcedure.execute(entity);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = SharkoEntity.this.getX();
+				double y = SharkoEntity.this.getY();
+				double z = SharkoEntity.this.getZ();
+				Entity entity = SharkoEntity.this;
+				Level world = SharkoEntity.this.level;
+				return super.canContinueToUse() && SharkoMoveAroundCheckProcedure.execute(entity);
+			}
+		});
+		this.goalSelector.addGoal(7, new BreedGoal(this, 1) {
+			@Override
+			public boolean canUse() {
+				double x = SharkoEntity.this.getX();
+				double y = SharkoEntity.this.getY();
+				double z = SharkoEntity.this.getZ();
+				Entity entity = SharkoEntity.this;
+				Level world = SharkoEntity.this.level;
+				return super.canUse() && SharkoMoveAroundCheckProcedure.execute(entity);
+			}
+		});
+		this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, (float) 12) {
+			@Override
+			public boolean canUse() {
+				double x = SharkoEntity.this.getX();
+				double y = SharkoEntity.this.getY();
+				double z = SharkoEntity.this.getZ();
+				Entity entity = SharkoEntity.this;
+				Level world = SharkoEntity.this.level;
+				return super.canUse() && SharkoSleepCheckProcedure.execute(entity);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = SharkoEntity.this.getX();
+				double y = SharkoEntity.this.getY();
+				double z = SharkoEntity.this.getZ();
+				Entity entity = SharkoEntity.this;
+				Level world = SharkoEntity.this.level;
+				return super.canContinueToUse() && SharkoSleepCheckProcedure.execute(entity);
+			}
+		});
+		this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, ServerPlayer.class, (float) 12) {
+			@Override
+			public boolean canUse() {
+				double x = SharkoEntity.this.getX();
+				double y = SharkoEntity.this.getY();
+				double z = SharkoEntity.this.getZ();
+				Entity entity = SharkoEntity.this;
+				Level world = SharkoEntity.this.level;
+				return super.canUse() && SharkoSleepCheckProcedure.execute(entity);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = SharkoEntity.this.getX();
+				double y = SharkoEntity.this.getY();
+				double z = SharkoEntity.this.getZ();
+				Entity entity = SharkoEntity.this;
+				Level world = SharkoEntity.this.level;
+				return super.canContinueToUse() && SharkoSleepCheckProcedure.execute(entity);
+			}
+		});
+		this.goalSelector.addGoal(10, new RandomLookAroundGoal(this) {
+			@Override
+			public boolean canUse() {
+				double x = SharkoEntity.this.getX();
+				double y = SharkoEntity.this.getY();
+				double z = SharkoEntity.this.getZ();
+				Entity entity = SharkoEntity.this;
+				Level world = SharkoEntity.this.level;
+				return super.canUse() && SharkoSleepCheckProcedure.execute(entity);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = SharkoEntity.this.getX();
+				double y = SharkoEntity.this.getY();
+				double z = SharkoEntity.this.getZ();
+				Entity entity = SharkoEntity.this;
+				Level world = SharkoEntity.this.level;
+				return super.canContinueToUse() && SharkoSleepCheckProcedure.execute(entity);
+			}
+		});
+		this.goalSelector.addGoal(11, new FloatGoal(this));
 	}
 
 	@Override
@@ -95,11 +265,62 @@ public class SharkoEntity extends PathfinderMob {
 	}
 
 	@Override
-	public void tick() {
-		super.tick();
-		if (this.level.isClientSide()) {
-			this.animationState0.startIfStopped(this.tickCount);
-		}
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
+		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
+		SharkoOnInitialEntitySpawnProcedure.execute(this);
+		return retval;
+	}
+
+	@Override
+	public void addAdditionalSaveData(CompoundTag compound) {
+		super.addAdditionalSaveData(compound);
+		compound.putBoolean("DataAlbino", this.entityData.get(DATA_Albino));
+		compound.putInt("DataSharkoState", this.entityData.get(DATA_SharkoState));
+		compound.putBoolean("DataAlternateState", this.entityData.get(DATA_AlternateState));
+	}
+
+	@Override
+	public void readAdditionalSaveData(CompoundTag compound) {
+		super.readAdditionalSaveData(compound);
+		if (compound.contains("DataAlbino"))
+			this.entityData.set(DATA_Albino, compound.getBoolean("DataAlbino"));
+		if (compound.contains("DataSharkoState"))
+			this.entityData.set(DATA_SharkoState, compound.getInt("DataSharkoState"));
+		if (compound.contains("DataAlternateState"))
+			this.entityData.set(DATA_AlternateState, compound.getBoolean("DataAlternateState"));
+	}
+
+	@Override
+	public InteractionResult mobInteract(Player sourceentity, InteractionHand hand) {
+		ItemStack itemstack = sourceentity.getItemInHand(hand);
+		InteractionResult retval = InteractionResult.sidedSuccess(this.level.isClientSide());
+		super.mobInteract(sourceentity, hand);
+		double x = this.getX();
+		double y = this.getY();
+		double z = this.getZ();
+		Entity entity = this;
+		Level world = this.level;
+
+		SharkoRightClickedOnEntityProcedure.execute(world, x, y, z, entity, sourceentity);
+		return retval;
+	}
+
+	@Override
+	public void baseTick() {
+		super.baseTick();
+		SharkoOnEntityTickUpdateProcedure.execute(this.level, this);
+	}
+
+	@Override
+	public AgeableMob getBreedOffspring(ServerLevel serverWorld, AgeableMob ageable) {
+		SharkoEntity retval = EngiesChaosModEntities.SHARKO.get().create(serverWorld);
+		retval.finalizeSpawn(serverWorld, serverWorld.getCurrentDifficultyAt(retval.blockPosition()), MobSpawnType.BREEDING, null, null);
+		return retval;
+	}
+
+	@Override
+	public boolean isFood(ItemStack stack) {
+		return Ingredient.of(new ItemStack(Items.COOKIE)).test(stack);
 	}
 
 	public static void init() {
@@ -107,7 +328,7 @@ public class SharkoEntity extends PathfinderMob {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			return AprilFoolsDespawningProcedure.execute(world);
+			return AprilFoolsDespawningProcedure.execute(world, x, y, z);
 		});
 	}
 

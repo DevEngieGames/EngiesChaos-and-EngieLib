@@ -5,7 +5,7 @@
     "mobName": "Monstrosity Death Sharko",
     "mobLabel": "",
     "mobModelName": "Modelboyo",
-    "mobModelTexture": "monstrositydeathboyountamed.png",
+    "mobModelTexture": "nothingsharko.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -21,7 +21,56 @@
     "boundingBoxScale": {
       "fixedValue": 1.5
     },
-    "modelLayers": [],
+    "modelLayers": [
+      {
+        "model": "Modelbigboyo",
+        "texture": "monstrositynew.png",
+        "disableHurtOverlay": false,
+        "glow": false
+      },
+      {
+        "model": "Modelbigboyotamed",
+        "texture": "monstrositynew.png",
+        "disableHurtOverlay": false,
+        "glow": false
+      },
+      {
+        "model": "Modelbigboyosit",
+        "texture": "monstrositynew.png",
+        "disableHurtOverlay": false,
+        "glow": false
+      },
+      {
+        "model": "Modelbigboyolay",
+        "texture": "monstrositynew.png",
+        "disableHurtOverlay": false,
+        "glow": false
+      },
+      {
+        "model": "Modelbigboyolayonside",
+        "texture": "monstrositynew.png",
+        "disableHurtOverlay": false,
+        "glow": false
+      },
+      {
+        "model": "Modelbigboyosleep",
+        "texture": "monstrositynewtired.png",
+        "disableHurtOverlay": false,
+        "glow": false
+      },
+      {
+        "model": "Modelbigboyolayalt",
+        "texture": "monstrositynew.png",
+        "disableHurtOverlay": false,
+        "glow": false
+      },
+      {
+        "model": "Modelboyosleepalt",
+        "texture": "monstrositynewtired.png",
+        "disableHurtOverlay": false,
+        "glow": false
+      }
+    ],
     "animations": [],
     "modelWidth": 0.7,
     "modelHeight": 0.9,
@@ -64,12 +113,12 @@
     },
     "mobBehaviourType": "Creature",
     "mobCreatureType": "UNDEFINED",
-    "attackStrength": 50,
+    "attackStrength": 80,
     "attackKnockback": 0.0,
     "knockbackResistance": 0.0,
     "movementSpeed": 0.5,
     "stepHeight": 0.6,
-    "armorBaseValue": 50.0,
+    "armorBaseValue": 80.0,
     "trackingRange": 64,
     "followRange": 16,
     "health": 1024,
@@ -119,19 +168,36 @@
     "raidCelebrationSound": {
       "value": ""
     },
-    "entityDataEntries": [],
-    "whenMobDies": {
-      "name": "SharkoKilledByPlayersCountUp"
-    },
+    "entityDataEntries": [
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "SharkoState",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "name": "AlternateState",
+        "type": "logic",
+        "value": false
+      }
+    ],
     "onRightClickedOn": {
-      "name": "MonstrosityDeathSharkoRC"
+      "name": "MonstrosityDeathSharkoRightClickedOnEntity"
+    },
+    "onMobTickUpdate": {
+      "name": "MonstrosityDeathSharkoOnEntityTickUpdate"
     },
     "hasAI": true,
     "aiBase": "(none)",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></xml>",
-    "breedable": false,
-    "tameable": false,
-    "breedTriggerItems": [],
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"protect_owner\"><field name=\"condition\">MonstrosityDeathSharkoMoveAroundCheck,MonstrosityDeathSharkoMoveAroundCheck</field><next><block type=\"fight_as_owner\"><field name=\"condition\">MonstrosityDeathSharkoMoveAroundCheck,MonstrosityDeathSharkoMoveAroundCheck</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">MonstrosityDeathSharkoMoveAroundCheck,MonstrosityDeathSharkoMoveAroundCheck</field><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">TRUE</field><field name=\"condition\">MonstrosityDeathSharkoMoveAroundCheck,MonstrosityDeathSharkoMoveAroundCheck</field><next><block type=\"follow_owner\"><field name=\"speed\">1</field><field name=\"min_distance\">10</field><field name=\"max_distance\">2</field><field name=\"condition\">MonstrosityDeathSharkoMoveAroundCheck,MonstrosityDeathSharkoMoveAroundCheck</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">MonstrosityDeathSharkoMoveAroundCheck,MonstrosityDeathSharkoMoveAroundCheck</field><next><block type=\"breed\"><field name=\"speed\">1</field><field name=\"condition\">MonstrosityDeathSharkoMoveAroundCheck,null</field><next><block type=\"watch_closest_entity\"><field name=\"entity\">EntityPlayer</field><field name=\"radius\">12</field><field name=\"condition\">MonstrosityDeathSharkoSleepCheck,MonstrosityDeathSharkoSleepCheck</field><next><block type=\"watch_closest_entity\"><field name=\"entity\">EntityPlayerMP</field><field name=\"radius\">12</field><field name=\"condition\">MonstrosityDeathSharkoSleepCheck,MonstrosityDeathSharkoSleepCheck</field><next><block type=\"look_around\"><field name=\"condition\">MonstrosityDeathSharkoSleepCheck,MonstrosityDeathSharkoSleepCheck</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
+    "breedable": true,
+    "tameable": true,
+    "breedTriggerItems": [
+      {
+        "value": "CUSTOM:EngieHead"
+      }
+    ],
     "ranged": false,
     "rangedAttackItem": {
       "value": ""
@@ -141,6 +207,9 @@
     "rangedAttackRadius": 10.0,
     "spawnThisMob": true,
     "doesDespawnWhenIdle": false,
+    "spawningCondition": {
+      "name": "NonAprilFoolsSharkoVarSpawning"
+    },
     "spawningProbability": 1,
     "mobSpawningType": "creature",
     "minNumberOfMobsPerGroup": 1,

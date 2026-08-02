@@ -18,7 +18,6 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.AreaEffectCloud;
-import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.network.protocol.Packet;
@@ -31,8 +30,6 @@ import engiegames.engies_chaos.procedures.ShadowSharkEngieBlindOnEntityTickUpdat
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class ShadowSharkEngieBlindEntity extends PathfinderMob {
-	public final AnimationState animationState0 = new AnimationState();
-
 	public ShadowSharkEngieBlindEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(EngiesChaosModEntities.SHADOW_SHARK_ENGIE_BLIND.get(), world);
 	}
@@ -105,14 +102,6 @@ public class ShadowSharkEngieBlindEntity extends PathfinderMob {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
 		ShadowSharkEngieBlindOnInitialEntitySpawnProcedure.execute(world, this.getX(), this.getY(), this.getZ(), this);
 		return retval;
-	}
-
-	@Override
-	public void tick() {
-		super.tick();
-		if (this.level.isClientSide()) {
-			this.animationState0.startIfStopped(this.tickCount);
-		}
 	}
 
 	@Override

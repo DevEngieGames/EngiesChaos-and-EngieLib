@@ -28,7 +28,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
@@ -47,8 +46,6 @@ import engiegames.engies_chaos.init.EngiesChaosModItems;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class ScorchedEntity extends PathfinderMob {
-	public final AnimationState animationState0 = new AnimationState();
-
 	public ScorchedEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(EngiesChaosModEntities.SCORCHED.get(), world);
 	}
@@ -133,14 +130,6 @@ public class ScorchedEntity extends PathfinderMob {
 
 		TheRealEngieGamesRightClickedOnEntityTradeProcedure.execute(world, x, y, z, entity, sourceentity);
 		return retval;
-	}
-
-	@Override
-	public void tick() {
-		super.tick();
-		if (this.level.isClientSide()) {
-			this.animationState0.startIfStopped(this.tickCount);
-		}
 	}
 
 	public static void init() {

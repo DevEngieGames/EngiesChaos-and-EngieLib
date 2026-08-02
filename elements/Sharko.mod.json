@@ -5,7 +5,7 @@
     "mobName": "Sharko",
     "mobLabel": "",
     "mobModelName": "Modelboyo",
-    "mobModelTexture": "sharkonew.png",
+    "mobModelTexture": "nothingsharko.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -21,17 +21,153 @@
     "boundingBoxScale": {
       "fixedValue": 1.0
     },
-    "modelLayers": [],
-    "animations": [
+    "modelLayers": [
       {
-        "animation": {
-          "value": "CUSTOM:boyoAnimation.SharkoIdle"
-        },
-        "speed": 1.0,
-        "walking": false,
-        "amplitude": 1.0
+        "model": "Modelboyo",
+        "texture": "sharkonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "SharkoDisplayCondition"
+        }
+      },
+      {
+        "model": "Modelboyotamed",
+        "texture": "sharkonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "SharkoTDisplayCondition"
+        }
+      },
+      {
+        "model": "Modelboyosit",
+        "texture": "sharkonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "SharkoTDisplayCondition2"
+        }
+      },
+      {
+        "model": "Modelboyolay",
+        "texture": "sharkonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "SharkoTDisplayCondition3"
+        }
+      },
+      {
+        "model": "Modelboyolayonside",
+        "texture": "sharkonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "SharkoTDisplayCondition4"
+        }
+      },
+      {
+        "model": "Modelboyosleep",
+        "texture": "sharkonewtired.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "SharkoTDisplayCondition5"
+        }
+      },
+      {
+        "model": "Modelboyolayalt",
+        "texture": "sharkonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "SharkoTDisplayCondition6"
+        }
+      },
+      {
+        "model": "Modelboyosleepalt",
+        "texture": "sharkonewtired.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "SharkoTDisplayCondition7"
+        }
+      },
+      {
+        "model": "Modelboyo",
+        "texture": "albinosharkonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "AlbinoSharkoDisplayCondition"
+        }
+      },
+      {
+        "model": "Modelboyotamed",
+        "texture": "albinosharkonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "AlbinoSharkoTDisplayCondition"
+        }
+      },
+      {
+        "model": "Modelboyosit",
+        "texture": "albinosharkonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "AlbinoSharkoTDisplayCondition2"
+        }
+      },
+      {
+        "model": "Modelboyolay",
+        "texture": "albinosharkonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "AlbinoSharkoTDisplayCondition3"
+        }
+      },
+      {
+        "model": "Modelboyolayonside",
+        "texture": "albinosharkonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "AlbinoSharkoTDisplayCondition4"
+        }
+      },
+      {
+        "model": "Modelboyosleep",
+        "texture": "albinosharkonewtired.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "AlbinoSharkoTDisplayCondition5"
+        }
+      },
+      {
+        "model": "Modelboyolayalt",
+        "texture": "albinosharkonew.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "AlbinoSharkoTDisplayCondition6"
+        }
+      },
+      {
+        "model": "Modelboyosleepalt",
+        "texture": "albinosharkonewtired.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "AlbinoSharkoTDisplayCondition7"
+        }
       }
     ],
+    "animations": [],
     "modelWidth": 0.7,
     "modelHeight": 0.9,
     "modelShadowSize": 0.5,
@@ -128,22 +264,44 @@
     "raidCelebrationSound": {
       "value": ""
     },
-    "entityDataEntries": [],
-    "whenMobDies": {
-      "name": "SharkoKilledByPlayersCountUp"
-    },
+    "entityDataEntries": [
+      {
+        "name": "Albino",
+        "type": "logic",
+        "value": false
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "SharkoState",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "name": "AlternateState",
+        "type": "logic",
+        "value": false
+      }
+    ],
     "onRightClickedOn": {
-      "name": "SharkoRCTame"
+      "name": "SharkoRightClickedOnEntity"
+    },
+    "onMobTickUpdate": {
+      "name": "SharkoOnEntityTickUpdate"
     },
     "onInitialSpawn": {
-      "name": "ChanceForBigSharko"
+      "name": "SharkoOnInitialEntitySpawn"
     },
     "hasAI": true,
     "aiBase": "(none)",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></xml>",
-    "breedable": false,
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"protect_owner\"><field name=\"condition\">SharkoMoveAroundCheck,SharkoMoveAroundCheck</field><next><block type=\"fight_as_owner\"><field name=\"condition\">SharkoMoveAroundCheck,SharkoMoveAroundCheck</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">SharkoMoveAroundCheck,SharkoMoveAroundCheck</field><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">TRUE</field><field name=\"condition\">SharkoMoveAroundCheck,SharkoMoveAroundCheck</field><next><block type=\"follow_owner\"><field name=\"speed\">1</field><field name=\"min_distance\">10</field><field name=\"max_distance\">2</field><field name=\"condition\">SharkoMoveAroundCheck,SharkoMoveAroundCheck</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">SharkoMoveAroundCheck,SharkoMoveAroundCheck</field><next><block type=\"breed\"><field name=\"speed\">1</field><field name=\"condition\">SharkoMoveAroundCheck,null</field><next><block type=\"watch_closest_entity\"><field name=\"entity\">EntityPlayer</field><field name=\"radius\">12</field><field name=\"condition\">SharkoSleepCheck,SharkoSleepCheck</field><next><block type=\"watch_closest_entity\"><field name=\"entity\">EntityPlayerMP</field><field name=\"radius\">12</field><field name=\"condition\">SharkoSleepCheck,SharkoSleepCheck</field><next><block type=\"look_around\"><field name=\"condition\">SharkoSleepCheck,SharkoSleepCheck</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
+    "breedable": true,
     "tameable": false,
-    "breedTriggerItems": [],
+    "breedTriggerItems": [
+      {
+        "value": "Items.COOKIE"
+      }
+    ],
     "ranged": false,
     "rangedAttackItem": {
       "value": ""
@@ -172,6 +330,9 @@
       2
     ],
     "sensitiveToVibration": false,
-    "vibrationalEvents": []
+    "vibrationalEvents": [],
+    "vibrationSensitivityRadius": {
+      "fixedValue": 7.0
+    }
   }
 }
