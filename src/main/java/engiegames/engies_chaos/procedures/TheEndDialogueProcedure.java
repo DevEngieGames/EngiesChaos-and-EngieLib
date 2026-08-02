@@ -1,112 +1,82 @@
 package engiegames.engies_chaos.procedures;
 
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.TickEvent;
 
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.Vec2;
+import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.GameRules;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
 import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
-import engiegames.engies_chaos.init.EngiesChaosModGameRules;
 import engiegames.engies_chaos.EngiesChaosMod;
 
 @Mod.EventBusSubscriber
 public class TheEndDialogueProcedure {
 	@SubscribeEvent
-	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+	public static void onWorldTick(TickEvent.LevelTickEvent event) {
 		if (event.phase == TickEvent.Phase.END) {
-			execute(event, event.player.level, event.player.getX(), event.player.getY(), event.player.getZ(), event.player);
+			execute(event, event.level);
 		}
 	}
 
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
-		execute(null, world, x, y, z, entity);
+	public static void execute(LevelAccessor world) {
+		execute(null, world);
 	}
 
-	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
-		if (entity == null)
-			return;
-		if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == true && EngiesChaosModVariables.MapVariables.get(world).TheEndStart == true) {
-			EngiesChaosModVariables.MapVariables.get(world).timecheckstop = true;
-			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-			EngiesChaosMod.queueServerWork(1, () -> {
-				if (EngiesChaosModVariables.MapVariables.get(world).TheEndEeriePlayOnce == false) {
-					EngiesChaosModVariables.MapVariables.get(world).TheEndEeriePlayOnce = true;
+	private static void execute(@Nullable Event event, LevelAccessor world) {
+		if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.OVERWORLD) {
+			if (!world.isClientSide()) {
+				if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == true && EngiesChaosModVariables.MapVariables.get(world).TheEndStart == true) {
+					EngiesChaosModVariables.MapVariables.get(world).timecheckstop = true;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (world instanceof Level _level) {
-						if (!_level.isClientSide()) {
-							_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("engies_chaos:theend_eerie")), SoundSource.AMBIENT, (float) 0.5, 1);
-						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("engies_chaos:theend_eerie")), SoundSource.AMBIENT, (float) 0.5, 1, false);
-						}
-					}
-				}
-				if (EngiesChaosModVariables.MapVariables.get(world).theendtimenighttimerblock == false) {
-					entity.getPersistentData().putDouble("TimeUntilNightTHEEND", (entity.getPersistentData().getDouble("TimeUntilNightTHEEND") + 0.05));
-					if (entity.getPersistentData().getDouble("TimeUntilNightTHEEND") >= 43) {
-						{
-							boolean _setval = true;
-							entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.DoomsdayAlive = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false, world.getServer());
-						world.getLevelData().getGameRules().getRule(GameRules.RULE_DOMOBSPAWNING).set(false, world.getServer());
-						{
-							boolean _setval = false;
-							entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.BlockDeathAliveCOunt = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						EngiesChaosModVariables.MapVariables.get(world).theendtimenighttimerblock = true;
+					if (EngiesChaosModVariables.MapVariables.get(world).theendtimenighttimerblock == false) {
+						EngiesChaosModVariables.MapVariables.get(world).TimeUntilNight = EngiesChaosModVariables.MapVariables.get(world).TimeUntilNight + 0.05;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						if (world instanceof Level _lvl6 && _lvl6.isDay()) {
-							{
-								Entity _ent = entity;
-								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "time set midnight");
-								}
+						if (EngiesChaosModVariables.MapVariables.get(world).TimeUntilNight >= 43) {
+							world.getLevelData().getGameRules().getRule(GameRules.RULE_DOMOBSPAWNING).set(false, world.getServer());
+							if (world instanceof Level _lvl5 && _lvl5.isDay()) {
+								if (world instanceof ServerLevel _level)
+									_level.getServer().getCommands().performPrefixedCommand(
+											new CommandSourceStack(CommandSource.NULL, new Vec3(0, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0)), 0), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null)
+													.withSuppressedOutput(),
+											"time add 100t");
 							}
-						}
-						if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_HARDCORE) == true) {
-							{
-								boolean _setval = true;
-								entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.healthreductiondday = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-							{
-								Entity _ent = entity;
-								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @p instant_health 1 28 true");
+							if (!(world instanceof Level _lvl8 && _lvl8.isDay())) {
+								EngiesChaosModVariables.MapVariables.get(world).theendtimenighttimerblock = true;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								for (int index0 = 0; index0 < 5; index0++) {
+									if (world instanceof ServerLevel _level)
+										_level.getServer().getCommands().performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, new Vec3(0, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0)), 0), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null)
+														.withSuppressedOutput(),
+												"time add 100t");
 								}
 							}
 						}
 					}
-				}
-				if (EngiesChaosModVariables.MapVariables.get(world).theenddialoguetimeblock == false) {
-					entity.getPersistentData().putDouble("TheEndDialogueCooldownStart", (entity.getPersistentData().getDouble("TheEndDialogueCooldownStart") + 0.05));
 					if (EngiesChaosModVariables.MapVariables.get(world).theenddialoguetimeblock == false) {
-						if (entity.getPersistentData().getDouble("TheEndDialogueCooldownStart") >= 36.1) {
+						EngiesChaosModVariables.MapVariables.get(world).DialogueCooldownStart = EngiesChaosModVariables.MapVariables.get(world).DialogueCooldownStart + 0.05;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						if (EngiesChaosModVariables.MapVariables.get(world).DialogueCooldownStart >= 37) {
 							EngiesChaosModVariables.MapVariables.get(world).theenddialoguetimeblock = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddayawardadvancement1 = true;
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							EngiesChaosModVariables.MapVariables.get(world).ShowObjectiveOverlay = true;
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -114,146 +84,137 @@ public class TheEndDialogueProcedure {
 								EngiesChaosModVariables.MapVariables.get(world).ShowObjectiveOverlay = false;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							});
-							EngiesChaosMod.queueServerWork(102, () -> {
-								{
-									Entity _ent = entity;
-									if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-										_ent.getServer().getCommands()
-												.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-														_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
-														"tellraw @a {\"text\":\"We never thought this day would come. But it is finally here.\",\"bold\":true,\"color\":\"yellow\"}");
-									}
-								}
-								EngiesChaosMod.queueServerWork(188, () -> {
-									{
-										Entity _ent = entity;
-										if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-											_ent.getServer().getCommands().performPrefixedCommand(
-													new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
-															_ent.getDisplayName(), _ent.level.getServer(), _ent),
-													"tellraw @a {\"text\":\"The end of humanity has arrived. Earth as we know it... is to come to an end.\",\"bold\":true,\"color\":\"yellow\"}");
-										}
-									}
+							EngiesChaosMod.queueServerWork(100, () -> {
+								EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 1;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).ddaydialogue = true;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosMod.queueServerWork(120, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 0;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
+								EngiesChaosMod.queueServerWork(200, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 2;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).ddaydialogue = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosMod.queueServerWork(120, () -> {
+										EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 0;
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									});
 									EngiesChaosMod.queueServerWork(200, () -> {
-										{
-											Entity _ent = entity;
-											if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-												_ent.getServer().getCommands().performPrefixedCommand(
-														new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
-																_ent.getDisplayName(), _ent.level.getServer(), _ent),
-														"tellraw @a {\"text\":\"You must withstand this chaos for a long time in order to survive the end of the world.\",\"bold\":true,\"color\":\"yellow\"}");
-											}
-										}
+										EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 3;
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+										EngiesChaosModVariables.MapVariables.get(world).ddaydialogue = true;
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+										EngiesChaosMod.queueServerWork(140, () -> {
+											EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 0;
+											EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+										});
 										EngiesChaosMod.queueServerWork(200, () -> {
-											{
-												Entity _ent = entity;
-												if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-													_ent.getServer().getCommands()
-															.performPrefixedCommand(
-																	new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-																			_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
-																	"tellraw @a {\"text\":\"May Mother Nature have mercy on our souls.\",\"bold\":true,\"color\":\"yellow\"}");
-												}
+											if (world.players().size() == 1) {
+												EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 4;
+												EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+											} else if (world.players().size() >= 2) {
+												EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 5;
+												EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 											}
-											EngiesChaosMod.queueServerWork(200, () -> {
-												{
-													Entity _ent = entity;
-													if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-														_ent.getServer().getCommands()
-																.performPrefixedCommand(
-																		new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-																				_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
-																		"tellraw @a {\"text\":\"Did you really think that the dialogue was over?\",\"bold\":true,\"color\":\"black\"}");
-													}
-												}
-												EngiesChaosMod.queueServerWork(160, () -> {
-													{
-														Entity _ent = entity;
-														if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-															_ent.getServer().getCommands().performPrefixedCommand(
-																	new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-																			_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
-																	"tellraw @a {\"text\":\"This isn't what you think it is.\",\"bold\":true,\"color\":\"black\"}");
+											EngiesChaosModVariables.MapVariables.get(world).ddaydialogue = true;
+											EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+											EngiesChaosMod.queueServerWork(120, () -> {
+												EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 0;
+												EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+											});
+											EngiesChaosMod.queueServerWork(260, () -> {
+												EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 8;
+												EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+												EngiesChaosModVariables.MapVariables.get(world).ddaydialogue = true;
+												EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+												EngiesChaosMod.queueServerWork(130, () -> {
+													EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 0;
+													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+												});
+												EngiesChaosMod.queueServerWork(260, () -> {
+													EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 9;
+													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+													EngiesChaosModVariables.MapVariables.get(world).ddaydialogue = true;
+													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+													EngiesChaosMod.queueServerWork(130, () -> {
+														EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 0;
+														EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+													});
+													EngiesChaosMod.queueServerWork(1, () -> {
+														EngiesChaosModVariables.MapVariables.get(world).stopeeriesound = true;
+														EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+														EngiesChaosModVariables.MapVariables.get(world).ddaymainsongplay = true;
+														EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+													});
+													EngiesChaosModVariables.MapVariables.get(world).doomsdaymainsongtimer = 14.5;
+													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+													EngiesChaosModVariables.MapVariables.get(world).doomsdayaltsongtimer = 191;
+													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+													EngiesChaosModVariables.MapVariables.get(world).theendtimerminutes = Math.round(Mth.nextDouble(RandomSource.create(), 7, 30));
+													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+													EngiesChaosMod.queueServerWork(1, () -> {
+														if (EngiesChaosModVariables.MapVariables.get(world).theendtimerminutes == 30) {
+															EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds = Math.round(Mth.nextDouble(RandomSource.create(), 0, 30));
+															EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+														} else if (EngiesChaosModVariables.MapVariables.get(world).theendtimerminutes == 7) {
+															EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds = Math.round(Mth.nextDouble(RandomSource.create(), 42, 59));
+															EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+														} else {
+															EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds = Math.round(Mth.nextDouble(RandomSource.create(), 0, 59));
+															EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 														}
-													}
-													EngiesChaosMod.queueServerWork(120, () -> {
-														{
-															Entity _ent = entity;
-															if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-																_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(),
-																		_ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
-																		"tellraw @a {\"text\":\"THIS\",\"bold\":true,\"color\":\"black\"}");
-															}
-														}
-														EngiesChaosMod.queueServerWork(20, () -> {
-															{
-																Entity _ent = entity;
-																if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-																	_ent.getServer().getCommands()
-																			.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(),
-																					_ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
-																					"tellraw @a {\"text\":\"IS\",\"bold\":true,\"color\":\"dark_gray\"}");
-																}
-															}
-															EngiesChaosMod.queueServerWork(20, () -> {
-																{
-																	Entity _ent = entity;
-																	if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-																		_ent.getServer().getCommands()
-																				.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(),
-																						_ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
-																						"tellraw @a {\"text\":\"THE\",\"bold\":true,\"color\":\"dark_red\"}");
-																	}
-																}
-																EngiesChaosMod.queueServerWork(20, () -> {
-																	{
-																		Entity _ent = entity;
-																		if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-																			_ent.getServer().getCommands()
-																					.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(),
-																							_ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
-																							"tellraw @a {\"text\":\"END\",\"bold\":true,\"color\":\"red\"}");
-																		}
-																	}
-																	EngiesChaosMod.queueServerWork(100, () -> {
-																		{
-																			Entity _ent = entity;
-																			if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-																				_ent.getServer().getCommands().performPrefixedCommand(
-																						new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-																								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
-																						"tellraw @a [\"\",{\"text\":\"GO\",\"bold\":true,\"color\":\"black\"},{\"text\":\"OD\",\"bold\":true,\"color\":\"dark_gray\"},{\"text\":\"BY\",\"bold\":true,\"color\":\"dark_red\"},{\"text\":\"E.\",\"bold\":true,\"color\":\"red\"}]");
-																			}
-																		}
-																		{
-																			Entity _ent = entity;
-																			if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-																				_ent.getServer().getCommands()
-																						.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(),
-																								_ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
-																								"stopsound @a ambient allaboutengie:theend_eerie");
-																			}
-																		}
-																		if (world instanceof Level _level) {
-																			if (!_level.isClientSide()) {
-																				_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("engies_chaos:doomsday_start")), SoundSource.MUSIC, (float) 1.5,
-																						1);
-																			} else {
-																				_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("engies_chaos:doomsday_start")), SoundSource.MUSIC, (float) 1.5, 1, false);
-																			}
-																		}
-																		entity.getPersistentData().putDouble("theendmainsongtimer", 0);
-																		EngiesChaosMod.queueServerWork(290, () -> {
-																			EngiesChaosModVariables.MapVariables.get(world).thestart = true;
-																			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-																			EngiesChaosModVariables.MapVariables.get(world).BYEBYE = true;
-																			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-																			world.getLevelData().getGameRules().getRule(GameRules.RULE_DOMOBSPAWNING).set(true, world.getServer());
-																		});
-																	});
-																});
-															});
-														});
+													});
+													EngiesChaosMod.queueServerWork(2, () -> {
+														EngiesChaosModVariables.MapVariables.get(world).theendmaxtime = 60 * EngiesChaosModVariables.MapVariables.get(world).theendtimerminutes
+																+ EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds;
+														EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+													});
+													EngiesChaosMod.queueServerWork(3, () -> {
+														EngiesChaosModVariables.MapVariables.get(world).theendtimer = EngiesChaosModVariables.MapVariables.get(world).theendmaxtime;
+														EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+													});
+													EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown = Math.round(Mth.nextDouble(RandomSource.create(), 5, 8)) + 3;
+													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+													EngiesChaosModVariables.MapVariables.get(world).missilecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 5, 8)) + 3;
+													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+													EngiesChaosModVariables.MapVariables.get(world).riftcooldown = Math.round(Mth.nextDouble(RandomSource.create(), 5, 8)) + 3;
+													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+													EngiesChaosModVariables.MapVariables.get(world).spikecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 5, 8)) + 3;
+													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+													EngiesChaosModVariables.MapVariables.get(world).avalanchecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 5, 8)) + 3;
+													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+													EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 0;
+													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+													EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount = 0;
+													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+													EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount = 0;
+													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+													EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount = 0;
+													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+													EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount = 0;
+													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+													EngiesChaosModVariables.MapVariables.get(world).ddayhalf1 = true;
+													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+													EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = false;
+													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+													EngiesChaosMod.queueServerWork(262, () -> {
+														if (world instanceof ServerLevel _level)
+															_level.getServer().getCommands().performPrefixedCommand(
+																	new CommandSourceStack(CommandSource.NULL, new Vec3(0, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0)), 0), Vec2.ZERO, _level, 4, "", Component.literal(""),
+																			_level.getServer(), null).withSuppressedOutput(),
+																	("effect give @a minecraft:regeneration " + new java.text.DecimalFormat("##").format(EngiesChaosModVariables.MapVariables.get(world).theendmaxtime) + " 1 true"));
+														EngiesChaosModVariables.MapVariables.get(world).ddayprophshow = true;
+														EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+														EngiesChaosModVariables.MapVariables.get(world).thestart = true;
+														EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+														EngiesChaosModVariables.MapVariables.get(world).BYEBYE = true;
+														EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+														world.getLevelData().getGameRules().getRule(GameRules.RULE_DOMOBSPAWNING).set(true, world.getServer());
+														world.getLevelData().getGameRules().getRule(GameRules.RULE_DOFIRETICK).set(false, world.getServer());
+														world.getLevelData().getGameRules().getRule(GameRules.RULE_FIRE_DAMAGE).set(false, world.getServer());
 													});
 												});
 											});
@@ -262,48 +223,6 @@ public class TheEndDialogueProcedure {
 								});
 							});
 						}
-					}
-				}
-			});
-		} else if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == false && EngiesChaosModVariables.MapVariables.get(world).TheEndStart == true) {
-			EngiesChaosMod.LOGGER.warn("Global rule \"TheEndStart\" is enabled when it's not supposed to be enabled, this is a bug!");
-		} else if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == false && EngiesChaosModVariables.MapVariables.get(world).TheEndStart == false) {
-			if (EngiesChaosModVariables.MapVariables.get(world).waittildoomsday == true) {
-				entity.getPersistentData().putDouble("waittoreset", (entity.getPersistentData().getDouble("waittoreset") + 0.05));
-				if (entity.getPersistentData().getDouble("waittoreset") >= 0.5) {
-					entity.getPersistentData().putDouble("waittoreset", 0);
-					entity.getPersistentData().putDouble("TheEndDialogueCooldownStart", 0);
-					entity.getPersistentData().putDouble("TimeUntilNightTHEEND", 0);
-					EngiesChaosModVariables.MapVariables.get(world).TheEndEeriePlayOnce = false;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).waittildoomsday = false;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).theendwait = false;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).TheEndStart = false;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).theenddialoguetimeblock = false;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).theendtimenighttimerblock = false;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				}
-			} else if (EngiesChaosModVariables.MapVariables.get(world).waittildoomsday == false) {
-				entity.getPersistentData().putDouble("waittoreset2", (entity.getPersistentData().getDouble("waittoreset2") + 0.05));
-				if (entity.getPersistentData().getDouble("waittoreset2") >= 0.5) {
-					entity.getPersistentData().putDouble("waittoreset2", 0);
-					if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == true && EngiesChaosModVariables.MapVariables.get(world).theendwait == false) {
-						EngiesChaosModVariables.MapVariables.get(world).TheEndStart = true;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					} else if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == true && EngiesChaosModVariables.MapVariables.get(world).theendwait == true) {
-						EngiesChaosModVariables.MapVariables.get(world).waittilsdoomsday = true;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).TheEndStart = false;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					} else {
-						EngiesChaosModVariables.MapVariables.get(world).waittilsdoomsday = true;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).TheEndStart = false;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 				}
 			}

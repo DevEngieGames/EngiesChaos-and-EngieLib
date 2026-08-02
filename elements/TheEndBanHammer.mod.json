@@ -11,10 +11,7 @@
     "guiTexture": "theendbanpixel",
     "name": "The End Ban Hammer",
     "specialInformation": {
-      "fixedValue": [
-        "Congrats!"
-      ],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

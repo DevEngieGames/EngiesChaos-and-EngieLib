@@ -11,10 +11,7 @@
     "guiTexture": "superdoomsdaybanpixel",
     "name": "Super Doomsday Ban Hammer",
     "specialInformation": {
-      "fixedValue": [
-        "Congrats!"
-      ],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

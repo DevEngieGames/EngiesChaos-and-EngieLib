@@ -5,11 +5,11 @@
     "toolType": "Sword",
     "renderType": 1,
     "blockingRenderType": 0,
-    "texture": "hallowsscythe",
-    "customModelName": "engieshallowscythe:default",
+    "texture": "pixelscythehallownew",
+    "customModelName": "engieshallowscytheengie:default",
     "blockingModelName": "Normal blocking",
-    "guiTexture": "hallowsscythe",
-    "name": "Roughian EngieGames's Hallow's Scythe",
+    "guiTexture": "pixelscythehallownew",
+    "name": "Hallow's Scythe",
     "specialInformation": {
       "fixedValue": [],
       "name": "EngieGamesHallowScytheSpecialInformation"

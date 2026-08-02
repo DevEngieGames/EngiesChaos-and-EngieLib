@@ -5,14 +5,13 @@
     "toolType": "Sword",
     "renderType": 1,
     "blockingRenderType": 0,
-    "texture": "antimatterregularscythe",
+    "texture": "pixelantimatterscythenew",
     "customModelName": "giganticscythe:antimatter",
     "blockingModelName": "Normal blocking",
-    "guiTexture": "antimatterregularscythe",
+    "guiTexture": "pixelantimatterscythenew",
     "name": "Antimatter Gigantic Scythe",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

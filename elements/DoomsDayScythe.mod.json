@@ -5,16 +5,13 @@
     "toolType": "Sword",
     "renderType": 1,
     "blockingRenderType": 0,
-    "texture": "doomsdayscythe",
+    "texture": "pixelscytheddaynew",
     "customModelName": "doomsdayscythe:default",
     "blockingModelName": "Normal blocking",
-    "guiTexture": "doomsdayscythe",
+    "guiTexture": "pixelscytheddaynew",
     "name": "Doomsday Scythe",
     "specialInformation": {
-      "fixedValue": [
-        "Congrats!"
-      ],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

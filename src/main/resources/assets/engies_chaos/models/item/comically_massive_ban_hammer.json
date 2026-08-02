@@ -3,6 +3,6 @@
   "textures": {
     "1": "engies_chaos:block/oreo",
     "2": "engies_chaos:block/signatures",
-    "particle": "engies_chaos:item/banhammerpixel"
+    "particle": "engies_chaos:item/oreobanpixel"
   }
 }

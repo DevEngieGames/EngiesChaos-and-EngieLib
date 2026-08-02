@@ -5,26 +5,26 @@
     "parent": "engies_chaos:custom/engiesscythe",
     "textures": {
       "0": "engies_chaos:block/engiesscythe",
-      "particle": "engies_chaos:item/engiesscythe"
+      "particle": "engies_chaos:item/pixelscytheengiesnew"
     }
   },
   "perspectives": {
     "gui": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/engiesscythe"
+        "layer0": "engies_chaos:item/pixelscytheengiesnew"
       }
     },
     "fixed": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/engiesscythe"
+        "layer0": "engies_chaos:item/pixelscytheengiesnew"
       }
     },
     "ground": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/engiesscythe"
+        "layer0": "engies_chaos:item/pixelscytheengiesnew"
       }
     }
   }

@@ -11,10 +11,7 @@
     "guiTexture": "mindscapebanpixel",
     "name": "Mindscape Ban Hammer",
     "specialInformation": {
-      "fixedValue": [
-        "Congrats!"
-      ],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

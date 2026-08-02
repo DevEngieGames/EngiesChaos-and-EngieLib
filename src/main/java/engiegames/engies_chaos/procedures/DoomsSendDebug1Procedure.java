@@ -33,7 +33,7 @@ public class DoomsSendDebug1Procedure {
 		if (EngiesChaosModVariables.MapVariables.get(world).doomssentdebug1 == true) {
 			EngiesChaosModVariables.MapVariables.get(world).doomssentdebug1 = false;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-			if (EngiesChaosModVariables.MapVariables.get(world).doomsdaychance >= 5 && EngiesChaosModVariables.MapVariables.get(world).doomsdaychance < 15) {
+			if (EngiesChaosModVariables.MapVariables.get(world).doomsdaychance >= 6.25 && EngiesChaosModVariables.MapVariables.get(world).doomsdaychance < 12.5) {
 				if (EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true) {
 					if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
 						if (entity instanceof Player _player && !_player.level.isClientSide())
@@ -55,7 +55,7 @@ public class DoomsSendDebug1Procedure {
 							_player.displayClientMessage(Component.literal(("DEBUG: Attempted to spawn ENGIES WRATH with risk: " + "Low.")), false);
 					}
 				}
-			} else if (EngiesChaosModVariables.MapVariables.get(world).doomsdaychance >= 15 && EngiesChaosModVariables.MapVariables.get(world).doomsdaychance < 25) {
+			} else if (EngiesChaosModVariables.MapVariables.get(world).doomsdaychance >= 12.5 && EngiesChaosModVariables.MapVariables.get(world).doomsdaychance < 18.75) {
 				if (EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true) {
 					if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
 						if (entity instanceof Player _player && !_player.level.isClientSide())
@@ -77,7 +77,7 @@ public class DoomsSendDebug1Procedure {
 							_player.displayClientMessage(Component.literal(("DEBUG: Attempted to spawn ENGIES WRATH with risk: " + "Medium.")), false);
 					}
 				}
-			} else if (EngiesChaosModVariables.MapVariables.get(world).doomsdaychance >= 25 && EngiesChaosModVariables.MapVariables.get(world).doomsdaychance < 35) {
+			} else if (EngiesChaosModVariables.MapVariables.get(world).doomsdaychance >= 18.75 && EngiesChaosModVariables.MapVariables.get(world).doomsdaychance < 25) {
 				if (EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true) {
 					if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
 						if (entity instanceof Player _player && !_player.level.isClientSide())
@@ -99,7 +99,7 @@ public class DoomsSendDebug1Procedure {
 							_player.displayClientMessage(Component.literal(("DEBUG: Attempted to spawn ENGIES WRATH with risk: " + "High.")), false);
 					}
 				}
-			} else if (EngiesChaosModVariables.MapVariables.get(world).doomsdaychance >= 35 && EngiesChaosModVariables.MapVariables.get(world).doomsdaychance < 75) {
+			} else if (EngiesChaosModVariables.MapVariables.get(world).doomsdaychance >= 25 && EngiesChaosModVariables.MapVariables.get(world).doomsdaychance < 50) {
 				if (EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true) {
 					if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
 						if (entity instanceof Player _player && !_player.level.isClientSide())
@@ -121,7 +121,7 @@ public class DoomsSendDebug1Procedure {
 							_player.displayClientMessage(Component.literal(("DEBUG: Attempted to spawn ENGIES WRATH with risk: " + "Extreme.")), false);
 					}
 				}
-			} else if (EngiesChaosModVariables.MapVariables.get(world).doomsdaychance >= 75) {
+			} else if (EngiesChaosModVariables.MapVariables.get(world).doomsdaychance >= 50) {
 				if (EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true) {
 					if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
 						if (entity instanceof Player _player && !_player.level.isClientSide())

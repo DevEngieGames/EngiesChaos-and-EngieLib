@@ -5,26 +5,26 @@
     "parent": "engies_chaos:custom/scythe",
     "textures": {
       "0": "engies_chaos:block/normscythe",
-      "particle": "engies_chaos:item/regularscythe"
+      "particle": "engies_chaos:item/pixelscythenew"
     }
   },
   "perspectives": {
     "gui": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/regularscythe"
+        "layer0": "engies_chaos:item/pixelscythenew"
       }
     },
     "fixed": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/regularscythe"
+        "layer0": "engies_chaos:item/pixelscythenew"
       }
     },
     "ground": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/regularscythe"
+        "layer0": "engies_chaos:item/pixelscythenew"
       }
     }
   }

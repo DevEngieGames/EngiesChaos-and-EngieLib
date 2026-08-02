@@ -5,26 +5,26 @@
     "parent": "engies_chaos:custom/monstrosityscythe",
     "textures": {
       "0": "engies_chaos:block/monstrosityscythe",
-      "particle": "engies_chaos:item/monstrosityscythe"
+      "particle": "engies_chaos:item/pixelscythemonnew"
     }
   },
   "perspectives": {
     "gui": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/monstrosityscythe"
+        "layer0": "engies_chaos:item/pixelscythemonnew"
       }
     },
     "fixed": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/monstrosityscythe"
+        "layer0": "engies_chaos:item/pixelscythemonnew"
       }
     },
     "ground": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/monstrosityscythe"
+        "layer0": "engies_chaos:item/pixelscythemonnew"
       }
     }
   }

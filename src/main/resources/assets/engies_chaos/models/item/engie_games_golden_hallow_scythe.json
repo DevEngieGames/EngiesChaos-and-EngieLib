@@ -2,34 +2,28 @@
   "loader": "forge:separate_transforms",
   "gui_light": "front",
   "base": {
-    "parent": "engies_chaos:custom/engieshallowscythegold",
+    "parent": "item/handheld",
     "textures": {
-      "0": "engies_chaos:block/scythemaingold",
-      "1": "engies_chaos:block/scythealtgold",
-      "2": "engies_chaos:block/scythespikes1gold",
-      "3": "engies_chaos:block/scythespikes2gold",
-      "4": "engies_chaos:block/scytheeye",
-      "5": "engies_chaos:block/scytheeyecolorgold",
-      "particle": "engies_chaos:item/hallowsscythe"
+      "layer0": "engies_chaos:item/pixelscythehallowgoldnew"
     }
   },
   "perspectives": {
     "gui": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/hallowsscythe"
+        "layer0": "engies_chaos:item/pixelscythehallowgoldnew"
       }
     },
     "fixed": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/hallowsscythe"
+        "layer0": "engies_chaos:item/pixelscythehallowgoldnew"
       }
     },
     "ground": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/hallowsscythe"
+        "layer0": "engies_chaos:item/pixelscythehallowgoldnew"
       }
     }
   }

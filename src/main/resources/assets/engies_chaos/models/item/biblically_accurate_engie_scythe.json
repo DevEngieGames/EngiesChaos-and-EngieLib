@@ -5,26 +5,26 @@
     "parent": "engies_chaos:custom/biblicallyaccuratescythe",
     "textures": {
       "0": "engies_chaos:block/biblicallyscythe",
-      "particle": "engies_chaos:item/biblicallyaccuratescythe"
+      "particle": "engies_chaos:item/pixelscythebibnew"
     }
   },
   "perspectives": {
     "gui": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/biblicallyaccuratescythe"
+        "layer0": "engies_chaos:item/pixelscythebibnew"
       }
     },
     "fixed": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/biblicallyaccuratescythe"
+        "layer0": "engies_chaos:item/pixelscythebibnew"
       }
     },
     "ground": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/biblicallyaccuratescythe"
+        "layer0": "engies_chaos:item/pixelscythebibnew"
       }
     }
   }

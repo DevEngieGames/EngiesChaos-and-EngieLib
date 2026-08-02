@@ -5,9 +5,10 @@
     "toolType": "Sword",
     "renderType": 1,
     "blockingRenderType": 0,
-    "texture": "banhammerpixel",
+    "texture": "oreobanpixel",
     "customModelName": "ban_hammer_bahemoth:default",
     "blockingModelName": "Normal blocking",
+    "guiTexture": "",
     "name": "Comically Massive Ban Hammer",
     "specialInformation": {
       "fixedValue": [
@@ -20,6 +21,9 @@
     "enchantability": 128000,
     "damageVsEntity": 4200.0,
     "usageCount": 42000,
+    "glowCondition": {
+      "fixedValue": false
+    },
     "repairItems": [],
     "immuneToFire": false,
     "blockDropsTier": "STONE",

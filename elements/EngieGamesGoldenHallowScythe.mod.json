@@ -3,12 +3,12 @@
   "_type": "tool",
   "definition": {
     "toolType": "Sword",
-    "renderType": 1,
+    "renderType": 0,
     "blockingRenderType": 0,
-    "texture": "hallowsscythe",
-    "customModelName": "engieshallowscythegold:default",
+    "texture": "pixelscythehallowgoldnew",
+    "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
-    "guiTexture": "hallowsscythe",
+    "guiTexture": "pixelscythehallowgoldnew",
     "name": "Roughian EngieGames's Golden Hallow's Scythe",
     "specialInformation": {
       "fixedValue": [],

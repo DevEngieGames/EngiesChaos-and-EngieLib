@@ -154,6 +154,7 @@ public class EngiesChaosModVariables {
 			clone.monstrosityplushesobtained = original.monstrosityplushesobtained;
 			clone.hostileplushesobtained = original.hostileplushesobtained;
 			clone.insanityplushesobtained = original.insanityplushesobtained;
+			clone.playercountedtoplayercount = original.playercountedtoplayercount;
 			if (!event.isWasDeath()) {
 				clone.playeroverhealhp = original.playeroverhealhp;
 				clone.DoomsdayAlive = original.DoomsdayAlive;
@@ -459,6 +460,7 @@ public class EngiesChaosModVariables {
 		public double ewrathtimerseconds = 0;
 		public double timeticks = 0;
 		public double engiepoctime = 18000.0;
+		public double totalplayersinworld = 0;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -695,6 +697,7 @@ public class EngiesChaosModVariables {
 			ewrathtimerseconds = nbt.getDouble("ewrathtimerseconds");
 			timeticks = nbt.getDouble("timeticks");
 			engiepoctime = nbt.getDouble("engiepoctime");
+			totalplayersinworld = nbt.getDouble("totalplayersinworld");
 		}
 
 		@Override
@@ -927,6 +930,7 @@ public class EngiesChaosModVariables {
 			nbt.putDouble("ewrathtimerseconds", ewrathtimerseconds);
 			nbt.putDouble("timeticks", timeticks);
 			nbt.putDouble("engiepoctime", engiepoctime);
+			nbt.putDouble("totalplayersinworld", totalplayersinworld);
 			return nbt;
 		}
 
@@ -1111,6 +1115,7 @@ public class EngiesChaosModVariables {
 		public boolean monstrosityplushesobtained = false;
 		public boolean hostileplushesobtained = false;
 		public boolean insanityplushesobtained = false;
+		public boolean playercountedtoplayercount = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -1211,6 +1216,7 @@ public class EngiesChaosModVariables {
 			nbt.putBoolean("monstrosityplushesobtained", monstrosityplushesobtained);
 			nbt.putBoolean("hostileplushesobtained", hostileplushesobtained);
 			nbt.putBoolean("insanityplushesobtained", insanityplushesobtained);
+			nbt.putBoolean("playercountedtoplayercount", playercountedtoplayercount);
 			return nbt;
 		}
 
@@ -1308,6 +1314,7 @@ public class EngiesChaosModVariables {
 			monstrosityplushesobtained = nbt.getBoolean("monstrosityplushesobtained");
 			hostileplushesobtained = nbt.getBoolean("hostileplushesobtained");
 			insanityplushesobtained = nbt.getBoolean("insanityplushesobtained");
+			playercountedtoplayercount = nbt.getBoolean("playercountedtoplayercount");
 		}
 	}
 
@@ -1424,6 +1431,7 @@ public class EngiesChaosModVariables {
 					variables.monstrosityplushesobtained = message.data.monstrosityplushesobtained;
 					variables.hostileplushesobtained = message.data.hostileplushesobtained;
 					variables.insanityplushesobtained = message.data.insanityplushesobtained;
+					variables.playercountedtoplayercount = message.data.playercountedtoplayercount;
 				}
 			});
 			context.setPacketHandled(true);

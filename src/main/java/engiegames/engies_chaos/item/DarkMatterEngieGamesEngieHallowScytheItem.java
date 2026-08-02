@@ -1,6 +1,5 @@
 package engiegames.engies_chaos.item;
 
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.TooltipFlag;
@@ -51,7 +50,7 @@ public class DarkMatterEngieGamesEngieHallowScytheItem extends SwordItem {
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
 		Entity entity = itemstack.getEntityRepresentation();
-		String hoverText = EngieGamesHallowScytheSpecialInformationProcedure.execute(level instanceof Level ? (LevelAccessor) level : null, itemstack);
+		String hoverText = EngieGamesHallowScytheSpecialInformationProcedure.execute(itemstack);
 		if (hoverText != null) {
 			for (String line : hoverText.split("\n")) {
 				list.add(Component.literal(line));

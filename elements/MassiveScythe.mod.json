@@ -5,14 +5,13 @@
     "toolType": "Sword",
     "renderType": 1,
     "blockingRenderType": 0,
-    "texture": "regularscythe",
+    "texture": "pixelscythenew",
     "customModelName": "massivescythe:default",
     "blockingModelName": "Normal blocking",
-    "guiTexture": "regularscythe",
+    "guiTexture": "pixelscythenew",
     "name": "Massive Scythe",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

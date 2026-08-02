@@ -5,16 +5,13 @@
     "toolType": "Sword",
     "renderType": 1,
     "blockingRenderType": 0,
-    "texture": "monstrosityscythe",
+    "texture": "pixelscythemonnew",
     "customModelName": "monstrosityscythe:default",
     "blockingModelName": "Normal blocking",
-    "guiTexture": "monstrosityscythe",
+    "guiTexture": "pixelscythemonnew",
     "name": "Monstrosity Scythe",
     "specialInformation": {
-      "fixedValue": [
-        "You could say this scythe is a Monstrosity.. Heh? Alright I know that was a terrible joke anyway."
-      ],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

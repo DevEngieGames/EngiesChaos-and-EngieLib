@@ -5,16 +5,13 @@
     "toolType": "Sword",
     "renderType": 1,
     "blockingRenderType": 0,
-    "texture": "theendscythe",
+    "texture": "pixelscythetheendnew",
     "customModelName": "theendscythe:default",
     "blockingModelName": "Normal blocking",
-    "guiTexture": "theendscythe",
+    "guiTexture": "pixelscythetheendnew",
     "name": "The End Scythe",
     "specialInformation": {
-      "fixedValue": [
-        "Congrats!"
-      ],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

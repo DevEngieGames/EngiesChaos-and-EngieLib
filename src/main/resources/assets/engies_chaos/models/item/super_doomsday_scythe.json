@@ -5,26 +5,26 @@
     "parent": "engies_chaos:custom/superdoomsdayscythe",
     "textures": {
       "0": "engies_chaos:block/sdoomsdayscythe",
-      "particle": "engies_chaos:item/sdoomsdayscythe"
+      "particle": "engies_chaos:item/pixelscythesddaynew"
     }
   },
   "perspectives": {
     "gui": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/sdoomsdayscythe"
+        "layer0": "engies_chaos:item/pixelscythesddaynew"
       }
     },
     "fixed": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/sdoomsdayscythe"
+        "layer0": "engies_chaos:item/pixelscythesddaynew"
       }
     },
     "ground": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/sdoomsdayscythe"
+        "layer0": "engies_chaos:item/pixelscythesddaynew"
       }
     }
   }

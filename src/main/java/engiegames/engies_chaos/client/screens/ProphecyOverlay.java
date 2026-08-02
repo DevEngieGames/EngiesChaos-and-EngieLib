@@ -65,83 +65,83 @@ public class ProphecyOverlay {
 		if (ProphecyDisplayOverlayIngameProcedure.execute(world)) {
 			if (DDAYProphNoneProcedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/doomsdayproph.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
 			}
 			if (DDAYProphMult1Procedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/doomsdayprophmult1.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
 			}
 			if (DDAYProphMult2Procedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/doomsdayprophmult2.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
 			}
 			if (DDAYProphMult3Procedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/doomsdayprophmult3.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
 			}
 			if (DDAYProphMult4Procedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/doomsdayprophmult4.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
 			}
 			if (SDDAYProphNoneProcedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/superdoomsdayproph.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
 			}
 			if (SDDAYProphMult1Procedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/superdoomsdayprophmult1.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
 			}
 			if (SDDAYProphMult2Procedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/superdoomsdayprophmult2.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
 			}
 			if (SDDAYProphMult3Procedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/superdoomsdayprophmult3.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
 			}
 			if (SDDAYProphMult4Procedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/superdoomsdayprophmult4.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
 			}
 			if (THEENDProphNoneProcedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/theendproph.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
 			}
 			if (THEENDProphMult1Procedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/theendprophmult1.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
 			}
 			if (THEENDProphMult2Procedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/theendprophmult2.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
 			}
 			if (THEENDProphMult3Procedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/theendprophmult3.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
 			}
 			if (THEENDProphMult4Procedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/theendprophmult4.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
 			}
 			if (ENGIEGAMESProphNoneProcedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/engiegamesproph.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
 			}
 			if (ENGIEGAMESProphMult1Procedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/engiegamesprophmult1.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
 			}
 			if (ENGIEGAMESProphMult2Procedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/engiegamesprophmult2.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
 			}
 			if (ENGIEGAMESProphMult3Procedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/engiegamesprophmult3.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
 			}
 			if (ENGIEGAMESProphMult4Procedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/engiegamesprophmult4.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
 			}
 		}
 		RenderSystem.depthMask(true);

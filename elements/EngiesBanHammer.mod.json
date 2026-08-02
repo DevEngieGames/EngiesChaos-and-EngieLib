@@ -11,10 +11,7 @@
     "guiTexture": "engiebanpixel",
     "name": "Engies Ban Hammer",
     "specialInformation": {
-      "fixedValue": [
-        "Congrats!"
-      ],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

@@ -5,26 +5,26 @@
     "parent": "engies_chaos:custom/mindscapeengiesscythe",
     "textures": {
       "0": "engies_chaos:block/mindscapeengiesscythe",
-      "particle": "engies_chaos:item/mindscapescythe"
+      "particle": "engies_chaos:item/pixelscythemindscapenew"
     }
   },
   "perspectives": {
     "gui": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/mindscapescythe"
+        "layer0": "engies_chaos:item/pixelscythemindscapenew"
       }
     },
     "fixed": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/mindscapescythe"
+        "layer0": "engies_chaos:item/pixelscythemindscapenew"
       }
     },
     "ground": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/mindscapescythe"
+        "layer0": "engies_chaos:item/pixelscythemindscapenew"
       }
     }
   }

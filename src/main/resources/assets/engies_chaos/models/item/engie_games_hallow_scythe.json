@@ -2,34 +2,34 @@
   "loader": "forge:separate_transforms",
   "gui_light": "front",
   "base": {
-    "parent": "engies_chaos:custom/engieshallowscythe",
+    "parent": "engies_chaos:custom/engieshallowscytheengie",
     "textures": {
-      "0": "engies_chaos:block/scythemain",
-      "1": "engies_chaos:block/scythealt",
-      "2": "engies_chaos:block/scythespikes1",
-      "3": "engies_chaos:block/scythespikes2",
-      "4": "engies_chaos:block/scytheeye",
-      "5": "engies_chaos:block/scytheeyecolor",
-      "particle": "engies_chaos:item/hallowsscythe"
+      "0": "engies_chaos:block/scythemainengie",
+      "1": "engies_chaos:block/scythealtengie",
+      "2": "engies_chaos:block/scythespikes1engie",
+      "3": "engies_chaos:block/scythespikes2engie",
+      "4": "engies_chaos:block/scytheeyeengie",
+      "5": "engies_chaos:block/scytheeyecolorengie",
+      "particle": "engies_chaos:item/pixelscythehallownew"
     }
   },
   "perspectives": {
     "gui": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/hallowsscythe"
+        "layer0": "engies_chaos:item/pixelscythehallownew"
       }
     },
     "fixed": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/hallowsscythe"
+        "layer0": "engies_chaos:item/pixelscythehallownew"
       }
     },
     "ground": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/hallowsscythe"
+        "layer0": "engies_chaos:item/pixelscythehallownew"
       }
     }
   }

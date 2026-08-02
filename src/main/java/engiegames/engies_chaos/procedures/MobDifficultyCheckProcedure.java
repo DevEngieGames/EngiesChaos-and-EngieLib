@@ -28,7 +28,6 @@ public class MobDifficultyCheckProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Advancement advancement) {
 		if (advancement == null)
 			return;
-		DifficultyIncreaseProcedure.execute(world);
 		if (world instanceof Level _lvl0 && _lvl0.getServer() != null && _lvl0.getServer().getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:big_ban_obtain")).equals(advancement)) {
 			if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty < 1) {
 				EngiesChaosModVariables.MapVariables.get(world).playerobtainedbigcount = EngiesChaosModVariables.MapVariables.get(world).playerobtainedbigcount + 1;
@@ -176,5 +175,22 @@ public class MobDifficultyCheckProcedure {
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			}
 		}
+		if (world instanceof Level _lvl29 && _lvl29.getServer() != null && _lvl29.getServer().getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:cosmic_sword_obtain")).equals(advancement)) {
+			if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty < 30) {
+				EngiesChaosModVariables.MapVariables.get(world).playerobtainedcosmicswordcount = EngiesChaosModVariables.MapVariables.get(world).playerobtainedcosmicswordcount + 1;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			}
+		} else if (world instanceof Level _lvl30 && _lvl30.getServer() != null && _lvl30.getServer().getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:roughian_scythe_obtained")).equals(advancement)) {
+			if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty < 31) {
+				EngiesChaosModVariables.MapVariables.get(world).playerobtainedhallowscythecount = EngiesChaosModVariables.MapVariables.get(world).playerobtainedhallowscythecount + 1;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			}
+		} else if (world instanceof Level _lvl31 && _lvl31.getServer() != null && _lvl31.getServer().getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_roughian_scythe_obtained")).equals(advancement)) {
+			if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty < 32) {
+				EngiesChaosModVariables.MapVariables.get(world).playerobtainedcollectorshallowscythe = EngiesChaosModVariables.MapVariables.get(world).playerobtainedcollectorshallowscythe + 1;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			}
+		}
+		DifficultyIncreaseProcedure.execute(world);
 	}
 }

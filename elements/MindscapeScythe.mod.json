@@ -5,16 +5,13 @@
     "toolType": "Sword",
     "renderType": 1,
     "blockingRenderType": 0,
-    "texture": "mindscapescythe",
+    "texture": "pixelscythemindscapenew",
     "customModelName": "mindscapeengiesscythe:default",
     "blockingModelName": "Normal blocking",
-    "guiTexture": "mindscapescythe",
+    "guiTexture": "pixelscythemindscapenew",
     "name": "Mindscape Scythe",
     "specialInformation": {
-      "fixedValue": [
-        "Congrats!"
-      ],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {
