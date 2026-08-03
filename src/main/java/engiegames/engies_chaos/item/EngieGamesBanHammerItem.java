@@ -16,7 +16,6 @@ import net.minecraft.core.BlockPos;
 
 import java.util.List;
 
-import engiegames.engies_chaos.procedures.EngiesObtainProProcedure;
 import engiegames.engies_chaos.procedures.EngieGamesBanHammerSpecialInformationProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModTabs;
 
@@ -72,11 +71,5 @@ public class EngieGamesBanHammerItem extends Item {
 				list.add(Component.literal(line));
 			}
 		}
-	}
-
-	@Override
-	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
-		super.inventoryTick(itemstack, world, entity, slot, selected);
-		EngiesObtainProProcedure.execute(world, entity, itemstack);
 	}
 }

@@ -16,24 +16,11 @@
   },
   "criteria": {
     "roughian_scythe_obtained_0": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "engies_chaos:engie_games_hallow_scythe"
-            ],
-            "count": {
-              "min": 1,
-              "max": 1
-            }
-          }
-        ]
-      }
+      "trigger": "minecraft:impossible"
     }
   },
   "rewards": {
     "experience": 125
   },
-  "parent": "engies_chaos:deleted_mod_element"
+  "parent": "engies_chaos:engie_games_tesseract_obtained"
 }

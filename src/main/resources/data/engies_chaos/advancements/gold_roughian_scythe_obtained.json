@@ -16,20 +16,7 @@
   },
   "criteria": {
     "gold_roughian_scythe_obtained_0": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "engies_chaos:engie_games_golden_hallow_scythe"
-            ],
-            "count": {
-              "min": 1,
-              "max": 1
-            }
-          }
-        ]
-      }
+      "trigger": "minecraft:impossible"
     }
   },
   "rewards": {
