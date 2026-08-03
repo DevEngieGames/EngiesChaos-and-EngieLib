@@ -27,7 +27,6 @@ public class Modelbigboyotamed<T extends Entity> extends EntityModel<T> {
 	public final ModelPart Hat;
 	public final ModelPart Ear1;
 	public final ModelPart Ear2;
-	public final ModelPart TobyWhiskers;
 	public final ModelPart Snout;
 	public final ModelPart Body;
 	public final ModelPart tail;
@@ -68,7 +67,6 @@ public class Modelbigboyotamed<T extends Entity> extends EntityModel<T> {
 		this.Hat = this.Head.getChild("Hat");
 		this.Ear1 = this.Head.getChild("Ear1");
 		this.Ear2 = this.Head.getChild("Ear2");
-		this.TobyWhiskers = this.Head.getChild("TobyWhiskers");
 		this.Snout = this.Head.getChild("Snout");
 		this.Body = root.getChild("Body");
 		this.tail = this.Body.getChild("tail");
@@ -142,14 +140,9 @@ public class Modelbigboyotamed<T extends Entity> extends EntityModel<T> {
 				PartPose.offsetAndRotation(0.4875F, 0.0F, 0.0F, 0.0F, -0.4363F, 0.0F));
 		PartDefinition cube_r12 = Ear2.addOrReplaceChild("cube_r12", CubeListBuilder.create().texOffs(36, 31).mirror().addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
 				PartPose.offsetAndRotation(-0.4875F, 0.0F, 0.0F, 0.0F, 0.4363F, 0.0F));
-		PartDefinition TobyWhiskers = Head.addOrReplaceChild("TobyWhiskers", CubeListBuilder.create(), PartPose.offset(3.0F, -0.5F, -8.0F));
-		PartDefinition TobyWhisker_r1 = TobyWhiskers.addOrReplaceChild("TobyWhisker_r1", CubeListBuilder.create().texOffs(71, 35).addBox(-2.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.0F, new CubeDeformation(0.0F)),
-				PartPose.offsetAndRotation(-6.0F, 0.0F, 0.0F, 0.0F, -0.2618F, 0.0F));
-		PartDefinition TobyWhisker_r2 = TobyWhiskers.addOrReplaceChild("TobyWhisker_r2", CubeListBuilder.create().texOffs(71, 38).addBox(0.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.0F, new CubeDeformation(0.0F)),
-				PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.2618F, 0.0F));
 		PartDefinition Snout = Head.addOrReplaceChild("Snout",
 				CubeListBuilder.create().texOffs(36, 39).addBox(-4.0F, 0.01F, 0.0F, 4.0F, 2.0F, 2.0F, new CubeDeformation(0.001F)).texOffs(36, 43).addBox(-4.0F, 1.51F, 0.25F, 4.0F, 1.0F, 2.0F, new CubeDeformation(0.001F)),
-				PartPose.offset(1.9F, -1.51F, -10.025F));
+				PartPose.offset(2.0F, -1.51F, -10.025F));
 		PartDefinition Whisker_r1 = Snout.addOrReplaceChild("Whisker_r1", CubeListBuilder.create().texOffs(54, 34).addBox(0.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.0F, new CubeDeformation(0.0F)),
 				PartPose.offsetAndRotation(0.05F, 1.01F, 0.975F, 0.0F, 0.2618F, 0.0F));
 		PartDefinition Whisker_r2 = Snout.addOrReplaceChild("Whisker_r2", CubeListBuilder.create().texOffs(54, 31).addBox(-2.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.0F, new CubeDeformation(0.0F)),
