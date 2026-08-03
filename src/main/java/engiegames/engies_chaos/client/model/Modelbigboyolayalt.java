@@ -26,7 +26,7 @@ public class Modelbigboyolayalt<T extends Entity> extends EntityModel<T> {
 	public final ModelPart Hat;
 	public final ModelPart Ear1;
 	public final ModelPart Ear2;
-		public final ModelPart Snout;
+	public final ModelPart Snout;
 	public final ModelPart Body;
 	public final ModelPart tail;
 	public final ModelPart base;
