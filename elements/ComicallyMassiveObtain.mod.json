@@ -5,7 +5,7 @@
     "achievementName": "Engie's little secret. ;)",
     "achievementDescription": "Redeem Engie's secret code. ;)",
     "achievementIcon": {
-      "value": "CUSTOM:AAEDevEngie"
+      "value": "CUSTOM:REAllAboutEngieAdvancementIcon"
     },
     "background": "Default",
     "disableDisplay": true,

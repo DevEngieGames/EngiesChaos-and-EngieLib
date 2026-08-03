@@ -45,6 +45,8 @@ public class PlayerJoinWorldProcedure {
 										+ ",{\"text\":\"! Hope you read the changelog!\",\"color\":\"white\"},{\"text\":\"\\n\"},{\"text\":\"----------------------------------------\",\"bold\":true,\"color\":\"dark_purple\"}]"));
 					}
 				}
+			});
+			EngiesChaosMod.queueServerWork(200, () -> {
 				if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).playercountedtoplayercount == false) {
 					{
 						boolean _setval = true;
