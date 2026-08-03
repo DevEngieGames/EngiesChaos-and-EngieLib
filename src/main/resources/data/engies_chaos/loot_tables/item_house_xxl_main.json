@@ -12,7 +12,7 @@
             {
               "function": "minecraft:set_count",
               "count": {
-                "min": 4,
+                "min": 8,
                 "max": 16
               }
             }
@@ -27,7 +27,7 @@
               "function": "minecraft:set_count",
               "count": {
                 "min": 1,
-                "max": 8
+                "max": 4
               }
             }
           ]
@@ -109,22 +109,8 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:enormous_ban_hammer",
-          "weight": 200,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 1
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
           "name": "engies_chaos:gigantic_ban_hammer",
-          "weight": 100,
+          "weight": 200,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -138,7 +124,7 @@
         {
           "type": "minecraft:item",
           "name": "engies_chaos:massive_ban_hammer",
-          "weight": 50,
+          "weight": 100,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -152,6 +138,76 @@
         {
           "type": "minecraft:item",
           "name": "engies_chaos:biblically_accurate_engie_ban_hammer",
+          "weight": 50,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "engies_chaos:monstrosity_ban_hammer",
+          "weight": 25,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "engies_chaos:gigantic_scythe",
+          "weight": 200,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "engies_chaos:massive_scythe",
+          "weight": 100,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "engies_chaos:biblically_accurate_engie_scythe",
+          "weight": 50,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "engies_chaos:monstrosity_scythe",
           "weight": 25,
           "functions": [
             {
@@ -170,96 +226,8 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:enraged_engies_helmet",
-          "weight": 100,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 1
-              }
-            },
-            {
-              "function": "minecraft:enchant_with_levels",
-              "treasure": true,
-              "levels": {
-                "min": 0,
-                "max": 24
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "engies_chaos:enraged_engies_chestplate",
-          "weight": 100,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 1
-              }
-            },
-            {
-              "function": "minecraft:enchant_with_levels",
-              "treasure": true,
-              "levels": {
-                "min": 0,
-                "max": 24
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "engies_chaos:enraged_engies_leggings",
-          "weight": 100,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 1
-              }
-            },
-            {
-              "function": "minecraft:enchant_with_levels",
-              "treasure": true,
-              "levels": {
-                "min": 0,
-                "max": 24
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "engies_chaos:enraged_engies_boots",
-          "weight": 100,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 1
-              }
-            },
-            {
-              "function": "minecraft:enchant_with_levels",
-              "treasure": true,
-              "levels": {
-                "min": 0,
-                "max": 24
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
           "name": "engies_chaos:outraged_engies_helmet",
-          "weight": 50,
+          "weight": 100,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -273,7 +241,7 @@
               "treasure": true,
               "levels": {
                 "min": 0,
-                "max": 12
+                "max": 24
               }
             }
           ]
@@ -281,7 +249,7 @@
         {
           "type": "minecraft:item",
           "name": "engies_chaos:outraged_engies_chestplate",
-          "weight": 50,
+          "weight": 100,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -295,7 +263,7 @@
               "treasure": true,
               "levels": {
                 "min": 0,
-                "max": 12
+                "max": 24
               }
             }
           ]
@@ -303,7 +271,7 @@
         {
           "type": "minecraft:item",
           "name": "engies_chaos:outraged_engies_leggings",
-          "weight": 50,
+          "weight": 100,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -317,7 +285,7 @@
               "treasure": true,
               "levels": {
                 "min": 0,
-                "max": 12
+                "max": 24
               }
             }
           ]
@@ -325,6 +293,28 @@
         {
           "type": "minecraft:item",
           "name": "engies_chaos:outraged_engies_boots",
+          "weight": 100,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 0,
+                "max": 24
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "engies_chaos:biblically_accurate_engies_helmet",
           "weight": 50,
           "functions": [
             {
@@ -346,30 +336,8 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:biblically_accurate_engies_helmet",
-          "weight": 25,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 1
-              }
-            },
-            {
-              "function": "minecraft:enchant_with_levels",
-              "treasure": true,
-              "levels": {
-                "min": 0,
-                "max": 6
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
           "name": "engies_chaos:biblically_accurate_engies_chestplate",
-          "weight": 25,
+          "weight": 50,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -383,7 +351,7 @@
               "treasure": true,
               "levels": {
                 "min": 0,
-                "max": 6
+                "max": 12
               }
             }
           ]
@@ -391,6 +359,50 @@
         {
           "type": "minecraft:item",
           "name": "engies_chaos:biblically_accurate_engies_leggings",
+          "weight": 50,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 0,
+                "max": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "engies_chaos:biblically_accurate_engies_boots",
+          "weight": 50,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 0,
+                "max": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "engies_chaos:monstrosity_engies_helmet",
           "weight": 25,
           "functions": [
             {
@@ -412,7 +424,51 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:biblically_accurate_engies_boots",
+          "name": "engies_chaos:monstrosity_engies_chestplate",
+          "weight": 25,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 0,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "engies_chaos:monstrosity_engies_leggings",
+          "weight": 25,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 0,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "engies_chaos:monstrosity_engies_boots",
           "weight": 25,
           "functions": [
             {
@@ -439,7 +495,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:enraged_engie_essence",
+          "name": "engies_chaos:outraged_engie_essence",
           "weight": 200,
           "functions": [
             {
@@ -453,21 +509,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:outraged_engie_essence",
-          "weight": 100,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 10
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "engies_chaos:enraged_engie_block",
+          "name": "engies_chaos:biblically_accurate_engie_essence",
           "weight": 100,
           "functions": [
             {
@@ -482,6 +524,20 @@
         {
           "type": "minecraft:item",
           "name": "engies_chaos:outraged_engie_block",
+          "weight": 100,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 10
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "engies_chaos:biblically_accurate_block",
           "weight": 50,
           "functions": [
             {
@@ -607,7 +663,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:biblically_accurate_engie_essence",
+          "name": "engies_chaos:monstrosity_engie_essence",
           "weight": 50,
           "functions": [
             {
@@ -621,7 +677,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:biblically_accurate_block",
+          "name": "engies_chaos:monstrosity_engie_block",
           "weight": 25,
           "functions": [
             {
@@ -640,70 +696,22 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:enraged_engie_axe",
+          "name": "engies_chaos:outraged_engie_sword",
           "weight": 100,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "min": 1,
-                "max": 12
+                "max": 1
               }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "engies_chaos:enraged_engie_pickaxe",
-          "weight": 100,
-          "functions": [
+            },
             {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 12
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "engies_chaos:enraged_engie_shovel",
-          "weight": 100,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 12
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "engies_chaos:enraged_engie_hoe",
-          "weight": 100,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 12
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "engies_chaos:outraged_engie_axe",
-          "weight": 50,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 12
+              "function": "minecraft:enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 0,
+                "max": 24
               }
             }
           ]
@@ -711,13 +719,43 @@
         {
           "type": "minecraft:item",
           "name": "engies_chaos:outraged_engie_pickaxe",
-          "weight": 50,
+          "weight": 100,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "min": 1,
-                "max": 12
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 0,
+                "max": 24
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "engies_chaos:outraged_engie_axe",
+          "weight": 100,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 0,
+                "max": 24
               }
             }
           ]
@@ -725,13 +763,21 @@
         {
           "type": "minecraft:item",
           "name": "engies_chaos:outraged_engie_shovel",
-          "weight": 50,
+          "weight": 100,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "min": 1,
-                "max": 12
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 0,
+                "max": 24
               }
             }
           ]
@@ -739,12 +785,86 @@
         {
           "type": "minecraft:item",
           "name": "engies_chaos:outraged_engie_hoe",
+          "weight": 100,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 0,
+                "max": 24
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "engies_chaos:outraged_engie_aiot",
+          "weight": 100,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 0,
+                "max": 24
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "engies_chaos:biblically_accurate_engie_sword",
+          "weight": 100,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 0,
+                "max": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "engies_chaos:biblically_accurate_engie_pickaxe",
           "weight": 50,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 0,
                 "max": 12
               }
             }
@@ -753,27 +873,21 @@
         {
           "type": "minecraft:item",
           "name": "engies_chaos:biblically_accurate_engie_axe",
-          "weight": 25,
+          "weight": 50,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "min": 1,
-                "max": 6
+                "max": 1
               }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "engies_chaos:biblically_accurate_engie_pickaxe",
-          "weight": 25,
-          "functions": [
+            },
             {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 6
+              "function": "minecraft:enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 0,
+                "max": 12
               }
             }
           ]
@@ -781,13 +895,21 @@
         {
           "type": "minecraft:item",
           "name": "engies_chaos:biblically_accurate_engie_shovel",
-          "weight": 25,
+          "weight": 50,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "min": 1,
-                "max": 6
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 0,
+                "max": 12
               }
             }
           ]
@@ -795,12 +917,174 @@
         {
           "type": "minecraft:item",
           "name": "engies_chaos:biblically_accurate_engie_hoe",
+          "weight": 50,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 0,
+                "max": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "engies_chaos:biblically_accurate_engie_aiot",
+          "weight": 50,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 0,
+                "max": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "engies_chaos:monstrosity_engie_sword",
           "weight": 25,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 0,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "engies_chaos:monstrosity_engie_pickaxe",
+          "weight": 25,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 0,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "engies_chaos:monstrosity_engie_axe",
+          "weight": 25,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 0,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "engies_chaos:monstrosity_engie_shovel",
+          "weight": 25,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 0,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "engies_chaos:monstrosity_engie_hoe",
+          "weight": 25,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 0,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "engies_chaos:monstrosity_engie_paxel",
+          "weight": 25,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            },
+            {
+              "function": "minecraft:enchant_with_levels",
+              "treasure": true,
+              "levels": {
+                "min": 0,
                 "max": 6
               }
             }

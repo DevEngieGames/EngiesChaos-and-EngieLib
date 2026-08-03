@@ -17,7 +17,7 @@
               "value": "CUSTOM:PizzaSlice"
             },
             "weight": 16,
-            "minCount": 4,
+            "minCount": 8,
             "maxCount": 16,
             "minEnchantmentLevel": 0,
             "maxEnchantmentLevel": 0,
@@ -32,7 +32,7 @@
             },
             "weight": 8,
             "minCount": 1,
-            "maxCount": 8,
+            "maxCount": 4,
             "minEnchantmentLevel": 0,
             "maxEnchantmentLevel": 0,
             "affectedByFortune": false,
@@ -121,23 +121,9 @@
           {
             "type": "item",
             "item": {
-              "value": "CUSTOM:EnormousBanHammer"
-            },
-            "weight": 200,
-            "minCount": 1,
-            "maxCount": 1,
-            "minEnchantmentLevel": 0,
-            "maxEnchantmentLevel": 0,
-            "affectedByFortune": false,
-            "explosionDecay": false,
-            "silkTouchMode": 0
-          },
-          {
-            "type": "item",
-            "item": {
               "value": "CUSTOM:GiganticBanHammer"
             },
-            "weight": 100,
+            "weight": 200,
             "minCount": 1,
             "maxCount": 1,
             "minEnchantmentLevel": 0,
@@ -151,7 +137,7 @@
             "item": {
               "value": "CUSTOM:MassiveBanHammer"
             },
-            "weight": 50,
+            "weight": 100,
             "minCount": 1,
             "maxCount": 1,
             "minEnchantmentLevel": 0,
@@ -165,6 +151,76 @@
             "item": {
               "value": "CUSTOM:BiblicallyAccuratEngieBanHammer"
             },
+            "weight": 50,
+            "minCount": 1,
+            "maxCount": 1,
+            "minEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 0,
+            "affectedByFortune": false,
+            "explosionDecay": false,
+            "silkTouchMode": 0
+          },
+          {
+            "type": "item",
+            "item": {
+              "value": "CUSTOM:MonstrosityBanHammer"
+            },
+            "weight": 25,
+            "minCount": 1,
+            "maxCount": 1,
+            "minEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 0,
+            "affectedByFortune": false,
+            "explosionDecay": false,
+            "silkTouchMode": 0
+          },
+          {
+            "type": "item",
+            "item": {
+              "value": "CUSTOM:GiganticScythe"
+            },
+            "weight": 200,
+            "minCount": 1,
+            "maxCount": 1,
+            "minEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 0,
+            "affectedByFortune": false,
+            "explosionDecay": false,
+            "silkTouchMode": 0
+          },
+          {
+            "type": "item",
+            "item": {
+              "value": "CUSTOM:MassiveScythe"
+            },
+            "weight": 100,
+            "minCount": 1,
+            "maxCount": 1,
+            "minEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 0,
+            "affectedByFortune": false,
+            "explosionDecay": false,
+            "silkTouchMode": 0
+          },
+          {
+            "type": "item",
+            "item": {
+              "value": "CUSTOM:BiblicallyAccurateEngieScythe"
+            },
+            "weight": 50,
+            "minCount": 1,
+            "maxCount": 1,
+            "minEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 0,
+            "affectedByFortune": false,
+            "explosionDecay": false,
+            "silkTouchMode": 0
+          },
+          {
+            "type": "item",
+            "item": {
+              "value": "CUSTOM:MonstrosityScythe"
+            },
             "weight": 25,
             "minCount": 1,
             "maxCount": 1,
@@ -186,69 +242,13 @@
           {
             "type": "item",
             "item": {
-              "value": "CUSTOM:EnragedEngies.helmet"
-            },
-            "weight": 100,
-            "minCount": 1,
-            "maxCount": 1,
-            "minEnchantmentLevel": 0,
-            "maxEnchantmentLevel": 24,
-            "affectedByFortune": false,
-            "explosionDecay": false,
-            "silkTouchMode": 0
-          },
-          {
-            "type": "item",
-            "item": {
-              "value": "CUSTOM:EnragedEngies.body"
-            },
-            "weight": 100,
-            "minCount": 1,
-            "maxCount": 1,
-            "minEnchantmentLevel": 0,
-            "maxEnchantmentLevel": 24,
-            "affectedByFortune": false,
-            "explosionDecay": false,
-            "silkTouchMode": 0
-          },
-          {
-            "type": "item",
-            "item": {
-              "value": "CUSTOM:EnragedEngies.legs"
-            },
-            "weight": 100,
-            "minCount": 1,
-            "maxCount": 1,
-            "minEnchantmentLevel": 0,
-            "maxEnchantmentLevel": 24,
-            "affectedByFortune": false,
-            "explosionDecay": false,
-            "silkTouchMode": 0
-          },
-          {
-            "type": "item",
-            "item": {
-              "value": "CUSTOM:EnragedEngies.boots"
-            },
-            "weight": 100,
-            "minCount": 1,
-            "maxCount": 1,
-            "minEnchantmentLevel": 0,
-            "maxEnchantmentLevel": 24,
-            "affectedByFortune": false,
-            "explosionDecay": false,
-            "silkTouchMode": 0
-          },
-          {
-            "type": "item",
-            "item": {
               "value": "CUSTOM:OutragedEngies.helmet"
             },
-            "weight": 50,
+            "weight": 100,
             "minCount": 1,
             "maxCount": 1,
             "minEnchantmentLevel": 0,
-            "maxEnchantmentLevel": 12,
+            "maxEnchantmentLevel": 24,
             "affectedByFortune": false,
             "explosionDecay": false,
             "silkTouchMode": 0
@@ -258,11 +258,11 @@
             "item": {
               "value": "CUSTOM:OutragedEngies.body"
             },
-            "weight": 50,
+            "weight": 100,
             "minCount": 1,
             "maxCount": 1,
             "minEnchantmentLevel": 0,
-            "maxEnchantmentLevel": 12,
+            "maxEnchantmentLevel": 24,
             "affectedByFortune": false,
             "explosionDecay": false,
             "silkTouchMode": 0
@@ -272,11 +272,11 @@
             "item": {
               "value": "CUSTOM:OutragedEngies.legs"
             },
-            "weight": 50,
+            "weight": 100,
             "minCount": 1,
             "maxCount": 1,
             "minEnchantmentLevel": 0,
-            "maxEnchantmentLevel": 12,
+            "maxEnchantmentLevel": 24,
             "affectedByFortune": false,
             "explosionDecay": false,
             "silkTouchMode": 0
@@ -286,6 +286,20 @@
             "item": {
               "value": "CUSTOM:OutragedEngies.boots"
             },
+            "weight": 100,
+            "minCount": 1,
+            "maxCount": 1,
+            "minEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 24,
+            "affectedByFortune": false,
+            "explosionDecay": false,
+            "silkTouchMode": 0
+          },
+          {
+            "type": "item",
+            "item": {
+              "value": "CUSTOM:BiblicallyAccurateEngies.helmet"
+            },
             "weight": 50,
             "minCount": 1,
             "maxCount": 1,
@@ -298,27 +312,13 @@
           {
             "type": "item",
             "item": {
-              "value": "CUSTOM:BiblicallyAccurateEngies.helmet"
-            },
-            "weight": 25,
-            "minCount": 1,
-            "maxCount": 1,
-            "minEnchantmentLevel": 0,
-            "maxEnchantmentLevel": 6,
-            "affectedByFortune": false,
-            "explosionDecay": false,
-            "silkTouchMode": 0
-          },
-          {
-            "type": "item",
-            "item": {
               "value": "CUSTOM:BiblicallyAccurateEngies.body"
             },
-            "weight": 25,
+            "weight": 50,
             "minCount": 1,
             "maxCount": 1,
             "minEnchantmentLevel": 0,
-            "maxEnchantmentLevel": 6,
+            "maxEnchantmentLevel": 12,
             "affectedByFortune": false,
             "explosionDecay": false,
             "silkTouchMode": 0
@@ -328,6 +328,34 @@
             "item": {
               "value": "CUSTOM:BiblicallyAccurateEngies.legs"
             },
+            "weight": 50,
+            "minCount": 1,
+            "maxCount": 1,
+            "minEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 12,
+            "affectedByFortune": false,
+            "explosionDecay": false,
+            "silkTouchMode": 0
+          },
+          {
+            "type": "item",
+            "item": {
+              "value": "CUSTOM:BiblicallyAccurateEngies.boots"
+            },
+            "weight": 50,
+            "minCount": 1,
+            "maxCount": 1,
+            "minEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 12,
+            "affectedByFortune": false,
+            "explosionDecay": false,
+            "silkTouchMode": 0
+          },
+          {
+            "type": "item",
+            "item": {
+              "value": "CUSTOM:MonstrosityEngies.helmet"
+            },
             "weight": 25,
             "minCount": 1,
             "maxCount": 1,
@@ -340,7 +368,35 @@
           {
             "type": "item",
             "item": {
-              "value": "CUSTOM:BiblicallyAccurateEngies.boots"
+              "value": "CUSTOM:MonstrosityEngies.body"
+            },
+            "weight": 25,
+            "minCount": 1,
+            "maxCount": 1,
+            "minEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 6,
+            "affectedByFortune": false,
+            "explosionDecay": false,
+            "silkTouchMode": 0
+          },
+          {
+            "type": "item",
+            "item": {
+              "value": "CUSTOM:MonstrosityEngies.legs"
+            },
+            "weight": 25,
+            "minCount": 1,
+            "maxCount": 1,
+            "minEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 6,
+            "affectedByFortune": false,
+            "explosionDecay": false,
+            "silkTouchMode": 0
+          },
+          {
+            "type": "item",
+            "item": {
+              "value": "CUSTOM:MonstrosityEngies.boots"
             },
             "weight": 25,
             "minCount": 1,
@@ -363,7 +419,7 @@
           {
             "type": "item",
             "item": {
-              "value": "CUSTOM:EnragedEngieEssence"
+              "value": "CUSTOM:OutragedEngieEssence"
             },
             "weight": 200,
             "minCount": 1,
@@ -377,21 +433,7 @@
           {
             "type": "item",
             "item": {
-              "value": "CUSTOM:OutragedEngieEssence"
-            },
-            "weight": 100,
-            "minCount": 1,
-            "maxCount": 10,
-            "minEnchantmentLevel": 0,
-            "maxEnchantmentLevel": 0,
-            "affectedByFortune": true,
-            "explosionDecay": false,
-            "silkTouchMode": 0
-          },
-          {
-            "type": "item",
-            "item": {
-              "value": "CUSTOM:EnragedEngieBlock"
+              "value": "CUSTOM:BiblicallyAccurateEngieEssence"
             },
             "weight": 100,
             "minCount": 1,
@@ -406,6 +448,20 @@
             "type": "item",
             "item": {
               "value": "CUSTOM:OutragedEngieBlock"
+            },
+            "weight": 100,
+            "minCount": 1,
+            "maxCount": 10,
+            "minEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 0,
+            "affectedByFortune": true,
+            "explosionDecay": false,
+            "silkTouchMode": 0
+          },
+          {
+            "type": "item",
+            "item": {
+              "value": "CUSTOM:BiblicallyAccurateBlock"
             },
             "weight": 50,
             "minCount": 1,
@@ -531,7 +587,7 @@
           {
             "type": "item",
             "item": {
-              "value": "CUSTOM:BiblicallyAccurateEngieEssence"
+              "value": "CUSTOM:MonstrosityEngieEssence"
             },
             "weight": 50,
             "minCount": 1,
@@ -545,7 +601,7 @@
           {
             "type": "item",
             "item": {
-              "value": "CUSTOM:BiblicallyAccurateBlock"
+              "value": "CUSTOM:MonstrosityEngieBlock"
             },
             "weight": 25,
             "minCount": 1,
@@ -568,69 +624,13 @@
           {
             "type": "item",
             "item": {
-              "value": "CUSTOM:EnragedEngieAxe"
+              "value": "CUSTOM:OutragedEngieSword"
             },
             "weight": 100,
             "minCount": 1,
-            "maxCount": 12,
+            "maxCount": 1,
             "minEnchantmentLevel": 0,
-            "maxEnchantmentLevel": 0,
-            "affectedByFortune": false,
-            "explosionDecay": false,
-            "silkTouchMode": 0
-          },
-          {
-            "type": "item",
-            "item": {
-              "value": "CUSTOM:EnragedEngiePickaxe"
-            },
-            "weight": 100,
-            "minCount": 1,
-            "maxCount": 12,
-            "minEnchantmentLevel": 0,
-            "maxEnchantmentLevel": 0,
-            "affectedByFortune": false,
-            "explosionDecay": false,
-            "silkTouchMode": 0
-          },
-          {
-            "type": "item",
-            "item": {
-              "value": "CUSTOM:EnragedEngieShovel"
-            },
-            "weight": 100,
-            "minCount": 1,
-            "maxCount": 12,
-            "minEnchantmentLevel": 0,
-            "maxEnchantmentLevel": 0,
-            "affectedByFortune": false,
-            "explosionDecay": false,
-            "silkTouchMode": 0
-          },
-          {
-            "type": "item",
-            "item": {
-              "value": "CUSTOM:EnragedEngieHoe"
-            },
-            "weight": 100,
-            "minCount": 1,
-            "maxCount": 12,
-            "minEnchantmentLevel": 0,
-            "maxEnchantmentLevel": 0,
-            "affectedByFortune": false,
-            "explosionDecay": false,
-            "silkTouchMode": 0
-          },
-          {
-            "type": "item",
-            "item": {
-              "value": "CUSTOM:OutragedEngieAxe"
-            },
-            "weight": 50,
-            "minCount": 1,
-            "maxCount": 12,
-            "minEnchantmentLevel": 0,
-            "maxEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 24,
             "affectedByFortune": false,
             "explosionDecay": false,
             "silkTouchMode": 0
@@ -640,11 +640,25 @@
             "item": {
               "value": "CUSTOM:OutragedEngiePickaxe"
             },
-            "weight": 50,
+            "weight": 100,
             "minCount": 1,
-            "maxCount": 12,
+            "maxCount": 1,
             "minEnchantmentLevel": 0,
-            "maxEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 24,
+            "affectedByFortune": false,
+            "explosionDecay": false,
+            "silkTouchMode": 0
+          },
+          {
+            "type": "item",
+            "item": {
+              "value": "CUSTOM:OutragedEngieAxe"
+            },
+            "weight": 100,
+            "minCount": 1,
+            "maxCount": 1,
+            "minEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 24,
             "affectedByFortune": false,
             "explosionDecay": false,
             "silkTouchMode": 0
@@ -654,11 +668,11 @@
             "item": {
               "value": "CUSTOM:OutragedEngieShovel"
             },
-            "weight": 50,
+            "weight": 100,
             "minCount": 1,
-            "maxCount": 12,
+            "maxCount": 1,
             "minEnchantmentLevel": 0,
-            "maxEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 24,
             "affectedByFortune": false,
             "explosionDecay": false,
             "silkTouchMode": 0
@@ -668,11 +682,11 @@
             "item": {
               "value": "CUSTOM:OutragedEngieHoe"
             },
-            "weight": 50,
+            "weight": 100,
             "minCount": 1,
-            "maxCount": 12,
+            "maxCount": 1,
             "minEnchantmentLevel": 0,
-            "maxEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 24,
             "affectedByFortune": false,
             "explosionDecay": false,
             "silkTouchMode": 0
@@ -680,13 +694,27 @@
           {
             "type": "item",
             "item": {
-              "value": "CUSTOM:BiblicallyAccurateEngieAxe"
+              "value": "CUSTOM:OutragedEngiePaxel"
             },
-            "weight": 25,
+            "weight": 100,
             "minCount": 1,
-            "maxCount": 6,
+            "maxCount": 1,
             "minEnchantmentLevel": 0,
-            "maxEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 24,
+            "affectedByFortune": false,
+            "explosionDecay": false,
+            "silkTouchMode": 0
+          },
+          {
+            "type": "item",
+            "item": {
+              "value": "CUSTOM:BiblicallyAccurateEngieSword"
+            },
+            "weight": 100,
+            "minCount": 1,
+            "maxCount": 1,
+            "minEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 12,
             "affectedByFortune": false,
             "explosionDecay": false,
             "silkTouchMode": 0
@@ -696,11 +724,25 @@
             "item": {
               "value": "CUSTOM:BiblicallyAccurateEngiePickaxe"
             },
-            "weight": 25,
+            "weight": 50,
             "minCount": 1,
-            "maxCount": 6,
+            "maxCount": 1,
             "minEnchantmentLevel": 0,
-            "maxEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 12,
+            "affectedByFortune": false,
+            "explosionDecay": false,
+            "silkTouchMode": 0
+          },
+          {
+            "type": "item",
+            "item": {
+              "value": "CUSTOM:BiblicallyAccurateEngieAxe"
+            },
+            "weight": 50,
+            "minCount": 1,
+            "maxCount": 1,
+            "minEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 12,
             "affectedByFortune": false,
             "explosionDecay": false,
             "silkTouchMode": 0
@@ -710,11 +752,11 @@
             "item": {
               "value": "CUSTOM:BiblicallyAccurateEngieShovel"
             },
-            "weight": 25,
+            "weight": 50,
             "minCount": 1,
-            "maxCount": 6,
+            "maxCount": 1,
             "minEnchantmentLevel": 0,
-            "maxEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 12,
             "affectedByFortune": false,
             "explosionDecay": false,
             "silkTouchMode": 0
@@ -724,11 +766,109 @@
             "item": {
               "value": "CUSTOM:BiblicallyAccurateEngieHoe"
             },
+            "weight": 50,
+            "minCount": 1,
+            "maxCount": 1,
+            "minEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 12,
+            "affectedByFortune": false,
+            "explosionDecay": false,
+            "silkTouchMode": 0
+          },
+          {
+            "type": "item",
+            "item": {
+              "value": "CUSTOM:BiblicallyAccurateEngiePaxel"
+            },
+            "weight": 50,
+            "minCount": 1,
+            "maxCount": 1,
+            "minEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 12,
+            "affectedByFortune": false,
+            "explosionDecay": false,
+            "silkTouchMode": 0
+          },
+          {
+            "type": "item",
+            "item": {
+              "value": "CUSTOM:MonstrosityEngieSword"
+            },
             "weight": 25,
             "minCount": 1,
-            "maxCount": 6,
+            "maxCount": 1,
             "minEnchantmentLevel": 0,
-            "maxEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 6,
+            "affectedByFortune": false,
+            "explosionDecay": false,
+            "silkTouchMode": 0
+          },
+          {
+            "type": "item",
+            "item": {
+              "value": "CUSTOM:MonstrosityEngiePickaxe"
+            },
+            "weight": 25,
+            "minCount": 1,
+            "maxCount": 1,
+            "minEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 6,
+            "affectedByFortune": false,
+            "explosionDecay": false,
+            "silkTouchMode": 0
+          },
+          {
+            "type": "item",
+            "item": {
+              "value": "CUSTOM:MonstrosityEngieAxe"
+            },
+            "weight": 25,
+            "minCount": 1,
+            "maxCount": 1,
+            "minEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 6,
+            "affectedByFortune": false,
+            "explosionDecay": false,
+            "silkTouchMode": 0
+          },
+          {
+            "type": "item",
+            "item": {
+              "value": "CUSTOM:MonstrosityEngieShovel"
+            },
+            "weight": 25,
+            "minCount": 1,
+            "maxCount": 1,
+            "minEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 6,
+            "affectedByFortune": false,
+            "explosionDecay": false,
+            "silkTouchMode": 0
+          },
+          {
+            "type": "item",
+            "item": {
+              "value": "CUSTOM:MonstrosityEngieHoe"
+            },
+            "weight": 25,
+            "minCount": 1,
+            "maxCount": 1,
+            "minEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 6,
+            "affectedByFortune": false,
+            "explosionDecay": false,
+            "silkTouchMode": 0
+          },
+          {
+            "type": "item",
+            "item": {
+              "value": "CUSTOM:MonstrosityEngiePaxel"
+            },
+            "weight": 25,
+            "minCount": 1,
+            "maxCount": 1,
+            "minEnchantmentLevel": 0,
+            "maxEnchantmentLevel": 6,
             "affectedByFortune": false,
             "explosionDecay": false,
             "silkTouchMode": 0
