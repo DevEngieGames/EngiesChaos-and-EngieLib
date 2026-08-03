@@ -1,0 +1,9 @@
+{
+  "_fv": 79,
+  "_type": "function",
+  "definition": {
+    "code": "effect give @a darkness 10 25 true\neffect give @a glowing 1 255 true\neffect give @a glowing 1 255 true\nenhancedcelestials setLunarEvent enhancedcelestials:blood_moon\ntime set 12618000",
+    "name": "challenge_chaos_enhanced_celestials_2",
+    "namespace": "mod"
+  }
+}

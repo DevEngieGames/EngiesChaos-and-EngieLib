@@ -36,112 +36,311 @@ public class Congrats2Procedure {
 		if (entity instanceof ServerPlayer _plr0 && _plr0.level instanceof ServerLevel
 				&& _plr0.getAdvancements().getOrStartProgress(_plr0.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:mad_engie_plush_obtained"))).isDone()) {
 			if (entity instanceof ServerPlayer _plr1 && _plr1.level instanceof ServerLevel
-					&& _plr1.getAdvancements().getOrStartProgress(_plr1.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:angry_engie_plush_obtained"))).isDone()) {
+					&& _plr1.getAdvancements().getOrStartProgress(_plr1.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_mad_engie_plush_obtained"))).isDone()) {
 				if (entity instanceof ServerPlayer _plr2 && _plr2.level instanceof ServerLevel
-						&& _plr2.getAdvancements().getOrStartProgress(_plr2.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_angry_engie_plush_obtained"))).isDone()) {
+						&& _plr2.getAdvancements().getOrStartProgress(_plr2.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_mad_engie_plush_obtained"))).isDone()) {
 					if (entity instanceof ServerPlayer _plr3 && _plr3.level instanceof ServerLevel
-							&& _plr3.getAdvancements().getOrStartProgress(_plr3.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_angry_engie_plush_obtained"))).isDone()) {
+							&& _plr3.getAdvancements().getOrStartProgress(_plr3.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_mad_engie_plush_obtained"))).isDone()) {
 						if (entity instanceof ServerPlayer _plr4 && _plr4.level instanceof ServerLevel
-								&& _plr4.getAdvancements().getOrStartProgress(_plr4.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_angry_engie_plush_obtained"))).isDone()) {
+								&& _plr4.getAdvancements().getOrStartProgress(_plr4.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_mad_engie_plush_obtained"))).isDone()) {
 							if (entity instanceof ServerPlayer _plr5 && _plr5.level instanceof ServerLevel
-									&& _plr5.getAdvancements().getOrStartProgress(_plr5.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:enraged_engie_plush_obtained"))).isDone()) {
+									&& _plr5.getAdvancements().getOrStartProgress(_plr5.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:angry_engie_plush_obtained"))).isDone()) {
 								if (entity instanceof ServerPlayer _plr6 && _plr6.level instanceof ServerLevel
-										&& _plr6.getAdvancements().getOrStartProgress(_plr6.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_enraged_engie_plush_obtained"))).isDone()) {
+										&& _plr6.getAdvancements().getOrStartProgress(_plr6.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_angry_engie_plush_obtained"))).isDone()) {
 									if (entity instanceof ServerPlayer _plr7 && _plr7.level instanceof ServerLevel
-											&& _plr7.getAdvancements().getOrStartProgress(_plr7.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_enraged_engie_plush_obtained"))).isDone()) {
+											&& _plr7.getAdvancements().getOrStartProgress(_plr7.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_angry_engie_plush_obtained"))).isDone()) {
 										if (entity instanceof ServerPlayer _plr8 && _plr8.level instanceof ServerLevel
-												&& _plr8.getAdvancements().getOrStartProgress(_plr8.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_enraged_engie_plush_obtained"))).isDone()) {
+												&& _plr8.getAdvancements().getOrStartProgress(_plr8.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_angry_engie_plush_obtained"))).isDone()) {
 											if (entity instanceof ServerPlayer _plr9 && _plr9.level instanceof ServerLevel
-													&& _plr9.getAdvancements().getOrStartProgress(_plr9.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:outraged_engie_plush_obtained"))).isDone()) {
+													&& _plr9.getAdvancements().getOrStartProgress(_plr9.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_angry_engie_plush_obtained"))).isDone()) {
 												if (entity instanceof ServerPlayer _plr10 && _plr10.level instanceof ServerLevel
-														&& _plr10.getAdvancements().getOrStartProgress(_plr10.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_outraged_engie_plush_obtained"))).isDone()) {
+														&& _plr10.getAdvancements().getOrStartProgress(_plr10.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:enraged_engie_plush_obtained"))).isDone()) {
 													if (entity instanceof ServerPlayer _plr11 && _plr11.level instanceof ServerLevel
-															&& _plr11.getAdvancements().getOrStartProgress(_plr11.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_outraged_engie_plush_obtained"))).isDone()) {
+															&& _plr11.getAdvancements().getOrStartProgress(_plr11.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_enraged_engie_plush_obtained"))).isDone()) {
 														if (entity instanceof ServerPlayer _plr12 && _plr12.level instanceof ServerLevel
-																&& _plr12.getAdvancements().getOrStartProgress(_plr12.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_outraged_engie_plush_obtained"))).isDone()) {
+																&& _plr12.getAdvancements().getOrStartProgress(_plr12.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_enraged_engie_plush_obtained"))).isDone()) {
 															if (entity instanceof ServerPlayer _plr13 && _plr13.level instanceof ServerLevel
-																	&& _plr13.getAdvancements().getOrStartProgress(_plr13.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:monstrosity_engie_plush_obtained"))).isDone()) {
+																	&& _plr13.getAdvancements().getOrStartProgress(_plr13.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_enraged_engie_plush_obtained"))).isDone()) {
 																if (entity instanceof ServerPlayer _plr14 && _plr14.level instanceof ServerLevel && _plr14.getAdvancements()
-																		.getOrStartProgress(_plr14.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_monstrosity_engie_plush_obtained"))).isDone()) {
-																	if (entity instanceof ServerPlayer _plr15 && _plr15.level instanceof ServerLevel && _plr15.getAdvancements()
-																			.getOrStartProgress(_plr15.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_monstrosity_engie_plush_obtained"))).isDone()) {
+																		.getOrStartProgress(_plr14.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_enraged_engie_plush_obtained"))).isDone()) {
+																	if (entity instanceof ServerPlayer _plr15 && _plr15.level instanceof ServerLevel
+																			&& _plr15.getAdvancements().getOrStartProgress(_plr15.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:outraged_engie_plush_obtained"))).isDone()) {
 																		if (entity instanceof ServerPlayer _plr16 && _plr16.level instanceof ServerLevel && _plr16.getAdvancements()
-																				.getOrStartProgress(_plr16.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_monstrosity_engie_plush_obtained"))).isDone()) {
+																				.getOrStartProgress(_plr16.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_outraged_engie_plush_obtained"))).isDone()) {
 																			if (entity instanceof ServerPlayer _plr17 && _plr17.level instanceof ServerLevel && _plr17.getAdvancements()
-																					.getOrStartProgress(_plr17.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:wither_rose_secret_xxl"))).isDone()) {
+																					.getOrStartProgress(_plr17.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_outraged_engie_plush_obtained"))).isDone()) {
 																				if (entity instanceof ServerPlayer _plr18 && _plr18.level instanceof ServerLevel && _plr18.getAdvancements()
-																						.getOrStartProgress(_plr18.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_about_engie_plaque_obtained"))).isDone()) {
+																						.getOrStartProgress(_plr18.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_outraged_engie_plush_obtained"))).isDone()) {
 																					if (entity instanceof ServerPlayer _plr19 && _plr19.level instanceof ServerLevel && _plr19.getAdvancements()
-																							.getOrStartProgress(_plr19.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:items_plaque_obtained"))).isDone()) {
-																						if (entity instanceof ServerPlayer _plr20 && _plr20.level instanceof ServerLevel && _plr20.getAdvancements()
-																								.getOrStartProgress(_plr20.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:mobs_plaque_obtained"))).isDone()) {
-																							if (entity instanceof ServerPlayer _plr21 && _plr21.level instanceof ServerLevel && _plr21.getAdvancements()
-																									.getOrStartProgress(_plr21.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:sharkos_plaque_obtained"))).isDone()) {
-																								if (entity instanceof ServerPlayer _plr22 && _plr22.level instanceof ServerLevel && _plr22.getAdvancements()
-																										.getOrStartProgress(_plr22.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:dimensions_plaque_obtained"))).isDone()) {
+																							.getOrStartProgress(_plr19.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_outraged_engie_plush_obtained"))).isDone()) {
+																						if (entity instanceof ServerPlayer _plr20 && _plr20.level instanceof ServerLevel
+																								&& _plr20.getAdvancements()
+																										.getOrStartProgress(_plr20.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:biblically_accurate_engie_plush_obtained")))
+																										.isDone()) {
+																							if (entity instanceof ServerPlayer _plr21 && _plr21.level instanceof ServerLevel
+																									&& _plr21.getAdvancements()
+																											.getOrStartProgress(
+																													_plr21.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_biblically_accurate_engie_plush_obtained")))
+																											.isDone()) {
+																								if (entity instanceof ServerPlayer _plr22 && _plr22.level instanceof ServerLevel
+																										&& _plr22.getAdvancements().getOrStartProgress(
+																												_plr22.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_biblically_accurate_engie_plush_obtained")))
+																												.isDone()) {
 																									if (entity instanceof ServerPlayer _plr23 && _plr23.level instanceof ServerLevel
-																											&& _plr23.getAdvancements()
-																													.getOrStartProgress(
-																															_plr23.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:enraged_zombies_plaque_obtained")))
+																											&& _plr23.getAdvancements().getOrStartProgress(
+																													_plr23.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_biblically_accurate_engie_plush_obtained")))
 																													.isDone()) {
-																										if (entity instanceof ServerPlayer _plr24 && _plr24.level instanceof ServerLevel
-																												&& _plr24.getAdvancements()
-																														.getOrStartProgress(_plr24.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:extras_plaque_obtained")))
-																														.isDone()) {
+																										if (entity instanceof ServerPlayer _plr24 && _plr24.level instanceof ServerLevel && _plr24.getAdvancements().getOrStartProgress(
+																												_plr24.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_biblically_accurate_engie_plush_obtained")))
+																												.isDone()) {
 																											if (entity instanceof ServerPlayer _plr25 && _plr25.level instanceof ServerLevel
 																													&& _plr25.getAdvancements()
 																															.getOrStartProgress(
-																																	_plr25.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_plaque_obtained")))
+																																	_plr25.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:monstrosity_engie_plush_obtained")))
 																															.isDone()) {
-																												if (entity instanceof ServerPlayer _plr26 && _plr26.level instanceof ServerLevel
-																														&& _plr26.getAdvancements()
-																																.getOrStartProgress(
-																																		_plr26.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_plush_obtained")))
-																																.isDone()) {
-																													if (entity instanceof ServerPlayer _plr27 && _plr27.level instanceof ServerLevel
-																															&& _plr27.getAdvancements()
-																																	.getOrStartProgress(
-																																			_plr27.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:dev_engie_plush_obtained")))
-																																	.isDone()) {
-																														if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_HARDCORE) == true
-																																&& world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ONE_HP) == false) {
-																															if (entity instanceof ServerPlayer _plr30 && _plr30.level instanceof ServerLevel
-																																	&& _plr30.getAdvancements().getOrStartProgress(_plr30.server.getAdvancements()
-																																			.getAdvancement(new ResourceLocation("engies_chaos:insanity_engie_plush_obtained"))).isDone()) {
-																																if (entity instanceof ServerPlayer _plr31 && _plr31.level instanceof ServerLevel
-																																		&& _plr31.getAdvancements()
-																																				.getOrStartProgress(_plr31.server.getAdvancements()
-																																						.getAdvancement(new ResourceLocation("engies_chaos:gold_insanity_engie_plush_obtained")))
-																																				.isDone()) {
-																																	if (entity instanceof ServerPlayer _plr32 && _plr32.level instanceof ServerLevel
-																																			&& _plr32.getAdvancements()
-																																					.getOrStartProgress(_plr32.server.getAdvancements()
-																																							.getAdvancement(new ResourceLocation("engies_chaos:diamond_insanity_engie_plush_obtained")))
+																												if (entity instanceof ServerPlayer _plr26 && _plr26.level instanceof ServerLevel && _plr26.getAdvancements().getOrStartProgress(
+																														_plr26.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_monstrosity_engie_plush_obtained")))
+																														.isDone()) {
+																													if (entity instanceof ServerPlayer _plr27 && _plr27.level instanceof ServerLevel && _plr27.getAdvancements().getOrStartProgress(
+																															_plr27.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_monstrosity_engie_plush_obtained")))
+																															.isDone()) {
+																														if (entity instanceof ServerPlayer _plr28 && _plr28.level instanceof ServerLevel
+																																&& _plr28.getAdvancements()
+																																		.getOrStartProgress(_plr28.server.getAdvancements()
+																																				.getAdvancement(new ResourceLocation("engies_chaos:diamond_monstrosity_engie_plush_obtained")))
+																																		.isDone()) {
+																															if (entity instanceof ServerPlayer _plr29 && _plr29.level instanceof ServerLevel
+																																	&& _plr29.getAdvancements()
+																																			.getOrStartProgress(_plr29.server.getAdvancements()
+																																					.getAdvancement(new ResourceLocation("engies_chaos:netherite_monstrosity_engie_plush_obtained")))
+																																			.isDone()) {
+																																if (entity instanceof ServerPlayer _plr30 && _plr30.level instanceof ServerLevel
+																																		&& _plr30.getAdvancements().getOrStartProgress(_plr30.server.getAdvancements()
+																																				.getAdvancement(new ResourceLocation("engies_chaos:hostile_engie_plush_obtained"))).isDone()) {
+																																	if (entity instanceof ServerPlayer _plr31 && _plr31.level instanceof ServerLevel
+																																			&& _plr31.getAdvancements()
+																																					.getOrStartProgress(_plr31.server.getAdvancements()
+																																							.getAdvancement(new ResourceLocation("engies_chaos:iron_hostile_engie_plush_obtained")))
 																																					.isDone()) {
-																																		if (entity instanceof ServerPlayer _plr33 && _plr33.level instanceof ServerLevel
-																																				&& _plr33.getAdvancements().getOrStartProgress(_plr33.server.getAdvancements()
-																																						.getAdvancement(new ResourceLocation("engies_chaos:netherite_insanity_engie_plush_obtained")))
+																																		if (entity instanceof ServerPlayer _plr32 && _plr32.level instanceof ServerLevel
+																																				&& _plr32.getAdvancements()
+																																						.getOrStartProgress(_plr32.server.getAdvancements()
+																																								.getAdvancement(new ResourceLocation("engies_chaos:gold_hostile_engie_plush_obtained")))
 																																						.isDone()) {
-																																			if (entity instanceof ServerPlayer _plr34 && _plr34.level instanceof ServerLevel
-																																					&& _plr34.getAdvancements().getOrStartProgress(_plr34.server.getAdvancements()
-																																							.getAdvancement(new ResourceLocation("engies_chaos:deleted_mod_element"))).isDone()) {
-																																				if (entity instanceof ServerPlayer _plr35 && _plr35.level instanceof ServerLevel
-																																						&& _plr35.getAdvancements()
-																																								.getOrStartProgress(_plr35.server.getAdvancements()
-																																										.getAdvancement(new ResourceLocation("engies_chaos:deleted_mod_element")))
+																																			if (entity instanceof ServerPlayer _plr33 && _plr33.level instanceof ServerLevel
+																																					&& _plr33.getAdvancements()
+																																							.getOrStartProgress(_plr33.server.getAdvancements().getAdvancement(
+																																									new ResourceLocation("engies_chaos:diamond_hostile_engie_plush_obtained")))
+																																							.isDone()) {
+																																				if (entity instanceof ServerPlayer _plr34 && _plr34.level instanceof ServerLevel
+																																						&& _plr34.getAdvancements()
+																																								.getOrStartProgress(_plr34.server.getAdvancements().getAdvancement(
+																																										new ResourceLocation("engies_chaos:netherite_hostile_engie_plush_obtained")))
 																																								.isDone()) {
-																																					if (!(entity instanceof ServerPlayer _plr36 && _plr36.level instanceof ServerLevel
-																																							&& _plr36.getAdvancements()
-																																									.getOrStartProgress(_plr36.server.getAdvancements().getAdvancement(
-																																											new ResourceLocation("engies_chaos:secret_advancements_completed")))
-																																									.isDone())) {
-																																						if (entity instanceof ServerPlayer _player) {
-																																							Advancement _adv = _player.server.getAdvancements()
-																																									.getAdvancement(new ResourceLocation("engies_chaos:secret_advancements_completed"));
-																																							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-																																							if (!_ap.isDone()) {
-																																								for (String criteria : _ap.getRemainingCriteria())
-																																									_player.getAdvancements().award(_adv, criteria);
+																																					if (entity instanceof ServerPlayer _plr35 && _plr35.level instanceof ServerLevel
+																																							&& _plr35.getAdvancements()
+																																									.getOrStartProgress(_plr35.server.getAdvancements()
+																																											.getAdvancement(new ResourceLocation("engies_chaos:wither_rose_secret_xxl")))
+																																									.isDone()) {
+																																						if (entity instanceof ServerPlayer _plr36 && _plr36.level instanceof ServerLevel
+																																								&& _plr36.getAdvancements().getOrStartProgress(_plr36.server.getAdvancements()
+																																										.getAdvancement(new ResourceLocation("engies_chaos:mindscape_secret_xxl")))
+																																										.isDone()) {
+																																							if (entity instanceof ServerPlayer _plr37 && _plr37.level instanceof ServerLevel
+																																									&& _plr37.getAdvancements()
+																																											.getOrStartProgress(_plr37.server.getAdvancements().getAdvancement(
+																																													new ResourceLocation("engies_chaos:all_about_engie_plaque_obtained")))
+																																											.isDone()) {
+																																								if (entity instanceof ServerPlayer _plr38 && _plr38.level instanceof ServerLevel
+																																										&& _plr38.getAdvancements()
+																																												.getOrStartProgress(_plr38.server.getAdvancements().getAdvancement(
+																																														new ResourceLocation("engies_chaos:items_plaque_obtained")))
+																																												.isDone()) {
+																																									if (entity instanceof ServerPlayer _plr39 && _plr39.level instanceof ServerLevel
+																																											&& _plr39.getAdvancements()
+																																													.getOrStartProgress(_plr39.server.getAdvancements().getAdvancement(
+																																															new ResourceLocation("engies_chaos:mobs_plaque_obtained")))
+																																													.isDone()) {
+																																										if (entity instanceof ServerPlayer _plr40 && _plr40.level instanceof ServerLevel
+																																												&& _plr40.getAdvancements()
+																																														.getOrStartProgress(_plr40.server.getAdvancements()
+																																																.getAdvancement(new ResourceLocation(
+																																																		"engies_chaos:sharkos_plaque_obtained")))
+																																														.isDone()) {
+																																											if (entity instanceof ServerPlayer _plr41
+																																													&& _plr41.level instanceof ServerLevel
+																																													&& _plr41.getAdvancements()
+																																															.getOrStartProgress(_plr41.server.getAdvancements()
+																																																	.getAdvancement(new ResourceLocation(
+																																																			"engies_chaos:dimensions_plaque_obtained")))
+																																															.isDone()) {
+																																												if (entity instanceof ServerPlayer _plr42
+																																														&& _plr42.level instanceof ServerLevel
+																																														&& _plr42.getAdvancements().getOrStartProgress(_plr42.server
+																																																.getAdvancements()
+																																																.getAdvancement(new ResourceLocation(
+																																																		"engies_chaos:enraged_zombies_plaque_obtained")))
+																																																.isDone()) {
+																																													if (entity instanceof ServerPlayer _plr43
+																																															&& _plr43.level instanceof ServerLevel
+																																															&& _plr43.getAdvancements().getOrStartProgress(_plr43.server
+																																																	.getAdvancements()
+																																																	.getAdvancement(new ResourceLocation(
+																																																			"engies_chaos:extras_plaque_obtained")))
+																																																	.isDone()) {
+																																														if (entity instanceof ServerPlayer _plr44
+																																																&& _plr44.level instanceof ServerLevel
+																																																&& _plr44.getAdvancements()
+																																																		.getOrStartProgress(_plr44.server
+																																																				.getAdvancements()
+																																																				.getAdvancement(new ResourceLocation(
+																																																						"engies_chaos:engie_plaque_obtained")))
+																																																		.isDone()) {
+																																															if (entity instanceof ServerPlayer _plr45
+																																																	&& _plr45.level instanceof ServerLevel
+																																																	&& _plr45.getAdvancements()
+																																																			.getOrStartProgress(_plr45.server
+																																																					.getAdvancements()
+																																																					.getAdvancement(new ResourceLocation(
+																																																							"engies_chaos:engie_plush_obtained")))
+																																																			.isDone()) {
+																																																if (entity instanceof ServerPlayer _plr46
+																																																		&& _plr46.level instanceof ServerLevel
+																																																		&& _plr46.getAdvancements()
+																																																				.getOrStartProgress(_plr46.server
+																																																						.getAdvancements().getAdvancement(
+																																																								new ResourceLocation(
+																																																										"engies_chaos:dev_engie_plush_obtained")))
+																																																				.isDone()) {
+																																																	if (world.getLevelData().getGameRules().getBoolean(
+																																																			EngiesChaosModGameRules.INSANITY_DIFFICULTY) == true
+																																																			|| world.getLevelData().getGameRules()
+																																																					.getBoolean(
+																																																							EngiesChaosModGameRules.APOCALYPSE_THREE) == true
+																																																			|| world.getLevelData().getGameRules()
+																																																					.getBoolean(
+																																																							EngiesChaosModGameRules.ENGIE_POC) == true) {
+																																																		if (entity instanceof ServerPlayer _plr50
+																																																				&& _plr50.level instanceof ServerLevel
+																																																				&& _plr50.getAdvancements()
+																																																						.getOrStartProgress(_plr50.server
+																																																								.getAdvancements()
+																																																								.getAdvancement(
+																																																										new ResourceLocation(
+																																																												"engies_chaos:insanity_engie_plush_obtained")))
+																																																						.isDone()) {
+																																																			if (entity instanceof ServerPlayer _plr51
+																																																					&& _plr51.level instanceof ServerLevel
+																																																					&& _plr51.getAdvancements()
+																																																							.getOrStartProgress(
+																																																									_plr51.server
+																																																											.getAdvancements()
+																																																											.getAdvancement(
+																																																													new ResourceLocation(
+																																																															"engies_chaos:iron_insanity_engie_plush_obtained")))
+																																																							.isDone()) {
+																																																				if (entity instanceof ServerPlayer _plr52
+																																																						&& _plr52.level instanceof ServerLevel
+																																																						&& _plr52.getAdvancements()
+																																																								.getOrStartProgress(
+																																																										_plr52.server
+																																																												.getAdvancements()
+																																																												.getAdvancement(
+																																																														new ResourceLocation(
+																																																																"engies_chaos:gold_insanity_engie_plush_obtained")))
+																																																								.isDone()) {
+																																																					if (entity instanceof ServerPlayer _plr53
+																																																							&& _plr53.level instanceof ServerLevel
+																																																							&& _plr53.getAdvancements()
+																																																									.getOrStartProgress(
+																																																											_plr53.server
+																																																													.getAdvancements()
+																																																													.getAdvancement(
+																																																															new ResourceLocation(
+																																																																	"engies_chaos:diamond_insanity_engie_plush_obtained")))
+																																																									.isDone()) {
+																																																						if (entity instanceof ServerPlayer _plr54
+																																																								&& _plr54.level instanceof ServerLevel
+																																																								&& _plr54
+																																																										.getAdvancements()
+																																																										.getOrStartProgress(
+																																																												_plr54.server
+																																																														.getAdvancements()
+																																																														.getAdvancement(
+																																																																new ResourceLocation(
+																																																																		"engies_chaos:netherite_insanity_engie_plush_obtained")))
+																																																										.isDone()) {
+																																																							if (!(entity instanceof ServerPlayer _plr55
+																																																									&& _plr55.level instanceof ServerLevel
+																																																									&& _plr55
+																																																											.getAdvancements()
+																																																											.getOrStartProgress(
+																																																													_plr55.server
+																																																															.getAdvancements()
+																																																															.getAdvancement(
+																																																																	new ResourceLocation(
+																																																																			"engies_chaos:secret_advancements_completed")))
+																																																											.isDone())) {
+																																																								if (entity instanceof ServerPlayer _player) {
+																																																									Advancement _adv = _player.server
+																																																											.getAdvancements()
+																																																											.getAdvancement(
+																																																													new ResourceLocation(
+																																																															"engies_chaos:secret_advancements_completed"));
+																																																									AdvancementProgress _ap = _player
+																																																											.getAdvancements()
+																																																											.getOrStartProgress(
+																																																													_adv);
+																																																									if (!_ap.isDone()) {
+																																																										for (String criteria : _ap
+																																																												.getRemainingCriteria())
+																																																											_player.getAdvancements()
+																																																													.award(_adv,
+																																																															criteria);
+																																																									}
+																																																								}
+																																																							}
+																																																						}
+																																																					}
+																																																				}
+																																																			}
+																																																		}
+																																																	} else {
+																																																		if (!(entity instanceof ServerPlayer _plr57
+																																																				&& _plr57.level instanceof ServerLevel
+																																																				&& _plr57.getAdvancements()
+																																																						.getOrStartProgress(_plr57.server
+																																																								.getAdvancements()
+																																																								.getAdvancement(
+																																																										new ResourceLocation(
+																																																												"engies_chaos:secret_advancements_completed")))
+																																																						.isDone())) {
+																																																			if (entity instanceof ServerPlayer _player) {
+																																																				Advancement _adv = _player.server
+																																																						.getAdvancements().getAdvancement(
+																																																								new ResourceLocation(
+																																																										"engies_chaos:secret_advancements_completed"));
+																																																				AdvancementProgress _ap = _player
+																																																						.getAdvancements()
+																																																						.getOrStartProgress(_adv);
+																																																				if (!_ap.isDone()) {
+																																																					for (String criteria : _ap
+																																																							.getRemainingCriteria())
+																																																						_player.getAdvancements()
+																																																								.award(_adv, criteria);
+																																																				}
+																																																			}
+																																																		}
+																																																	}
+																																																}
+																																															}
+																																														}
+																																													}
+																																												}
+																																											}
+																																										}
+																																									}
+																																								}
 																																							}
 																																						}
 																																					}

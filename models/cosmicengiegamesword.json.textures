@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "cosmicengie_sword"
+      },
+      "name": "default"
+    },
+    "darkmatter": {
+      "map": {
+        "0": "darkmattercosmicengie_sword"
+      },
+      "name": "darkmatter"
+    }
+  }
+}

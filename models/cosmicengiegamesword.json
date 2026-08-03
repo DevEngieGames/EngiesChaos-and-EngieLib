@@ -2,7 +2,7 @@
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "engies_chaos:block/engiegames_sword"
+		"0": "engies_chaos:item/engiegames_sword"
 	},
 	"elements": [
 		{
@@ -491,8 +491,8 @@
 	"display": {
 		"thirdperson_righthand": {
 			"rotation": [-45, -90, 0],
-			"translation": [0, 10.5, 2.5],
-			"scale": [2, 2, 2]
+			"translation": [0, 15, 2.5],
+			"scale": [2.5, 2.5, 2.5]
 		},
 		"thirdperson_lefthand": {
 			"rotation": [-45, 90, 0],
