@@ -1024,7 +1024,7 @@ public class PlayerAdvancemntCheckProcedure {
 		}
 		if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty < 31 && entity instanceof ServerPlayer _plr90 && _plr90.level instanceof ServerLevel
 				&& _plr90.getAdvancements().getOrStartProgress(_plr90.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:roughian_scythe_obtained"))).isDone()) {
-			if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).diffadvancement31 == true) {
+			if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).diffadvancement31 == false) {
 				{
 					boolean _setval = true;
 					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
