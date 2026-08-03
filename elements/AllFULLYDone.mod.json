@@ -2,10 +2,10 @@
   "_fv": 79,
   "_type": "achievement",
   "definition": {
-    "achievementName": "All About Engie (101%)",
+    "achievementName": "Engie's Chaos, All FULLY Done.",
     "achievementDescription": " Get all advancements, all items at least once and all possible secret advancements. Congrats my friend.",
     "achievementIcon": {
-      "value": "CUSTOM:AllAboutEngieAdvancementIcon"
+      "value": "CUSTOM:REAllAboutEngieAdvancementIcon"
     },
     "background": "Default",
     "disableDisplay": false,

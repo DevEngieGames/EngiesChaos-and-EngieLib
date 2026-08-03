@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "engies_chaos:deleted_mod_element"
+      "item": "engies_chaos:engies_chaos_advancement_icon"
     },
     "title": {
       "translate": "advancements.all_done.title"
