@@ -1,9 +1,0 @@
-{
-  "_fv": 79,
-  "_type": "function",
-  "definition": {
-    "code": "effect give @a darkness 10 25 true\neffect give @a glowing 1 255 true\neffect give @a glowing 1 255 true\ntime set 12618000",
-    "name": "challenge_chaos_weather_mod",
-    "namespace": "mod"
-  }
-}
