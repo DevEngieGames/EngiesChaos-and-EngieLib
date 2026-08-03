@@ -2,10 +2,10 @@
   "_fv": 79,
   "_type": "tab",
   "definition": {
-    "name": "Weapons (AAE)",
+    "name": "Engie's Chaos Weapons",
     "icon": {
       "value": "CUSTOM:BanHammer"
     },
-    "showSearch": false
+    "showSearch": true
   }
 }

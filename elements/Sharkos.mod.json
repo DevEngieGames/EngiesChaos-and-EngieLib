@@ -2,10 +2,10 @@
   "_fv": 79,
   "_type": "tab",
   "definition": {
-    "name": "Sharkos (AAE)",
+    "name": "Engie's Chaos Sharkos",
     "icon": {
       "value": "Items.COOKIE"
     },
-    "showSearch": false
+    "showSearch": true
   }
 }

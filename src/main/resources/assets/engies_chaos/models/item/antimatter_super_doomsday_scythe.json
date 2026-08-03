@@ -4,7 +4,7 @@
   "base": {
     "parent": "engies_chaos:custom/superdoomsdayscythe",
     "textures": {
-      "0": "engies_chaos:block/pixelantimatterscythesddaynew",
+      "0": "engies_chaos:block/antimattercrucifixsuperdoomsday",
       "particle": "engies_chaos:item/pixelantimatterscythesddaynew"
     }
   },

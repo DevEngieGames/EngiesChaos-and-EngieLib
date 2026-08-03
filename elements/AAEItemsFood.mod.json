@@ -2,9 +2,9 @@
   "_fv": 79,
   "_type": "tab",
   "definition": {
-    "name": "Food (AAE)",
+    "name": "Engie's Chaos Food",
     "icon": {
-      "value": "CUSTOM:CookedPizza"
+      "value": "CUSTOM:PizzaSlice"
     },
     "showSearch": false
   }

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "engies_chaos:cyberblood_block"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:cyberblood_ingot",
+    "count": 9
+  }
+}

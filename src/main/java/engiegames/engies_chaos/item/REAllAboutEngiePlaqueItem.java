@@ -19,7 +19,7 @@ public class REAllAboutEngiePlaqueItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.translatable("item.engies_chaos.re_all_about_engie_plaque.description_0"));
-		list.add(Component.translatable("item.engies_chaos.re_all_about_engie_plaque.description_1"));
+		list.add(Component.translatable("item.engies_chaos.engies_chaos_plaque.description_0"));
+		list.add(Component.translatable("item.engies_chaos.engies_chaos_plaque.description_1"));
 	}
 }

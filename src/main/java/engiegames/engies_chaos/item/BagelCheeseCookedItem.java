@@ -7,6 +7,6 @@ import engiegames.engies_chaos.init.EngiesChaosModTabs;
 
 public class BagelCheeseCookedItem extends Item {
 	public BagelCheeseCookedItem() {
-		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_AAE_ITEMS_FOOD).food((new FoodProperties.Builder()).nutrition(8).saturationMod(0.5f).build()));
+		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_FOOD).food((new FoodProperties.Builder()).nutrition(8).saturationMod(0.5f).build()));
 	}
 }

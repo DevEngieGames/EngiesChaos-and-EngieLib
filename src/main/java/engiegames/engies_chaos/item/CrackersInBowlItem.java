@@ -13,7 +13,7 @@ import engiegames.engies_chaos.init.EngiesChaosModTabs;
 
 public class CrackersInBowlItem extends Item {
 	public CrackersInBowlItem() {
-		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_AAE_ITEMS_FOOD).durability(21).food((new FoodProperties.Builder()).nutrition(3).saturationMod(0.3f).build()));
+		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_FOOD).durability(21).food((new FoodProperties.Builder()).nutrition(3).saturationMod(0.3f).build()));
 	}
 
 	@Override

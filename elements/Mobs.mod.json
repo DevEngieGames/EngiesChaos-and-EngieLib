@@ -2,10 +2,10 @@
   "_fv": 79,
   "_type": "tab",
   "definition": {
-    "name": "Mobs (AAE)",
+    "name": "Engie's Chaos Mobs",
     "icon": {
       "value": "CUSTOM:AAEEngie"
     },
-    "showSearch": false
+    "showSearch": true
   }
 }

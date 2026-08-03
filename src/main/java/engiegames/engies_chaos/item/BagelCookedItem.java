@@ -8,7 +8,7 @@ import engiegames.engies_chaos.init.EngiesChaosModTabs;
 
 public class BagelCookedItem extends Item {
 	public BagelCookedItem() {
-		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_AAE_ITEMS_FOOD).food((new FoodProperties.Builder()).nutrition(5).saturationMod(0.3f).build()));
+		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_FOOD).food((new FoodProperties.Builder()).nutrition(5).saturationMod(0.3f).build()));
 	}
 
 	@Override

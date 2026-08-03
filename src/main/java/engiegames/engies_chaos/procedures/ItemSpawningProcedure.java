@@ -1624,7 +1624,7 @@ public class ItemSpawningProcedure {
 				}
 			} else if (Mth.nextInt(RandomSource.create(), 1, 9) == 8) {
 				if (world instanceof ServerLevel _level) {
-					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.RE_ALL_ABOUT_ENGIE_PLAQUE.get()));
+					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.ENGIES_CHAOS_PLAQUE.get()));
 					entityToSpawn.setPickUpDelay(10);
 					entityToSpawn.setUnlimitedLifetime();
 					_level.addFreshEntity(entityToSpawn);

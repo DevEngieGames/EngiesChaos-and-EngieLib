@@ -2,10 +2,10 @@
   "_fv": 79,
   "_type": "tab",
   "definition": {
-    "name": "Armor (AAE)",
+    "name": "Engie's Chaos Armor",
     "icon": {
-      "value": "CUSTOM:Engies.helmet"
+      "value": "CUSTOM:TrueXEngie.helmet"
     },
-    "showSearch": false
+    "showSearch": true
   }
 }

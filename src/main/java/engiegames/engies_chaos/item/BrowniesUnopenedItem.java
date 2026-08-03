@@ -14,7 +14,7 @@ import engiegames.engies_chaos.init.EngiesChaosModTabs;
 
 public class BrowniesUnopenedItem extends Item {
 	public BrowniesUnopenedItem() {
-		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_AAE_ITEMS_FOOD));
+		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_FOOD));
 	}
 
 	@Override

@@ -16,7 +16,7 @@ import engiegames.engies_chaos.init.EngiesChaosModTabs;
 
 public class EngieHeadItem extends Item {
 	public EngieHeadItem() {
-		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_AAE_ITEMS_FOOD).rarity(Rarity.EPIC).food((new FoodProperties.Builder()).nutrition(10).saturationMod(5f).alwaysEat().build()));
+		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_FOOD).rarity(Rarity.EPIC).food((new FoodProperties.Builder()).nutrition(10).saturationMod(5f).alwaysEat().build()));
 	}
 
 	@Override

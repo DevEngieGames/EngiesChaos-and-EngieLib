@@ -1384,7 +1384,6 @@ public class EngiesChaosModItems {
 	public static final RegistryObject<Item> MONSTROSITY_ENGIE_BUNDLE = REGISTRY.register("monstrosity_engie_bundle", MonstrosityEngieBundleItem::new);
 	public static final RegistryObject<Item> CREATIVE_ENGIE_BUNDLE = REGISTRY.register("creative_engie_bundle", CreativeEngieBundleItem::new);
 	public static final RegistryObject<Item> REGULAR_ENGIE_BUNDLE = REGISTRY.register("regular_engie_bundle", RegularEngieBundleItem::new);
-	public static final RegistryObject<Item> RE_ALL_ABOUT_ENGIE_PLAQUE = REGISTRY.register("re_all_about_engie_plaque", REAllAboutEngiePlaqueItem::new);
 	public static final RegistryObject<Item> MAD_ENGIE_PLUSH = REGISTRY.register("mad_engie_plush", MadEngiePlushItem::new);
 	public static final RegistryObject<Item> IRON_MAD_ENGIE_PLUSH = REGISTRY.register("iron_mad_engie_plush", IronMadEngiePlushItem::new);
 	public static final RegistryObject<Item> GOLD_MAD_ENGIE_PLUSH = REGISTRY.register("gold_mad_engie_plush", GoldMadEngiePlushItem::new);
@@ -1433,6 +1432,7 @@ public class EngiesChaosModItems {
 	public static final RegistryObject<Item> CHALLENGE_INSANITY_ENGIE_GAMES_PLUSH_MULTIPLAYER = REGISTRY.register("challenge_insanity_engie_games_plush_multiplayer", ChallengeInsanityEngieGamesPlushMultiplayerItem::new);
 	public static final RegistryObject<Item> PUNISHER_PLUSH = REGISTRY.register("punisher_plush", PunisherPlushItem::new);
 	public static final RegistryObject<Item> X_ENGIE_PLUSH = REGISTRY.register("x_engie_plush", XEngiePlushItem::new);
+	public static final RegistryObject<Item> ENGIES_CHAOS_PLAQUE = REGISTRY.register("engies_chaos_plaque", REAllAboutEngiePlaqueItem::new);
 	public static final RegistryObject<Item> ENGIES_HELMET = REGISTRY.register("engies_helmet", EngiesItem.Helmet::new);
 	public static final RegistryObject<Item> ENGIES_CHESTPLATE = REGISTRY.register("engies_chestplate", EngiesItem.Chestplate::new);
 	public static final RegistryObject<Item> ENGIES_LEGGINGS = REGISTRY.register("engies_leggings", EngiesItem.Leggings::new);
@@ -1808,30 +1808,6 @@ public class EngiesChaosModItems {
 	public static final RegistryObject<Item> SHADOW_SHARK_ENGIE_SPAWN_EGG = REGISTRY.register("shadow_shark_engie_spawn_egg",
 			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.SHADOW_SHARK_ENGIE, -16777216, -16777216, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_MOBS)));
 	public static final RegistryObject<Item> OMEN_SPAWN_EGG = REGISTRY.register("omen_spawn_egg", () -> new ForgeSpawnEggItem(EngiesChaosModEntities.OMEN, -16777216, -16777216, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_MOBS)));
-	public static final RegistryObject<Item> CHEESE = REGISTRY.register("cheese", CheeseItem::new);
-	public static final RegistryObject<Item> DOUGH = REGISTRY.register("dough", DoughItem::new);
-	public static final RegistryObject<Item> DOUGH_WITH_SAUCE = REGISTRY.register("dough_with_sauce", DoughWithSauceItem::new);
-	public static final RegistryObject<Item> UNCOOKED_PIZZA = REGISTRY.register("uncooked_pizza", UncookedPizzaItem::new);
-	public static final RegistryObject<Item> COOKED_PIZZA = REGISTRY.register("cooked_pizza", CookedPizzaItem::new);
-	public static final RegistryObject<Item> PIZZA_SLICE = REGISTRY.register("pizza_slice", PizzaSliceItem::new);
-	public static final RegistryObject<Item> BAGEL = REGISTRY.register("bagel", BagelItem::new);
-	public static final RegistryObject<Item> BAGEL_COOKED = REGISTRY.register("bagel_cooked", BagelCookedItem::new);
-	public static final RegistryObject<Item> BAGEL_CHEESE = REGISTRY.register("bagel_cheese", BagelCheeseItem::new);
-	public static final RegistryObject<Item> BAGEL_CHEESE_COOKED = REGISTRY.register("bagel_cheese_cooked", BagelCheeseCookedItem::new);
-	public static final RegistryObject<Item> CHEESE_BALLS_UNOPENED = REGISTRY.register("cheese_balls_unopened", CheesePuffsUnopenedItem::new);
-	public static final RegistryObject<Item> CHEESE_BALLS_OPENED = REGISTRY.register("cheese_balls_opened", CheesePuffsOpenedItem::new);
-	public static final RegistryObject<Item> CHEESE_BALL = REGISTRY.register("cheese_ball", CheeseBallItem::new);
-	public static final RegistryObject<Item> BROWNIES_UNOPENED = REGISTRY.register("brownies_unopened", BrowniesUnopenedItem::new);
-	public static final RegistryObject<Item> BROWNIES_OPENED = REGISTRY.register("brownies_opened", BrowniesOpenedItem::new);
-	public static final RegistryObject<Item> BROWNIE = REGISTRY.register("brownie", BrownieItem::new);
-	public static final RegistryObject<Item> CRACKERS_IN_BOWL = REGISTRY.register("crackers_in_bowl", CrackersInBowlItem::new);
-	public static final RegistryObject<Item> GOLDEN_COOKIE = REGISTRY.register("golden_cookie", GoldenCookieItem::new);
-	public static final RegistryObject<Item> ENCHANTED_GOLDEN_COOKIE = REGISTRY.register("enchanted_golden_cookie", EnchantedGoldenCookieItem::new);
-	public static final RegistryObject<Item> EXOTIC_COOKIE = REGISTRY.register("exotic_cookie", ExoticCookieItem::new);
-	public static final RegistryObject<Item> ENCHANTED_EXOTIC_COOKIE = REGISTRY.register("enchanted_exotic_cookie", EnchantedExoticCookieItem::new);
-	public static final RegistryObject<Item> ENGIE_COOKIE = REGISTRY.register("engie_cookie", EngieCookieItem::new);
-	public static final RegistryObject<Item> ENCHANTED_ENGIE_COOKIE = REGISTRY.register("enchanted_engie_cookie", EnchantedEngieCookieItem::new);
-	public static final RegistryObject<Item> ENGIE_HEAD = REGISTRY.register("engie_head", EngieHeadItem::new);
 	public static final RegistryObject<Item> SHARKO_SPAWN_EGG = REGISTRY.register("sharko_spawn_egg", () -> new ForgeSpawnEggItem(EngiesChaosModEntities.SHARKO, -12420148, -1, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_SHARKOS)));
 	public static final RegistryObject<Item> UNCOMMON_SHARKO_SPAWN_EGG = REGISTRY.register("uncommon_sharko_spawn_egg",
 			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.UNCOMMON_SHARKO, -16725231, -1, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_SHARKOS)));
@@ -1897,6 +1873,30 @@ public class EngiesChaosModItems {
 			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.ENRAGED_TNT, -2412774, -7405568, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ZOMBIES)));
 	public static final RegistryObject<Item> ENRAGED_SPEED_SPAWN_EGG = REGISTRY.register("enraged_speed_spawn_egg",
 			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.ENRAGED_SPEED, -16489688, -7405568, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ZOMBIES)));
+	public static final RegistryObject<Item> DOUGH = REGISTRY.register("dough", DoughItem::new);
+	public static final RegistryObject<Item> DOUGH_WITH_SAUCE = REGISTRY.register("dough_with_sauce", DoughWithSauceItem::new);
+	public static final RegistryObject<Item> UNCOOKED_PIZZA = REGISTRY.register("uncooked_pizza", UncookedPizzaItem::new);
+	public static final RegistryObject<Item> COOKED_PIZZA = REGISTRY.register("cooked_pizza", CookedPizzaItem::new);
+	public static final RegistryObject<Item> PIZZA_SLICE = REGISTRY.register("pizza_slice", PizzaSliceItem::new);
+	public static final RegistryObject<Item> CHEESE = REGISTRY.register("cheese", CheeseItem::new);
+	public static final RegistryObject<Item> CHEESE_BALLS_UNOPENED = REGISTRY.register("cheese_balls_unopened", CheesePuffsUnopenedItem::new);
+	public static final RegistryObject<Item> CHEESE_BALLS_OPENED = REGISTRY.register("cheese_balls_opened", CheesePuffsOpenedItem::new);
+	public static final RegistryObject<Item> GOLDEN_COOKIE = REGISTRY.register("golden_cookie", GoldenCookieItem::new);
+	public static final RegistryObject<Item> ENCHANTED_GOLDEN_COOKIE = REGISTRY.register("enchanted_golden_cookie", EnchantedGoldenCookieItem::new);
+	public static final RegistryObject<Item> EXOTIC_COOKIE = REGISTRY.register("exotic_cookie", ExoticCookieItem::new);
+	public static final RegistryObject<Item> ENCHANTED_EXOTIC_COOKIE = REGISTRY.register("enchanted_exotic_cookie", EnchantedExoticCookieItem::new);
+	public static final RegistryObject<Item> ENGIE_COOKIE = REGISTRY.register("engie_cookie", EngieCookieItem::new);
+	public static final RegistryObject<Item> ENCHANTED_ENGIE_COOKIE = REGISTRY.register("enchanted_engie_cookie", EnchantedEngieCookieItem::new);
+	public static final RegistryObject<Item> CHEESE_BALL = REGISTRY.register("cheese_ball", CheeseBallItem::new);
+	public static final RegistryObject<Item> BROWNIES_UNOPENED = REGISTRY.register("brownies_unopened", BrowniesUnopenedItem::new);
+	public static final RegistryObject<Item> BROWNIES_OPENED = REGISTRY.register("brownies_opened", BrowniesOpenedItem::new);
+	public static final RegistryObject<Item> BROWNIE = REGISTRY.register("brownie", BrownieItem::new);
+	public static final RegistryObject<Item> BAGEL = REGISTRY.register("bagel", BagelItem::new);
+	public static final RegistryObject<Item> BAGEL_CHEESE = REGISTRY.register("bagel_cheese", BagelCheeseItem::new);
+	public static final RegistryObject<Item> BAGEL_CHEESE_COOKED = REGISTRY.register("bagel_cheese_cooked", BagelCheeseCookedItem::new);
+	public static final RegistryObject<Item> BAGEL_COOKED = REGISTRY.register("bagel_cooked", BagelCookedItem::new);
+	public static final RegistryObject<Item> CRACKERS_IN_BOWL = REGISTRY.register("crackers_in_bowl", CrackersInBowlItem::new);
+	public static final RegistryObject<Item> ENGIE_HEAD = REGISTRY.register("engie_head", EngieHeadItem::new);
 	public static final RegistryObject<Item> WOODEN_AIOT = REGISTRY.register("wooden_aiot", WoodenAiotItem::new);
 	public static final RegistryObject<Item> STONE_AIOT = REGISTRY.register("stone_aiot", StoneAiotItem::new);
 	public static final RegistryObject<Item> IRON_AIOT = REGISTRY.register("iron_aiot", IronAiotItem::new);

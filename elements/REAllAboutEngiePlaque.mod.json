@@ -3,12 +3,12 @@
   "_type": "item",
   "definition": {
     "renderType": 1,
-    "texture": "reaaeicon",
+    "texture": "newengiepfplol",
     "customModelName": "reallaboutengieplaque:default",
     "guiTexture": "",
     "customProperties": {},
     "states": [],
-    "name": "RE:All About Engie Plaque",
+    "name": "Engie's Chaos Plaque",
     "rarity": "EPIC",
     "creativeTabs": [
       {

@@ -2,10 +2,10 @@
   "_fv": 79,
   "_type": "tab",
   "definition": {
-    "name": "Items (AAE)",
+    "name": "Engie's Chaos Items",
     "icon": {
       "value": "CUSTOM:EngieGem"
     },
-    "showSearch": false
+    "showSearch": true
   }
 }
