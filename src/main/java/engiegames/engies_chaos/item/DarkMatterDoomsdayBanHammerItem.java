@@ -62,6 +62,6 @@ public class DarkMatterDoomsdayBanHammerItem extends Item {
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		DoomsdayObtainProProcedure.execute(entity, itemstack);
+		DoomsdayObtainProProcedure.execute(world, entity, itemstack);
 	}
 }

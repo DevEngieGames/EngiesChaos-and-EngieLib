@@ -227,7 +227,7 @@ public class OHBOYProcedure {
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 										EngiesChaosModVariables.MapVariables.get(world).DayCooldownToggle = true;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-										EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = EngiesChaosModVariables.MapVariables.get(world).doomsdaychance + 0.3125;
+										EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = EngiesChaosModVariables.MapVariables.get(world).doomsdaychance + 1;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 										EngiesChaosMod.queueServerWork(1, () -> {
 											EngiesChaosModVariables.MapVariables.get(world).doomssentdebug2 = true;

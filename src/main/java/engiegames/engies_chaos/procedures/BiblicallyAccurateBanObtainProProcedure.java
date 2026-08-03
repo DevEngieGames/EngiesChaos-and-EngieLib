@@ -3,6 +3,7 @@ package engiegames.engies_chaos.procedures;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
@@ -52,6 +53,9 @@ public class BiblicallyAccurateBanObtainProProcedure {
 					}
 				}
 			}
+		}
+		if (itemstack.is(ItemTags.create(new ResourceLocation("allaboutengie:items/stunavilible")))) {
+			StunKeyTickProcedure.execute(world, entity, itemstack);
 		}
 	}
 }

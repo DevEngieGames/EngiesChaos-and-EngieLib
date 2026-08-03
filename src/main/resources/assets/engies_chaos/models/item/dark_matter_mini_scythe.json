@@ -4,7 +4,7 @@
   "base": {
     "parent": "engies_chaos:custom/miniscythe",
     "textures": {
-      "0": "engies_chaos:block/normscythe",
+      "0": "engies_chaos:block/pixeldarkmatterscythe",
       "particle": "engies_chaos:item/pixeldarkmatterscythe"
     }
   },

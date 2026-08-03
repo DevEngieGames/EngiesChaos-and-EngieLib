@@ -2,7 +2,7 @@
   "_fv": 79,
   "_type": "achievement",
   "definition": {
-    "achievementName": "RE:All About Engie. Detective mode edition.",
+    "achievementName": "Engie's Chaos. Detective mode edition.",
     "achievementDescription": "Create a world with the detective gamerule enabled.",
     "achievementIcon": {
       "value": "CUSTOM:REAllAboutEngieAdvancementIcon"

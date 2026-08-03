@@ -47,6 +47,6 @@ public class MindscapeScytheItem extends SwordItem {
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		MindscapeObtainProProcedure.execute(entity);
+		MindscapeObtainProProcedure.execute(world, entity, itemstack);
 	}
 }

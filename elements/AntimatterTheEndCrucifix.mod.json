@@ -3,8 +3,8 @@
   "_type": "item",
   "definition": {
     "renderType": 1,
-    "texture": "crucifixtheendpixel",
-    "customModelName": "crucifixtheend:antimatter",
+    "texture": "antimattercrucifixtheendpixel",
+    "customModelName": "crucifix:antimattertheend",
     "guiTexture": "",
     "customProperties": {},
     "states": [],

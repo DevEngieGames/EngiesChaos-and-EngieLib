@@ -5,16 +5,13 @@
     "toolType": "Sword",
     "renderType": 1,
     "blockingRenderType": 0,
-    "texture": "antimattersuperdoomsdayscythe",
+    "texture": "pixelantimatterscythesddaynew",
     "customModelName": "superdoomsdayscythe:antimatter",
     "blockingModelName": "Normal blocking",
-    "guiTexture": "antimattersuperdoomsdayscythe",
+    "guiTexture": "pixelantimatterscythesddaynew",
     "name": "Antimatter Super Doomsday Scythe",
     "specialInformation": {
-      "fixedValue": [
-        "Congrats!"
-      ],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

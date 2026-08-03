@@ -3,7 +3,7 @@
   "_type": "item",
   "definition": {
     "renderType": 1,
-    "texture": "reaaelogo",
+    "texture": "newengiepfplol",
     "customModelName": "xengieplush:default",
     "guiTexture": "",
     "customProperties": {},
@@ -30,11 +30,7 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInformation": {
-      "fixedValue": [
-        "Thanks for playing RE:All About Engie!",
-        "- EngieGames(xEngie)",
-        "Also, this is just a crucifix with a durability count of 525."
-      ]
+      "fixedValue": []
     },
     "glowCondition": {
       "fixedValue": false

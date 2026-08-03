@@ -4,27 +4,27 @@
   "base": {
     "parent": "engies_chaos:custom/engiesscythe",
     "textures": {
-      "0": "engies_chaos:block/antimatterengiesscythe",
-      "particle": "engies_chaos:item/antimatterengiesscythe"
+      "0": "engies_chaos:block/pixelantimatterscytheengiesnew",
+      "particle": "engies_chaos:item/pixelantimatterscytheengiesnew"
     }
   },
   "perspectives": {
     "gui": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/antimatterengiesscythe"
+        "layer0": "engies_chaos:item/pixelantimatterscytheengiesnew"
       }
     },
     "fixed": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/antimatterengiesscythe"
+        "layer0": "engies_chaos:item/pixelantimatterscytheengiesnew"
       }
     },
     "ground": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/antimatterengiesscythe"
+        "layer0": "engies_chaos:item/pixelantimatterscytheengiesnew"
       }
     }
   }

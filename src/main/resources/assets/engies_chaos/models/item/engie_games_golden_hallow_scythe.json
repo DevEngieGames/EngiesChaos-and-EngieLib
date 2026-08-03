@@ -2,9 +2,12 @@
   "loader": "forge:separate_transforms",
   "gui_light": "front",
   "base": {
-    "parent": "item/handheld",
+    "parent": "engies_chaos:custom/hallowsscythe",
     "textures": {
-      "layer0": "engies_chaos:item/pixelscythehallowgoldnew"
+      "0": "engies_chaos:block/pixelscythehallowgoldnew",
+      "1": "engies_chaos:block/scythespikes1gold",
+      "2": "engies_chaos:block/scythespikes2gold",
+      "particle": "engies_chaos:item/pixelscythehallowgoldnew"
     }
   },
   "perspectives": {

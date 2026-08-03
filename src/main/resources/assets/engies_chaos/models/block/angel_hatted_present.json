@@ -1,13 +1,9 @@
 {
   "parent": "engies_chaos:custom/angelhattedpresent",
   "textures": {
-    "all": "engies_chaos:block/presenttext",
-    "particle": "engies_chaos:block/presenttext",
-    "0": "engies_chaos:block/presenttext",
-    "1": "engies_chaos:block/angelhatpresenttext",
-    "2": "engies_chaos:block/boxengiesface",
-    "3": "engies_chaos:block/boxedengie",
-    "missing": "engies_chaos:block/"
+    "all": "engies_chaos:block/present",
+    "particle": "engies_chaos:block/present",
+    "0": "engies_chaos:block/present"
   },
   "render_type": "translucent"
 }

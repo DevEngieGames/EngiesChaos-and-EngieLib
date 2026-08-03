@@ -1,13 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "engies_chaos:block/thanksforplayingnew",
-    "up": "engies_chaos:block/thanksforplayingnew",
-    "north": "engies_chaos:block/thanksforplayingnew",
-    "east": "engies_chaos:block/thanksforplayingnew",
-    "south": "engies_chaos:block/thanksforplayingnew",
-    "west": "engies_chaos:block/thanksforplayingnew",
-    "particle": "engies_chaos:block/thanksforplayingnew"
+    "down": "engies_chaos:block/thanksforplayingreaae",
+    "up": "engies_chaos:block/thanksforplayingreaae",
+    "north": "engies_chaos:block/thanksforplayingreaae",
+    "east": "engies_chaos:block/thanksforplayingreaae",
+    "south": "engies_chaos:block/thanksforplayingreaae",
+    "west": "engies_chaos:block/thanksforplayingreaae",
+    "particle": "engies_chaos:block/thanksforplayingreaae"
   },
   "render_type": "solid"
 }

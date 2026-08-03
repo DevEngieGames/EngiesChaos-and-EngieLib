@@ -1,7 +1,9 @@
 package engiegames.engies_chaos.procedures;
 
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
@@ -11,7 +13,7 @@ import net.minecraft.advancements.Advancement;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 
 public class SuperDoomsdayObtainProProcedure {
-	public static void execute(Entity entity, ItemStack itemstack) {
+	public static void execute(LevelAccessor world, Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
 		if (itemstack.getItem() == EngiesChaosModItems.ANTIMATTER_SUPER_DOOMSDAY_BAN_HAMMER.get() || itemstack.getItem() == EngiesChaosModItems.ANTIMATTER_SUPER_DOOMSDAY_SCYTHE.get()) {
@@ -38,6 +40,9 @@ public class SuperDoomsdayObtainProProcedure {
 					}
 				}
 			}
+		}
+		if (itemstack.is(ItemTags.create(new ResourceLocation("allaboutengie:items/stunavilible")))) {
+			StunKeyTickProcedure.execute(world, entity, itemstack);
 		}
 	}
 }

@@ -3,16 +3,15 @@
   "_type": "tool",
   "definition": {
     "toolType": "Hoe",
-    "renderType": 1,
+    "renderType": 0,
     "blockingRenderType": 0,
-    "texture": "cosmicengie_hoe",
-    "customModelName": "roughianengiegameshoe:default",
+    "texture": "roughianengiegames_hoe",
+    "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
     "guiTexture": "",
     "name": "Roughian EngieGames' Hoe",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem2"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

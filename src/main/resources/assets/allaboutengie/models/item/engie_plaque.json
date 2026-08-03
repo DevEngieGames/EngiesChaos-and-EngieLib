@@ -1,7 +1,0 @@
-{
-  "parent": "allaboutengie:custom/engieplaque",
-  "textures": {
-    "0": "allaboutengie:block/newpfproughian",
-    "particle": "allaboutengie:item/hm"
-  }
-}

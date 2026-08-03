@@ -1,7 +1,0 @@
-{
-  "parent": "allaboutengie:custom/punisherplush",
-  "textures": {
-    "0": "allaboutengie:block/punishernew",
-    "particle": "allaboutengie:item/volc"
-  }
-}

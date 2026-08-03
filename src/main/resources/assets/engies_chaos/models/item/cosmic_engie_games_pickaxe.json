@@ -4,8 +4,6 @@
   "base": {
     "parent": "engies_chaos:custom/cosmicpickaxe",
     "textures": {
-      "0": "engies_chaos:block/toolmain",
-      "1": "engies_chaos:block/tooloutline",
       "particle": "engies_chaos:item/cosmicengie_pickaxe"
     }
   },

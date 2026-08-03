@@ -3,16 +3,15 @@
   "_type": "tool",
   "definition": {
     "toolType": "MultiTool",
-    "renderType": 1,
+    "renderType": 0,
     "blockingRenderType": 0,
-    "texture": "cosmicengie_pickaxe",
-    "customModelName": "roughianengiegamespaxel:default",
+    "texture": "roughianengiegames_paxel",
+    "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
     "guiTexture": "",
     "name": "Roughian EngieGames' Paxel",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem3"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

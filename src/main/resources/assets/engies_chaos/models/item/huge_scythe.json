@@ -4,7 +4,7 @@
   "base": {
     "parent": "engies_chaos:custom/hugescythe",
     "textures": {
-      "0": "engies_chaos:block/normscythe",
+      "0": "engies_chaos:block/pixelscythenew",
       "particle": "engies_chaos:item/pixelscythenew"
     }
   },

@@ -4,7 +4,7 @@
   "definition": {
     "renderType": 1,
     "texture": "crucifixdoomsdaypixel",
-    "customModelName": "crucifixdoomsday:default",
+    "customModelName": "crucifix:dooms",
     "guiTexture": "",
     "customProperties": {},
     "states": [],
@@ -30,9 +30,7 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInformation": {
-      "fixedValue": [
-        "75 uses."
-      ]
+      "fixedValue": []
     },
     "glowCondition": {
       "fixedValue": false

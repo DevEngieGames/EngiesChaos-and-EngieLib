@@ -2,13 +2,19 @@
   "mappings": {
     "default": {
       "map": {
-        "0": "theendscythe"
+        "0": "pixelscythetheendnew"
       },
       "name": "default"
     },
+    "darkmatter": {
+      "map": {
+        "0": "pixeldarkmatterscythetheend"
+      },
+      "name": "darkmatter"
+    },
     "antimatter": {
       "map": {
-        "0": "antimattertheendscythe"
+        "0": "pixelantimatterscythetheendnew"
       },
       "name": "antimatter"
     }

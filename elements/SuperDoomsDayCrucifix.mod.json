@@ -4,7 +4,7 @@
   "definition": {
     "renderType": 1,
     "texture": "crucifixsuperdoomsdaypixel",
-    "customModelName": "crucifixsuperdoomsday:default",
+    "customModelName": "crucifix:superdooms",
     "guiTexture": "",
     "customProperties": {},
     "states": [],

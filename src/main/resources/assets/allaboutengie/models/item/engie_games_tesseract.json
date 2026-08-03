@@ -1,8 +1,0 @@
-{
-  "parent": "allaboutengie:custom/engiegamestesseract",
-  "textures": {
-    "0": "allaboutengie:block/engiegamestesseractouter",
-    "1": "allaboutengie:block/engiegamestesseractcube",
-    "particle": "allaboutengie:item/engiegamesbase"
-  }
-}

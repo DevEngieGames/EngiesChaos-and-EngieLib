@@ -4,27 +4,27 @@
   "base": {
     "parent": "engies_chaos:custom/massivescythe",
     "textures": {
-      "0": "engies_chaos:block/antimatternormscythe",
-      "particle": "engies_chaos:item/antimatterregularscythe"
+      "0": "engies_chaos:block/pixelantimatterscythenew",
+      "particle": "engies_chaos:item/pixelantimatterscythenew"
     }
   },
   "perspectives": {
     "gui": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/antimatterregularscythe"
+        "layer0": "engies_chaos:item/pixelantimatterscythenew"
       }
     },
     "fixed": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/antimatterregularscythe"
+        "layer0": "engies_chaos:item/pixelantimatterscythenew"
       }
     },
     "ground": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/antimatterregularscythe"
+        "layer0": "engies_chaos:item/pixelantimatterscythenew"
       }
     }
   }

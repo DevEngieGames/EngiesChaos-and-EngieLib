@@ -19,6 +19,7 @@ import net.minecraft.network.chat.Component;
 import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.init.EngiesChaosModGameRules;
+import engiegames.engies_chaos.EngiesChaosMod;
 
 @Mod.EventBusSubscriber
 public class EngiePocNoSleepProcedure {
@@ -42,13 +43,15 @@ public class EngiePocNoSleepProcedure {
 					if (!(world instanceof Level _lvl4 && _lvl4.isDay())) {
 						if (entity instanceof LivingEntity _entity)
 							_entity.swing(InteractionHand.MAIN_HAND, true);
-						if (entity instanceof Player _player && !_player.level.isClientSide())
-							_player.displayClientMessage(Component.literal("You cannot sleep now; EngiePoc is currently enabled in this world."), true);
-						if (event != null && event.isCancelable()) {
-							event.setCanceled(true);
-						} else if (event != null && event.hasResult()) {
-							event.setResult(Event.Result.DENY);
-						}
+						EngiesChaosMod.queueServerWork(1, () -> {
+							if (entity instanceof Player _player && !_player.level.isClientSide())
+								_player.displayClientMessage(Component.literal("You cannot sleep now; EngiePoc is currently enabled in this world."), true);
+							if (event != null && event.isCancelable()) {
+								event.setCanceled(true);
+							} else if (event != null && event.hasResult()) {
+								event.setResult(Event.Result.DENY);
+							}
+						});
 					}
 				}
 			}

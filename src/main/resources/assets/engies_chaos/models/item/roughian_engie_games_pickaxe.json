@@ -1,7 +1,6 @@
 {
-  "parent": "engies_chaos:custom/roughianengiegamespickaxe",
+  "parent": "item/handheld",
   "textures": {
-    "0": "engies_chaos:block/roughianengiegamespicktext",
-    "particle": "engies_chaos:item/cosmicengie_pickaxe"
+    "layer0": "engies_chaos:item/roughianengiegames_pickaxe"
   }
 }

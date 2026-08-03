@@ -3,7 +3,7 @@
   "_type": "achievement",
   "definition": {
     "achievementName": "Hi Engie!",
-    "achievementDescription": "Meet the developer of RE:All About Engie.",
+    "achievementDescription": "Meet the developer of Engie's Chaos",
     "achievementIcon": {
       "value": "CUSTOM:REAllAboutEngieAdvancementIcon"
     },

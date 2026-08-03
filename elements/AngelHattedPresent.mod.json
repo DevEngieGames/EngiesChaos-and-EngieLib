@@ -2,7 +2,7 @@
   "_fv": 79,
   "_type": "block",
   "definition": {
-    "texture": "presenttext",
+    "texture": "present",
     "textureTop": "",
     "textureLeft": "",
     "textureFront": "",
@@ -39,7 +39,7 @@
     "name": "Angel Hatted Present",
     "specialInformation": {
       "fixedValue": [
-        "From: DevEngie(Games). To: You!"
+        "From: EngieGames/EngieSharks. To: You!"
       ]
     },
     "hardness": 0.5,

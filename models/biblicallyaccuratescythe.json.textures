@@ -2,13 +2,19 @@
   "mappings": {
     "default": {
       "map": {
-        "0": "biblicallyscythe"
+        "0": "pixelscythebibnew"
       },
       "name": "default"
     },
+    "darkmatter": {
+      "map": {
+        "0": "pixeldarkmatterscythebib"
+      },
+      "name": "darkmatter"
+    },
     "antimatter": {
       "map": {
-        "0": "antimatterbiblicallyscythe"
+        "0": "pixelantimatterscythebibnew"
       },
       "name": "antimatter"
     }

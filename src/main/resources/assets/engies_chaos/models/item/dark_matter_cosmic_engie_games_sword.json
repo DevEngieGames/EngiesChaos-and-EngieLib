@@ -4,7 +4,6 @@
   "base": {
     "parent": "engies_chaos:custom/cosmicengiegamesword",
     "textures": {
-      "0": "engies_chaos:block/darkmattercosmicengie_sword",
       "particle": "engies_chaos:item/darkmattercosmicengie_sword"
     }
   },

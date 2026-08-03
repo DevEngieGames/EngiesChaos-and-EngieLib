@@ -2,8 +2,8 @@
   "_fv": 79,
   "_type": "achievement",
   "definition": {
-    "achievementName": "RE: All About Engie",
-    "achievementDescription": "Create a new world with the RE:All About Engie mod installed.",
+    "achievementName": "Engie's Chaos",
+    "achievementDescription": "Create a new world with the Engie's Chaos mod installed.",
     "achievementIcon": {
       "value": "CUSTOM:REAllAboutEngieAdvancementIcon"
     },

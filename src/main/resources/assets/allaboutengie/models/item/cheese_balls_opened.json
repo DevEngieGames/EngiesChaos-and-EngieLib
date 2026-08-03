@@ -1,8 +1,0 @@
-{
-  "parent": "allaboutengie:custom/cheeseballsopened",
-  "textures": {
-    "0": "allaboutengie:block/cheeseballs",
-    "1": "allaboutengie:block/cheesepuffseattext",
-    "particle": "allaboutengie:item/cheesepuffsbinopened"
-  }
-}

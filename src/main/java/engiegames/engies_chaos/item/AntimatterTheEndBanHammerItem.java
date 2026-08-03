@@ -70,6 +70,6 @@ public class AntimatterTheEndBanHammerItem extends Item {
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		TheEndObtainProProcedure.execute(entity, itemstack);
+		TheEndObtainProProcedure.execute(world, entity, itemstack);
 	}
 }

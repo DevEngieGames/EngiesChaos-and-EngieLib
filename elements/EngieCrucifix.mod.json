@@ -3,8 +3,8 @@
   "_type": "item",
   "definition": {
     "renderType": 1,
-    "texture": "engiecrucifixpixel",
-    "customModelName": "crucifixengie:default",
+    "texture": "crucifixengiepixel",
+    "customModelName": "crucifix:engie",
     "guiTexture": "",
     "customProperties": {},
     "states": [],

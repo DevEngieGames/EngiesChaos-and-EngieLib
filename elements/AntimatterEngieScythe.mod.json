@@ -5,16 +5,13 @@
     "toolType": "Sword",
     "renderType": 1,
     "blockingRenderType": 0,
-    "texture": "antimatterengiesscythe",
+    "texture": "pixelantimatterscytheengiesnew",
     "customModelName": "engiesscythe:antimatter",
     "blockingModelName": "Normal blocking",
-    "guiTexture": "antimatterengiesscythe",
+    "guiTexture": "pixelantimatterscytheengiesnew",
     "name": "Antimatter Engies Scythe",
     "specialInformation": {
-      "fixedValue": [
-        "Congrats!"
-      ],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

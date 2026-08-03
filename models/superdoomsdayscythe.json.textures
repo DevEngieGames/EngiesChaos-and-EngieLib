@@ -2,13 +2,13 @@
   "mappings": {
     "default": {
       "map": {
-        "0": "sdoomsdayscythe"
+        "0": "crucifixsuperdoomsday"
       },
       "name": "default"
     },
     "antimatter": {
       "map": {
-        "0": "antimattersdoomsdayscythe"
+        "0": "antimattercrucifixsuperdoomsday"
       },
       "name": "antimatter"
     }

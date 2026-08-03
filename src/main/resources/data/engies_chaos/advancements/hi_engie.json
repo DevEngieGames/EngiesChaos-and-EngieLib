@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "engies_chaos:engies_chaos_advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.hi_engie.title"
+    },
+    "description": {
+      "translate": "advancements.hi_engie.descr"
+    },
+    "frame": "challenge",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "hi_engie_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "engies_chaos:secret_advancements"
+}

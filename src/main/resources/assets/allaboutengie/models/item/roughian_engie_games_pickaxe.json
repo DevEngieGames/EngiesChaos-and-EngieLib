@@ -1,7 +1,0 @@
-{
-  "parent": "allaboutengie:custom/roughianengiegamespickaxe",
-  "textures": {
-    "0": "allaboutengie:block/roughianengiegamespicktext",
-    "particle": "allaboutengie:item/cosmicengie_pickaxe"
-  }
-}

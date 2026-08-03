@@ -27,28 +27,28 @@ public class OhNoProcedure {
 		if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DOOMSDAY_TOGGLE) == true) {
 			if (EngiesChaosModVariables.MapVariables.get(world).OHNO == false) {
 				if (Math.random() >= 0.25) {
-					EngiesChaosModVariables.MapVariables.get(world).Risk = 1;
+					EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = 6.25;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).OHNO = true;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).riskcooldown = true;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				} else if (Math.random() >= 0.5 && Math.random() < 0.25) {
-					EngiesChaosModVariables.MapVariables.get(world).Risk = 2;
+					EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = 12.5;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).OHNO = true;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).riskcooldown = true;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				} else if (Math.random() >= 0.75 && Math.random() < 0.5) {
-					EngiesChaosModVariables.MapVariables.get(world).Risk = 3;
+					EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = 18.75;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).OHNO = true;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).riskcooldown = true;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				} else if (Math.random() >= 1 && Math.random() < 0.75) {
-					EngiesChaosModVariables.MapVariables.get(world).Risk = 4;
+					EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = 25;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).OHNO = true;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);

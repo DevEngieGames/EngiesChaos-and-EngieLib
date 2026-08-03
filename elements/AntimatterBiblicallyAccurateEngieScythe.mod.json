@@ -5,14 +5,13 @@
     "toolType": "Sword",
     "renderType": 1,
     "blockingRenderType": 0,
-    "texture": "antimatterregularscythe",
+    "texture": "pixelantimatterscythebibnew",
     "customModelName": "biblicallyaccuratescythe:antimatter",
     "blockingModelName": "Normal blocking",
-    "guiTexture": "antimatterregularscythe",
+    "guiTexture": "pixelantimatterscythebibnew",
     "name": "Antimatter Biblically Accurate Scythe",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {
@@ -25,7 +24,7 @@
     "damageVsEntity": 11850.0,
     "usageCount": 47400,
     "glowCondition": {
-      "fixedValue": true
+      "fixedValue": false
     },
     "repairItems": [],
     "immuneToFire": false,

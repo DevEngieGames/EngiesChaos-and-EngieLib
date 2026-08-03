@@ -4,7 +4,7 @@
   "definition": {
     "renderType": 1,
     "texture": "crucifixtheendpixel",
-    "customModelName": "crucifixtheend:default",
+    "customModelName": "crucifix:theend",
     "guiTexture": "",
     "customProperties": {},
     "states": [],

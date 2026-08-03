@@ -1,7 +1,0 @@
-{
-  "parent": "allaboutengie:custom/roughianengiegamesaxe",
-  "textures": {
-    "0": "allaboutengie:block/roughianengiegamesaxetext",
-    "particle": "allaboutengie:item/cosmicengie_axe"
-  }
-}

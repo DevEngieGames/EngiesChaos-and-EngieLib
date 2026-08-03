@@ -1,7 +1,0 @@
-{
-  "parent": "allaboutengie:custom/crucifixmindscapeengie",
-  "textures": {
-    "0": "allaboutengie:block/mindscapeengiescrucifix",
-    "particle": "allaboutengie:item/mindscapebase"
-  }
-}

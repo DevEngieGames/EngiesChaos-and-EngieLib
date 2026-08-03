@@ -1,9 +1,0 @@
-{
-  "parent": "allaboutengie:custom/engiegamescoinblock",
-  "textures": {
-    "all": "allaboutengie:block/engiegamescoinblocktext",
-    "particle": "allaboutengie:block/engiegamescoinblocktext",
-    "0": "allaboutengie:block/engiegamescoinblocktext"
-  },
-  "render_type": "cutout"
-}

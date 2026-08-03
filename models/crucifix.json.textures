@@ -11,6 +11,72 @@
         "0": "antimattercrucifix"
       },
       "name": "antimatter"
+    },
+    "dooms": {
+      "map": {
+        "0": "crucifixdoomsday"
+      },
+      "name": "dooms"
+    },
+    "antimatterdooms": {
+      "map": {
+        "0": "antimattercrucifixdoomsday"
+      },
+      "name": "antimatterdooms"
+    },
+    "superdooms": {
+      "map": {
+        "0": "crucifixsuperdoomsday"
+      },
+      "name": "superdooms"
+    },
+    "antimattersuperdooms": {
+      "map": {
+        "0": "antimattercrucifixsuperdoomsday"
+      },
+      "name": "antimattersuperdooms"
+    },
+    "theend": {
+      "map": {
+        "0": "crucifixtheend"
+      },
+      "name": "theend"
+    },
+    "antimattertheend": {
+      "map": {
+        "0": "antimattercrucifixtheend"
+      },
+      "name": "antimattertheend"
+    },
+    "engie": {
+      "map": {
+        "0": "engiescrucifix"
+      },
+      "name": "engie"
+    },
+    "antimatterengie": {
+      "map": {
+        "0": "antimatterengiescrucifix"
+      },
+      "name": "antimatterengie"
+    },
+    "engiegames": {
+      "map": {
+        "0": "engiegamesscrucifix"
+      },
+      "name": "engiegames"
+    },
+    "antimatterengiegames": {
+      "map": {
+        "0": "antimatterengiegamesscrucifix"
+      },
+      "name": "antimatterengiegames"
+    },
+    "mindscape": {
+      "map": {
+        "0": "mindscapeengiescrucifix"
+      },
+      "name": "mindscape"
     }
   }
 }

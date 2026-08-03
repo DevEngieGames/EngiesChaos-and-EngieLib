@@ -4,7 +4,7 @@
   "base": {
     "parent": "engies_chaos:custom/biblicallyaccuratescythe",
     "textures": {
-      "0": "engies_chaos:block/biblicallyscythe",
+      "0": "engies_chaos:block/pixelscythebibnew",
       "particle": "engies_chaos:item/pixelscythebibnew"
     }
   },

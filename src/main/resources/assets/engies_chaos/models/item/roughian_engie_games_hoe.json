@@ -1,7 +1,6 @@
 {
-  "parent": "engies_chaos:custom/roughianengiegameshoe",
+  "parent": "item/handheld",
   "textures": {
-    "0": "engies_chaos:block/roughianengiegameshoetext",
-    "particle": "engies_chaos:item/cosmicengie_hoe"
+    "layer0": "engies_chaos:item/roughianengiegames_hoe"
   }
 }

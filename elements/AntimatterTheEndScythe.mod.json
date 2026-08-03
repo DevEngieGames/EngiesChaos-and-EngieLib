@@ -5,16 +5,13 @@
     "toolType": "Sword",
     "renderType": 1,
     "blockingRenderType": 0,
-    "texture": "antimattertheendscythe",
+    "texture": "pixelantimatterscythetheendnew",
     "customModelName": "theendscythe:antimatter",
     "blockingModelName": "Normal blocking",
-    "guiTexture": "antimattertheendscythe",
+    "guiTexture": "pixelantimatterscythetheendnew",
     "name": "Antimatter The End Scythe",
     "specialInformation": {
-      "fixedValue": [
-        "Congrats!"
-      ],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

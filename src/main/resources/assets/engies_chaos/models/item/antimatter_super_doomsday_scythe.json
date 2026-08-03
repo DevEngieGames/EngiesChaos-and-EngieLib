@@ -4,27 +4,27 @@
   "base": {
     "parent": "engies_chaos:custom/superdoomsdayscythe",
     "textures": {
-      "0": "engies_chaos:block/antimattersdoomsdayscythe",
-      "particle": "engies_chaos:item/antimattersuperdoomsdayscythe"
+      "0": "engies_chaos:block/pixelantimatterscythesddaynew",
+      "particle": "engies_chaos:item/pixelantimatterscythesddaynew"
     }
   },
   "perspectives": {
     "gui": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/antimattersuperdoomsdayscythe"
+        "layer0": "engies_chaos:item/pixelantimatterscythesddaynew"
       }
     },
     "fixed": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/antimattersuperdoomsdayscythe"
+        "layer0": "engies_chaos:item/pixelantimatterscythesddaynew"
       }
     },
     "ground": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/antimattersuperdoomsdayscythe"
+        "layer0": "engies_chaos:item/pixelantimatterscythesddaynew"
       }
     }
   }

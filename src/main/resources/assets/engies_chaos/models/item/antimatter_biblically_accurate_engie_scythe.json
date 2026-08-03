@@ -4,27 +4,27 @@
   "base": {
     "parent": "engies_chaos:custom/biblicallyaccuratescythe",
     "textures": {
-      "0": "engies_chaos:block/antimatterbiblicallyscythe",
-      "particle": "engies_chaos:item/antimatterregularscythe"
+      "0": "engies_chaos:block/pixelantimatterscythebibnew",
+      "particle": "engies_chaos:item/pixelantimatterscythebibnew"
     }
   },
   "perspectives": {
     "gui": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/antimatterregularscythe"
+        "layer0": "engies_chaos:item/pixelantimatterscythebibnew"
       }
     },
     "fixed": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/antimatterregularscythe"
+        "layer0": "engies_chaos:item/pixelantimatterscythebibnew"
       }
     },
     "ground": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "engies_chaos:item/antimatterregularscythe"
+        "layer0": "engies_chaos:item/pixelantimatterscythebibnew"
       }
     }
   }

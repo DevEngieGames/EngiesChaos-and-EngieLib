@@ -2,12 +2,12 @@
   "_fv": 79,
   "_type": "block",
   "definition": {
-    "texture": "thanksforplayingnew",
-    "textureTop": "thanksforplayingnew",
-    "textureLeft": "thanksforplayingnew",
-    "textureFront": "thanksforplayingnew",
-    "textureRight": "thanksforplayingnew",
-    "textureBack": "thanksforplayingnew",
+    "texture": "thanksforplayingreaae",
+    "textureTop": "thanksforplayingreaae",
+    "textureLeft": "thanksforplayingreaae",
+    "textureFront": "thanksforplayingreaae",
+    "textureRight": "thanksforplayingreaae",
+    "textureBack": "thanksforplayingreaae",
     "renderType": 10,
     "customModelName": "Normal",
     "rotationMode": 0,
@@ -108,6 +108,9 @@
     "isBonemealable": false,
     "sensitiveToVibration": false,
     "vibrationalEvents": [],
+    "vibrationSensitivityRadius": {
+      "fixedValue": 7.0
+    },
     "hasInventory": false,
     "openGUIOnRightClick": false,
     "inventorySize": 9,

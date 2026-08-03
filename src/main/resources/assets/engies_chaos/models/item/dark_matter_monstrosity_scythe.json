@@ -4,7 +4,7 @@
   "base": {
     "parent": "engies_chaos:custom/monstrosityscythe",
     "textures": {
-      "0": "engies_chaos:block/monstrosityscythe",
+      "0": "engies_chaos:block/pixeldarkmatterscythemon",
       "particle": "engies_chaos:item/pixeldarkmatterscythemon"
     }
   },

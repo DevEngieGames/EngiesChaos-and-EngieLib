@@ -44,6 +44,6 @@ public class EngieScytheItem extends SwordItem {
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		EngiesObtainProProcedure.execute(entity, itemstack);
+		EngiesObtainProProcedure.execute(world, entity, itemstack);
 	}
 }

@@ -3,16 +3,15 @@
   "_type": "tool",
   "definition": {
     "toolType": "Axe",
-    "renderType": 1,
+    "renderType": 0,
     "blockingRenderType": 0,
-    "texture": "cosmicengie_axe",
-    "customModelName": "roughianengiegamesaxe:default",
+    "texture": "roughianengiegames_axe",
+    "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
     "guiTexture": "",
     "name": "Roughian EngieGames' Axe",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem2"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

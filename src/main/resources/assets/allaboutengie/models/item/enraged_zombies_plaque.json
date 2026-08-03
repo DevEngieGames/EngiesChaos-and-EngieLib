@@ -1,7 +1,0 @@
-{
-  "parent": "allaboutengie:custom/enragedzombiesplaque",
-  "textures": {
-    "0": "allaboutengie:block/enraged_zombies_logo",
-    "particle": "allaboutengie:item/backuptext"
-  }
-}

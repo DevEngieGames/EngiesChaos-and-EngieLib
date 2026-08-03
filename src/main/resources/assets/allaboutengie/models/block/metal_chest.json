@@ -1,9 +1,0 @@
-{
-  "parent": "allaboutengie:custom/metal_chest",
-  "textures": {
-    "all": "allaboutengie:block/metalchest",
-    "particle": "allaboutengie:block/metalchest",
-    "0": "allaboutengie:block/metalchest"
-  },
-  "render_type": "solid"
-}

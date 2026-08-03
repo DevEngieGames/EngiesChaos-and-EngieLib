@@ -4,8 +4,6 @@
   "base": {
     "parent": "engies_chaos:custom/cosmicengiegames_sword_3d",
     "textures": {
-      "0": "engies_chaos:block/cosmicengiegames_sword_3d",
-      "1": "engies_chaos:block/cosmicengiegames_sword_3d_outline",
       "particle": "engies_chaos:item/cosmicengie_sword"
     }
   },
