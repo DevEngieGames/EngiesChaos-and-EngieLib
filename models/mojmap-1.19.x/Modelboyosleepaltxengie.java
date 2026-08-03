@@ -1,4 +1,4 @@
-// Made with Blockbench 5.1.4
+// Made with Blockbench 5.1.6
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
@@ -11,9 +11,9 @@ public class Modelboyosleepaltxengie<T extends Entity> extends EntityModel<T> {
 	private final ModelPart Head;
 	private final ModelPart Ear1;
 	private final ModelPart Ear2;
-	private final ModelPart Snout;
 	private final ModelPart Hat;
 	private final ModelPart Crown;
+	private final ModelPart Snout;
 	private final ModelPart Body;
 	private final ModelPart tail;
 	private final ModelPart base;
@@ -53,9 +53,9 @@ public class Modelboyosleepaltxengie<T extends Entity> extends EntityModel<T> {
 		this.Head = this.Root.getChild("Head");
 		this.Ear1 = this.Head.getChild("Ear1");
 		this.Ear2 = this.Head.getChild("Ear2");
-		this.Snout = this.Head.getChild("Snout");
 		this.Hat = this.Head.getChild("Hat");
 		this.Crown = this.Head.getChild("Crown");
+		this.Snout = this.Head.getChild("Snout");
 		this.Body = this.Root.getChild("Body");
 		this.tail = this.Body.getChild("tail");
 		this.base = this.tail.getChild("base");
@@ -134,44 +134,6 @@ public class Modelboyosleepaltxengie<T extends Entity> extends EntityModel<T> {
 						.addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
 				PartPose.offsetAndRotation(-0.4875F, 0.0F, 0.0F, 0.0F, 0.4363F, 0.0F));
 
-		PartDefinition Snout = Head.addOrReplaceChild("Snout",
-				CubeListBuilder.create().texOffs(36, 39)
-						.addBox(-4.0F, 0.01F, 0.0F, 4.0F, 2.0F, 2.0F, new CubeDeformation(0.001F)).texOffs(36, 43)
-						.addBox(-4.0F, 1.51F, 0.25F, 4.0F, 1.0F, 2.0F, new CubeDeformation(0.001F)),
-				PartPose.offset(1.889F, -1.4981F, -10.025F));
-
-		PartDefinition Whisker_r1 = Snout.addOrReplaceChild("Whisker_r1",
-				CubeListBuilder.create().texOffs(54, 31).addBox(-2.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.0F,
-						new CubeDeformation(0.0F)),
-				PartPose.offsetAndRotation(-4.014F, 0.9981F, 1.0F, 0.0F, -0.2618F, 0.0F));
-
-		PartDefinition Whisker_r2 = Snout.addOrReplaceChild("Whisker_r2",
-				CubeListBuilder.create().texOffs(54, 34).addBox(0.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.0F,
-						new CubeDeformation(0.0F)),
-				PartPose.offsetAndRotation(0.086F, 0.9981F, 0.975F, 0.0F, 0.2618F, 0.0F));
-
-		PartDefinition Snout_r1 = Snout.addOrReplaceChild("Snout_r1",
-				CubeListBuilder.create().texOffs(58, 39).addBox(0.0F, 1.01F, 0.0F, 2.0F, 1.0F, 3.0F,
-						new CubeDeformation(0.0F)),
-				PartPose.offsetAndRotation(-4.0F, 0.5F, 0.25F, 0.0F, -0.4625F, 0.0F));
-
-		PartDefinition Snout_r2 = Snout
-				.addOrReplaceChild("Snout_r2",
-						CubeListBuilder.create().texOffs(58, 39).addBox(-2.0F, 1.01F, 0.0F, 2.0F, 1.0F, 3.0F,
-								new CubeDeformation(0.0F)),
-						PartPose.offsetAndRotation(0.0F, 0.5F, 0.25F, 0.0F, 0.4625F, 0.0F));
-
-		PartDefinition Snout_r3 = Snout.addOrReplaceChild("Snout_r3",
-				CubeListBuilder.create().texOffs(48, 39).addBox(0.0F, 0.01F, 0.0F, 2.0F, 2.0F, 3.0F,
-						new CubeDeformation(0.0F)),
-				PartPose.offsetAndRotation(-4.0F, 0.0F, 0.0F, 0.0F, -0.4625F, 0.0F));
-
-		PartDefinition Snout_r4 = Snout
-				.addOrReplaceChild("Snout_r4",
-						CubeListBuilder.create().texOffs(48, 39).addBox(-2.0F, 0.01F, 0.0F, 2.0F, 2.0F, 3.0F,
-								new CubeDeformation(0.0F)),
-						PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.4625F, 0.0F));
-
 		PartDefinition Hat = Head.addOrReplaceChild("Hat",
 				CubeListBuilder.create().texOffs(0, 59)
 						.addBox(-7.0F, 0.6176F, -7.0F, 14.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 62)
@@ -240,6 +202,44 @@ public class Modelboyosleepaltxengie<T extends Entity> extends EntityModel<T> {
 						.addBox(3.0023F, -1.05F, 4.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.001F)).texOffs(83, 60)
 						.addBox(-4.9977F, -1.05F, 4.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.001F)),
 				PartPose.offsetAndRotation(-0.0023F, -9.7F, -13.0F, 1.2217F, 0.0F, 0.0F));
+
+		PartDefinition Snout = Head.addOrReplaceChild("Snout",
+				CubeListBuilder.create().texOffs(36, 39)
+						.addBox(-4.0F, 0.01F, 0.0F, 4.0F, 2.0F, 2.0F, new CubeDeformation(0.001F)).texOffs(36, 43)
+						.addBox(-4.0F, 1.51F, 0.25F, 4.0F, 1.0F, 2.0F, new CubeDeformation(0.001F)),
+				PartPose.offset(2.0F, -1.51F, -10.025F));
+
+		PartDefinition Whisker_r1 = Snout.addOrReplaceChild("Whisker_r1",
+				CubeListBuilder.create().texOffs(54, 31).addBox(-2.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.0F,
+						new CubeDeformation(0.0F)),
+				PartPose.offsetAndRotation(-4.05F, 1.01F, 1.0F, 0.0F, -0.2618F, 0.0F));
+
+		PartDefinition Whisker_r2 = Snout.addOrReplaceChild("Whisker_r2",
+				CubeListBuilder.create().texOffs(54, 34).addBox(0.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.0F,
+						new CubeDeformation(0.0F)),
+				PartPose.offsetAndRotation(0.05F, 1.01F, 0.975F, 0.0F, 0.2618F, 0.0F));
+
+		PartDefinition Snout_r1 = Snout.addOrReplaceChild("Snout_r1",
+				CubeListBuilder.create().texOffs(58, 39).addBox(0.0F, 1.01F, 0.0F, 2.0F, 1.0F, 3.0F,
+						new CubeDeformation(0.0F)),
+				PartPose.offsetAndRotation(-4.0F, 0.5F, 0.25F, 0.0F, -0.4625F, 0.0F));
+
+		PartDefinition Snout_r2 = Snout
+				.addOrReplaceChild("Snout_r2",
+						CubeListBuilder.create().texOffs(58, 39).addBox(-2.0F, 1.01F, 0.0F, 2.0F, 1.0F, 3.0F,
+								new CubeDeformation(0.0F)),
+						PartPose.offsetAndRotation(0.0F, 0.5F, 0.25F, 0.0F, 0.4625F, 0.0F));
+
+		PartDefinition Snout_r3 = Snout.addOrReplaceChild("Snout_r3",
+				CubeListBuilder.create().texOffs(48, 39).addBox(0.0F, 0.01F, 0.0F, 2.0F, 2.0F, 3.0F,
+						new CubeDeformation(0.0F)),
+				PartPose.offsetAndRotation(-4.0F, 0.0F, 0.0F, 0.0F, -0.4625F, 0.0F));
+
+		PartDefinition Snout_r4 = Snout
+				.addOrReplaceChild("Snout_r4",
+						CubeListBuilder.create().texOffs(48, 39).addBox(-2.0F, 0.01F, 0.0F, 2.0F, 2.0F, 3.0F,
+								new CubeDeformation(0.0F)),
+						PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.4625F, 0.0F));
 
 		PartDefinition Body = Root.addOrReplaceChild("Body",
 				CubeListBuilder.create().texOffs(0, 16)

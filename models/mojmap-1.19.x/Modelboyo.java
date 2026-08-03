@@ -1,4 +1,4 @@
-// Made with Blockbench 5.1.3
+// Made with Blockbench 5.1.6
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
@@ -11,7 +11,6 @@ public class Modelboyo<T extends Entity> extends EntityModel<T> {
 	private final ModelPart Hat;
 	private final ModelPart Ear1;
 	private final ModelPart Ear2;
-	private final ModelPart TobyWhiskers;
 	private final ModelPart Snout;
 	private final ModelPart Body;
 	private final ModelPart tail;
@@ -50,7 +49,6 @@ public class Modelboyo<T extends Entity> extends EntityModel<T> {
 		this.Hat = this.Head.getChild("Hat");
 		this.Ear1 = this.Head.getChild("Ear1");
 		this.Ear2 = this.Head.getChild("Ear2");
-		this.TobyWhiskers = this.Head.getChild("TobyWhiskers");
 		this.Snout = this.Head.getChild("Snout");
 		this.Body = root.getChild("Body");
 		this.tail = this.Body.getChild("tail");
@@ -158,25 +156,11 @@ public class Modelboyo<T extends Entity> extends EntityModel<T> {
 						.addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
 				PartPose.offsetAndRotation(-0.4875F, 0.0F, 0.0F, 0.0F, 0.4363F, 0.0F));
 
-		PartDefinition TobyWhiskers = Head.addOrReplaceChild("TobyWhiskers", CubeListBuilder.create(),
-				PartPose.offset(3.0F, -0.5F, -8.0F));
-
-		PartDefinition TobyWhisker_r1 = TobyWhiskers.addOrReplaceChild("TobyWhisker_r1",
-				CubeListBuilder.create().texOffs(71, 35).addBox(-2.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.0F,
-						new CubeDeformation(0.0F)),
-				PartPose.offsetAndRotation(-6.0F, 0.0F, 0.0F, 0.0F, -0.2618F, 0.0F));
-
-		PartDefinition TobyWhisker_r2 = TobyWhiskers
-				.addOrReplaceChild("TobyWhisker_r2",
-						CubeListBuilder.create().texOffs(71, 38).addBox(0.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.0F,
-								new CubeDeformation(0.0F)),
-						PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.2618F, 0.0F));
-
 		PartDefinition Snout = Head.addOrReplaceChild("Snout",
 				CubeListBuilder.create().texOffs(36, 39)
 						.addBox(-4.0F, 0.01F, 0.0F, 4.0F, 2.0F, 2.0F, new CubeDeformation(0.001F)).texOffs(36, 43)
 						.addBox(-4.0F, 1.51F, 0.25F, 4.0F, 1.0F, 2.0F, new CubeDeformation(0.001F)),
-				PartPose.offset(1.9F, -1.51F, -10.025F));
+				PartPose.offset(2.0F, -1.51F, -10.025F));
 
 		PartDefinition Whisker_r1 = Snout.addOrReplaceChild("Whisker_r1",
 				CubeListBuilder.create().texOffs(54, 31).addBox(-2.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.0F,
