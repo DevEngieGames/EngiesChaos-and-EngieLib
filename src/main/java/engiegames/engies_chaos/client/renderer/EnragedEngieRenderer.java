@@ -131,6 +131,6 @@ public class EnragedEngieRenderer extends MobRenderer<EnragedEngieEntity, Modelh
 
 	@Override
 	public ResourceLocation getTextureLocation(EnragedEngieEntity entity) {
-		return new ResourceLocation("engies_chaos:textures/entities/enragednew_style1.png");
+		return new ResourceLocation("engies_chaos:textures/entities/nothingness.png");
 	}
 }

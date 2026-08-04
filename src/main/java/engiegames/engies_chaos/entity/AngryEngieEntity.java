@@ -39,8 +39,8 @@ import net.minecraft.nbt.CompoundTag;
 
 import javax.annotation.Nullable;
 
+import engiegames.engies_chaos.procedures.NegativeDifficultyAICheckProcedure;
 import engiegames.engies_chaos.procedures.HostileEngieSpawningConditionProcedure;
-import engiegames.engies_chaos.procedures.DoomsDayMobsFightEachotherToggleProcedure;
 import engiegames.engies_chaos.procedures.AnyEngieDiesAddCountProcedure;
 import engiegames.engies_chaos.procedures.AngryEngieTickProcedure;
 import engiegames.engies_chaos.procedures.AngryEngieOnInitialEntitySpawnProcedure;
@@ -78,16 +78,14 @@ public class AngryEngieEntity extends Monster {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1, false) {
+		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.8, false) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
 		});
 		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
-		this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, Player.class, true, false));
-		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal(this, ServerPlayer.class, true, false));
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal(this, Monster.class, true, false) {
+		this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, Player.class, true, false) {
 			@Override
 			public boolean canUse() {
 				double x = AngryEngieEntity.this.getX();
@@ -95,7 +93,7 @@ public class AngryEngieEntity extends Monster {
 				double z = AngryEngieEntity.this.getZ();
 				Entity entity = AngryEngieEntity.this;
 				Level world = AngryEngieEntity.this.level;
-				return super.canUse() && DoomsDayMobsFightEachotherToggleProcedure.execute(world);
+				return super.canUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 
 			@Override
@@ -105,14 +103,75 @@ public class AngryEngieEntity extends Monster {
 				double z = AngryEngieEntity.this.getZ();
 				Entity entity = AngryEngieEntity.this;
 				Level world = AngryEngieEntity.this.level;
-				return super.canContinueToUse() && DoomsDayMobsFightEachotherToggleProcedure.execute(world);
+				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 		});
-		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, (float) 6));
-		this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, ServerPlayer.class, (float) 6));
-		this.targetSelector.addGoal(8, new HurtByTargetGoal(this));
-		this.goalSelector.addGoal(9, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(10, new FloatGoal(this));
+		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal(this, ServerPlayer.class, true, false) {
+			@Override
+			public boolean canUse() {
+				double x = AngryEngieEntity.this.getX();
+				double y = AngryEngieEntity.this.getY();
+				double z = AngryEngieEntity.this.getZ();
+				Entity entity = AngryEngieEntity.this;
+				Level world = AngryEngieEntity.this.level;
+				return super.canUse() && NegativeDifficultyAICheckProcedure.execute(world);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = AngryEngieEntity.this.getX();
+				double y = AngryEngieEntity.this.getY();
+				double z = AngryEngieEntity.this.getZ();
+				Entity entity = AngryEngieEntity.this;
+				Level world = AngryEngieEntity.this.level;
+				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
+			}
+		});
+		this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, (float) 6) {
+			@Override
+			public boolean canUse() {
+				double x = AngryEngieEntity.this.getX();
+				double y = AngryEngieEntity.this.getY();
+				double z = AngryEngieEntity.this.getZ();
+				Entity entity = AngryEngieEntity.this;
+				Level world = AngryEngieEntity.this.level;
+				return super.canUse() && NegativeDifficultyAICheckProcedure.execute(world);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = AngryEngieEntity.this.getX();
+				double y = AngryEngieEntity.this.getY();
+				double z = AngryEngieEntity.this.getZ();
+				Entity entity = AngryEngieEntity.this;
+				Level world = AngryEngieEntity.this.level;
+				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
+			}
+		});
+		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, ServerPlayer.class, (float) 6) {
+			@Override
+			public boolean canUse() {
+				double x = AngryEngieEntity.this.getX();
+				double y = AngryEngieEntity.this.getY();
+				double z = AngryEngieEntity.this.getZ();
+				Entity entity = AngryEngieEntity.this;
+				Level world = AngryEngieEntity.this.level;
+				return super.canUse() && NegativeDifficultyAICheckProcedure.execute(world);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = AngryEngieEntity.this.getX();
+				double y = AngryEngieEntity.this.getY();
+				double z = AngryEngieEntity.this.getZ();
+				Entity entity = AngryEngieEntity.this;
+				Level world = AngryEngieEntity.this.level;
+				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
+			}
+		});
+		this.targetSelector.addGoal(7, new HurtByTargetGoal(this));
+		this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(9, new FloatGoal(this));
 	}
 
 	@Override
@@ -179,7 +238,7 @@ public class AngryEngieEntity extends Monster {
 
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
-		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.5);
+		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.25);
 		builder = builder.add(Attributes.MAX_HEALTH, 200);
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 15);

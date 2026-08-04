@@ -2,7 +2,7 @@
   "_fv": 79,
   "_type": "structure",
   "definition": {
-    "structure": "itemhousexxl",
+    "structure": "itemhousexxl4",
     "projection": "rigid",
     "ignoredBlocks": [
       {
@@ -263,8 +263,45 @@
     "startHeightProviderType": "UNIFORM",
     "startHeightMin": 0,
     "startHeightMax": 128,
-    "size": 1,
+    "size": 4,
     "maxDistanceFromCenter": 64,
-    "jigsawPools": []
+    "jigsawPools": [
+      {
+        "poolName": "portion3",
+        "fallbackPool": "engies_chaos:item_house_xxl_portion1",
+        "poolParts": [
+          {
+            "weight": 1,
+            "structure": "itemhousexxl1",
+            "projection": "rigid",
+            "ignoredBlocks": []
+          }
+        ]
+      },
+      {
+        "poolName": "portion1",
+        "fallbackPool": "engies_chaos:item_house_xxl_portion2",
+        "poolParts": [
+          {
+            "weight": 1,
+            "structure": "itemhousexxl2",
+            "projection": "rigid",
+            "ignoredBlocks": []
+          }
+        ]
+      },
+      {
+        "poolName": "portion2",
+        "fallbackPool": "",
+        "poolParts": [
+          {
+            "weight": 1,
+            "structure": "itemhousexxl3",
+            "projection": "rigid",
+            "ignoredBlocks": []
+          }
+        ]
+      }
+    ]
   }
 }

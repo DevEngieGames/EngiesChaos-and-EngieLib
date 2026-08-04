@@ -78,7 +78,7 @@ public class BiblicallyAccurateEngieEntity extends PathfinderMob {
 	protected void registerGoals() {
 		super.registerGoals();
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Monster.class, false, false));
-		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 2, false) {
+		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 2.25, false) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
