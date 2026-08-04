@@ -4,7 +4,8 @@
   "definition": {
     "renderType": 1,
     "texture": "volc",
-    "customModelName": "insanity_plush:default",
+    "customModelName": "insanityplush:default",
+    "guiTexture": "",
     "customProperties": {},
     "states": [],
     "name": "Insanity Plush",

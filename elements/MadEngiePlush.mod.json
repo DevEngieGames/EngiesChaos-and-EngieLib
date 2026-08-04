@@ -4,7 +4,8 @@
   "definition": {
     "renderType": 1,
     "texture": "volc",
-    "customModelName": "mad_plush:default",
+    "customModelName": "hostileplush:mad",
+    "guiTexture": "",
     "customProperties": {},
     "states": [],
     "name": "Mad Engie Plush",
@@ -29,15 +30,19 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInformation": {
-      "fixedValue": [
-        "Poor dude lost 12 ranked matches in a row... Only if he could take a break..."
-      ]
+      "fixedValue": []
+    },
+    "glowCondition": {
+      "fixedValue": false
     },
     "inventorySize": 9,
     "inventoryStackSize": 64,
     "enableRanged": false,
     "shootConstantly": false,
     "rangedItemChargesPower": false,
+    "projectile": {
+      "value": "Arrow"
+    },
     "projectileDisableAmmoCheck": false,
     "isFood": false,
     "nutritionalValue": 4,
@@ -49,6 +54,10 @@
     "isAlwaysEdible": false,
     "animation": "none",
     "isMusicDisc": false,
+    "musicDiscMusic": {
+      "value": ""
+    },
+    "musicDiscDescription": "",
     "musicDiscLengthInTicks": 0,
     "musicDiscAnalogOutput": 0,
     "providedBannerPatterns": []

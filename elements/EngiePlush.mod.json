@@ -8,7 +8,7 @@
     "guiTexture": "",
     "customProperties": {},
     "states": [],
-    "name": "EngieGames Plush (Yes, the REAL EngieGames)",
+    "name": "EngieGames Plush",
     "rarity": "EPIC",
     "creativeTabs": [
       {
@@ -31,8 +31,7 @@
     "damageVsEntity": 0.0,
     "specialInformation": {
       "fixedValue": [
-        "The man himself in your hands.",
-        "Thanks for playing RE:All About Engie."
+        ""
       ]
     },
     "glowCondition": {

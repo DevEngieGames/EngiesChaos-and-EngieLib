@@ -11,10 +11,7 @@
     "guiTexture": "antimatterengiebanpixel",
     "name": "Antimatter Engies Ban Hammer",
     "specialInformation": {
-      "fixedValue": [
-        "Congrats!"
-      ],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

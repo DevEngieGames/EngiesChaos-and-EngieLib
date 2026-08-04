@@ -6,7 +6,6 @@ import net.minecraftforge.common.ToolAction;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.ItemStack;
@@ -17,10 +16,7 @@ import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
-
-import java.util.List;
 
 import engiegames.engies_chaos.init.EngiesChaosModTabs;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
@@ -95,11 +91,5 @@ public class SuperDoomsDayPaxelItem extends TieredItem {
 	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
 		itemstack.hurtAndBreak(2, entity, i -> i.broadcastBreakEvent(EquipmentSlot.MAINHAND));
 		return true;
-	}
-
-	@Override
-	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
-		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.translatable("item.engies_chaos.super_dooms_day_aiot.description_0"));
 	}
 }

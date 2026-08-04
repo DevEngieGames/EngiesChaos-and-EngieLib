@@ -11,10 +11,7 @@
     "guiTexture": "",
     "name": "The End Pickaxe",
     "specialInformation": {
-      "fixedValue": [
-        "Congrats!"
-      ],
-      "name": "DescriptionOfItem3"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

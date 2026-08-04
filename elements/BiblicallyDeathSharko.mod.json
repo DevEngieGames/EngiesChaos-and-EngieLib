@@ -41,7 +41,7 @@
         }
       },
       {
-        "model": "Modelbigboyolay",
+        "model": "Modelbigboyosit",
         "texture": "biblicallynew.png",
         "disableHurtOverlay": false,
         "glow": false,
@@ -206,6 +206,12 @@
         "value": false
       }
     ],
+    "onRightClickedOn": {
+      "name": "BiblicallyDeathSharkoRightClickedOnEntity"
+    },
+    "onMobTickUpdate": {
+      "name": "BiblicallyDeathSharkoOnEntityTickUpdate"
+    },
     "hasAI": true,
     "aiBase": "(none)",
     "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"protect_owner\"><field name=\"condition\">BiblicallyDeathSharkoMoveAroundCheck,BiblicallyDeathSharkoMoveAroundCheck</field><next><block type=\"fight_as_owner\"><field name=\"condition\">BiblicallyDeathSharkoMoveAroundCheck,BiblicallyDeathSharkoMoveAroundCheck</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">BiblicallyDeathSharkoMoveAroundCheck,BiblicallyDeathSharkoMoveAroundCheck</field><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">TRUE</field><field name=\"condition\">BiblicallyDeathSharkoMoveAroundCheck,BiblicallyDeathSharkoMoveAroundCheck</field><next><block type=\"follow_owner\"><field name=\"speed\">1</field><field name=\"min_distance\">10</field><field name=\"max_distance\">2</field><field name=\"condition\">BiblicallyDeathSharkoMoveAroundCheck,BiblicallyDeathSharkoMoveAroundCheck</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">BiblicallyDeathSharkoMoveAroundCheck,BiblicallyDeathSharkoMoveAroundCheck</field><next><block type=\"breed\"><field name=\"speed\">1</field><field name=\"condition\">BiblicallyDeathSharkoMoveAroundCheck,null</field><next><block type=\"watch_closest_entity\"><field name=\"entity\">EntityPlayer</field><field name=\"radius\">12</field><field name=\"condition\">BiblicallyDeathSharkoSleepCheck,BiblicallyDeathSharkoSleepCheck</field><next><block type=\"watch_closest_entity\"><field name=\"entity\">EntityPlayerMP</field><field name=\"radius\">12</field><field name=\"condition\">BiblicallyDeathSharkoSleepCheck,BiblicallyDeathSharkoSleepCheck</field><next><block type=\"look_around\"><field name=\"condition\">BiblicallyDeathSharkoSleepCheck,BiblicallyDeathSharkoSleepCheck</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",

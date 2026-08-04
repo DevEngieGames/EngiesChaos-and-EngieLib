@@ -11,10 +11,7 @@
     "guiTexture": "",
     "name": "Antimatter EngieGames' Hoe",
     "specialInformation": {
-      "fixedValue": [
-        "Looks like a scythe."
-      ],
-      "name": "DescriptionOfItem2"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

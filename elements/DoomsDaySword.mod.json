@@ -11,10 +11,7 @@
     "guiTexture": "",
     "name": "Doomsday Sword",
     "specialInformation": {
-      "fixedValue": [
-        "Congrats!"
-      ],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

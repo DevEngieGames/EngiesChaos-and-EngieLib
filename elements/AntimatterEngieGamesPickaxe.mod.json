@@ -11,10 +11,7 @@
     "guiTexture": "",
     "name": "Antimatter EngieGames' Pickaxe",
     "specialInformation": {
-      "fixedValue": [
-        "Looks like an anchor."
-      ],
-      "name": "DescriptionOfItem3"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

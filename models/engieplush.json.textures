@@ -2,10 +2,15 @@
   "mappings": {
     "default": {
       "map": {
-        "0": "roughianengie",
-        "1": "16101613"
+        "0": "roughianengie"
       },
       "name": "default"
+    },
+    "devengie": {
+      "map": {
+        "0": "devengie"
+      },
+      "name": "devengie"
     }
   }
 }

@@ -4,7 +4,8 @@
   "definition": {
     "renderType": 1,
     "texture": "volc",
-    "customModelName": "outraged_netherite_plush:default",
+    "customModelName": "hostileplush:outragednetherite",
+    "guiTexture": "",
     "customProperties": {},
     "states": [],
     "name": "Netherite Outraged Engie Plush",
@@ -31,11 +32,17 @@
     "specialInformation": {
       "fixedValue": []
     },
+    "glowCondition": {
+      "fixedValue": false
+    },
     "inventorySize": 9,
     "inventoryStackSize": 64,
     "enableRanged": false,
     "shootConstantly": false,
     "rangedItemChargesPower": false,
+    "projectile": {
+      "value": "Arrow"
+    },
     "projectileDisableAmmoCheck": false,
     "isFood": false,
     "nutritionalValue": 4,
@@ -47,6 +54,10 @@
     "isAlwaysEdible": false,
     "animation": "none",
     "isMusicDisc": false,
+    "musicDiscMusic": {
+      "value": ""
+    },
+    "musicDiscDescription": "",
     "musicDiscLengthInTicks": 0,
     "musicDiscAnalogOutput": 0,
     "providedBannerPatterns": []

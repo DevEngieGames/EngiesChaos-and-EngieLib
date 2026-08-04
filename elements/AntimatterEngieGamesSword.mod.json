@@ -6,15 +6,12 @@
     "renderType": 1,
     "blockingRenderType": 0,
     "texture": "antimatterengiegames_sword",
-    "customModelName": "antimatterengiegames_sword_3d:default",
+    "customModelName": "engiegamesword:antimatter",
     "blockingModelName": "Normal blocking",
     "guiTexture": "antimatterengiegames_sword",
     "name": "Antimatter EngieGames' Sword",
     "specialInformation": {
-      "fixedValue": [
-        "Looks like a crescendo honestly."
-      ],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

@@ -11,10 +11,7 @@
     "guiTexture": "",
     "name": "Antimatter EngieGames' Shovel",
     "specialInformation": {
-      "fixedValue": [
-        "Hm."
-      ],
-      "name": "DescriptionOfItem2"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

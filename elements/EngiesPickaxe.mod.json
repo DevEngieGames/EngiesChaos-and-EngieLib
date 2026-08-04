@@ -11,10 +11,7 @@
     "guiTexture": "",
     "name": "Engies Pickaxe",
     "specialInformation": {
-      "fixedValue": [
-        "Congrats!"
-      ],
-      "name": "DescriptionOfItem3"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

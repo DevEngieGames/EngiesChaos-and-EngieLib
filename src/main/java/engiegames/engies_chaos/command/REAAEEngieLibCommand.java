@@ -19,7 +19,7 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 public class REAAEEngieLibCommand {
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {
-		event.getDispatcher().register(Commands.literal("REAAE")
+		event.getDispatcher().register(Commands.literal("EChaos")
 
 				.then(Commands.argument("EngieLib", StringArgumentType.word()).then(Commands.argument("Type", StringArgumentType.word()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();

@@ -31,7 +31,8 @@
     "damageVsEntity": 0.0,
     "specialInformation": {
       "fixedValue": [
-        "Congrats!"
+        "Congrats!",
+        "Try beating this solo!"
       ]
     },
     "glowCondition": {

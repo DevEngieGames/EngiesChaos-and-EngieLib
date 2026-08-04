@@ -11,10 +11,7 @@
     "guiTexture": "antimattertheendbanpixel",
     "name": "Antimatter The End Ban Hammer",
     "specialInformation": {
-      "fixedValue": [
-        "Congrats!"
-      ],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

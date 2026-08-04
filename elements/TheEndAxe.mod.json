@@ -11,10 +11,7 @@
     "guiTexture": "",
     "name": "The End Axe",
     "specialInformation": {
-      "fixedValue": [
-        "Congrats!"
-      ],
-      "name": "DescriptionOfItem2"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

@@ -6,15 +6,12 @@
     "renderType": 1,
     "blockingRenderType": 0,
     "texture": "engiegames_sword",
-    "customModelName": "engiegames_sword_3d:default",
+    "customModelName": "engiegamesword:default",
     "blockingModelName": "Normal blocking",
     "guiTexture": "engiegames_sword",
     "name": "EngieGames' Sword",
     "specialInformation": {
-      "fixedValue": [
-        "Looks like a crescendo honestly."
-      ],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

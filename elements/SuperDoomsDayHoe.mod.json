@@ -11,10 +11,7 @@
     "guiTexture": "",
     "name": "Super Doomsday Hoe",
     "specialInformation": {
-      "fixedValue": [
-        "Congrats!"
-      ],
-      "name": "DescriptionOfItem2"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

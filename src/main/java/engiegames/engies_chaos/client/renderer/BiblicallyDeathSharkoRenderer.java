@@ -24,6 +24,7 @@ import engiegames.engies_chaos.client.model.Modelboyo;
 import engiegames.engies_chaos.client.model.Modelbigboyotamed;
 import engiegames.engies_chaos.client.model.Modelbigboyosleepalt;
 import engiegames.engies_chaos.client.model.Modelbigboyosleep;
+import engiegames.engies_chaos.client.model.Modelbigboyosit;
 import engiegames.engies_chaos.client.model.Modelbigboyolayonside;
 import engiegames.engies_chaos.client.model.Modelbigboyolayalt;
 import engiegames.engies_chaos.client.model.Modelbigboyolay;
@@ -84,7 +85,7 @@ public class BiblicallyDeathSharkoRenderer extends MobRenderer<BiblicallyDeathSh
 				double z = entity.getZ();
 				if (BiblicallyDeathSharkoTDisplayCondition2Procedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-					EntityModel model = new Modelbigboyolay(Minecraft.getInstance().getEntityModels().bakeLayer(Modelbigboyolay.LAYER_LOCATION));
+					EntityModel model = new Modelbigboyosit(Minecraft.getInstance().getEntityModels().bakeLayer(Modelbigboyosit.LAYER_LOCATION));
 					this.getParentModel().copyPropertiesTo(model);
 					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
 					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);

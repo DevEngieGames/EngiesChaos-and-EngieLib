@@ -6,6 +6,13 @@
         "1": "engiegamestesseractcube"
       },
       "name": "default"
+    },
+    "darkmatter": {
+      "map": {
+        "0": "darkmatterengiegamestesseractouter",
+        "1": "engiegamestesseractcube"
+      },
+      "name": "darkmatter"
     }
   }
 }

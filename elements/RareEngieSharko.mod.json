@@ -93,6 +93,69 @@
         "condition": {
           "name": "RareEngieSharkoTDisplayCondition7"
         }
+      },
+      {
+        "model": "Modelboyotamed",
+        "texture": "rareengiesharkonewfox.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "FinneganDisplayCondition"
+        }
+      },
+      {
+        "model": "Modelboyosit",
+        "texture": "rareengiesharkonewfox.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "FinneganDisplayCondition2"
+        }
+      },
+      {
+        "model": "Modelboyolay",
+        "texture": "rareengiesharkonewfox.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "FinneganDisplayCondition3"
+        }
+      },
+      {
+        "model": "Modelboyolayonside",
+        "texture": "rareengiesharkonewfox.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "FinneganDisplayCondition4"
+        }
+      },
+      {
+        "model": "Modelboyosleep",
+        "texture": "rareengiesharkonewfox.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "FinneganDisplayCondition5"
+        }
+      },
+      {
+        "model": "Modelboyolayalt",
+        "texture": "rareengiesharkonewfox.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "FinneganDisplayCondition6"
+        }
+      },
+      {
+        "model": "Modelboyosleepalt",
+        "texture": "rareengiesharkonewfox.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "FinneganDisplayCondition7"
+        }
       }
     ],
     "animations": [],

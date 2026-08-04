@@ -9,8 +9,9 @@ public class RareEngieSharkoTDisplayCondition3Procedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		if ((entity instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false) && (entity instanceof RareEngieSharkoEntity _datEntI ? _datEntI.getEntityData().get(RareEngieSharkoEntity.DATA_SharkoState) : 0) == 2
-				&& (entity instanceof RareEngieSharkoEntity _datEntL2 && _datEntL2.getEntityData().get(RareEngieSharkoEntity.DATA_AlternateState)) == false) {
+		if ((entity instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false) && !(entity.getDisplayName().getString()).equals("Finnegan")
+				&& (entity instanceof RareEngieSharkoEntity _datEntI ? _datEntI.getEntityData().get(RareEngieSharkoEntity.DATA_SharkoState) : 0) == 2
+				&& (entity instanceof RareEngieSharkoEntity _datEntL3 && _datEntL3.getEntityData().get(RareEngieSharkoEntity.DATA_AlternateState)) == false) {
 			return true;
 		}
 		return false;

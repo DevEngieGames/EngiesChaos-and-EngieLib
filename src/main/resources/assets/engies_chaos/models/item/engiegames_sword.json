@@ -2,9 +2,9 @@
   "loader": "forge:separate_transforms",
   "gui_light": "front",
   "base": {
-    "parent": "engies_chaos:custom/engiegames_sword_3d",
+    "parent": "engies_chaos:custom/engiegamesword",
     "textures": {
-      "0": "engies_chaos:block/engiegames_sword_3d",
+      "0": "engies_chaos:block/engiegames_sword",
       "particle": "engies_chaos:item/engiegames_sword"
     }
   },

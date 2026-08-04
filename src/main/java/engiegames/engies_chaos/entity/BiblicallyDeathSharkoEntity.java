@@ -49,6 +49,8 @@ import net.minecraft.nbt.CompoundTag;
 
 import engiegames.engies_chaos.procedures.NonAprilFoolsSharkoVarSpawningProcedure;
 import engiegames.engies_chaos.procedures.BiblicallyDeathSharkoSleepCheckProcedure;
+import engiegames.engies_chaos.procedures.BiblicallyDeathSharkoRightClickedOnEntityProcedure;
+import engiegames.engies_chaos.procedures.BiblicallyDeathSharkoOnEntityTickUpdateProcedure;
 import engiegames.engies_chaos.procedures.BiblicallyDeathSharkoMoveAroundCheckProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
@@ -381,7 +383,20 @@ public class BiblicallyDeathSharkoEntity extends TamableAnimal {
 					this.setPersistenceRequired();
 			}
 		}
+		double x = this.getX();
+		double y = this.getY();
+		double z = this.getZ();
+		Entity entity = this;
+		Level world = this.level;
+
+		BiblicallyDeathSharkoRightClickedOnEntityProcedure.execute(world, x, y, z, entity, sourceentity);
 		return retval;
+	}
+
+	@Override
+	public void baseTick() {
+		super.baseTick();
+		BiblicallyDeathSharkoOnEntityTickUpdateProcedure.execute(this.level, this);
 	}
 
 	@Override

@@ -1,5 +1,6 @@
 package engiegames.engies_chaos.client.renderer;
 
+import net.minecraft.world.level.Level;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.client.renderer.entity.MobRenderer;
@@ -10,10 +11,18 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.Minecraft;
 
+import engiegames.engies_chaos.procedures.MonstrosityDeathSharkoTDisplayConditionProcedure;
+import engiegames.engies_chaos.procedures.MonstrosityDeathSharkoTDisplayCondition7Procedure;
+import engiegames.engies_chaos.procedures.MonstrosityDeathSharkoTDisplayCondition6Procedure;
+import engiegames.engies_chaos.procedures.MonstrosityDeathSharkoTDisplayCondition5Procedure;
+import engiegames.engies_chaos.procedures.MonstrosityDeathSharkoTDisplayCondition4Procedure;
+import engiegames.engies_chaos.procedures.MonstrosityDeathSharkoTDisplayCondition3Procedure;
+import engiegames.engies_chaos.procedures.MonstrosityDeathSharkoTDisplayCondition2Procedure;
+import engiegames.engies_chaos.procedures.MonstrosityDeathSharkoDisplayConditionProcedure;
 import engiegames.engies_chaos.entity.MonstrosityDeathSharkoEntity;
-import engiegames.engies_chaos.client.model.Modelboyosleepalt;
 import engiegames.engies_chaos.client.model.Modelboyo;
 import engiegames.engies_chaos.client.model.Modelbigboyotamed;
+import engiegames.engies_chaos.client.model.Modelbigboyosleepalt;
 import engiegames.engies_chaos.client.model.Modelbigboyosleep;
 import engiegames.engies_chaos.client.model.Modelbigboyosit;
 import engiegames.engies_chaos.client.model.Modelbigboyolayonside;
@@ -32,12 +41,18 @@ public class MonstrosityDeathSharkoRenderer extends MobRenderer<MonstrosityDeath
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, MonstrosityDeathSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-				VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-				EntityModel model = new Modelbigboyo(Minecraft.getInstance().getEntityModels().bakeLayer(Modelbigboyo.LAYER_LOCATION));
-				this.getParentModel().copyPropertiesTo(model);
-				model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
-				model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-				model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (MonstrosityDeathSharkoDisplayConditionProcedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelbigboyo(Minecraft.getInstance().getEntityModels().bakeLayer(Modelbigboyo.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
 			}
 		});
 		this.addLayer(new RenderLayer<MonstrosityDeathSharkoEntity, Modelboyo<MonstrosityDeathSharkoEntity>>(this) {
@@ -45,12 +60,18 @@ public class MonstrosityDeathSharkoRenderer extends MobRenderer<MonstrosityDeath
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, MonstrosityDeathSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-				VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-				EntityModel model = new Modelbigboyotamed(Minecraft.getInstance().getEntityModels().bakeLayer(Modelbigboyotamed.LAYER_LOCATION));
-				this.getParentModel().copyPropertiesTo(model);
-				model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
-				model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-				model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (MonstrosityDeathSharkoTDisplayConditionProcedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelbigboyotamed(Minecraft.getInstance().getEntityModels().bakeLayer(Modelbigboyotamed.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
 			}
 		});
 		this.addLayer(new RenderLayer<MonstrosityDeathSharkoEntity, Modelboyo<MonstrosityDeathSharkoEntity>>(this) {
@@ -58,12 +79,18 @@ public class MonstrosityDeathSharkoRenderer extends MobRenderer<MonstrosityDeath
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, MonstrosityDeathSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-				VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-				EntityModel model = new Modelbigboyosit(Minecraft.getInstance().getEntityModels().bakeLayer(Modelbigboyosit.LAYER_LOCATION));
-				this.getParentModel().copyPropertiesTo(model);
-				model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
-				model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-				model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (MonstrosityDeathSharkoTDisplayCondition2Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelbigboyosit(Minecraft.getInstance().getEntityModels().bakeLayer(Modelbigboyosit.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
 			}
 		});
 		this.addLayer(new RenderLayer<MonstrosityDeathSharkoEntity, Modelboyo<MonstrosityDeathSharkoEntity>>(this) {
@@ -71,12 +98,18 @@ public class MonstrosityDeathSharkoRenderer extends MobRenderer<MonstrosityDeath
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, MonstrosityDeathSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-				VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-				EntityModel model = new Modelbigboyolay(Minecraft.getInstance().getEntityModels().bakeLayer(Modelbigboyolay.LAYER_LOCATION));
-				this.getParentModel().copyPropertiesTo(model);
-				model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
-				model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-				model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (MonstrosityDeathSharkoTDisplayCondition3Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelbigboyolay(Minecraft.getInstance().getEntityModels().bakeLayer(Modelbigboyolay.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
 			}
 		});
 		this.addLayer(new RenderLayer<MonstrosityDeathSharkoEntity, Modelboyo<MonstrosityDeathSharkoEntity>>(this) {
@@ -84,12 +117,18 @@ public class MonstrosityDeathSharkoRenderer extends MobRenderer<MonstrosityDeath
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, MonstrosityDeathSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-				VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-				EntityModel model = new Modelbigboyolayonside(Minecraft.getInstance().getEntityModels().bakeLayer(Modelbigboyolayonside.LAYER_LOCATION));
-				this.getParentModel().copyPropertiesTo(model);
-				model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
-				model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-				model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (MonstrosityDeathSharkoTDisplayCondition4Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelbigboyolayonside(Minecraft.getInstance().getEntityModels().bakeLayer(Modelbigboyolayonside.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
 			}
 		});
 		this.addLayer(new RenderLayer<MonstrosityDeathSharkoEntity, Modelboyo<MonstrosityDeathSharkoEntity>>(this) {
@@ -97,12 +136,18 @@ public class MonstrosityDeathSharkoRenderer extends MobRenderer<MonstrosityDeath
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, MonstrosityDeathSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-				VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-				EntityModel model = new Modelbigboyosleep(Minecraft.getInstance().getEntityModels().bakeLayer(Modelbigboyosleep.LAYER_LOCATION));
-				this.getParentModel().copyPropertiesTo(model);
-				model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
-				model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-				model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (MonstrosityDeathSharkoTDisplayCondition5Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelbigboyosleep(Minecraft.getInstance().getEntityModels().bakeLayer(Modelbigboyosleep.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
 			}
 		});
 		this.addLayer(new RenderLayer<MonstrosityDeathSharkoEntity, Modelboyo<MonstrosityDeathSharkoEntity>>(this) {
@@ -110,12 +155,18 @@ public class MonstrosityDeathSharkoRenderer extends MobRenderer<MonstrosityDeath
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, MonstrosityDeathSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-				VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-				EntityModel model = new Modelbigboyolayalt(Minecraft.getInstance().getEntityModels().bakeLayer(Modelbigboyolayalt.LAYER_LOCATION));
-				this.getParentModel().copyPropertiesTo(model);
-				model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
-				model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-				model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (MonstrosityDeathSharkoTDisplayCondition6Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelbigboyolayalt(Minecraft.getInstance().getEntityModels().bakeLayer(Modelbigboyolayalt.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
 			}
 		});
 		this.addLayer(new RenderLayer<MonstrosityDeathSharkoEntity, Modelboyo<MonstrosityDeathSharkoEntity>>(this) {
@@ -123,12 +174,18 @@ public class MonstrosityDeathSharkoRenderer extends MobRenderer<MonstrosityDeath
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, MonstrosityDeathSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-				VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-				EntityModel model = new Modelboyosleepalt(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyosleepalt.LAYER_LOCATION));
-				this.getParentModel().copyPropertiesTo(model);
-				model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
-				model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-				model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (MonstrosityDeathSharkoTDisplayCondition7Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelbigboyosleepalt(Minecraft.getInstance().getEntityModels().bakeLayer(Modelbigboyosleepalt.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
 			}
 		});
 	}

@@ -21,7 +21,7 @@ import com.mojang.brigadier.arguments.BoolArgumentType;
 public class AllAboutEngieCommand {
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {
-		event.getDispatcher().register(Commands.literal("AllAboutEngie")
+		event.getDispatcher().register(Commands.literal("EngiesChaos")
 
 				.then(Commands.argument("MainType", StringArgumentType.word()).then(Commands.argument("AltType", StringArgumentType.word()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();

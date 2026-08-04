@@ -20,5 +20,6 @@ public class ChallengeInsanityEngieGamesPlushMultiplayerItem extends Item {
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
 		list.add(Component.translatable("item.engies_chaos.challenge_insanity_engie_games_plush_multiplayer.description_0"));
+		list.add(Component.translatable("item.engies_chaos.challenge_insanity_engie_games_plush_multiplayer.description_1"));
 	}
 }

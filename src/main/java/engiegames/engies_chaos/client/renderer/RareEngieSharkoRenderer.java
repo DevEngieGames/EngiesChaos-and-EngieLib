@@ -19,6 +19,13 @@ import engiegames.engies_chaos.procedures.RareEngieSharkoTDisplayCondition4Proce
 import engiegames.engies_chaos.procedures.RareEngieSharkoTDisplayCondition3Procedure;
 import engiegames.engies_chaos.procedures.RareEngieSharkoTDisplayCondition2Procedure;
 import engiegames.engies_chaos.procedures.RareEngieSharkoDisplayConditionProcedure;
+import engiegames.engies_chaos.procedures.FinneganDisplayConditionProcedure;
+import engiegames.engies_chaos.procedures.FinneganDisplayCondition7Procedure;
+import engiegames.engies_chaos.procedures.FinneganDisplayCondition6Procedure;
+import engiegames.engies_chaos.procedures.FinneganDisplayCondition5Procedure;
+import engiegames.engies_chaos.procedures.FinneganDisplayCondition4Procedure;
+import engiegames.engies_chaos.procedures.FinneganDisplayCondition3Procedure;
+import engiegames.engies_chaos.procedures.FinneganDisplayCondition2Procedure;
 import engiegames.engies_chaos.entity.RareEngieSharkoEntity;
 import engiegames.engies_chaos.client.model.Modelboyotamed;
 import engiegames.engies_chaos.client.model.Modelboyosleepalt;
@@ -178,6 +185,139 @@ public class RareEngieSharkoRenderer extends MobRenderer<RareEngieSharkoEntity, 
 				double y = entity.getY();
 				double z = entity.getZ();
 				if (RareEngieSharkoTDisplayCondition7Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelboyosleepalt(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyosleepalt.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<RareEngieSharkoEntity, Modelboyo<RareEngieSharkoEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/rareengiesharkonewfox.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, RareEngieSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (FinneganDisplayConditionProcedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelboyotamed(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyotamed.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<RareEngieSharkoEntity, Modelboyo<RareEngieSharkoEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/rareengiesharkonewfox.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, RareEngieSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (FinneganDisplayCondition2Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelboyosit(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyosit.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<RareEngieSharkoEntity, Modelboyo<RareEngieSharkoEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/rareengiesharkonewfox.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, RareEngieSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (FinneganDisplayCondition3Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelboyolay(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyolay.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<RareEngieSharkoEntity, Modelboyo<RareEngieSharkoEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/rareengiesharkonewfox.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, RareEngieSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (FinneganDisplayCondition4Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelboyolayonside(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyolayonside.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<RareEngieSharkoEntity, Modelboyo<RareEngieSharkoEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/rareengiesharkonewfox.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, RareEngieSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (FinneganDisplayCondition5Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelboyosleep(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyosleep.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<RareEngieSharkoEntity, Modelboyo<RareEngieSharkoEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/rareengiesharkonewfox.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, RareEngieSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (FinneganDisplayCondition6Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelboyolayalt(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyolayalt.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<RareEngieSharkoEntity, Modelboyo<RareEngieSharkoEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/rareengiesharkonewfox.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, RareEngieSharkoEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (FinneganDisplayCondition7Procedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
 					EntityModel model = new Modelboyosleepalt(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyosleepalt.LAYER_LOCATION));
 					this.getParentModel().copyPropertiesTo(model);

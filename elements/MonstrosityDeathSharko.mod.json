@@ -26,49 +26,73 @@
         "model": "Modelbigboyo",
         "texture": "monstrositynew.png",
         "disableHurtOverlay": false,
-        "glow": false
+        "glow": false,
+        "condition": {
+          "name": "MonstrosityDeathSharkoDisplayCondition"
+        }
       },
       {
         "model": "Modelbigboyotamed",
         "texture": "monstrositynew.png",
         "disableHurtOverlay": false,
-        "glow": false
+        "glow": false,
+        "condition": {
+          "name": "MonstrosityDeathSharkoTDisplayCondition"
+        }
       },
       {
         "model": "Modelbigboyosit",
         "texture": "monstrositynew.png",
         "disableHurtOverlay": false,
-        "glow": false
+        "glow": false,
+        "condition": {
+          "name": "MonstrosityDeathSharkoTDisplayCondition2"
+        }
       },
       {
         "model": "Modelbigboyolay",
         "texture": "monstrositynew.png",
         "disableHurtOverlay": false,
-        "glow": false
+        "glow": false,
+        "condition": {
+          "name": "MonstrosityDeathSharkoTDisplayCondition3"
+        }
       },
       {
         "model": "Modelbigboyolayonside",
         "texture": "monstrositynew.png",
         "disableHurtOverlay": false,
-        "glow": false
+        "glow": false,
+        "condition": {
+          "name": "MonstrosityDeathSharkoTDisplayCondition4"
+        }
       },
       {
         "model": "Modelbigboyosleep",
         "texture": "monstrositynewtired.png",
         "disableHurtOverlay": false,
-        "glow": false
+        "glow": false,
+        "condition": {
+          "name": "MonstrosityDeathSharkoTDisplayCondition5"
+        }
       },
       {
         "model": "Modelbigboyolayalt",
         "texture": "monstrositynew.png",
         "disableHurtOverlay": false,
-        "glow": false
+        "glow": false,
+        "condition": {
+          "name": "MonstrosityDeathSharkoTDisplayCondition6"
+        }
       },
       {
-        "model": "Modelboyosleepalt",
+        "model": "Modelbigboyosleepalt",
         "texture": "monstrositynewtired.png",
         "disableHurtOverlay": false,
-        "glow": false
+        "glow": false,
+        "condition": {
+          "name": "MonstrosityDeathSharkoTDisplayCondition7"
+        }
       }
     ],
     "animations": [],

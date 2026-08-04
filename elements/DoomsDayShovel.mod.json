@@ -11,10 +11,7 @@
     "guiTexture": "",
     "name": "Doomsday Shovel",
     "specialInformation": {
-      "fixedValue": [
-        "Congrats!"
-      ],
-      "name": "DescriptionOfItem2"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

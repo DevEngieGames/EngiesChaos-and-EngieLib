@@ -11,10 +11,7 @@
     "guiTexture": "",
     "name": "Antimatter EngieGames' Axe",
     "specialInformation": {
-      "fixedValue": [
-        "Looks like a battle axe."
-      ],
-      "name": "DescriptionOfItem2"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

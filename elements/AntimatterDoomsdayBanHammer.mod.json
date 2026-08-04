@@ -11,10 +11,7 @@
     "guiTexture": "antimatterdoomsdaybanpixel",
     "name": "Antimatter Doomsday Ban Hammer",
     "specialInformation": {
-      "fixedValue": [
-        "Congrats!"
-      ],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

@@ -473,6 +473,7 @@ public class CosmicDeathSharkoRenderer extends MobRenderer<CosmicDeathSharkoEnti
 	@Override
 	protected void scale(CosmicDeathSharkoEntity entity, PoseStack poseStack, float f) {
 		poseStack.scale(1.5f, 1.5f, 1.5f);
+		poseStack.scale(entity.getScale(), entity.getScale(), entity.getScale());
 	}
 
 	@Override

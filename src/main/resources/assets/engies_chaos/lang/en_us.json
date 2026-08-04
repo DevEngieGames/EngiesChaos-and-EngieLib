@@ -1039,8 +1039,8 @@
   "item.engies_chaos.netherite_insanity_plush": "Netherite Insanity Plush",
   "item.engies_chaos.mad_engie_plush.description_0": "Poor dude lost 12 ranked matches in a row... Only if he could take a break...",
   "item.engies_chaos.mad_engie_plush": "Mad Engie Plush",
-  "item.engies_chaos.engie_plush": "EngieGames Plush (Yes, the REAL EngieGames)",
-  "item.engies_chaos.engie_plush.description_0": "The man himself in your hands.",
+  "item.engies_chaos.engie_plush": "EngieGames Plush",
+  "item.engies_chaos.engie_plush.description_0": "",
   "item.engies_chaos.engie_plush.description_1": "Thanks for playing RE:All About Engie.",
   "item.engies_chaos.dev_engie_plush": "DevEngie Plush",
   "item.engies_chaos.dev_engie_plush.description_1": "We\u0027ll miss you DevEngie.",
@@ -2160,7 +2160,7 @@
   "item.engies_chaos.iron_outraged_engie_plush": "Iron Outraged Engie Plush",
   "item.engies_chaos.iron_monstrosity_engie_plush": "Iron Monstrosity Engie Plush",
   "item.engies_chaos.iron_insanity_plush": "Iron Insanity Plush",
-  "item.engies_chaos.old_enraged_plush.description_0": "Given out by the Testers and Developers.",
+  "item.engies_chaos.old_enraged_plush.description_0": "Given out by the Testers and Developer.",
   "item.engies_chaos.old_enraged_plush": "Old Enraged Engie Plush",
   "item.engies_chaos.challenge_insanity_engie_games_plush_solo": "[SOLO] Insanity EngieGames Plush",
   "item.engies_chaos.challenge_insanity_engie_games_plush_solo.description_0": "Congrats!",
@@ -2777,5 +2777,6 @@
   "item.engies_chaos.engies_chaos_plaque.description_1": "I don\u0027t want to remove DevEngie\u0027s work unless I have to.",
   "item.engies_chaos.engies_chaos_plaque.description_0": "No, the All About Engie plaque hasn\u0027t been removed.",
   "item.engies_chaos.engies_chaos_plaque": "Engie\u0027s Chaos Plaque",
-  "itemGroup.engies_chaos.engies_chaos_food": "Engie\u0027s Chaos Food"
+  "itemGroup.engies_chaos.engies_chaos_food": "Engie\u0027s Chaos Food",
+  "item.engies_chaos.challenge_insanity_engie_games_plush_multiplayer.description_1": "Try beating this solo!"
 }
