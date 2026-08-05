@@ -2,217 +2,217 @@
   "mappings": {
     "hostileengieiron": {
       "map": {
-        "1": "ironhostileengieplush"
+        "0": "ironhostileengieplush"
       },
       "name": "hostileengieiron"
     },
     "outrageddiamond": {
       "map": {
-        "1": "diamondoutragedengie"
+        "0": "diamondoutragedengie"
       },
       "name": "outrageddiamond"
     },
     "monstrositynetherite": {
       "map": {
-        "1": "netheritemonstrosityengie"
+        "0": "netheritemonstrosityengie"
       },
       "name": "monstrositynetherite"
     },
     "hostileengiediamond": {
       "map": {
-        "1": "diamondhostileengieplush"
+        "0": "diamondhostileengieplush"
       },
       "name": "hostileengiediamond"
     },
     "outragedgold": {
       "map": {
-        "1": "goldoutragedengie"
+        "0": "goldoutragedengie"
       },
       "name": "outragedgold"
     },
     "biblicallynetherite": {
       "map": {
-        "1": "netheritebiblicallyplush"
+        "0": "netheritebiblicallyplush"
       },
       "name": "biblicallynetherite"
     },
     "maddiamond": {
       "map": {
-        "1": "goldmadengie"
+        "0": "diamondmadengie"
       },
       "name": "maddiamond"
     },
     "biblicallygold": {
       "map": {
-        "1": "goldbiblicallyplush"
+        "0": "goldbiblicallyplush"
       },
       "name": "biblicallygold"
     },
     "madgold": {
       "map": {
-        "1": "goldmadengie"
+        "0": "goldmadengie"
       },
       "name": "madgold"
     },
     "enragedgold": {
       "map": {
-        "1": "goldenragedengie"
+        "0": "goldenragedengie"
       },
       "name": "enragedgold"
     },
     "enraged": {
       "map": {
-        "1": "enragedengie"
+        "0": "enragedengie"
       },
       "name": "enraged"
     },
     "mad": {
       "map": {
-        "1": "madengie"
+        "0": "madengie"
       },
       "name": "mad"
     },
     "default": {
       "map": {
-        "1": "plush"
+        "0": "plush"
       },
       "name": "default"
     },
     "hostileengienetherite": {
       "map": {
-        "1": "netheritehostileengieplush"
+        "0": "netheritehostileengieplush"
       },
       "name": "hostileengienetherite"
     },
     "monstrosityiron": {
       "map": {
-        "1": "ironmonstrosityengie"
+        "0": "ironmonstrosityengie"
       },
       "name": "monstrosityiron"
     },
     "angryiron": {
       "map": {
-        "1": "ironangryengie"
+        "0": "ironangryengie"
       },
       "name": "angryiron"
     },
     "enrageddiamond": {
       "map": {
-        "1": "diamondenragedengie"
+        "0": "diamondenragedengie"
       },
       "name": "enrageddiamond"
     },
     "outragednetherite": {
       "map": {
-        "1": "netheriteoutragedengie"
+        "0": "netheriteoutragedengie"
       },
       "name": "outragednetherite"
     },
     "biblicallydiamond": {
       "map": {
-        "1": "diamondbiblicallyplush"
+        "0": "diamondbiblicallyplush"
       },
       "name": "biblicallydiamond"
     },
     "madiron": {
       "map": {
-        "1": "ironmadengie"
+        "0": "ironmadengie"
       },
       "name": "madiron"
     },
     "hostileengiegold": {
       "map": {
-        "1": "goldhostileengieplush"
+        "0": "goldhostileengieplush"
       },
       "name": "hostileengiegold"
     },
     "outraged": {
       "map": {
-        "1": "outragedengie"
+        "0": "outragedengie"
       },
       "name": "outraged"
     },
     "angrynetherite": {
       "map": {
-        "1": "netheriteangryengie"
+        "0": "netheriteangryengie"
       },
       "name": "angrynetherite"
     },
     "angry": {
       "map": {
-        "1": "angryengie"
+        "0": "angryengie"
       },
       "name": "angry"
     },
     "hostileengie": {
       "map": {
-        "1": "hostileengieplush"
+        "0": "hostileengieplush"
       },
       "name": "hostileengie"
     },
     "monstrosity": {
       "map": {
-        "1": "monstrosityengie"
+        "0": "monstrosityengie"
       },
       "name": "monstrosity"
     },
     "angrygold": {
       "map": {
-        "1": "goldangryengie"
+        "0": "goldangryengie"
       },
       "name": "angrygold"
     },
     "biblically": {
       "map": {
-        "1": "biblicallyplush"
+        "0": "biblicallyplush"
       },
       "name": "biblically"
     },
     "enragediron": {
       "map": {
-        "1": "ironenragedengie"
+        "0": "ironenragedengie"
       },
       "name": "enragediron"
     },
     "monstrositygold": {
       "map": {
-        "1": "goldmonstrosityengie"
+        "0": "goldmonstrosityengie"
       },
       "name": "monstrositygold"
     },
     "madnetherite": {
       "map": {
-        "1": "netheritemadengie"
+        "0": "netheritemadengie"
       },
       "name": "madnetherite"
     },
     "enragednetherite": {
       "map": {
-        "1": "netheriteenragedengie"
+        "0": "netheriteenragedengie"
       },
       "name": "enragednetherite"
     },
     "biblicallyiron": {
       "map": {
-        "1": "ironbiblicallyplush"
+        "0": "ironbiblicallyplush"
       },
       "name": "biblicallyiron"
     },
     "outragediron": {
       "map": {
-        "1": "ironoutragedengie"
+        "0": "ironoutragedengie"
       },
       "name": "outragediron"
     },
     "monstrositydiamond": {
       "map": {
-        "1": "diamondmonstrosityengie"
+        "0": "diamondmonstrosityengie"
       },
       "name": "monstrositydiamond"
     },
     "angrydiamond": {
       "map": {
-        "1": "diamondangryengie"
+        "0": "diamondangryengie"
       },
       "name": "angrydiamond"
     }

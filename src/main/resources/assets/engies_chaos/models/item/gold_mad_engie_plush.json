@@ -1,7 +1,7 @@
 {
   "parent": "engies_chaos:custom/hostileplush",
   "textures": {
-    "1": "engies_chaos:block/goldmadengie",
+    "0": "engies_chaos:block/goldmadengie",
     "particle": "engies_chaos:item/volc"
   }
 }
