@@ -1,26 +1,22 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "abc",
-    " de"
-  ],
-  "key": {
-    "a": {
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
       "item": "engies_chaos:mindscape_engies_axe"
     },
-    "b": {
+    {
       "item": "engies_chaos:mindscape_engies_pickaxe"
     },
-    "c": {
+    {
       "item": "engies_chaos:mindscape_engies_shovel"
     },
-    "d": {
+    {
       "item": "engies_chaos:mindscape_engies_sword"
     },
-    "e": {
+    {
       "item": "engies_chaos:mindscape_engies_hoe"
     }
-  },
+  ],
   "result": {
     "item": "engies_chaos:mindscape_engies_aiot",
     "count": 1

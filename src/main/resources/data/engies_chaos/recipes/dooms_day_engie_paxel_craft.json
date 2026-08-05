@@ -1,27 +1,23 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "group": "doomsdayengiepaxel",
-  "pattern": [
-    "abc",
-    " de"
-  ],
-  "key": {
-    "a": {
+  "ingredients": [
+    {
       "item": "engies_chaos:dooms_day_axe"
     },
-    "b": {
+    {
       "item": "engies_chaos:dooms_day_pickaxe"
     },
-    "c": {
+    {
       "item": "engies_chaos:dooms_day_shovel"
     },
-    "d": {
+    {
       "item": "engies_chaos:dooms_day_sword"
     },
-    "e": {
+    {
       "item": "engies_chaos:dooms_day_hoe"
     }
-  },
+  ],
   "result": {
     "item": "engies_chaos:dooms_day_aiot",
     "count": 1

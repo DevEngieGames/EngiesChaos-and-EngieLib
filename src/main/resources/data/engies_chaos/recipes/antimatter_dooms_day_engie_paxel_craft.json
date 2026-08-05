@@ -1,27 +1,23 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "group": "doomsdayengiepaxel",
-  "pattern": [
-    "abc",
-    " de"
-  ],
-  "key": {
-    "a": {
+  "ingredients": [
+    {
       "item": "engies_chaos:antimatter_doomsday_axe"
     },
-    "b": {
+    {
       "item": "engies_chaos:antimatter_doomsday_pickaxe"
     },
-    "c": {
+    {
       "item": "engies_chaos:antimatter_doomsday_shovel"
     },
-    "d": {
+    {
       "item": "engies_chaos:antimatter_doomsday_sword"
     },
-    "e": {
+    {
       "item": "engies_chaos:antimatter_doomsday_hoe"
     }
-  },
+  ],
   "result": {
     "item": "engies_chaos:antimatter_doomsday_aiot",
     "count": 1

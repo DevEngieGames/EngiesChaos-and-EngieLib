@@ -1,26 +1,22 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "abc",
-    " de"
-  ],
-  "key": {
-    "a": {
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
       "item": "engies_chaos:roughian_engie_games_axe"
     },
-    "b": {
+    {
       "item": "engies_chaos:roughian_engie_games_pickaxe"
     },
-    "c": {
+    {
       "item": "engies_chaos:roughian_engie_games_shovel"
     },
-    "d": {
+    {
       "item": "engies_chaos:engie_games_hallow_scythe"
     },
-    "e": {
+    {
       "item": "engies_chaos:roughian_engie_games_hoe"
     }
-  },
+  ],
   "result": {
     "item": "engies_chaos:roughian_engie_games_aiot",
     "count": 1

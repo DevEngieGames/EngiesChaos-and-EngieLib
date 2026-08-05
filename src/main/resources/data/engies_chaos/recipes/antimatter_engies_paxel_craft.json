@@ -1,27 +1,23 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "group": "engiespaxel",
-  "pattern": [
-    "abc",
-    " de"
-  ],
-  "key": {
-    "a": {
+  "ingredients": [
+    {
       "item": "engies_chaos:antimatter_engies_axe"
     },
-    "b": {
+    {
       "item": "engies_chaos:antimatter_engies_pickaxe"
     },
-    "c": {
+    {
       "item": "engies_chaos:antimatter_engies_shovel"
     },
-    "d": {
+    {
       "item": "engies_chaos:antimatter_engies_sword"
     },
-    "e": {
+    {
       "item": "engies_chaos:antimatter_engies_hoe"
     }
-  },
+  ],
   "result": {
     "item": "engies_chaos:antimatter_engies_aiot",
     "count": 1

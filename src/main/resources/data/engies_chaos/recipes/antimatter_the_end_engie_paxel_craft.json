@@ -1,27 +1,23 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "group": "theendengiepaxel",
-  "pattern": [
-    "abc",
-    " de"
-  ],
-  "key": {
-    "a": {
+  "ingredients": [
+    {
       "item": "engies_chaos:antimatter_the_end_axe"
     },
-    "b": {
+    {
       "item": "engies_chaos:antimatter_the_end_pickaxe"
     },
-    "c": {
+    {
       "item": "engies_chaos:antimatter_the_end_shovel"
     },
-    "d": {
+    {
       "item": "engies_chaos:antimatter_the_end_sword"
     },
-    "e": {
+    {
       "item": "engies_chaos:antimatter_the_end_hoe"
     }
-  },
+  ],
   "result": {
     "item": "engies_chaos:antimatter_the_end_aiot",
     "count": 1

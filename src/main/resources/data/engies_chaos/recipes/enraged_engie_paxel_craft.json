@@ -1,27 +1,23 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "group": "enragedengiepaxel",
-  "pattern": [
-    "abc",
-    " de"
-  ],
-  "key": {
-    "a": {
+  "ingredients": [
+    {
       "item": "engies_chaos:enraged_engie_axe"
     },
-    "b": {
+    {
       "item": "engies_chaos:enraged_engie_pickaxe"
     },
-    "c": {
+    {
       "item": "engies_chaos:enraged_engie_shovel"
     },
-    "d": {
+    {
       "item": "engies_chaos:enraged_engie_sword"
     },
-    "e": {
+    {
       "item": "engies_chaos:enraged_engie_hoe"
     }
-  },
+  ],
   "result": {
     "item": "engies_chaos:enraged_engie_aiot",
     "count": 1
