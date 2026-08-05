@@ -1,118 +1,10 @@
 {
   "mappings": {
-    "default": {
+    "hostileengieiron": {
       "map": {
-        "1": "minecraft:black_stained_glass"
+        "1": "ironhostileengieplush"
       },
-      "name": "default"
-    },
-    "mad": {
-      "map": {
-        "1": "madengie"
-      },
-      "name": "mad"
-    },
-    "madiron": {
-      "map": {
-        "1": "ironmadengie"
-      },
-      "name": "madiron"
-    },
-    "madgold": {
-      "map": {
-        "1": "goldmadengie"
-      },
-      "name": "madgold"
-    },
-    "maddiamond": {
-      "map": {
-        "1": "diamondmadengie"
-      },
-      "name": "maddiamond"
-    },
-    "madnetherite": {
-      "map": {
-        "1": "netheritemadengie"
-      },
-      "name": "madnetherite"
-    },
-    "angry": {
-      "map": {
-        "1": "angryengie"
-      },
-      "name": "angry"
-    },
-    "angryiron": {
-      "map": {
-        "1": "ironangryengie"
-      },
-      "name": "angryiron"
-    },
-    "angrygold": {
-      "map": {
-        "1": "goldangryengie"
-      },
-      "name": "angrygold"
-    },
-    "angrydiamond": {
-      "map": {
-        "1": "diamondangryengie"
-      },
-      "name": "angrydiamond"
-    },
-    "angrynetherite": {
-      "map": {
-        "1": "netheriteangryengie"
-      },
-      "name": "angrynetherite"
-    },
-    "enraged": {
-      "map": {
-        "1": "enragedengie"
-      },
-      "name": "enraged"
-    },
-    "enragediron": {
-      "map": {
-        "1": "ironenragedengie"
-      },
-      "name": "enragediron"
-    },
-    "enragedgold": {
-      "map": {
-        "1": "goldenragedengie"
-      },
-      "name": "enragedgold"
-    },
-    "enrageddiamond": {
-      "map": {
-        "1": "diamondenragedengie"
-      },
-      "name": "enrageddiamond"
-    },
-    "enragednetherite": {
-      "map": {
-        "1": "netheriteenragedengie"
-      },
-      "name": "enragednetherite"
-    },
-    "outraged": {
-      "map": {
-        "1": "outragedengie"
-      },
-      "name": "outraged"
-    },
-    "outragediron": {
-      "map": {
-        "1": "ironoutragedengie"
-      },
-      "name": "outragediron"
-    },
-    "outragedgold": {
-      "map": {
-        "1": "goldoutragedengie"
-      },
-      "name": "outragedgold"
+      "name": "hostileengieiron"
     },
     "outrageddiamond": {
       "map": {
@@ -120,89 +12,11 @@
       },
       "name": "outrageddiamond"
     },
-    "outragednetherite": {
-      "map": {
-        "1": "netheriteoutragedengie"
-      },
-      "name": "outragednetherite"
-    },
-    "biblically": {
-      "map": {
-        "1": "biblicallyplush"
-      },
-      "name": "biblically"
-    },
-    "biblicallyiron": {
-      "map": {
-        "1": "ironbiblicallyplush"
-      },
-      "name": "biblicallyiron"
-    },
-    "biblicallygold": {
-      "map": {
-        "1": "goldbiblicallyplush"
-      },
-      "name": "biblicallygold"
-    },
-    "biblicallydiamond": {
-      "map": {
-        "1": "diamondbiblicallyplush"
-      },
-      "name": "biblicallydiamond"
-    },
-    "biblicallynetherite": {
-      "map": {
-        "1": "netheritebiblicallyplush"
-      },
-      "name": "biblicallynetherite"
-    },
-    "monstrosity": {
-      "map": {
-        "1": "monstrosityengie"
-      },
-      "name": "monstrosity"
-    },
-    "monstrosityiron": {
-      "map": {
-        "1": "ironmonstrosityengie"
-      },
-      "name": "monstrosityiron"
-    },
-    "monstrositygold": {
-      "map": {
-        "1": "goldmonstrosityengie"
-      },
-      "name": "monstrositygold"
-    },
-    "monstrositydiamond": {
-      "map": {
-        "1": "diamondmonstrosityengie"
-      },
-      "name": "monstrositydiamond"
-    },
     "monstrositynetherite": {
       "map": {
         "1": "netheritemonstrosityengie"
       },
       "name": "monstrositynetherite"
-    },
-    "hostileengie": {
-      "map": {
-        "1": "hostileengieplush"
-      },
-      "name": "hostileengie"
-    },
-    "hostileengieiron": {
-      "map": {
-        "1": "ironhostileengieplush"
-      },
-      "name": "hostileengieiron"
-    },
-    "hostileengiegold": {
-      "map": {
-        "1": "goldhostileengieplush"
-      },
-      "name": "hostileengiegold"
     },
     "hostileengiediamond": {
       "map": {
@@ -210,11 +24,197 @@
       },
       "name": "hostileengiediamond"
     },
+    "outragedgold": {
+      "map": {
+        "1": "goldoutragedengie"
+      },
+      "name": "outragedgold"
+    },
+    "biblicallynetherite": {
+      "map": {
+        "1": "netheritebiblicallyplush"
+      },
+      "name": "biblicallynetherite"
+    },
+    "maddiamond": {
+      "map": {
+        "1": "goldmadengie"
+      },
+      "name": "maddiamond"
+    },
+    "biblicallygold": {
+      "map": {
+        "1": "goldbiblicallyplush"
+      },
+      "name": "biblicallygold"
+    },
+    "madgold": {
+      "map": {
+        "1": "goldmadengie"
+      },
+      "name": "madgold"
+    },
+    "enragedgold": {
+      "map": {
+        "1": "goldenragedengie"
+      },
+      "name": "enragedgold"
+    },
+    "enraged": {
+      "map": {
+        "1": "enragedengie"
+      },
+      "name": "enraged"
+    },
+    "mad": {
+      "map": {
+        "1": "madengie"
+      },
+      "name": "mad"
+    },
+    "default": {
+      "map": {
+        "1": "plush"
+      },
+      "name": "default"
+    },
     "hostileengienetherite": {
       "map": {
         "1": "netheritehostileengieplush"
       },
       "name": "hostileengienetherite"
+    },
+    "monstrosityiron": {
+      "map": {
+        "1": "ironmonstrosityengie"
+      },
+      "name": "monstrosityiron"
+    },
+    "angryiron": {
+      "map": {
+        "1": "ironangryengie"
+      },
+      "name": "angryiron"
+    },
+    "enrageddiamond": {
+      "map": {
+        "1": "diamondenragedengie"
+      },
+      "name": "enrageddiamond"
+    },
+    "outragednetherite": {
+      "map": {
+        "1": "netheriteoutragedengie"
+      },
+      "name": "outragednetherite"
+    },
+    "biblicallydiamond": {
+      "map": {
+        "1": "diamondbiblicallyplush"
+      },
+      "name": "biblicallydiamond"
+    },
+    "madiron": {
+      "map": {
+        "1": "ironmadengie"
+      },
+      "name": "madiron"
+    },
+    "hostileengiegold": {
+      "map": {
+        "1": "goldhostileengieplush"
+      },
+      "name": "hostileengiegold"
+    },
+    "outraged": {
+      "map": {
+        "1": "outragedengie"
+      },
+      "name": "outraged"
+    },
+    "angrynetherite": {
+      "map": {
+        "1": "netheriteangryengie"
+      },
+      "name": "angrynetherite"
+    },
+    "angry": {
+      "map": {
+        "1": "angryengie"
+      },
+      "name": "angry"
+    },
+    "hostileengie": {
+      "map": {
+        "1": "hostileengieplush"
+      },
+      "name": "hostileengie"
+    },
+    "monstrosity": {
+      "map": {
+        "1": "monstrosityengie"
+      },
+      "name": "monstrosity"
+    },
+    "angrygold": {
+      "map": {
+        "1": "goldangryengie"
+      },
+      "name": "angrygold"
+    },
+    "biblically": {
+      "map": {
+        "1": "biblicallyplush"
+      },
+      "name": "biblically"
+    },
+    "enragediron": {
+      "map": {
+        "1": "ironenragedengie"
+      },
+      "name": "enragediron"
+    },
+    "monstrositygold": {
+      "map": {
+        "1": "goldmonstrosityengie"
+      },
+      "name": "monstrositygold"
+    },
+    "madnetherite": {
+      "map": {
+        "1": "netheritemadengie"
+      },
+      "name": "madnetherite"
+    },
+    "enragednetherite": {
+      "map": {
+        "1": "netheriteenragedengie"
+      },
+      "name": "enragednetherite"
+    },
+    "biblicallyiron": {
+      "map": {
+        "1": "ironbiblicallyplush"
+      },
+      "name": "biblicallyiron"
+    },
+    "outragediron": {
+      "map": {
+        "1": "ironoutragedengie"
+      },
+      "name": "outragediron"
+    },
+    "monstrositydiamond": {
+      "map": {
+        "1": "diamondmonstrosityengie"
+      },
+      "name": "monstrositydiamond"
+    },
+    "angrydiamond": {
+      "map": {
+        "1": "diamondangryengie"
+      },
+      "name": "angrydiamond"
     }
   }
 }

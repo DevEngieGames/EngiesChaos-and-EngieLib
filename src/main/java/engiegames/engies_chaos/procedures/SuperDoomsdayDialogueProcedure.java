@@ -43,7 +43,7 @@ public class SuperDoomsdayDialogueProcedure {
 				if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == true && EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart == true) {
 					EngiesChaosModVariables.MapVariables.get(world).timecheckstop = true;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (EngiesChaosModVariables.MapVariables.get(world).ewrathtimenighttimerblock == false) {
+					if (EngiesChaosModVariables.MapVariables.get(world).sddaytimenighttimerblock == false) {
 						EngiesChaosModVariables.MapVariables.get(world).TimeUntilNight = EngiesChaosModVariables.MapVariables.get(world).TimeUntilNight + 0.05;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						if (EngiesChaosModVariables.MapVariables.get(world).TimeUntilNight >= 43) {
@@ -154,7 +154,7 @@ public class SuperDoomsdayDialogueProcedure {
 														EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 														EngiesChaosModVariables.MapVariables.get(world).doomsdayaltsongtimer = 191;
 														EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-														EngiesChaosModVariables.MapVariables.get(world).ewrathtimerminutes = Math.round(Mth.nextDouble(RandomSource.create(), 7, 30));
+														EngiesChaosModVariables.MapVariables.get(world).sddaytimerminutes = Math.round(Mth.nextDouble(RandomSource.create(), 7, 30));
 														EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 														EngiesChaosMod.queueServerWork(1, () -> {
 															if (EngiesChaosModVariables.MapVariables.get(world).sddaytimerminutes == 30) {
@@ -169,7 +169,7 @@ public class SuperDoomsdayDialogueProcedure {
 															}
 														});
 														EngiesChaosMod.queueServerWork(2, () -> {
-															EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime = 60 * EngiesChaosModVariables.MapVariables.get(world).sddaytimerminutes
+															EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime = 60 * EngiesChaosModVariables.MapVariables.get(world).sddaytimerminutes
 																	+ EngiesChaosModVariables.MapVariables.get(world).sddaytimerseconds;
 															EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 														});
@@ -209,7 +209,7 @@ public class SuperDoomsdayDialogueProcedure {
 																		("effect give @a minecraft:regeneration " + new java.text.DecimalFormat("##").format(EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime) + " 1 true"));
 															EngiesChaosModVariables.MapVariables.get(world).ddayprophshow = true;
 															EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-															EngiesChaosModVariables.MapVariables.get(world).engieswrathstart = true;
+															EngiesChaosModVariables.MapVariables.get(world).sddaystart = true;
 															EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 															EngiesChaosModVariables.MapVariables.get(world).BYEBYE = true;
 															EngiesChaosModVariables.MapVariables.get(world).syncData(world);

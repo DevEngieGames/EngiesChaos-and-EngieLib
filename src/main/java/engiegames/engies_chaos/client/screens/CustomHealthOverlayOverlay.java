@@ -11,14 +11,20 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.Component;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.Minecraft;
 
+import engiegames.engies_chaos.procedures.TesterCheckProcedure;
+import engiegames.engies_chaos.procedures.Only16CharactersProcedure;
 import engiegames.engies_chaos.procedures.MaxHealthCheckProcedure;
+import engiegames.engies_chaos.procedures.IdeaGiverCheckProcedure;
 import engiegames.engies_chaos.procedures.HealthCheckProcedure;
-import engiegames.engies_chaos.procedures.HealthBelow50butabove45Procedure;
+import engiegames.engies_chaos.procedures.HealthCheck3Procedure;
+import engiegames.engies_chaos.procedures.HealthCheck2Procedure;
+import engiegames.engies_chaos.procedures.DevCheckProcedure;
 import engiegames.engies_chaos.procedures.CustomHealthOverlayDisplayOverlayIngameProcedure;
+import engiegames.engies_chaos.procedures.ContentCreatorCheckProcedure;
+import engiegames.engies_chaos.procedures.BetaTesterCheckProcedure;
 import engiegames.engies_chaos.procedures.ArmorCheckProcedure;
 import engiegames.engies_chaos.procedures.AbsorptionHealthCheckProcedure;
 
@@ -49,104 +55,49 @@ public class CustomHealthOverlayOverlay {
 		RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		if (CustomHealthOverlayDisplayOverlayIngameProcedure.execute(entity)) {
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/healthcover.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -90, h - 39, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/healthcover.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -82, h - 39, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/healthcover.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -74, h - 39, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/healthcover.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -66, h - 39, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/healthcover.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -58, h - 39, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/healthcover.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -50, h - 39, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/healthcover.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -42, h - 39, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/healthcover.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -34, h - 39, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/absorptioncover.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -90, h - 47, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/absorptioncover.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -82, h - 47, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/absorptioncover.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -74, h - 47, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/absorptioncover.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -66, h - 47, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/armorcover.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -42, h - 47, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/armorcover.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -50, h - 47, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/armorcover.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -58, h - 47, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/armorcover.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -34, h - 47, 0, 0, 0, 0, 0, 0);
-
-			if (HealthBelow50butabove45Procedure.execute(entity)) {
-				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/health50andbelow.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -90, h - 39, 0, 0, 0, 0, 0, 0);
+			if (HealthCheck2Procedure.execute(entity)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newhudnormhp.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), 0, h - 127, 0, 0, 151, 127, 151, 127);
 			}
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/health45andbelow.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -90, h - 39, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/health40andbelow.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -90, h - 39, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/health35andbelow.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -90, h - 39, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/health30andbelow.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -90, h - 39, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/health25andbelow.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -90, h - 39, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/health20andbelow.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -90, h - 39, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/health15andbelow.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -90, h - 39, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/health10andbelow.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -90, h - 39, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/health5andbelow.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -90, h - 39, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/health1andbelownon1hp.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -90, h - 39, 0, 0, 0, 0, 0, 0);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/health1andbelow1hp.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -90, h - 39, 0, 0, 0, 0, 0, 0);
-
+			if (HealthCheck3Procedure.execute(entity)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newhudhalfandlowerhp.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), 0, h - 127, 0, 0, 151, 127, 151, 127);
+			}
+			if (TesterCheckProcedure.execute(entity)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/testericon.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), 0, h - 127, 0, 0, 151, 127, 151, 127);
+			}
+			if (BetaTesterCheckProcedure.execute(entity)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/betatestericon.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), 0, h - 127, 0, 0, 151, 127, 151, 127);
+			}
+			if (ContentCreatorCheckProcedure.execute(entity)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/contentcreatoricon.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), 0, h - 127, 0, 0, 151, 127, 151, 127);
+			}
+			if (IdeaGiverCheckProcedure.execute(entity)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/ideagivericon.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), 0, h - 127, 0, 0, 151, 127, 151, 127);
+			}
+			if (DevCheckProcedure.execute(entity)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/devicon.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), 0, h - 127, 0, 0, 151, 127, 151, 127);
+			}
 			Minecraft.getInstance().font.draw(event.getPoseStack(),
 
-					HealthCheckProcedure.execute(entity), w / 2 + -89, h - 39, -2143665);
-			Minecraft.getInstance().font.draw(event.getPoseStack(), Component.translatable("gui.engies_chaos.custom_health_overlay.label_empty"), w / 2 + -64, h - 39, -2143665);
+					HealthCheckProcedure.execute(entity), 32, h - 64, -55256);
 			Minecraft.getInstance().font.draw(event.getPoseStack(),
 
-					MaxHealthCheckProcedure.execute(entity), w / 2 + -52, h - 39, -2143665);
+					ArmorCheckProcedure.execute(entity), 26, h - 15, -1842205);
 			Minecraft.getInstance().font.draw(event.getPoseStack(),
 
-					AbsorptionHealthCheckProcedure.execute(entity), w / 2 + -89, h - 47, -2125238);
+					MaxHealthCheckProcedure.execute(entity), 26, h - 44, -4511704);
 			Minecraft.getInstance().font.draw(event.getPoseStack(),
 
-					ArmorCheckProcedure.execute(entity), w / 2 + -57, h - 47, -1842205);
+					AbsorptionHealthCheckProcedure.execute(entity), 26, h - 30, -17624);
+			Minecraft.getInstance().font.draw(event.getPoseStack(),
+
+					Only16CharactersProcedure.execute(entity), 7, h - 94, -1);
 		}
 		RenderSystem.depthMask(true);
 		RenderSystem.defaultBlendFunc();

@@ -5,44 +5,323 @@
     "priority": "NORMAL",
     "components": [
       {
-        "type": "label",
+        "type": "image",
         "data": {
-          "name": "label_0",
-          "text": {
-            "fixedValue": "0",
-            "name": "DoomsDayAliveCheck"
-          },
-          "color": {
-            "value": -16711936,
-            "falpha": 0.0
-          },
+          "image": "ddaybottomleft.png",
+          "use1Xscale": true,
+          "anchorPoint": "BOTTOM_RIGHT",
+          "x": 334,
+          "y": 212,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "ddaybottomleftalive.png",
+          "use1Xscale": true,
           "displayCondition": {
             "name": "DoomsDayAliveOverlayCheck"
           },
-          "anchorPoint": "CENTER",
-          "x": 0,
-          "y": 0,
+          "anchorPoint": "BOTTOM_RIGHT",
+          "x": 334,
+          "y": 212,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "ddaybottomleftdead.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DoomsDayDeadOverlayCheck"
+          },
+          "anchorPoint": "BOTTOM_RIGHT",
+          "x": 334,
+          "y": 212,
           "locked": false
         }
       },
       {
         "type": "label",
         "data": {
-          "name": "label_01",
+          "name": "label_proc_return_dday_timer",
           "text": {
-            "fixedValue": "0",
-            "name": "DoomsDayDeadCheck"
+            "fixedValue": "##:##.#5",
+            "name": "ReturnDdayTimer"
           },
           "color": {
-            "value": -65536,
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "anchorPoint": "BOTTOM_RIGHT",
+          "x": 337,
+          "y": 214,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_empty",
+          "text": {
+            "fixedValue": "##:##.#5",
+            "name": "ReturnDdayTimer"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "anchorPoint": "BOTTOM_RIGHT",
+          "x": 336,
+          "y": 213,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "ddaystatus.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DoomsDayCheck"
+          },
+          "anchorPoint": "BOTTOM_RIGHT",
+          "x": 334,
+          "y": 212,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "sddaystatus.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "SuperDoomsDayCheck"
+          },
+          "anchorPoint": "BOTTOM_RIGHT",
+          "x": 334,
+          "y": 212,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "theendstatus.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "TheEndCheck"
+          },
+          "anchorPoint": "BOTTOM_RIGHT",
+          "x": 334,
+          "y": 212,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "engieswrathstatus.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "EngiesWrathCheck"
+          },
+          "anchorPoint": "BOTTOM_RIGHT",
+          "x": 334,
+          "y": 212,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "ddaydeadcounticon.png",
+          "use1Xscale": true,
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 16,
+          "y": 208,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "ddayalivecounticon.png",
+          "use1Xscale": true,
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 16,
+          "y": 187,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_dooms_alive_count1",
+          "text": {
+            "fixedValue": "shadow",
+            "name": "DoomsAliveCount"
+          },
+          "color": {
+            "value": -16777216,
             "falpha": 0.0
           },
           "displayCondition": {
-            "name": "DoomsDayDeadOverlayCheck"
+            "name": "DoomsAliveCountSmall"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 22,
+          "y": 193,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_dooms_alive_count",
+          "text": {
+            "fixedValue": "1",
+            "name": "DoomsAliveCount"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DoomsAliveCountSmall"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 21,
+          "y": 192,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_dooms_alive_count3",
+          "text": {
+            "fixedValue": "",
+            "name": "DoomsAliveCount"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DoomsAliveCountBig"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 20,
+          "y": 193,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_dooms_alive_count2",
+          "text": {
+            "fixedValue": "",
+            "name": "DoomsAliveCount"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DoomsAliveCountBig"
           },
           "anchorPoint": "CENTER",
-          "x": 0,
-          "y": 0,
+          "x": 19,
+          "y": 192,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_dooms_dead_count1",
+          "text": {
+            "fixedValue": "",
+            "name": "DoomsDeadCount"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DoomsDeadCountSmall"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 23,
+          "y": 215,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_dooms_dead_count",
+          "text": {
+            "fixedValue": "",
+            "name": "DoomsDeadCount"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DoomsDeadCountSmall"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 22,
+          "y": 214,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_dooms_dead_count3",
+          "text": {
+            "fixedValue": "",
+            "name": "DoomsDeadCount"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DoomsDeadCountBig"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 21,
+          "y": 215,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_dooms_dead_count2",
+          "text": {
+            "fixedValue": "",
+            "name": "DoomsDeadCount"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DoomsDeadCountBig"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 20,
+          "y": 214,
           "locked": false
         }
       }

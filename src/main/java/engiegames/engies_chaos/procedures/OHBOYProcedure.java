@@ -86,8 +86,6 @@ public class OHBOYProcedure {
 											if ((EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart && EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart && EngiesChaosModVariables.MapVariables.get(world).TheEndStart
 													&& EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart) == false) {
 												DoomsdaySummonProcedure.execute(world);
-												EngiesChaosModVariables.MapVariables.get(world).doomssentdebug1 = true;
-												EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 											}
 										});
 									} else {
@@ -130,8 +128,6 @@ public class OHBOYProcedure {
 											if ((EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart && EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart && EngiesChaosModVariables.MapVariables.get(world).TheEndStart
 													&& EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart) == false) {
 												DoomsdaySummonProcedure.execute(world);
-												EngiesChaosModVariables.MapVariables.get(world).doomssentdebug1 = true;
-												EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 											}
 										});
 									} else {
@@ -174,8 +170,6 @@ public class OHBOYProcedure {
 											if ((EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart && EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart && EngiesChaosModVariables.MapVariables.get(world).TheEndStart
 													&& EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart) == false) {
 												DoomsdaySummonProcedure.execute(world);
-												EngiesChaosModVariables.MapVariables.get(world).doomssentdebug1 = true;
-												EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 											}
 										});
 									} else {
@@ -218,8 +212,6 @@ public class OHBOYProcedure {
 											if ((EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart && EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart && EngiesChaosModVariables.MapVariables.get(world).TheEndStart
 													&& EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart) == false) {
 												DoomsdaySummonProcedure.execute(world);
-												EngiesChaosModVariables.MapVariables.get(world).doomssentdebug1 = true;
-												EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 											}
 										});
 									} else {
@@ -261,8 +253,6 @@ public class OHBOYProcedure {
 										if ((EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart && EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart && EngiesChaosModVariables.MapVariables.get(world).TheEndStart
 												&& EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart) == false) {
 											DoomsdaySummonProcedure.execute(world);
-											EngiesChaosModVariables.MapVariables.get(world).doomssentdebug1 = true;
-											EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 										}
 									});
 								}

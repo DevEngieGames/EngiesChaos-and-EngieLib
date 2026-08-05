@@ -14,8 +14,6 @@ public class MissileOnInitialEntitySpawnProcedure {
 		EngiesChaosMod.queueServerWork(1, () -> {
 			EngiesChaosModVariables.MapVariables.get(world).playmissilespawnsound = false;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-			EngiesChaosModVariables.MapVariables.get(world).playmissilespawnsound2 = false;
-			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 		});
 	}
 }

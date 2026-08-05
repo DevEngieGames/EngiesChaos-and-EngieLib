@@ -18,17 +18,22 @@ import net.minecraft.world.entity.ai.control.FlyingMoveControl;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.SpawnGroupData;
+import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.BlockPos;
@@ -40,6 +45,8 @@ import engiegames.engies_chaos.procedures.DDAYRiftOnEntityTickUpdateProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class DDAYRiftEntity extends PathfinderMob {
+	public static final EntityDataAccessor<Boolean> DATA_spawnedentity = SynchedEntityData.defineId(DDAYRiftEntity.class, EntityDataSerializers.BOOLEAN);
+
 	public DDAYRiftEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(EngiesChaosModEntities.DDAY_RIFT.get(), world);
 	}
@@ -51,11 +58,18 @@ public class DDAYRiftEntity extends PathfinderMob {
 		setNoAi(false);
 		setPersistenceRequired();
 		this.moveControl = new FlyingMoveControl(this, 10, true);
+		refreshDimensions();
 	}
 
 	@Override
 	public Packet<?> getAddEntityPacket() {
 		return NetworkHooks.getEntitySpawningPacket(this);
+	}
+
+	@Override
+	protected void defineSynchedData() {
+		super.defineSynchedData();
+		this.entityData.define(DATA_spawnedentity, false);
 	}
 
 	@Override
@@ -131,8 +145,21 @@ public class DDAYRiftEntity extends PathfinderMob {
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		DDAYRiftOnInitialEntitySpawnProcedure.execute(this);
+		DDAYRiftOnInitialEntitySpawnProcedure.execute(world);
 		return retval;
+	}
+
+	@Override
+	public void addAdditionalSaveData(CompoundTag compound) {
+		super.addAdditionalSaveData(compound);
+		compound.putBoolean("Dataspawnedentity", this.entityData.get(DATA_spawnedentity));
+	}
+
+	@Override
+	public void readAdditionalSaveData(CompoundTag compound) {
+		super.readAdditionalSaveData(compound);
+		if (compound.contains("Dataspawnedentity"))
+			this.entityData.set(DATA_spawnedentity, compound.getBoolean("Dataspawnedentity"));
 	}
 
 	@Override
@@ -167,6 +194,11 @@ public class DDAYRiftEntity extends PathfinderMob {
 
 	@Override
 	protected void pushEntities() {
+	}
+
+	@Override
+	public EntityDimensions getDimensions(Pose pose) {
+		return super.getDimensions(pose).scale(5f);
 	}
 
 	@Override

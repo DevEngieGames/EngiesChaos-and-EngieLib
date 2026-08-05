@@ -6,8 +6,20 @@
     "mobLabel": "",
     "mobModelName": "Modelddayrift",
     "mobModelTexture": "rifttexture.png",
+    "transparentModelCondition": {
+      "fixedValue": false
+    },
+    "isShakingCondition": {
+      "fixedValue": false
+    },
     "solidBoundingBox": {
       "fixedValue": false
+    },
+    "visualScale": {
+      "fixedValue": 5.0
+    },
+    "boundingBoxScale": {
+      "fixedValue": 5.0
     },
     "modelLayers": [],
     "animations": [],
@@ -66,6 +78,9 @@
     "breatheUnderwater": {
       "fixedValue": true
     },
+    "pushedByFluids": {
+      "fixedValue": true
+    },
     "flyingMob": true,
     "inventorySize": 9,
     "inventoryStackSize": 64,
@@ -101,7 +116,16 @@
     "stepSound": {
       "value": ""
     },
-    "entityDataEntries": [],
+    "raidCelebrationSound": {
+      "value": ""
+    },
+    "entityDataEntries": [
+      {
+        "name": "spawnedentity",
+        "type": "logic",
+        "value": false
+      }
+    ],
     "onMobTickUpdate": {
       "name": "DDAYRiftOnEntityTickUpdate"
     },
@@ -139,6 +163,9 @@
       2
     ],
     "sensitiveToVibration": false,
-    "vibrationalEvents": []
+    "vibrationalEvents": [],
+    "vibrationSensitivityRadius": {
+      "fixedValue": 7.0
+    }
   }
 }

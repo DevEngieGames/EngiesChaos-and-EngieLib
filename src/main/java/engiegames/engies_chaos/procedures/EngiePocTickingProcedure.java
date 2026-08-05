@@ -67,7 +67,7 @@ public class EngiePocTickingProcedure {
 					}
 					world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.TRUE_HARDCORE).set(true, world.getServer());
 					world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.DOOMSDAY_TOGGLE).set(true, world.getServer());
-					world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set(true, world.getServer());
+					world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.ENGIES_WRATH_TOGGLE).set(true, world.getServer());
 					world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING).set(true, world.getServer());
 					world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.HEAVY_LIGHTNING).set(true, world.getServer());
 					world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(true, world.getServer());

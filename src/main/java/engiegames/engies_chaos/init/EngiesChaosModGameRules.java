@@ -30,4 +30,6 @@ public class EngiesChaosModGameRules {
 	public static final GameRules.Key<GameRules.BooleanValue> AMBIENCE_MODE = GameRules.register("ambienceMode", GameRules.Category.MOBS, GameRules.BooleanValue.create(false));
 	public static final GameRules.Key<GameRules.IntegerValue> DOOMSDAY_SUB_DISASTER_LIMIT = GameRules.register("doomsdaySubDisasterLimit", GameRules.Category.UPDATES, GameRules.IntegerValue.create(250));
 	public static final GameRules.Key<GameRules.BooleanValue> ENGIE_POC = GameRules.register("engiePoc", GameRules.Category.UPDATES, GameRules.BooleanValue.create(false));
+	public static final GameRules.Key<GameRules.BooleanValue> THE_END_TOGGLE = GameRules.register("theEndToggle", GameRules.Category.MISC, GameRules.BooleanValue.create(false));
+	public static final GameRules.Key<GameRules.BooleanValue> ENGIES_WRATH_TOGGLE = GameRules.register("engiesWrathToggle", GameRules.Category.MISC, GameRules.BooleanValue.create(false));
 }

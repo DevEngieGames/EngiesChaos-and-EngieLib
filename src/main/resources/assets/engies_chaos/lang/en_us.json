@@ -2548,7 +2548,7 @@
   "gamerule.ambienceMode.description": "Experience Engie\u0027s Chaos without any hostile mobs. This also works for the Enraged Zombies portion!",
   "item.engies_chaos.uncommon_sharko_spawn_egg": "Uncommon Sharko Spawn Egg",
   "entity.engies_chaos.uncommon_sharko": "Uncommon Sharko",
-  "gamerule.superDoomsDayToggle.description": "Enable the full wrath of mother nature.",
+  "gamerule.superDoomsDayToggle.description": "Enable a harder version of Doomsday.",
   "gamerule.superDoomsDayToggle": "Super Doomsday",
   "gamerule.doomsdaySubDisasterLimit.description": "[DEFAULT: 250] Set the limit for Doomsday Sub Disasters. Lower if the world gets too laggy during something like Engie\u0027s Wrath.",
   "gamerule.doomsdaySubDisasterLimit": "[Engie\u0027s Chaos] Doomsday Sub Disaster Limit",
@@ -2778,5 +2778,17 @@
   "item.engies_chaos.engies_chaos_plaque.description_0": "No, the All About Engie plaque hasn\u0027t been removed.",
   "item.engies_chaos.engies_chaos_plaque": "Engie\u0027s Chaos Plaque",
   "itemGroup.engies_chaos.engies_chaos_food": "Engie\u0027s Chaos Food",
-  "item.engies_chaos.challenge_insanity_engie_games_plush_multiplayer.description_1": "Try beating this solo!"
+  "item.engies_chaos.challenge_insanity_engie_games_plush_multiplayer.description_1": "Try beating this solo!",
+  "gui.engies_chaos.dooms_day_alive_death_count.label_10": "10",
+  "gui.engies_chaos.dooms_day_alive_death_count.label_1": "1",
+  "gui.engies_chaos.dooms_day_alive_death_count.label_103": "10",
+  "gui.engies_chaos.dooms_day_alive_death_count.label_102": "10",
+  "gui.engies_chaos.dooms_day_alive_death_count.label_101": "10",
+  "gui.engies_chaos.dooms_day_alive_death_count.label_13": "1",
+  "gui.engies_chaos.dooms_day_alive_death_count.label_12": "1",
+  "gui.engies_chaos.dooms_day_alive_death_count.label_11": "1",
+  "gamerule.theEndToggle.description": "Enable a even harder version of Doomsday.",
+  "gamerule.theEndToggle": "The End",
+  "gamerule.engiesWrathToggle": "ENGIES WRATH",
+  "gamerule.engiesWrathToggle.description": "MAY DEATH RAIN UPON YOU ALL."
 }

@@ -5,6 +5,34 @@
     "priority": "NORMAL",
     "components": [
       {
+        "type": "image",
+        "data": {
+          "image": "newhudnormhp.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "HealthCheck2"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 0,
+          "y": 113,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newhudhalfandlowerhp.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "HealthCheck3"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 0,
+          "y": 113,
+          "locked": false
+        }
+      },
+      {
         "type": "label",
         "data": {
           "name": "label_9999",
@@ -13,241 +41,12 @@
             "name": "HealthCheck"
           },
           "color": {
-            "value": -2143665,
+            "value": -55256,
             "falpha": 0.0
           },
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 124,
-          "y": 201,
-          "locked": false
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_empty",
-          "text": {
-            "fixedValue": "//"
-          },
-          "color": {
-            "value": -2143665,
-            "falpha": 0.0
-          },
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 149,
-          "y": 201,
-          "locked": false
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_99991",
-          "text": {
-            "fixedValue": "9999",
-            "name": "MaxHealthCheck"
-          },
-          "color": {
-            "value": -2143665,
-            "falpha": 0.0
-          },
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 161,
-          "y": 201,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "healthcover.png",
-          "use1Xscale": true,
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 123,
-          "y": 201,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "healthcover.png",
-          "use1Xscale": true,
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 131,
-          "y": 201,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "healthcover.png",
-          "use1Xscale": true,
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 139,
-          "y": 201,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "healthcover.png",
-          "use1Xscale": true,
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 147,
-          "y": 201,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "healthcover.png",
-          "use1Xscale": true,
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 155,
-          "y": 201,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "healthcover.png",
-          "use1Xscale": true,
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 163,
-          "y": 201,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "healthcover.png",
-          "use1Xscale": true,
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 171,
-          "y": 201,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "healthcover.png",
-          "use1Xscale": true,
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 179,
-          "y": 201,
-          "locked": false
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_99992",
-          "text": {
-            "fixedValue": "9999",
-            "name": "AbsorptionHealthCheck"
-          },
-          "color": {
-            "value": -2125238,
-            "falpha": 0.0
-          },
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 124,
-          "y": 193,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "absorptioncover.png",
-          "use1Xscale": true,
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 123,
-          "y": 193,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "absorptioncover.png",
-          "use1Xscale": true,
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 131,
-          "y": 193,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "absorptioncover.png",
-          "use1Xscale": true,
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 139,
-          "y": 193,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "absorptioncover.png",
-          "use1Xscale": true,
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 147,
-          "y": 193,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "armorcover.png",
-          "use1Xscale": true,
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 171,
-          "y": 193,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "armorcover.png",
-          "use1Xscale": true,
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 163,
-          "y": 193,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "armorcover.png",
-          "use1Xscale": true,
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 155,
-          "y": 193,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "armorcover.png",
-          "use1Xscale": true,
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 179,
-          "y": 193,
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 32,
+          "y": 176,
           "locked": false
         }
       },
@@ -263,177 +62,133 @@
             "value": -1842205,
             "falpha": 0.0
           },
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 156,
-          "y": 193,
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 26,
+          "y": 225,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_max_health_check",
+          "text": {
+            "fixedValue": "9999",
+            "name": "MaxHealthCheck"
+          },
+          "color": {
+            "value": -4511704,
+            "falpha": 0.0
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 26,
+          "y": 196,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_absorption_health_check",
+          "text": {
+            "fixedValue": "",
+            "name": "AbsorptionHealthCheck"
+          },
+          "color": {
+            "value": -17624,
+            "falpha": 0.0
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 26,
+          "y": 210,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_only_16_characters",
+          "text": {
+            "fixedValue": "",
+            "name": "Only16Characters"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 7,
+          "y": 146,
           "locked": false
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "health50andbelow.png",
+          "image": "testericon.png",
           "use1Xscale": true,
           "displayCondition": {
-            "name": "HealthBelow50butabove45"
+            "name": "TesterCheck"
           },
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 123,
-          "y": 201,
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 0,
+          "y": 113,
           "locked": false
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "health45andbelow.png",
+          "image": "betatestericon.png",
           "use1Xscale": true,
           "displayCondition": {
-            "name": "HealthBelow45butabove40"
+            "name": "BetaTesterCheck"
           },
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 123,
-          "y": 201,
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 0,
+          "y": 113,
           "locked": false
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "health40andbelow.png",
+          "image": "contentcreatoricon.png",
           "use1Xscale": true,
           "displayCondition": {
-            "name": "HealthBelow40butabove35"
+            "name": "ContentCreatorCheck"
           },
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 123,
-          "y": 201,
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 0,
+          "y": 113,
           "locked": false
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "health35andbelow.png",
+          "image": "ideagivericon.png",
           "use1Xscale": true,
           "displayCondition": {
-            "name": "HealthBelow35butabove30"
+            "name": "IdeaGiverCheck"
           },
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 123,
-          "y": 201,
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 0,
+          "y": 113,
           "locked": false
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "health30andbelow.png",
+          "image": "devicon.png",
           "use1Xscale": true,
           "displayCondition": {
-            "name": "HealthBelow30butabove25"
+            "name": "DevCheck"
           },
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 123,
-          "y": 201,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "health25andbelow.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "HealthBelow25butabove20"
-          },
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 123,
-          "y": 201,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "health20andbelow.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "HealthBelow20butabove15"
-          },
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 123,
-          "y": 201,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "health15andbelow.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "HealthBelow15butabove10"
-          },
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 123,
-          "y": 201,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "health10andbelow.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "HealthBelow10butabove5"
-          },
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 123,
-          "y": 201,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "health5andbelow.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "HealthBelow5butabove1"
-          },
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 123,
-          "y": 201,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "health1andbelownon1hp.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "HealthBelow1butabove1hp"
-          },
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 123,
-          "y": 201,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "health1andbelow1hp.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "HealthAt1hp"
-          },
-          "anchorPoint": "BOTTOM_CENTER",
-          "x": 123,
-          "y": 201,
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 0,
+          "y": 113,
           "locked": false
         }
       }

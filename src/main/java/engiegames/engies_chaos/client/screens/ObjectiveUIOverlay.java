@@ -10,13 +10,18 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.Minecraft;
 
 import engiegames.engies_chaos.procedures.TheEndCheckProcedure;
 import engiegames.engies_chaos.procedures.SuperDoomsDayCheckProcedure;
 import engiegames.engies_chaos.procedures.ObjectiveOverlayCheckProcedure;
+import engiegames.engies_chaos.procedures.EngiesWrathCheckProcedure;
 import engiegames.engies_chaos.procedures.DoomsDayCheckProcedure;
+
+import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.blaze3d.platform.GlStateManager;
 
 @Mod.EventBusSubscriber({Dist.CLIENT})
 public class ObjectiveUIOverlay {
@@ -35,16 +40,34 @@ public class ObjectiveUIOverlay {
 			y = entity.getY();
 			z = entity.getZ();
 		}
+		RenderSystem.disableDepthTest();
+		RenderSystem.depthMask(false);
+		RenderSystem.enableBlend();
+		RenderSystem.setShader(GameRenderer::getPositionTexShader);
+		RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
+		RenderSystem.setShaderColor(1, 1, 1, 1);
 		if (ObjectiveOverlayCheckProcedure.execute(world, entity)) {
-			Minecraft.getInstance().font.draw(event.getPoseStack(), Component.translatable("gui.engies_chaos.objective_ui.label_u26a0_new_objective_u26a0"), w / 2 + -69, h / 2 + -120, -256);
-			if (DoomsDayCheckProcedure.execute(world))
-				Minecraft.getInstance().font.draw(event.getPoseStack(), Component.translatable("gui.engies_chaos.objective_ui.label_the_end_is_near_survive_the_end"), w / 2 + -116, h / 2 + -111, -1);
-			if (SuperDoomsDayCheckProcedure.execute(world))
-				Minecraft.getInstance().font.draw(event.getPoseStack(), Component.translatable("gui.engies_chaos.objective_ui.label_the_end_is_near_the_full_wrath"), w / 2 + -164, h / 2 + -111, -1);
-			if (SuperDoomsDayCheckProcedure.execute(world))
-				Minecraft.getInstance().font.draw(event.getPoseStack(), Component.translatable("gui.engies_chaos.objective_ui.label_ultimate_disaster_super_doomsda"), w / 2 + -89, h / 2 + -101, -1);
-			if (TheEndCheckProcedure.execute(world))
-				Minecraft.getInstance().font.draw(event.getPoseStack(), Component.translatable("gui.engies_chaos.objective_ui.label_theres_no_disaster_theres_no"), w / 2 + -157, h / 2 + -111, -4978150);
+			if (DoomsDayCheckProcedure.execute(world)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/objectiveline1.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -122, 90, 0, 0, 250, 75, 250, 75);
+			}
+			if (SuperDoomsDayCheckProcedure.execute(world)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/objectiveline2.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -122, 90, 0, 0, 250, 75, 250, 75);
+			}
+			if (TheEndCheckProcedure.execute(world)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/objectiveline3.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -122, 90, 0, 0, 250, 75, 250, 75);
+			}
+			if (EngiesWrathCheckProcedure.execute(world)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/objectiveline4.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -122, 90, 0, 0, 250, 75, 250, 75);
+			}
 		}
+		RenderSystem.depthMask(true);
+		RenderSystem.defaultBlendFunc();
+		RenderSystem.enableDepthTest();
+		RenderSystem.disableBlend();
+		RenderSystem.setShaderColor(1, 1, 1, 1);
 	}
 }

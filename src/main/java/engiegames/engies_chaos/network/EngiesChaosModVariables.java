@@ -187,6 +187,7 @@ public class EngiesChaosModVariables {
 			clone.diffadvancement30 = original.diffadvancement30;
 			clone.diffadvancement31 = original.diffadvancement31;
 			clone.diffadvancement32 = original.diffadvancement32;
+			clone.ddayplayeraddedtodeadcount = original.ddayplayeraddedtodeadcount;
 			if (!event.isWasDeath()) {
 				clone.playeroverhealhp = original.playeroverhealhp;
 				clone.DoomsdayAlive = original.DoomsdayAlive;
@@ -374,7 +375,6 @@ public class EngiesChaosModVariables {
 		public boolean sddaydialoguetimeblock = false;
 		public boolean sddaystart = false;
 		public boolean sddaytimenighttimerblock = false;
-		public boolean SDDAYToggle = false;
 		public boolean seasonautumn = false;
 		public boolean seasonspring = false;
 		public boolean seasonsummer = false;
@@ -492,6 +492,8 @@ public class EngiesChaosModVariables {
 		public double timeticks = 0;
 		public double engiepoctime = 18000.0;
 		public double totalplayersinworld = 0;
+		public double ddayplayeralivecount = 0;
+		public double ddayplayerdeadcount = 0;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -610,7 +612,6 @@ public class EngiesChaosModVariables {
 			sddaydialoguetimeblock = nbt.getBoolean("sddaydialoguetimeblock");
 			sddaystart = nbt.getBoolean("sddaystart");
 			sddaytimenighttimerblock = nbt.getBoolean("sddaytimenighttimerblock");
-			SDDAYToggle = nbt.getBoolean("SDDAYToggle");
 			seasonautumn = nbt.getBoolean("seasonautumn");
 			seasonspring = nbt.getBoolean("seasonspring");
 			seasonsummer = nbt.getBoolean("seasonsummer");
@@ -728,6 +729,8 @@ public class EngiesChaosModVariables {
 			timeticks = nbt.getDouble("timeticks");
 			engiepoctime = nbt.getDouble("engiepoctime");
 			totalplayersinworld = nbt.getDouble("totalplayersinworld");
+			ddayplayeralivecount = nbt.getDouble("ddayplayeralivecount");
+			ddayplayerdeadcount = nbt.getDouble("ddayplayerdeadcount");
 		}
 
 		@Override
@@ -842,7 +845,6 @@ public class EngiesChaosModVariables {
 			nbt.putBoolean("sddaydialoguetimeblock", sddaydialoguetimeblock);
 			nbt.putBoolean("sddaystart", sddaystart);
 			nbt.putBoolean("sddaytimenighttimerblock", sddaytimenighttimerblock);
-			nbt.putBoolean("SDDAYToggle", SDDAYToggle);
 			nbt.putBoolean("seasonautumn", seasonautumn);
 			nbt.putBoolean("seasonspring", seasonspring);
 			nbt.putBoolean("seasonsummer", seasonsummer);
@@ -960,6 +962,8 @@ public class EngiesChaosModVariables {
 			nbt.putDouble("timeticks", timeticks);
 			nbt.putDouble("engiepoctime", engiepoctime);
 			nbt.putDouble("totalplayersinworld", totalplayersinworld);
+			nbt.putDouble("ddayplayeralivecount", ddayplayeralivecount);
+			nbt.putDouble("ddayplayerdeadcount", ddayplayerdeadcount);
 			return nbt;
 		}
 
@@ -1177,6 +1181,7 @@ public class EngiesChaosModVariables {
 		public boolean diffadvancement30 = false;
 		public boolean diffadvancement31 = false;
 		public boolean diffadvancement32 = false;
+		public boolean ddayplayeraddedtodeadcount = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -1310,6 +1315,7 @@ public class EngiesChaosModVariables {
 			nbt.putBoolean("diffadvancement30", diffadvancement30);
 			nbt.putBoolean("diffadvancement31", diffadvancement31);
 			nbt.putBoolean("diffadvancement32", diffadvancement32);
+			nbt.putBoolean("ddayplayeraddedtodeadcount", ddayplayeraddedtodeadcount);
 			return nbt;
 		}
 
@@ -1440,6 +1446,7 @@ public class EngiesChaosModVariables {
 			diffadvancement30 = nbt.getBoolean("diffadvancement30");
 			diffadvancement31 = nbt.getBoolean("diffadvancement31");
 			diffadvancement32 = nbt.getBoolean("diffadvancement32");
+			ddayplayeraddedtodeadcount = nbt.getBoolean("ddayplayeraddedtodeadcount");
 		}
 	}
 
@@ -1589,6 +1596,7 @@ public class EngiesChaosModVariables {
 					variables.diffadvancement30 = message.data.diffadvancement30;
 					variables.diffadvancement31 = message.data.diffadvancement31;
 					variables.diffadvancement32 = message.data.diffadvancement32;
+					variables.ddayplayeraddedtodeadcount = message.data.ddayplayeraddedtodeadcount;
 				}
 			});
 			context.setPacketHandled(true);

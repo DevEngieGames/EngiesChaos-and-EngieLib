@@ -36,7 +36,7 @@ public class PlayerRiftSoundTickProcedure {
 				Entity _ent = entity;
 				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "execute as @a run stopsound @s ambient engies_chaos:riftopens");
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @s ambient engies_chaos:riftopens");
 				}
 			}
 		} else if (EngiesChaosModVariables.MapVariables.get(world).playriftsound == true) {
@@ -47,7 +47,7 @@ public class PlayerRiftSoundTickProcedure {
 					Entity _ent = entity;
 					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "execute as @a run playsound engies_chaos:riftopens ambient @s ~ ~ ~ 0.5");
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "playsound engies_chaos:riftopens ambient @s ~ ~ ~ 0.5");
 					}
 				}
 			}

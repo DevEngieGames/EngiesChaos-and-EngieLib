@@ -4,7 +4,7 @@
   "definition": {
     "type": "Logic",
     "displayName": "Super Doomsday",
-    "description": "Enable the full wrath of mother nature.",
+    "description": "Enable a harder version of Doomsday.",
     "category": "MISC",
     "defaultValueLogic": false,
     "defaultValueNumber": 0

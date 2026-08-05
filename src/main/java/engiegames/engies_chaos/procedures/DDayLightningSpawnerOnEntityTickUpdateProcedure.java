@@ -1,12 +1,8 @@
 package engiegames.engies_chaos.procedures;
 
-import net.minecraftforge.registries.ForgeRegistries;
-
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.EntityType;
@@ -15,7 +11,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
-import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
@@ -23,8 +19,11 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
+import java.util.ArrayList;
+
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.init.EngiesChaosModGameRules;
+import engiegames.engies_chaos.EngiesChaosMod;
 
 public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -39,309 +38,395 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 				if (_ent instanceof ServerPlayer _serverPlayer)
 					_serverPlayer.connection.teleport(x, (y - 1), z, _ent.getYRot(), _ent.getXRot());
 			}
-		} else {
+		} else if ((world.getBlockState(new BlockPos(x, y - 1, z))).is(BlockTags.create(new ResourceLocation("engies_chaos:ddaylightningstrikeable")))) {
 			if (!entity.level.isClientSide())
 				entity.discard();
-			if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true || EngiesChaosModVariables.MapVariables.get(world).sddaystart == true || EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
+			if (EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true) {
+				if (world instanceof ServerLevel _level) {
+					LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+					entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
+					entityToSpawn.setVisualOnly(true);
+					_level.addFreshEntity(entityToSpawn);
+				}
+				if (world instanceof ServerLevel _level) {
+					LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+					entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x - Mth.nextDouble(RandomSource.create(), 1, 4), y, z + Mth.nextDouble(RandomSource.create(), 1, 4))));
+					entityToSpawn.setVisualOnly(true);
+					_level.addFreshEntity(entityToSpawn);
+				}
+				if (world instanceof ServerLevel _level) {
+					LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+					entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x - Mth.nextDouble(RandomSource.create(), 1, 4), y, z + Mth.nextDouble(RandomSource.create(), 1, 4))));
+					entityToSpawn.setVisualOnly(true);
+					_level.addFreshEntity(entityToSpawn);
+				}
+				if (world instanceof ServerLevel _level) {
+					LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+					entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x - Mth.nextDouble(RandomSource.create(), 1, 4), y, z - Mth.nextDouble(RandomSource.create(), 1, 4))));
+					entityToSpawn.setVisualOnly(true);
+					_level.addFreshEntity(entityToSpawn);
+				}
+				if (world instanceof ServerLevel _level) {
+					LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+					entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x - Mth.nextDouble(RandomSource.create(), 1, 4), y, z - Mth.nextDouble(RandomSource.create(), 1, 4))));
+					entityToSpawn.setVisualOnly(true);
+					_level.addFreshEntity(entityToSpawn);
+				}
+				if (world instanceof ServerLevel _level) {
+					LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+					entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Mth.nextDouble(RandomSource.create(), 1, 4), y, z - Mth.nextDouble(RandomSource.create(), 1, 4))));
+					entityToSpawn.setVisualOnly(true);
+					_level.addFreshEntity(entityToSpawn);
+				}
+				if (world instanceof ServerLevel _level) {
+					LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+					entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Mth.nextDouble(RandomSource.create(), 1, 4), y, z - Mth.nextDouble(RandomSource.create(), 1, 4))));
+					entityToSpawn.setVisualOnly(true);
+					_level.addFreshEntity(entityToSpawn);
+				}
+				if (world instanceof ServerLevel _level) {
+					LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+					entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Mth.nextDouble(RandomSource.create(), 1, 4), y, z + Mth.nextDouble(RandomSource.create(), 1, 4))));
+					entityToSpawn.setVisualOnly(true);
+					_level.addFreshEntity(entityToSpawn);
+				}
+				if (world instanceof ServerLevel _level) {
+					LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+					entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Mth.nextDouble(RandomSource.create(), 1, 4), y, z + Mth.nextDouble(RandomSource.create(), 1, 4))));
+					entityToSpawn.setVisualOnly(true);
+					_level.addFreshEntity(entityToSpawn);
+				}
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @e[type=player,distance=..10] engies_chaos:stunned 5 0 true");
+					}
+				}
+				for (Entity entityiterator : new ArrayList<>(world.players())) {
+					{
+						double _setval = 0.25;
+						entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.lightningflashnum = _setval;
+							capability.syncPlayerVariables(entityiterator);
+						});
+					}
+				}
+				EngiesChaosModVariables.MapVariables.get(world).playlightningsound = false;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+				EngiesChaosMod.queueServerWork(1, () -> {
+					EngiesChaosModVariables.MapVariables.get(world).playlightningsound = true;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).playlightningsound2 = true;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+				});
+			} else if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true || EngiesChaosModVariables.MapVariables.get(world).sddaystart == true || EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
 				if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == false) {
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x - Mth.nextDouble(RandomSource.create(), 1, 4), y, z + Mth.nextDouble(RandomSource.create(), 1, 4))));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x - Mth.nextDouble(RandomSource.create(), 1, 4), y, z - Mth.nextDouble(RandomSource.create(), 1, 4))));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Mth.nextDouble(RandomSource.create(), 1, 4), y, z - Mth.nextDouble(RandomSource.create(), 1, 4))));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Mth.nextDouble(RandomSource.create(), 1, 4), y, z + Mth.nextDouble(RandomSource.create(), 1, 4))));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
 					{
 						Entity _ent = entity;
 						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "playsound allaboutengie:customlightning weather @a ~ ~ ~ 0.25 0.75");
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @e[type=player,distance=..10] engies_chaos:stunned 5 0 true");
 						}
 					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
+					for (Entity entityiterator : new ArrayList<>(world.players())) {
+						{
+							double _setval = 0.25;
+							entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.lightningflashnum = _setval;
+								capability.syncPlayerVariables(entityiterator);
+							});
+						}
 					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo((x + Mth.nextDouble(RandomSource.create(), 1, 4)), y, (z + Mth.nextDouble(RandomSource.create(), 1, 4)), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo((x + Mth.nextDouble(RandomSource.create(), 1, 4)), y, (z - Mth.nextDouble(RandomSource.create(), 1, 4)), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo((x - Mth.nextDouble(RandomSource.create(), 1, 4)), y, (z - Mth.nextDouble(RandomSource.create(), 1, 4)), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo((x - Mth.nextDouble(RandomSource.create(), 1, 4)), y, (z + Mth.nextDouble(RandomSource.create(), 1, 4)), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
+					EngiesChaosModVariables.MapVariables.get(world).playlightningsound = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosMod.queueServerWork(1, () -> {
+						EngiesChaosModVariables.MapVariables.get(world).playlightningsound = true;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).playlightningsound2 = true;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					});
 				} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == true) {
-					if (world instanceof Level _level) {
-						if (!_level.isClientSide()) {
-							_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("engies_chaos:customlightning")), SoundSource.AMBIENT, (float) 0.25, (float) 0.5);
-						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("engies_chaos:customlightning")), SoundSource.AMBIENT, (float) 0.25, (float) 0.5, false);
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x - Mth.nextDouble(RandomSource.create(), 1, 4), y, z + Mth.nextDouble(RandomSource.create(), 1, 4))));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x - Mth.nextDouble(RandomSource.create(), 1, 4), y, z + Mth.nextDouble(RandomSource.create(), 1, 4))));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x - Mth.nextDouble(RandomSource.create(), 1, 4), y, z - Mth.nextDouble(RandomSource.create(), 1, 4))));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x - Mth.nextDouble(RandomSource.create(), 1, 4), y, z - Mth.nextDouble(RandomSource.create(), 1, 4))));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Mth.nextDouble(RandomSource.create(), 1, 4), y, z - Mth.nextDouble(RandomSource.create(), 1, 4))));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Mth.nextDouble(RandomSource.create(), 1, 4), y, z - Mth.nextDouble(RandomSource.create(), 1, 4))));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Mth.nextDouble(RandomSource.create(), 1, 4), y, z + Mth.nextDouble(RandomSource.create(), 1, 4))));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Mth.nextDouble(RandomSource.create(), 1, 4), y, z + Mth.nextDouble(RandomSource.create(), 1, 4))));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @e[type=player,distance=..10] engies_chaos:stunned 5 0 true");
 						}
 					}
-					if (world instanceof Level _level) {
-						if (!_level.isClientSide()) {
-							_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("engies_chaos:customlightning2")), SoundSource.AMBIENT, (float) 0.25, (float) 0.75);
-						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("engies_chaos:customlightning2")), SoundSource.AMBIENT, (float) 0.25, (float) 0.75, false);
+					for (Entity entityiterator : new ArrayList<>(world.players())) {
+						{
+							double _setval = 0.25;
+							entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.lightningflashnum = _setval;
+								capability.syncPlayerVariables(entityiterator);
+							});
 						}
 					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo((x + Mth.nextDouble(RandomSource.create(), 1, 4)), y, (z + Mth.nextDouble(RandomSource.create(), 1, 4)), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo((x + Mth.nextDouble(RandomSource.create(), 1, 4)), y, (z + Mth.nextDouble(RandomSource.create(), 1, 4)), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo((x + Mth.nextDouble(RandomSource.create(), 1, 4)), y, (z - Mth.nextDouble(RandomSource.create(), 1, 4)), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo((x + Mth.nextDouble(RandomSource.create(), 1, 4)), y, (z - Mth.nextDouble(RandomSource.create(), 1, 4)), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo((x - Mth.nextDouble(RandomSource.create(), 1, 4)), y, (z - Mth.nextDouble(RandomSource.create(), 1, 4)), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo((x - Mth.nextDouble(RandomSource.create(), 1, 4)), y, (z - Mth.nextDouble(RandomSource.create(), 1, 4)), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo((x - Mth.nextDouble(RandomSource.create(), 1, 4)), y, (z + Mth.nextDouble(RandomSource.create(), 1, 4)), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo((x - Mth.nextDouble(RandomSource.create(), 1, 4)), y, (z + Mth.nextDouble(RandomSource.create(), 1, 4)), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
+					EngiesChaosModVariables.MapVariables.get(world).playlightningsound = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosMod.queueServerWork(1, () -> {
+						EngiesChaosModVariables.MapVariables.get(world).playlightningsound = true;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).playlightningsound2 = true;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					});
 				}
-			} else if (world.getLevelData().isThundering()
-					&& !(EngiesChaosModVariables.MapVariables.get(world).ddaystart == true || EngiesChaosModVariables.MapVariables.get(world).sddaystart == true || EngiesChaosModVariables.MapVariables.get(world).thestart == true)) {
+			} else {
 				if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == true) {
-					if (Math.random() < 0.5) {
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("engies_chaos:customlightning")), SoundSource.AMBIENT, (float) 0.25, 1);
-							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("engies_chaos:customlightning")), SoundSource.AMBIENT, (float) 0.25, 1, false);
-							}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x - Mth.nextDouble(RandomSource.create(), 1, 4), y, z + Mth.nextDouble(RandomSource.create(), 1, 4))));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x - Mth.nextDouble(RandomSource.create(), 1, 4), y, z - Mth.nextDouble(RandomSource.create(), 1, 4))));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Mth.nextDouble(RandomSource.create(), 1, 4), y, z - Mth.nextDouble(RandomSource.create(), 1, 4))));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Mth.nextDouble(RandomSource.create(), 1, 4), y, z + Mth.nextDouble(RandomSource.create(), 1, 4))));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @e[type=player,distance=..10] engies_chaos:stunned 5 0 true");
 						}
-					} else if (Math.random() >= 0.5) {
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("engies_chaos:customlightning2")), SoundSource.AMBIENT, (float) 0.25, 1);
-							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("engies_chaos:customlightning2")), SoundSource.AMBIENT, (float) 0.25, 1, false);
-							}
+					}
+					for (Entity entityiterator : new ArrayList<>(world.players())) {
+						{
+							double _setval = 0.25;
+							entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.lightningflashnum = _setval;
+								capability.syncPlayerVariables(entityiterator);
+							});
 						}
 					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo((x + Mth.nextDouble(RandomSource.create(), 1, 4)), y, (z + Mth.nextDouble(RandomSource.create(), 1, 4)), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo((x + Mth.nextDouble(RandomSource.create(), 1, 4)), y, (z - Mth.nextDouble(RandomSource.create(), 1, 4)), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo((x - Mth.nextDouble(RandomSource.create(), 1, 4)), y, (z - Mth.nextDouble(RandomSource.create(), 1, 4)), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo((x - Mth.nextDouble(RandomSource.create(), 1, 4)), y, (z + Mth.nextDouble(RandomSource.create(), 1, 4)), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
+					EngiesChaosModVariables.MapVariables.get(world).playlightningsound = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosMod.queueServerWork(1, () -> {
+						EngiesChaosModVariables.MapVariables.get(world).playlightningsound = true;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).playlightningsound3 = true;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					});
 				} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == true && world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == true) {
-					if (Math.random() < 0.5) {
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("engies_chaos:customlightning")), SoundSource.AMBIENT, (float) 0.25, 1);
-							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("engies_chaos:customlightning")), SoundSource.AMBIENT, (float) 0.25, 1, false);
-							}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x - Mth.nextDouble(RandomSource.create(), 1, 4), y, z + Mth.nextDouble(RandomSource.create(), 1, 4))));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x - Mth.nextDouble(RandomSource.create(), 1, 4), y, z + Mth.nextDouble(RandomSource.create(), 1, 4))));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x - Mth.nextDouble(RandomSource.create(), 1, 4), y, z - Mth.nextDouble(RandomSource.create(), 1, 4))));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x - Mth.nextDouble(RandomSource.create(), 1, 4), y, z - Mth.nextDouble(RandomSource.create(), 1, 4))));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Mth.nextDouble(RandomSource.create(), 1, 4), y, z - Mth.nextDouble(RandomSource.create(), 1, 4))));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Mth.nextDouble(RandomSource.create(), 1, 4), y, z - Mth.nextDouble(RandomSource.create(), 1, 4))));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Mth.nextDouble(RandomSource.create(), 1, 4), y, z + Mth.nextDouble(RandomSource.create(), 1, 4))));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					if (world instanceof ServerLevel _level) {
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Mth.nextDouble(RandomSource.create(), 1, 4), y, z + Mth.nextDouble(RandomSource.create(), 1, 4))));
+						entityToSpawn.setVisualOnly(true);
+						_level.addFreshEntity(entityToSpawn);
+					}
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @e[type=player,distance=..10] engies_chaos:stunned 5 0 true");
 						}
-					} else if (Math.random() >= 0.5) {
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("engies_chaos:customlightning2")), SoundSource.AMBIENT, (float) 0.25, 1);
-							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("engies_chaos:customlightning2")), SoundSource.AMBIENT, (float) 0.25, 1, false);
-							}
+					}
+					for (Entity entityiterator : new ArrayList<>(world.players())) {
+						{
+							double _setval = 0.25;
+							entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.lightningflashnum = _setval;
+								capability.syncPlayerVariables(entityiterator);
+							});
 						}
 					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo((x + Mth.nextDouble(RandomSource.create(), 1, 4)), y, (z + Mth.nextDouble(RandomSource.create(), 1, 4)), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo((x + Mth.nextDouble(RandomSource.create(), 1, 4)), y, (z + Mth.nextDouble(RandomSource.create(), 1, 4)), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo((x + Mth.nextDouble(RandomSource.create(), 1, 4)), y, (z - Mth.nextDouble(RandomSource.create(), 1, 4)), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo((x + Mth.nextDouble(RandomSource.create(), 1, 4)), y, (z - Mth.nextDouble(RandomSource.create(), 1, 4)), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo((x - Mth.nextDouble(RandomSource.create(), 1, 4)), y, (z - Mth.nextDouble(RandomSource.create(), 1, 4)), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo((x - Mth.nextDouble(RandomSource.create(), 1, 4)), y, (z - Mth.nextDouble(RandomSource.create(), 1, 4)), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo((x - Mth.nextDouble(RandomSource.create(), 1, 4)), y, (z + Mth.nextDouble(RandomSource.create(), 1, 4)), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo((x - Mth.nextDouble(RandomSource.create(), 1, 4)), y, (z + Mth.nextDouble(RandomSource.create(), 1, 4)), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
+					EngiesChaosModVariables.MapVariables.get(world).playlightningsound = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosMod.queueServerWork(1, () -> {
+						EngiesChaosModVariables.MapVariables.get(world).playlightningsound = true;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).playlightningsound4 = true;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					});
 				} else {
-					if (Math.random() < 0.5) {
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("engies_chaos:customlightning")), SoundSource.AMBIENT, (float) 0.25, 1);
-							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("engies_chaos:customlightning")), SoundSource.AMBIENT, (float) 0.25, 1, false);
-							}
-						}
-					} else if (Math.random() >= 0.5) {
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("engies_chaos:customlightning2")), SoundSource.AMBIENT, (float) 0.25, 1);
-							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("engies_chaos:customlightning2")), SoundSource.AMBIENT, (float) 0.25, 1, false);
-							}
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @e[type=player,distance=..10] engies_chaos:stunned 5 0 true");
 						}
 					}
 					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new LightningBolt(EntityType.LIGHTNING_BOLT, _level);
-						entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
+						entityToSpawn.setVisualOnly(true);
 						_level.addFreshEntity(entityToSpawn);
 					}
+					for (Entity entityiterator : new ArrayList<>(world.players())) {
+						{
+							double _setval = 0.25;
+							entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.lightningflashnum = _setval;
+								capability.syncPlayerVariables(entityiterator);
+							});
+						}
+					}
+					EngiesChaosModVariables.MapVariables.get(world).playlightningsound = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosMod.queueServerWork(1, () -> {
+						EngiesChaosModVariables.MapVariables.get(world).playlightningsound = true;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).playlightningsound3 = true;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					});
 				}
 			}
+		} else {
+			if (!entity.level.isClientSide())
+				entity.discard();
 		}
 	}
 }

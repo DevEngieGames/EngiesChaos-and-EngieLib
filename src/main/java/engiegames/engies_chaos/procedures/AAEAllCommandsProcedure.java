@@ -23,10 +23,19 @@ public class AAEAllCommandsProcedure {
 		if ((StringArgumentType.getString(arguments, "MainType")).equals("Doomsday") || (StringArgumentType.getString(arguments, "MainType")).equals("doomsday")) {
 			if ((StringArgumentType.getString(arguments, "AltType")).equals("Summon") || (StringArgumentType.getString(arguments, "AltType")).equals("summon")) {
 				if (entity.getPersistentData().getBoolean("EngiesChaos_Dev") == true) {
-					if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == true) {
-						EngiesChaosModVariables.MapVariables.get(world).DDAYCleanup = true;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					} else if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == false) {
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(
+									new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
+											_ent.level.getServer(), _ent),
+									"tellraw @a [\"\",{\"selector\":\"@p\",\"bold\":true,\"color\":\"gold\"},{\"text\":\" has summoned Doomsday! It will occur the next day.\",\"bold\":true,\"color\":\"gold\"}]");
+						}
+					}
+					EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = Mth.nextDouble(RandomSource.create(), 50, 100);
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+				} else if (world.players().size() == 1) {
+					if (entity.hasPermissions(4)) {
 						{
 							Entity _ent = entity;
 							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
@@ -39,43 +48,19 @@ public class AAEAllCommandsProcedure {
 						EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = Mth.nextDouble(RandomSource.create(), 50, 100);
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
-				} else if (world.players().size() == 1) {
-					if (entity.hasPermissions(4)) {
-						if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == true) {
-							EngiesChaosModVariables.MapVariables.get(world).DDAYCleanup = true;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						} else if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == false) {
-							{
-								Entity _ent = entity;
-								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-									_ent.getServer().getCommands().performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
-													_ent.getDisplayName(), _ent.level.getServer(), _ent),
-											"tellraw @a [\"\",{\"selector\":\"@p\",\"bold\":true,\"color\":\"gold\"},{\"text\":\" has summoned Doomsday! It will occur the next day.\",\"bold\":true,\"color\":\"gold\"}]");
-								}
-							}
-							EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = Mth.nextDouble(RandomSource.create(), 50, 100);
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						}
-					}
 				} else if (world.players().size() > 1) {
 					if (entity.hasPermissions(4)) {
-						if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == true) {
-							EngiesChaosModVariables.MapVariables.get(world).DDAYCleanup = true;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						} else if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == false) {
-							{
-								Entity _ent = entity;
-								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-									_ent.getServer().getCommands().performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
-													_ent.getDisplayName(), _ent.level.getServer(), _ent),
-											"tellraw @a [\"\",{\"selector\":\"@p\",\"bold\":true,\"color\":\"gold\"},{\"text\":\" has summoned Doomsday! It will occur the next day.\",\"bold\":true,\"color\":\"gold\"}]");
-								}
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
+												_ent.level.getServer(), _ent),
+										"tellraw @a [\"\",{\"selector\":\"@p\",\"bold\":true,\"color\":\"gold\"},{\"text\":\" has summoned Doomsday! It will occur the next day.\",\"bold\":true,\"color\":\"gold\"}]");
 							}
-							EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = Mth.nextDouble(RandomSource.create(), 50, 100);
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						}
+						EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = Mth.nextDouble(RandomSource.create(), 50, 100);
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 				} else {
 					{
@@ -88,6 +73,8 @@ public class AAEAllCommandsProcedure {
 				}
 			} else if ((StringArgumentType.getString(arguments, "AltType")).equals("GetRisk") || (StringArgumentType.getString(arguments, "AltType")).equals("getrisk")) {
 				RiskCheckProcedure.execute(world, entity);
+			} else if ((StringArgumentType.getString(arguments, "AltType")).equals("CleanUp") || (StringArgumentType.getString(arguments, "AltType")).equals("cleanup")) {
+				DoomsdayManualCleanupProcedure.execute(world);
 			}
 		} else if ((StringArgumentType.getString(arguments, "MainType")).equals("TraderCount") || (StringArgumentType.getString(arguments, "MainType")).equals("tradercount")) {
 			if ((StringArgumentType.getString(arguments, "AltType")).equals("Reset") || (StringArgumentType.getString(arguments, "AltType")).equals("reset")) {

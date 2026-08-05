@@ -7,12 +7,16 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.client.multiplayer.PlayerInfo;
 import net.minecraft.client.Minecraft;
 
+import engiegames.engies_chaos.network.EngiesChaosModVariables;
+
 public class CustomHealthOverlayDisplayOverlayIngameProcedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
 		if (getEntityGameType(entity) == GameType.SURVIVAL || getEntityGameType(entity) == GameType.ADVENTURE) {
-			return true;
+			if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).hphudtoggle == true) {
+				return true;
+			}
 		}
 		return false;
 	}

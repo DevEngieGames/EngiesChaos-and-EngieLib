@@ -72,6 +72,13 @@ public class DDayEeriePlayProcedure {
 									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "spreadplayers 0 0 0 128 false @s");
 						}
 					}
+					{
+						boolean _setval = false;
+						entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.ddayplayeraddedtodeadcount = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
 					if (entity instanceof Player _player) {
 						ItemStack _stktoremove = new ItemStack(EngiesChaosModItems.GRAVITY_COIL.get());
 						_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 100000000, _player.inventoryMenu.getCraftSlots());
@@ -89,13 +96,6 @@ public class DDayEeriePlayProcedure {
 						_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 100000000, _player.inventoryMenu.getCraftSlots());
 					}
 					EngiesChaosMod.queueServerWork(1, () -> {
-						{
-							Entity _ent = entity;
-							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "EngiesChaos doomsday toggleall");
-							}
-						}
 						if (entity instanceof Player _player) {
 							ItemStack _setstack = new ItemStack(EngiesChaosModItems.GRAVITY_COIL.get()).copy();
 							_setstack.setCount(1);
@@ -153,6 +153,13 @@ public class DDayEeriePlayProcedure {
 									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "spreadplayers 0 0 0 128 false @s");
 						}
 					}
+					{
+						boolean _setval = false;
+						entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.ddayplayeraddedtodeadcount = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
 					if (entity instanceof Player _player) {
 						ItemStack _stktoremove = new ItemStack(EngiesChaosModItems.GRAVITY_COIL.get());
 						_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 100000000, _player.inventoryMenu.getCraftSlots());
@@ -170,13 +177,6 @@ public class DDayEeriePlayProcedure {
 						_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 100000000, _player.inventoryMenu.getCraftSlots());
 					}
 					EngiesChaosMod.queueServerWork(1, () -> {
-						{
-							Entity _ent = entity;
-							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "EngiesChaos doomsday toggleall");
-							}
-						}
 						if (entity instanceof Player _player) {
 							ItemStack _setstack = new ItemStack(EngiesChaosModItems.GRAVITY_COIL.get()).copy();
 							_setstack.setCount(1);

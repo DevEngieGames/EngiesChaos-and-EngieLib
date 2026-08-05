@@ -1,12 +1,12 @@
 {
   "name": "engies_chaos:item_house_xxl_portion3",
-  "fallback": "engies_chaos:item_house_xxl_portion1",
+  "fallback": "engies_chaos:item_house_xxl_portion3",
   "elements": [
     {
       "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "engies_chaos:itemhousexxl1",
+        "location": "engies_chaos:itemhousexxl4",
         "projection": "rigid",
         "processors": {
           "processors": []
