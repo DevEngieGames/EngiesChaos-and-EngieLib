@@ -114,19 +114,19 @@ public class DoomsDayAliveDeathCountOverlay {
 			if (DoomsDeadCountSmallProcedure.execute(world))
 				Minecraft.getInstance().font.draw(event.getPoseStack(),
 
-						DoomsDeadCountProcedure.execute(world), 23, h - 25, -16777216);
+						DoomsDeadCountProcedure.execute(world), 22, h - 27, -16777216);
 			if (DoomsDeadCountSmallProcedure.execute(world))
 				Minecraft.getInstance().font.draw(event.getPoseStack(),
 
-						DoomsDeadCountProcedure.execute(world), 22, h - 26, -1);
+						DoomsDeadCountProcedure.execute(world), 21, h - 27, -1);
 			if (DoomsDeadCountBigProcedure.execute(world))
 				Minecraft.getInstance().font.draw(event.getPoseStack(),
 
-						DoomsDeadCountProcedure.execute(world), 21, h - 25, -16777216);
+						DoomsDeadCountProcedure.execute(world), 20, h - 26, -16777216);
 			if (DoomsDeadCountBigProcedure.execute(world))
 				Minecraft.getInstance().font.draw(event.getPoseStack(),
 
-						DoomsDeadCountProcedure.execute(world), 20, h - 26, -1);
+						DoomsDeadCountProcedure.execute(world), 19, h - 27, -1);
 		}
 		RenderSystem.depthMask(true);
 		RenderSystem.defaultBlendFunc();

@@ -12,7 +12,7 @@
         "items": [
           {
             "items": [
-              "engies_chaos:engie_gem"
+              "minecraft:iron_ingot"
             ]
           }
         ]
@@ -24,7 +24,7 @@
         "items": [
           {
             "items": [
-              "minecraft:iron_ingot"
+              "engies_chaos:angry_engie_essence"
             ]
           }
         ]
@@ -36,7 +36,7 @@
         "items": [
           {
             "items": [
-              "engies_chaos:angry_engie_essence"
+              "engies_chaos:mad_engie_essence"
             ]
           }
         ]

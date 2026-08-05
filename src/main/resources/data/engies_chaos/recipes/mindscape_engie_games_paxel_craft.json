@@ -2,8 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "abc",
-    " d ",
-    " d "
+    " de"
   ],
   "key": {
     "a": {
@@ -16,7 +15,10 @@
       "item": "engies_chaos:mindscape_engies_shovel"
     },
     "d": {
-      "item": "minecraft:stick"
+      "item": "engies_chaos:mindscape_engies_sword"
+    },
+    "e": {
+      "item": "engies_chaos:mindscape_engies_hoe"
     }
   },
   "result": {

@@ -10,10 +10,10 @@
         "value": "Items.IRON_INGOT"
       },
       {
-        "value": "CUSTOM:EngieGem"
+        "value": "CUSTOM:AngryEngieEssence"
       },
       {
-        "value": "CUSTOM:AngryEngieEssence"
+        "value": "CUSTOM:MadEngieEssence"
       }
     ],
     "cookingBookCategory": "MISC",
@@ -23,7 +23,7 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": "CUSTOM:EngieGem"
+        "value": "CUSTOM:MadEngieEssence"
       },
       {
         "value": "Items.IRON_INGOT"

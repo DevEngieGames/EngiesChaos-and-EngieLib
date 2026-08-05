@@ -257,8 +257,8 @@
             "name": "DoomsDeadCountSmall"
           },
           "anchorPoint": "BOTTOM_LEFT",
-          "x": 23,
-          "y": 215,
+          "x": 22,
+          "y": 213,
           "locked": false
         }
       },
@@ -278,8 +278,8 @@
             "name": "DoomsDeadCountSmall"
           },
           "anchorPoint": "BOTTOM_LEFT",
-          "x": 22,
-          "y": 214,
+          "x": 21,
+          "y": 213,
           "locked": false
         }
       },
@@ -299,8 +299,8 @@
             "name": "DoomsDeadCountBig"
           },
           "anchorPoint": "BOTTOM_LEFT",
-          "x": 21,
-          "y": 215,
+          "x": 20,
+          "y": 214,
           "locked": false
         }
       },
@@ -320,8 +320,8 @@
             "name": "DoomsDeadCountBig"
           },
           "anchorPoint": "BOTTOM_LEFT",
-          "x": 20,
-          "y": 214,
+          "x": 19,
+          "y": 213,
           "locked": false
         }
       }

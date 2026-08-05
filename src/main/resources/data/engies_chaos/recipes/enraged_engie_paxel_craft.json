@@ -3,8 +3,7 @@
   "group": "enragedengiepaxel",
   "pattern": [
     "abc",
-    " d ",
-    " d "
+    " de"
   ],
   "key": {
     "a": {
@@ -17,7 +16,10 @@
       "item": "engies_chaos:enraged_engie_shovel"
     },
     "d": {
-      "item": "minecraft:stick"
+      "item": "engies_chaos:enraged_engie_sword"
+    },
+    "e": {
+      "item": "engies_chaos:enraged_engie_hoe"
     }
   },
   "result": {

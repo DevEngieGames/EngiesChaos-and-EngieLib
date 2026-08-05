@@ -13,31 +13,31 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": "CUSTOM:AntimatterEngieGem"
+        "value": "CUSTOM:AntimatterMadEngieEssence"
       },
       {
-        "value": "CUSTOM:AntimatterEngieGem"
+        "value": "CUSTOM:AntimatterMadEngieEssence"
       },
       {
-        "value": "CUSTOM:AntimatterEngieGem"
+        "value": "CUSTOM:AntimatterMadEngieEssence"
       },
       {
-        "value": "CUSTOM:AntimatterEngieGem"
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "CUSTOM:AntimatterEngieGem"
-      },
-      {
-        "value": "CUSTOM:AntimatterEngieGem"
+        "value": "CUSTOM:AntimatterMadEngieEssence"
       },
       {
         "value": ""
       },
       {
-        "value": "CUSTOM:AntimatterEngieGem"
+        "value": "CUSTOM:AntimatterMadEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterMadEngieEssence"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:AntimatterMadEngieEssence"
       }
     ],
     "recipeReturnStack": {

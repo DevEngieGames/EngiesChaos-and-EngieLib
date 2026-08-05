@@ -17,13 +17,13 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": "CUSTOM:AntimatterEngieGem"
+        "value": "CUSTOM:AntimatterMadEngieEssence"
       },
       {
         "value": "Items.IRON_INGOT"
       },
       {
-        "value": "CUSTOM:AntimatterEngieGem"
+        "value": "CUSTOM:AntimatterMadEngieEssence"
       },
       {
         "value": "CUSTOM:AntimatterAngryEngieEssence"

@@ -1,25 +1,23 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "group": "engiepaxel",
-  "pattern": [
-    "abc",
-    " d ",
-    " d "
-  ],
-  "key": {
-    "a": {
+  "ingredients": [
+    {
       "item": "engies_chaos:engie_axe"
     },
-    "b": {
+    {
       "item": "engies_chaos:engie_pickaxe"
     },
-    "c": {
+    {
       "item": "engies_chaos:engie_shovel"
     },
-    "d": {
-      "item": "minecraft:stick"
+    {
+      "item": "engies_chaos:engie_sword"
+    },
+    {
+      "item": "engies_chaos:engie_hoe"
     }
-  },
+  ],
   "result": {
     "item": "engies_chaos:engie_aiot",
     "count": 1

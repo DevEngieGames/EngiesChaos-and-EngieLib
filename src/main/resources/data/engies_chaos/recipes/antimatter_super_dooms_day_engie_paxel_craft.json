@@ -3,8 +3,7 @@
   "group": "superdoomsdayengiepaxel",
   "pattern": [
     "abc",
-    " d ",
-    " d "
+    " de"
   ],
   "key": {
     "a": {
@@ -17,7 +16,10 @@
       "item": "engies_chaos:antimatter_super_doomsday_shovel"
     },
     "d": {
-      "item": "minecraft:stick"
+      "item": "engies_chaos:antimatter_super_doomsday_sword"
+    },
+    "e": {
+      "item": "engies_chaos:antimatter_super_doomsday_hoe"
     }
   },
   "result": {

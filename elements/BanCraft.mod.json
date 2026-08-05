@@ -17,13 +17,13 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": "CUSTOM:EngieGem"
+        "value": "CUSTOM:MadEngieEssence"
       },
       {
         "value": "Items.IRON_INGOT"
       },
       {
-        "value": "CUSTOM:EngieGem"
+        "value": "CUSTOM:MadEngieEssence"
       },
       {
         "value": "CUSTOM:AngryEngieEssence"

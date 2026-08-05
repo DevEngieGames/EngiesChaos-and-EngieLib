@@ -2,8 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "abc",
-    " d ",
-    " d "
+    " de"
   ],
   "key": {
     "a": {
@@ -16,7 +15,10 @@
       "item": "engies_chaos:roughian_engie_games_shovel"
     },
     "d": {
-      "item": "minecraft:stick"
+      "item": "engies_chaos:engie_games_hallow_scythe"
+    },
+    "e": {
+      "item": "engies_chaos:roughian_engie_games_hoe"
     }
   },
   "result": {

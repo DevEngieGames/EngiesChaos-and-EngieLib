@@ -3,8 +3,7 @@
   "group": "theendengiepaxel",
   "pattern": [
     "abc",
-    " d ",
-    " d "
+    " de"
   ],
   "key": {
     "a": {
@@ -17,7 +16,10 @@
       "item": "engies_chaos:antimatter_the_end_shovel"
     },
     "d": {
-      "item": "minecraft:stick"
+      "item": "engies_chaos:antimatter_the_end_sword"
+    },
+    "e": {
+      "item": "engies_chaos:antimatter_the_end_hoe"
     }
   },
   "result": {

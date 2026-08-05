@@ -10,7 +10,7 @@
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
-    "recipeShapeless": false,
+    "recipeShapeless": true,
     "recipeSlots": [
       {
         "value": "CUSTOM:EngieAxe"
@@ -25,16 +25,16 @@
         "value": ""
       },
       {
-        "value": "Items.STICK"
+        "value": "CUSTOM:EngieSword"
+      },
+      {
+        "value": "CUSTOM:EngieHoe"
       },
       {
         "value": ""
       },
       {
         "value": ""
-      },
-      {
-        "value": "Items.STICK"
       },
       {
         "value": ""
