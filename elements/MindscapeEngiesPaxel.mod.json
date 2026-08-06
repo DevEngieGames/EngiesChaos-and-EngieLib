@@ -11,8 +11,7 @@
     "guiTexture": "",
     "name": "Mindscape Engies Paxel",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem2"
+      "fixedValue": []
     },
     "creativeTabs": [
       {
@@ -63,6 +62,12 @@
     "blockDropsTier": "NETHERITE",
     "blocksAffected": [],
     "stayInGridWhenCrafting": false,
-    "damageOnCrafting": false
+    "damageOnCrafting": false,
+    "onRightClickedOnBlock": {
+      "name": "AIOTRightClickBlock"
+    },
+    "onItemInInventoryTick": {
+      "name": "AIOTRightClickBlock"
+    }
   }
 }

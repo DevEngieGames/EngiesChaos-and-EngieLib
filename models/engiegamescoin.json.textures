@@ -2,13 +2,19 @@
   "mappings": {
     "default": {
       "map": {
-        "0": "engiecointexture"
+        "0": "engiegamescointexture"
       },
       "name": "default"
     },
+    "darkmatter": {
+      "map": {
+        "0": "darkmatterengiegamescointexture"
+      },
+      "name": "darkmatter"
+    },
     "antimatter": {
       "map": {
-        "0": "antimatterengiecointexture"
+        "0": "antimatterengiegamescointexture"
       },
       "name": "antimatter"
     }

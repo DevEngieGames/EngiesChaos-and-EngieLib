@@ -6,6 +6,12 @@
       },
       "name": "default"
     },
+    "darkmatter": {
+      "map": {
+        "0": "darkmatterdoomsdaycointexture"
+      },
+      "name": "darkmatter"
+    },
     "antimatter": {
       "map": {
         "0": "antimatterdoomsdaycointexture"

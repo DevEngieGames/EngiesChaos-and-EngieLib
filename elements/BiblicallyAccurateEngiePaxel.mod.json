@@ -9,10 +9,9 @@
     "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
     "guiTexture": "",
-    "name": "Biblically Accurate Engie Paxel",
+    "name": "Biblically Accurate Engie AIOT",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem2"
+      "fixedValue": []
     },
     "creativeTabs": [
       {
@@ -25,7 +24,7 @@
     "damageVsEntity": 125.0,
     "usageCount": 2250,
     "glowCondition": {
-      "fixedValue": true
+      "fixedValue": false
     },
     "repairItems": [
       {
@@ -37,6 +36,9 @@
     "blocksAffected": [],
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
+    "onRightClickedOnBlock": {
+      "name": "AIOTRightClickBlock"
+    },
     "onItemInInventoryTick": {
       "name": "BiblicallyAccurateToolObtain"
     }

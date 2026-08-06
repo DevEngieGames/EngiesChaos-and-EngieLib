@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "roughianengie",
+        "1": "holster"
+      },
+      "name": "default"
+    }
+  }
+}

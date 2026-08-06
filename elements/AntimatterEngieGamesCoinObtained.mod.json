@@ -2,7 +2,7 @@
   "_fv": 79,
   "_type": "achievement",
   "definition": {
-    "achievementName": "Okay, that looks pretty neat.",
+    "achievementName": "It still looks near identical to another coin...",
     "achievementDescription": "Obtain a Antimatter EngieGames coin.",
     "achievementIcon": {
       "value": "CUSTOM:AntimatterEngieGamesCoin"

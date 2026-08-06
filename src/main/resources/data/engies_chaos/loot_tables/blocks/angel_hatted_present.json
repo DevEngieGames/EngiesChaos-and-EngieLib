@@ -2256,7 +2256,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:monstrosity_engie_paxel",
+          "name": "engies_chaos:monstrosity_engie_aiot",
           "weight": 3750,
           "functions": [
             {
@@ -3852,7 +3852,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:hostile_engie_paxel",
+          "name": "engies_chaos:hostile_engie_aiot",
           "weight": 3500,
           "functions": [
             {

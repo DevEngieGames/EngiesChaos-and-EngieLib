@@ -1,7 +1,7 @@
 {
   "parent": "engies_chaos:custom/punisherplush",
   "textures": {
-    "0": "engies_chaos:block/punishernew",
+    "0": "engies_chaos:block/punisherplush",
     "particle": "engies_chaos:item/volc"
   }
 }

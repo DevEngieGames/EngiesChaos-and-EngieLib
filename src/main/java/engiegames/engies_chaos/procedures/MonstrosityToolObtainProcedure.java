@@ -74,7 +74,7 @@ public class MonstrosityToolObtainProcedure {
 					}
 				}
 			}
-		} else if (itemstack.getItem() == EngiesChaosModItems.MONSTROSITY_ENGIE_PAXEL.get()) {
+		} else if (itemstack.getItem() == EngiesChaosModItems.MONSTROSITY_ENGIE_AIOT.get()) {
 			if ((entity instanceof ServerPlayer _plr22 && _plr22.level instanceof ServerLevel
 					&& _plr22.getAdvancements().getOrStartProgress(_plr22.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:monstrosity_engie_tools_obtained"))).isDone()) == false) {
 				if (entity instanceof ServerPlayer _player) {

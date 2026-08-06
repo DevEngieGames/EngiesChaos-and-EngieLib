@@ -124,6 +124,20 @@
         "name": "spawnedentity",
         "type": "logic",
         "value": false
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "riftsize",
+        "type": "integer",
+        "value": 1
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "entityspawntype",
+        "type": "integer",
+        "value": 0
       }
     ],
     "onMobTickUpdate": {

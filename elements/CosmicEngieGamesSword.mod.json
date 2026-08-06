@@ -6,13 +6,12 @@
     "renderType": 1,
     "blockingRenderType": 0,
     "texture": "cosmicengie_sword",
-    "customModelName": "cosmicengiegames_sword_3d:default",
+    "customModelName": "cosmicengiegamesword:default",
     "blockingModelName": "Normal blocking",
     "guiTexture": "cosmicengie_sword",
     "name": "Cosmic EngieGames' Sword",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

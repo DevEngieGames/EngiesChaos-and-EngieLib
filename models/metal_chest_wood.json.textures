@@ -139,6 +139,62 @@
         "1": "minecraft:cherry_planks"
       },
       "name": "antimatter_cherry"
+    },
+    "darkmatter_oak": {
+      "map": {
+        "0": "darkmattermetalchest",
+        "1": "minecraft:oak_planks"
+      },
+      "name": "darkmatter_oak"
+    },
+    "darkmatter_spruce": {
+      "map": {
+        "0": "darkmattermetalchest",
+        "1": "minecraft:spruce_planks"
+      },
+      "name": "darkmatter_spruce"
+    },
+    "darkmatter_dark_oak": {
+      "map": {
+        "0": "darkmattermetalchest",
+        "1": "minecraft:dark_oak_planks"
+      },
+      "name": "darkmatter_dark_oak"
+    },
+    "darkmatter_jungle": {
+      "map": {
+        "0": "darkmattermetalchest",
+        "1": "minecraft:jungle_planks"
+      },
+      "name": "darkmatter_jungle"
+    },
+    "darkmatter_acacia": {
+      "map": {
+        "0": "darkmattermetalchest",
+        "1": "minecraft:acacia_planks"
+      },
+      "name": "darkmatter_acacia"
+    },
+    "darkmatter_crimson": {
+      "map": {
+        "0": "darkmattermetalchest",
+        "1": "minecraft:crimson_planks"
+      },
+      "name": "darkmatter_crimson"
+    },
+    "darkmatter_warped": {
+      "map": {
+        "0": "darkmattermetalchest",
+        "1": "minecraft:warped_planks"
+      },
+      "name": "darkmatter_warped"
+    },
+    "darkmatter_cherry": {
+      "map": {
+        "0": "darkmattermetalchest",
+        "1": "minecraft:cherry_planks"
+      },
+      "name": "darkmatter_cherry"
     }
   }
 }

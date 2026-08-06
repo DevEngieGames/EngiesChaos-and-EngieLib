@@ -1,0 +1,30 @@
+{
+  "replace": false,
+  "values": [
+    "wither_skull",
+    {
+      "id": "#engies_chaos:mobs/insanityhostile",
+      "required": false
+    },
+    {
+      "id": "#engies_chaos:mobs/nightmarehostile",
+      "required": false
+    },
+    "cave_spider",
+    {
+      "id": "#minecraft:undead",
+      "required": false
+    },
+    "wither",
+    "wither_skeleton",
+    {
+      "id": "#engies_chaos:mobs/hostile",
+      "required": false
+    },
+    {
+      "id": "#engies_chaos:mobs/engiepochostile",
+      "required": false
+    },
+    "spider"
+  ]
+}

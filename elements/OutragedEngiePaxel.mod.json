@@ -9,7 +9,7 @@
     "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
     "guiTexture": "",
-    "name": "Outraged Engie Paxel",
+    "name": "Outraged Engie AIOT",
     "specialInformation": {
       "fixedValue": []
     },
@@ -36,6 +36,9 @@
     "blocksAffected": [],
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
+    "onRightClickedOnBlock": {
+      "name": "AIOTRightClickBlock"
+    },
     "onItemInInventoryTick": {
       "name": "OutragedEngieToolObtain"
     }

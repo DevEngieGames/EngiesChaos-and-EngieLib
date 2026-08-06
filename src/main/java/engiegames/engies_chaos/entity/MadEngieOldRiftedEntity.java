@@ -28,6 +28,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.Packet;
 
+import engiegames.engies_chaos.procedures.RiftedEntitiesOnTickUpdateProcedure;
 import engiegames.engies_chaos.procedures.DoomsDayMobsFightEachotherToggleProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
@@ -134,6 +135,12 @@ public class MadEngieOldRiftedEntity extends Monster {
 	@Override
 	public boolean ignoreExplosion() {
 		return true;
+	}
+
+	@Override
+	public void baseTick() {
+		super.baseTick();
+		RiftedEntitiesOnTickUpdateProcedure.execute(this.level, this);
 	}
 
 	public static void init() {

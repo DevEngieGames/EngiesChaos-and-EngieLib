@@ -32,8 +32,6 @@ public class StunOnKeyPressedProcedure {
 								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @e[type=#allaboutengie:mobs/stunable,distance=..100] engies_chaos:stunned 10 255");
 					}
 				}
-				if (entity instanceof Player _player)
-					_player.getCooldowns().addCooldown((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem(), 800);
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
 						_level.playSound(null, new BlockPos(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("engies_chaos:playerstunmobs")), SoundSource.PLAYERS, (float) 0.5, 1);
@@ -44,7 +42,7 @@ public class StunOnKeyPressedProcedure {
 			} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getBoolean("usedstun") == true) {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal(("\u00A7cYou cannot stun with this weapon right now! You must wait "
-							+ ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("stuntimer")) + " second(s) before you can stun again!")), true);
+							+ (20 - Math.round((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("stuntimer"))) + " second(s) before you can stun again!")), true);
 			}
 		}
 	}

@@ -47,7 +47,7 @@ public class EngiesBlessingEnchantment extends Enchantment {
 			new ItemStack(EngiesChaosModItems.ENGIE_SCYTHE.get()), new ItemStack(EngiesChaosModItems.ENGIES_PICKAXE.get()), new ItemStack(EngiesChaosModItems.ENGIES_AXE.get()), new ItemStack(EngiesChaosModItems.ENGIES_SHOVEL.get()),
 			new ItemStack(EngiesChaosModItems.ENGIES_HOE.get()), new ItemStack(EngiesChaosModItems.ENGIES_AIOT.get()), new ItemStack(EngiesChaosModItems.ENGIE_AIOT.get()), new ItemStack(EngiesChaosModItems.ANGRY_ENGIE_AIOT.get()),
 			new ItemStack(EngiesChaosModItems.ENRAGED_ENGIE_AIOT.get()), new ItemStack(EngiesChaosModItems.OUTRAGED_ENGIE_AIOT.get()), new ItemStack(EngiesChaosModItems.BIBLICALLY_ACCURATE_ENGIE_AIOT.get()),
-			new ItemStack(EngiesChaosModItems.MONSTROSITY_ENGIE_PAXEL.get()), new ItemStack(EngiesChaosModItems.DOOMS_DAY_AIOT.get()), new ItemStack(EngiesChaosModItems.SUPER_DOOMS_DAY_AIOT.get()),
+			new ItemStack(EngiesChaosModItems.MONSTROSITY_ENGIE_AIOT.get()), new ItemStack(EngiesChaosModItems.DOOMS_DAY_AIOT.get()), new ItemStack(EngiesChaosModItems.SUPER_DOOMS_DAY_AIOT.get()),
 			new ItemStack(EngiesChaosModItems.THE_END_AIOT.get()), new ItemStack(EngiesChaosModItems.MINI_SCYTHE.get()), new ItemStack(EngiesChaosModItems.SCYTHE.get()), new ItemStack(EngiesChaosModItems.BIG_SCYTHE.get()),
 			new ItemStack(EngiesChaosModItems.LARGE_SCYTHE.get()), new ItemStack(EngiesChaosModItems.HUGE_SCYTHE.get()), new ItemStack(EngiesChaosModItems.ENORMOUS_SCYTHE.get()), new ItemStack(EngiesChaosModItems.GIGANTIC_SCYTHE.get()),
 			new ItemStack(EngiesChaosModItems.MASSIVE_SCYTHE.get()), new ItemStack(EngiesChaosModItems.BIBLICALLY_ACCURATE_ENGIE_SCYTHE.get()), new ItemStack(EngiesChaosModItems.MONSTROSITY_SCYTHE.get()),

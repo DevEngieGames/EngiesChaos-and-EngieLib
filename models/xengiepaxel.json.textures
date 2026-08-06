@@ -9,6 +9,16 @@
         "6": "handle"
       },
       "name": "default"
+    },
+    "truexengie": {
+      "map": {
+        "2": "truexengiescarf",
+        "3": "minecraft:dark_oak_planks",
+        "4": "scytheeyeengie",
+        "5": "truexengiegradiant",
+        "6": "handle"
+      },
+      "name": "truexengie"
     }
   }
 }

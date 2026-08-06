@@ -2,8 +2,9 @@
   "loader": "forge:separate_transforms",
   "gui_light": "front",
   "base": {
-    "parent": "engies_chaos:custom/cosmicengiegames_sword_3d",
+    "parent": "engies_chaos:custom/cosmicengiegamesword",
     "textures": {
+      "0": "engies_chaos:block/cosmicengie_sword",
       "particle": "engies_chaos:item/cosmicengie_sword"
     }
   },

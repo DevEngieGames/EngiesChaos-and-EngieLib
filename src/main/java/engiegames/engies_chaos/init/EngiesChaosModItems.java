@@ -925,7 +925,7 @@ public class EngiesChaosModItems {
 	public static final RegistryObject<Item> MONSTROSITY_ENGIE_AXE = REGISTRY.register("monstrosity_engie_axe", MonstrosityEngieAxeItem::new);
 	public static final RegistryObject<Item> MONSTROSITY_ENGIE_SHOVEL = REGISTRY.register("monstrosity_engie_shovel", MonstrosityEngieShovelItem::new);
 	public static final RegistryObject<Item> MONSTROSITY_ENGIE_HOE = REGISTRY.register("monstrosity_engie_hoe", MonstrosityEngieHoeItem::new);
-	public static final RegistryObject<Item> MONSTROSITY_ENGIE_PAXEL = REGISTRY.register("monstrosity_engie_paxel", MonstrosityEngiePaxelItem::new);
+	public static final RegistryObject<Item> MONSTROSITY_ENGIE_AIOT = REGISTRY.register("monstrosity_engie_aiot", MonstrosityEngiePaxelItem::new);
 	public static final RegistryObject<Item> ENGIE_ORE = blockCMT(EngiesChaosModBlocks.ENGIE_ORE, EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS);
 	public static final RegistryObject<Item> DEEPSLATE_ENGIE_ORE = blockCMT(EngiesChaosModBlocks.DEEPSLATE_ENGIE_ORE, EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS);
 	public static final RegistryObject<Item> ENGIE_GEM = REGISTRY.register("engie_gem", EngieGemItem::new);
@@ -936,7 +936,7 @@ public class EngiesChaosModItems {
 	public static final RegistryObject<Item> HOSTILE_ENGIE_AXE = REGISTRY.register("hostile_engie_axe", HostileEngieAxeItem::new);
 	public static final RegistryObject<Item> HOSTILE_ENGIE_SHOVEL = REGISTRY.register("hostile_engie_shovel", HostileEngieShovelItem::new);
 	public static final RegistryObject<Item> HOSTILE_ENGIE_HOE = REGISTRY.register("hostile_engie_hoe", HostileEngieHoeItem::new);
-	public static final RegistryObject<Item> HOSTILE_ENGIE_PAXEL = REGISTRY.register("hostile_engie_paxel", HostileEngiePaxelItem::new);
+	public static final RegistryObject<Item> HOSTILE_ENGIE_AIOT = REGISTRY.register("hostile_engie_aiot", HostileEngiePaxelItem::new);
 	public static final RegistryObject<Item> DOOMS_DAY_COIN = REGISTRY.register("dooms_day_coin", DoomsDayCoinItem::new);
 	public static final RegistryObject<Item> DOOMS_DAY_SWORD = REGISTRY.register("dooms_day_sword", DoomsDaySwordItem::new);
 	public static final RegistryObject<Item> DOOMS_DAY_PICKAXE = REGISTRY.register("dooms_day_pickaxe", DoomsDayPickaxeItem::new);
@@ -1065,7 +1065,7 @@ public class EngiesChaosModItems {
 	public static final RegistryObject<Item> ANTIMATTER_HOSTILE_ENGIE_AXE = REGISTRY.register("antimatter_hostile_engie_axe", AntimatterHostileEngieAxeItem::new);
 	public static final RegistryObject<Item> ANTIMATTER_HOSTILE_ENGIE_SHOVEL = REGISTRY.register("antimatter_hostile_engie_shovel", AntimatterHostileEngieShovelItem::new);
 	public static final RegistryObject<Item> ANTIMATTER_HOSTILE_ENGIE_HOE = REGISTRY.register("antimatter_hostile_engie_hoe", AntimatterHostileEngieHoeItem::new);
-	public static final RegistryObject<Item> ANTIMATTER_HOSTILE_ENGIE_PAXEL = REGISTRY.register("antimatter_hostile_engie_paxel", AntimatterHostileEngiePaxelItem::new);
+	public static final RegistryObject<Item> ANTIMATTER_HOSTILE_ENGIE_AIOT = REGISTRY.register("antimatter_hostile_engie_aiot", AntimatterHostileEngiePaxelItem::new);
 	public static final RegistryObject<Item> ANTIMATTER_DOOMSDAY_COIN = REGISTRY.register("antimatter_doomsday_coin", AntimatterDoomsdayCoinItem::new);
 	public static final RegistryObject<Item> ANTIMATTER_DOOMSDAY_SWORD = REGISTRY.register("antimatter_doomsday_sword", AntimatterDoomsdaySwordItem::new);
 	public static final RegistryObject<Item> ANTIMATTER_DOOMSDAY_PICKAXE = REGISTRY.register("antimatter_doomsday_pickaxe", AntimatterDoomsdayPickaxeItem::new);

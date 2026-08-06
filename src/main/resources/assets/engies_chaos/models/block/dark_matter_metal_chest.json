@@ -3,7 +3,7 @@
   "textures": {
     "all": "engies_chaos:block/darkmattermetalchest",
     "particle": "engies_chaos:block/darkmattermetalchest",
-    "0": "engies_chaos:block/metalchest"
+    "0": "engies_chaos:block/darkmattermetalchest"
   },
   "render_type": "solid"
 }

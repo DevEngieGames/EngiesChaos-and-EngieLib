@@ -9,7 +9,7 @@
     "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
     "guiTexture": "",
-    "name": "The End Paxel",
+    "name": "The End AIOT",
     "specialInformation": {
       "fixedValue": []
     },
@@ -35,6 +35,12 @@
     "blockDropsTier": "NETHERITE",
     "blocksAffected": [],
     "stayInGridWhenCrafting": false,
-    "damageOnCrafting": false
+    "damageOnCrafting": false,
+    "onRightClickedOnBlock": {
+      "name": "AIOTRightClickBlock"
+    },
+    "onItemInInventoryTick": {
+      "name": "TheEndToolObtain"
+    }
   }
 }

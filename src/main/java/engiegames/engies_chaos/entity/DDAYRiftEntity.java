@@ -46,6 +46,8 @@ import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class DDAYRiftEntity extends PathfinderMob {
 	public static final EntityDataAccessor<Boolean> DATA_spawnedentity = SynchedEntityData.defineId(DDAYRiftEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_riftsize = SynchedEntityData.defineId(DDAYRiftEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_entityspawntype = SynchedEntityData.defineId(DDAYRiftEntity.class, EntityDataSerializers.INT);
 
 	public DDAYRiftEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(EngiesChaosModEntities.DDAY_RIFT.get(), world);
@@ -70,6 +72,8 @@ public class DDAYRiftEntity extends PathfinderMob {
 	protected void defineSynchedData() {
 		super.defineSynchedData();
 		this.entityData.define(DATA_spawnedentity, false);
+		this.entityData.define(DATA_riftsize, 1);
+		this.entityData.define(DATA_entityspawntype, 0);
 	}
 
 	@Override
@@ -145,7 +149,7 @@ public class DDAYRiftEntity extends PathfinderMob {
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		DDAYRiftOnInitialEntitySpawnProcedure.execute(world);
+		DDAYRiftOnInitialEntitySpawnProcedure.execute(world, this);
 		return retval;
 	}
 
@@ -153,6 +157,8 @@ public class DDAYRiftEntity extends PathfinderMob {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putBoolean("Dataspawnedentity", this.entityData.get(DATA_spawnedentity));
+		compound.putInt("Datariftsize", this.entityData.get(DATA_riftsize));
+		compound.putInt("Dataentityspawntype", this.entityData.get(DATA_entityspawntype));
 	}
 
 	@Override
@@ -160,6 +166,10 @@ public class DDAYRiftEntity extends PathfinderMob {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Dataspawnedentity"))
 			this.entityData.set(DATA_spawnedentity, compound.getBoolean("Dataspawnedentity"));
+		if (compound.contains("Datariftsize"))
+			this.entityData.set(DATA_riftsize, compound.getInt("Datariftsize"));
+		if (compound.contains("Dataentityspawntype"))
+			this.entityData.set(DATA_entityspawntype, compound.getInt("Dataentityspawntype"));
 	}
 
 	@Override

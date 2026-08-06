@@ -1,6 +1,7 @@
 package engiegames.engies_chaos.procedures;
 
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.LivingEntity;
@@ -34,9 +35,9 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 		if ((world.getBlockState(new BlockPos(x, y - 1, z))).getBlock() == Blocks.AIR) {
 			{
 				Entity _ent = entity;
-				_ent.teleportTo(x, (y - 1), z);
+				_ent.teleportTo(x, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) x, (int) z)), z);
 				if (_ent instanceof ServerPlayer _serverPlayer)
-					_serverPlayer.connection.teleport(x, (y - 1), z, _ent.getYRot(), _ent.getXRot());
+					_serverPlayer.connection.teleport(x, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) x, (int) z)), z, _ent.getYRot(), _ent.getXRot());
 			}
 		} else if ((world.getBlockState(new BlockPos(x, y - 1, z))).is(BlockTags.create(new ResourceLocation("engies_chaos:ddaylightningstrikeable")))) {
 			if (!entity.level.isClientSide())
@@ -103,6 +104,14 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @e[type=player,distance=..10] engies_chaos:stunned 5 0 true");
 					}
 				}
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
+								("execute as @a[distance=..10] run damage @s " + Math.round(Mth.nextDouble(RandomSource.create(), 45, 100)) + " minecraft:lightning_bolt"));
+					}
+				}
 				for (Entity entityiterator : new ArrayList<>(world.players())) {
 					{
 						double _setval = 0.25;
@@ -157,6 +166,14 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
 									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @e[type=player,distance=..10] engies_chaos:stunned 5 0 true");
+						}
+					}
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
+									("execute as @a[distance=..10] run damage @s " + Math.round(Mth.nextDouble(RandomSource.create(), 45, 100)) + " minecraft:lightning_bolt"));
 						}
 					}
 					for (Entity entityiterator : new ArrayList<>(world.players())) {
@@ -238,6 +255,14 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @e[type=player,distance=..10] engies_chaos:stunned 5 0 true");
 						}
 					}
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
+									("execute as @a[distance=..10] run damage @s " + Math.round(Mth.nextDouble(RandomSource.create(), 45, 100)) + " minecraft:lightning_bolt"));
+						}
+					}
 					for (Entity entityiterator : new ArrayList<>(world.players())) {
 						{
 							double _setval = 0.25;
@@ -293,6 +318,14 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
 									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @e[type=player,distance=..10] engies_chaos:stunned 5 0 true");
+						}
+					}
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
+									("execute as @a[distance=..10] run damage @s " + Math.round(Mth.nextDouble(RandomSource.create(), 45, 100)) + " minecraft:lightning_bolt"));
 						}
 					}
 					for (Entity entityiterator : new ArrayList<>(world.players())) {
@@ -374,6 +407,14 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @e[type=player,distance=..10] engies_chaos:stunned 5 0 true");
 						}
 					}
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
+									("execute as @a[distance=..10] run damage @s " + Math.round(Mth.nextDouble(RandomSource.create(), 45, 100)) + " minecraft:lightning_bolt"));
+						}
+					}
 					for (Entity entityiterator : new ArrayList<>(world.players())) {
 						{
 							double _setval = 0.25;
@@ -397,6 +438,14 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
 									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @e[type=player,distance=..10] engies_chaos:stunned 5 0 true");
+						}
+					}
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
+									("execute as @a[distance=..10] run damage @s " + Math.round(Mth.nextDouble(RandomSource.create(), 45, 100)) + " minecraft:lightning_bolt"));
 						}
 					}
 					if (world instanceof ServerLevel _level) {

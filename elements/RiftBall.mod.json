@@ -134,7 +134,7 @@
         "max": 2147483647,
         "name": "size",
         "type": "integer",
-        "value": 3
+        "value": 5
       }
     ],
     "onMobTickUpdate": {
@@ -142,9 +142,6 @@
     },
     "onPlayerCollidesWith": {
       "name": "RiftBallPlayerCollidesWithThisEntity"
-    },
-    "onInitialSpawn": {
-      "name": "RiftBallOnInitialEntitySpawn"
     },
     "hasAI": true,
     "aiBase": "(none)",

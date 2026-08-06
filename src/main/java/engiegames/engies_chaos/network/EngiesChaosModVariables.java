@@ -188,6 +188,7 @@ public class EngiesChaosModVariables {
 			clone.diffadvancement31 = original.diffadvancement31;
 			clone.diffadvancement32 = original.diffadvancement32;
 			clone.ddayplayeraddedtodeadcount = original.ddayplayeraddedtodeadcount;
+			clone.doublejumping = original.doublejumping;
 			if (!event.isWasDeath()) {
 				clone.playeroverhealhp = original.playeroverhealhp;
 				clone.DoomsdayAlive = original.DoomsdayAlive;
@@ -1182,6 +1183,7 @@ public class EngiesChaosModVariables {
 		public boolean diffadvancement31 = false;
 		public boolean diffadvancement32 = false;
 		public boolean ddayplayeraddedtodeadcount = false;
+		public boolean doublejumping = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -1316,6 +1318,7 @@ public class EngiesChaosModVariables {
 			nbt.putBoolean("diffadvancement31", diffadvancement31);
 			nbt.putBoolean("diffadvancement32", diffadvancement32);
 			nbt.putBoolean("ddayplayeraddedtodeadcount", ddayplayeraddedtodeadcount);
+			nbt.putBoolean("doublejumping", doublejumping);
 			return nbt;
 		}
 
@@ -1447,6 +1450,7 @@ public class EngiesChaosModVariables {
 			diffadvancement31 = nbt.getBoolean("diffadvancement31");
 			diffadvancement32 = nbt.getBoolean("diffadvancement32");
 			ddayplayeraddedtodeadcount = nbt.getBoolean("ddayplayeraddedtodeadcount");
+			doublejumping = nbt.getBoolean("doublejumping");
 		}
 	}
 
@@ -1597,6 +1601,7 @@ public class EngiesChaosModVariables {
 					variables.diffadvancement31 = message.data.diffadvancement31;
 					variables.diffadvancement32 = message.data.diffadvancement32;
 					variables.ddayplayeraddedtodeadcount = message.data.ddayplayeraddedtodeadcount;
+					variables.doublejumping = message.data.doublejumping;
 				}
 			});
 			context.setPacketHandled(true);

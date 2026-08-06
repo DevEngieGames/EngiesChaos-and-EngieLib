@@ -1,11 +1,14 @@
 package engiegames.engies_chaos.item;
 
+import net.minecraft.world.level.Level;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.Entity;
 
+import engiegames.engies_chaos.procedures.SuperDoomsDayToolObtainProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModTabs;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 
@@ -36,5 +39,11 @@ public class SuperDoomsDaySwordItem extends SwordItem {
 				return Ingredient.of(new ItemStack(EngiesChaosModItems.SUPER_DOOMS_DAY_COIN.get()));
 			}
 		}, 3, -0.2f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
+	}
+
+	@Override
+	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
+		super.inventoryTick(itemstack, world, entity, slot, selected);
+		SuperDoomsDayToolObtainProcedure.execute(entity, itemstack);
 	}
 }

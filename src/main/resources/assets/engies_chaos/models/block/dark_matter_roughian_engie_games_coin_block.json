@@ -3,7 +3,7 @@
   "textures": {
     "all": "engies_chaos:block/darkmatterengiecointexture",
     "particle": "engies_chaos:block/darkmatterengiecointexture",
-    "0": "engies_chaos:block/engiegamestesseractouter",
+    "0": "engies_chaos:block/darkmatterengiegamestesseractouter",
     "1": "engies_chaos:block/engiegamestesseractcube"
   },
   "render_type": "cutout"
