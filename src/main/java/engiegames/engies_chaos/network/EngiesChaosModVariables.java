@@ -495,6 +495,15 @@ public class EngiesChaosModVariables {
 		public double totalplayersinworld = 0;
 		public double ddayplayeralivecount = 0;
 		public double ddayplayerdeadcount = 0;
+		public boolean TraderDoomsdaySpawnLock = false;
+		public boolean TraderSuperDoomsdaySpawnLock = false;
+		public boolean TraderTheEndSpawnLock = false;
+		public boolean TraderEngieSpawnLock = false;
+		public boolean TraderMindscapeEngieSpawnLock = false;
+		public boolean TraderEngieGamesSpawnLock = false;
+		public boolean TraderCosmicEngieGamesSpawnLock = false;
+		public boolean TraderRoughianEngieGamesSpawnLock = false;
+		public double ticktimerentitycheck = 0;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -732,6 +741,15 @@ public class EngiesChaosModVariables {
 			totalplayersinworld = nbt.getDouble("totalplayersinworld");
 			ddayplayeralivecount = nbt.getDouble("ddayplayeralivecount");
 			ddayplayerdeadcount = nbt.getDouble("ddayplayerdeadcount");
+			TraderDoomsdaySpawnLock = nbt.getBoolean("TraderDoomsdaySpawnLock");
+			TraderSuperDoomsdaySpawnLock = nbt.getBoolean("TraderSuperDoomsdaySpawnLock");
+			TraderTheEndSpawnLock = nbt.getBoolean("TraderTheEndSpawnLock");
+			TraderEngieSpawnLock = nbt.getBoolean("TraderEngieSpawnLock");
+			TraderMindscapeEngieSpawnLock = nbt.getBoolean("TraderMindscapeEngieSpawnLock");
+			TraderEngieGamesSpawnLock = nbt.getBoolean("TraderEngieGamesSpawnLock");
+			TraderCosmicEngieGamesSpawnLock = nbt.getBoolean("TraderCosmicEngieGamesSpawnLock");
+			TraderRoughianEngieGamesSpawnLock = nbt.getBoolean("TraderRoughianEngieGamesSpawnLock");
+			ticktimerentitycheck = nbt.getDouble("ticktimerentitycheck");
 		}
 
 		@Override
@@ -965,6 +983,15 @@ public class EngiesChaosModVariables {
 			nbt.putDouble("totalplayersinworld", totalplayersinworld);
 			nbt.putDouble("ddayplayeralivecount", ddayplayeralivecount);
 			nbt.putDouble("ddayplayerdeadcount", ddayplayerdeadcount);
+			nbt.putBoolean("TraderDoomsdaySpawnLock", TraderDoomsdaySpawnLock);
+			nbt.putBoolean("TraderSuperDoomsdaySpawnLock", TraderSuperDoomsdaySpawnLock);
+			nbt.putBoolean("TraderTheEndSpawnLock", TraderTheEndSpawnLock);
+			nbt.putBoolean("TraderEngieSpawnLock", TraderEngieSpawnLock);
+			nbt.putBoolean("TraderMindscapeEngieSpawnLock", TraderMindscapeEngieSpawnLock);
+			nbt.putBoolean("TraderEngieGamesSpawnLock", TraderEngieGamesSpawnLock);
+			nbt.putBoolean("TraderCosmicEngieGamesSpawnLock", TraderCosmicEngieGamesSpawnLock);
+			nbt.putBoolean("TraderRoughianEngieGamesSpawnLock", TraderRoughianEngieGamesSpawnLock);
+			nbt.putDouble("ticktimerentitycheck", ticktimerentitycheck);
 			return nbt;
 		}
 

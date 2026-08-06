@@ -33,28 +33,7 @@
     }
   },
   "rewards": {
-    "experience": 10,
-    "recipes": [
-      "engies_chaos:engie_axe_1",
-      "engies_chaos:engie_pickaxe_1",
-      "engies_chaos:engie_shovel_1",
-      "engies_chaos:engie_hoe_1",
-      "engies_chaos:engie_helmet_1",
-      "engies_chaos:engie_chestplate_1",
-      "engies_chaos:engie_leggings_1",
-      "engies_chaos:engie_boots_1",
-      "engies_chaos:engie_block_1",
-      "engies_chaos:engie_gem_9items",
-      "engies_chaos:mini_ban_craft",
-      "engies_chaos:ban_craft",
-      "engies_chaos:big_ban_craft",
-      "engies_chaos:large_ban_craft",
-      "engies_chaos:engie_bundle_craft",
-      "engies_chaos:mini_scythe_craft",
-      "engies_chaos:scythe_craft",
-      "engies_chaos:big_scythe_craft",
-      "engies_chaos:large_scythe_craft"
-    ]
+    "experience": 10
   },
-  "parent": "engies_chaos:new_world"
+  "parent": "engies_chaos:monstrosity_engie_essence_obtained"
 }

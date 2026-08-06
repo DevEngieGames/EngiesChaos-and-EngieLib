@@ -28,8 +28,15 @@ public class MissileTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
+		{
+			Entity _ent = entity;
+			if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+				_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+						_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "team join DDayNoCol");
+			}
+		}
 		for (Entity entityiterator : new ArrayList<>(world.players())) {
-			if (entityiterator instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(MobEffects.DARKNESS)) {
+			if (entityiterator instanceof LivingEntity _livEnt1 && _livEnt1.hasEffect(MobEffects.DARKNESS)) {
 				if (entity instanceof LivingEntity _entity)
 					_entity.removeEffect(MobEffects.GLOWING);
 			} else {
@@ -48,7 +55,7 @@ public class MissileTickUpdateProcedure {
 				Entity _ent = entity;
 				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "team join YellowLightning @e[type=allaboutengie:yellow_lightning]");
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "team join YellowLightning @e[type=engies_chaos:yellow_lightning]");
 				}
 			}
 			entity.getPersistentData().putDouble("YellowLightningTimeBeforeExplosion", (entity.getPersistentData().getDouble("YellowLightningTimeBeforeExplosion") + 0.05));
@@ -69,13 +76,15 @@ public class MissileTickUpdateProcedure {
 				entity.getPersistentData().putDouble("YellowLightningTimeBeforeExplosion", 0);
 				if (!entity.level.isClientSide())
 					entity.discard();
+				EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount = EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount - 1;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			}
 		} else if (entity instanceof BlueBurstEntity) {
 			{
 				Entity _ent = entity;
 				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "team join BlueBurst @e[type=allaboutengie:blue_burst]");
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "team join BlueBurst @e[type=engies_chaos:blue_burst]");
 				}
 			}
 			entity.getPersistentData().putDouble("BlueBurstTimeBeforeExplosion", (entity.getPersistentData().getDouble("BlueBurstTimeBeforeExplosion") + 0.05));
@@ -96,13 +105,15 @@ public class MissileTickUpdateProcedure {
 				entity.getPersistentData().putDouble("BlueBurstTimeBeforeExplosion", 0);
 				if (!entity.level.isClientSide())
 					entity.discard();
+				EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount = EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount - 1;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			}
 		} else if (entity instanceof NormalEntity) {
 			{
 				Entity _ent = entity;
 				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "team join Normal @e[type=allaboutengie:normal]");
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "team join Normal @e[type=engies_chaos:normal]");
 				}
 			}
 			entity.getPersistentData().putDouble("NormalTimeBeforeExplosion", (entity.getPersistentData().getDouble("NormalTimeBeforeExplosion") + 0.05));
@@ -123,6 +134,8 @@ public class MissileTickUpdateProcedure {
 				entity.getPersistentData().putDouble("NormalTimeBeforeExplosion", 0);
 				if (!entity.level.isClientSide())
 					entity.discard();
+				EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount = EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount - 1;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			}
 		} else if (entity instanceof MOABEntity) {
 			entity.getPersistentData().putDouble("MoabTimeBeforeExplosion", (entity.getPersistentData().getDouble("MoabTimeBeforeExplosion") + 0.05));
@@ -143,6 +156,8 @@ public class MissileTickUpdateProcedure {
 				entity.getPersistentData().putDouble("MoabTimeBeforeExplosion", 0);
 				if (!entity.level.isClientSide())
 					entity.discard();
+				EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount = EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount - 1;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			}
 		}
 	}

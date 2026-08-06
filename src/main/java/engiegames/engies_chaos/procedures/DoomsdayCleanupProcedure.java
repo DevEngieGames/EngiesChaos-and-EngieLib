@@ -18,6 +18,7 @@ import net.minecraft.commands.CommandSource;
 import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
+import engiegames.engies_chaos.init.EngiesChaosModGameRules;
 import engiegames.engies_chaos.EngiesChaosMod;
 
 @Mod.EventBusSubscriber
@@ -207,12 +208,23 @@ public class DoomsdayCleanupProcedure {
 			EngiesChaosModVariables.MapVariables.get(world).doomsdayaltsongstart = false;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(true, world.getServer());
-			if (EngiesChaosModVariables.MapVariables.get(world).timecheckstop == true) {
-				if (world instanceof ServerLevel _level)
-					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO,
-							_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), ("time set " + EngiesChaosModVariables.MapVariables.get(world).timebeforespecial));
-				EngiesChaosModVariables.MapVariables.get(world).timecheckstop = false;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIE_POC) == true && world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ONE_HP) == true
+					&& EngiesChaosModVariables.MapVariables.get(world).MobDifficulty == 525000) {
+				if (EngiesChaosModVariables.MapVariables.get(world).timecheckstop == true) {
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
+								Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), ("time set " + EngiesChaosModVariables.MapVariables.get(world).engiepoctime));
+					EngiesChaosModVariables.MapVariables.get(world).timecheckstop = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+				}
+			} else {
+				if (EngiesChaosModVariables.MapVariables.get(world).timecheckstop == true) {
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
+								Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), ("time set " + EngiesChaosModVariables.MapVariables.get(world).timebeforespecial));
+					EngiesChaosModVariables.MapVariables.get(world).timecheckstop = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+				}
 			}
 			EngiesChaosModVariables.MapVariables.get(world).DayCooldownToggle = true;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);

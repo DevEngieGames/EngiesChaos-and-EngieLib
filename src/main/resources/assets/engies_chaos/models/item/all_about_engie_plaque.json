@@ -1,8 +1,8 @@
 {
   "parent": "engies_chaos:custom/plaque",
   "textures": {
-    "0": "engies_chaos:block/allaboutengie",
-    "1": "engies_chaos:block/holster",
+    "0": "engies_chaos:block/holster",
+    "1": "engies_chaos:block/allaboutengie",
     "particle": "engies_chaos:item/backuptext"
   }
 }

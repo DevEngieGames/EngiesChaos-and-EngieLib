@@ -10,6 +10,7 @@ import net.minecraft.server.level.ServerLevel;
 
 import java.util.Comparator;
 
+import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 import engiegames.engies_chaos.entity.RiftBallEntity;
 import engiegames.engies_chaos.entity.MadEngieOldRiftedEntity;
@@ -88,6 +89,8 @@ public class DDAYRiftOnEntityTickUpdateProcedure {
 			EngiesChaosMod.queueServerWork(200, () -> {
 				if (!entity.level.isClientSide())
 					entity.discard();
+				EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount = EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount - 1;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			});
 		}
 	}

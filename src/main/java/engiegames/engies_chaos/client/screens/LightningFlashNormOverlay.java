@@ -15,6 +15,7 @@ import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.Minecraft;
 
 import engiegames.engies_chaos.procedures.LightningFlashNormDisplayProcedure;
+import engiegames.engies_chaos.network.EngiesChaosModVariables;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.platform.GlStateManager;
@@ -41,7 +42,7 @@ public class LightningFlashNormOverlay {
 		RenderSystem.enableBlend();
 		RenderSystem.setShader(GameRenderer::getPositionTexShader);
 		RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
-		RenderSystem.setShaderColor(1, 1, 1, 1);
+		RenderSystem.setShaderColor(1, 1, 1, (float) (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).lightningflashnum);
 		if (LightningFlashNormDisplayProcedure.execute(world)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/lightningflashnorm.png"));
 			Minecraft.getInstance().gui.blit(event.getPoseStack(), 0, 0, 0, 0, w, h, w, h);

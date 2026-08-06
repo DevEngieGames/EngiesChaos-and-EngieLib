@@ -29,7 +29,7 @@ public class DoomsdayAvalanchesProcedure {
 										"", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "summon engies_chaos:d_day_avalanche");
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 2) {
-				for (int index1 = 0; index1 < (int) Mth.nextDouble(RandomSource.create(), 1, 2); index1++) {
+				for (int index1 = 0; index1 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 2)); index1++) {
 					for (int index2 = 0; index2 < 25; index2++) {
 						EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount = EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount + 1;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -41,7 +41,7 @@ public class DoomsdayAvalanchesProcedure {
 					}
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 3) {
-				for (int index3 = 0; index3 < (int) Mth.nextDouble(RandomSource.create(), 1, 4); index3++) {
+				for (int index3 = 0; index3 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 4)); index3++) {
 					for (int index4 = 0; index4 < 25; index4++) {
 						EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount = EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount + 1;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -53,7 +53,7 @@ public class DoomsdayAvalanchesProcedure {
 					}
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 4) {
-				for (int index5 = 0; index5 < (int) Mth.nextDouble(RandomSource.create(), 1, 8); index5++) {
+				for (int index5 = 0; index5 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 8)); index5++) {
 					for (int index6 = 0; index6 < 25; index6++) {
 						EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount = EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount + 1;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);

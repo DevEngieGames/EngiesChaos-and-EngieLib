@@ -2,9 +2,9 @@
   "loader": "forge:separate_transforms",
   "gui_light": "front",
   "base": {
-    "parent": "engies_chaos:custom/cosmichoe",
+    "parent": "item/handheld",
     "textures": {
-      "particle": "engies_chaos:item/cosmicengie_hoe"
+      "layer0": "engies_chaos:item/cosmicengie_hoe"
     }
   },
   "perspectives": {

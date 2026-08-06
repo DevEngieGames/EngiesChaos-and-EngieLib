@@ -67,7 +67,7 @@
       "name": "AIOTRightClickBlock"
     },
     "onItemInInventoryTick": {
-      "name": "AIOTRightClickBlock"
+      "name": "MindscapeEngieGamesToolObtain"
     }
   }
 }

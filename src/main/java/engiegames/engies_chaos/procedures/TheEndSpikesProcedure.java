@@ -17,8 +17,8 @@ public class TheEndSpikesProcedure {
 	public static void execute(LevelAccessor world) {
 		if (Math.random() <= 0.5) {
 			if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 1) {
-				for (int index0 = 0; index0 < (int) Mth.nextDouble(RandomSource.create(), 1, 3); index0++) {
-					for (int index1 = 0; index1 < 15; index1++) {
+				for (int index0 = 0; index0 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 3)); index0++) {
+					for (int index1 = 0; index1 < 25; index1++) {
 						EngiesChaosMod.queueServerWork(5, () -> {
 							EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount = EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount + 1;
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -29,8 +29,8 @@ public class TheEndSpikesProcedure {
 					}
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 2) {
-				for (int index2 = 0; index2 < (int) Mth.nextDouble(RandomSource.create(), 1, 6); index2++) {
-					for (int index3 = 0; index3 < 15; index3++) {
+				for (int index2 = 0; index2 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 6)); index2++) {
+					for (int index3 = 0; index3 < 25; index3++) {
 						EngiesChaosMod.queueServerWork(5, () -> {
 							EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount = EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount + 1;
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -41,8 +41,8 @@ public class TheEndSpikesProcedure {
 					}
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 3) {
-				for (int index4 = 0; index4 < (int) Mth.nextDouble(RandomSource.create(), 1, 12); index4++) {
-					for (int index5 = 0; index5 < 15; index5++) {
+				for (int index4 = 0; index4 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 12)); index4++) {
+					for (int index5 = 0; index5 < 25; index5++) {
 						EngiesChaosMod.queueServerWork(5, () -> {
 							EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount = EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount + 1;
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -53,8 +53,8 @@ public class TheEndSpikesProcedure {
 					}
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 4) {
-				for (int index6 = 0; index6 < (int) Mth.nextDouble(RandomSource.create(), 1, 24); index6++) {
-					for (int index7 = 0; index7 < 15; index7++) {
+				for (int index6 = 0; index6 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 24)); index6++) {
+					for (int index7 = 0; index7 < 25; index7++) {
 						EngiesChaosMod.queueServerWork(5, () -> {
 							EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount = EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount + 1;
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);

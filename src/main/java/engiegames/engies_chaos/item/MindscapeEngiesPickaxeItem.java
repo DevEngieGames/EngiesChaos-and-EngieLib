@@ -1,11 +1,14 @@
 package engiegames.engies_chaos.item;
 
+import net.minecraft.world.level.Level;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.Entity;
 
+import engiegames.engies_chaos.procedures.MindscapeEngieGamesToolObtainProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModTabs;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 
@@ -39,5 +42,11 @@ public class MindscapeEngiesPickaxeItem extends PickaxeItem {
 						new ItemStack(EngiesChaosModItems.MONSTROSITY_ENGIE_ESSENCE.get()));
 			}
 		}, 1, 1.4f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
+	}
+
+	@Override
+	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
+		super.inventoryTick(itemstack, world, entity, slot, selected);
+		MindscapeEngieGamesToolObtainProcedure.execute(entity);
 	}
 }

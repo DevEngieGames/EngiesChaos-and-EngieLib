@@ -1,0 +1,12 @@
+{
+  "_fv": 79,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Number",
+    "displayName": "Trader Max Count",
+    "description": "MINIMUM 1. UNLESS YOU WANT TO TURN TRADERS OFF",
+    "category": "MOBS",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 1
+  }
+}

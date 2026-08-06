@@ -2795,5 +2795,7 @@
   "item.engies_chaos.old_enraged_plush_2.description_0": "Given out by the Testers, Contributors and the Developer.",
   "item.engies_chaos.old_enraged_plush_2.description_1": "He\u0027s totally Outraged Engie\u0027s original concept. (He\u0027s not.)",
   "item.engies_chaos.old_enraged_plush_2": "Old Enraged Engie Plush",
-  "item.engies_chaos.old_enraged_plush_2.description_2": "Thanks for playing Engie\u0027s Chaos!"
+  "item.engies_chaos.old_enraged_plush_2.description_2": "Thanks for playing Engie\u0027s Chaos!",
+  "gamerule.tradermaxcount.description": "MINIMUM 1. UNLESS YOU WANT TO TURN TRADERS OFF",
+  "gamerule.tradermaxcount": "Trader Max Count"
 }

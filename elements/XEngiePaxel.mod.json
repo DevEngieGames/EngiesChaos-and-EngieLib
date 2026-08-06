@@ -11,8 +11,7 @@
     "guiTexture": "",
     "name": "xEngie Paxel",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem3"
+      "fixedValue": []
     },
     "creativeTabs": [
       {
@@ -102,6 +101,9 @@
     "blockDropsTier": "NETHERITE",
     "blocksAffected": [],
     "stayInGridWhenCrafting": false,
-    "damageOnCrafting": false
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "XEngieGamesToolObtain"
+    }
   }
 }

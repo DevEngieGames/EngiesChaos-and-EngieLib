@@ -15,9 +15,11 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.core.BlockPos;
 
+import engiegames.engies_chaos.procedures.XEngieGamesToolObtainProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModTabs;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 
@@ -98,5 +100,11 @@ public class XEngiePaxelItem extends TieredItem {
 	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
 		itemstack.hurtAndBreak(2, entity, i -> i.broadcastBreakEvent(EquipmentSlot.MAINHAND));
 		return true;
+	}
+
+	@Override
+	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
+		super.inventoryTick(itemstack, world, entity, slot, selected);
+		XEngieGamesToolObtainProcedure.execute(entity);
 	}
 }

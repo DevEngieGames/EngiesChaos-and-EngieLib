@@ -22,7 +22,7 @@ public class DoomsdayRiftsProcedure {
 					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO,
 							_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos rift");
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 2) {
-				for (int index0 = 0; index0 < (int) Mth.nextDouble(RandomSource.create(), 1, 2); index0++) {
+				for (int index0 = 0; index0 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 2)); index0++) {
 					EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount = EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					if (world instanceof ServerLevel _level)
@@ -30,7 +30,7 @@ public class DoomsdayRiftsProcedure {
 								Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos rift");
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 3) {
-				for (int index1 = 0; index1 < (int) Mth.nextDouble(RandomSource.create(), 1, 4); index1++) {
+				for (int index1 = 0; index1 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 4)); index1++) {
 					EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount = EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					if (world instanceof ServerLevel _level)
@@ -38,7 +38,7 @@ public class DoomsdayRiftsProcedure {
 								Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos rift");
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 4) {
-				for (int index2 = 0; index2 < (int) Mth.nextDouble(RandomSource.create(), 1, 8); index2++) {
+				for (int index2 = 0; index2 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 8)); index2++) {
 					EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount = EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					if (world instanceof ServerLevel _level)

@@ -7,7 +7,6 @@ import net.minecraftforge.event.TickEvent;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.LevelAccessor;
@@ -15,7 +14,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
@@ -26,8 +24,6 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
 import javax.annotation.Nullable;
-
-import java.util.Comparator;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.init.EngiesChaosModGameRules;
@@ -74,13 +70,9 @@ public class EngiePocTickingProcedure {
 					world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.ENRAGED_ZOMBIES_TOGGLE).set(true, world.getServer());
 					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ONE_HP) == true && EngiesChaosModVariables.MapVariables.get(world).MobDifficulty == 525000) {
 						world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false, world.getServer());
-						{
-							Entity _ent = (findEntityInWorldRange(world, Player.class, 0, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0)), 0, 59999968));
-							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("time set " + EngiesChaosModVariables.MapVariables.get(world).engiepoctime));
-							}
-						}
+						if (world instanceof ServerLevel _level)
+							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
+									Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), ("time set " + EngiesChaosModVariables.MapVariables.get(world).engiepoctime));
 						if (EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart == false) {
 							EngiesChaosModVariables.MapVariables.get(world).engiepoctruehardest20mincount = EngiesChaosModVariables.MapVariables.get(world).engiepoctruehardest20mincount + 0.05;
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -118,9 +110,5 @@ public class EngiePocTickingProcedure {
 				}
 			}
 		}
-	}
-
-	private static Entity findEntityInWorldRange(LevelAccessor world, Class<? extends Entity> clazz, double x, double y, double z, double range) {
-		return (Entity) world.getEntitiesOfClass(clazz, AABB.ofSize(new Vec3(x, y, z), range, range, range), e -> true).stream().sorted(Comparator.comparingDouble(e -> e.distanceToSqr(x, y, z))).findFirst().orElse(null);
 	}
 }

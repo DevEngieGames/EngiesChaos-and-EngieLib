@@ -3,16 +3,15 @@
   "_type": "tool",
   "definition": {
     "toolType": "Hoe",
-    "renderType": 1,
+    "renderType": 0,
     "blockingRenderType": 0,
     "texture": "cosmicengie_hoe",
-    "customModelName": "cosmichoe:default",
+    "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
     "guiTexture": "cosmicengie_hoe",
     "name": "Cosmic EngieGames' Hoe",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem2"
+      "fixedValue": []
     },
     "creativeTabs": [
       {
@@ -36,6 +35,9 @@
     "blockDropsTier": "NETHERITE",
     "blocksAffected": [],
     "stayInGridWhenCrafting": false,
-    "damageOnCrafting": false
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "CosmicEngieGamesToolObtain"
+    }
   }
 }

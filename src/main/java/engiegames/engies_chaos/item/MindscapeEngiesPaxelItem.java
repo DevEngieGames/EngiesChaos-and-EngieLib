@@ -21,6 +21,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.core.BlockPos;
 
+import engiegames.engies_chaos.procedures.MindscapeEngieGamesToolObtainProcedure;
 import engiegames.engies_chaos.procedures.AIOTRightClickBlockProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModTabs;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
@@ -110,6 +111,6 @@ public class MindscapeEngiesPaxelItem extends TieredItem {
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		AIOTRightClickBlockProcedure.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity);
+		MindscapeEngieGamesToolObtainProcedure.execute(entity);
 	}
 }

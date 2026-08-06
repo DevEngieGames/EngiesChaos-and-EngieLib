@@ -8,11 +8,10 @@
     "texture": "cosmicengie_paxel",
     "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
-    "guiTexture": "cosmicengie_paxel",
+    "guiTexture": "",
     "name": "Cosmic EngieGames' AIOT",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem3"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

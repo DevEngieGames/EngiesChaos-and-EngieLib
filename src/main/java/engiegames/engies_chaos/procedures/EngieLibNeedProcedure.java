@@ -9,6 +9,7 @@ import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
+import engiegames.engies_chaos.init.EngiesChaosModGameRules;
 
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.StringArgumentType;
@@ -35,6 +36,16 @@ public class EngieLibNeedProcedure {
 									_player.getAdvancements().award(_adv, criteria);
 							}
 						}
+						if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ONE_HP) == true && EngiesChaosModVariables.MapVariables.get(world).ddayhappened == true) {
+							if (entity instanceof ServerPlayer _player) {
+								Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:doomsday_1hp_challenge_win"));
+								AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+								if (!_ap.isDone()) {
+									for (String criteria : _ap.getRemainingCriteria())
+										_player.getAdvancements().award(_adv, criteria);
+								}
+							}
+						}
 					}
 					if (EngiesChaosModVariables.MapVariables.get(world).sddayhappened == true || EngiesChaosModVariables.MapVariables.get(world).theendhappened == true || EngiesChaosModVariables.MapVariables.get(world).ewrathhappened == true) {
 						if (entity instanceof ServerPlayer _player) {
@@ -55,6 +66,16 @@ public class EngieLibNeedProcedure {
 									_player.getAdvancements().award(_adv, criteria);
 							}
 						}
+						if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ONE_HP) == true && EngiesChaosModVariables.MapVariables.get(world).theendhappened == true) {
+							if (entity instanceof ServerPlayer _player) {
+								Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:the_end_1hp_challenge_win"));
+								AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+								if (!_ap.isDone()) {
+									for (String criteria : _ap.getRemainingCriteria())
+										_player.getAdvancements().award(_adv, criteria);
+								}
+							}
+						}
 					}
 					if (EngiesChaosModVariables.MapVariables.get(world).ewrathhappened == true) {
 						if (entity instanceof ServerPlayer _player) {
@@ -63,6 +84,16 @@ public class EngieLibNeedProcedure {
 							if (!_ap.isDone()) {
 								for (String criteria : _ap.getRemainingCriteria())
 									_player.getAdvancements().award(_adv, criteria);
+							}
+						}
+						if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ONE_HP) == true) {
+							if (entity instanceof ServerPlayer _player) {
+								Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engies_wrath_1hp_challenge_win"));
+								AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+								if (!_ap.isDone()) {
+									for (String criteria : _ap.getRemainingCriteria())
+										_player.getAdvancements().award(_adv, criteria);
+								}
 							}
 						}
 					}

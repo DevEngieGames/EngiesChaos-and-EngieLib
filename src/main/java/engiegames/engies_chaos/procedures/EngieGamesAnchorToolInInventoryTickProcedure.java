@@ -31,6 +31,17 @@ public class EngieGamesAnchorToolInInventoryTickProcedure {
 				}
 			}
 		}
+		if (!(entity instanceof ServerPlayer _plr2 && _plr2.level instanceof ServerLevel
+				&& _plr2.getAdvancements().getOrStartProgress(_plr2.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:roughian_engie_games_tools_obtained"))).isDone())) {
+			if (entity instanceof ServerPlayer _player) {
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:roughian_engie_games_tools_obtained"));
+				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+				if (!_ap.isDone()) {
+					for (String criteria : _ap.getRemainingCriteria())
+						_player.getAdvancements().award(_adv, criteria);
+				}
+			}
+		}
 		if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 10) {
 			itemstack.setHoverName(Component.literal(("\u00A76" + "Strange" + " " + "Roughian Anchor")));
 		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 10 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 25) {

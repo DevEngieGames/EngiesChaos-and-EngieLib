@@ -16,7 +16,7 @@ public class SuperDoomsdayMissilesProcedure {
 	public static void execute(LevelAccessor world) {
 		if (Math.random() <= 0.5) {
 			if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 1) {
-				for (int index0 = 0; index0 < (int) Mth.nextDouble(RandomSource.create(), 1, 2); index0++) {
+				for (int index0 = 0; index0 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 2)); index0++) {
 					EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount = EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					if (world instanceof ServerLevel _level)
@@ -24,7 +24,7 @@ public class SuperDoomsdayMissilesProcedure {
 								Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos missile");
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 2) {
-				for (int index1 = 0; index1 < (int) Mth.nextDouble(RandomSource.create(), 1, 4); index1++) {
+				for (int index1 = 0; index1 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 4)); index1++) {
 					EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount = EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					if (world instanceof ServerLevel _level)
@@ -32,7 +32,7 @@ public class SuperDoomsdayMissilesProcedure {
 								Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos missile");
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 3) {
-				for (int index2 = 0; index2 < (int) Mth.nextDouble(RandomSource.create(), 1, 8); index2++) {
+				for (int index2 = 0; index2 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 8)); index2++) {
 					EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount = EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					if (world instanceof ServerLevel _level)
@@ -40,7 +40,7 @@ public class SuperDoomsdayMissilesProcedure {
 								Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos missile");
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 4) {
-				for (int index3 = 0; index3 < (int) Mth.nextDouble(RandomSource.create(), 1, 16); index3++) {
+				for (int index3 = 0; index3 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 16)); index3++) {
 					EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount = EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					if (world instanceof ServerLevel _level)
