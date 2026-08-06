@@ -4,8 +4,56 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4835044e-5263-4cfe-9dec-e05f7f84ea95" name="Changes" comment="Ported EngieLib back to Forge 1.19.2 for now. Expect a code update later.">
+    <list default="true" id="4835044e-5263-4cfe-9dec-e05f7f84ea95" name="Changes" comment="v0.2.5">
+      <change beforePath="$PROJECT_DIR$/.eclipse/configurations/Client.launch" beforeDir="false" afterPath="$PROJECT_DIR$/.eclipse/configurations/Client.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eclipse/configurations/Server.launch" beforeDir="false" afterPath="$PROJECT_DIR$/.eclipse/configurations/Server.launch" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/LibNeed.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/LibNeed.mod.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/PlayerTagCheck.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/PlayerTagCheck.mod.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/TeamCreate.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/TeamCreate.mod.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/EngielibMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/EngielibMod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/EgmCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/EgmCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/EgmaCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/EgmaCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/EgmcCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/EgmcCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/EgmsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/EgmsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/EgmspCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/EgmspCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/EngieLibCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/EngieLibCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/GmCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/GmCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/GmaCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/GmaCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/GmcCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/GmcCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/GmsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/GmsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/GmspCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/GmspCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/HomeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/HomeCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/SpawnCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/SpawnCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/TopCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/TopCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/network/EngielibModVariables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/network/EngielibModVariables.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/BetaTesterGearProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/BetaTesterGearProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/ChallengeCompletionProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/ChallengeCompletionProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/ContentCreatorProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/ContentCreatorProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/DeveloperGearProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/DeveloperGearProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/EGMAProProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/EGMAProProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/EGMCProProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/EGMCProProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/EGMProProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/EGMProProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/EGMSPProProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/EGMSPProProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/EGMSProProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/EGMSProProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/GMAProProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/GMAProProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/GMCProProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/GMCProProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/GMProProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/GMProProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/GMSPProProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/GMSPProProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/GMSProProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/GMSProProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/HomesProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/HomesProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/IdeaGiverGearProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/IdeaGiverGearProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/LibNeedProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/LibNeedProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/OperatorGearProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/OperatorGearProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/PlayerTagCheckProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/PlayerTagCheckProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/StartEndgameLootProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/StartEndgameLootProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/StartchallengeProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/StartchallengeProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/StarterGearEZProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/StarterGearEZProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/StarterGearProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/StarterGearProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/TeamCreateProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/TeamCreateProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/TesterGearProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/TesterGearProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/mods.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pack.mcmeta" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pack.mcmeta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +121,7 @@
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;EngieLib-Code&quot;,
     &quot;git.auto.fetch.suggestion.counter&quot;: &quot;2&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;F:/Repositories/2025.2/engielib&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
@@ -162,7 +211,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785614979364</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="v0.2.5">
+      <option name="closed" value="true" />
+      <created>1786025047657</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1786025047657</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +240,7 @@
     <MESSAGE value="bruh" />
     <MESSAGE value="First EngieLib code commit." />
     <MESSAGE value="Ported EngieLib back to Forge 1.19.2 for now. Expect a code update later." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ported EngieLib back to Forge 1.19.2 for now. Expect a code update later." />
+    <MESSAGE value="v0.2.5" />
+    <option name="LAST_COMMIT_MESSAGE" value="v0.2.5" />
   </component>
 </project>

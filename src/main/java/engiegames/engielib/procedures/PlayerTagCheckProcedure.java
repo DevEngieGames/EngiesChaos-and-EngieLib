@@ -192,8 +192,8 @@ public class PlayerTagCheckProcedure {
 					entity.getPersistentData().putBoolean("EngiesChaos_CC", true);
 				}
 			} else {
-				if (entity.getPersistentData().getBoolean("EngiesChaos_Dev") == true || entity.getPersistentData().getBoolean("") == true || entity.getPersistentData().getBoolean("EngiesChaos_CC") == true
-						|| entity.getPersistentData().getBoolean("EngiesChaos_BetaTester") == true || entity.getPersistentData().getBoolean("EngiesChaos_Tester") == true) {
+				if (entity.getPersistentData().getBoolean("EngiesChaos_Dev") == true || entity.getPersistentData().getBoolean("EngiesChaos_Contributor") == true || entity.getPersistentData().getBoolean("EngiesChaos_BetaTester") == true
+						|| entity.getPersistentData().getBoolean("EngiesChaos_Tester") == true || entity.getPersistentData().getBoolean("EngiesChaos_CC") == true) {
 					entity.getPersistentData().putBoolean("EngiesChaos_Dev", false);
 					entity.getPersistentData().putBoolean("EngiesChaos_Contributor", false);
 					entity.getPersistentData().putBoolean("EngiesChaos_BetaTester", false);
