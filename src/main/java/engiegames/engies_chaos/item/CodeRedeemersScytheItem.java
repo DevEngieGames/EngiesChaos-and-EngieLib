@@ -1,11 +1,14 @@
 package engiegames.engies_chaos.item;
 
+import net.minecraft.world.level.Level;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.Entity;
 
+import engiegames.engies_chaos.procedures.StunKeyTickProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 
 public class CodeRedeemersScytheItem extends SwordItem {
@@ -36,5 +39,11 @@ public class CodeRedeemersScytheItem extends SwordItem {
 						new ItemStack(EngiesChaosModItems.OUTRAGED_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.BIBLICALLY_ACCURATE_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.MONSTROSITY_ENGIE_ESSENCE.get()));
 			}
 		}, 3, -3f, new Item.Properties().tab(null));
+	}
+
+	@Override
+	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
+		super.inventoryTick(itemstack, world, entity, slot, selected);
+		StunKeyTickProcedure.execute(world, entity, itemstack);
 	}
 }

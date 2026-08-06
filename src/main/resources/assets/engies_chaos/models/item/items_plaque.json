@@ -1,7 +1,8 @@
 {
-  "parent": "engies_chaos:custom/aaeitemsplaque",
+  "parent": "engies_chaos:custom/plaque",
   "textures": {
     "0": "engies_chaos:block/aae_items_logo",
+    "1": "engies_chaos:block/holster",
     "particle": "engies_chaos:item/backuptext"
   }
 }

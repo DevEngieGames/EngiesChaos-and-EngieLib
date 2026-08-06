@@ -143,6 +143,7 @@ import engiegames.engies_chaos.item.OperatorsItem;
 import engiegames.engies_chaos.item.OperatorsHoeItem;
 import engiegames.engies_chaos.item.OperatorsAxeItem;
 import engiegames.engies_chaos.item.OldEnragedPlushItem;
+import engiegames.engies_chaos.item.OldEnragedPlush2Item;
 import engiegames.engies_chaos.item.OMENsItem;
 import engiegames.engies_chaos.item.NetheriteOutragedEngiePlushItem;
 import engiegames.engies_chaos.item.NetheriteMonstrosityEngiePlushItem;
@@ -1432,7 +1433,15 @@ public class EngiesChaosModItems {
 	public static final RegistryObject<Item> CHALLENGE_INSANITY_ENGIE_GAMES_PLUSH_MULTIPLAYER = REGISTRY.register("challenge_insanity_engie_games_plush_multiplayer", ChallengeInsanityEngieGamesPlushMultiplayerItem::new);
 	public static final RegistryObject<Item> PUNISHER_PLUSH = REGISTRY.register("punisher_plush", PunisherPlushItem::new);
 	public static final RegistryObject<Item> X_ENGIE_PLUSH = REGISTRY.register("x_engie_plush", XEngiePlushItem::new);
+	public static final RegistryObject<Item> ITEMS_PLAQUE = REGISTRY.register("items_plaque", ItemsPlaqueItem::new);
+	public static final RegistryObject<Item> MOBS_PLAQUE = REGISTRY.register("mobs_plaque", MobsPlaqueItem::new);
+	public static final RegistryObject<Item> SHARKOS_PLAQUE = REGISTRY.register("sharkos_plaque", SharkosPlaqueItem::new);
+	public static final RegistryObject<Item> DIMENSIONS_PLAQUE = REGISTRY.register("dimensions_plaque", DimensionsPlaqueItem::new);
+	public static final RegistryObject<Item> EXTRAS_PLAQUE = REGISTRY.register("extras_plaque", ExtrasPlaqueItem::new);
+	public static final RegistryObject<Item> ENRAGED_ZOMBIES_PLAQUE = REGISTRY.register("enraged_zombies_plaque", EnragedZombiesPlaqueItem::new);
+	public static final RegistryObject<Item> ALL_ABOUT_ENGIE_PLAQUE = REGISTRY.register("all_about_engie_plaque", AllAboutEngiePlaqueItem::new);
 	public static final RegistryObject<Item> ENGIES_CHAOS_PLAQUE = REGISTRY.register("engies_chaos_plaque", REAllAboutEngiePlaqueItem::new);
+	public static final RegistryObject<Item> ENGIE_PLAQUE = REGISTRY.register("engie_plaque", EngiePlaqueItem::new);
 	public static final RegistryObject<Item> ENGIES_HELMET = REGISTRY.register("engies_helmet", EngiesItem.Helmet::new);
 	public static final RegistryObject<Item> ENGIES_CHESTPLATE = REGISTRY.register("engies_chestplate", EngiesItem.Chestplate::new);
 	public static final RegistryObject<Item> ENGIES_LEGGINGS = REGISTRY.register("engies_leggings", EngiesItem.Leggings::new);
@@ -1928,13 +1937,6 @@ public class EngiesChaosModItems {
 	public static final RegistryObject<Item> TESTER_LEGGINGS = REGISTRY.register("tester_leggings", TesterItem.Leggings::new);
 	public static final RegistryObject<Item> TESTER_BOOTS = REGISTRY.register("tester_boots", TesterItem.Boots::new);
 	public static final RegistryObject<Item> AAE_ENGIE = REGISTRY.register("aae_engie", AAEEngieItem::new);
-	public static final RegistryObject<Item> ITEMS_PLAQUE = REGISTRY.register("items_plaque", ItemsPlaqueItem::new);
-	public static final RegistryObject<Item> MOBS_PLAQUE = REGISTRY.register("mobs_plaque", MobsPlaqueItem::new);
-	public static final RegistryObject<Item> EXTRAS_PLAQUE = REGISTRY.register("extras_plaque", ExtrasPlaqueItem::new);
-	public static final RegistryObject<Item> SHARKOS_PLAQUE = REGISTRY.register("sharkos_plaque", SharkosPlaqueItem::new);
-	public static final RegistryObject<Item> DIMENSIONS_PLAQUE = REGISTRY.register("dimensions_plaque", DimensionsPlaqueItem::new);
-	public static final RegistryObject<Item> ENRAGED_ZOMBIES_PLAQUE = REGISTRY.register("enraged_zombies_plaque", EnragedZombiesPlaqueItem::new);
-	public static final RegistryObject<Item> ALL_ABOUT_ENGIE_PLAQUE = REGISTRY.register("all_about_engie_plaque", AllAboutEngiePlaqueItem::new);
 	public static final RegistryObject<Item> CODE_REDEEMERS_HAMMER = REGISTRY.register("code_redeemers_hammer", CodeRedeemersHammerItem::new);
 	public static final RegistryObject<Item> CODE_REDEEMERS_HELMET = REGISTRY.register("code_redeemers_helmet", CodeRedeemersItem.Helmet::new);
 	public static final RegistryObject<Item> CODE_REDEEMERS_CHESTPLATE = REGISTRY.register("code_redeemers_chestplate", CodeRedeemersItem.Chestplate::new);
@@ -1955,7 +1957,6 @@ public class EngiesChaosModItems {
 	public static final RegistryObject<Item> TESTER_ENGIE_BUNDLE = REGISTRY.register("tester_engie_bundle", TesterEngieBundleItem::new);
 	public static final RegistryObject<Item> CONTENT_CREATOR_ENGIE_BUNDLE = REGISTRY.register("content_creator_engie_bundle", ContentCreatorEngieBundleItem::new);
 	public static final RegistryObject<Item> ENGIES_OWN_ENGIE_BUNDLE = REGISTRY.register("engies_own_engie_bundle", EngiesOwnEngieBundleItem::new);
-	public static final RegistryObject<Item> ENGIE_PLAQUE = REGISTRY.register("engie_plaque", EngiePlaqueItem::new);
 	public static final RegistryObject<Item> ENGIES_BIRTHDAY_BUNDLE = REGISTRY.register("engies_birthday_bundle", EngiesBirthdayBundleItem::new);
 	public static final RegistryObject<Item> DOOMS_DAY_ADVANCEMENT_ICON = REGISTRY.register("dooms_day_advancement_icon", DoomsDayAdvancementIconItem::new);
 	public static final RegistryObject<Item> SUPER_DOOMS_DAY_ADVANCEMENT_ICON = REGISTRY.register("super_dooms_day_advancement_icon", SuperDoomsDayAdvancementIconItem::new);
@@ -2092,6 +2093,7 @@ public class EngiesChaosModItems {
 	public static final RegistryObject<Item> ENGIES_CHAOS_RECIPE_BOOK_VOLUME_2 = REGISTRY.register("engies_chaos_recipe_book_volume_2", EngiesChaosRecipeBookVolume2Item::new);
 	public static final RegistryObject<Item> ENGIES_CHAOS_RECIPE_BOOK_VOLUME_3 = REGISTRY.register("engies_chaos_recipe_book_volume_3", EngiesChaosRecipeBookVolume3Item::new);
 	public static final RegistryObject<Item> ENGIES_CHAOS_RECIPE_BOOK_VOLUME_5 = REGISTRY.register("engies_chaos_recipe_book_volume_5", EngiesChaosRecipeBookVolume5Item::new);
+	public static final RegistryObject<Item> OLD_ENRAGED_PLUSH_2 = REGISTRY.register("old_enraged_plush_2", OldEnragedPlush2Item::new);
 
 	// Start of user code block custom items
 	// End of user code block custom items

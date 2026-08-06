@@ -1,0 +1,67 @@
+{
+  "mappings": {
+    "mobs": {
+      "map": {
+        "0": "aae_mobs_logo",
+        "1": "holster"
+      },
+      "name": "mobs"
+    },
+    "default": {
+      "map": {
+        "0": "newengiepfplol",
+        "1": "holster"
+      },
+      "name": "default"
+    },
+    "aae": {
+      "map": {
+        "0": "allaboutengie",
+        "1": "holster"
+      },
+      "name": "aae"
+    },
+    "sharkos": {
+      "map": {
+        "0": "aae_sharkos_logo",
+        "1": "holster"
+      },
+      "name": "sharkos"
+    },
+    "extras": {
+      "map": {
+        "0": "aae_extras_logo",
+        "1": "holster"
+      },
+      "name": "extras"
+    },
+    "items": {
+      "map": {
+        "0": "aae_items_logo",
+        "1": "holster"
+      },
+      "name": "items"
+    },
+    "zombies": {
+      "map": {
+        "0": "enraged_zombies_logo",
+        "1": "holster"
+      },
+      "name": "zombies"
+    },
+    "dimensions": {
+      "map": {
+        "0": "aae_dimensions_logo",
+        "1": "holster"
+      },
+      "name": "dimensions"
+    },
+    "engie": {
+      "map": {
+        "0": "newengiepfp",
+        "1": "holster"
+      },
+      "name": "engie"
+    }
+  }
+}

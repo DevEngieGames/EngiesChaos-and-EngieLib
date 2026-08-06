@@ -12,7 +12,7 @@ public class DeveloperModeGUIWhileThisGUIIsOpenTickProcedure {
 		if (entity == null)
 			return;
 		if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-			ItemStack _setstack = new ItemStack(EngiesChaosModItems.OLD_ENRAGED_PLUSH.get()).copy();
+			ItemStack _setstack = new ItemStack(EngiesChaosModItems.OLD_ENRAGED_PLUSH_2.get()).copy();
 			_setstack.setCount(1);
 			_menu.getSlots().get(4).set(_setstack);
 			_player.containerMenu.broadcastChanges();

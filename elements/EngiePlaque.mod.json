@@ -4,13 +4,17 @@
   "definition": {
     "renderType": 1,
     "texture": "newengiepfplol",
-    "customModelName": "engieplaque:default",
+    "customModelName": "plaque:engie",
     "guiTexture": "",
     "customProperties": {},
     "states": [],
     "name": "Engie Plaque",
     "rarity": "EPIC",
-    "creativeTabs": [],
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsItems"
+      }
+    ],
     "stackSize": 64,
     "enchantability": 0,
     "useDuration": 0,

@@ -126,7 +126,7 @@ public class DeveloperModeGUIScreen extends AbstractContainerScreen<DeveloperMod
 
 	@Override
 	protected void renderLabels(PoseStack ms, int mouseX, int mouseY) {
-		this.font.draw(ms, Component.translatable("gui.engies_chaos.developer_mode_gui.label_devgui"), 4, 1, -16777216);
+		this.font.draw(ms, Component.translatable("gui.engies_chaos.developer_mode_gui.label_devgui"), 4, 3, -16777216);
 		this.font.draw(ms, StunRadiusGetForDevGUIProcedure.execute(world), 117, 123, -16777216);
 	}
 

@@ -3,18 +3,14 @@
   "_type": "item",
   "definition": {
     "renderType": 1,
-    "texture": "backuptext",
-    "customModelName": "plaque:zombies",
+    "texture": "volc",
+    "customModelName": "oldenragedplush:alt",
     "guiTexture": "",
     "customProperties": {},
     "states": [],
-    "name": "Enraged Zombies Plaque",
-    "rarity": "EPIC",
-    "creativeTabs": [
-      {
-        "value": "CUSTOM:AAEItemsItems"
-      }
-    ],
+    "name": "Old Enraged Engie Plush",
+    "rarity": "COMMON",
+    "creativeTabs": [],
     "stackSize": 64,
     "enchantability": 0,
     "useDuration": 0,
@@ -24,13 +20,17 @@
       "value": ""
     },
     "destroyAnyBlock": false,
-    "immuneToFire": true,
+    "immuneToFire": false,
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInformation": {
-      "fixedValue": []
+      "fixedValue": [
+        "Given out by the Testers, Contributors and the Developer.",
+        "He's totally Outraged Engie's original concept. (He's not.)",
+        "Thanks for playing Engie's Chaos!"
+      ]
     },
     "glowCondition": {
       "fixedValue": false

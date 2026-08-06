@@ -10,6 +10,10 @@ public class DoomsDayAliveDeathCountDisplayOverlayIngameProcedure {
 			return true;
 		} else if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart == true) {
 			return true;
+		} else if (EngiesChaosModVariables.MapVariables.get(world).TheEndStart == true) {
+			return true;
+		} else if (EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart == true) {
+			return true;
 		}
 		return false;
 	}

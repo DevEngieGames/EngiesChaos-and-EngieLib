@@ -4,13 +4,17 @@
   "definition": {
     "renderType": 1,
     "texture": "backuptext",
-    "customModelName": "allaboutengieplaque:default",
+    "customModelName": "plaque:aae",
     "guiTexture": "",
     "customProperties": {},
     "states": [],
     "name": "All About Engie Plaque",
     "rarity": "EPIC",
-    "creativeTabs": [],
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsItems"
+      }
+    ],
     "stackSize": 64,
     "enchantability": 0,
     "useDuration": 0,

@@ -84,7 +84,7 @@ public class DifficultyOverlayMediumOverlay {
 		RenderSystem.setShader(GameRenderer::getPositionTexShader);
 		RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
 		RenderSystem.setShaderColor(1, 1, 1, 1);
-		if (DifficultyOverlayShow2Procedure.execute(entity)) {
+		if (DifficultyOverlayShow2Procedure.execute(world, entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/difficultyoverlaybg.png"));
 			Minecraft.getInstance().gui.blit(event.getPoseStack(), w - 192, 0, 0, 0, 256, 64, 256, 64);
 

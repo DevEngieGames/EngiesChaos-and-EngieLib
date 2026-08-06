@@ -5,6 +5,12 @@
         "0": "oldenragedengie"
       },
       "name": "default"
+    },
+    "alt": {
+      "map": {
+        "0": "oldenragedengie2"
+      },
+      "name": "alt"
     }
   }
 }

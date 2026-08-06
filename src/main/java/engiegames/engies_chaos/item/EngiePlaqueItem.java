@@ -9,9 +9,11 @@ import net.minecraft.network.chat.Component;
 
 import java.util.List;
 
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
+
 public class EngiePlaqueItem extends Item {
 	public EngiePlaqueItem() {
-		super(new Item.Properties().tab(null).fireResistant().rarity(Rarity.EPIC));
+		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS).fireResistant().rarity(Rarity.EPIC));
 	}
 
 	@Override

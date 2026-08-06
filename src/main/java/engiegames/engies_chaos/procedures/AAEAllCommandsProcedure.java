@@ -239,6 +239,48 @@ public class AAEAllCommandsProcedure {
 					}
 				}
 			}
+		} else if ((StringArgumentType.getString(arguments, "MainType")).equals("DevMode") || (StringArgumentType.getString(arguments, "MainType")).equals("devmode")) {
+			if (entity.getPersistentData().getBoolean("EngiesChaos_Dev") == true) {
+				{
+					boolean _setval = !(entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).playerdebugmode;
+					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.playerdebugmode = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			} else if (entity.getPersistentData().getBoolean("EngiesChaos_Contributor") == true) {
+				{
+					boolean _setval = !(entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).playerdebugmode;
+					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.playerdebugmode = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			} else if (entity.getPersistentData().getBoolean("EngiesChaos_BetaTester") == true) {
+				{
+					boolean _setval = !(entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).playerdebugmode;
+					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.playerdebugmode = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			} else if (entity.getPersistentData().getBoolean("EngiesChaos_Tester") == true) {
+				{
+					boolean _setval = !(entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).playerdebugmode;
+					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.playerdebugmode = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			} else {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "tellraw @p {\"text\":\"NUH UH!\",\"color\":\"red\"}");
+					}
+				}
+			}
 		}
 	}
 }

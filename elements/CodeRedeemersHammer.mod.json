@@ -8,6 +8,7 @@
     "texture": "redeempixel",
     "customModelName": "ban_hammer_redeem:default",
     "blockingModelName": "Normal blocking",
+    "guiTexture": "",
     "name": "Code Redeemers Ban Hammer",
     "specialInformation": {
       "fixedValue": []
@@ -18,11 +19,17 @@
     "enchantability": 128000,
     "damageVsEntity": 690.0,
     "usageCount": 6900,
+    "glowCondition": {
+      "fixedValue": false
+    },
     "repairItems": [],
     "immuneToFire": false,
     "blockDropsTier": "STONE",
     "blocksAffected": [],
     "stayInGridWhenCrafting": false,
-    "damageOnCrafting": false
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "StunKeyTick"
+    }
   }
 }

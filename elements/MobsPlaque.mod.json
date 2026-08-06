@@ -4,13 +4,17 @@
   "definition": {
     "renderType": 1,
     "texture": "backuptext",
-    "customModelName": "aaemobsplaque:default",
+    "customModelName": "plaque:mobs",
     "guiTexture": "",
     "customProperties": {},
     "states": [],
-    "name": "All About Engie (Mobs) Plaque",
+    "name": "All About Engie Mobs Plaque",
     "rarity": "EPIC",
-    "creativeTabs": [],
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsItems"
+      }
+    ],
     "stackSize": 64,
     "enchantability": 0,
     "useDuration": 0,

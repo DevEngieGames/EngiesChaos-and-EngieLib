@@ -3,7 +3,7 @@
   "_type": "keybind",
   "definition": {
     "triggerKey": "K",
-    "keyBindingName": "[Engie's Chaos] Dev GUI (Just for Engie btw)",
+    "keyBindingName": "[Engie's Chaos] Dev GUI (unbind if you wanna)",
     "keyBindingCategoryKey": "gameplay",
     "onKeyPressed": {
       "name": "DevModeGUIOnKeyReleased"

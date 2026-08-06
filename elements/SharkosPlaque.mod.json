@@ -4,13 +4,17 @@
   "definition": {
     "renderType": 1,
     "texture": "backuptext",
-    "customModelName": "aaesharkosplaque:default",
+    "customModelName": "plaque:sharkos",
     "guiTexture": "",
     "customProperties": {},
     "states": [],
-    "name": "All About Engie (Sharkos) Plaque",
+    "name": "All About Engie Sharkos Plaque",
     "rarity": "EPIC",
-    "creativeTabs": [],
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsItems"
+      }
+    ],
     "stackSize": 64,
     "enchantability": 0,
     "useDuration": 0,

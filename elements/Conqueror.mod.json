@@ -17,7 +17,7 @@
     "rewardXP": 1000,
     "achievementType": "goal",
     "parent": {
-      "value": "CUSTOM:NewWorld"
+      "value": "CUSTOM:IGuessThisIsDDAY"
     },
     "triggerxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"advancement_trigger\" deletable=\"false\" x=\"40\" y=\"80\"><next><block type=\"custom_trigger\"></block></next></block></xml>"
   }
