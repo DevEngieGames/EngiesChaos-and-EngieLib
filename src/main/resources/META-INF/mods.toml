@@ -1,0 +1,36 @@
+modLoader="javafml"
+loaderVersion="[43,)"
+license="Apache License version 2.0"
+
+[[mods]]
+modId="engielib"
+version="0.2.4"
+displayName="EngieLib"
+updateJSONURL="https://raw.githubusercontent.com/DevEngieGames/RE-All-About-Engie/refs/heads/Update-Check/EngieLib.json"
+displayURL="https://github.com/DevEngieGames/EngiesChaos-and-EngieLib"
+logoFile="logo.png"
+credits="Not really anyone else."
+authors="EngieGames"
+description="Designed for Engie's Chaos currently. Works in unison with Engie's Chaos to stop some strange bugs that couldn't have been fixed without this mod."
+
+# Start of user code block mod configuration
+# End of user code block mod configuration
+
+[[dependencies.engielib]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19.2]"
+    ordering="AFTER"
+    side="BOTH"
+
+
+
+[[dependencies.engielib]]
+    modId="allaboutengie"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
+
+# Start of user code block dependencies configuration
+# End of user code block dependencies configuration
