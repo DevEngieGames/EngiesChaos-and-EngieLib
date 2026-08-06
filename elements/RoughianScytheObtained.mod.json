@@ -17,7 +17,7 @@
     "rewardXP": 125,
     "achievementType": "challenge",
     "parent": {
-      "value": "CUSTOM:EngieGamesTesseractObtained"
+      "value": "CUSTOM:CosmicSwordObtain"
     },
     "triggerxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"advancement_trigger\" deletable=\"false\" x=\"40\" y=\"80\"><next><block type=\"custom_trigger\"></block></next></block></xml>"
   }

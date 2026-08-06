@@ -195,6 +195,20 @@
         "1": "minecraft:cherry_planks"
       },
       "name": "darkmatter_cherry"
+    },
+    "darkmatter_mangrove": {
+      "map": {
+        "0": "darkmattermetalchest",
+        "1": "minecraft:mangrove_planks"
+      },
+      "name": "darkmatter_mangrove"
+    },
+    "darkmatter_birch": {
+      "map": {
+        "0": "darkmattermetalchest",
+        "1": "minecraft:birch_planks"
+      },
+      "name": "darkmatter_birch"
     }
   }
 }

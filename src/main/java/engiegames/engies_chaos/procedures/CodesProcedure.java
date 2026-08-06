@@ -354,5 +354,27 @@ public class CodesProcedure {
 				}
 			}
 		}
+		if ((((entity instanceof Player _entity54 && _entity54.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu54) ? _menu54.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("devmode")) {
+			if ((entity.getPersistentData().getBoolean("EngiesChaos_Dev") || entity.getPersistentData().getBoolean("EngiesChaos_Contributor") || entity.getPersistentData().getBoolean("EngiesChaos_BetaTester")
+					|| entity.getPersistentData().getBoolean("EngiesChaos_Tester")) == true) {
+				if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).playerdebugmode == false) {
+					{
+						boolean _setval = true;
+						entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.playerdebugmode = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).playerdebugmode == true) {
+					{
+						boolean _setval = false;
+						entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.playerdebugmode = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				}
+			}
+		}
 	}
 }

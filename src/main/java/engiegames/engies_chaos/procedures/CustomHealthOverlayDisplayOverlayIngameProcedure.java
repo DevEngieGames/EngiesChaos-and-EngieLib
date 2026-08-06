@@ -13,7 +13,7 @@ public class CustomHealthOverlayDisplayOverlayIngameProcedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		if (getEntityGameType(entity) == GameType.SURVIVAL || getEntityGameType(entity) == GameType.ADVENTURE) {
+		if (getEntityGameType(entity) == GameType.SURVIVAL || getEntityGameType(entity) == GameType.ADVENTURE || getEntityGameType(entity) == GameType.CREATIVE) {
 			if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).hphudtoggle == true) {
 				return true;
 			}

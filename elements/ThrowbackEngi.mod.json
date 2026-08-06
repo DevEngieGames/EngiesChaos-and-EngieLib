@@ -136,7 +136,7 @@
     "spawnThisMob": true,
     "doesDespawnWhenIdle": true,
     "spawningCondition": {
-      "name": "ThrowbackSharkoNaturalEntitySpawningCondition"
+      "name": "ThrowbackSpawningCond"
     },
     "spawningProbability": 40,
     "mobSpawningType": "creature",
