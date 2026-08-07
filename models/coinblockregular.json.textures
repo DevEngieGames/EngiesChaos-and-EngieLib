@@ -41,6 +41,24 @@
         "0": "antimattertheendcoinblocktext"
       },
       "name": "athend"
+    },
+    "darkdday": {
+      "map": {
+        "0": "darkmatterdoomsdaycoinblocktext"
+      },
+      "name": "darkdday"
+    },
+    "darksdday": {
+      "map": {
+        "0": "darkmattersuperdoomsdaycoinblocktext"
+      },
+      "name": "darksdday"
+    },
+    "darktheend": {
+      "map": {
+        "0": "darkmattertheendcoinblocktext"
+      },
+      "name": "darktheend"
     }
   }
 }

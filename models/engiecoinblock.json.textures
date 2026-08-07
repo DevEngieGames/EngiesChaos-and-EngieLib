@@ -11,6 +11,12 @@
         "0": "antimatterengiecoinblocktext"
       },
       "name": "antimatter"
+    },
+    "darkmatter": {
+      "map": {
+        "0": "darkmatterengiecoinblocktext"
+      },
+      "name": "darkmatter"
     }
   }
 }

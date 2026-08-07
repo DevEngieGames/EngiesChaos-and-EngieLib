@@ -172,8 +172,8 @@ public abstract class CosmicEngieGamessItem extends ArmorItem {
 				@OnlyIn(Dist.CLIENT)
 				public HumanoidModel getHumanoidArmorModel(LivingEntity living, ItemStack stack, EquipmentSlot slot, HumanoidModel defaultModel) {
 					HumanoidModel armorModel = new HumanoidModel(new ModelPart(Collections.emptyList(),
-							Map.of("left_leg", new Modelcosmicengiearmor(Minecraft.getInstance().getEntityModels().bakeLayer(Modelcosmicengiearmor.LAYER_LOCATION)).LeftLeg, "right_leg",
-									new Modelcosmicengiearmor(Minecraft.getInstance().getEntityModels().bakeLayer(Modelcosmicengiearmor.LAYER_LOCATION)).RightLeg, "head", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "hat",
+							Map.of("left_leg", new Modelcosmicengiearmor(Minecraft.getInstance().getEntityModels().bakeLayer(Modelcosmicengiearmor.LAYER_LOCATION)).LeftLeg2, "right_leg",
+									new Modelcosmicengiearmor(Minecraft.getInstance().getEntityModels().bakeLayer(Modelcosmicengiearmor.LAYER_LOCATION)).RightLeg2, "head", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "hat",
 									new ModelPart(Collections.emptyList(), Collections.emptyMap()), "body", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "right_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
 									"left_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()))));
 					armorModel.crouching = living.isShiftKeyDown();

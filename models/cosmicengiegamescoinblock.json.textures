@@ -5,6 +5,12 @@
         "0": "cosmicengiegamescoinblocktext"
       },
       "name": "default"
+    },
+    "darkmatter": {
+      "map": {
+        "0": "darkmattercosmicengiegamescoinblocktext"
+      },
+      "name": "darkmatter"
     }
   }
 }
