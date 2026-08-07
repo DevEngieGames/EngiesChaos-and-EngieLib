@@ -11,7 +11,7 @@ public class HealthOverlayButtonDisplayProcedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		if (getEntityGameType(entity) == GameType.SURVIVAL || getEntityGameType(entity) == GameType.ADVENTURE) {
+		if (getEntityGameType(entity) == GameType.SURVIVAL || getEntityGameType(entity) == GameType.ADVENTURE || getEntityGameType(entity) == GameType.CREATIVE) {
 			return true;
 		}
 		return false;
