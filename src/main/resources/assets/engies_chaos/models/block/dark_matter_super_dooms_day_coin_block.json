@@ -3,7 +3,7 @@
   "textures": {
     "all": "engies_chaos:block/darkmattersuperdoomsdaycoinblocktext",
     "particle": "engies_chaos:block/darkmattersuperdoomsdaycoinblocktext",
-    "0": "engies_chaos:block/mindscapeengiecoinblocktext"
+    "0": "engies_chaos:block/darkmattersuperdoomsdaycoinblocktext"
   },
   "render_type": "cutout"
 }

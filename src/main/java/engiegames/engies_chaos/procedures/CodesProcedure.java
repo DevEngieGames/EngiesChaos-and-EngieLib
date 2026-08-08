@@ -336,7 +336,7 @@ public class CodesProcedure {
 				}
 			}
 		}
-		if ((((entity instanceof Player _entity50 && _entity50.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu50) ? _menu50.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("engiesbuggedchaos")) {
+		if ((((entity instanceof Player _entity50 && _entity50.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu50) ? _menu50.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("ceasar")) {
 			{
 				Entity _ent = entity;
 				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
@@ -345,7 +345,7 @@ public class CodesProcedure {
 				}
 			}
 		}
-		if ((((entity instanceof Player _entity52 && _entity52.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu52) ? _menu52.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("ceasar")) {
+		if ((((entity instanceof Player _entity52 && _entity52.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu52) ? _menu52.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("engiesbuggedchaos")) {
 			{
 				Entity _ent = entity;
 				if (!_ent.level.isClientSide() && _ent.getServer() != null) {

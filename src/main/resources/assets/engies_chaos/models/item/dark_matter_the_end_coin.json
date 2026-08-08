@@ -1,7 +1,7 @@
 {
   "parent": "engies_chaos:custom/theendcoin",
   "textures": {
-    "0": "engies_chaos:block/theendcointexture",
+    "0": "engies_chaos:block/darkmattertheendcointexture",
     "particle": "engies_chaos:item/theendbase"
   }
 }

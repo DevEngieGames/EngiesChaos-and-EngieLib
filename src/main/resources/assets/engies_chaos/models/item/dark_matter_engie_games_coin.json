@@ -1,7 +1,7 @@
 {
   "parent": "engies_chaos:custom/engiegamescoin",
   "textures": {
-    "0": "engies_chaos:block/engiegamescointexture",
+    "0": "engies_chaos:block/darkmatterengiegamescointexture",
     "particle": "engies_chaos:item/engiebase"
   }
 }
