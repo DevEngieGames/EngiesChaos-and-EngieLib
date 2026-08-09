@@ -2797,5 +2797,9 @@
   "item.engies_chaos.old_enraged_plush_2": "Old Enraged Engie Plush",
   "item.engies_chaos.old_enraged_plush_2.description_2": "Thanks for playing Engie\u0027s Chaos!",
   "gamerule.tradermaxcount.description": "MINIMUM 1. UNLESS YOU WANT TO TURN TRADERS OFF",
-  "gamerule.tradermaxcount": "Trader Max Count"
+  "gamerule.tradermaxcount": "Trader Max Count",
+  "item.engies_chaos.darkmatter_fragment": "§0Dark §fMatter Fragment",
+  "item.engies_chaos.darkmatter": "§0Dark §fMatter",
+  "enchantment.engies_chaos.engies_dark_matter_blessing": "Engies Antimatter Blessing",
+  "attribute.engies_chaos.engies_dark_matter_blessing_chance_for_player": "Engies Dark Matter Blessing Chance For Player"
 }

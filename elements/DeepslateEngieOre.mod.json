@@ -131,9 +131,6 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
-    "onDestroyedByPlayer": {
-      "name": "DeepslateEngieOreBlockDestroyed"
-    },
     "generateFeature": true,
     "restrictionBiomes": [
       {
@@ -148,7 +145,7 @@
     "generationShape": "UNIFORM",
     "frequencyPerChunks": 5,
     "frequencyOnChunk": 5,
-    "minGenerateHeight": -64,
+    "minGenerateHeight": -25,
     "maxGenerateHeight": 0
   }
 }

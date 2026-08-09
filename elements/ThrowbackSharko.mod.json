@@ -139,6 +139,9 @@
     "rangedAttackRadius": 10.0,
     "spawnThisMob": true,
     "doesDespawnWhenIdle": false,
+    "spawningCondition": {
+      "name": "ThrowbackSpawningCond"
+    },
     "spawningProbability": 20,
     "mobSpawningType": "creature",
     "minNumberOfMobsPerGroup": 4,

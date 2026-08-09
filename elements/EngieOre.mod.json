@@ -131,9 +131,6 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
-    "onDestroyedByPlayer": {
-      "name": "EngieOreBlockDestroyed"
-    },
     "generateFeature": true,
     "restrictionBiomes": [
       {
@@ -155,9 +152,9 @@
       }
     ],
     "generationShape": "UNIFORM",
-    "frequencyPerChunks": 10,
+    "frequencyPerChunks": 5,
     "frequencyOnChunk": 5,
     "minGenerateHeight": 0,
-    "maxGenerateHeight": 128
+    "maxGenerateHeight": 25
   }
 }

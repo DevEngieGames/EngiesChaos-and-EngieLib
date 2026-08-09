@@ -10,6 +10,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraft.world.item.enchantment.Enchantment;
 
 import engiegames.engies_chaos.enchantment.EngiesTrueBlessingEnchantment;
+import engiegames.engies_chaos.enchantment.EngiesDarkMatterBlessingEnchantment;
 import engiegames.engies_chaos.enchantment.EngiesBlessingEnchantment;
 import engiegames.engies_chaos.enchantment.EngiesAntimatterBlessingEnchantment;
 import engiegames.engies_chaos.EngiesChaosMod;
@@ -19,4 +20,5 @@ public class EngiesChaosModEnchantments {
 	public static final RegistryObject<Enchantment> ENGIES_BLESSING = REGISTRY.register("engies_blessing", () -> new EngiesBlessingEnchantment());
 	public static final RegistryObject<Enchantment> ENGIES_ANTIMATTER_BLESSING = REGISTRY.register("engies_antimatter_blessing", () -> new EngiesAntimatterBlessingEnchantment());
 	public static final RegistryObject<Enchantment> ENGIES_TRUE_BLESSING = REGISTRY.register("engies_true_blessing", () -> new EngiesTrueBlessingEnchantment());
+	public static final RegistryObject<Enchantment> ENGIES_DARK_MATTER_BLESSING = REGISTRY.register("engies_dark_matter_blessing", () -> new EngiesDarkMatterBlessingEnchantment());
 }

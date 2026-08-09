@@ -6,15 +6,18 @@
       "id": "#engies_chaos:mobs/insanityhostile",
       "required": false
     },
+    "cave_spider",
+    "skeleton",
+    "zombie_villager",
     {
       "id": "#engies_chaos:mobs/nightmarehostile",
       "required": false
     },
-    "cave_spider",
-    {
-      "id": "#minecraft:undead",
-      "required": false
-    },
+    "vindicator",
+    "zombie",
+    "zombified_piglin",
+    "evoker",
+    "pillager",
     "wither",
     "wither_skeleton",
     {
@@ -25,6 +28,8 @@
       "id": "#engies_chaos:mobs/engiepochostile",
       "required": false
     },
-    "spider"
+    "enderman",
+    "spider",
+    "ravager"
   ]
 }

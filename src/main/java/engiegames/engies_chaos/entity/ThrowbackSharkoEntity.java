@@ -4,7 +4,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
 
-import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -40,6 +39,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.Packet;
 
+import engiegames.engies_chaos.procedures.ThrowbackSpawningCondProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class ThrowbackSharkoEntity extends TamableAnimal {
@@ -168,8 +168,12 @@ public class ThrowbackSharkoEntity extends TamableAnimal {
 	}
 
 	public static void init() {
-		SpawnPlacements.register(EngiesChaosModEntities.THROWBACK_SHARKO.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-				(entityType, world, reason, pos, random) -> (world.getBlockState(pos.below()).getMaterial() == Material.GRASS && world.getRawBrightness(pos, 0) > 8));
+		SpawnPlacements.register(EngiesChaosModEntities.THROWBACK_SHARKO.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			return ThrowbackSpawningCondProcedure.execute(world);
+		});
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

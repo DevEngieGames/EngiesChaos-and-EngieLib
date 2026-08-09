@@ -45,24 +45,24 @@ public class CoinDroppingProcedure {
 					for (int index0 = 0; index0 < (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get())
 							* ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(Enchantments.MOB_LOOTING) + 1
 									+ (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(Enchantments.BLOCK_FORTUNE) + 1); index0++) {
-						CoinDropping1Procedure.execute(world, entity, sourceentity);
+						CoinDropping1Procedure.execute(world, entity);
 					}
 				} else if (EnchantmentHelper.getItemEnchantmentLevel(Enchantments.MOB_LOOTING, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
 						&& !(EnchantmentHelper.getItemEnchantmentLevel(Enchantments.BLOCK_FORTUNE, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0)) {
 					for (int index1 = 0; index1 < (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get())
 							* ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(Enchantments.MOB_LOOTING) + 1); index1++) {
-						CoinDropping1Procedure.execute(world, entity, sourceentity);
+						CoinDropping1Procedure.execute(world, entity);
 					}
 				} else if (EnchantmentHelper.getItemEnchantmentLevel(Enchantments.BLOCK_FORTUNE, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
 						&& !(EnchantmentHelper.getItemEnchantmentLevel(Enchantments.MOB_LOOTING, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0)) {
 					for (int index2 = 0; index2 < (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get())
 							* ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(Enchantments.BLOCK_FORTUNE) + 1); index2++) {
-						CoinDropping1Procedure.execute(world, entity, sourceentity);
+						CoinDropping1Procedure.execute(world, entity);
 					}
 				} else if (!(EnchantmentHelper.getItemEnchantmentLevel(Enchantments.MOB_LOOTING, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
 						&& EnchantmentHelper.getItemEnchantmentLevel(Enchantments.BLOCK_FORTUNE, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0)) {
 					for (int index3 = 0; index3 < (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get()); index3++) {
-						CoinDropping1Procedure.execute(world, entity, sourceentity);
+						CoinDropping1Procedure.execute(world, entity);
 					}
 				}
 			}
@@ -78,7 +78,7 @@ public class CoinDroppingProcedure {
 							* (((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(Enchantments.MOB_LOOTING) + 1
 									+ ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(Enchantments.BLOCK_FORTUNE)
 									+ 1); index4++) {
-						CoinDropping1Procedure.execute(world, entity, sourceentity);
+						CoinDropping1Procedure.execute(world, entity);
 					}
 				} else if (EnchantmentHelper.getItemEnchantmentLevel(Enchantments.MOB_LOOTING,
 						((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
@@ -88,7 +88,7 @@ public class CoinDroppingProcedure {
 							.getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get())
 							* (((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(Enchantments.MOB_LOOTING)
 									+ 1); index5++) {
-						CoinDropping1Procedure.execute(world, entity, sourceentity);
+						CoinDropping1Procedure.execute(world, entity);
 					}
 				} else if (EnchantmentHelper.getItemEnchantmentLevel(Enchantments.BLOCK_FORTUNE,
 						((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
@@ -98,7 +98,7 @@ public class CoinDroppingProcedure {
 							.getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get())
 							* (((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(Enchantments.BLOCK_FORTUNE)
 									+ 1); index6++) {
-						CoinDropping1Procedure.execute(world, entity, sourceentity);
+						CoinDropping1Procedure.execute(world, entity);
 					}
 				} else if (!(EnchantmentHelper.getItemEnchantmentLevel(Enchantments.MOB_LOOTING,
 						((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
@@ -106,16 +106,16 @@ public class CoinDroppingProcedure {
 								((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0)) {
 					for (int index7 = 0; index7 < ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
 							.getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get()); index7++) {
-						CoinDropping1Procedure.execute(world, entity, sourceentity);
+						CoinDropping1Procedure.execute(world, entity);
 					}
 				}
 			}
 		} else if (sourceentity instanceof XEngieGamesEntity) {
 			for (int index8 = 0; index8 < 25 * 8; index8++) {
-				CoinDropping1Procedure.execute(world, entity, sourceentity);
+				CoinDropping1Procedure.execute(world, entity);
 			}
 		} else {
-			CoinDropping1Procedure.execute(world, entity, sourceentity);
+			CoinDropping1Procedure.execute(world, entity);
 		}
 	}
 }

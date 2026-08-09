@@ -4,12 +4,13 @@
 	"texture_size": [32, 32],
 	"textures": {
 		"0": "antimatter",
+		"1": "antimatterring",
 		"particle": "antimatter"
 	},
 	"elements": [
 		{
-			"from": [7.5, 7.5, 7.5],
-			"to": [8.5, 8.5, 8.5],
+			"from": [6, 6, 6],
+			"to": [10, 10, 10],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
 			"faces": {
 				"north": {"uv": [4, 4, 8, 8], "texture": "#0"},
@@ -22,8 +23,8 @@
 		},
 		{
 			"name": "cube_outline",
-			"from": [8.6, 8.6, 8.6],
-			"to": [7.4, 7.4, 7.4],
+			"from": [10.25, 10.25, 10.25],
+			"to": [5.75, 5.75, 5.75],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
 			"faces": {
 				"north": {"uv": [12, 12, 16, 16], "rotation": 180, "texture": "#0"},
@@ -32,6 +33,19 @@
 				"west": {"uv": [0, 12, 4, 16], "rotation": 180, "texture": "#0"},
 				"up": {"uv": [12, 8, 8, 12], "rotation": 180, "texture": "#0"},
 				"down": {"uv": [8, 12, 4, 8], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"from": [3, 7.975, 3],
+			"to": [13, 8.025, 13],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 0], "texture": "#1"},
+				"east": {"uv": [0, 0, 0, 0], "texture": "#1"},
+				"south": {"uv": [0, 0, 0, 0], "texture": "#1"},
+				"west": {"uv": [0, 0, 0, 0], "texture": "#1"},
+				"up": {"uv": [16, 16, 0, 0], "texture": "#1"},
+				"down": {"uv": [16, 0, 0, 16], "texture": "#1"}
 			}
 		}
 	],

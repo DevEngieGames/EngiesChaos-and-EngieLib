@@ -23,10 +23,13 @@ public class EngiesChaosModAttributes {
 	public static final DeferredRegister<Attribute> REGISTRY = DeferredRegister.create(ForgeRegistries.ATTRIBUTES, EngiesChaosMod.MODID);
 	public static final RegistryObject<Attribute> ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER = REGISTRY.register("engies_antimatter_blessing_chance_for_player",
 			() -> new RangedAttribute("attribute.engies_chaos.engies_antimatter_blessing_chance_for_player", 0.5, 0.05, 0.55).setSyncable(true));
+	public static final RegistryObject<Attribute> ENGIES_DARK_MATTER_BLESSING_CHANCE_FOR_PLAYER = REGISTRY.register("engies_dark_matter_blessing_chance_for_player",
+			() -> new RangedAttribute("attribute.engies_chaos.engies_dark_matter_blessing_chance_for_player", 0, 0, 100).setSyncable(true));
 
 	@SubscribeEvent
 	public static void addAttributes(EntityAttributeModificationEvent event) {
 		event.add(EntityType.PLAYER, ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get());
+		event.add(EntityType.PLAYER, ENGIES_DARK_MATTER_BLESSING_CHANCE_FOR_PLAYER.get());
 	}
 
 	@Mod.EventBusSubscriber
@@ -36,6 +39,7 @@ public class EngiesChaosModAttributes {
 			Player oldPlayer = event.getOriginal();
 			Player newPlayer = event.getEntity();
 			newPlayer.getAttribute(ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).setBaseValue(oldPlayer.getAttribute(ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue());
+			newPlayer.getAttribute(ENGIES_DARK_MATTER_BLESSING_CHANCE_FOR_PLAYER.get()).setBaseValue(oldPlayer.getAttribute(ENGIES_DARK_MATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue());
 		}
 	}
 }
