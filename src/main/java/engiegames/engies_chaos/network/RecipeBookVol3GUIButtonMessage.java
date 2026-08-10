@@ -12,12 +12,12 @@ import net.minecraft.core.BlockPos;
 
 import java.util.function.Supplier;
 
-import engiegames.engies_chaos.procedures.RecipeBookVol3UpOnePageProcedure;
-import engiegames.engies_chaos.procedures.RecipeBookVol3UpMaxPagesProcedure;
-import engiegames.engies_chaos.procedures.RecipeBookVol3UpFivePagesProcedure;
-import engiegames.engies_chaos.procedures.RecipeBookVol3DownOnePageProcedure;
-import engiegames.engies_chaos.procedures.RecipeBookVol3DownFivePagesProcedure;
-import engiegames.engies_chaos.procedures.RecipeBookVol3DownAllPagesProcedure;
+import engiegames.engies_chaos.procedures.RecipeBookUpOnePageProcedure;
+import engiegames.engies_chaos.procedures.RecipeBookUpMaxPagesProcedure;
+import engiegames.engies_chaos.procedures.RecipeBookUpFivePagesProcedure;
+import engiegames.engies_chaos.procedures.RecipeBookDownOnePageProcedure;
+import engiegames.engies_chaos.procedures.RecipeBookDownFivePagesProcedure;
+import engiegames.engies_chaos.procedures.RecipeBookDownAllPagesProcedure;
 import engiegames.engies_chaos.EngiesChaosMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -58,27 +58,27 @@ public class RecipeBookVol3GUIButtonMessage {
 			return;
 		if (buttonID == 0) {
 
-			RecipeBookVol3UpOnePageProcedure.execute(entity);
+			RecipeBookUpOnePageProcedure.execute(entity);
 		}
 		if (buttonID == 1) {
 
-			RecipeBookVol3DownOnePageProcedure.execute(entity);
+			RecipeBookDownOnePageProcedure.execute(entity);
 		}
 		if (buttonID == 2) {
 
-			RecipeBookVol3UpFivePagesProcedure.execute(entity);
+			RecipeBookUpFivePagesProcedure.execute(entity);
 		}
 		if (buttonID == 3) {
 
-			RecipeBookVol3DownFivePagesProcedure.execute(entity);
+			RecipeBookDownFivePagesProcedure.execute(entity);
 		}
 		if (buttonID == 4) {
 
-			RecipeBookVol3UpMaxPagesProcedure.execute(entity);
+			RecipeBookUpMaxPagesProcedure.execute(entity);
 		}
 		if (buttonID == 5) {
 
-			RecipeBookVol3DownAllPagesProcedure.execute(entity);
+			RecipeBookDownAllPagesProcedure.execute(entity);
 		}
 	}
 

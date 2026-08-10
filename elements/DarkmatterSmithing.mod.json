@@ -7,7 +7,7 @@
     "group": "darkmattermattersmithing",
     "unlockingItems": [
       {
-        "value": "CUSTOM:DarkMatterMadEngieBlock"
+        "value": "CUSTOM:DarkMatter"
       }
     ],
     "cookingBookCategory": "MISC",
@@ -19,7 +19,7 @@
       "value": "Items.BOOK"
     },
     "smithingInputAdditionStack": {
-      "value": "CUSTOM:DarkMatterMadEngieBlock"
+      "value": "CUSTOM:DarkMatter"
     },
     "smithingInputTemplateStack": {
       "value": ""

@@ -217,7 +217,7 @@
           "text": ">",
           "isUndecorated": false,
           "onClick": {
-            "name": "RecipeBookVol1UpOnePage"
+            "name": "RecipeBookUpOnePage"
           },
           "width": 25,
           "height": 20,
@@ -233,7 +233,7 @@
           "text": "<",
           "isUndecorated": false,
           "onClick": {
-            "name": "RecipeBookVol1DownOnePage"
+            "name": "RecipeBookDownOnePage"
           },
           "width": 25,
           "height": 20,
@@ -249,7 +249,7 @@
           "text": ">>",
           "isUndecorated": false,
           "onClick": {
-            "name": "RecipeBookVol1UpFivePages"
+            "name": "RecipeBookUpFivePages"
           },
           "width": 25,
           "height": 20,
@@ -265,7 +265,7 @@
           "text": "<<",
           "isUndecorated": false,
           "onClick": {
-            "name": "RecipeBookVol1DownFivePages"
+            "name": "RecipeBookDownFivePages"
           },
           "width": 25,
           "height": 20,
@@ -281,7 +281,7 @@
           "text": ">>>",
           "isUndecorated": false,
           "onClick": {
-            "name": "RecipeBookVol1UpMaxPages"
+            "name": "RecipeBookUpMaxPages"
           },
           "width": 25,
           "height": 20,
@@ -297,7 +297,7 @@
           "text": "<<<",
           "isUndecorated": false,
           "onClick": {
-            "name": "RecipeBookVol1DownAllPages"
+            "name": "RecipeBookDownAllPages"
           },
           "width": 25,
           "height": 20,

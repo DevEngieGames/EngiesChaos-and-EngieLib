@@ -4,7 +4,7 @@
     "item": "minecraft:book"
   },
   "addition": {
-    "item": "engies_chaos:dark_matter_mad_engie_block"
+    "item": "engies_chaos:darkmatter"
   },
   "result": {
     "item": "engies_chaos:engies_chaos_recipe_book_volume_3"
