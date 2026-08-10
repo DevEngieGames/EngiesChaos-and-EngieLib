@@ -1142,6 +1142,8 @@ public class EngiesChaosModItems {
 	public static final RegistryObject<Item> ANTIMATTER_METAL_CHEST_JUNGLE = blockCMT(EngiesChaosModBlocks.ANTIMATTER_METAL_CHEST_JUNGLE, EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS);
 	public static final RegistryObject<Item> ANTIMATTER_METAL_CHEST_MANGROVE = blockCMT(EngiesChaosModBlocks.ANTIMATTER_METAL_CHEST_MANGROVE, EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS);
 	public static final RegistryObject<Item> ANTIMATTER_METAL_CHEST_CHERRY = blockCMT(EngiesChaosModBlocks.ANTIMATTER_METAL_CHEST_CHERRY, EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS);
+	public static final RegistryObject<Item> DARKMATTER_FRAGMENT = REGISTRY.register("darkmatter_fragment", DarkMatterFragmentItem::new);
+	public static final RegistryObject<Item> DARKMATTER = REGISTRY.register("darkmatter", DarkMatterItem::new);
 	public static final RegistryObject<Item> DARK_MATTER_MAD_ENGIE_ESSENCE = REGISTRY.register("dark_matter_mad_engie_essence", DarkMatterMadEngieEssenceItem::new);
 	public static final RegistryObject<Item> DARK_MATTER_MAD_ENGIE_BLOCK = blockCMT(EngiesChaosModBlocks.DARK_MATTER_MAD_ENGIE_BLOCK, EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS);
 	public static final RegistryObject<Item> BUDDING_DARK_MATTER_MAD_ENGIE_BLOCK = blockCMT(EngiesChaosModBlocks.BUDDING_DARK_MATTER_MAD_ENGIE_BLOCK, EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS);
@@ -1444,8 +1446,6 @@ public class EngiesChaosModItems {
 	public static final RegistryObject<Item> CHALLENGE_INSANITY_ENGIE_GAMES_PLUSH_MULTIPLAYER = REGISTRY.register("challenge_insanity_engie_games_plush_multiplayer", ChallengeInsanityEngieGamesPlushMultiplayerItem::new);
 	public static final RegistryObject<Item> PUNISHER_PLUSH = REGISTRY.register("punisher_plush", PunisherPlushItem::new);
 	public static final RegistryObject<Item> X_ENGIE_PLUSH = REGISTRY.register("x_engie_plush", XEngiePlushItem::new);
-	public static final RegistryObject<Item> DARKMATTER_FRAGMENT = REGISTRY.register("darkmatter_fragment", DarkMatterFragmentItem::new);
-	public static final RegistryObject<Item> DARKMATTER = REGISTRY.register("darkmatter", DarkMatterItem::new);
 	public static final RegistryObject<Item> ENGIES_HELMET = REGISTRY.register("engies_helmet", EngiesItem.Helmet::new);
 	public static final RegistryObject<Item> ENGIES_CHESTPLATE = REGISTRY.register("engies_chestplate", EngiesItem.Chestplate::new);
 	public static final RegistryObject<Item> ENGIES_LEGGINGS = REGISTRY.register("engies_leggings", EngiesItem.Leggings::new);

@@ -1,0 +1,53 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "darkmattercraft",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:DarkMatterFragment"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:DarkMatterFragment"
+      },
+      {
+        "value": "CUSTOM:DarkMatterFragment"
+      },
+      {
+        "value": "CUSTOM:DarkMatterFragment"
+      },
+      {
+        "value": "CUSTOM:DarkMatterFragment"
+      },
+      {
+        "value": "CUSTOM:DarkMatterFragment"
+      },
+      {
+        "value": "CUSTOM:DarkMatterFragment"
+      },
+      {
+        "value": "CUSTOM:DarkMatterFragment"
+      },
+      {
+        "value": "CUSTOM:DarkMatterFragment"
+      },
+      {
+        "value": "CUSTOM:DarkMatterFragment"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:DarkMatter"
+    },
+    "name": "dark_matter_craft",
+    "namespace": "mod"
+  }
+}

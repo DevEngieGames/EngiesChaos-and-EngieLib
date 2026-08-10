@@ -226,7 +226,7 @@ public class MonstrosityEngieEntity extends Monster {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			return HostileEngieSpawningConditionProcedure.execute(world);
+			return HostileEngieSpawningConditionProcedure.execute(world, x, y, z);
 		});
 	}
 

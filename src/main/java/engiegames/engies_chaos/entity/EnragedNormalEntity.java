@@ -103,7 +103,7 @@ public class EnragedNormalEntity extends Monster {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			return EnragedNormalNaturalEntitySpawningConditionProcedure.execute(world);
+			return EnragedNormalNaturalEntitySpawningConditionProcedure.execute(world, x, y, z);
 		});
 	}
 

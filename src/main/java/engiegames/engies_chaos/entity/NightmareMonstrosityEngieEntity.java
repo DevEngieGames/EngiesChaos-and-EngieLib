@@ -217,7 +217,7 @@ public class NightmareMonstrosityEngieEntity extends Monster {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			return NightmareHostileEngieySpawningConditionProcedure.execute(world);
+			return NightmareHostileEngieySpawningConditionProcedure.execute(world, x, y, z);
 		});
 	}
 

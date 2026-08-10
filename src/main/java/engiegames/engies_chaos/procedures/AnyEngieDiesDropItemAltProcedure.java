@@ -11,6 +11,8 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
 import net.minecraft.tags.TagKey;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
@@ -47,9 +49,10 @@ public class AnyEngieDiesDropItemAltProcedure {
 					_level.addFreshEntity(entityToSpawn);
 				}
 				if (EngiesChaosModVariables.MapVariables.get(world).antimatterdropcheck == true) {
-					if (Math.random() < (entity instanceof LivingEntity _livingEntity4 && _livingEntity4.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
-							? _livingEntity4.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
-							: 0) / 4) {
+					if (Math.round(Mth.nextDouble(RandomSource.create(), 0,
+							100)) < (entity instanceof LivingEntity _livingEntity5 && _livingEntity5.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
+									? _livingEntity5.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
+									: 0) / 4) {
 						if (world instanceof ServerLevel _level) {
 							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.ANTIMATTER_MAD_ENGIE_ESSENCE.get()));
 							entityToSpawn.setPickUpDelay(10);
@@ -57,9 +60,12 @@ public class AnyEngieDiesDropItemAltProcedure {
 						}
 					}
 				}
-				if (((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof ServerPlayer _plr7 && _plr7.level instanceof ServerLevel
-						&& _plr7.getAdvancements().getOrStartProgress(_plr7.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()) == true) {
-					if (Math.random() < 0.25) {
+				if (((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof ServerPlayer _plr8 && _plr8.level instanceof ServerLevel
+						&& _plr8.getAdvancements().getOrStartProgress(_plr8.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()) == true) {
+					if (Math.round(Mth.nextDouble(RandomSource.create(), 0,
+							100)) < (entity instanceof LivingEntity _livingEntity10 && _livingEntity10.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
+									? _livingEntity10.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
+									: 0) / 4) {
 						if (world instanceof ServerLevel _level) {
 							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.DARK_MATTER_MAD_ENGIE_ESSENCE.get()));
 							entityToSpawn.setPickUpDelay(10);
@@ -74,9 +80,10 @@ public class AnyEngieDiesDropItemAltProcedure {
 					_level.addFreshEntity(entityToSpawn);
 				}
 				if (EngiesChaosModVariables.MapVariables.get(world).antimatterdropcheck == true) {
-					if (Math.random() < (entity instanceof LivingEntity _livingEntity11 && _livingEntity11.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
-							? _livingEntity11.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
-							: 0) / 4) {
+					if (Math.round(Mth.nextDouble(RandomSource.create(), 0,
+							100)) < (entity instanceof LivingEntity _livingEntity15 && _livingEntity15.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
+									? _livingEntity15.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
+									: 0) / 4) {
 						if (world instanceof ServerLevel _level) {
 							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.ANTIMATTER_ANGRY_ENGIE_ESSENCE.get()));
 							entityToSpawn.setPickUpDelay(10);
@@ -84,9 +91,12 @@ public class AnyEngieDiesDropItemAltProcedure {
 						}
 					}
 				}
-				if (((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof ServerPlayer _plr14 && _plr14.level instanceof ServerLevel
-						&& _plr14.getAdvancements().getOrStartProgress(_plr14.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()) == true) {
-					if (Math.random() < 0.25) {
+				if (((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof ServerPlayer _plr18 && _plr18.level instanceof ServerLevel
+						&& _plr18.getAdvancements().getOrStartProgress(_plr18.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()) == true) {
+					if (Math.round(Mth.nextDouble(RandomSource.create(), 0,
+							100)) < (entity instanceof LivingEntity _livingEntity20 && _livingEntity20.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
+									? _livingEntity20.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
+									: 0) / 4) {
 						if (world instanceof ServerLevel _level) {
 							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.DARK_MATTER_ANGRY_ENGIE_ESSENCE.get()));
 							entityToSpawn.setPickUpDelay(10);
@@ -101,9 +111,10 @@ public class AnyEngieDiesDropItemAltProcedure {
 					_level.addFreshEntity(entityToSpawn);
 				}
 				if (EngiesChaosModVariables.MapVariables.get(world).antimatterdropcheck == true) {
-					if (Math.random() < (entity instanceof LivingEntity _livingEntity18 && _livingEntity18.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
-							? _livingEntity18.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
-							: 0) / 4) {
+					if (Math.round(Mth.nextDouble(RandomSource.create(), 0,
+							100)) < (entity instanceof LivingEntity _livingEntity25 && _livingEntity25.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
+									? _livingEntity25.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
+									: 0) / 4) {
 						if (world instanceof ServerLevel _level) {
 							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.ANTIMATTER_ENRAGED_ENGIE_ESSENCE.get()));
 							entityToSpawn.setPickUpDelay(10);
@@ -111,9 +122,12 @@ public class AnyEngieDiesDropItemAltProcedure {
 						}
 					}
 				}
-				if (((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof ServerPlayer _plr21 && _plr21.level instanceof ServerLevel
-						&& _plr21.getAdvancements().getOrStartProgress(_plr21.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()) == true) {
-					if (Math.random() < 0.25) {
+				if (((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof ServerPlayer _plr28 && _plr28.level instanceof ServerLevel
+						&& _plr28.getAdvancements().getOrStartProgress(_plr28.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()) == true) {
+					if (Math.round(Mth.nextDouble(RandomSource.create(), 0,
+							100)) < (entity instanceof LivingEntity _livingEntity30 && _livingEntity30.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
+									? _livingEntity30.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
+									: 0) / 4) {
 						if (world instanceof ServerLevel _level) {
 							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.DARK_MATTER_ENRAGED_ENGIE_ESSENCE.get()));
 							entityToSpawn.setPickUpDelay(10);
@@ -128,9 +142,10 @@ public class AnyEngieDiesDropItemAltProcedure {
 					_level.addFreshEntity(entityToSpawn);
 				}
 				if (EngiesChaosModVariables.MapVariables.get(world).antimatterdropcheck == true) {
-					if (Math.random() < (entity instanceof LivingEntity _livingEntity25 && _livingEntity25.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
-							? _livingEntity25.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
-							: 0) / 4) {
+					if (Math.round(Mth.nextDouble(RandomSource.create(), 0,
+							100)) < (entity instanceof LivingEntity _livingEntity35 && _livingEntity35.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
+									? _livingEntity35.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
+									: 0) / 4) {
 						if (world instanceof ServerLevel _level) {
 							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.ANTIMATTER_OUTRAGED_ENGIE_ESSENCE.get()));
 							entityToSpawn.setPickUpDelay(10);
@@ -138,9 +153,12 @@ public class AnyEngieDiesDropItemAltProcedure {
 						}
 					}
 				}
-				if (((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof ServerPlayer _plr28 && _plr28.level instanceof ServerLevel
-						&& _plr28.getAdvancements().getOrStartProgress(_plr28.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()) == true) {
-					if (Math.random() < 0.25) {
+				if (((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof ServerPlayer _plr38 && _plr38.level instanceof ServerLevel
+						&& _plr38.getAdvancements().getOrStartProgress(_plr38.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()) == true) {
+					if (Math.round(Mth.nextDouble(RandomSource.create(), 0,
+							100)) < (entity instanceof LivingEntity _livingEntity40 && _livingEntity40.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
+									? _livingEntity40.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
+									: 0) / 4) {
 						if (world instanceof ServerLevel _level) {
 							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.DARK_MATTER_OUTRAGED_ENGIE_ESSENCE.get()));
 							entityToSpawn.setPickUpDelay(10);
@@ -155,9 +173,10 @@ public class AnyEngieDiesDropItemAltProcedure {
 					_level.addFreshEntity(entityToSpawn);
 				}
 				if (EngiesChaosModVariables.MapVariables.get(world).antimatterdropcheck == true) {
-					if (Math.random() < (entity instanceof LivingEntity _livingEntity32 && _livingEntity32.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
-							? _livingEntity32.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
-							: 0) / 4) {
+					if (Math.round(Mth.nextDouble(RandomSource.create(), 0,
+							100)) < (entity instanceof LivingEntity _livingEntity45 && _livingEntity45.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
+									? _livingEntity45.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
+									: 0) / 4) {
 						if (world instanceof ServerLevel _level) {
 							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.ANTIMATTER_BIBLICALLY_ACCURATE_ENGIE_ESSENCE.get()));
 							entityToSpawn.setPickUpDelay(10);
@@ -165,9 +184,12 @@ public class AnyEngieDiesDropItemAltProcedure {
 						}
 					}
 				}
-				if (((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof ServerPlayer _plr35 && _plr35.level instanceof ServerLevel
-						&& _plr35.getAdvancements().getOrStartProgress(_plr35.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()) == true) {
-					if (Math.random() < 0.25) {
+				if (((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof ServerPlayer _plr48 && _plr48.level instanceof ServerLevel
+						&& _plr48.getAdvancements().getOrStartProgress(_plr48.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()) == true) {
+					if (Math.round(Mth.nextDouble(RandomSource.create(), 0,
+							100)) < (entity instanceof LivingEntity _livingEntity50 && _livingEntity50.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
+									? _livingEntity50.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
+									: 0) / 4) {
 						if (world instanceof ServerLevel _level) {
 							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.DARK_MATTER_BIBLICALLY_ACCURATE_ENGIE_ESSENCE.get()));
 							entityToSpawn.setPickUpDelay(10);
@@ -182,9 +204,10 @@ public class AnyEngieDiesDropItemAltProcedure {
 					_level.addFreshEntity(entityToSpawn);
 				}
 				if (EngiesChaosModVariables.MapVariables.get(world).antimatterdropcheck == true) {
-					if (Math.random() < (entity instanceof LivingEntity _livingEntity39 && _livingEntity39.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
-							? _livingEntity39.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
-							: 0) / 4) {
+					if (Math.round(Mth.nextDouble(RandomSource.create(), 0,
+							100)) < (entity instanceof LivingEntity _livingEntity55 && _livingEntity55.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
+									? _livingEntity55.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
+									: 0) / 4) {
 						if (world instanceof ServerLevel _level) {
 							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.ANTIMATTER_MONSTROSITY_ENGIE_ESSENCE.get()));
 							entityToSpawn.setPickUpDelay(10);
@@ -192,9 +215,12 @@ public class AnyEngieDiesDropItemAltProcedure {
 						}
 					}
 				}
-				if (((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof ServerPlayer _plr42 && _plr42.level instanceof ServerLevel
-						&& _plr42.getAdvancements().getOrStartProgress(_plr42.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()) == true) {
-					if (Math.random() < 0.25) {
+				if (((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof ServerPlayer _plr58 && _plr58.level instanceof ServerLevel
+						&& _plr58.getAdvancements().getOrStartProgress(_plr58.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()) == true) {
+					if (Math.round(Mth.nextDouble(RandomSource.create(), 0,
+							100)) < (entity instanceof LivingEntity _livingEntity60 && _livingEntity60.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
+									? _livingEntity60.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
+									: 0) / 4) {
 						if (world instanceof ServerLevel _level) {
 							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.DARK_MATTER_MONSTROSITY_ENGIE_ESSENCE.get()));
 							entityToSpawn.setPickUpDelay(10);
@@ -209,9 +235,10 @@ public class AnyEngieDiesDropItemAltProcedure {
 					_level.addFreshEntity(entityToSpawn);
 				}
 				if (EngiesChaosModVariables.MapVariables.get(world).antimatterdropcheck == true) {
-					if (Math.random() < (entity instanceof LivingEntity _livingEntity46 && _livingEntity46.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
-							? _livingEntity46.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
-							: 0) / 4) {
+					if (Math.round(Mth.nextDouble(RandomSource.create(), 0,
+							100)) < (entity instanceof LivingEntity _livingEntity65 && _livingEntity65.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
+									? _livingEntity65.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
+									: 0) / 4) {
 						if (world instanceof ServerLevel _level) {
 							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.ANTIMATTER_ENGIE_GEM.get()));
 							entityToSpawn.setPickUpDelay(10);
@@ -219,9 +246,12 @@ public class AnyEngieDiesDropItemAltProcedure {
 						}
 					}
 				}
-				if (((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof ServerPlayer _plr49 && _plr49.level instanceof ServerLevel
-						&& _plr49.getAdvancements().getOrStartProgress(_plr49.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()) == true) {
-					if (Math.random() < 0.25) {
+				if (((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof ServerPlayer _plr68 && _plr68.level instanceof ServerLevel
+						&& _plr68.getAdvancements().getOrStartProgress(_plr68.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()) == true) {
+					if (Math.round(Mth.nextDouble(RandomSource.create(), 0,
+							100)) < (entity instanceof LivingEntity _livingEntity70 && _livingEntity70.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
+									? _livingEntity70.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
+									: 0) / 4) {
 						if (world instanceof ServerLevel _level) {
 							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.DARK_MATTER_ENGIE_GEM.get()));
 							entityToSpawn.setPickUpDelay(10);

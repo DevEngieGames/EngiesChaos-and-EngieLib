@@ -1,0 +1,29 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "darkmattersmithing14",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:CosmicEngieCoin"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:DarkMatter"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:DarkMatterCosmicEngieCoin"
+    },
+    "name": "dark_matter_smithing_14",
+    "namespace": "mod"
+  }
+}

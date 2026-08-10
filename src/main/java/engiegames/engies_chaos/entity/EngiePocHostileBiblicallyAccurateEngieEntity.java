@@ -211,7 +211,7 @@ public class EngiePocHostileBiblicallyAccurateEngieEntity extends Monster {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			return EngiePocHostileEngieSpawningConditionProcedure.execute(world);
+			return EngiePocHostileEngieSpawningConditionProcedure.execute(world, x, y, z);
 		});
 	}
 

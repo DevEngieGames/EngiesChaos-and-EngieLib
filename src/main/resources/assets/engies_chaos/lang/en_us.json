@@ -1040,7 +1040,7 @@
   "item.engies_chaos.mad_engie_plush.description_0": "Poor dude lost 12 ranked matches in a row... Only if he could take a break...",
   "item.engies_chaos.mad_engie_plush": "Mad Engie Plush",
   "item.engies_chaos.engie_plush": "EngieGames Plush",
-  "item.engies_chaos.engie_plush.description_0": "",
+  "item.engies_chaos.engie_plush.description_0": "gaming",
   "item.engies_chaos.engie_plush.description_1": "Thanks for playing RE:All About Engie.",
   "item.engies_chaos.dev_engie_plush": "DevEngie Plush",
   "item.engies_chaos.dev_engie_plush.description_1": "We\u0027ll miss you DevEngie.",
@@ -2800,6 +2800,6 @@
   "gamerule.tradermaxcount": "Trader Max Count",
   "item.engies_chaos.darkmatter_fragment": "§0Dark §fMatter Fragment",
   "item.engies_chaos.darkmatter": "§0Dark §fMatter",
-  "enchantment.engies_chaos.engies_dark_matter_blessing": "Engies Antimatter Blessing",
+  "enchantment.engies_chaos.engies_dark_matter_blessing": "Engies Dark Matter Blessing",
   "attribute.engies_chaos.engies_dark_matter_blessing_chance_for_player": "Engies Dark Matter Blessing Chance For Player"
 }

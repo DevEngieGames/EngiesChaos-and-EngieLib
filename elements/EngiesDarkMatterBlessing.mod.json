@@ -1,0 +1,29 @@
+{
+  "_fv": 79,
+  "_type": "enchantment",
+  "definition": {
+    "name": "Engies Dark Matter Blessing",
+    "supportedSlots": "mainhand",
+    "weight": 1,
+    "anvilCost": 1,
+    "maxLevel": 25,
+    "damageModifier": 0,
+    "incompatibleEnchantments": [
+      {
+        "value": "BINDING_CURSE"
+      },
+      {
+        "value": "VANISHING_CURSE"
+      }
+    ],
+    "supportedItems": [
+      {
+        "value": "TAG:allaboutengie:enchantable/engiesantimatterblessing"
+      }
+    ],
+    "isTreasureEnchantment": false,
+    "isCurse": false,
+    "canGenerateInLootTables": true,
+    "canVillagerTrade": true
+  }
+}

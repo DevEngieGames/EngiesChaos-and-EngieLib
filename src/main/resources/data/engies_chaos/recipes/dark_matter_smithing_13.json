@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:antimatter_engie_games_coin"
+  },
+  "addition": {
+    "item": "engies_chaos:darkmatter"
+  },
+  "result": {
+    "item": "engies_chaos:dark_matter_engie_games_coin"
+  }
+}

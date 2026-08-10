@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:cosmic_engie_coin"
+  },
+  "addition": {
+    "item": "engies_chaos:darkmatter"
+  },
+  "result": {
+    "item": "engies_chaos:dark_matter_cosmic_engie_coin"
+  }
+}

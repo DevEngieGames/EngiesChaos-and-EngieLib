@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:antimatter_monstrosity_engie_essence"
+  },
+  "addition": {
+    "item": "engies_chaos:darkmatter"
+  },
+  "result": {
+    "item": "engies_chaos:dark_matter_monstrosity_engie_essence"
+  }
+}

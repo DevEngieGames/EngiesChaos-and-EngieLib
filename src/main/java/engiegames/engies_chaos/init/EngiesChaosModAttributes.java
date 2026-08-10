@@ -22,9 +22,9 @@ import engiegames.engies_chaos.EngiesChaosMod;
 public class EngiesChaosModAttributes {
 	public static final DeferredRegister<Attribute> REGISTRY = DeferredRegister.create(ForgeRegistries.ATTRIBUTES, EngiesChaosMod.MODID);
 	public static final RegistryObject<Attribute> ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER = REGISTRY.register("engies_antimatter_blessing_chance_for_player",
-			() -> new RangedAttribute("attribute.engies_chaos.engies_antimatter_blessing_chance_for_player", 0.5, 0.05, 0.55).setSyncable(true));
+			() -> new RangedAttribute("attribute.engies_chaos.engies_antimatter_blessing_chance_for_player", 4, 0, 100).setSyncable(true));
 	public static final RegistryObject<Attribute> ENGIES_DARK_MATTER_BLESSING_CHANCE_FOR_PLAYER = REGISTRY.register("engies_dark_matter_blessing_chance_for_player",
-			() -> new RangedAttribute("attribute.engies_chaos.engies_dark_matter_blessing_chance_for_player", 0, 0, 100).setSyncable(true));
+			() -> new RangedAttribute("attribute.engies_chaos.engies_dark_matter_blessing_chance_for_player", 2, 0, 100).setSyncable(true));
 
 	@SubscribeEvent
 	public static void addAttributes(EntityAttributeModificationEvent event) {

@@ -1,0 +1,14 @@
+{
+  "_fv": 79,
+  "_type": "attribute",
+  "definition": {
+    "name": "Engies Dark Matter Blessing Chance For Player",
+    "minValue": 0.0,
+    "maxValue": 100.0,
+    "defaultValue": 2.0,
+    "sentiment": "POSITIVE",
+    "addToAllEntities": false,
+    "addToPlayers": true,
+    "entities": []
+  }
+}
