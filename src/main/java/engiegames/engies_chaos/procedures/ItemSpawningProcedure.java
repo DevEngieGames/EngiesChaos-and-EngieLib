@@ -1550,24 +1550,48 @@ public class ItemSpawningProcedure {
 					(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putDouble("countuntilbasedrop", 0);
 				}
 			}
-		}
-		if (EngiesChaosModVariables.MapVariables.get(world).antimatterdropcheck == true) {
-			if (Math.random() < (sourceentity instanceof LivingEntity _livingEntity765 && _livingEntity765.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
-					? _livingEntity765.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
-					: 0)) {
-				if (Math.random() <= 0.05) {
-					if (world instanceof ServerLevel _level) {
-						ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ANTIMATTER.get()));
-						entityToSpawn.setPickUpDelay(10);
-						entityToSpawn.setUnlimitedLifetime();
-						_level.addFreshEntity(entityToSpawn);
+			if (EngiesChaosModVariables.MapVariables.get(world).antimatterdropcheck == true) {
+				if (Math.round(Mth.nextDouble(RandomSource.create(), 0,
+						100)) <= (sourceentity instanceof LivingEntity _livingEntity766 && _livingEntity766.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
+								? _livingEntity766.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
+								: 0)) {
+					if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) <= 5) {
+						if (world instanceof ServerLevel _level) {
+							ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ANTIMATTER.get()));
+							entityToSpawn.setPickUpDelay(10);
+							entityToSpawn.setUnlimitedLifetime();
+							_level.addFreshEntity(entityToSpawn);
+						}
+					} else {
+						if (world instanceof ServerLevel _level) {
+							ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ANTIMATTER_FRAGMENT.get()));
+							entityToSpawn.setPickUpDelay(10);
+							entityToSpawn.setUnlimitedLifetime();
+							_level.addFreshEntity(entityToSpawn);
+						}
 					}
-				} else {
-					if (world instanceof ServerLevel _level) {
-						ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ANTIMATTER_FRAGMENT.get()));
-						entityToSpawn.setPickUpDelay(10);
-						entityToSpawn.setUnlimitedLifetime();
-						_level.addFreshEntity(entityToSpawn);
+				}
+			}
+			if (entity instanceof ServerPlayer _plr776 && _plr776.level instanceof ServerLevel
+					&& _plr776.getAdvancements().getOrStartProgress(_plr776.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()) {
+				if (Math.round(Mth.nextDouble(RandomSource.create(), 0,
+						100)) <= (sourceentity instanceof LivingEntity _livingEntity778 && _livingEntity778.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_DARK_MATTER_BLESSING_CHANCE_FOR_PLAYER.get())
+								? _livingEntity778.getAttribute(EngiesChaosModAttributes.ENGIES_DARK_MATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
+								: 0)) {
+					if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) <= 5) {
+						if (world instanceof ServerLevel _level) {
+							ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DARKMATTER.get()));
+							entityToSpawn.setPickUpDelay(10);
+							entityToSpawn.setUnlimitedLifetime();
+							_level.addFreshEntity(entityToSpawn);
+						}
+					} else {
+						if (world instanceof ServerLevel _level) {
+							ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DARKMATTER_FRAGMENT.get()));
+							entityToSpawn.setPickUpDelay(10);
+							entityToSpawn.setUnlimitedLifetime();
+							_level.addFreshEntity(entityToSpawn);
+						}
 					}
 				}
 			}
