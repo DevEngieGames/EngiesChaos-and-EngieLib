@@ -11,5 +11,6 @@ public class RecipeBookVol5PagesProcedure {
 		RecipeBookVol5Portion12Procedure.execute(entity, itemstack);
 		RecipeBookVol5Portion2Procedure.execute(entity, itemstack);
 		RecipeBookVol5Portion3Procedure.execute(entity, itemstack);
+		RecipeBookVol5Portion4Procedure.execute(entity, itemstack);
 	}
 }

@@ -6984,5 +6984,117 @@ public class RecipeBookVol3Procedure {
 				itemstack.getOrCreateTag().putDouble("RecipeBookGroupIDETC4", 0);
 			}
 		}
+		if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 30) {
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARK_MATTER_BIBLICALLY_ACCURATE_ENGIE_ESSENCE.get()).copy();
+				final int _sltid = 0;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARK_MATTER_ENGIE_GEM.get()).copy();
+				final int _sltid = 1;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARK_MATTER_BIBLICALLY_ACCURATE_ENGIE_ESSENCE.get()).copy();
+				final int _sltid = 2;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARK_MATTER_ENGIE_GEM.get()).copy();
+				final int _sltid = 3;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARK_MATTER_BIBLICALLY_ACCURATE_ENGIE_ESSENCE.get()).copy();
+				final int _sltid = 4;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARK_MATTER_ENGIE_GEM.get()).copy();
+				final int _sltid = 5;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARK_MATTER_BIBLICALLY_ACCURATE_ENGIE_ESSENCE.get()).copy();
+				final int _sltid = 6;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARK_MATTER_ENGIE_GEM.get()).copy();
+				final int _sltid = 7;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARK_MATTER_BIBLICALLY_ACCURATE_ENGIE_ESSENCE.get()).copy();
+				final int _sltid = 8;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARK_MATTER_ENGIE_UPGRADE.get()).copy();
+				final int _sltid = 9;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+		}
 	}
 }
