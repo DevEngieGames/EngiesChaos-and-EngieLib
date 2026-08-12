@@ -16,6 +16,9 @@
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsItems"
+      },
+      {
+        "value": "CUSTOM:BanHammers"
       }
     ],
     "efficiency": 96.0,

@@ -11,6 +11,12 @@
         "0": "antimatterregular"
       },
       "name": "antimatter"
+    },
+    "darkmatter": {
+      "map": {
+        "0": "darkmatterregular"
+      },
+      "name": "darkmatter"
     }
   }
 }

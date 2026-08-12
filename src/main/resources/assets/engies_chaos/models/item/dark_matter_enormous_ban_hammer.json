@@ -4,7 +4,7 @@
   "base": {
     "parent": "engies_chaos:custom/ban_hammer_enormous",
     "textures": {
-      "0": "engies_chaos:block/regular",
+      "0": "engies_chaos:block/darkmatterregular",
       "particle": "engies_chaos:item/darkmatterbanhammerpixel"
     }
   },

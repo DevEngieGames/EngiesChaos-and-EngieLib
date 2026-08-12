@@ -6,17 +6,17 @@
       },
       "name": "default"
     },
-    "antimatter": {
-      "map": {
-        "0": "pixelantimatterscythesddaynew"
-      },
-      "name": "antimatter"
-    },
     "darkmatter": {
       "map": {
         "0": "pixeldarkmatterscythesdday"
       },
       "name": "darkmatter"
+    },
+    "antimatter": {
+      "map": {
+        "0": "pixelantimatterscythesddaynew"
+      },
+      "name": "antimatter"
     }
   }
 }

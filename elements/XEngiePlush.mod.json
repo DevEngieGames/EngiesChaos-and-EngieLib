@@ -10,11 +10,7 @@
     "states": [],
     "name": "xEngieGames Plush",
     "rarity": "EPIC",
-    "creativeTabs": [
-      {
-        "value": "CUSTOM:AAEItemsItems"
-      }
-    ],
+    "creativeTabs": [],
     "stackSize": 64,
     "enchantability": 0,
     "useDuration": 0,

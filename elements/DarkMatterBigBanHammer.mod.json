@@ -6,13 +6,12 @@
     "renderType": 1,
     "blockingRenderType": 0,
     "texture": "darkmatterbanhammerpixel",
-    "customModelName": "ban_hammer_big:dark",
+    "customModelName": "ban_hammer_big:darkmatter",
     "blockingModelName": "Normal blocking",
     "guiTexture": "darkmatterbanhammerpixel",
     "name": "Dark Matter Big Ban Hammer",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

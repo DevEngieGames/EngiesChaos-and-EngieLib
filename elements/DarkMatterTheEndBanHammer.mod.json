@@ -6,7 +6,7 @@
     "renderType": 1,
     "blockingRenderType": 0,
     "texture": "darkmattertheendbanhammerpixel",
-    "customModelName": "ban_hammer_theend:dark",
+    "customModelName": "ban_hammer_theend:darkmatter",
     "blockingModelName": "Normal blocking",
     "guiTexture": "darkmattertheendbanhammerpixel",
     "name": "Dark Matter The End Ban Hammer",

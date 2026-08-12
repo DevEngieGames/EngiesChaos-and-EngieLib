@@ -11,6 +11,12 @@
         "0": "antimatterengiebanhammer"
       },
       "name": "antimatter"
+    },
+    "darkmatter": {
+      "map": {
+        "0": "darkmatterengiebanhammer"
+      },
+      "name": "darkmatter"
     }
   }
 }

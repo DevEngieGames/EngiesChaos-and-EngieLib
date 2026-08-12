@@ -6,7 +6,7 @@
     "renderType": 1,
     "blockingRenderType": 0,
     "texture": "darkmattersuperdoomsdaybanhammerpixel",
-    "customModelName": "ban_hammer_superdoomsday:dark",
+    "customModelName": "ban_hammer_superdoomsday:darkmatter",
     "blockingModelName": "Normal blocking",
     "guiTexture": "darkmattersuperdoomsdaybanhammerpixel",
     "name": "Dark Matter Super Doomsday Ban Hammer",

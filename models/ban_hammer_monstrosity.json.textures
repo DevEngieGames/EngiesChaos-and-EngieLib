@@ -11,6 +11,12 @@
         "0": "antimattermonstrosity"
       },
       "name": "antimatter"
+    },
+    "darkmatter": {
+      "map": {
+        "0": "darkmattermonstrosity"
+      },
+      "name": "darkmatter"
     }
   }
 }

@@ -8,9 +8,13 @@
     "guiTexture": "",
     "customProperties": {},
     "states": [],
-    "name": "Paxel Base",
+    "name": "xEngie Paxel Base",
     "rarity": "COMMON",
-    "creativeTabs": [],
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsItems"
+      }
+    ],
     "stackSize": 64,
     "enchantability": 0,
     "useDuration": 0,

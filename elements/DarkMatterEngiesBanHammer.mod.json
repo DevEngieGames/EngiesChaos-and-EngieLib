@@ -6,7 +6,7 @@
     "renderType": 1,
     "blockingRenderType": 0,
     "texture": "darkmatterengiesbanhammerpixel",
-    "customModelName": "ban_hammer_engie:dark",
+    "customModelName": "ban_hammer_engie:darkmatter",
     "blockingModelName": "Normal blocking",
     "guiTexture": "darkmatterengiesbanhammerpixel",
     "name": "Dark Matter Engies Ban Hammer",

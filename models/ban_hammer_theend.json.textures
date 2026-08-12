@@ -11,6 +11,12 @@
         "0": "antimattertheendbanhammer"
       },
       "name": "antimatter"
+    },
+    "darkmatter": {
+      "map": {
+        "0": "darkmattertheendbanhammer"
+      },
+      "name": "darkmatter"
     }
   }
 }

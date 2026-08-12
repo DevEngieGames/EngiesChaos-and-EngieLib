@@ -6,7 +6,7 @@
     "renderType": 1,
     "blockingRenderType": 0,
     "texture": "darkmatterbiblicallybanhammerpixel",
-    "customModelName": "ban_hammer_biblicallyaccurate:dark",
+    "customModelName": "ban_hammer_biblicallyaccurate:darkmatter",
     "blockingModelName": "Normal blocking",
     "guiTexture": "darkmatterbiblicallybanhammerpixel",
     "name": "Dark Matter Biblically Accurate Ban Hammer",

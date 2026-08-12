@@ -38,7 +38,7 @@ public class CosmicEngieGamesSwordItem extends SwordItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.of(new ItemStack(EngiesChaosModItems.COSMIC_ENGIE_COIN.get()));
 			}
-		}, 3, -3f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
+		}, 3, -3f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_WEAPONS));
 	}
 
 	@Override

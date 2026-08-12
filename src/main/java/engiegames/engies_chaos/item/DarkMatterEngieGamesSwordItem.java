@@ -38,7 +38,7 @@ public class DarkMatterEngieGamesSwordItem extends SwordItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.of(new ItemStack(EngiesChaosModItems.DARK_MATTER_ENGIE_GAMES_COIN.get()));
 			}
-		}, 3, 15.4f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
+		}, 3, 15.4f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_WEAPONS));
 	}
 
 	@Override
