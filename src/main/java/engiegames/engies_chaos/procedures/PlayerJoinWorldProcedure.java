@@ -41,7 +41,7 @@ public class PlayerJoinWorldProcedure {
 								new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
 										_ent.level.getServer(), _ent),
 								("tellraw @p [\"\",{\"text\":\"-------------\",\"bold\":true,\"color\":\"dark_purple\"},{\"text\":\"<\",\"bold\":true,\"color\":\"white\"},{\"text\":\"Engie's\",\"bold\":true,\"underlined\":true,\"color\":\"gold\"},{\"text\":\" \",\"bold\":true,\"color\":\"white\"},{\"text\":\"Chaos\",\"bold\":true,\"underlined\":true,\"color\":\"red\"},{\"text\":\">\",\"bold\":true,\"color\":\"white\"},{\"text\":\"-------------\",\"bold\":true,\"color\":\"dark_purple\"},{\"text\":\"\\nHey \"},{\"selector\":\"@p\"},{\"text\":\"! If you do manage to find a bug with \"},{\"text\":\"Engie's\",\"color\":\"gold\"},{\"text\":\" Chaos\",\"color\":\"red\"},{\"text\":\", make sure to stop by the \",\"color\":\"white\"},{\"text\":\"GitHub\",\"underlined\":true,\"color\":\"blue\"},{\"text\":\" and report any issues you come across! It would be \",\"color\":\"white\"},{\"text\":\"VERY\",\"bold\":true,\"italic\":true,\"color\":\"white\"},{\"text\":\" appreciated if you did.\\n\\nAnyways, the version you're running right now is.. \",\"color\":\"white\"},"
-										+ "" + "{\"text\":\"v23.54.55\",\"bold\":true,\"color\":\"gold\"}"
+										+ "" + "{\"text\":\"v23.54.56\",\"bold\":true,\"color\":\"gold\"}"
 										+ ",{\"text\":\"! Hope you read the changelog!\",\"color\":\"white\"},{\"text\":\"\\n\"},{\"text\":\"----------------------------------------\",\"bold\":true,\"color\":\"dark_purple\"}]"));
 					}
 				}
