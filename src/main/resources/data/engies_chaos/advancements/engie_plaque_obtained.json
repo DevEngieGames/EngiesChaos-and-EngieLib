@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "engies_chaos:engies_chaos_secret_advancement_icon"
+      "item": "engies_chaos:engie_plaque"
     },
     "title": {
       "translate": "advancements.engie_plaque_obtained.title"

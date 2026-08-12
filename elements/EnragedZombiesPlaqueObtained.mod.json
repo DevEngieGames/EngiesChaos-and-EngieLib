@@ -5,7 +5,7 @@
     "achievementName": "Enraged Zombies Plaque",
     "achievementDescription": "Based on another idea I saw. I'd say it worked perfectly.",
     "achievementIcon": {
-      "value": "CUSTOM:AllAboutEngieSecretAdvancementIcon"
+      "value": "CUSTOM:EnragedZombiesPlaque"
     },
     "background": "Default",
     "disableDisplay": false,

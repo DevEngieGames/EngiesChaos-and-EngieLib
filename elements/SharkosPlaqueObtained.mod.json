@@ -5,7 +5,7 @@
     "achievementName": "All About Engie Sharkos Plaque",
     "achievementDescription": "The sharkos with what the old mythic sharko looked like on the title text.",
     "achievementIcon": {
-      "value": "CUSTOM:AllAboutEngieSecretAdvancementIcon"
+      "value": "CUSTOM:SharkosPlaque"
     },
     "background": "Default",
     "disableDisplay": false,

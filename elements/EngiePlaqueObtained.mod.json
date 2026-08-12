@@ -5,7 +5,7 @@
     "achievementName": "Engie Plaque",
     "achievementDescription": "It's me, Engie!",
     "achievementIcon": {
-      "value": "CUSTOM:AllAboutEngieSecretAdvancementIcon"
+      "value": "CUSTOM:EngiePlaque"
     },
     "background": "Default",
     "disableDisplay": false,

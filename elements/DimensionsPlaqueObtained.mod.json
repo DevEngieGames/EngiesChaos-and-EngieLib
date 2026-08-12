@@ -3,9 +3,9 @@
   "_type": "achievement",
   "definition": {
     "achievementName": "All About Engie Dimensions Plaque",
-    "achievementDescription": "Thank you for the ideas Blood.",
+    "achievementDescription": "Thank you for the contributions Blood.",
     "achievementIcon": {
-      "value": "CUSTOM:AllAboutEngieSecretAdvancementIcon"
+      "value": "CUSTOM:DimensionsPlaque"
     },
     "background": "Default",
     "disableDisplay": false,

@@ -5,7 +5,7 @@
     "achievementName": "All About Engie Plaque",
     "achievementDescription": "What's that shadow? Could it be because of Engie?",
     "achievementIcon": {
-      "value": "CUSTOM:AllAboutEngieSecretAdvancementIcon"
+      "value": "CUSTOM:AllAboutEngiePlaque"
     },
     "background": "Default",
     "disableDisplay": false,

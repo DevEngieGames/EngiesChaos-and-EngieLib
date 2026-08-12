@@ -5,7 +5,7 @@
     "achievementName": "All About Engie Extras Plaque",
     "achievementDescription": "Used to hold other stuff that wasn't going to be apart of the main mod.",
     "achievementIcon": {
-      "value": "CUSTOM:AllAboutEngieSecretAdvancementIcon"
+      "value": "CUSTOM:ExtrasPlaque"
     },
     "background": "Default",
     "disableDisplay": false,

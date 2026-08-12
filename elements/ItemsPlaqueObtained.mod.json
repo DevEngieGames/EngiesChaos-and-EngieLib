@@ -5,7 +5,7 @@
     "achievementName": "All About Engie Items Plaque",
     "achievementDescription": "What used to be split into multiple mods. Paired with Mobs for a better experience.",
     "achievementIcon": {
-      "value": "CUSTOM:AllAboutEngieSecretAdvancementIcon"
+      "value": "CUSTOM:ItemsPlaque"
     },
     "background": "Default",
     "disableDisplay": false,
