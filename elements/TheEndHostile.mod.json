@@ -45,22 +45,22 @@
     "bossBarColor": "PINK",
     "bossBarType": "PROGRESS",
     "equipmentMainHand": {
-      "value": "CUSTOM:TheEndScythe"
+      "value": ""
     },
     "equipmentOffHand": {
       "value": ""
     },
     "equipmentHelmet": {
-      "value": "CUSTOM:TheEnds.helmet"
+      "value": ""
     },
     "equipmentBody": {
-      "value": "CUSTOM:TheEnds.body"
+      "value": ""
     },
     "equipmentLeggings": {
-      "value": "CUSTOM:TheEnds.legs"
+      "value": ""
     },
     "equipmentBoots": {
-      "value": "CUSTOM:TheEnds.boots"
+      "value": ""
     },
     "mobBehaviourType": "Mob",
     "mobCreatureType": "UNDEFINED",
@@ -72,7 +72,7 @@
     "armorBaseValue": 0.0,
     "trackingRange": 64,
     "followRange": 16,
-    "health": 525,
+    "health": 975,
     "xpAmount": 0,
     "waterMob": false,
     "breatheUnderwater": {
@@ -122,9 +122,6 @@
     "entityDataEntries": [],
     "whenMobDies": {
       "name": "TheEndHostileEntityDies"
-    },
-    "onMobTickUpdate": {
-      "name": "EntityNameDisplayUpdateTick"
     },
     "onInitialSpawn": {
       "name": "EntitySpawns"

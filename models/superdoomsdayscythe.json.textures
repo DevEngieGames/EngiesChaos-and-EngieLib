@@ -11,6 +11,12 @@
         "0": "antimattercrucifixsuperdoomsday"
       },
       "name": "antimatter"
+    },
+    "darkmatter": {
+      "map": {
+        "0": ""
+      },
+      "name": "darkmatter"
     }
   }
 }

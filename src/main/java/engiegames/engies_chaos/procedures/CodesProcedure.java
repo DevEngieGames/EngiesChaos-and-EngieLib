@@ -20,7 +20,9 @@ public class CodesProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if ((((entity instanceof Player _entity0 && _entity0.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu0) ? _menu0.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("byebyethere")) {
+		if ((((entity instanceof Player _entity0 && _entity0.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu0) ? _menu0.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("byebyethere")
+				|| (((entity instanceof Player _entity1 && _entity1.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu1) ? _menu1.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("bye bye there")
+				|| (((entity instanceof Player _entity2 && _entity2.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu2) ? _menu2.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("bye bye there!")) {
 			if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).coderedeemblock == false) {
 				{
 					Entity _ent = entity;
@@ -36,8 +38,8 @@ public class CodesProcedure {
 								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:bye_bye_there");
 					}
 				}
-				if ((entity instanceof ServerPlayer _plr3 && _plr3.level instanceof ServerLevel
-						&& _plr3.getAdvancements().getOrStartProgress(_plr3.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:comically_massive_obtain"))).isDone()) == false) {
+				if ((entity instanceof ServerPlayer _plr5 && _plr5.level instanceof ServerLevel
+						&& _plr5.getAdvancements().getOrStartProgress(_plr5.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:comically_massive_obtain"))).isDone()) == false) {
 					if (entity instanceof ServerPlayer _player) {
 						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:comically_massive_obtain"));
 						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
@@ -66,7 +68,8 @@ public class CodesProcedure {
 				}
 			}
 		}
-		if ((((entity instanceof Player _entity6 && _entity6.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu6) ? _menu6.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("hewhogames")) {
+		if ((((entity instanceof Player _entity8 && _entity8.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu8) ? _menu8.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("hewhogames")
+				|| (((entity instanceof Player _entity9 && _entity9.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu9) ? _menu9.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("he who games")) {
 			if (EngiesChaosModVariables.MapVariables.get(world).hewhowatches == false) {
 				{
 					Entity _ent = entity;
@@ -96,7 +99,10 @@ public class CodesProcedure {
 				}
 			}
 		}
-		if ((((entity instanceof Player _entity10 && _entity10.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu10) ? _menu10.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("engieschaos")) {
+		if ((((entity instanceof Player _entity13 && _entity13.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu13) ? _menu13.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("engieschaos")
+				|| (((entity instanceof Player _entity14 && _entity14.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu14) ? _menu14.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("engies chaos")
+				|| (((entity instanceof Player _entity15 && _entity15.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu15) ? _menu15.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("engie's chaos")
+				|| (((entity instanceof Player _entity16 && _entity16.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu16) ? _menu16.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("engie'schaos")) {
 			{
 				Entity _ent = entity;
 				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
@@ -175,7 +181,8 @@ public class CodesProcedure {
 				}
 			}
 		}
-		if ((((entity instanceof Player _entity22 && _entity22.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu22) ? _menu22.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("happynewyears")) {
+		if ((((entity instanceof Player _entity28 && _entity28.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu28) ? _menu28.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("happynewyears")
+				|| (((entity instanceof Player _entity29 && _entity29.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu29) ? _menu29.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("happy new years")) {
 			if (Calendar.getInstance().get(Calendar.MONTH) == 0 && Calendar.getInstance().get(Calendar.DAY_OF_MONTH) < 6) {
 				{
 					Entity _ent = entity;
@@ -186,7 +193,8 @@ public class CodesProcedure {
 				}
 			}
 		}
-		if ((((entity instanceof Player _entity24 && _entity24.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu24) ? _menu24.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("merrychristmas")) {
+		if ((((entity instanceof Player _entity31 && _entity31.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu31) ? _menu31.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("merrychristmas")
+				|| (((entity instanceof Player _entity32 && _entity32.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu32) ? _menu32.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("merry christmas")) {
 			if (Calendar.getInstance().get(Calendar.MONTH) == 11 && Calendar.getInstance().get(Calendar.DAY_OF_MONTH) >= 25) {
 				{
 					Entity _ent = entity;
@@ -197,7 +205,8 @@ public class CodesProcedure {
 				}
 			}
 		}
-		if ((((entity instanceof Player _entity26 && _entity26.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu26) ? _menu26.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("happybirthdayengie")) {
+		if ((((entity instanceof Player _entity34 && _entity34.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu34) ? _menu34.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("happybirthdayengie")
+				|| (((entity instanceof Player _entity35 && _entity35.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu35) ? _menu35.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("happy birthday engie")) {
 			if (entity.getPersistentData().getBoolean("EngiesChaos_Dev") == true) {
 				if (EngiesChaosModVariables.MapVariables.get(world).Birthday == true) {
 					{
@@ -282,7 +291,8 @@ public class CodesProcedure {
 				}
 			}
 		}
-		if ((((entity instanceof Player _entity38 && _entity38.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu38) ? _menu38.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("hotlinemiami2")) {
+		if ((((entity instanceof Player _entity47 && _entity47.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu47) ? _menu47.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("hotlinemiami2")
+				|| (((entity instanceof Player _entity48 && _entity48.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu48) ? _menu48.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("hotline miami 2")) {
 			{
 				Entity _ent = entity;
 				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
@@ -291,7 +301,8 @@ public class CodesProcedure {
 				}
 			}
 		}
-		if ((((entity instanceof Player _entity40 && _entity40.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu40) ? _menu40.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("happybirthdaysaph")) {
+		if ((((entity instanceof Player _entity50 && _entity50.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu50) ? _menu50.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("happybirthdaysaph")
+				|| (((entity instanceof Player _entity51 && _entity51.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu51) ? _menu51.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("happy birthday saph")) {
 			if ((entity.getDisplayName().getString()).equals("Two_Dragons15")) {
 				{
 					Entity _ent = entity;
@@ -309,7 +320,7 @@ public class CodesProcedure {
 				}
 			}
 		}
-		if ((((entity instanceof Player _entity44 && _entity44.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu44) ? _menu44.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("punisher")) {
+		if ((((entity instanceof Player _entity55 && _entity55.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu55) ? _menu55.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("punisher")) {
 			{
 				Entity _ent = entity;
 				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
@@ -318,7 +329,7 @@ public class CodesProcedure {
 				}
 			}
 		}
-		if ((((entity instanceof Player _entity46 && _entity46.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu46) ? _menu46.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("phantom")) {
+		if ((((entity instanceof Player _entity57 && _entity57.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu57) ? _menu57.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("phantom")) {
 			{
 				Entity _ent = entity;
 				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
@@ -327,7 +338,7 @@ public class CodesProcedure {
 				}
 			}
 		}
-		if ((((entity instanceof Player _entity48 && _entity48.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu48) ? _menu48.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("scarlet")) {
+		if ((((entity instanceof Player _entity59 && _entity59.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu59) ? _menu59.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("scarlet")) {
 			{
 				Entity _ent = entity;
 				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
@@ -336,7 +347,7 @@ public class CodesProcedure {
 				}
 			}
 		}
-		if ((((entity instanceof Player _entity50 && _entity50.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu50) ? _menu50.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("ceasar")) {
+		if ((((entity instanceof Player _entity61 && _entity61.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu61) ? _menu61.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("ceasar")) {
 			{
 				Entity _ent = entity;
 				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
@@ -345,7 +356,10 @@ public class CodesProcedure {
 				}
 			}
 		}
-		if ((((entity instanceof Player _entity52 && _entity52.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu52) ? _menu52.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("engiesbuggedchaos")) {
+		if ((((entity instanceof Player _entity63 && _entity63.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu63) ? _menu63.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("engiesbuggedchaos")
+				|| (((entity instanceof Player _entity64 && _entity64.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu64) ? _menu64.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("engies bugged chaos")
+				|| (((entity instanceof Player _entity65 && _entity65.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu65) ? _menu65.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("engie's bugged chaos")
+				|| (((entity instanceof Player _entity66 && _entity66.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu66) ? _menu66.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("engie'sbuggedchaos")) {
 			{
 				Entity _ent = entity;
 				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
@@ -354,7 +368,7 @@ public class CodesProcedure {
 				}
 			}
 		}
-		if ((((entity instanceof Player _entity54 && _entity54.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu54) ? _menu54.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("devmode")) {
+		if ((((entity instanceof Player _entity68 && _entity68.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu68) ? _menu68.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("devmode")) {
 			if ((entity.getPersistentData().getBoolean("EngiesChaos_Dev") || entity.getPersistentData().getBoolean("EngiesChaos_Contributor") || entity.getPersistentData().getBoolean("EngiesChaos_BetaTester")
 					|| entity.getPersistentData().getBoolean("EngiesChaos_Tester")) == true) {
 				if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).playerdebugmode == false) {

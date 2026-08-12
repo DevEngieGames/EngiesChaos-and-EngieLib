@@ -56,7 +56,7 @@ public class HostileBiblicallyAccurateEngieEntity extends Monster {
 
 	public HostileBiblicallyAccurateEngieEntity(EntityType<HostileBiblicallyAccurateEngieEntity> type, Level world) {
 		super(type, world);
-		maxUpStep = 1f;
+		maxUpStep = 0.6f;
 		xpReward = 60;
 		setNoAi(false);
 	}
@@ -250,10 +250,10 @@ public class HostileBiblicallyAccurateEngieEntity extends Monster {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.25);
-		builder = builder.add(Attributes.MAX_HEALTH, 750);
-		builder = builder.add(Attributes.ARMOR, 100);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 75);
-		builder = builder.add(Attributes.FOLLOW_RANGE, 32);
+		builder = builder.add(Attributes.MAX_HEALTH, 600);
+		builder = builder.add(Attributes.ARMOR, 25);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 45);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
 		return builder;
 	}
 }

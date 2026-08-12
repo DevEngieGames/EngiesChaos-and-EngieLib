@@ -2,13 +2,19 @@
   "mappings": {
     "default": {
       "map": {
-        "0": "crucifixdoomsday"
+        "0": "pixelscytheddaynew"
       },
       "name": "default"
     },
+    "darkmatter": {
+      "map": {
+        "0": "pixeldarkmatterscythedday"
+      },
+      "name": "darkmatter"
+    },
     "antimatter": {
       "map": {
-        "0": "antimattercrucifixdoomsday"
+        "0": "pixelantimatterscytheddaynew"
       },
       "name": "antimatter"
     }

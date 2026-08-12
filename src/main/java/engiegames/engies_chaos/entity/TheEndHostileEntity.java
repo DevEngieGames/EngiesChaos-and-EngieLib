@@ -7,7 +7,6 @@ import net.minecraftforge.network.NetworkHooks;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
@@ -26,7 +25,6 @@ import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.DifficultyInstance;
@@ -40,7 +38,6 @@ import javax.annotation.Nullable;
 import engiegames.engies_chaos.procedures.TheEndNaturalEntitySpawningConditionProcedure;
 import engiegames.engies_chaos.procedures.TheEndHostileEntityDiesProcedure;
 import engiegames.engies_chaos.procedures.EntitySpawnsProcedure;
-import engiegames.engies_chaos.init.EngiesChaosModItems;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class TheEndHostileEntity extends Monster {
@@ -53,11 +50,6 @@ public class TheEndHostileEntity extends Monster {
 		maxUpStep = 0.6f;
 		xpReward = 0;
 		setNoAi(false);
-		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(EngiesChaosModItems.THE_END_SCYTHE.get()));
-		this.setItemSlot(EquipmentSlot.HEAD, new ItemStack(EngiesChaosModItems.THE_ENDS_HELMET.get()));
-		this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(EngiesChaosModItems.THE_ENDS_CHESTPLATE.get()));
-		this.setItemSlot(EquipmentSlot.LEGS, new ItemStack(EngiesChaosModItems.THE_ENDS_LEGGINGS.get()));
-		this.setItemSlot(EquipmentSlot.FEET, new ItemStack(EngiesChaosModItems.THE_ENDS_BOOTS.get()));
 	}
 
 	@Override
@@ -131,7 +123,7 @@ public class TheEndHostileEntity extends Monster {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.6);
-		builder = builder.add(Attributes.MAX_HEALTH, 525);
+		builder = builder.add(Attributes.MAX_HEALTH, 975);
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 1);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);

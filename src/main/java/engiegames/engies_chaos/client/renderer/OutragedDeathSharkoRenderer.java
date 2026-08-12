@@ -20,13 +20,13 @@ import engiegames.engies_chaos.procedures.OutragedDeathSharkoTDisplayCondition3P
 import engiegames.engies_chaos.procedures.OutragedDeathSharkoTDisplayCondition2Procedure;
 import engiegames.engies_chaos.procedures.OutragedDeathSharkoMoveAroundCheckProcedure;
 import engiegames.engies_chaos.entity.OutragedDeathSharkoEntity;
-import engiegames.engies_chaos.client.model.Modelboyosleepalt;
 import engiegames.engies_chaos.client.model.Modelboyo;
 import engiegames.engies_chaos.client.model.Modelbigboyotamed;
 import engiegames.engies_chaos.client.model.Modelbigboyosleepalt;
 import engiegames.engies_chaos.client.model.Modelbigboyosleep;
 import engiegames.engies_chaos.client.model.Modelbigboyosit;
 import engiegames.engies_chaos.client.model.Modelbigboyolayonside;
+import engiegames.engies_chaos.client.model.Modelbigboyolayalt;
 import engiegames.engies_chaos.client.model.Modelbigboyolay;
 import engiegames.engies_chaos.client.model.Modelbigboyo;
 
@@ -161,7 +161,7 @@ public class OutragedDeathSharkoRenderer extends MobRenderer<OutragedDeathSharko
 				double z = entity.getZ();
 				if (OutragedDeathSharkoTDisplayCondition6Procedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-					EntityModel model = new Modelboyosleepalt(Minecraft.getInstance().getEntityModels().bakeLayer(Modelboyosleepalt.LAYER_LOCATION));
+					EntityModel model = new Modelbigboyolayalt(Minecraft.getInstance().getEntityModels().bakeLayer(Modelbigboyolayalt.LAYER_LOCATION));
 					this.getParentModel().copyPropertiesTo(model);
 					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
 					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
