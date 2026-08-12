@@ -368,7 +368,17 @@ public class CodesProcedure {
 				}
 			}
 		}
-		if ((((entity instanceof Player _entity68 && _entity68.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu68) ? _menu68.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("devmode")) {
+		if ((((entity instanceof Player _entity68 && _entity68.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu68) ? _menu68.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("pureinsanity")
+				|| (((entity instanceof Player _entity69 && _entity69.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu69) ? _menu69.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("pure insanity")) {
+			{
+				Entity _ent = entity;
+				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @p engies_chaos:pure_insanity_plush");
+				}
+			}
+		}
+		if ((((entity instanceof Player _entity71 && _entity71.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu71) ? _menu71.getMenuState(0, "codeinput", "") : "").toLowerCase()).equals("devmode")) {
 			if ((entity.getPersistentData().getBoolean("EngiesChaos_Dev") || entity.getPersistentData().getBoolean("EngiesChaos_Contributor") || entity.getPersistentData().getBoolean("EngiesChaos_BetaTester")
 					|| entity.getPersistentData().getBoolean("EngiesChaos_Tester")) == true) {
 				if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).playerdebugmode == false) {

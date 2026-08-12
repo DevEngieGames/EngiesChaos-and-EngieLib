@@ -263,7 +263,7 @@ public class CongratsProcedure {
 																																																														.getAdvancements()
 																																																														.getAdvancement(
 																																																																new ResourceLocation(
-																																																																		"engies_chaos:antimatter_engie_tool_obtained")))
+																																																																		"engies_chaos:antimatter_hostile_engie_armor_obtained")))
 																																																										.isDone()) {
 																																																							if (entity instanceof ServerPlayer _plr53
 																																																									&& _plr53.level instanceof ServerLevel
@@ -274,7 +274,7 @@ public class CongratsProcedure {
 																																																															.getAdvancements()
 																																																															.getAdvancement(
 																																																																	new ResourceLocation(
-																																																																			"engies_chaos:antimatter_angry_engie_tool_obtained")))
+																																																																			"engies_chaos:antimatter_dooms_day_armor_obtained")))
 																																																											.isDone()) {
 																																																								if (entity instanceof ServerPlayer _plr54
 																																																										&& _plr54.level instanceof ServerLevel
@@ -285,7 +285,7 @@ public class CongratsProcedure {
 																																																																.getAdvancements()
 																																																																.getAdvancement(
 																																																																		new ResourceLocation(
-																																																																				"engies_chaos:antimatter_enraged_engie_tool_obtained")))
+																																																																				"engies_chaos:antimatter_super_dooms_day_tools_obtained")))
 																																																												.isDone()) {
 																																																									if (entity instanceof ServerPlayer _plr55
 																																																											&& _plr55.level instanceof ServerLevel
@@ -296,7 +296,7 @@ public class CongratsProcedure {
 																																																																	.getAdvancements()
 																																																																	.getAdvancement(
 																																																																			new ResourceLocation(
-																																																																					"engies_chaos:antimatter_outraged_tools_obtained")))
+																																																																					"engies_chaos:antimatter_the_end_armor_obtained")))
 																																																													.isDone()) {
 																																																										if (entity instanceof ServerPlayer _plr56
 																																																												&& _plr56.level instanceof ServerLevel
@@ -307,7 +307,7 @@ public class CongratsProcedure {
 																																																																		.getAdvancements()
 																																																																		.getAdvancement(
 																																																																				new ResourceLocation(
-																																																																						"engies_chaos:antimatter_biblically_accurate_tools_obtained")))
+																																																																						"engies_chaos:antimatter_engie_armor_obtained")))
 																																																														.isDone()) {
 																																																											if (entity instanceof ServerPlayer _plr57
 																																																													&& _plr57.level instanceof ServerLevel
@@ -318,7 +318,7 @@ public class CongratsProcedure {
 																																																																			.getAdvancements()
 																																																																			.getAdvancement(
 																																																																					new ResourceLocation(
-																																																																							"engies_chaos:antimatter_monstrosity_engie_tools_obtained")))
+																																																																							"engies_chaos:antimatter_engie_games_armor_obtained")))
 																																																															.isDone()) {
 																																																												if (entity instanceof ServerPlayer _plr58
 																																																														&& _plr58.level instanceof ServerLevel
@@ -329,7 +329,7 @@ public class CongratsProcedure {
 																																																																				.getAdvancements()
 																																																																				.getAdvancement(
 																																																																						new ResourceLocation(
-																																																																								"engies_chaos:antimatter_mini_ban_obtain")))
+																																																																								"engies_chaos:antimatter_engie_tool_obtained")))
 																																																																.isDone()) {
 																																																													if (entity instanceof ServerPlayer _plr59
 																																																															&& _plr59.level instanceof ServerLevel
@@ -340,7 +340,7 @@ public class CongratsProcedure {
 																																																																					.getAdvancements()
 																																																																					.getAdvancement(
 																																																																							new ResourceLocation(
-																																																																									"engies_chaos:antimatter_ban_obtain")))
+																																																																									"engies_chaos:antimatter_angry_engie_tool_obtained")))
 																																																																	.isDone()) {
 																																																														if (entity instanceof ServerPlayer _plr60
 																																																																&& _plr60.level instanceof ServerLevel
@@ -351,7 +351,7 @@ public class CongratsProcedure {
 																																																																						.getAdvancements()
 																																																																						.getAdvancement(
 																																																																								new ResourceLocation(
-																																																																										"engies_chaos:antimatter_big_ban_obtain")))
+																																																																										"engies_chaos:antimatter_enraged_engie_tool_obtained")))
 																																																																		.isDone()) {
 																																																															if (entity instanceof ServerPlayer _plr61
 																																																																	&& _plr61.level instanceof ServerLevel
@@ -362,7 +362,7 @@ public class CongratsProcedure {
 																																																																							.getAdvancements()
 																																																																							.getAdvancement(
 																																																																									new ResourceLocation(
-																																																																											"engies_chaos:antimatter_large_ban_obtain")))
+																																																																											"engies_chaos:antimatter_outraged_tools_obtained")))
 																																																																			.isDone()) {
 																																																																if (entity instanceof ServerPlayer _plr62
 																																																																		&& _plr62.level instanceof ServerLevel
@@ -373,7 +373,7 @@ public class CongratsProcedure {
 																																																																								.getAdvancements()
 																																																																								.getAdvancement(
 																																																																										new ResourceLocation(
-																																																																												"engies_chaos:antimatter_huge_ban_obtain")))
+																																																																												"engies_chaos:antimatter_biblically_accurate_tools_obtained")))
 																																																																				.isDone()) {
 																																																																	if (entity instanceof ServerPlayer _plr63
 																																																																			&& _plr63.level instanceof ServerLevel
@@ -384,7 +384,7 @@ public class CongratsProcedure {
 																																																																									.getAdvancements()
 																																																																									.getAdvancement(
 																																																																											new ResourceLocation(
-																																																																													"engies_chaos:antimatter_enormous_ban_obtain")))
+																																																																													"engies_chaos:antimatter_monstrosity_engie_tools_obtained")))
 																																																																					.isDone()) {
 																																																																		if (entity instanceof ServerPlayer _plr64
 																																																																				&& _plr64.level instanceof ServerLevel
@@ -395,7 +395,7 @@ public class CongratsProcedure {
 																																																																										.getAdvancements()
 																																																																										.getAdvancement(
 																																																																												new ResourceLocation(
-																																																																														"engies_chaos:antimatter_gigantic_ban_obtain")))
+																																																																														"engies_chaos:antimatter_hostile_engie_tools_obtained")))
 																																																																						.isDone()) {
 																																																																			if (entity instanceof ServerPlayer _plr65
 																																																																					&& _plr65.level instanceof ServerLevel
@@ -406,7 +406,7 @@ public class CongratsProcedure {
 																																																																											.getAdvancements()
 																																																																											.getAdvancement(
 																																																																													new ResourceLocation(
-																																																																															"engies_chaos:antimatter_massive_ban_obtain")))
+																																																																															"engies_chaos:antimatter_dooms_day_tools_obtained")))
 																																																																							.isDone()) {
 																																																																				if (entity instanceof ServerPlayer _plr66
 																																																																						&& _plr66.level instanceof ServerLevel
@@ -417,7 +417,7 @@ public class CongratsProcedure {
 																																																																												.getAdvancements()
 																																																																												.getAdvancement(
 																																																																														new ResourceLocation(
-																																																																																"engies_chaos:antimatter_biblically_accurate_ban_obtain")))
+																																																																																"engies_chaos:antimatter_super_doomsday_ban_scythe_obtain")))
 																																																																								.isDone()) {
 																																																																					if (entity instanceof ServerPlayer _plr67
 																																																																							&& _plr67.level instanceof ServerLevel
@@ -428,7 +428,7 @@ public class CongratsProcedure {
 																																																																													.getAdvancements()
 																																																																													.getAdvancement(
 																																																																															new ResourceLocation(
-																																																																																	"engies_chaos:antimatter_monstrosity_ban_obtain")))
+																																																																																	"engies_chaos:antimatter_the_end_tools_obtained")))
 																																																																									.isDone()) {
 																																																																						if (entity instanceof ServerPlayer _plr68
 																																																																								&& _plr68.level instanceof ServerLevel
@@ -439,7 +439,7 @@ public class CongratsProcedure {
 																																																																														.getAdvancements()
 																																																																														.getAdvancement(
 																																																																																new ResourceLocation(
-																																																																																		"engies_chaos:antimatter_doomsday_ban_scythe_obtain")))
+																																																																																		"engies_chaos:antimatter_engies_tools_obtained")))
 																																																																										.isDone()) {
 																																																																							if (entity instanceof ServerPlayer _plr69
 																																																																									&& _plr69.level instanceof ServerLevel
@@ -450,7 +450,7 @@ public class CongratsProcedure {
 																																																																															.getAdvancements()
 																																																																															.getAdvancement(
 																																																																																	new ResourceLocation(
-																																																																																			"engies_chaos:antimatter_super_doomsday_ban_scythe_obtain")))
+																																																																																			"engies_chaos:antimatter_engie_games_tools_obtained")))
 																																																																											.isDone()) {
 																																																																								if (entity instanceof ServerPlayer _plr70
 																																																																										&& _plr70.level instanceof ServerLevel
@@ -461,7 +461,7 @@ public class CongratsProcedure {
 																																																																																.getAdvancements()
 																																																																																.getAdvancement(
 																																																																																		new ResourceLocation(
-																																																																																				"engies_chaos:antimatter_the_end_ban_scythe_obtain")))
+																																																																																				"engies_chaos:antimatter_mini_ban_obtain")))
 																																																																												.isDone()) {
 																																																																									if (entity instanceof ServerPlayer _plr71
 																																																																											&& _plr71.level instanceof ServerLevel
@@ -472,7 +472,7 @@ public class CongratsProcedure {
 																																																																																	.getAdvancements()
 																																																																																	.getAdvancement(
 																																																																																			new ResourceLocation(
-																																																																																					"engies_chaos:antimatter_engies_ban_scythe_obtain")))
+																																																																																					"engies_chaos:antimatter_ban_obtain")))
 																																																																													.isDone()) {
 																																																																										if (entity instanceof ServerPlayer _plr72
 																																																																												&& _plr72.level instanceof ServerLevel
@@ -483,7 +483,7 @@ public class CongratsProcedure {
 																																																																																		.getAdvancements()
 																																																																																		.getAdvancement(
 																																																																																				new ResourceLocation(
-																																																																																						"engies_chaos:antimatter_engie_games_sword_obtained")))
+																																																																																						"engies_chaos:antimatter_big_ban_obtain")))
 																																																																														.isDone()) {
 																																																																											if (entity instanceof ServerPlayer _plr73
 																																																																													&& _plr73.level instanceof ServerLevel
@@ -494,7 +494,7 @@ public class CongratsProcedure {
 																																																																																			.getAdvancements()
 																																																																																			.getAdvancement(
 																																																																																					new ResourceLocation(
-																																																																																							"engies_chaos:mindscape_ban_scythe_obtain")))
+																																																																																							"engies_chaos:antimatter_large_ban_obtain")))
 																																																																															.isDone()) {
 																																																																												if (entity instanceof ServerPlayer _plr74
 																																																																														&& _plr74.level instanceof ServerLevel
@@ -505,7 +505,7 @@ public class CongratsProcedure {
 																																																																																				.getAdvancements()
 																																																																																				.getAdvancement(
 																																																																																						new ResourceLocation(
-																																																																																								"engies_chaos:engie_games_sword_obtained")))
+																																																																																								"engies_chaos:antimatter_huge_ban_obtain")))
 																																																																																.isDone()) {
 																																																																													if (entity instanceof ServerPlayer _plr75
 																																																																															&& _plr75.level instanceof ServerLevel
@@ -516,7 +516,7 @@ public class CongratsProcedure {
 																																																																																					.getAdvancements()
 																																																																																					.getAdvancement(
 																																																																																							new ResourceLocation(
-																																																																																									"engies_chaos:antimatter_doomsday_coin_obtained")))
+																																																																																									"engies_chaos:antimatter_enormous_ban_obtain")))
 																																																																																	.isDone()) {
 																																																																														if (entity instanceof ServerPlayer _plr76
 																																																																																&& _plr76.level instanceof ServerLevel
@@ -527,7 +527,7 @@ public class CongratsProcedure {
 																																																																																						.getAdvancements()
 																																																																																						.getAdvancement(
 																																																																																								new ResourceLocation(
-																																																																																										"engies_chaos:antimatter_super_doomsday_coin_obtained")))
+																																																																																										"engies_chaos:antimatter_gigantic_ban_obtain")))
 																																																																																		.isDone()) {
 																																																																															if (entity instanceof ServerPlayer _plr77
 																																																																																	&& _plr77.level instanceof ServerLevel
@@ -538,7 +538,7 @@ public class CongratsProcedure {
 																																																																																							.getAdvancements()
 																																																																																							.getAdvancement(
 																																																																																									new ResourceLocation(
-																																																																																											"engies_chaos:antimatter_the_end_coin_obtained")))
+																																																																																											"engies_chaos:antimatter_massive_ban_obtain")))
 																																																																																			.isDone()) {
 																																																																																if (entity instanceof ServerPlayer _plr78
 																																																																																		&& _plr78.level instanceof ServerLevel
@@ -549,7 +549,7 @@ public class CongratsProcedure {
 																																																																																								.getAdvancements()
 																																																																																								.getAdvancement(
 																																																																																										new ResourceLocation(
-																																																																																												"engies_chaos:antimatter_engie_coin_obtained")))
+																																																																																												"engies_chaos:antimatter_biblically_accurate_ban_obtain")))
 																																																																																				.isDone()) {
 																																																																																	if (entity instanceof ServerPlayer _plr79
 																																																																																			&& _plr79.level instanceof ServerLevel
@@ -560,9 +560,9 @@ public class CongratsProcedure {
 																																																																																									.getAdvancements()
 																																																																																									.getAdvancement(
 																																																																																											new ResourceLocation(
-																																																																																													"engies_chaos:antimatter_engie_games_coin_obtained")))
+																																																																																													"engies_chaos:antimatter_monstrosity_ban_obtain")))
 																																																																																					.isDone()) {
-																																																																																		if (!(entity instanceof ServerPlayer _plr80
+																																																																																		if (entity instanceof ServerPlayer _plr80
 																																																																																				&& _plr80.level instanceof ServerLevel
 																																																																																				&& _plr80
 																																																																																						.getAdvancements()
@@ -571,65 +571,209 @@ public class CongratsProcedure {
 																																																																																										.getAdvancements()
 																																																																																										.getAdvancement(
 																																																																																												new ResourceLocation(
-																																																																																														"engies_chaos:all_done")))
-																																																																																						.isDone())) {
-																																																																																			if (entity instanceof ServerPlayer _player) {
-																																																																																				Advancement _adv = _player.server
-																																																																																						.getAdvancements()
-																																																																																						.getAdvancement(
-																																																																																								new ResourceLocation(
-																																																																																										"engies_chaos:all_done"));
-																																																																																				AdvancementProgress _ap = _player
-																																																																																						.getAdvancements()
-																																																																																						.getOrStartProgress(
-																																																																																								_adv);
-																																																																																				if (!_ap.isDone()) {
-																																																																																					for (String criteria : _ap
-																																																																																							.getRemainingCriteria())
-																																																																																						_player.getAdvancements()
-																																																																																								.award(_adv,
-																																																																																										criteria);
-																																																																																				}
-																																																																																			}
-																																																																																		}
-																																																																																		if (entity instanceof ServerPlayer _plr82
-																																																																																				&& _plr82.level instanceof ServerLevel
-																																																																																				&& _plr82
-																																																																																						.getAdvancements()
-																																																																																						.getOrStartProgress(
-																																																																																								_plr82.server
-																																																																																										.getAdvancements()
-																																																																																										.getAdvancement(
-																																																																																												new ResourceLocation(
-																																																																																														"engies_chaos:secret_advancements_completed")))
+																																																																																														"engies_chaos:antimatter_doomsday_ban_scythe_obtain")))
 																																																																																						.isDone()) {
-																																																																																			if (!(entity instanceof ServerPlayer _plr83
-																																																																																					&& _plr83.level instanceof ServerLevel
-																																																																																					&& _plr83
+																																																																																			if (entity instanceof ServerPlayer _plr81
+																																																																																					&& _plr81.level instanceof ServerLevel
+																																																																																					&& _plr81
 																																																																																							.getAdvancements()
 																																																																																							.getOrStartProgress(
-																																																																																									_plr83.server
+																																																																																									_plr81.server
 																																																																																											.getAdvancements()
 																																																																																											.getAdvancement(
 																																																																																													new ResourceLocation(
-																																																																																															"engies_chaos:all_fully_done")))
-																																																																																							.isDone())) {
-																																																																																				if (entity instanceof ServerPlayer _player) {
-																																																																																					Advancement _adv = _player.server
-																																																																																							.getAdvancements()
-																																																																																							.getAdvancement(
-																																																																																									new ResourceLocation(
-																																																																																											"engies_chaos:all_fully_done"));
-																																																																																					AdvancementProgress _ap = _player
-																																																																																							.getAdvancements()
-																																																																																							.getOrStartProgress(
-																																																																																									_adv);
-																																																																																					if (!_ap.isDone()) {
-																																																																																						for (String criteria : _ap
-																																																																																								.getRemainingCriteria())
-																																																																																							_player.getAdvancements()
-																																																																																									.award(_adv,
-																																																																																											criteria);
+																																																																																															"engies_chaos:antimatter_super_doomsday_ban_scythe_obtain")))
+																																																																																							.isDone()) {
+																																																																																				if (entity instanceof ServerPlayer _plr82
+																																																																																						&& _plr82.level instanceof ServerLevel
+																																																																																						&& _plr82
+																																																																																								.getAdvancements()
+																																																																																								.getOrStartProgress(
+																																																																																										_plr82.server
+																																																																																												.getAdvancements()
+																																																																																												.getAdvancement(
+																																																																																														new ResourceLocation(
+																																																																																																"engies_chaos:antimatter_the_end_ban_scythe_obtain")))
+																																																																																								.isDone()) {
+																																																																																					if (entity instanceof ServerPlayer _plr83
+																																																																																							&& _plr83.level instanceof ServerLevel
+																																																																																							&& _plr83
+																																																																																									.getAdvancements()
+																																																																																									.getOrStartProgress(
+																																																																																											_plr83.server
+																																																																																													.getAdvancements()
+																																																																																													.getAdvancement(
+																																																																																															new ResourceLocation(
+																																																																																																	"engies_chaos:antimatter_engies_ban_scythe_obtain")))
+																																																																																									.isDone()) {
+																																																																																						if (entity instanceof ServerPlayer _plr84
+																																																																																								&& _plr84.level instanceof ServerLevel
+																																																																																								&& _plr84
+																																																																																										.getAdvancements()
+																																																																																										.getOrStartProgress(
+																																																																																												_plr84.server
+																																																																																														.getAdvancements()
+																																																																																														.getAdvancement(
+																																																																																																new ResourceLocation(
+																																																																																																		"engies_chaos:antimatter_engie_games_sword_obtained")))
+																																																																																										.isDone()) {
+																																																																																							if (entity instanceof ServerPlayer _plr85
+																																																																																									&& _plr85.level instanceof ServerLevel
+																																																																																									&& _plr85
+																																																																																											.getAdvancements()
+																																																																																											.getOrStartProgress(
+																																																																																													_plr85.server
+																																																																																															.getAdvancements()
+																																																																																															.getAdvancement(
+																																																																																																	new ResourceLocation(
+																																																																																																			"engies_chaos:mindscape_ban_scythe_obtain")))
+																																																																																											.isDone()) {
+																																																																																								if (entity instanceof ServerPlayer _plr86
+																																																																																										&& _plr86.level instanceof ServerLevel
+																																																																																										&& _plr86
+																																																																																												.getAdvancements()
+																																																																																												.getOrStartProgress(
+																																																																																														_plr86.server
+																																																																																																.getAdvancements()
+																																																																																																.getAdvancement(
+																																																																																																		new ResourceLocation(
+																																																																																																				"engies_chaos:engie_games_sword_obtained")))
+																																																																																												.isDone()) {
+																																																																																									if (entity instanceof ServerPlayer _plr87
+																																																																																											&& _plr87.level instanceof ServerLevel
+																																																																																											&& _plr87
+																																																																																													.getAdvancements()
+																																																																																													.getOrStartProgress(
+																																																																																															_plr87.server
+																																																																																																	.getAdvancements()
+																																																																																																	.getAdvancement(
+																																																																																																			new ResourceLocation(
+																																																																																																					"engies_chaos:antimatter_doomsday_coin_obtained")))
+																																																																																													.isDone()) {
+																																																																																										if (entity instanceof ServerPlayer _plr88
+																																																																																												&& _plr88.level instanceof ServerLevel
+																																																																																												&& _plr88
+																																																																																														.getAdvancements()
+																																																																																														.getOrStartProgress(
+																																																																																																_plr88.server
+																																																																																																		.getAdvancements()
+																																																																																																		.getAdvancement(
+																																																																																																				new ResourceLocation(
+																																																																																																						"engies_chaos:antimatter_super_doomsday_coin_obtained")))
+																																																																																														.isDone()) {
+																																																																																											if (entity instanceof ServerPlayer _plr89
+																																																																																													&& _plr89.level instanceof ServerLevel
+																																																																																													&& _plr89
+																																																																																															.getAdvancements()
+																																																																																															.getOrStartProgress(
+																																																																																																	_plr89.server
+																																																																																																			.getAdvancements()
+																																																																																																			.getAdvancement(
+																																																																																																					new ResourceLocation(
+																																																																																																							"engies_chaos:antimatter_the_end_coin_obtained")))
+																																																																																															.isDone()) {
+																																																																																												if (entity instanceof ServerPlayer _plr90
+																																																																																														&& _plr90.level instanceof ServerLevel
+																																																																																														&& _plr90
+																																																																																																.getAdvancements()
+																																																																																																.getOrStartProgress(
+																																																																																																		_plr90.server
+																																																																																																				.getAdvancements()
+																																																																																																				.getAdvancement(
+																																																																																																						new ResourceLocation(
+																																																																																																								"engies_chaos:antimatter_engie_coin_obtained")))
+																																																																																																.isDone()) {
+																																																																																													if (entity instanceof ServerPlayer _plr91
+																																																																																															&& _plr91.level instanceof ServerLevel
+																																																																																															&& _plr91
+																																																																																																	.getAdvancements()
+																																																																																																	.getOrStartProgress(
+																																																																																																			_plr91.server
+																																																																																																					.getAdvancements()
+																																																																																																					.getAdvancement(
+																																																																																																							new ResourceLocation(
+																																																																																																									"engies_chaos:antimatter_engie_games_coin_obtained")))
+																																																																																																	.isDone()) {
+																																																																																														if (!(entity instanceof ServerPlayer _plr92
+																																																																																																&& _plr92.level instanceof ServerLevel
+																																																																																																&& _plr92
+																																																																																																		.getAdvancements()
+																																																																																																		.getOrStartProgress(
+																																																																																																				_plr92.server
+																																																																																																						.getAdvancements()
+																																																																																																						.getAdvancement(
+																																																																																																								new ResourceLocation(
+																																																																																																										"engies_chaos:all_done")))
+																																																																																																		.isDone())) {
+																																																																																															if (entity instanceof ServerPlayer _player) {
+																																																																																																Advancement _adv = _player.server
+																																																																																																		.getAdvancements()
+																																																																																																		.getAdvancement(
+																																																																																																				new ResourceLocation(
+																																																																																																						"engies_chaos:all_done"));
+																																																																																																AdvancementProgress _ap = _player
+																																																																																																		.getAdvancements()
+																																																																																																		.getOrStartProgress(
+																																																																																																				_adv);
+																																																																																																if (!_ap.isDone()) {
+																																																																																																	for (String criteria : _ap
+																																																																																																			.getRemainingCriteria())
+																																																																																																		_player.getAdvancements()
+																																																																																																				.award(_adv,
+																																																																																																						criteria);
+																																																																																																}
+																																																																																															}
+																																																																																														}
+																																																																																														if (entity instanceof ServerPlayer _plr94
+																																																																																																&& _plr94.level instanceof ServerLevel
+																																																																																																&& _plr94
+																																																																																																		.getAdvancements()
+																																																																																																		.getOrStartProgress(
+																																																																																																				_plr94.server
+																																																																																																						.getAdvancements()
+																																																																																																						.getAdvancement(
+																																																																																																								new ResourceLocation(
+																																																																																																										"engies_chaos:secret_advancements_completed")))
+																																																																																																		.isDone()) {
+																																																																																															if (!(entity instanceof ServerPlayer _plr95
+																																																																																																	&& _plr95.level instanceof ServerLevel
+																																																																																																	&& _plr95
+																																																																																																			.getAdvancements()
+																																																																																																			.getOrStartProgress(
+																																																																																																					_plr95.server
+																																																																																																							.getAdvancements()
+																																																																																																							.getAdvancement(
+																																																																																																									new ResourceLocation(
+																																																																																																											"engies_chaos:all_fully_done")))
+																																																																																																			.isDone())) {
+																																																																																																if (entity instanceof ServerPlayer _player) {
+																																																																																																	Advancement _adv = _player.server
+																																																																																																			.getAdvancements()
+																																																																																																			.getAdvancement(
+																																																																																																					new ResourceLocation(
+																																																																																																							"engies_chaos:all_fully_done"));
+																																																																																																	AdvancementProgress _ap = _player
+																																																																																																			.getAdvancements()
+																																																																																																			.getOrStartProgress(
+																																																																																																					_adv);
+																																																																																																	if (!_ap.isDone()) {
+																																																																																																		for (String criteria : _ap
+																																																																																																				.getRemainingCriteria())
+																																																																																																			_player.getAdvancements()
+																																																																																																					.award(_adv,
+																																																																																																							criteria);
+																																																																																																	}
+																																																																																																}
+																																																																																															}
+																																																																																														}
+																																																																																													}
+																																																																																												}
+																																																																																											}
+																																																																																										}
+																																																																																									}
+																																																																																								}
+																																																																																							}
+																																																																																						}
 																																																																																					}
 																																																																																				}
 																																																																																			}
