@@ -16,7 +16,7 @@ public class AntimatterDoomsDayScytheItem extends SwordItem {
 	public AntimatterDoomsDayScytheItem() {
 		super(new Tier() {
 			public int getUses() {
-				return 60000;
+				return 30000;
 			}
 
 			public float getSpeed() {
@@ -24,7 +24,7 @@ public class AntimatterDoomsDayScytheItem extends SwordItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 14996f;
+				return 7496f;
 			}
 
 			public int getLevel() {

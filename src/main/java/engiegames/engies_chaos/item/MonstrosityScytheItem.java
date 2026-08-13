@@ -15,7 +15,7 @@ public class MonstrosityScytheItem extends SwordItem {
 	public MonstrosityScytheItem() {
 		super(new Tier() {
 			public int getUses() {
-				return 9600;
+				return 8000;
 			}
 
 			public float getSpeed() {
@@ -23,7 +23,7 @@ public class MonstrosityScytheItem extends SwordItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 2396f;
+				return 1996f;
 			}
 
 			public int getLevel() {

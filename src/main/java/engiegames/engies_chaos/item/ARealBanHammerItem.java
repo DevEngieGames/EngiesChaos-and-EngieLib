@@ -7,9 +7,12 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
 
 import java.util.List;
+
+import engiegames.engies_chaos.procedures.StunKeyTickProcedure;
 
 public class ARealBanHammerItem extends SwordItem {
 	public ARealBanHammerItem() {
@@ -45,5 +48,11 @@ public class ARealBanHammerItem extends SwordItem {
 		super.appendHoverText(itemstack, level, list, flag);
 		list.add(Component.translatable("item.engies_chaos.a_real_ban_hammer.description_0"));
 		list.add(Component.translatable("item.engies_chaos.a_real_ban_hammer.description_1"));
+	}
+
+	@Override
+	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
+		super.inventoryTick(itemstack, world, entity, slot, selected);
+		StunKeyTickProcedure.execute(world, entity, itemstack);
 	}
 }

@@ -20,7 +20,7 @@ import com.google.common.collect.ImmutableMultimap;
 
 public class GiganticBanHammerItem extends Item {
 	public GiganticBanHammerItem() {
-		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_WEAPONS).durability(5284));
+		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_WEAPONS).durability(5000));
 	}
 
 	@Override
@@ -50,7 +50,7 @@ public class GiganticBanHammerItem extends Item {
 		if (equipmentSlot == EquipmentSlot.MAINHAND) {
 			ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 			builder.putAll(super.getDefaultAttributeModifiers(equipmentSlot));
-			builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Tool modifier", 1320f, AttributeModifier.Operation.ADDITION));
+			builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Tool modifier", 1249f, AttributeModifier.Operation.ADDITION));
 			builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Tool modifier", -2.25, AttributeModifier.Operation.ADDITION));
 			return builder.build();
 		}

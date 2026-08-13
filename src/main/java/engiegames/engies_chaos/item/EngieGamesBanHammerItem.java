@@ -16,15 +16,15 @@ import net.minecraft.core.BlockPos;
 
 import java.util.List;
 
+import engiegames.engies_chaos.procedures.StunKeyTickProcedure;
 import engiegames.engies_chaos.procedures.EngieGamesBanHammerSpecialInformationProcedure;
-import engiegames.engies_chaos.init.EngiesChaosModTabs;
 
 import com.google.common.collect.Multimap;
 import com.google.common.collect.ImmutableMultimap;
 
 public class EngieGamesBanHammerItem extends Item {
 	public EngieGamesBanHammerItem() {
-		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_WEAPONS).durability(128000));
+		super(new Item.Properties().tab(null).durability(128000));
 	}
 
 	@Override
@@ -71,5 +71,11 @@ public class EngieGamesBanHammerItem extends Item {
 				list.add(Component.literal(line));
 			}
 		}
+	}
+
+	@Override
+	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
+		super.inventoryTick(itemstack, world, entity, slot, selected);
+		StunKeyTickProcedure.execute(world, entity, itemstack);
 	}
 }

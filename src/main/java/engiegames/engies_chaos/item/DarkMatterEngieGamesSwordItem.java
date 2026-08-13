@@ -16,7 +16,7 @@ public class DarkMatterEngieGamesSwordItem extends SwordItem {
 	public DarkMatterEngieGamesSwordItem() {
 		super(new Tier() {
 			public int getUses() {
-				return 92000;
+				return 53000;
 			}
 
 			public float getSpeed() {
@@ -24,7 +24,7 @@ public class DarkMatterEngieGamesSwordItem extends SwordItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 13296f;
+				return 13246f;
 			}
 
 			public int getLevel() {
@@ -38,7 +38,7 @@ public class DarkMatterEngieGamesSwordItem extends SwordItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.of(new ItemStack(EngiesChaosModItems.DARK_MATTER_ENGIE_GAMES_COIN.get()));
 			}
-		}, 3, 15.4f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_WEAPONS));
+		}, 3, -3f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_WEAPONS));
 	}
 
 	@Override

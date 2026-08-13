@@ -15,7 +15,7 @@ public class DarkMatterMonstrosityScytheItem extends SwordItem {
 	public DarkMatterMonstrosityScytheItem() {
 		super(new Tier() {
 			public int getUses() {
-				return 82600;
+				return 48000;
 			}
 
 			public float getSpeed() {
@@ -23,7 +23,7 @@ public class DarkMatterMonstrosityScytheItem extends SwordItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 12046f;
+				return 11996f;
 			}
 
 			public int getLevel() {

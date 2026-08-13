@@ -9,7 +9,7 @@
     "customModelName": "engiegamesanchor:gold",
     "blockingModelName": "Normal blocking",
     "guiTexture": "engiegamesgoldanchor2d",
-    "name": "Roughian EngieGames's Golden Anchor",
+    "name": "Golden Hallow's Anchor",
     "specialInformation": {
       "fixedValue": [],
       "name": "EngieGamesAnchorSpecialInformation"
@@ -23,7 +23,7 @@
     "attackSpeed": 1.0,
     "enchantability": 22,
     "damageVsEntity": 9250.0,
-    "usageCount": 71000,
+    "usageCount": 37000,
     "glowCondition": {
       "fixedValue": false
     },

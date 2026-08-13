@@ -21,7 +21,7 @@ public class EngieGamesGoldenHallowScytheItem extends SwordItem {
 	public EngieGamesGoldenHallowScytheItem() {
 		super(new Tier() {
 			public int getUses() {
-				return 128000;
+				return 37000;
 			}
 
 			public float getSpeed() {
@@ -29,7 +29,7 @@ public class EngieGamesGoldenHallowScytheItem extends SwordItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 112496f;
+				return 9246f;
 			}
 
 			public int getLevel() {

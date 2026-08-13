@@ -9,7 +9,7 @@
     "customModelName": "hallowsscythe:gold",
     "blockingModelName": "Normal blocking",
     "guiTexture": "pixelscythehallowgoldnew",
-    "name": "Roughian EngieGames's Golden Hallow's Scythe",
+    "name": "Golden Hallow's Scythe",
     "specialInformation": {
       "fixedValue": [],
       "name": "EngieGamesHallowScytheSpecialInformation"
@@ -22,8 +22,8 @@
     "efficiency": 125.0,
     "attackSpeed": 1.0,
     "enchantability": 22,
-    "damageVsEntity": 112500.0,
-    "usageCount": 128000,
+    "damageVsEntity": 9250.0,
+    "usageCount": 37000,
     "glowCondition": {
       "fixedValue": false
     },

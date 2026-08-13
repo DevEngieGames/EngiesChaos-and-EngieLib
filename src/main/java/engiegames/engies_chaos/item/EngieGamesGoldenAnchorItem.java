@@ -21,7 +21,7 @@ public class EngieGamesGoldenAnchorItem extends PickaxeItem {
 	public EngieGamesGoldenAnchorItem() {
 		super(new Tier() {
 			public int getUses() {
-				return 71000;
+				return 37000;
 			}
 
 			public float getSpeed() {

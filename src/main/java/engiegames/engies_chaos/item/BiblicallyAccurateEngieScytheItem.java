@@ -15,7 +15,7 @@ public class BiblicallyAccurateEngieScytheItem extends SwordItem {
 	public BiblicallyAccurateEngieScytheItem() {
 		super(new Tier() {
 			public int getUses() {
-				return 7392;
+				return 7000;
 			}
 
 			public float getSpeed() {
@@ -23,7 +23,7 @@ public class BiblicallyAccurateEngieScytheItem extends SwordItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 1844f;
+				return 1746f;
 			}
 
 			public int getLevel() {

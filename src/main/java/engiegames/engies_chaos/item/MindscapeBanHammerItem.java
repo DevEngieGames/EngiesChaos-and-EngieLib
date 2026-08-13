@@ -20,7 +20,7 @@ import com.google.common.collect.ImmutableMultimap;
 
 public class MindscapeBanHammerItem extends Item {
 	public MindscapeBanHammerItem() {
-		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_WEAPONS).durability(40000));
+		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_WEAPONS).durability(13000));
 	}
 
 	@Override

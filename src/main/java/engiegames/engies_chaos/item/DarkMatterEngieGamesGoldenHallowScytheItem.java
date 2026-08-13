@@ -21,7 +21,7 @@ public class DarkMatterEngieGamesGoldenHallowScytheItem extends SwordItem {
 	public DarkMatterEngieGamesGoldenHallowScytheItem() {
 		super(new Tier() {
 			public int getUses() {
-				return 98000;
+				return 56000;
 			}
 
 			public float getSpeed() {
@@ -29,7 +29,7 @@ public class DarkMatterEngieGamesGoldenHallowScytheItem extends SwordItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 14046f;
+				return 13996f;
 			}
 
 			public int getLevel() {

@@ -11,8 +11,7 @@
     "guiTexture": "antimatterbanhammerpixel",
     "name": "Antimatter Gigantic Ban Hammer",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {
@@ -22,8 +21,8 @@
     "efficiency": 4.0,
     "attackSpeed": 1.75,
     "enchantability": 22,
-    "damageVsEntity": 11321.0,
-    "usageCount": 45284,
+    "damageVsEntity": 6500.0,
+    "usageCount": 26000,
     "glowCondition": {
       "fixedValue": false
     },

@@ -14,11 +14,7 @@
       "fixedValue": [],
       "name": "EngieGamesBanHammerSpecialInformation"
     },
-    "creativeTabs": [
-      {
-        "value": "CUSTOM:BanHammers"
-      }
-    ],
+    "creativeTabs": [],
     "efficiency": 4.0,
     "attackSpeed": 1.0,
     "enchantability": 22,
@@ -93,6 +89,9 @@
     "blockDropsTier": "NETHERITE",
     "blocksAffected": [],
     "stayInGridWhenCrafting": false,
-    "damageOnCrafting": false
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "StunKeyTick"
+    }
   }
 }

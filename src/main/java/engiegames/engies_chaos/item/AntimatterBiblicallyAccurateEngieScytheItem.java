@@ -15,7 +15,7 @@ public class AntimatterBiblicallyAccurateEngieScytheItem extends SwordItem {
 	public AntimatterBiblicallyAccurateEngieScytheItem() {
 		super(new Tier() {
 			public int getUses() {
-				return 47400;
+				return 28000;
 			}
 
 			public float getSpeed() {
@@ -23,7 +23,7 @@ public class AntimatterBiblicallyAccurateEngieScytheItem extends SwordItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 11846f;
+				return 6996f;
 			}
 
 			public int getLevel() {

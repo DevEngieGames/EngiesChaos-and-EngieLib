@@ -103,7 +103,10 @@ public class DoubleJumpOnKeyReleasedProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
-			} else if ((getEntityGameType(entity) == GameType.SURVIVAL || getEntityGameType(entity) == GameType.ADVENTURE) && entity.isOnGround()
+			} else if ((getEntityGameType(entity) == GameType.SURVIVAL || getEntityGameType(entity) == GameType.ADVENTURE)
+					&& !((world.getBlockState(new BlockPos(entity.getX(), entity.getY() - 1, entity.getZ()))).getBlock() == Blocks.AIR
+							|| (world.getBlockState(new BlockPos(entity.getX(), entity.getY() - 1, entity.getZ()))).getBlock() == Blocks.VOID_AIR
+							|| (world.getBlockState(new BlockPos(entity.getX(), entity.getY() - 1, entity.getZ()))).getBlock() == Blocks.CAVE_AIR)
 					&& (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).doublejumpcount > 2) {
 				{
 					double _setval = 2;

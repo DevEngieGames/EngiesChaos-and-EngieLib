@@ -16,7 +16,7 @@ public class CosmicEngieGamesSwordItem extends SwordItem {
 	public CosmicEngieGamesSwordItem() {
 		super(new Tier() {
 			public int getUses() {
-				return 128000;
+				return 35000;
 			}
 
 			public float getSpeed() {
@@ -24,7 +24,7 @@ public class CosmicEngieGamesSwordItem extends SwordItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 50521f;
+				return 8746f;
 			}
 
 			public int getLevel() {

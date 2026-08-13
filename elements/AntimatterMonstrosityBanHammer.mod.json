@@ -11,8 +11,7 @@
     "guiTexture": "antimattermonstrositypixel",
     "name": "Antimatter Monstrosity Ban Hammer",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {
@@ -22,8 +21,8 @@
     "efficiency": 10.0,
     "attackSpeed": 1.0,
     "enchantability": 22,
-    "damageVsEntity": 12400.0,
-    "usageCount": 49600,
+    "damageVsEntity": 7250.0,
+    "usageCount": 29000,
     "glowCondition": {
       "fixedValue": false
     },

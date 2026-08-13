@@ -9,7 +9,7 @@
     "customModelName": "hallowsscythe:engie",
     "blockingModelName": "Normal blocking",
     "guiTexture": "pixelscythehallowengienew",
-    "name": "Collectors EngieGames Hallows Scythe",
+    "name": "Collectors Hallow's Scythe",
     "specialInformation": {
       "fixedValue": [],
       "name": "EngieGamesHallowScytheSpecialInformation"
@@ -22,8 +22,8 @@
     "efficiency": 125.0,
     "attackSpeed": 1.0,
     "enchantability": 22,
-    "damageVsEntity": 125000.0,
-    "usageCount": 128000,
+    "damageVsEntity": 9500.0,
+    "usageCount": 38000,
     "glowCondition": {
       "fixedValue": false
     },

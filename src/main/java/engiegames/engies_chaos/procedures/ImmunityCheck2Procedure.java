@@ -6,6 +6,7 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.damagesource.DamageSource;
 
 import javax.annotation.Nullable;
 
@@ -16,22 +17,31 @@ public class ImmunityCheck2Procedure {
 	@SubscribeEvent
 	public static void onEntityAttacked(LivingAttackEvent event) {
 		if (event != null && event.getEntity() != null) {
-			execute(event, event.getEntity());
+			execute(event, event.getSource(), event.getEntity());
 		}
 	}
 
-	public static void execute(Entity entity) {
-		execute(null, entity);
+	public static void execute(DamageSource damagesource, Entity entity) {
+		execute(null, damagesource, entity);
 	}
 
-	private static void execute(@Nullable Event event, Entity entity) {
-		if (entity == null)
+	private static void execute(@Nullable Event event, DamageSource damagesource, Entity entity) {
+		if (damagesource == null || entity == null)
 			return;
 		if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).playerhasimmunity == true) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
 			} else if (event != null && event.hasResult()) {
 				event.setResult(Event.Result.DENY);
+			}
+		}
+		if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).doublejumping == true) {
+			if (damagesource == DamageSource.FALL) {
+				if (event != null && event.isCancelable()) {
+					event.setCanceled(true);
+				} else if (event != null && event.hasResult()) {
+					event.setResult(Event.Result.DENY);
+				}
 			}
 		}
 	}

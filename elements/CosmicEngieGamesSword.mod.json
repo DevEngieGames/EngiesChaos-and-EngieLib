@@ -24,8 +24,8 @@
     "efficiency": 96.0,
     "attackSpeed": 1.0,
     "enchantability": 22,
-    "damageVsEntity": 50525.0,
-    "usageCount": 128000,
+    "damageVsEntity": 8750.0,
+    "usageCount": 35000,
     "glowCondition": {
       "fixedValue": false
     },

@@ -8,6 +8,7 @@
     "texture": "bloodypixel",
     "customModelName": "ban_hammer_death:default",
     "blockingModelName": "Normal blocking",
+    "guiTexture": "bloodypixel",
     "name": "ECHDEATH",
     "specialInformation": {
       "fixedValue": [
@@ -20,11 +21,17 @@
     "enchantability": 128000,
     "damageVsEntity": 128000.0,
     "usageCount": 128000,
+    "glowCondition": {
+      "fixedValue": false
+    },
     "repairItems": [],
     "immuneToFire": false,
     "blockDropsTier": "NETHERITE",
     "blocksAffected": [],
     "stayInGridWhenCrafting": false,
-    "damageOnCrafting": false
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "StunKeyTick"
+    }
   }
 }

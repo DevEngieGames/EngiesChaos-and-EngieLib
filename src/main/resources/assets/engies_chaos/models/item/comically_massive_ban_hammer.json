@@ -1,8 +1,32 @@
 {
-  "parent": "engies_chaos:custom/ban_hammer_bahemoth",
-  "textures": {
-    "1": "engies_chaos:block/oreo",
-    "2": "engies_chaos:block/signatures",
-    "particle": "engies_chaos:item/oreobanpixel"
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "engies_chaos:custom/ban_hammer_bahemoth",
+    "textures": {
+      "1": "engies_chaos:block/oreo",
+      "2": "engies_chaos:block/signatures",
+      "particle": "engies_chaos:item/oreobanpixel"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/oreobanpixel"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/oreobanpixel"
+      }
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/oreobanpixel"
+      }
+    }
   }
 }

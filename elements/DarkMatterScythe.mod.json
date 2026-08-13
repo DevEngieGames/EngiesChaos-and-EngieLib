@@ -11,8 +11,7 @@
     "guiTexture": "pixeldarkmatterscythe",
     "name": "Dark Matter Scythe",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {
@@ -22,8 +21,8 @@
     "efficiency": 4.0,
     "attackSpeed": 3.0,
     "enchantability": 22,
-    "damageVsEntity": 9800.0,
-    "usageCount": 73576,
+    "damageVsEntity": 10000.0,
+    "usageCount": 40000,
     "glowCondition": {
       "fixedValue": false
     },

@@ -9,7 +9,7 @@
     "customModelName": "engiegamesanchor:default",
     "blockingModelName": "Normal blocking",
     "guiTexture": "engiegamesengieanchor2d",
-    "name": "Collectors EngieGames Anchor",
+    "name": "Collectors Hallow's Anchor",
     "specialInformation": {
       "fixedValue": [],
       "name": "EngieGamesAnchorSpecialInformation"
@@ -23,7 +23,7 @@
     "attackSpeed": 1.0,
     "enchantability": 22,
     "damageVsEntity": 9500.0,
-    "usageCount": 71000,
+    "usageCount": 38000,
     "glowCondition": {
       "fixedValue": false
     },

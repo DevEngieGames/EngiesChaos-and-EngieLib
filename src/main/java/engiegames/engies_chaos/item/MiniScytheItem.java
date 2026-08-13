@@ -15,7 +15,7 @@ public class MiniScytheItem extends SwordItem {
 	public MiniScytheItem() {
 		super(new Tier() {
 			public int getUses() {
-				return 288;
+				return 200;
 			}
 
 			public float getSpeed() {
@@ -23,7 +23,7 @@ public class MiniScytheItem extends SwordItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 68f;
+				return 46f;
 			}
 
 			public int getLevel() {

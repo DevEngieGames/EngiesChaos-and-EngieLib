@@ -9,7 +9,7 @@
     "customModelName": "engiegamesanchor:rough",
     "blockingModelName": "Normal blocking",
     "guiTexture": "engiegamesanchor2d",
-    "name": "Roughian EngieGames's Anchor",
+    "name": "Hallow's Anchor",
     "specialInformation": {
       "fixedValue": [],
       "name": "EngieGamesAnchorSpecialInformation"
@@ -23,7 +23,7 @@
     "attackSpeed": 1.0,
     "enchantability": 22,
     "damageVsEntity": 9000.0,
-    "usageCount": 71000,
+    "usageCount": 36000,
     "glowCondition": {
       "fixedValue": false
     },

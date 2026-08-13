@@ -11,8 +11,7 @@
     "guiTexture": "pixeldarkmatterscythebib",
     "name": "Dark Matter Biblically Accurate Scythe",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {
@@ -23,7 +22,7 @@
     "attackSpeed": 1.25,
     "enchantability": 22,
     "damageVsEntity": 11800.0,
-    "usageCount": 80400,
+    "usageCount": 47000,
     "glowCondition": {
       "fixedValue": false
     },

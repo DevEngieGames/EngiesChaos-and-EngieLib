@@ -11,8 +11,7 @@
     "guiTexture": "biblicallyaccuratepixel",
     "name": "Biblically Accurate Ban Hammer",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {
@@ -22,8 +21,8 @@
     "efficiency": 10.0,
     "attackSpeed": 1.25,
     "enchantability": 15,
-    "damageVsEntity": 1850.0,
-    "usageCount": 7400,
+    "damageVsEntity": 1750.0,
+    "usageCount": 7000,
     "glowCondition": {
       "fixedValue": true
     },

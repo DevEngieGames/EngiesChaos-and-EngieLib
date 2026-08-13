@@ -16,7 +16,7 @@ public class MindscapeScytheItem extends SwordItem {
 	public MindscapeScytheItem() {
 		super(new Tier() {
 			public int getUses() {
-				return 40000;
+				return 13000;
 			}
 
 			public float getSpeed() {
@@ -24,7 +24,7 @@ public class MindscapeScytheItem extends SwordItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 9996f;
+				return 3246f;
 			}
 
 			public int getLevel() {

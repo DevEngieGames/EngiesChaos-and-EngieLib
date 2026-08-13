@@ -871,7 +871,6 @@ public class EngiesChaosModItems {
 	public static final RegistryObject<Item> SMALL_BAN_HAMMER = REGISTRY.register("small_ban_hammer", SmallBanHammerItem::new);
 	public static final RegistryObject<Item> THROWBACK_BAN_HAMMER = REGISTRY.register("throwback_ban_hammer", ThrowbackBanHammerItem::new);
 	public static final RegistryObject<Item> THROWBACK_BIG_BAN_HAMMER = REGISTRY.register("throwback_big_ban_hammer", ThrowbackBigBanHammerItem::new);
-	public static final RegistryObject<Item> ENGIE_GAMES_BAN_HAMMER = REGISTRY.register("engie_games_ban_hammer", EngieGamesBanHammerItem::new);
 	public static final RegistryObject<Item> STARTERS_SWORD = REGISTRY.register("starters_sword", StartersSwordItem::new);
 	public static final RegistryObject<Item> STARTERS_PICKAXE = REGISTRY.register("starters_pickaxe", StartersPickaxeItem::new);
 	public static final RegistryObject<Item> STARTERS_AXE = REGISTRY.register("starters_axe", StartersAxeItem::new);
@@ -1996,6 +1995,7 @@ public class EngiesChaosModItems {
 	public static final RegistryObject<Item> CONTENT_CREATOR_CHESTPLATE = REGISTRY.register("content_creator_chestplate", ContentCreatorItem.Chestplate::new);
 	public static final RegistryObject<Item> CONTENT_CREATOR_LEGGINGS = REGISTRY.register("content_creator_leggings", ContentCreatorItem.Leggings::new);
 	public static final RegistryObject<Item> CONTENT_CREATOR_BOOTS = REGISTRY.register("content_creator_boots", ContentCreatorItem.Boots::new);
+	public static final RegistryObject<Item> ENGIE_GAMES_BAN_HAMMER = REGISTRY.register("engie_games_ban_hammer", EngieGamesBanHammerItem::new);
 	public static final RegistryObject<Item> ENGIES_CHAOS_ADVANCEMENT_ICON = REGISTRY.register("engies_chaos_advancement_icon", REAllAboutEngieAdvancementIconItem::new);
 	public static final RegistryObject<Item> CORNDOG = REGISTRY.register("corndog", CorndogItem::new);
 	public static final RegistryObject<Item> FROZEN_CORNDOG = REGISTRY.register("frozen_corndog", FrozenCorndogItem::new);

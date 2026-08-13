@@ -8,7 +8,7 @@
     "texture": "oreobanpixel",
     "customModelName": "ban_hammer_bahemoth:default",
     "blockingModelName": "Normal blocking",
-    "guiTexture": "",
+    "guiTexture": "oreobanpixel",
     "name": "Comically Massive Ban Hammer",
     "specialInformation": {
       "fixedValue": [

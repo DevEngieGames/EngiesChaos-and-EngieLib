@@ -19,7 +19,7 @@ import com.google.common.collect.ImmutableMultimap;
 
 public class DarkMatterEnormousBanHammerItem extends Item {
 	public DarkMatterEnormousBanHammerItem() {
-		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_WEAPONS).durability(77224));
+		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_WEAPONS).durability(44000));
 	}
 
 	@Override

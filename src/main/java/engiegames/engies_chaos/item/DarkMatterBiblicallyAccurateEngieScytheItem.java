@@ -15,7 +15,7 @@ public class DarkMatterBiblicallyAccurateEngieScytheItem extends SwordItem {
 	public DarkMatterBiblicallyAccurateEngieScytheItem() {
 		super(new Tier() {
 			public int getUses() {
-				return 80400;
+				return 47000;
 			}
 
 			public float getSpeed() {

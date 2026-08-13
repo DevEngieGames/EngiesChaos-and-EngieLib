@@ -11,8 +11,7 @@
     "guiTexture": "banhammerpixel",
     "name": "Massive Ban Hammer",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {
@@ -22,8 +21,8 @@
     "efficiency": 4.0,
     "attackSpeed": 1.5,
     "enchantability": 15,
-    "damageVsEntity": 1585.0,
-    "usageCount": 6340,
+    "damageVsEntity": 1500.0,
+    "usageCount": 6000,
     "glowCondition": {
       "fixedValue": false
     },
