@@ -218,15 +218,17 @@ public class EngiesWrathDialogueProcedure {
 																		EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 																	});
 																}
-																EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown = Math.round(Mth.nextDouble(RandomSource.create(), 5, 6)) + 3;
+																EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5)) + 3;
 																EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-																EngiesChaosModVariables.MapVariables.get(world).missilecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 5, 6)) + 3;
+																EngiesChaosModVariables.MapVariables.get(world).missilecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5)) + 3;
 																EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-																EngiesChaosModVariables.MapVariables.get(world).riftcooldown = Math.round(Mth.nextDouble(RandomSource.create(), 5, 6)) + 3;
+																EngiesChaosModVariables.MapVariables.get(world).riftcooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5)) + 3;
 																EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-																EngiesChaosModVariables.MapVariables.get(world).spikecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 5, 6)) + 3;
+																EngiesChaosModVariables.MapVariables.get(world).spikecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5)) + 3;
 																EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-																EngiesChaosModVariables.MapVariables.get(world).avalanchecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 5, 6)) + 3;
+																EngiesChaosModVariables.MapVariables.get(world).avalanchecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5)) + 3;
+																EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+																EngiesChaosModVariables.MapVariables.get(world).hordecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5)) + 3;
 																EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 																EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 0;
 																EngiesChaosModVariables.MapVariables.get(world).syncData(world);

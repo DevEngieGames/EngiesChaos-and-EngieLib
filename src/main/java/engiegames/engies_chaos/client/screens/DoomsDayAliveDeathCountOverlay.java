@@ -18,16 +18,13 @@ import engiegames.engies_chaos.procedures.TheEndCheckProcedure;
 import engiegames.engies_chaos.procedures.SuperDoomsDayCheckProcedure;
 import engiegames.engies_chaos.procedures.ReturnDdayTimerProcedure;
 import engiegames.engies_chaos.procedures.EngiesWrathCheckProcedure;
-import engiegames.engies_chaos.procedures.DoomsDeadCountSmallProcedure;
 import engiegames.engies_chaos.procedures.DoomsDeadCountProcedure;
-import engiegames.engies_chaos.procedures.DoomsDeadCountBigProcedure;
 import engiegames.engies_chaos.procedures.DoomsDayDeadOverlayCheckProcedure;
 import engiegames.engies_chaos.procedures.DoomsDayCheckProcedure;
 import engiegames.engies_chaos.procedures.DoomsDayAliveOverlayCheckProcedure;
 import engiegames.engies_chaos.procedures.DoomsDayAliveDeathCountDisplayOverlayIngameProcedure;
-import engiegames.engies_chaos.procedures.DoomsAliveCountSmallProcedure;
 import engiegames.engies_chaos.procedures.DoomsAliveCountProcedure;
-import engiegames.engies_chaos.procedures.DoomsAliveCountBigProcedure;
+import engiegames.engies_chaos.procedures.CustomHealthOverlayDisplayOverlayIngameProcedure;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.platform.GlStateManager;
@@ -83,50 +80,32 @@ public class DoomsDayAliveDeathCountOverlay {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/engieswrathstatus.png"));
 				Minecraft.getInstance().gui.blit(event.getPoseStack(), w - 93, h - 28, 0, 0, 93, 28, 93, 28);
 			}
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/ddaydeadcounticon.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), 16, h - 32, 0, 0, 16, 16, 16, 16);
-
-			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/ddayalivecounticon.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), 16, h - 53, 0, 0, 16, 16, 16, 16);
-
+			if (CustomHealthOverlayDisplayOverlayIngameProcedure.execute(entity)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/ddayalivedeadstuff.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), 0, h - 56, 0, 0, 132, 14, 132, 14);
+			}
 			Minecraft.getInstance().font.draw(event.getPoseStack(),
 
 					ReturnDdayTimerProcedure.execute(world), w - 90, h - 26, -16777216);
 			Minecraft.getInstance().font.draw(event.getPoseStack(),
 
 					ReturnDdayTimerProcedure.execute(world), w - 91, h - 27, -1);
-			if (DoomsAliveCountSmallProcedure.execute(world))
+			if (CustomHealthOverlayDisplayOverlayIngameProcedure.execute(entity))
 				Minecraft.getInstance().font.draw(event.getPoseStack(),
 
-						DoomsAliveCountProcedure.execute(world), 22, h - 47, -16777216);
-			if (DoomsAliveCountSmallProcedure.execute(world))
+						DoomsAliveCountProcedure.execute(world), 4, h - 52, -16777216);
+			if (CustomHealthOverlayDisplayOverlayIngameProcedure.execute(entity))
 				Minecraft.getInstance().font.draw(event.getPoseStack(),
 
-						DoomsAliveCountProcedure.execute(world), 21, h - 48, -1);
-			if (DoomsAliveCountBigProcedure.execute(world))
+						DoomsAliveCountProcedure.execute(world), 3, h - 53, -1);
+			if (CustomHealthOverlayDisplayOverlayIngameProcedure.execute(entity))
 				Minecraft.getInstance().font.draw(event.getPoseStack(),
 
-						DoomsAliveCountProcedure.execute(world), 20, h - 47, -16777216);
-			if (DoomsAliveCountBigProcedure.execute(world))
+						DoomsDeadCountProcedure.execute(world), 70, h - 52, -16777216);
+			if (CustomHealthOverlayDisplayOverlayIngameProcedure.execute(entity))
 				Minecraft.getInstance().font.draw(event.getPoseStack(),
 
-						DoomsAliveCountProcedure.execute(world), w / 2 + -194, h / 2 + 72, -1);
-			if (DoomsDeadCountSmallProcedure.execute(world))
-				Minecraft.getInstance().font.draw(event.getPoseStack(),
-
-						DoomsDeadCountProcedure.execute(world), 22, h - 27, -16777216);
-			if (DoomsDeadCountSmallProcedure.execute(world))
-				Minecraft.getInstance().font.draw(event.getPoseStack(),
-
-						DoomsDeadCountProcedure.execute(world), 21, h - 27, -1);
-			if (DoomsDeadCountBigProcedure.execute(world))
-				Minecraft.getInstance().font.draw(event.getPoseStack(),
-
-						DoomsDeadCountProcedure.execute(world), 20, h - 26, -16777216);
-			if (DoomsDeadCountBigProcedure.execute(world))
-				Minecraft.getInstance().font.draw(event.getPoseStack(),
-
-						DoomsDeadCountProcedure.execute(world), 19, h - 27, -1);
+						DoomsDeadCountProcedure.execute(world), 69, h - 53, -1);
 		}
 		RenderSystem.depthMask(true);
 		RenderSystem.defaultBlendFunc();

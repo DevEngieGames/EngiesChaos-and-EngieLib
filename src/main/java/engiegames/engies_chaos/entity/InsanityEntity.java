@@ -25,7 +25,6 @@ import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.sounds.SoundEvent;
@@ -38,7 +37,6 @@ import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.procedures.InsanityNaturalEntitySpawningConditionProcedure;
 import engiegames.engies_chaos.procedures.EntitySpawnsProcedure;
-import engiegames.engies_chaos.procedures.DoomsDayMobsFightEachotherToggleProcedure;
 import engiegames.engies_chaos.procedures.AnyEngieDiesAddCountProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
@@ -71,32 +69,11 @@ public class InsanityEntity extends Monster {
 		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
 		this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, Player.class, true, false));
 		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal(this, ServerPlayer.class, true, false));
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal(this, Monster.class, true, false) {
-			@Override
-			public boolean canUse() {
-				double x = InsanityEntity.this.getX();
-				double y = InsanityEntity.this.getY();
-				double z = InsanityEntity.this.getZ();
-				Entity entity = InsanityEntity.this;
-				Level world = InsanityEntity.this.level;
-				return super.canUse() && DoomsDayMobsFightEachotherToggleProcedure.execute(world);
-			}
-
-			@Override
-			public boolean canContinueToUse() {
-				double x = InsanityEntity.this.getX();
-				double y = InsanityEntity.this.getY();
-				double z = InsanityEntity.this.getZ();
-				Entity entity = InsanityEntity.this;
-				Level world = InsanityEntity.this.level;
-				return super.canContinueToUse() && DoomsDayMobsFightEachotherToggleProcedure.execute(world);
-			}
-		});
-		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, (float) 6));
-		this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, ServerPlayer.class, (float) 6));
-		this.targetSelector.addGoal(8, new HurtByTargetGoal(this));
-		this.goalSelector.addGoal(9, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(10, new FloatGoal(this));
+		this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, (float) 6));
+		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, ServerPlayer.class, (float) 6));
+		this.targetSelector.addGoal(7, new HurtByTargetGoal(this));
+		this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(9, new FloatGoal(this));
 	}
 
 	@Override

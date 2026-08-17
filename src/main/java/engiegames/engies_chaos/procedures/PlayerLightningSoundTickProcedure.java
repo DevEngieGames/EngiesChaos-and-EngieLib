@@ -14,7 +14,6 @@ import net.minecraft.commands.CommandSource;
 import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
-import engiegames.engies_chaos.init.EngiesChaosModGameRules;
 
 @Mod.EventBusSubscriber
 public class PlayerLightningSoundTickProcedure {
@@ -71,47 +70,23 @@ public class PlayerLightningSoundTickProcedure {
 				} else {
 					EngiesChaosModVariables.MapVariables.get(world).playlightningsound2 = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == true) {
-						{
-							Entity _ent = entity;
-							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "playsound engies_chaos:extreme_lightning_strike weather @s ~ ~ ~ 0.5");
-							}
-						}
-					} else {
-						{
-							Entity _ent = entity;
-							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "playsound engies_chaos:ddaylightning weather @s ~ ~ ~ 0.5");
-							}
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "playsound engies_chaos:ddaylightning weather @s ~ ~ ~ 0.5");
 						}
 					}
 				}
 			}
 			if (EngiesChaosModVariables.MapVariables.get(world).playlightningsound3 == true) {
-				if (EngiesChaosModVariables.MapVariables.get(world).playlightningcornersound == true) {
-					EngiesChaosModVariables.MapVariables.get(world).playlightningsound3 = false;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).playlightningcornersound = false;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					{
-						Entity _ent = entity;
-						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "playsound engies_chaos:lightning_strike weather @s ~ ~ ~ 0.5");
-						}
-					}
-				} else {
-					EngiesChaosModVariables.MapVariables.get(world).playlightningsound3 = false;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					{
-						Entity _ent = entity;
-						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "playsound engies_chaos:extreme_lightning_strike weather @s ~ ~ ~ 0.5");
-						}
+				EngiesChaosModVariables.MapVariables.get(world).playlightningsound3 = false;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "playsound engies_chaos:extreme_lightning_strike weather @s ~ ~ ~ 0.5");
 					}
 				}
 			}

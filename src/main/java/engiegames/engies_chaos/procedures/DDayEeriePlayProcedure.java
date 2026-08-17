@@ -79,6 +79,13 @@ public class DDayEeriePlayProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
+					{
+						boolean _setval = true;
+						entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.healthreductiondday = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
 					if (entity instanceof Player _player) {
 						ItemStack _stktoremove = new ItemStack(EngiesChaosModItems.GRAVITY_COIL.get());
 						_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 100000000, _player.inventoryMenu.getCraftSlots());
@@ -157,6 +164,13 @@ public class DDayEeriePlayProcedure {
 						boolean _setval = false;
 						entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.ddayplayeraddedtodeadcount = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						boolean _setval = true;
+						entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.healthreductiondday = _setval;
 							capability.syncPlayerVariables(entity);
 						});
 					}

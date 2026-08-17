@@ -109,6 +109,7 @@ public class EngiesChaosModVariables {
 			clone.PlayerDeathY = original.PlayerDeathY;
 			clone.PlayerDeathZ = original.PlayerDeathZ;
 			clone.riftspawnoneentity = original.riftspawnoneentity;
+			clone.DoomsdayAlive = original.DoomsdayAlive;
 			clone.BlockDeathAliveCOunt = original.BlockDeathAliveCOunt;
 			clone.coderedeemblock = original.coderedeemblock;
 			clone.detecstart = original.detecstart;
@@ -121,7 +122,6 @@ public class EngiesChaosModVariables {
 			clone.WelcomeBackToggle = original.WelcomeBackToggle;
 			clone.MaxPercentGiveOptionToDoHardestMobDiff = original.MaxPercentGiveOptionToDoHardestMobDiff;
 			clone.playerstunnedmobs = original.playerstunnedmobs;
-			clone.playerstunoffcooldown = original.playerstunoffcooldown;
 			clone.DoomsdayTrackToggle = original.DoomsdayTrackToggle;
 			clone.DoomsdayRiskTrackToggle = original.DoomsdayRiskTrackToggle;
 			clone.sharkolayingstate = original.sharkolayingstate;
@@ -191,11 +191,9 @@ public class EngiesChaosModVariables {
 			clone.doublejumping = original.doublejumping;
 			if (!event.isWasDeath()) {
 				clone.playeroverhealhp = original.playeroverhealhp;
-				clone.DoomsdayAlive = original.DoomsdayAlive;
 				clone.firstplay = original.firstplay;
 				clone.RespawnNormInstantHealth = original.RespawnNormInstantHealth;
 				clone.RespawnTrueHardcoreGraceStart = original.RespawnTrueHardcoreGraceStart;
-				clone.playeralive = original.playeralive;
 				clone.missileyellowlightningscale = original.missileyellowlightningscale;
 				clone.missileblueburstscale = original.missileblueburstscale;
 				clone.missilenormalscale = original.missilenormalscale;
@@ -354,7 +352,6 @@ public class EngiesChaosModVariables {
 		public boolean ChallengeToggle = false;
 		public boolean checkboxbothmarked = false;
 		public boolean checkboxbothnomarked = false;
-		public boolean darknesscooldown = false;
 		public boolean DayCooldownToggle = false;
 		public boolean ddaydialoguetimeblock = false;
 		public boolean ddaystart = false;
@@ -367,7 +364,6 @@ public class EngiesChaosModVariables {
 		public boolean HHGkilledtoggle = false;
 		public boolean itemswap1 = false;
 		public boolean itemswap2 = false;
-		public boolean lightningcooldowndday = false;
 		public boolean madlads = false;
 		public boolean multiplayertrophyobtained = false;
 		public boolean OHBOY = false;
@@ -389,15 +385,10 @@ public class EngiesChaosModVariables {
 		public boolean theendtimenighttimerblock = false;
 		public boolean thestart = false;
 		public boolean timecheckstop = false;
-		public boolean waittildoomsday = false;
-		public boolean waittilsdoomsday = false;
 		public boolean antimatterdropcheck = false;
 		public boolean detectedothermodesenabledthrowback = false;
 		public boolean graceperiodbeforeplushangryagain = false;
-		public boolean ddaywait = true;
 		public boolean riskcooldown = true;
-		public boolean sddaywait = true;
-		public boolean theendwait = true;
 		public boolean CosmicEngieGamesSpawnLock = true;
 		public boolean CosmicEngieGamesDespawnLock = true;
 		public boolean FallingTreeInstalled = false;
@@ -409,9 +400,6 @@ public class EngiesChaosModVariables {
 		public boolean EngiesWrathStart = false;
 		public boolean ewrathdialoguetimeblock = false;
 		public boolean ewrathtimenighttimerblock = false;
-		public boolean ewrathwait = true;
-		public boolean waittiltheend = false;
-		public boolean waittilewrath = false;
 		public boolean EngiesWrathEeriePlayOnce = false;
 		public boolean truehardcoreenabledonworld = false;
 		public boolean specialhealth = false;
@@ -504,6 +492,12 @@ public class EngiesChaosModVariables {
 		public boolean TraderCosmicEngieGamesSpawnLock = false;
 		public boolean TraderRoughianEngieGamesSpawnLock = false;
 		public double ticktimerentitycheck = 0;
+		public double ddayprophnormhordenumb = 0;
+		public double ddayprophnightmarehordenumb = 0;
+		public double ddayprophinsanityhordenumb = 0;
+		public double ddayprophengiepochordenumb = 0;
+		public String userids = "";
+		public double hordecooldown = 0;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -600,7 +594,6 @@ public class EngiesChaosModVariables {
 			ChallengeToggle = nbt.getBoolean("ChallengeToggle");
 			checkboxbothmarked = nbt.getBoolean("checkboxbothmarked");
 			checkboxbothnomarked = nbt.getBoolean("checkboxbothnomarked");
-			darknesscooldown = nbt.getBoolean("darknesscooldown");
 			DayCooldownToggle = nbt.getBoolean("DayCooldownToggle");
 			ddaydialoguetimeblock = nbt.getBoolean("ddaydialoguetimeblock");
 			ddaystart = nbt.getBoolean("ddaystart");
@@ -613,7 +606,6 @@ public class EngiesChaosModVariables {
 			HHGkilledtoggle = nbt.getBoolean("HHGkilledtoggle");
 			itemswap1 = nbt.getBoolean("itemswap1");
 			itemswap2 = nbt.getBoolean("itemswap2");
-			lightningcooldowndday = nbt.getBoolean("lightningcooldowndday");
 			madlads = nbt.getBoolean("madlads");
 			multiplayertrophyobtained = nbt.getBoolean("multiplayertrophyobtained");
 			OHBOY = nbt.getBoolean("OHBOY");
@@ -635,15 +627,10 @@ public class EngiesChaosModVariables {
 			theendtimenighttimerblock = nbt.getBoolean("theendtimenighttimerblock");
 			thestart = nbt.getBoolean("thestart");
 			timecheckstop = nbt.getBoolean("timecheckstop");
-			waittildoomsday = nbt.getBoolean("waittildoomsday");
-			waittilsdoomsday = nbt.getBoolean("waittilsdoomsday");
 			antimatterdropcheck = nbt.getBoolean("antimatterdropcheck");
 			detectedothermodesenabledthrowback = nbt.getBoolean("detectedothermodesenabledthrowback");
 			graceperiodbeforeplushangryagain = nbt.getBoolean("graceperiodbeforeplushangryagain");
-			ddaywait = nbt.getBoolean("ddaywait");
 			riskcooldown = nbt.getBoolean("riskcooldown");
-			sddaywait = nbt.getBoolean("sddaywait");
-			theendwait = nbt.getBoolean("theendwait");
 			CosmicEngieGamesSpawnLock = nbt.getBoolean("CosmicEngieGamesSpawnLock");
 			CosmicEngieGamesDespawnLock = nbt.getBoolean("CosmicEngieGamesDespawnLock");
 			FallingTreeInstalled = nbt.getBoolean("FallingTreeInstalled");
@@ -655,9 +642,6 @@ public class EngiesChaosModVariables {
 			EngiesWrathStart = nbt.getBoolean("EngiesWrathStart");
 			ewrathdialoguetimeblock = nbt.getBoolean("ewrathdialoguetimeblock");
 			ewrathtimenighttimerblock = nbt.getBoolean("ewrathtimenighttimerblock");
-			ewrathwait = nbt.getBoolean("ewrathwait");
-			waittiltheend = nbt.getBoolean("waittiltheend");
-			waittilewrath = nbt.getBoolean("waittilewrath");
 			EngiesWrathEeriePlayOnce = nbt.getBoolean("EngiesWrathEeriePlayOnce");
 			truehardcoreenabledonworld = nbt.getBoolean("truehardcoreenabledonworld");
 			specialhealth = nbt.getBoolean("specialhealth");
@@ -750,6 +734,12 @@ public class EngiesChaosModVariables {
 			TraderCosmicEngieGamesSpawnLock = nbt.getBoolean("TraderCosmicEngieGamesSpawnLock");
 			TraderRoughianEngieGamesSpawnLock = nbt.getBoolean("TraderRoughianEngieGamesSpawnLock");
 			ticktimerentitycheck = nbt.getDouble("ticktimerentitycheck");
+			ddayprophnormhordenumb = nbt.getDouble("ddayprophnormhordenumb");
+			ddayprophnightmarehordenumb = nbt.getDouble("ddayprophnightmarehordenumb");
+			ddayprophinsanityhordenumb = nbt.getDouble("ddayprophinsanityhordenumb");
+			ddayprophengiepochordenumb = nbt.getDouble("ddayprophengiepochordenumb");
+			userids = nbt.getString("userids");
+			hordecooldown = nbt.getDouble("hordecooldown");
 		}
 
 		@Override
@@ -842,7 +832,6 @@ public class EngiesChaosModVariables {
 			nbt.putBoolean("ChallengeToggle", ChallengeToggle);
 			nbt.putBoolean("checkboxbothmarked", checkboxbothmarked);
 			nbt.putBoolean("checkboxbothnomarked", checkboxbothnomarked);
-			nbt.putBoolean("darknesscooldown", darknesscooldown);
 			nbt.putBoolean("DayCooldownToggle", DayCooldownToggle);
 			nbt.putBoolean("ddaydialoguetimeblock", ddaydialoguetimeblock);
 			nbt.putBoolean("ddaystart", ddaystart);
@@ -855,7 +844,6 @@ public class EngiesChaosModVariables {
 			nbt.putBoolean("HHGkilledtoggle", HHGkilledtoggle);
 			nbt.putBoolean("itemswap1", itemswap1);
 			nbt.putBoolean("itemswap2", itemswap2);
-			nbt.putBoolean("lightningcooldowndday", lightningcooldowndday);
 			nbt.putBoolean("madlads", madlads);
 			nbt.putBoolean("multiplayertrophyobtained", multiplayertrophyobtained);
 			nbt.putBoolean("OHBOY", OHBOY);
@@ -877,15 +865,10 @@ public class EngiesChaosModVariables {
 			nbt.putBoolean("theendtimenighttimerblock", theendtimenighttimerblock);
 			nbt.putBoolean("thestart", thestart);
 			nbt.putBoolean("timecheckstop", timecheckstop);
-			nbt.putBoolean("waittildoomsday", waittildoomsday);
-			nbt.putBoolean("waittilsdoomsday", waittilsdoomsday);
 			nbt.putBoolean("antimatterdropcheck", antimatterdropcheck);
 			nbt.putBoolean("detectedothermodesenabledthrowback", detectedothermodesenabledthrowback);
 			nbt.putBoolean("graceperiodbeforeplushangryagain", graceperiodbeforeplushangryagain);
-			nbt.putBoolean("ddaywait", ddaywait);
 			nbt.putBoolean("riskcooldown", riskcooldown);
-			nbt.putBoolean("sddaywait", sddaywait);
-			nbt.putBoolean("theendwait", theendwait);
 			nbt.putBoolean("CosmicEngieGamesSpawnLock", CosmicEngieGamesSpawnLock);
 			nbt.putBoolean("CosmicEngieGamesDespawnLock", CosmicEngieGamesDespawnLock);
 			nbt.putBoolean("FallingTreeInstalled", FallingTreeInstalled);
@@ -897,9 +880,6 @@ public class EngiesChaosModVariables {
 			nbt.putBoolean("EngiesWrathStart", EngiesWrathStart);
 			nbt.putBoolean("ewrathdialoguetimeblock", ewrathdialoguetimeblock);
 			nbt.putBoolean("ewrathtimenighttimerblock", ewrathtimenighttimerblock);
-			nbt.putBoolean("ewrathwait", ewrathwait);
-			nbt.putBoolean("waittiltheend", waittiltheend);
-			nbt.putBoolean("waittilewrath", waittilewrath);
 			nbt.putBoolean("EngiesWrathEeriePlayOnce", EngiesWrathEeriePlayOnce);
 			nbt.putBoolean("truehardcoreenabledonworld", truehardcoreenabledonworld);
 			nbt.putBoolean("specialhealth", specialhealth);
@@ -992,6 +972,12 @@ public class EngiesChaosModVariables {
 			nbt.putBoolean("TraderCosmicEngieGamesSpawnLock", TraderCosmicEngieGamesSpawnLock);
 			nbt.putBoolean("TraderRoughianEngieGamesSpawnLock", TraderRoughianEngieGamesSpawnLock);
 			nbt.putDouble("ticktimerentitycheck", ticktimerentitycheck);
+			nbt.putDouble("ddayprophnormhordenumb", ddayprophnormhordenumb);
+			nbt.putDouble("ddayprophnightmarehordenumb", ddayprophnightmarehordenumb);
+			nbt.putDouble("ddayprophinsanityhordenumb", ddayprophinsanityhordenumb);
+			nbt.putDouble("ddayprophengiepochordenumb", ddayprophengiepochordenumb);
+			nbt.putString("userids", userids);
+			nbt.putDouble("hordecooldown", hordecooldown);
 			return nbt;
 		}
 
@@ -1136,7 +1122,6 @@ public class EngiesChaosModVariables {
 		public boolean WelcomeBackToggle = false;
 		public boolean MaxPercentGiveOptionToDoHardestMobDiff = false;
 		public boolean playerstunnedmobs = false;
-		public boolean playerstunoffcooldown = false;
 		public boolean DoomsdayTrackToggle = false;
 		public boolean DoomsdayRiskTrackToggle = false;
 		public boolean sharkolayingstate = false;
@@ -1153,7 +1138,6 @@ public class EngiesChaosModVariables {
 		public boolean playerdebugmode = false;
 		public boolean playerhasimmunity = false;
 		public boolean truehardcorelifesobtained = false;
-		public boolean playeralive = true;
 		public boolean boyoaprilfoolslaycheck = false;
 		public boolean PlayerHasEngieGamesSwordAdvancement = false;
 		public boolean PlayerHasAntimatterEngieGamesSwordAdvancement = false;
@@ -1271,7 +1255,6 @@ public class EngiesChaosModVariables {
 			nbt.putBoolean("WelcomeBackToggle", WelcomeBackToggle);
 			nbt.putBoolean("MaxPercentGiveOptionToDoHardestMobDiff", MaxPercentGiveOptionToDoHardestMobDiff);
 			nbt.putBoolean("playerstunnedmobs", playerstunnedmobs);
-			nbt.putBoolean("playerstunoffcooldown", playerstunoffcooldown);
 			nbt.putBoolean("DoomsdayTrackToggle", DoomsdayTrackToggle);
 			nbt.putBoolean("DoomsdayRiskTrackToggle", DoomsdayRiskTrackToggle);
 			nbt.putBoolean("sharkolayingstate", sharkolayingstate);
@@ -1288,7 +1271,6 @@ public class EngiesChaosModVariables {
 			nbt.putBoolean("playerdebugmode", playerdebugmode);
 			nbt.putBoolean("playerhasimmunity", playerhasimmunity);
 			nbt.putBoolean("truehardcorelifesobtained", truehardcorelifesobtained);
-			nbt.putBoolean("playeralive", playeralive);
 			nbt.putBoolean("boyoaprilfoolslaycheck", boyoaprilfoolslaycheck);
 			nbt.putBoolean("PlayerHasEngieGamesSwordAdvancement", PlayerHasEngieGamesSwordAdvancement);
 			nbt.putBoolean("PlayerHasAntimatterEngieGamesSwordAdvancement", PlayerHasAntimatterEngieGamesSwordAdvancement);
@@ -1403,7 +1385,6 @@ public class EngiesChaosModVariables {
 			WelcomeBackToggle = nbt.getBoolean("WelcomeBackToggle");
 			MaxPercentGiveOptionToDoHardestMobDiff = nbt.getBoolean("MaxPercentGiveOptionToDoHardestMobDiff");
 			playerstunnedmobs = nbt.getBoolean("playerstunnedmobs");
-			playerstunoffcooldown = nbt.getBoolean("playerstunoffcooldown");
 			DoomsdayTrackToggle = nbt.getBoolean("DoomsdayTrackToggle");
 			DoomsdayRiskTrackToggle = nbt.getBoolean("DoomsdayRiskTrackToggle");
 			sharkolayingstate = nbt.getBoolean("sharkolayingstate");
@@ -1420,7 +1401,6 @@ public class EngiesChaosModVariables {
 			playerdebugmode = nbt.getBoolean("playerdebugmode");
 			playerhasimmunity = nbt.getBoolean("playerhasimmunity");
 			truehardcorelifesobtained = nbt.getBoolean("truehardcorelifesobtained");
-			playeralive = nbt.getBoolean("playeralive");
 			boyoaprilfoolslaycheck = nbt.getBoolean("boyoaprilfoolslaycheck");
 			PlayerHasEngieGamesSwordAdvancement = nbt.getBoolean("PlayerHasEngieGamesSwordAdvancement");
 			PlayerHasAntimatterEngieGamesSwordAdvancement = nbt.getBoolean("PlayerHasAntimatterEngieGamesSwordAdvancement");
@@ -1554,7 +1534,6 @@ public class EngiesChaosModVariables {
 					variables.WelcomeBackToggle = message.data.WelcomeBackToggle;
 					variables.MaxPercentGiveOptionToDoHardestMobDiff = message.data.MaxPercentGiveOptionToDoHardestMobDiff;
 					variables.playerstunnedmobs = message.data.playerstunnedmobs;
-					variables.playerstunoffcooldown = message.data.playerstunoffcooldown;
 					variables.DoomsdayTrackToggle = message.data.DoomsdayTrackToggle;
 					variables.DoomsdayRiskTrackToggle = message.data.DoomsdayRiskTrackToggle;
 					variables.sharkolayingstate = message.data.sharkolayingstate;
@@ -1571,7 +1550,6 @@ public class EngiesChaosModVariables {
 					variables.playerdebugmode = message.data.playerdebugmode;
 					variables.playerhasimmunity = message.data.playerhasimmunity;
 					variables.truehardcorelifesobtained = message.data.truehardcorelifesobtained;
-					variables.playeralive = message.data.playeralive;
 					variables.boyoaprilfoolslaycheck = message.data.boyoaprilfoolslaycheck;
 					variables.PlayerHasEngieGamesSwordAdvancement = message.data.PlayerHasEngieGamesSwordAdvancement;
 					variables.PlayerHasAntimatterEngieGamesSwordAdvancement = message.data.PlayerHasAntimatterEngieGamesSwordAdvancement;

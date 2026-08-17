@@ -16,7 +16,7 @@ public class DDaySpikeRenderer extends MobRenderer<DDaySpikeEntity, Modelddayspi
 
 	@Override
 	protected void scale(DDaySpikeEntity entity, PoseStack poseStack, float f) {
-		poseStack.scale(10f, 10f, 10f);
+		poseStack.scale(6f, 6f, 6f);
 	}
 
 	@Override

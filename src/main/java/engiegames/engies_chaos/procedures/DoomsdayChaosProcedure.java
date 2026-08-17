@@ -68,7 +68,55 @@ public class DoomsdayChaosProcedure {
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 				}
+				if (EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount >= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.DOOMSDAY_SUB_DISASTER_LIMIT))) {
+					for (int index0 = 0; index0 < Math.round((world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.DOOMSDAY_SUB_DISASTER_LIMIT)) / 2d); index0++) {
+						if (world instanceof ServerLevel _level)
+							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
+									Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "kill @e[type=engies_chaos:d_day_avalanche,limit=1]");
+						EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount = EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount - 1;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					}
+				}
+				if (EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount >= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.DOOMSDAY_SUB_DISASTER_LIMIT))) {
+					for (int index1 = 0; index1 < Math.round((world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.DOOMSDAY_SUB_DISASTER_LIMIT)) / 2d); index1++) {
+						if (world instanceof ServerLevel _level)
+							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
+									Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "kill @e[type=engies_chaos:dday_rift,limit=1]");
+						EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount = EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount - 1;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					}
+				}
+				if (EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount >= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.DOOMSDAY_SUB_DISASTER_LIMIT))) {
+					for (int index2 = 0; index2 < Math.round((world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.DOOMSDAY_SUB_DISASTER_LIMIT)) / 2d); index2++) {
+						if (world instanceof ServerLevel _level)
+							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
+									Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "kill @e[type=#engies_chaos:ddaymissiles,limit=1]");
+						EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount = EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount - 1;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					}
+				}
+				if (EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount >= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.DOOMSDAY_SUB_DISASTER_LIMIT))) {
+					for (int index3 = 0; index3 < Math.round((world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.DOOMSDAY_SUB_DISASTER_LIMIT)) / 8d); index3++) {
+						if (world instanceof ServerLevel _level)
+							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
+									Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "kill @e[type=engies_chaos:d_day_spike,limit=1]");
+						EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount = EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount - 1;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					}
+				}
 				EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = EngiesChaosModVariables.MapVariables.get(world).lightningcooldown + 0.05;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+				EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown = EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown - 0.05;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+				EngiesChaosModVariables.MapVariables.get(world).missilecooldown = EngiesChaosModVariables.MapVariables.get(world).missilecooldown - 0.05;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+				EngiesChaosModVariables.MapVariables.get(world).riftcooldown = EngiesChaosModVariables.MapVariables.get(world).riftcooldown - 0.05;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+				EngiesChaosModVariables.MapVariables.get(world).spikecooldown = EngiesChaosModVariables.MapVariables.get(world).spikecooldown - 0.05;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+				EngiesChaosModVariables.MapVariables.get(world).avalanchecooldown = EngiesChaosModVariables.MapVariables.get(world).avalanchecooldown - 0.05;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+				EngiesChaosModVariables.MapVariables.get(world).hordecooldown = EngiesChaosModVariables.MapVariables.get(world).hordecooldown - 0.05;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				if (EngiesChaosModVariables.MapVariables.get(world).extremeddaylightningenabled == true) {
 					if (EngiesChaosModVariables.MapVariables.get(world).lightningcooldown >= 0.4) {
@@ -127,80 +175,37 @@ public class DoomsdayChaosProcedure {
 						}
 					}
 				}
-				EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown = EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown - 0.05;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				if (EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown <= 0) {
-					EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown = Math.round(Mth.nextDouble(RandomSource.create(), 5, 6));
+					EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 20));
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (Math.random() <= 0.25) {
-						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
-									Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos darkness");
-					}
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
+								Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos darkness");
 				}
-				if (EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount >= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.DOOMSDAY_SUB_DISASTER_LIMIT))) {
-					for (int index0 = 0; index0 < Math.round((world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.DOOMSDAY_SUB_DISASTER_LIMIT)) / 2d); index0++) {
-						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
-									Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "kill @e[type=engies_chaos:d_day_avalanche,limit=1]");
-						EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount = EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount - 1;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					}
-				}
-				if (EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount >= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.DOOMSDAY_SUB_DISASTER_LIMIT))) {
-					for (int index1 = 0; index1 < Math.round((world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.DOOMSDAY_SUB_DISASTER_LIMIT)) / 2d); index1++) {
-						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
-									Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "kill @e[type=engies_chaos:dday_rift,limit=1]");
-						EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount = EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount - 1;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					}
-				}
-				if (EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount >= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.DOOMSDAY_SUB_DISASTER_LIMIT))) {
-					for (int index2 = 0; index2 < Math.round((world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.DOOMSDAY_SUB_DISASTER_LIMIT)) / 2d); index2++) {
-						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
-									Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "kill @e[type=#engies_chaos:ddaymissiles,limit=1]");
-						EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount = EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount - 1;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					}
-				}
-				if (EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount >= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.DOOMSDAY_SUB_DISASTER_LIMIT))) {
-					for (int index3 = 0; index3 < Math.round((world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.DOOMSDAY_SUB_DISASTER_LIMIT)) / 8d); index3++) {
-						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
-									Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "kill @e[type=engies_chaos:d_day_spike,limit=1]");
-						EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount = EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount - 1;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					}
-				}
-				EngiesChaosModVariables.MapVariables.get(world).missilecooldown = EngiesChaosModVariables.MapVariables.get(world).missilecooldown - 0.05;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosModVariables.MapVariables.get(world).riftcooldown = EngiesChaosModVariables.MapVariables.get(world).riftcooldown - 0.05;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosModVariables.MapVariables.get(world).spikecooldown = EngiesChaosModVariables.MapVariables.get(world).spikecooldown - 0.05;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosModVariables.MapVariables.get(world).avalanchecooldown = EngiesChaosModVariables.MapVariables.get(world).avalanchecooldown - 0.05;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				if (EngiesChaosModVariables.MapVariables.get(world).missilecooldown <= 0) {
-					EngiesChaosModVariables.MapVariables.get(world).missilecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 5, 20));
+					EngiesChaosModVariables.MapVariables.get(world).missilecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 20));
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					DoomsdayMissilesProcedure.execute(world);
+					MissileSpawnProcedure.execute(world);
 				}
 				if (EngiesChaosModVariables.MapVariables.get(world).riftcooldown <= 0) {
-					EngiesChaosModVariables.MapVariables.get(world).riftcooldown = Math.round(Mth.nextDouble(RandomSource.create(), 5, 20));
+					EngiesChaosModVariables.MapVariables.get(world).riftcooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 20));
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					DoomsdayRiftsProcedure.execute(world);
+					RiftSpawnsProcedure.execute(world);
 				}
 				if (EngiesChaosModVariables.MapVariables.get(world).spikecooldown <= 0) {
-					EngiesChaosModVariables.MapVariables.get(world).spikecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 5, 20));
+					EngiesChaosModVariables.MapVariables.get(world).spikecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 20));
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					DoomsdaySpikesProcedure.execute(world);
+					SpikeSpawnsProcedure.execute(world);
 				}
 				if (EngiesChaosModVariables.MapVariables.get(world).avalanchecooldown <= 0) {
-					EngiesChaosModVariables.MapVariables.get(world).avalanchecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 5, 20));
+					EngiesChaosModVariables.MapVariables.get(world).avalanchecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 20));
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					DoomsdayAvalanchesProcedure.execute(world);
+					AvalancheSpawnProcedure.execute(world);
+				}
+				if (EngiesChaosModVariables.MapVariables.get(world).hordecooldown <= 0) {
+					EngiesChaosModVariables.MapVariables.get(world).hordecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 20));
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					HordeSpawnsProcedure.execute(world);
 				}
 			}
 		}

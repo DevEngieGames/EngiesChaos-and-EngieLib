@@ -10,6 +10,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
+import net.minecraft.client.Minecraft;
 
 import javax.annotation.Nullable;
 
@@ -124,6 +125,68 @@ public class PlayerJoinWorldProcedure {
 					if (EngiesChaosModVariables.decembercodeblock == true) {
 						EngiesChaosModVariables.decembercodeblock = false;
 					}
+				}
+			}
+		}
+		if ((EngiesChaosModVariables.MapVariables.get(world).ddaystart || EngiesChaosModVariables.MapVariables.get(world).sddaystart || EngiesChaosModVariables.MapVariables.get(world).thestart
+				|| EngiesChaosModVariables.MapVariables.get(world).engieswrathstart) == true
+				&& !(world.getServer() != null ? world.getServer().isSingleplayer() : (Minecraft.getInstance().getSingleplayerServer() != null && !Minecraft.getInstance().getSingleplayerServer().isPublished()))) {
+			if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive == true
+					&& (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).ddayplayeraddedtodeadcount == false) {
+				{
+					boolean _setval = true;
+					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.ddayplayeraddedtodeadcount = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				{
+					boolean _setval = false;
+					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.DoomsdayAlive = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			}
+		} else if ((EngiesChaosModVariables.MapVariables.get(world).ddaystart || EngiesChaosModVariables.MapVariables.get(world).sddaystart || EngiesChaosModVariables.MapVariables.get(world).thestart
+				|| EngiesChaosModVariables.MapVariables.get(world).engieswrathstart) == true
+				&& (world.getServer() != null ? world.getServer().isSingleplayer() : (Minecraft.getInstance().getSingleplayerServer() != null && !Minecraft.getInstance().getSingleplayerServer().isPublished()))) {
+			if (EngiesChaosModVariables.MapVariables.get(world).userids.contains(entity.getUUID() + ", ")) {
+				if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive == true
+						&& (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).ddayplayeraddedtodeadcount == false) {
+					{
+						boolean _setval = true;
+						entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.ddayplayeraddedtodeadcount = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						boolean _setval = false;
+						entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.DoomsdayAlive = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					EngiesChaosModVariables.MapVariables.get(world).userids = EngiesChaosModVariables.MapVariables.get(world).userids.replace(entity.getUUID() + ", ", "");
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount = EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount - 1;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).ddayplayerdeadcount = EngiesChaosModVariables.MapVariables.get(world).ddayplayerdeadcount + 1;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+				}
+			} else {
+				if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive == false
+						&& (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).ddayplayeraddedtodeadcount == false) {
+					{
+						boolean _setval = true;
+						entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.ddayplayeraddedtodeadcount = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					EngiesChaosModVariables.MapVariables.get(world).ddayplayerdeadcount = EngiesChaosModVariables.MapVariables.get(world).ddayplayerdeadcount + 1;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				}
 			}
 		}

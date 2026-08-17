@@ -8,6 +8,8 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
 
 import javax.annotation.Nullable;
 
@@ -40,21 +42,9 @@ public class ProphecyTickProcedure {
 				if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumbertotal >= 3) {
 					if (EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait == false) {
 						if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 0) {
-							if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true) {
-								EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = true;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 1;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							} else if (EngiesChaosModVariables.MapVariables.get(world).sddaystart == true) {
-								EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = true;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 1;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							} else if (EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
+							EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb = Math.round(Mth.nextDouble(RandomSource.create(), 1, 7));
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true || EngiesChaosModVariables.MapVariables.get(world).sddaystart == true || EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
 								EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 								EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = true;
@@ -70,21 +60,9 @@ public class ProphecyTickProcedure {
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							}
 						} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 1) {
-							if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true) {
-								EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = true;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 2;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							} else if (EngiesChaosModVariables.MapVariables.get(world).sddaystart == true) {
-								EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = true;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 2;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							} else if (EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
+							EngiesChaosModVariables.MapVariables.get(world).ddayprophnightmarehordenumb = Math.round(Mth.nextDouble(RandomSource.create(), 1, 7));
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true || EngiesChaosModVariables.MapVariables.get(world).sddaystart == true || EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
 								EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 								EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = true;
@@ -100,21 +78,9 @@ public class ProphecyTickProcedure {
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							}
 						} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 2) {
-							if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true) {
-								EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = true;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 3;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							} else if (EngiesChaosModVariables.MapVariables.get(world).sddaystart == true) {
-								EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = true;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 3;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							} else if (EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
+							EngiesChaosModVariables.MapVariables.get(world).ddayprophinsanityhordenumb = Math.round(Mth.nextDouble(RandomSource.create(), 1, 7));
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true || EngiesChaosModVariables.MapVariables.get(world).sddaystart == true || EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
 								EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 								EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = true;
@@ -130,21 +96,9 @@ public class ProphecyTickProcedure {
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							}
 						} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 3) {
-							if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true) {
-								EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = true;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 4;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							} else if (EngiesChaosModVariables.MapVariables.get(world).sddaystart == true) {
-								EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = true;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 4;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							} else if (EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
+							EngiesChaosModVariables.MapVariables.get(world).ddayprophengiepochordenumb = Math.round(Mth.nextDouble(RandomSource.create(), 1, 7));
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true || EngiesChaosModVariables.MapVariables.get(world).sddaystart == true || EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
 								EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 								EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = true;

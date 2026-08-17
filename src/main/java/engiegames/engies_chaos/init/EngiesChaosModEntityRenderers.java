@@ -72,6 +72,7 @@ import engiegames.engies_chaos.client.renderer.InsanityEngieRenderer;
 import engiegames.engies_chaos.client.renderer.InsanityAngryEngieRenderer;
 import engiegames.engies_chaos.client.renderer.HsotileEngieRenderer;
 import engiegames.engies_chaos.client.renderer.HostileBiblicallyAccurateEngieRenderer;
+import engiegames.engies_chaos.client.renderer.HordeSpawnerRenderer;
 import engiegames.engies_chaos.client.renderer.HeWhoGamesRenderer;
 import engiegames.engies_chaos.client.renderer.HeWhoGamesHostileRenderer;
 import engiegames.engies_chaos.client.renderer.GlitchSharkoRenderer;
@@ -297,5 +298,6 @@ public class EngiesChaosModEntityRenderers {
 		event.registerEntityRenderer(EngiesChaosModEntities.ENGIE_POC_MONSTROSITY_ENGIE.get(), EngiePocMonstrosityEngieRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.ENGIE_POC_HOSTILE_BIBLICALLY_ACCURATE_ENGIE.get(), EngiePocHostileBiblicallyAccurateEngieRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.ENGIE_POC_ENGIE.get(), EngiePocEngieRenderer::new);
+		event.registerEntityRenderer(EngiesChaosModEntities.HORDE_SPAWNER.get(), HordeSpawnerRenderer::new);
 	}
 }

@@ -97,11 +97,6 @@ public class EngieLibNeedProcedure {
 							}
 						}
 					}
-					EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount = EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount - 1;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive == false) {
-					EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount = EngiesChaosModVariables.MapVariables.get(world).ddayplayerdeadcount - 1;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				}
 				{
 					Entity _ent = entity;

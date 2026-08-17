@@ -5,102 +5,19 @@
     "priority": "NORMAL",
     "components": [
       {
-        "type": "image",
-        "data": {
-          "image": "newhudnormhp.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "HealthCheck2"
-          },
-          "anchorPoint": "BOTTOM_LEFT",
-          "x": 0,
-          "y": 113,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "newhudhalfandlowerhp.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "HealthCheck3"
-          },
-          "anchorPoint": "BOTTOM_LEFT",
-          "x": 0,
-          "y": 113,
-          "locked": false
-        }
-      },
-      {
         "type": "label",
         "data": {
-          "name": "label_9999",
+          "name": "label_only16characters",
           "text": {
-            "fixedValue": "9999",
-            "name": "HealthCheck"
+            "fixedValue": "Only16Characters"
           },
           "color": {
-            "value": -55256,
+            "value": -16777216,
             "falpha": 0.0
           },
-          "anchorPoint": "BOTTOM_LEFT",
-          "x": 32,
-          "y": 176,
-          "locked": false
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_99993",
-          "text": {
-            "fixedValue": "9999",
-            "name": "ArmorCheck"
-          },
-          "color": {
-            "value": -1842205,
-            "falpha": 0.0
-          },
-          "anchorPoint": "BOTTOM_LEFT",
-          "x": 26,
-          "y": 225,
-          "locked": false
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_proc_max_health_check",
-          "text": {
-            "fixedValue": "9999",
-            "name": "MaxHealthCheck"
-          },
-          "color": {
-            "value": -4511704,
-            "falpha": 0.0
-          },
-          "anchorPoint": "BOTTOM_LEFT",
-          "x": 26,
-          "y": 196,
-          "locked": false
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_proc_absorption_health_check",
-          "text": {
-            "fixedValue": "",
-            "name": "AbsorptionHealthCheck"
-          },
-          "color": {
-            "value": -17624,
-            "falpha": 0.0
-          },
-          "anchorPoint": "BOTTOM_LEFT",
-          "x": 26,
-          "y": 210,
+          "anchorPoint": "CENTER",
+          "x": 4,
+          "y": 202,
           "locked": false
         }
       },
@@ -117,78 +34,424 @@
             "falpha": 0.0
           },
           "anchorPoint": "BOTTOM_LEFT",
-          "x": 7,
-          "y": 146,
+          "x": 3,
+          "y": 201,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_health_check",
+          "text": {
+            "fixedValue": "",
+            "name": "HealthCheck"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 4,
+          "y": 230,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_health_check1",
+          "text": {
+            "fixedValue": "",
+            "name": "HealthCheck"
+          },
+          "color": {
+            "value": -1363406,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "LowShow"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 3,
+          "y": 229,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_9999",
+          "text": {
+            "fixedValue": "1024",
+            "name": "HealthCheck"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "NormalShow"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 3,
+          "y": 229,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_absorption_health_check",
+          "text": {
+            "fixedValue": "99992",
+            "name": "HealthCheck"
+          },
+          "color": {
+            "value": -13457941,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "OverhealShow"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 3,
+          "y": 229,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_armor_check",
+          "text": {
+            "fixedValue": "",
+            "name": "ArmorCheck"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 70,
+          "y": 230,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_99993",
+          "text": {
+            "fixedValue": "1024",
+            "name": "ArmorCheck"
+          },
+          "color": {
+            "value": -1842205,
+            "falpha": 0.0
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 69,
+          "y": 229,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_true_hardcore_lives_check1",
+          "text": {
+            "fixedValue": "",
+            "name": "TrueHardcoreLivesCheck"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 70,
+          "y": 216,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_true_hardcore_lives_check",
+          "text": {
+            "fixedValue": "",
+            "name": "TrueHardcoreLivesCheck"
+          },
+          "color": {
+            "value": -11206656,
+            "falpha": 0.0
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 69,
+          "y": 215,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_risk_text_none",
+          "text": {
+            "fixedValue": "",
+            "name": "RiskTextNone"
+          },
+          "color": {
+            "value": -12632257,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DDayNoneRiskVis"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 4,
+          "y": 216,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_none",
+          "text": {
+            "fixedValue": "None!",
+            "name": "RiskTextNone"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DDayNoneRiskVis"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 3,
+          "y": 215,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_risk_text_low",
+          "text": {
+            "fixedValue": "",
+            "name": "RiskTextLow"
+          },
+          "color": {
+            "value": -15390208,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DDayLowRiskVis"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 4,
+          "y": 216,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_low",
+          "text": {
+            "fixedValue": "Low",
+            "name": "RiskTextLow"
+          },
+          "color": {
+            "value": -11294720,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DDayLowRiskVis"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 3,
+          "y": 215,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_risk_text_medium",
+          "text": {
+            "fixedValue": "",
+            "name": "RiskTextMedium"
+          },
+          "color": {
+            "value": -14013952,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DDayMediumRiskVis"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 4,
+          "y": 216,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_medium",
+          "text": {
+            "fixedValue": "Medium",
+            "name": "RiskTextMedium"
+          },
+          "color": {
+            "value": -5724160,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DDayMediumRiskVis"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 3,
+          "y": 215,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_risk_text_high",
+          "text": {
+            "fixedValue": "",
+            "name": "RiskTextHigh"
+          },
+          "color": {
+            "value": -12713984,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DDayHighRiskVis"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 4,
+          "y": 216,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_high",
+          "text": {
+            "fixedValue": "High",
+            "name": "RiskTextHigh"
+          },
+          "color": {
+            "value": -393216,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DDayHighRiskVis"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 3,
+          "y": 215,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_risk_text_extreme",
+          "text": {
+            "fixedValue": "",
+            "name": "RiskTextExtreme"
+          },
+          "color": {
+            "value": -15204352,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DDayExtremeRiskVis"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 4,
+          "y": 216,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_extreme",
+          "text": {
+            "fixedValue": "Extreme",
+            "name": "RiskTextExtreme"
+          },
+          "color": {
+            "value": -10551040,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DDayExtremeRiskVis"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 3,
+          "y": 215,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_risk_text_guaranteed",
+          "text": {
+            "fixedValue": "",
+            "name": "RiskTextGuaranteed"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DDayGuaranteedRiskVis"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 4,
+          "y": 216,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_guaranteed",
+          "text": {
+            "fixedValue": "Guaranteed",
+            "name": "RiskTextGuaranteed"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DDayGuaranteedRiskVis"
+          },
+          "anchorPoint": "BOTTOM_LEFT",
+          "x": 3,
+          "y": 215,
           "locked": false
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "testericon.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "TesterCheck"
-          },
+          "image": "newhpoverlay.png",
+          "use1Xscale": false,
           "anchorPoint": "BOTTOM_LEFT",
           "x": 0,
-          "y": 113,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "betatestericon.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "BetaTesterCheck"
-          },
-          "anchorPoint": "BOTTOM_LEFT",
-          "x": 0,
-          "y": 113,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "contentcreatoricon.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "ContentCreatorCheck"
-          },
-          "anchorPoint": "BOTTOM_LEFT",
-          "x": 0,
-          "y": 113,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "ideagivericon.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "IdeaGiverCheck"
-          },
-          "anchorPoint": "BOTTOM_LEFT",
-          "x": 0,
-          "y": 113,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "devicon.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "DevCheck"
-          },
-          "anchorPoint": "BOTTOM_LEFT",
-          "x": 0,
-          "y": 113,
+          "y": 198,
           "locked": false
         }
       }

@@ -198,7 +198,7 @@ public class DDaySpikeEntity extends PathfinderMob {
 
 	@Override
 	public EntityDimensions getDimensions(Pose pose) {
-		return super.getDimensions(pose).scale(10f);
+		return super.getDimensions(pose).scale(6f);
 	}
 
 	@Override

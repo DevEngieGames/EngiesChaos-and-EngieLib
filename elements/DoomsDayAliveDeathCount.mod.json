@@ -136,28 +136,6 @@
         }
       },
       {
-        "type": "image",
-        "data": {
-          "image": "ddaydeadcounticon.png",
-          "use1Xscale": true,
-          "anchorPoint": "BOTTOM_LEFT",
-          "x": 16,
-          "y": 208,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "ddayalivecounticon.png",
-          "use1Xscale": true,
-          "anchorPoint": "BOTTOM_LEFT",
-          "x": 16,
-          "y": 187,
-          "locked": false
-        }
-      },
-      {
         "type": "label",
         "data": {
           "name": "label_proc_dooms_alive_count1",
@@ -170,11 +148,11 @@
             "falpha": 0.0
           },
           "displayCondition": {
-            "name": "DoomsAliveCountSmall"
+            "name": "CustomHealthOverlayDisplayOverlayIngame"
           },
           "anchorPoint": "BOTTOM_LEFT",
-          "x": 22,
-          "y": 193,
+          "x": 4,
+          "y": 188,
           "locked": false
         }
       },
@@ -191,53 +169,11 @@
             "falpha": 0.0
           },
           "displayCondition": {
-            "name": "DoomsAliveCountSmall"
+            "name": "CustomHealthOverlayDisplayOverlayIngame"
           },
           "anchorPoint": "BOTTOM_LEFT",
-          "x": 21,
-          "y": 192,
-          "locked": false
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_proc_dooms_alive_count3",
-          "text": {
-            "fixedValue": "",
-            "name": "DoomsAliveCount"
-          },
-          "color": {
-            "value": -16777216,
-            "falpha": 0.0
-          },
-          "displayCondition": {
-            "name": "DoomsAliveCountBig"
-          },
-          "anchorPoint": "BOTTOM_LEFT",
-          "x": 20,
-          "y": 193,
-          "locked": false
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_proc_dooms_alive_count2",
-          "text": {
-            "fixedValue": "",
-            "name": "DoomsAliveCount"
-          },
-          "color": {
-            "value": -1,
-            "falpha": 0.0
-          },
-          "displayCondition": {
-            "name": "DoomsAliveCountBig"
-          },
-          "anchorPoint": "CENTER",
-          "x": 19,
-          "y": 192,
+          "x": 3,
+          "y": 187,
           "locked": false
         }
       },
@@ -254,11 +190,11 @@
             "falpha": 0.0
           },
           "displayCondition": {
-            "name": "DoomsDeadCountSmall"
+            "name": "CustomHealthOverlayDisplayOverlayIngame"
           },
           "anchorPoint": "BOTTOM_LEFT",
-          "x": 22,
-          "y": 213,
+          "x": 70,
+          "y": 188,
           "locked": false
         }
       },
@@ -275,53 +211,25 @@
             "falpha": 0.0
           },
           "displayCondition": {
-            "name": "DoomsDeadCountSmall"
+            "name": "CustomHealthOverlayDisplayOverlayIngame"
           },
           "anchorPoint": "BOTTOM_LEFT",
-          "x": 21,
-          "y": 213,
+          "x": 69,
+          "y": 187,
           "locked": false
         }
       },
       {
-        "type": "label",
+        "type": "image",
         "data": {
-          "name": "label_proc_dooms_dead_count3",
-          "text": {
-            "fixedValue": "",
-            "name": "DoomsDeadCount"
-          },
-          "color": {
-            "value": -16777216,
-            "falpha": 0.0
-          },
+          "image": "ddayalivedeadstuff.png",
+          "use1Xscale": false,
           "displayCondition": {
-            "name": "DoomsDeadCountBig"
+            "name": "CustomHealthOverlayDisplayOverlayIngame"
           },
           "anchorPoint": "BOTTOM_LEFT",
-          "x": 20,
-          "y": 214,
-          "locked": false
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_proc_dooms_dead_count2",
-          "text": {
-            "fixedValue": "",
-            "name": "DoomsDeadCount"
-          },
-          "color": {
-            "value": -1,
-            "falpha": 0.0
-          },
-          "displayCondition": {
-            "name": "DoomsDeadCountBig"
-          },
-          "anchorPoint": "BOTTOM_LEFT",
-          "x": 19,
-          "y": 213,
+          "x": 0,
+          "y": 184,
           "locked": false
         }
       }

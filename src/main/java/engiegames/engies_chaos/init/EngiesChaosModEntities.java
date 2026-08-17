@@ -79,6 +79,7 @@ import engiegames.engies_chaos.entity.InsanityEngieEntity;
 import engiegames.engies_chaos.entity.InsanityAngryEngieEntity;
 import engiegames.engies_chaos.entity.HsotileEngieEntity;
 import engiegames.engies_chaos.entity.HostileBiblicallyAccurateEngieEntity;
+import engiegames.engies_chaos.entity.HordeSpawnerEntity;
 import engiegames.engies_chaos.entity.HeWhoGamesHostileEntity;
 import engiegames.engies_chaos.entity.HeWhoGamesEntity;
 import engiegames.engies_chaos.entity.GlitchSharkoEntity;
@@ -709,6 +710,8 @@ public class EngiesChaosModEntities {
 			EntityType.Builder.<EngiePocEngieEntity>of(EngiePocEngieEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(192).setUpdateInterval(3).setCustomClientFactory(EngiePocEngieEntity::new)
 
 					.sized(0.6f, 1.9f));
+	public static final RegistryObject<EntityType<HordeSpawnerEntity>> HORDE_SPAWNER = register("horde_spawner", EntityType.Builder.<HordeSpawnerEntity>of(HordeSpawnerEntity::new, MobCategory.MISC).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(HordeSpawnerEntity::new).fireImmune().sized(1f, 1f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
@@ -861,6 +864,7 @@ public class EngiesChaosModEntities {
 			EngiePocMonstrosityEngieEntity.init();
 			EngiePocHostileBiblicallyAccurateEngieEntity.init();
 			EngiePocEngieEntity.init();
+			HordeSpawnerEntity.init();
 		});
 	}
 
@@ -1008,5 +1012,6 @@ public class EngiesChaosModEntities {
 		event.put(ENGIE_POC_MONSTROSITY_ENGIE.get(), EngiePocMonstrosityEngieEntity.createAttributes().build());
 		event.put(ENGIE_POC_HOSTILE_BIBLICALLY_ACCURATE_ENGIE.get(), EngiePocHostileBiblicallyAccurateEngieEntity.createAttributes().build());
 		event.put(ENGIE_POC_ENGIE.get(), EngiePocEngieEntity.createAttributes().build());
+		event.put(HORDE_SPAWNER.get(), HordeSpawnerEntity.createAttributes().build());
 	}
 }

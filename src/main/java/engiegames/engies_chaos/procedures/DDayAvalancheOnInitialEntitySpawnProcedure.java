@@ -11,7 +11,7 @@ public class DDayAvalancheOnInitialEntitySpawnProcedure {
 		if (entity == null)
 			return;
 		if (entity instanceof DDayAvalancheEntity _datEntSetI)
-			_datEntSetI.getEntityData().set(DDayAvalancheEntity.DATA_scale, (int) Mth.nextDouble(RandomSource.create(), 5, 15));
+			_datEntSetI.getEntityData().set(DDayAvalancheEntity.DATA_scale, (int) Mth.nextDouble(RandomSource.create(), 3, 7));
 		entity.push((Mth.nextDouble(RandomSource.create(), -10, 10)), (Mth.nextDouble(RandomSource.create(), -1, 1)), (Mth.nextDouble(RandomSource.create(), -10, 10)));
 	}
 }

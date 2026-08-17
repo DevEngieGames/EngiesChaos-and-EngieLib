@@ -14,6 +14,7 @@ import net.minecraft.commands.CommandSource;
 
 import javax.annotation.Nullable;
 
+import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.init.EngiesChaosModGameRules;
 
 @Mod.EventBusSubscriber
@@ -48,67 +49,201 @@ public class ModeCheckProcedure {
 				}
 			}
 		} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIE_POC) == true) {
-			{
-				Entity _ent = entity;
-				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:generic.max_health base set 10");
+			if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).healthreductiondday == true) {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:generic.max_health base set 25");
+					}
 				}
-			}
-			{
-				Entity _ent = entity;
-				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:max_health base set 10");
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:max_health base set 25");
+					}
+				}
+			} else {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:generic.max_health base set 12.5");
+					}
+				}
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:max_health base set 12.5");
+					}
 				}
 			}
 		} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.APOCALYPSE_THREE) == true) {
-			{
-				Entity _ent = entity;
-				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:generic.max_health base set 25");
+			if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).healthreductiondday == true
+					&& world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_HARDCORE) == true) {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:generic.max_health base set 50");
+					}
 				}
-			}
-			{
-				Entity _ent = entity;
-				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:max_health base set 25");
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:max_health base set 50");
+					}
+				}
+			} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).healthreductiondday == true
+					&& world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_HARDCORE) == false) {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:generic.max_health base set 100");
+					}
+				}
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:max_health base set 100");
+					}
+				}
+			} else {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:generic.max_health base set 25");
+					}
+				}
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:max_health base set 25");
+					}
 				}
 			}
 		} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.APOCALYPSE_TWO) == true) {
-			{
-				Entity _ent = entity;
-				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:generic.max_health base set 50");
+			if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).healthreductiondday == true
+					&& world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_HARDCORE) == true) {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:generic.max_health base set 50");
+					}
 				}
-			}
-			{
-				Entity _ent = entity;
-				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:max_health base set 50");
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:max_health base set 50");
+					}
+				}
+			} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).healthreductiondday == true
+					&& world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_HARDCORE) == false) {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:generic.max_health base set 100");
+					}
+				}
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:max_health base set 100");
+					}
+				}
+			} else {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:generic.max_health base set 50");
+					}
+				}
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:max_health base set 50");
+					}
 				}
 			}
 		} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.APOCALYPSE_ONE) == true) {
-			{
-				Entity _ent = entity;
-				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:generic.max_health base set 75");
+			if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).healthreductiondday == true
+					&& world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_HARDCORE) == true) {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:generic.max_health base set 50");
+					}
 				}
-			}
-			{
-				Entity _ent = entity;
-				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:max_health base set 75");
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:max_health base set 50");
+					}
+				}
+			} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).healthreductiondday == true
+					&& world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_HARDCORE) == false) {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:generic.max_health base set 100");
+					}
+				}
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:max_health base set 100");
+					}
+				}
+			} else {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:generic.max_health base set 75");
+					}
+				}
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:max_health base set 75");
+					}
 				}
 			}
 		} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_HARDCORE) == true) {
-			if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.INSANITY_DIFFICULTY) == true) {
+			if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).healthreductiondday == true) {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:generic.max_health base set 50");
+					}
+				}
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:max_health base set 50");
+					}
+				}
+			} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.INSANITY_DIFFICULTY) == true) {
 				{
 					Entity _ent = entity;
 					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
@@ -183,9 +318,39 @@ public class ModeCheckProcedure {
 								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:max_health base set 50");
 					}
 				}
+			} else if (world.getDifficulty() == Difficulty.PEACEFUL) {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:generic.max_health base set 25");
+					}
+				}
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:max_health base set 25");
+					}
+				}
 			}
 		} else {
-			if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.INSANITY_DIFFICULTY) == true) {
+			if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).healthreductiondday == true) {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:generic.max_health base set 100");
+					}
+				}
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "attribute @s minecraft:max_health base set 100");
+					}
+				}
+			} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.INSANITY_DIFFICULTY) == true) {
 				{
 					Entity _ent = entity;
 					if (!_ent.level.isClientSide() && _ent.getServer() != null) {

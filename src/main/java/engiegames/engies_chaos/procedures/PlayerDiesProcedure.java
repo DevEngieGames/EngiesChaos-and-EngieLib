@@ -55,6 +55,13 @@ public class PlayerDiesProcedure {
 					|| EngiesChaosModVariables.MapVariables.get(world).engieswrathstart) == true) {
 				if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).ddayplayeraddedtodeadcount == false) {
 					{
+						boolean _setval = false;
+						entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.DoomsdayAlive = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
 						boolean _setval = true;
 						entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.ddayplayeraddedtodeadcount = _setval;

@@ -2802,5 +2802,10 @@
   "item.engies_chaos.darkmatter": "§0Dark §fMatter",
   "enchantment.engies_chaos.engies_dark_matter_blessing": "Engies Dark Matter Blessing",
   "attribute.engies_chaos.engies_dark_matter_blessing_chance_for_player": "Engies Dark Matter Blessing Chance For Player",
-  "item.engies_chaos.monstrosity_ban_hammer.description_0": "You could say this ban hammer is a Monstrosity.. Heh? Alright I know that was a terrible joke anyway."
+  "item.engies_chaos.monstrosity_ban_hammer.description_0": "You could say this ban hammer is a Monstrosity.. Heh? Alright I know that was a terrible joke anyway.",
+  "entity.engies_chaos.horde_spawner": "SPAWING GO BRRR",
+  "gui.engies_chaos.custom_health_overlay.label_9999": "1024",
+  "gui.engies_chaos.custom_health_overlay.label_99993": "1024",
+  "gui.engies_chaos.custom_health_overlay.label_proc_absorption_health_check": "1024",
+  "gui.engies_chaos.custom_health_overlay.label_only16characters": "Only16Characters"
 }
