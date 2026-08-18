@@ -197,7 +197,7 @@
   "doomsdaydisasterreveal": {
     "sounds": [
       {
-        "name": "engies_chaos:orchestrahitbnochoir",
+        "name": "engies_chaos:orchestralhitb",
         "stream": false
       }
     ]

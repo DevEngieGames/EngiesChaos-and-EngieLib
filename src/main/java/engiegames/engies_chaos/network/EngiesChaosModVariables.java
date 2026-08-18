@@ -366,7 +366,7 @@ public class EngiesChaosModVariables {
 		public boolean itemswap2 = false;
 		public boolean madlads = false;
 		public boolean multiplayertrophyobtained = false;
-		public boolean OHBOY = false;
+		public boolean OHBOY = true;
 		public boolean OHNO = false;
 		public boolean riskcheckedstart = false;
 		public boolean sddaydialoguetimeblock = false;
@@ -498,6 +498,8 @@ public class EngiesChaosModVariables {
 		public double ddayprophengiepochordenumb = 0;
 		public String userids = "";
 		public double hordecooldown = 0;
+		public double previoustime = 0;
+		public double forecastdialogue = 0;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -740,6 +742,8 @@ public class EngiesChaosModVariables {
 			ddayprophengiepochordenumb = nbt.getDouble("ddayprophengiepochordenumb");
 			userids = nbt.getString("userids");
 			hordecooldown = nbt.getDouble("hordecooldown");
+			previoustime = nbt.getDouble("previoustime");
+			forecastdialogue = nbt.getDouble("forecastdialogue");
 		}
 
 		@Override
@@ -978,6 +982,8 @@ public class EngiesChaosModVariables {
 			nbt.putDouble("ddayprophengiepochordenumb", ddayprophengiepochordenumb);
 			nbt.putString("userids", userids);
 			nbt.putDouble("hordecooldown", hordecooldown);
+			nbt.putDouble("previoustime", previoustime);
+			nbt.putDouble("forecastdialogue", forecastdialogue);
 			return nbt;
 		}
 

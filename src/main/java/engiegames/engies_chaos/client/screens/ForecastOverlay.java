@@ -15,24 +15,14 @@ import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.Minecraft;
 
 import engiegames.engies_chaos.procedures.NightcheckProcedure;
+import engiegames.engies_chaos.procedures.ForecastStatementDisplay2Procedure;
+import engiegames.engies_chaos.procedures.ForecastStatementDisplay1Procedure;
 import engiegames.engies_chaos.procedures.ForecastDisplayOverlayIngameProcedure;
-import engiegames.engies_chaos.procedures.ForecastDisplay9Procedure;
-import engiegames.engies_chaos.procedures.ForecastDisplay8Procedure;
-import engiegames.engies_chaos.procedures.ForecastDisplay7Procedure;
-import engiegames.engies_chaos.procedures.ForecastDisplay6Procedure;
-import engiegames.engies_chaos.procedures.ForecastDisplay5Procedure;
-import engiegames.engies_chaos.procedures.ForecastDisplay4Procedure;
-import engiegames.engies_chaos.procedures.ForecastDisplay3Procedure;
-import engiegames.engies_chaos.procedures.ForecastDisplay2Procedure;
-import engiegames.engies_chaos.procedures.ForecastDisplay1Procedure;
 import engiegames.engies_chaos.procedures.ForecastDisplay17Procedure;
-import engiegames.engies_chaos.procedures.ForecastDisplay16Procedure;
-import engiegames.engies_chaos.procedures.ForecastDisplay15Procedure;
-import engiegames.engies_chaos.procedures.ForecastDisplay14Procedure;
-import engiegames.engies_chaos.procedures.ForecastDisplay13Procedure;
-import engiegames.engies_chaos.procedures.ForecastDisplay12Procedure;
-import engiegames.engies_chaos.procedures.ForecastDisplay11Procedure;
-import engiegames.engies_chaos.procedures.ForecastDisplay10Procedure;
+import engiegames.engies_chaos.procedures.DoomsdayDialogueForecastDisplay4Procedure;
+import engiegames.engies_chaos.procedures.DoomsdayDialogueForecastDisplay3Procedure;
+import engiegames.engies_chaos.procedures.DoomsdayDialogueForecastDisplay2Procedure;
+import engiegames.engies_chaos.procedures.DoomsdayDialogueForecastDisplay1Procedure;
 import engiegames.engies_chaos.procedures.DaycheckProcedure;
 
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -61,85 +51,45 @@ public class ForecastOverlay {
 		RenderSystem.setShader(GameRenderer::getPositionTexShader);
 		RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
 		RenderSystem.setShaderColor(1, 1, 1, 1);
-		if (ForecastDisplayOverlayIngameProcedure.execute(world)) {
+		if (ForecastDisplayOverlayIngameProcedure.execute()) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newforecast.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
+			Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
 
 			if (DaycheckProcedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newforecastdaytime.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
 			}
 			if (NightcheckProcedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newforecastnighttime.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
 			}
-			if (ForecastDisplay15Procedure.execute(world)) {
+			if (ForecastStatementDisplay1Procedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newforecaststatementtext.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
 			}
-			if (ForecastDisplay16Procedure.execute(world)) {
+			if (ForecastStatementDisplay2Procedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newforecaststatementtext2.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
 			}
 			if (ForecastDisplay17Procedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newforecaststatement.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
 			}
-			if (ForecastDisplay1Procedure.execute(world)) {
+			if (DoomsdayDialogueForecastDisplay1Procedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newforecaststatementdooms1.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
 			}
-			if (ForecastDisplay2Procedure.execute(world)) {
+			if (DoomsdayDialogueForecastDisplay2Procedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newforecaststatementdooms2.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
 			}
-			if (ForecastDisplay3Procedure.execute(world)) {
+			if (DoomsdayDialogueForecastDisplay3Procedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newforecaststatementdooms3.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
 			}
-			if (ForecastDisplay4Procedure.execute(world)) {
-				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newforecaststatementdooms4single.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
-			}
-			if (ForecastDisplay5Procedure.execute(world)) {
-				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newforecaststatementdooms4multi.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
-			}
-			if (ForecastDisplay6Procedure.execute(world)) {
-				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newforecaststatementsuperdooms1.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
-			}
-			if (ForecastDisplay7Procedure.execute(world)) {
-				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newforecaststatementsuperdooms2.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
-			}
-			if (ForecastDisplay8Procedure.execute(world)) {
-				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newforecaststatementtheend1.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
-			}
-			if (ForecastDisplay9Procedure.execute(world)) {
-				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newforecaststatementtheend2.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
-			}
-			if (ForecastDisplay10Procedure.execute(world)) {
-				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newforecaststatementengieswrath1.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
-			}
-			if (ForecastDisplay11Procedure.execute(world)) {
-				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newforecaststatementengieswrath2.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
-			}
-			if (ForecastDisplay12Procedure.execute(world)) {
-				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newforecaststatementengieswrath3.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
-			}
-			if (ForecastDisplay13Procedure.execute(world)) {
-				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newforecaststatementengieswrath4single.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
-			}
-			if (ForecastDisplay14Procedure.execute(world)) {
-				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newforecaststatementengieswrath4multi.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
+			if (DoomsdayDialogueForecastDisplay4Procedure.execute(world)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newforecaststatementdooms4.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 528, 75, 528, 75);
 			}
 		}
 		RenderSystem.depthMask(true);

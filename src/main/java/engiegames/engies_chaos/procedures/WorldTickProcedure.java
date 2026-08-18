@@ -40,14 +40,9 @@ public class WorldTickProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				}
 			}
-			if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DOOMSDAY_TOGGLE) == true) {
-				if (EngiesChaosModVariables.MapVariables.get(world).timecheckstop == false) {
-					EngiesChaosModVariables.MapVariables.get(world).timeticks = EngiesChaosModVariables.MapVariables.get(world).timeticks + 1;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				} else if (EngiesChaosModVariables.MapVariables.get(world).timecheckstop == true) {
-					EngiesChaosModVariables.MapVariables.get(world).timebeforespecial = EngiesChaosModVariables.MapVariables.get(world).timeticks;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				}
+			if (EngiesChaosModVariables.MapVariables.get(world).timecheckstop == false) {
+				EngiesChaosModVariables.MapVariables.get(world).timeticks = EngiesChaosModVariables.MapVariables.get(world).timeticks + 1;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			}
 			if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_HARDCORE) == true) {
 				EngiesChaosModVariables.MapVariables.get(world).truehardcoreenabledonworld = true;

@@ -10,63 +10,7 @@
           "image": "doomsdayproph.png",
           "use1Xscale": true,
           "displayCondition": {
-            "name": "DDAYProphNone"
-          },
-          "anchorPoint": "TOP_CENTER",
-          "x": 33,
-          "y": 40,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "doomsdayprophmult1.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "DDAYProphMult1"
-          },
-          "anchorPoint": "TOP_CENTER",
-          "x": 33,
-          "y": 40,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "doomsdayprophmult2.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "DDAYProphMult2"
-          },
-          "anchorPoint": "TOP_CENTER",
-          "x": 33,
-          "y": 40,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "doomsdayprophmult3.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "DDAYProphMult3"
-          },
-          "anchorPoint": "TOP_CENTER",
-          "x": 33,
-          "y": 40,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "doomsdayprophmult4.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "DDAYProphMult4"
+            "name": "DoomsdayProphShow"
           },
           "anchorPoint": "TOP_CENTER",
           "x": 33,
@@ -80,63 +24,7 @@
           "image": "superdoomsdayproph.png",
           "use1Xscale": true,
           "displayCondition": {
-            "name": "SDDAYProphNone"
-          },
-          "anchorPoint": "TOP_CENTER",
-          "x": 33,
-          "y": 40,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "superdoomsdayprophmult1.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "SDDAYProphMult1"
-          },
-          "anchorPoint": "TOP_CENTER",
-          "x": 33,
-          "y": 40,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "superdoomsdayprophmult2.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "SDDAYProphMult2"
-          },
-          "anchorPoint": "TOP_CENTER",
-          "x": 33,
-          "y": 40,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "superdoomsdayprophmult3.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "SDDAYProphMult3"
-          },
-          "anchorPoint": "TOP_CENTER",
-          "x": 33,
-          "y": 40,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "superdoomsdayprophmult4.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "SDDAYProphMult4"
+            "name": "SuperDoomsdayProphShow"
           },
           "anchorPoint": "TOP_CENTER",
           "x": 33,
@@ -150,63 +38,7 @@
           "image": "theendproph.png",
           "use1Xscale": true,
           "displayCondition": {
-            "name": "THEENDProphNone"
-          },
-          "anchorPoint": "TOP_CENTER",
-          "x": 33,
-          "y": 40,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "theendprophmult1.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "THEENDProphMult1"
-          },
-          "anchorPoint": "TOP_CENTER",
-          "x": 33,
-          "y": 40,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "theendprophmult2.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "THEENDProphMult2"
-          },
-          "anchorPoint": "TOP_CENTER",
-          "x": 33,
-          "y": 40,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "theendprophmult3.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "THEENDProphMult3"
-          },
-          "anchorPoint": "TOP_CENTER",
-          "x": 33,
-          "y": 40,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "theendprophmult4.png",
-          "use1Xscale": true,
-          "displayCondition": {
-            "name": "THEENDProphMult4"
+            "name": "TheEndProphShow"
           },
           "anchorPoint": "TOP_CENTER",
           "x": 33,
@@ -220,7 +52,7 @@
           "image": "engiegamesproph.png",
           "use1Xscale": true,
           "displayCondition": {
-            "name": "ENGIEGAMESProphNone"
+            "name": "EngiesWrathProphShow"
           },
           "anchorPoint": "TOP_CENTER",
           "x": 33,
@@ -231,10 +63,10 @@
       {
         "type": "image",
         "data": {
-          "image": "engiegamesprophmult1.png",
+          "image": "horde1.png",
           "use1Xscale": true,
           "displayCondition": {
-            "name": "ENGIEGAMESProphMult1"
+            "name": "ProphHorde1"
           },
           "anchorPoint": "TOP_CENTER",
           "x": 33,
@@ -245,10 +77,10 @@
       {
         "type": "image",
         "data": {
-          "image": "engiegamesprophmult2.png",
+          "image": "horde11.png",
           "use1Xscale": true,
           "displayCondition": {
-            "name": "ENGIEGAMESProphMult2"
+            "name": "ProphNormalHorde1"
           },
           "anchorPoint": "TOP_CENTER",
           "x": 33,
@@ -259,10 +91,10 @@
       {
         "type": "image",
         "data": {
-          "image": "engiegamesprophmult3.png",
+          "image": "horde12.png",
           "use1Xscale": true,
           "displayCondition": {
-            "name": "ENGIEGAMESProphMult3"
+            "name": "ProphNormalHorde2"
           },
           "anchorPoint": "TOP_CENTER",
           "x": 33,
@@ -273,10 +105,402 @@
       {
         "type": "image",
         "data": {
-          "image": "engiegamesprophmult4.png",
+          "image": "horde13.png",
           "use1Xscale": true,
           "displayCondition": {
-            "name": "ENGIEGAMESProphMult4"
+            "name": "ProphNormalHorde3"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde14.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphNormalHorde4"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde15.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphNormalHorde5"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde16.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphNormalHorde6"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde17.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphNormalHorde7"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde2.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphHorde2"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde21.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphNightmareHorde1"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde22.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphNightmareHorde2"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde23.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphNightmareHorde3"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde24.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphNightmareHorde4"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde25.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphNightmareHorde5"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde26.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphNightmareHorde6"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde27.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphNightmareHorde7"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde3.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphNormalHorde3"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde31.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphInsanityHorde1"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde32.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphInsanityHorde2"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde33.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphInsanityHorde3"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde34.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphInsanityHorde4"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde35.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphInsanityHorde5"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde36.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphInsanityHorde6"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde37.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphInsanityHorde7"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde4.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphHorde4"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde41.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphEngiePocHorde1"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde42.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphEngiePocHorde2"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde43.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphEngiePocHorde3"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde44.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphEngiePocHorde4"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde45.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphEngiePocHorde5"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde46.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphEngiePocHorde6"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "horde47.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ProphEngiePocHorde7"
           },
           "anchorPoint": "TOP_CENTER",
           "x": 33,

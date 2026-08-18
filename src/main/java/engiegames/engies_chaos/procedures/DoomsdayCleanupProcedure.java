@@ -199,7 +199,7 @@ public class DoomsdayCleanupProcedure {
 				if (EngiesChaosModVariables.MapVariables.get(world).timecheckstop == true) {
 					if (world instanceof ServerLevel _level)
 						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
-								Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), ("time set " + EngiesChaosModVariables.MapVariables.get(world).timebeforespecial));
+								Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), ("time set " + EngiesChaosModVariables.MapVariables.get(world).timeticks));
 					EngiesChaosModVariables.MapVariables.get(world).timecheckstop = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				}

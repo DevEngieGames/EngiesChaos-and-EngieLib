@@ -49,19 +49,19 @@ public class ObjectiveUIOverlay {
 		if (ObjectiveOverlayCheckProcedure.execute(world, entity)) {
 			if (DoomsDayCheckProcedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/objectiveline1.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -122, 90, 0, 0, 250, 75, 250, 75);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -122, 69, 0, 0, 250, 75, 250, 75);
 			}
 			if (SuperDoomsDayCheckProcedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/objectiveline2.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -122, 90, 0, 0, 250, 75, 250, 75);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -122, 69, 0, 0, 250, 75, 250, 75);
 			}
 			if (TheEndCheckProcedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/objectiveline3.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -122, 90, 0, 0, 250, 75, 250, 75);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -122, 69, 0, 0, 250, 75, 250, 75);
 			}
 			if (EngiesWrathCheckProcedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/objectiveline4.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -122, 90, 0, 0, 250, 75, 250, 75);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -122, 69, 0, 0, 250, 75, 250, 75);
 			}
 		}
 		RenderSystem.depthMask(true);

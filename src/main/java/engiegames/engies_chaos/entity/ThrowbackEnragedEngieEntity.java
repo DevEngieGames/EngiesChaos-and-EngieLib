@@ -22,7 +22,6 @@ import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.server.level.ServerPlayer;
@@ -30,7 +29,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.Packet;
 
 import engiegames.engies_chaos.procedures.ThrowbackSpawningCondProcedure;
-import engiegames.engies_chaos.procedures.DoomsDayMobsFightEachotherToggleProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class ThrowbackEnragedEngieEntity extends Monster {
@@ -62,32 +60,11 @@ public class ThrowbackEnragedEngieEntity extends Monster {
 		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
 		this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, Player.class, true, false));
 		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal(this, ServerPlayer.class, true, false));
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal(this, Monster.class, true, false) {
-			@Override
-			public boolean canUse() {
-				double x = ThrowbackEnragedEngieEntity.this.getX();
-				double y = ThrowbackEnragedEngieEntity.this.getY();
-				double z = ThrowbackEnragedEngieEntity.this.getZ();
-				Entity entity = ThrowbackEnragedEngieEntity.this;
-				Level world = ThrowbackEnragedEngieEntity.this.level;
-				return super.canUse() && DoomsDayMobsFightEachotherToggleProcedure.execute(world);
-			}
-
-			@Override
-			public boolean canContinueToUse() {
-				double x = ThrowbackEnragedEngieEntity.this.getX();
-				double y = ThrowbackEnragedEngieEntity.this.getY();
-				double z = ThrowbackEnragedEngieEntity.this.getZ();
-				Entity entity = ThrowbackEnragedEngieEntity.this;
-				Level world = ThrowbackEnragedEngieEntity.this.level;
-				return super.canContinueToUse() && DoomsDayMobsFightEachotherToggleProcedure.execute(world);
-			}
-		});
-		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, (float) 6));
-		this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, ServerPlayer.class, (float) 6));
-		this.targetSelector.addGoal(8, new HurtByTargetGoal(this));
-		this.goalSelector.addGoal(9, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(10, new FloatGoal(this));
+		this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, (float) 6));
+		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, ServerPlayer.class, (float) 6));
+		this.targetSelector.addGoal(7, new HurtByTargetGoal(this));
+		this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(9, new FloatGoal(this));
 	}
 
 	@Override
