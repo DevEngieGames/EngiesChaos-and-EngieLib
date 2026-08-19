@@ -88,32 +88,8 @@ import engiegames.engies_chaos.entity.ExoticEngieEntity;
 import engiegames.engies_chaos.entity.EpicSharkoEntity;
 import engiegames.engies_chaos.entity.EpicEngieEntity;
 import engiegames.engies_chaos.entity.EnragedTNTEntity;
-import engiegames.engies_chaos.entity.EnragedTNT9Entity;
-import engiegames.engies_chaos.entity.EnragedTNT8Entity;
-import engiegames.engies_chaos.entity.EnragedTNT7Entity;
-import engiegames.engies_chaos.entity.EnragedTNT6Entity;
-import engiegames.engies_chaos.entity.EnragedTNT5Entity;
-import engiegames.engies_chaos.entity.EnragedTNT4Entity;
-import engiegames.engies_chaos.entity.EnragedTNT3Entity;
-import engiegames.engies_chaos.entity.EnragedTNT2Entity;
 import engiegames.engies_chaos.entity.EnragedSpeedEntity;
-import engiegames.engies_chaos.entity.EnragedSpeed9Entity;
-import engiegames.engies_chaos.entity.EnragedSpeed8Entity;
-import engiegames.engies_chaos.entity.EnragedSpeed7Entity;
-import engiegames.engies_chaos.entity.EnragedSpeed6Entity;
-import engiegames.engies_chaos.entity.EnragedSpeed5Entity;
-import engiegames.engies_chaos.entity.EnragedSpeed4Entity;
-import engiegames.engies_chaos.entity.EnragedSpeed3Entity;
-import engiegames.engies_chaos.entity.EnragedSpeed2Entity;
 import engiegames.engies_chaos.entity.EnragedNormalEntity;
-import engiegames.engies_chaos.entity.EnragedNormal9Entity;
-import engiegames.engies_chaos.entity.EnragedNormal8Entity;
-import engiegames.engies_chaos.entity.EnragedNormal7Entity;
-import engiegames.engies_chaos.entity.EnragedNormal6Entity;
-import engiegames.engies_chaos.entity.EnragedNormal5Entity;
-import engiegames.engies_chaos.entity.EnragedNormal4Entity;
-import engiegames.engies_chaos.entity.EnragedNormal3Entity;
-import engiegames.engies_chaos.entity.EnragedNormal2Entity;
 import engiegames.engies_chaos.entity.EnragedEngieOldRiftedEntity;
 import engiegames.engies_chaos.entity.EnragedEngieEntity;
 import engiegames.engies_chaos.entity.EnragedDeathSharkoEntity;
@@ -198,109 +174,13 @@ public class EngiesChaosModEntities {
 	public static final RegistryObject<EntityType<EnragedNormalEntity>> ENRAGED_NORMAL = register("enraged_normal",
 			EntityType.Builder.<EnragedNormalEntity>of(EnragedNormalEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedNormalEntity::new)
 
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EnragedNormal2Entity>> ENRAGED_NORMAL_2 = register("enraged_normal_2",
-			EntityType.Builder.<EnragedNormal2Entity>of(EnragedNormal2Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedNormal2Entity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EnragedNormal3Entity>> ENRAGED_NORMAL_3 = register("enraged_normal_3",
-			EntityType.Builder.<EnragedNormal3Entity>of(EnragedNormal3Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedNormal3Entity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EnragedNormal4Entity>> ENRAGED_NORMAL_4 = register("enraged_normal_4",
-			EntityType.Builder.<EnragedNormal4Entity>of(EnragedNormal4Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedNormal4Entity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EnragedNormal5Entity>> ENRAGED_NORMAL_5 = register("enraged_normal_5",
-			EntityType.Builder.<EnragedNormal5Entity>of(EnragedNormal5Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedNormal5Entity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EnragedNormal6Entity>> ENRAGED_NORMAL_6 = register("enraged_normal_6",
-			EntityType.Builder.<EnragedNormal6Entity>of(EnragedNormal6Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedNormal6Entity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EnragedNormal7Entity>> ENRAGED_NORMAL_7 = register("enraged_normal_7",
-			EntityType.Builder.<EnragedNormal7Entity>of(EnragedNormal7Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedNormal7Entity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EnragedNormal8Entity>> ENRAGED_NORMAL_8 = register("enraged_normal_8",
-			EntityType.Builder.<EnragedNormal8Entity>of(EnragedNormal8Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedNormal8Entity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EnragedNormal9Entity>> ENRAGED_NORMAL_9 = register("enraged_normal_9",
-			EntityType.Builder.<EnragedNormal9Entity>of(EnragedNormal9Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedNormal9Entity::new)
-
-					.sized(0.6f, 1.8f));
+					.sized(0.6f, 1.9f));
 	public static final RegistryObject<EntityType<EnragedTNTEntity>> ENRAGED_TNT = register("enraged_tnt",
 			EntityType.Builder.<EnragedTNTEntity>of(EnragedTNTEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedTNTEntity::new)
 
 					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EnragedTNT2Entity>> ENRAGED_TNT_2 = register("enraged_tnt_2",
-			EntityType.Builder.<EnragedTNT2Entity>of(EnragedTNT2Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedTNT2Entity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EnragedTNT3Entity>> ENRAGED_TNT_3 = register("enraged_tnt_3",
-			EntityType.Builder.<EnragedTNT3Entity>of(EnragedTNT3Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedTNT3Entity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EnragedTNT4Entity>> ENRAGED_TNT_4 = register("enraged_tnt_4",
-			EntityType.Builder.<EnragedTNT4Entity>of(EnragedTNT4Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedTNT4Entity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EnragedTNT5Entity>> ENRAGED_TNT_5 = register("enraged_tnt_5",
-			EntityType.Builder.<EnragedTNT5Entity>of(EnragedTNT5Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedTNT5Entity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EnragedTNT6Entity>> ENRAGED_TNT_6 = register("enraged_tnt_6",
-			EntityType.Builder.<EnragedTNT6Entity>of(EnragedTNT6Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedTNT6Entity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EnragedTNT7Entity>> ENRAGED_TNT_7 = register("enraged_tnt_7",
-			EntityType.Builder.<EnragedTNT7Entity>of(EnragedTNT7Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedTNT7Entity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EnragedTNT8Entity>> ENRAGED_TNT_8 = register("enraged_tnt_8",
-			EntityType.Builder.<EnragedTNT8Entity>of(EnragedTNT8Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedTNT8Entity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EnragedTNT9Entity>> ENRAGED_TNT_9 = register("enraged_tnt_9",
-			EntityType.Builder.<EnragedTNT9Entity>of(EnragedTNT9Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedTNT9Entity::new)
-
-					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<EnragedSpeedEntity>> ENRAGED_SPEED = register("enraged_speed",
 			EntityType.Builder.<EnragedSpeedEntity>of(EnragedSpeedEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedSpeedEntity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EnragedSpeed2Entity>> ENRAGED_SPEED_2 = register("enraged_speed_2",
-			EntityType.Builder.<EnragedSpeed2Entity>of(EnragedSpeed2Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedSpeed2Entity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EnragedSpeed3Entity>> ENRAGED_SPEED_3 = register("enraged_speed_3",
-			EntityType.Builder.<EnragedSpeed3Entity>of(EnragedSpeed3Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedSpeed3Entity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EnragedSpeed4Entity>> ENRAGED_SPEED_4 = register("enraged_speed_4",
-			EntityType.Builder.<EnragedSpeed4Entity>of(EnragedSpeed4Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedSpeed4Entity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EnragedSpeed5Entity>> ENRAGED_SPEED_5 = register("enraged_speed_5",
-			EntityType.Builder.<EnragedSpeed5Entity>of(EnragedSpeed5Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedSpeed5Entity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EnragedSpeed6Entity>> ENRAGED_SPEED_6 = register("enraged_speed_6",
-			EntityType.Builder.<EnragedSpeed6Entity>of(EnragedSpeed6Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedSpeed6Entity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EnragedSpeed7Entity>> ENRAGED_SPEED_7 = register("enraged_speed_7",
-			EntityType.Builder.<EnragedSpeed7Entity>of(EnragedSpeed7Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedSpeed7Entity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EnragedSpeed8Entity>> ENRAGED_SPEED_8 = register("enraged_speed_8",
-			EntityType.Builder.<EnragedSpeed8Entity>of(EnragedSpeed8Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedSpeed8Entity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<EnragedSpeed9Entity>> ENRAGED_SPEED_9 = register("enraged_speed_9",
-			EntityType.Builder.<EnragedSpeed9Entity>of(EnragedSpeed9Entity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EnragedSpeed9Entity::new)
 
 					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<CommonEngieEntity>> COMMON_ENGIE = register("common_engie",
@@ -430,7 +310,7 @@ public class EngiesChaosModEntities {
 			EntityType.Builder.<ThrowbackSharkoEntity>of(ThrowbackSharkoEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ThrowbackSharkoEntity::new)
 
 					.sized(0.7f, 0.9f));
-	public static final RegistryObject<EntityType<WormholeEngieEntity>> WORMHOLE_ENGIE = register("wormhole_engie", EntityType.Builder.<WormholeEngieEntity>of(WormholeEngieEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
+	public static final RegistryObject<EntityType<WormholeEngieEntity>> WORMHOLE_ENGIE = register("wormhole_engie", EntityType.Builder.<WormholeEngieEntity>of(WormholeEngieEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true)
 			.setTrackingRange(128).setUpdateInterval(3).setCustomClientFactory(WormholeEngieEntity::new).fireImmune().sized(0.6f, 1.9f));
 	public static final RegistryObject<EntityType<RoughianTheRealEngieGamesEntity>> ROUGHIAN_THE_REAL_ENGIE_GAMES = register("roughian_the_real_engie_games",
 			EntityType.Builder.<RoughianTheRealEngieGamesEntity>of(RoughianTheRealEngieGamesEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
@@ -480,9 +360,9 @@ public class EngiesChaosModEntities {
 					.setCustomClientFactory(TheRealEngieGamesHalloweenEntity::new)
 
 					.sized(0.6f, 1.9f));
-	public static final RegistryObject<EntityType<ShadowSharkEngieEntity>> SHADOW_SHARK_ENGIE = register("shadow_shark_engie", EntityType.Builder.<ShadowSharkEngieEntity>of(ShadowSharkEngieEntity::new, MobCategory.MONSTER)
+	public static final RegistryObject<EntityType<ShadowSharkEngieEntity>> SHADOW_SHARK_ENGIE = register("shadow_shark_engie", EntityType.Builder.<ShadowSharkEngieEntity>of(ShadowSharkEngieEntity::new, MobCategory.CREATURE)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ShadowSharkEngieEntity::new).fireImmune().sized(0.6f, 1.9f));
-	public static final RegistryObject<EntityType<ShadowSharkEngieBlindEntity>> SHADOW_SHARK_ENGIE_BLIND = register("shadow_shark_engie_blind", EntityType.Builder.<ShadowSharkEngieBlindEntity>of(ShadowSharkEngieBlindEntity::new, MobCategory.MONSTER)
+	public static final RegistryObject<EntityType<ShadowSharkEngieBlindEntity>> SHADOW_SHARK_ENGIE_BLIND = register("shadow_shark_engie_blind", EntityType.Builder.<ShadowSharkEngieBlindEntity>of(ShadowSharkEngieBlindEntity::new, MobCategory.CREATURE)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ShadowSharkEngieBlindEntity::new).fireImmune().sized(0.6f, 1.9f));
 	public static final RegistryObject<EntityType<ClippedbyengieEntity>> CLIPPEDBYENGIE = register("clippedbyengie",
 			EntityType.Builder.<ClippedbyengieEntity>of(ClippedbyengieEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ClippedbyengieEntity::new)
@@ -615,7 +495,7 @@ public class EngiesChaosModEntities {
 
 					.sized(0.7f, 0.9f));
 	public static final RegistryObject<EntityType<OMENEntity>> OMEN = register("omen",
-			EntityType.Builder.<OMENEntity>of(OMENEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(OMENEntity::new).fireImmune().sized(0.6f, 1.9f));
+			EntityType.Builder.<OMENEntity>of(OMENEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(OMENEntity::new).fireImmune().sized(0.6f, 1.9f));
 	public static final RegistryObject<EntityType<DDaySpikeEntity>> D_DAY_SPIKE = register("d_day_spike", EntityType.Builder.<DDaySpikeEntity>of(DDaySpikeEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
 			.setUpdateInterval(3).setCustomClientFactory(DDaySpikeEntity::new).fireImmune().sized(0.5f, 1.8f));
 	public static final RegistryObject<EntityType<DDayAvalancheEntity>> D_DAY_AVALANCHE = register("d_day_avalanche", EntityType.Builder.<DDayAvalancheEntity>of(DDayAvalancheEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
@@ -731,32 +611,8 @@ public class EngiesChaosModEntities {
 			ProtogenEntity.init();
 			QuizzetEntity.init();
 			EnragedNormalEntity.init();
-			EnragedNormal2Entity.init();
-			EnragedNormal3Entity.init();
-			EnragedNormal4Entity.init();
-			EnragedNormal5Entity.init();
-			EnragedNormal6Entity.init();
-			EnragedNormal7Entity.init();
-			EnragedNormal8Entity.init();
-			EnragedNormal9Entity.init();
 			EnragedTNTEntity.init();
-			EnragedTNT2Entity.init();
-			EnragedTNT3Entity.init();
-			EnragedTNT4Entity.init();
-			EnragedTNT5Entity.init();
-			EnragedTNT6Entity.init();
-			EnragedTNT7Entity.init();
-			EnragedTNT8Entity.init();
-			EnragedTNT9Entity.init();
 			EnragedSpeedEntity.init();
-			EnragedSpeed2Entity.init();
-			EnragedSpeed3Entity.init();
-			EnragedSpeed4Entity.init();
-			EnragedSpeed5Entity.init();
-			EnragedSpeed6Entity.init();
-			EnragedSpeed7Entity.init();
-			EnragedSpeed8Entity.init();
-			EnragedSpeed9Entity.init();
 			CommonEngieEntity.init();
 			UncommonEngieEntity.init();
 			RareEngieEntity.init();
@@ -879,32 +735,8 @@ public class EngiesChaosModEntities {
 		event.put(PROTOGEN.get(), ProtogenEntity.createAttributes().build());
 		event.put(QUIZZET.get(), QuizzetEntity.createAttributes().build());
 		event.put(ENRAGED_NORMAL.get(), EnragedNormalEntity.createAttributes().build());
-		event.put(ENRAGED_NORMAL_2.get(), EnragedNormal2Entity.createAttributes().build());
-		event.put(ENRAGED_NORMAL_3.get(), EnragedNormal3Entity.createAttributes().build());
-		event.put(ENRAGED_NORMAL_4.get(), EnragedNormal4Entity.createAttributes().build());
-		event.put(ENRAGED_NORMAL_5.get(), EnragedNormal5Entity.createAttributes().build());
-		event.put(ENRAGED_NORMAL_6.get(), EnragedNormal6Entity.createAttributes().build());
-		event.put(ENRAGED_NORMAL_7.get(), EnragedNormal7Entity.createAttributes().build());
-		event.put(ENRAGED_NORMAL_8.get(), EnragedNormal8Entity.createAttributes().build());
-		event.put(ENRAGED_NORMAL_9.get(), EnragedNormal9Entity.createAttributes().build());
 		event.put(ENRAGED_TNT.get(), EnragedTNTEntity.createAttributes().build());
-		event.put(ENRAGED_TNT_2.get(), EnragedTNT2Entity.createAttributes().build());
-		event.put(ENRAGED_TNT_3.get(), EnragedTNT3Entity.createAttributes().build());
-		event.put(ENRAGED_TNT_4.get(), EnragedTNT4Entity.createAttributes().build());
-		event.put(ENRAGED_TNT_5.get(), EnragedTNT5Entity.createAttributes().build());
-		event.put(ENRAGED_TNT_6.get(), EnragedTNT6Entity.createAttributes().build());
-		event.put(ENRAGED_TNT_7.get(), EnragedTNT7Entity.createAttributes().build());
-		event.put(ENRAGED_TNT_8.get(), EnragedTNT8Entity.createAttributes().build());
-		event.put(ENRAGED_TNT_9.get(), EnragedTNT9Entity.createAttributes().build());
 		event.put(ENRAGED_SPEED.get(), EnragedSpeedEntity.createAttributes().build());
-		event.put(ENRAGED_SPEED_2.get(), EnragedSpeed2Entity.createAttributes().build());
-		event.put(ENRAGED_SPEED_3.get(), EnragedSpeed3Entity.createAttributes().build());
-		event.put(ENRAGED_SPEED_4.get(), EnragedSpeed4Entity.createAttributes().build());
-		event.put(ENRAGED_SPEED_5.get(), EnragedSpeed5Entity.createAttributes().build());
-		event.put(ENRAGED_SPEED_6.get(), EnragedSpeed6Entity.createAttributes().build());
-		event.put(ENRAGED_SPEED_7.get(), EnragedSpeed7Entity.createAttributes().build());
-		event.put(ENRAGED_SPEED_8.get(), EnragedSpeed8Entity.createAttributes().build());
-		event.put(ENRAGED_SPEED_9.get(), EnragedSpeed9Entity.createAttributes().build());
 		event.put(COMMON_ENGIE.get(), CommonEngieEntity.createAttributes().build());
 		event.put(UNCOMMON_ENGIE.get(), UncommonEngieEntity.createAttributes().build());
 		event.put(RARE_ENGIE.get(), RareEngieEntity.createAttributes().build());

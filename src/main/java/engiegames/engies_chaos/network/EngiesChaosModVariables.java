@@ -500,6 +500,7 @@ public class EngiesChaosModVariables {
 		public double hordecooldown = 0;
 		public double previoustime = 0;
 		public double forecastdialogue = 0;
+		public boolean hordespawnstoggle = false;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -744,6 +745,7 @@ public class EngiesChaosModVariables {
 			hordecooldown = nbt.getDouble("hordecooldown");
 			previoustime = nbt.getDouble("previoustime");
 			forecastdialogue = nbt.getDouble("forecastdialogue");
+			hordespawnstoggle = nbt.getBoolean("hordespawnstoggle");
 		}
 
 		@Override
@@ -984,6 +986,7 @@ public class EngiesChaosModVariables {
 			nbt.putDouble("hordecooldown", hordecooldown);
 			nbt.putDouble("previoustime", previoustime);
 			nbt.putDouble("forecastdialogue", forecastdialogue);
+			nbt.putBoolean("hordespawnstoggle", hordespawnstoggle);
 			return nbt;
 		}
 

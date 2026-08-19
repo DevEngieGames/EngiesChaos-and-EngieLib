@@ -14,9 +14,9 @@ import engiegames.engies_chaos.network.EngiesChaosModVariables;
 @Mod.EventBusSubscriber
 public class DDAYHalfTickProcedure {
 	@SubscribeEvent
-	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+	public static void onWorldTick(TickEvent.LevelTickEvent event) {
 		if (event.phase == TickEvent.Phase.END) {
-			execute(event, event.player.level);
+			execute(event, event.level);
 		}
 	}
 

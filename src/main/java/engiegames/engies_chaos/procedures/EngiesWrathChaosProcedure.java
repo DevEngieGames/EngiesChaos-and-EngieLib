@@ -204,6 +204,13 @@ public class EngiesWrathChaosProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					AvalancheSpawnProcedure.execute(world);
 				}
+				if (EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle == true) {
+					if (EngiesChaosModVariables.MapVariables.get(world).hordecooldown <= 0) {
+						EngiesChaosModVariables.MapVariables.get(world).hordecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5));
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						HordeSpawnsProcedure.execute(world);
+					}
+				}
 			}
 		}
 	}

@@ -54,17 +54,57 @@ public class DarkMatterEngieGamesHallowScytheToolInInventoryTickProcedure {
 			itemstack.setHoverName(Component.literal(("\u00A76" + "Rare" + " " + "Dark Matter EngieGames's Hallow Scythe")));
 		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 7500 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 10000) {
 			itemstack.setHoverName(Component.literal(("\u00A76" + "Epic" + " " + "Dark Matter Hallow's Scythe")));
+			itemstack.getOrCreateTag().putBoolean("givenupgradeitem", false);
 		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 10000 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 12500) {
 			itemstack.setHoverName(Component.literal(("\u00A76" + "Legendary" + " " + "Dark Matter Hallow's Scythe")));
+			if (itemstack.getOrCreateTag().getBoolean("givenupgradeitem") == false) {
+				if (entity instanceof Player _player) {
+					ItemStack _setstack = new ItemStack(EngiesChaosModItems.HALLOW_UPGRADE_TO_GOLD.get()).copy();
+					_setstack.setCount(1);
+					ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+				}
+				itemstack.getOrCreateTag().putBoolean("givenupgradeitem", true);
+			}
 		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 12500 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 15000) {
 			itemstack.setHoverName(Component.literal(("\u00A76" + "Mythic" + " " + "Dark Matter Hallow's Scythe")));
+			if (itemstack.getOrCreateTag().getBoolean("givenupgradeitem") == false) {
+				if (entity instanceof Player _player) {
+					ItemStack _setstack = new ItemStack(EngiesChaosModItems.HALLOW_UPGRADE_TO_GOLD.get()).copy();
+					_setstack.setCount(1);
+					ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+				}
+				itemstack.getOrCreateTag().putBoolean("givenupgradeitem", true);
+			}
 		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 15000 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 20000) {
 			itemstack.setHoverName(Component.literal(("\u00A76" + "Exotic" + " " + "Dark Matter Hallow's Scythe")));
+			if (itemstack.getOrCreateTag().getBoolean("givenupgradeitem") == false) {
+				if (entity instanceof Player _player) {
+					ItemStack _setstack = new ItemStack(EngiesChaosModItems.HALLOW_UPGRADE_TO_GOLD.get()).copy();
+					_setstack.setCount(1);
+					ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+				}
+				itemstack.getOrCreateTag().putBoolean("givenupgradeitem", true);
+			}
 		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 20000 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 25000) {
 			itemstack.setHoverName(Component.literal(("\u00A76" + "Engie" + " " + "Dark Matter Hallow's Scythe")));
+			if (itemstack.getOrCreateTag().getBoolean("givenupgradeitem") == false) {
+				if (entity instanceof Player _player) {
+					ItemStack _setstack = new ItemStack(EngiesChaosModItems.HALLOW_UPGRADE_TO_GOLD.get()).copy();
+					_setstack.setCount(1);
+					ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+				}
+				itemstack.getOrCreateTag().putBoolean("givenupgradeitem", true);
+			}
 		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 25000 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 50525) {
 			itemstack.setHoverName(Component.literal(("\u00A76" + "DevEngie's Own" + " " + "Dark Matter Hallow's Scythe")));
-			itemstack.getOrCreateTag().putBoolean("givenupgradeitem", false);
+			if (itemstack.getOrCreateTag().getBoolean("givenupgradeitem") == false) {
+				if (entity instanceof Player _player) {
+					ItemStack _setstack = new ItemStack(EngiesChaosModItems.HALLOW_UPGRADE_TO_GOLD.get()).copy();
+					_setstack.setCount(1);
+					ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+				}
+				itemstack.getOrCreateTag().putBoolean("givenupgradeitem", true);
+			}
 		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 50525 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 50527) {
 			itemstack.setHoverName(Component.literal(("\u00A76" + "EngieGames's Own" + " " + "Dark Matter Hallow's Scythe")));
 			itemstack.getOrCreateTag().putDouble("engiegameshallowscythestatclockcount", 50525);

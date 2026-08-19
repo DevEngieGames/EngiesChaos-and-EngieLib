@@ -33,7 +33,7 @@ public class ExtremelyRareSharkoRandNumProcedure {
 		if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.OVERWORLD && !world.isClientSide()) {
 			EngiesChaosModVariables.MapVariables.get(world).timerforextremelyraresharko = EngiesChaosModVariables.MapVariables.get(world).timerforextremelyraresharko + 0.05;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-			if (EngiesChaosModVariables.MapVariables.get(world).timerforextremelyraresharko >= 30) {
+			if (EngiesChaosModVariables.MapVariables.get(world).timerforextremelyraresharko >= 60) {
 				EngiesChaosModVariables.MapVariables.get(world).timerforextremelyraresharko = 0;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				EngiesChaosModVariables.MapVariables.get(world).wormholesharkorandnum = Math.round(Mth.nextDouble(RandomSource.create(), 0, 691));

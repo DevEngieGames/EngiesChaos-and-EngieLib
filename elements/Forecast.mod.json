@@ -18,10 +18,10 @@
       {
         "type": "image",
         "data": {
-          "image": "newforecastdaytime.png",
+          "image": "newforecastversionnumb.png",
           "use1Xscale": true,
           "displayCondition": {
-            "name": "Daycheck"
+            "name": "ForecastVersionDisplayOn"
           },
           "anchorPoint": "TOP_CENTER",
           "x": 33,
@@ -32,10 +32,10 @@
       {
         "type": "image",
         "data": {
-          "image": "newforecastnighttime.png",
+          "image": "newforecastversionnumberrored.png",
           "use1Xscale": true,
           "displayCondition": {
-            "name": "Nightcheck"
+            "name": "ForecastVersionDisplayOff"
           },
           "anchorPoint": "TOP_CENTER",
           "x": 33,
@@ -77,7 +77,7 @@
           "image": "newforecaststatement.png",
           "use1Xscale": true,
           "displayCondition": {
-            "name": "ForecastDisplay17"
+            "name": "ForecastStatementMainDisplay"
           },
           "anchorPoint": "TOP_CENTER",
           "x": 33,
@@ -88,7 +88,7 @@
       {
         "type": "image",
         "data": {
-          "image": "newforecaststatementdooms1.png",
+          "image": "newforecastdoomsdialogue1.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "DoomsdayDialogueForecastDisplay1"
@@ -102,7 +102,7 @@
       {
         "type": "image",
         "data": {
-          "image": "newforecaststatementdooms2.png",
+          "image": "newforecastdoomsdialogue2.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "DoomsdayDialogueForecastDisplay2"
@@ -116,7 +116,7 @@
       {
         "type": "image",
         "data": {
-          "image": "newforecaststatementdooms3.png",
+          "image": "newforecastdoomsdialogue3.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "DoomsdayDialogueForecastDisplay3"
@@ -130,10 +130,178 @@
       {
         "type": "image",
         "data": {
-          "image": "newforecaststatementdooms4.png",
+          "image": "newforecastdoomsdialogue4.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "DoomsdayDialogueForecastDisplay4"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecastsuperdoomsdialogue5.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "SuperDoomsdayDialogueForecastDisplay5"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecastsuperdoomsdialogue6.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "SuperDoomsdayDialogueForecastDisplay6"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecasttheenddialogue1.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "TheEndDialogueForecastDisplay1"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecasttheenddialogue2.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "TheEndDialogueForecastDisplay2"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecasttheenddialogue3.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "TheEndDialogueForecastDisplay3"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecasttheenddialogue4.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "TheEndDialogueForecastDisplay4"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecasttheenddialogue5.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "TheEndDialogueForecastDisplay5"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecastengieswrathdialogue1.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "EngiesWrathDialogueForecastDisplay1"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecastengieswrathdialogue2.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "EngiesWrathDialogueForecastDisplay2"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecastengieswrathdialogue3.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "EngiesWrathDialogueForecastDisplay3"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecastengieswrathdialogue4.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "EngiesWrathDialogueForecastDisplay4"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "newforecastengieswrathdialogue5.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "EngiesWrathDialogueForecastDisplay5"
           },
           "anchorPoint": "TOP_CENTER",
           "x": 33,

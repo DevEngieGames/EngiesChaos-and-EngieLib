@@ -22,146 +22,72 @@ import net.minecraft.core.BlockPos;
 import java.util.Comparator;
 
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
-import engiegames.engies_chaos.entity.ShadowSharkEngieEntity;
 import engiegames.engies_chaos.entity.ShadowSharkEngieBlindEntity;
 
 public class ShadowSharkEngieOnInitialEntitySpawnProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getDisplayName().getString()).equals("[RE:All About Engie Developer] Dev")) {
-			if (Math.random() <= 0.49) {
-				if (((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getDirection()) == Direction.NORTH) {
-					{
-						Entity _ent = entity;
-						_ent.teleportTo(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX()), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
-								((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ() + Mth.nextDouble(RandomSource.create(), 5, 25)));
-						if (_ent instanceof ServerPlayer _serverPlayer)
-							_serverPlayer.connection.teleport(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX()), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
-									((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ() + Mth.nextDouble(RandomSource.create(), 5, 25)), _ent.getYRot(), _ent.getXRot());
-					}
-				} else if (((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getDirection()) == Direction.SOUTH) {
-					{
-						Entity _ent = entity;
-						_ent.teleportTo(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX()), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
-								((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ() - Mth.nextDouble(RandomSource.create(), 5, 25)));
-						if (_ent instanceof ServerPlayer _serverPlayer)
-							_serverPlayer.connection.teleport(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX()), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
-									((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ() - Mth.nextDouble(RandomSource.create(), 5, 25)), _ent.getYRot(), _ent.getXRot());
-					}
-				} else if (((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getDirection()) == Direction.EAST) {
-					{
-						Entity _ent = entity;
-						_ent.teleportTo(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX() - Mth.nextDouble(RandomSource.create(), 5, 25)), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
-								((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ()));
-						if (_ent instanceof ServerPlayer _serverPlayer)
-							_serverPlayer.connection.teleport(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX() - Mth.nextDouble(RandomSource.create(), 5, 25)), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
-									((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ()), _ent.getYRot(), _ent.getXRot());
-					}
-				} else if (((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getDirection()) == Direction.WEST) {
-					{
-						Entity _ent = entity;
-						_ent.teleportTo(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX() + Mth.nextDouble(RandomSource.create(), 5, 25)), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
-								((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ()));
-						if (_ent instanceof ServerPlayer _serverPlayer)
-							_serverPlayer.connection.teleport(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX() + Mth.nextDouble(RandomSource.create(), 5, 25)), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
-									((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ()), _ent.getYRot(), _ent.getXRot());
-					}
+		if (Math.random() <= 0.49) {
+			if (((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getDirection()) == Direction.NORTH) {
+				{
+					Entity _ent = entity;
+					_ent.teleportTo(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX()), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
+							((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ() + Mth.nextDouble(RandomSource.create(), 5, 25)));
+					if (_ent instanceof ServerPlayer _serverPlayer)
+						_serverPlayer.connection.teleport(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX()), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
+								((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ() + Mth.nextDouble(RandomSource.create(), 5, 25)), _ent.getYRot(), _ent.getXRot());
 				}
-				if (world instanceof Level _level) {
-					if (!_level.isClientSide()) {
-						_level.playSound(null, new BlockPos((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX(), (findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY(),
-								(findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("ambient.cave")), SoundSource.AMBIENT, 1, 1);
-					} else {
-						_level.playLocalSound(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX()), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
-								((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("ambient.cave")), SoundSource.AMBIENT, 1, 1, false);
-					}
+			} else if (((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getDirection()) == Direction.SOUTH) {
+				{
+					Entity _ent = entity;
+					_ent.teleportTo(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX()), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
+							((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ() - Mth.nextDouble(RandomSource.create(), 5, 25)));
+					if (_ent instanceof ServerPlayer _serverPlayer)
+						_serverPlayer.connection.teleport(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX()), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
+								((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ() - Mth.nextDouble(RandomSource.create(), 5, 25)), _ent.getYRot(), _ent.getXRot());
 				}
-			} else if (Math.random() >= 0.5) {
-				if (!entity.level.isClientSide())
-					entity.discard();
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = new ShadowSharkEngieBlindEntity(EngiesChaosModEntities.SHADOW_SHARK_ENGIE_BLIND.get(), _level);
-					entityToSpawn.moveTo(x, y, z, 0, 0);
-					entityToSpawn.setYBodyRot(0);
-					entityToSpawn.setYHeadRot(0);
-					entityToSpawn.setDeltaMovement(0, 0, 0);
-					if (entityToSpawn instanceof Mob _mobToSpawn)
-						_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-					_level.addFreshEntity(entityToSpawn);
+			} else if (((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getDirection()) == Direction.EAST) {
+				{
+					Entity _ent = entity;
+					_ent.teleportTo(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX() - Mth.nextDouble(RandomSource.create(), 5, 25)), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
+							((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ()));
+					if (_ent instanceof ServerPlayer _serverPlayer)
+						_serverPlayer.connection.teleport(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX() - Mth.nextDouble(RandomSource.create(), 5, 25)), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
+								((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ()), _ent.getYRot(), _ent.getXRot());
+				}
+			} else if (((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getDirection()) == Direction.WEST) {
+				{
+					Entity _ent = entity;
+					_ent.teleportTo(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX() + Mth.nextDouble(RandomSource.create(), 5, 25)), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
+							((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ()));
+					if (_ent instanceof ServerPlayer _serverPlayer)
+						_serverPlayer.connection.teleport(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX() + Mth.nextDouble(RandomSource.create(), 5, 25)), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
+								((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ()), _ent.getYRot(), _ent.getXRot());
 				}
 			}
-		} else {
-			if (!world.getEntitiesOfClass(ShadowSharkEngieEntity.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(500 / 2d), e -> true).isEmpty()) {
-				if (!entity.level.isClientSide())
-					entity.discard();
-			} else if (!(!world.getEntitiesOfClass(ShadowSharkEngieEntity.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(500 / 2d), e -> true).isEmpty())) {
-				if (Math.random() > 0.05) {
-					if (!entity.level.isClientSide())
-						entity.discard();
-				} else if (Math.random() <= 0.05) {
-					if (Math.random() <= 0.49) {
-						if (((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getDirection()) == Direction.NORTH) {
-							{
-								Entity _ent = entity;
-								_ent.teleportTo(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX()), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
-										((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ() + Mth.nextDouble(RandomSource.create(), 5, 25)));
-								if (_ent instanceof ServerPlayer _serverPlayer)
-									_serverPlayer.connection.teleport(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX()), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
-											((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ() + Mth.nextDouble(RandomSource.create(), 5, 25)), _ent.getYRot(), _ent.getXRot());
-							}
-						} else if (((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getDirection()) == Direction.SOUTH) {
-							{
-								Entity _ent = entity;
-								_ent.teleportTo(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX()), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
-										((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ() - Mth.nextDouble(RandomSource.create(), 5, 25)));
-								if (_ent instanceof ServerPlayer _serverPlayer)
-									_serverPlayer.connection.teleport(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX()), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
-											((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ() - Mth.nextDouble(RandomSource.create(), 5, 25)), _ent.getYRot(), _ent.getXRot());
-							}
-						} else if (((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getDirection()) == Direction.EAST) {
-							{
-								Entity _ent = entity;
-								_ent.teleportTo(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX() - Mth.nextDouble(RandomSource.create(), 5, 25)), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
-										((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ()));
-								if (_ent instanceof ServerPlayer _serverPlayer)
-									_serverPlayer.connection.teleport(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX() - Mth.nextDouble(RandomSource.create(), 5, 25)),
-											((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ()), _ent.getYRot(), _ent.getXRot());
-							}
-						} else if (((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getDirection()) == Direction.WEST) {
-							{
-								Entity _ent = entity;
-								_ent.teleportTo(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX() + Mth.nextDouble(RandomSource.create(), 5, 25)), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
-										((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ()));
-								if (_ent instanceof ServerPlayer _serverPlayer)
-									_serverPlayer.connection.teleport(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX() + Mth.nextDouble(RandomSource.create(), 5, 25)),
-											((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ()), _ent.getYRot(), _ent.getXRot());
-							}
-						}
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, new BlockPos((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX(), (findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY(),
-										(findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("ambient.cave")), SoundSource.AMBIENT, 1, 1);
-							} else {
-								_level.playLocalSound(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX()), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
-										((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("ambient.cave")), SoundSource.AMBIENT, 1, 1, false);
-							}
-						}
-					} else if (Math.random() >= 0.5) {
-						if (!entity.level.isClientSide())
-							entity.discard();
-						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = new ShadowSharkEngieBlindEntity(EngiesChaosModEntities.SHADOW_SHARK_ENGIE_BLIND.get(), _level);
-							entityToSpawn.moveTo(x, y, z, 0, 0);
-							entityToSpawn.setYBodyRot(0);
-							entityToSpawn.setYHeadRot(0);
-							entityToSpawn.setDeltaMovement(0, 0, 0);
-							if (entityToSpawn instanceof Mob _mobToSpawn)
-								_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-							_level.addFreshEntity(entityToSpawn);
-						}
-					}
+			if (world instanceof Level _level) {
+				if (!_level.isClientSide()) {
+					_level.playSound(null,
+							new BlockPos((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX(), (findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY(), (findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ()),
+							ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("ambient.cave")), SoundSource.AMBIENT, 1, 1);
+				} else {
+					_level.playLocalSound(((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getX()), ((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getY()),
+							((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("ambient.cave")), SoundSource.AMBIENT, 1, 1, false);
 				}
+			}
+		} else if (Math.random() >= 0.5) {
+			if (!entity.level.isClientSide())
+				entity.discard();
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = new ShadowSharkEngieBlindEntity(EngiesChaosModEntities.SHADOW_SHARK_ENGIE_BLIND.get(), _level);
+				entityToSpawn.moveTo(x, y, z, 0, 0);
+				entityToSpawn.setYBodyRot(0);
+				entityToSpawn.setYHeadRot(0);
+				entityToSpawn.setDeltaMovement(0, 0, 0);
+				if (entityToSpawn instanceof Mob _mobToSpawn)
+					_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+				_level.addFreshEntity(entityToSpawn);
 			}
 		}
 	}

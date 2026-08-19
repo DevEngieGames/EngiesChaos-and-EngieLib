@@ -4,6 +4,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
 
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.projectile.ThrownPotion;
@@ -13,6 +14,7 @@ import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.MobType;
@@ -31,6 +33,7 @@ import net.minecraft.nbt.CompoundTag;
 
 import javax.annotation.Nullable;
 
+import engiegames.engies_chaos.procedures.WormholeSpawningCondProcedure;
 import engiegames.engies_chaos.procedures.WormholeEngieOnInitialEntitySpawnProcedure;
 import engiegames.engies_chaos.procedures.WormholeEngieOnEntityTickUpdateProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
@@ -143,6 +146,12 @@ public class WormholeEngieEntity extends PathfinderMob {
 	}
 
 	public static void init() {
+		SpawnPlacements.register(EngiesChaosModEntities.WORMHOLE_ENGIE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			return WormholeSpawningCondProcedure.execute();
+		});
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

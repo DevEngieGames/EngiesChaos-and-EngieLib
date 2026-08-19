@@ -102,7 +102,7 @@ public class EnragedTNTEntity extends Monster {
 	@Override
 	public void die(DamageSource source) {
 		super.die(source);
-		TNTSpawnTNTDeathProcedure.execute(this);
+		TNTSpawnTNTDeathProcedure.execute(this.level, this);
 	}
 
 	public static void init() {

@@ -80,17 +80,57 @@ public class EngieGamesAnchorToolInInventoryTickProcedure {
 			itemstack.setHoverName(Component.literal(("\u00A76" + "Rare" + " " + "Roughian Anchor")));
 		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 7500 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 10000) {
 			itemstack.setHoverName(Component.literal(("\u00A76" + "Epic" + " " + "Roughian Anchor")));
+			itemstack.getOrCreateTag().putBoolean("givenupgradeitem", false);
 		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 10000 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 12500) {
 			itemstack.setHoverName(Component.literal(("\u00A76" + "Legendary" + " " + "Roughian Anchor")));
+			if (itemstack.getOrCreateTag().getBoolean("givenupgradeitem") == false) {
+				if (entity instanceof Player _player) {
+					ItemStack _setstack = new ItemStack(EngiesChaosModItems.HALLOW_UPGRADE_TO_GOLD.get()).copy();
+					_setstack.setCount(1);
+					ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+				}
+				itemstack.getOrCreateTag().putBoolean("givenupgradeitem", true);
+			}
 		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 12500 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 15000) {
 			itemstack.setHoverName(Component.literal(("\u00A76" + "Mythic" + " " + "Roughian Anchor")));
+			if (itemstack.getOrCreateTag().getBoolean("givenupgradeitem") == false) {
+				if (entity instanceof Player _player) {
+					ItemStack _setstack = new ItemStack(EngiesChaosModItems.HALLOW_UPGRADE_TO_GOLD.get()).copy();
+					_setstack.setCount(1);
+					ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+				}
+				itemstack.getOrCreateTag().putBoolean("givenupgradeitem", true);
+			}
 		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 17500 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 20000) {
 			itemstack.setHoverName(Component.literal(("\u00A76" + "Exotic" + " " + "Roughian Anchor")));
+			if (itemstack.getOrCreateTag().getBoolean("givenupgradeitem") == false) {
+				if (entity instanceof Player _player) {
+					ItemStack _setstack = new ItemStack(EngiesChaosModItems.HALLOW_UPGRADE_TO_GOLD.get()).copy();
+					_setstack.setCount(1);
+					ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+				}
+				itemstack.getOrCreateTag().putBoolean("givenupgradeitem", true);
+			}
 		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 20000 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 25000) {
 			itemstack.setHoverName(Component.literal(("\u00A76" + "Engie" + " " + "Roughian Anchor")));
+			if (itemstack.getOrCreateTag().getBoolean("givenupgradeitem") == false) {
+				if (entity instanceof Player _player) {
+					ItemStack _setstack = new ItemStack(EngiesChaosModItems.HALLOW_UPGRADE_TO_GOLD.get()).copy();
+					_setstack.setCount(1);
+					ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+				}
+				itemstack.getOrCreateTag().putBoolean("givenupgradeitem", true);
+			}
 		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 25000 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 50525) {
 			itemstack.setHoverName(Component.literal(("\u00A76" + "DevEngie's Own" + " " + "Roughian Anchor")));
-			itemstack.getOrCreateTag().putBoolean("givenupgradeitem", false);
+			if (itemstack.getOrCreateTag().getBoolean("givenupgradeitem") == false) {
+				if (entity instanceof Player _player) {
+					ItemStack _setstack = new ItemStack(EngiesChaosModItems.HALLOW_UPGRADE_TO_GOLD.get()).copy();
+					_setstack.setCount(1);
+					ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+				}
+				itemstack.getOrCreateTag().putBoolean("givenupgradeitem", true);
+			}
 		} else if (itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") >= 50525 && itemstack.getOrCreateTag().getDouble("engiegameshallowscythestatclockcount") < 50527) {
 			itemstack.setHoverName(Component.literal(("\u00A76" + "EngieGames's Own" + " " + "Roughian Anchor")));
 			itemstack.getOrCreateTag().putDouble("engiegameshallowscythestatclockcount", 50525);

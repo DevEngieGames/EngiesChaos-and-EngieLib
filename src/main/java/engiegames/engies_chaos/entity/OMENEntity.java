@@ -32,6 +32,7 @@ import net.minecraft.nbt.CompoundTag;
 
 import javax.annotation.Nullable;
 
+import engiegames.engies_chaos.procedures.OMENSpawningCondProcedure;
 import engiegames.engies_chaos.procedures.OMENOnInitialEntitySpawnProcedure;
 import engiegames.engies_chaos.procedures.OMENOnEntityTickUpdateProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
@@ -154,7 +155,12 @@ public class OMENEntity extends PathfinderMob {
 	}
 
 	public static void init() {
-		SpawnPlacements.register(EngiesChaosModEntities.OMEN.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
+		SpawnPlacements.register(EngiesChaosModEntities.OMEN.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			return OMENSpawningCondProcedure.execute();
+		});
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

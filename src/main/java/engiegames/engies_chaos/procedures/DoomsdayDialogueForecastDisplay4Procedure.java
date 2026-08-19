@@ -6,8 +6,7 @@ import engiegames.engies_chaos.network.EngiesChaosModVariables;
 
 public class DoomsdayDialogueForecastDisplay4Procedure {
 	public static boolean execute(LevelAccessor world) {
-		if (EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum == 4
-				&& (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true || EngiesChaosModVariables.MapVariables.get(world).sddaystart == true || EngiesChaosModVariables.MapVariables.get(world).thestart == true)) {
+		if (EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum == 4 && (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true || EngiesChaosModVariables.MapVariables.get(world).sddaystart == true)) {
 			return true;
 		}
 		return false;
