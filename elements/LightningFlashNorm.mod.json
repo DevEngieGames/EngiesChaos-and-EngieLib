@@ -2,7 +2,7 @@
   "_fv": 79,
   "_type": "overlay",
   "definition": {
-    "priority": "LOWEST",
+    "priority": "HIGHEST",
     "components": [],
     "baseTexture": "lightningflashnorm.png",
     "overlayTarget": "Ingame",

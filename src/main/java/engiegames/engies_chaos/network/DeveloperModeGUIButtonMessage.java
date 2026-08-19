@@ -15,6 +15,7 @@ import java.util.function.Supplier;
 import engiegames.engies_chaos.procedures.ToggleSpecialHealthButtonProcedure;
 import engiegames.engies_chaos.procedures.StunNearbyMobsWithDurationProcedure;
 import engiegames.engies_chaos.procedures.SetStatClockNumProcedure;
+import engiegames.engies_chaos.procedures.SetRiskDevModeProcedure;
 import engiegames.engies_chaos.procedures.SetHealthToMaxProcedure;
 import engiegames.engies_chaos.procedures.SetDifficultyDevModeProcedure;
 import engiegames.engies_chaos.procedures.RemovePlayerImmunityProcedure;
@@ -88,17 +89,21 @@ public class DeveloperModeGUIButtonMessage {
 
 			RemovePlayerImmunityProcedure.execute(entity);
 		}
-		if (buttonID == 8) {
+		if (buttonID == 7) {
 
 			StunNearbyMobsWithDurationProcedure.execute(world, entity);
 		}
-		if (buttonID == 9) {
+		if (buttonID == 8) {
 
 			ToggleSpecialHealthButtonProcedure.execute(world);
 		}
-		if (buttonID == 10) {
+		if (buttonID == 9) {
 
 			SetStatClockNumProcedure.execute(entity);
+		}
+		if (buttonID == 10) {
+
+			SetRiskDevModeProcedure.execute(world, entity);
 		}
 	}
 

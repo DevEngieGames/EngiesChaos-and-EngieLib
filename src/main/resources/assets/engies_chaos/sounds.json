@@ -8,15 +8,6 @@
       }
     ]
   },
-  "doomsday_start": {
-    "subtitle": "subtitles.doomsday_start",
-    "sounds": [
-      {
-        "name": "engies_chaos:doomsdayphase1",
-        "stream": true
-      }
-    ]
-  },
   "hotlinemiami2-run": {
     "subtitle": "subtitles.hotlinemiami2-run",
     "sounds": [
@@ -170,14 +161,6 @@
       }
     ]
   },
-  "alarmfordday": {
-    "sounds": [
-      {
-        "name": "engies_chaos:alarmfordday",
-        "stream": true
-      }
-    ]
-  },
   "noneshallive": {
     "sounds": [
       {
@@ -199,6 +182,22 @@
       {
         "name": "engies_chaos:orchestralhitb",
         "stream": false
+      }
+    ]
+  },
+  "doomshalf1": {
+    "sounds": [
+      {
+        "name": "engies_chaos:doomshalf1",
+        "stream": true
+      }
+    ]
+  },
+  "doomshalf2": {
+    "sounds": [
+      {
+        "name": "engies_chaos:doomshalf2",
+        "stream": true
       }
     ]
   }

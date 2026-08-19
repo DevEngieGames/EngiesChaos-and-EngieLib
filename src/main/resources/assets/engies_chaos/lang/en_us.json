@@ -2783,5 +2783,8 @@
   "gui.engies_chaos.custom_health_overlay.label_9999": "1024",
   "gui.engies_chaos.custom_health_overlay.label_99993": "1024",
   "gui.engies_chaos.custom_health_overlay.label_proc_absorption_health_check": "1024",
-  "gui.engies_chaos.custom_health_overlay.label_only16characters": "Only16Characters"
+  "gui.engies_chaos.custom_health_overlay.label_only16characters": "Only16Characters",
+  "gui.engies_chaos.developer_mode_gui.button_set_doomsday_risk": "Set Doomsday Risk.",
+  "subtitles.doomshalf1": "",
+  "subtitles.doomshalf2": ""
 }

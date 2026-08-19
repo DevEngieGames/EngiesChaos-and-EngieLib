@@ -8,8 +8,14 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.CommandSource;
 
 import javax.annotation.Nullable;
+
+import java.util.ArrayList;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 
@@ -30,41 +36,31 @@ public class DDAYSongTickProcedure {
 		if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.OVERWORLD) {
 			if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true || EngiesChaosModVariables.MapVariables.get(world).sddaystart == true || EngiesChaosModVariables.MapVariables.get(world).thestart == true
 					|| EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true) {
-				if (EngiesChaosModVariables.MapVariables.get(world).ddayhalf1 == true) {
-					EngiesChaosModVariables.MapVariables.get(world).doomsdaymainsongtimer = EngiesChaosModVariables.MapVariables.get(world).doomsdaymainsongtimer + 0.05;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (EngiesChaosModVariables.MapVariables.get(world).doomsdaymainsongtimer >= 142) {
-						EngiesChaosModVariables.MapVariables.get(world).doomsdaymainsongtimer = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).ddaymainsongplay = true;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+				for (Entity entityiterator : new ArrayList<>(world.players())) {
+					{
+						Entity _ent = entityiterator;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @s music minecraft:music.game");
+						}
 					}
+				}
+				if (EngiesChaosModVariables.MapVariables.get(world).ddayhalf1 == true) {
 					EngiesChaosModVariables.MapVariables.get(world).firstplayofaltsoundtrack = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayhalf1 == false) {
 					EngiesChaosModVariables.MapVariables.get(world).doomsdayaltsongtimer = EngiesChaosModVariables.MapVariables.get(world).doomsdayaltsongtimer + 0.05;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart == true) {
-						if (EngiesChaosModVariables.MapVariables.get(world).doomsdayaltsongtimer >= 125) {
-							EngiesChaosModVariables.MapVariables.get(world).doomsdayaltsongtimer = 0;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							EngiesChaosModVariables.MapVariables.get(world).ddayaltsongplay = true;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						}
-					} else if (EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart == false) {
-						if (EngiesChaosModVariables.MapVariables.get(world).doomsdayaltsongtimer >= 100) {
-							EngiesChaosModVariables.MapVariables.get(world).doomsdayaltsongtimer = 0;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							EngiesChaosModVariables.MapVariables.get(world).ddayaltsongplay = true;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						}
+					if (EngiesChaosModVariables.MapVariables.get(world).firstplayofaltsoundtrack == false) {
+						EngiesChaosModVariables.MapVariables.get(world).ddayaltsongplay = true;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).firstplayofaltsoundtrack = true;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 					if (EngiesChaosModVariables.MapVariables.get(world).doomsdayaltsongtimer >= 4.75 && EngiesChaosModVariables.MapVariables.get(world).firstplayofaltsoundtrack == false) {
 						EngiesChaosModVariables.MapVariables.get(world).ddayprophshow = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = false;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).firstplayofaltsoundtrack = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 				}

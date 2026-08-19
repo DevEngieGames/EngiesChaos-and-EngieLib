@@ -11,7 +11,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.Component;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.Minecraft;
 
@@ -24,6 +23,7 @@ import engiegames.engies_chaos.procedures.RiskTextGuaranteedProcedure;
 import engiegames.engies_chaos.procedures.RiskTextExtremeProcedure;
 import engiegames.engies_chaos.procedures.OverhealShowProcedure;
 import engiegames.engies_chaos.procedures.Only16CharactersProcedure;
+import engiegames.engies_chaos.procedures.Only16Characters2Procedure;
 import engiegames.engies_chaos.procedures.NormalShowProcedure;
 import engiegames.engies_chaos.procedures.LowShowProcedure;
 import engiegames.engies_chaos.procedures.HealthCheckProcedure;
@@ -66,7 +66,9 @@ public class CustomHealthOverlayOverlay {
 			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newhpoverlay.png"));
 			Minecraft.getInstance().gui.blit(event.getPoseStack(), 0, h - 42, 0, 0, 132, 42, 132, 42);
 
-			Minecraft.getInstance().font.draw(event.getPoseStack(), Component.translatable("gui.engies_chaos.custom_health_overlay.label_only16characters"), w / 2 + -209, h / 2 + 82, -16777216);
+			Minecraft.getInstance().font.draw(event.getPoseStack(),
+
+					Only16Characters2Procedure.execute(entity), 4, h - 38, -16777216);
 			Minecraft.getInstance().font.draw(event.getPoseStack(),
 
 					Only16CharactersProcedure.execute(entity), 3, h - 39, -1);

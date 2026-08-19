@@ -35,10 +35,10 @@ public class DeveloperModeGUIScreen extends AbstractContainerScreen<DeveloperMod
 	Button button_duplicate_item;
 	Button button_give_immunity;
 	Button button_give_immunity1;
-	Button button_kill_mobs_nearby;
 	Button button_stun_nearby_mobs;
 	Button button_toggle_special_health;
 	Button button_confirm_stat_clock_number_count;
+	Button button_set_doomsday_risk;
 
 	public DeveloperModeGUIScreen(DeveloperModeGUIMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -127,7 +127,7 @@ public class DeveloperModeGUIScreen extends AbstractContainerScreen<DeveloperMod
 	@Override
 	protected void renderLabels(PoseStack ms, int mouseX, int mouseY) {
 		this.font.draw(ms, Component.translatable("gui.engies_chaos.developer_mode_gui.label_devgui"), 4, 3, -16777216);
-		this.font.draw(ms, StunRadiusGetForDevGUIProcedure.execute(world), 117, 123, -16777216);
+		this.font.draw(ms, StunRadiusGetForDevGUIProcedure.execute(world), 129, 139, -16777216);
 	}
 
 	@Override
@@ -149,7 +149,7 @@ public class DeveloperModeGUIScreen extends AbstractContainerScreen<DeveloperMod
 		});
 		number.setSuggestion(Component.translatable("gui.engies_chaos.developer_mode_gui.number").getString());
 		this.addWidget(this.number);
-		button_raise = new Button(this.leftPos + 117, this.topPos + 140, 51, 20, Component.translatable("gui.engies_chaos.developer_mode_gui.button_raise"), e -> {
+		button_raise = new Button(this.leftPos + 129, this.topPos + 119, 51, 20, Component.translatable("gui.engies_chaos.developer_mode_gui.button_raise"), e -> {
 			int x = DeveloperModeGUIScreen.this.x;
 			int y = DeveloperModeGUIScreen.this.y;
 			if (true) {
@@ -158,7 +158,7 @@ public class DeveloperModeGUIScreen extends AbstractContainerScreen<DeveloperMod
 			}
 		});
 		this.addRenderableWidget(button_raise);
-		button_lower = new Button(this.leftPos + 191, this.topPos + 140, 51, 20, Component.translatable("gui.engies_chaos.developer_mode_gui.button_lower"), e -> {
+		button_lower = new Button(this.leftPos + 191, this.topPos + 119, 51, 20, Component.translatable("gui.engies_chaos.developer_mode_gui.button_lower"), e -> {
 			int x = DeveloperModeGUIScreen.this.x;
 			int y = DeveloperModeGUIScreen.this.y;
 			if (true) {
@@ -176,7 +176,7 @@ public class DeveloperModeGUIScreen extends AbstractContainerScreen<DeveloperMod
 			}
 		});
 		this.addRenderableWidget(button_heal_self);
-		button_set_difficulty = new Button(this.leftPos + 139, this.topPos + 98, 103, 20, Component.translatable("gui.engies_chaos.developer_mode_gui.button_set_difficulty"), e -> {
+		button_set_difficulty = new Button(this.leftPos + 3, this.topPos + 140, 103, 20, Component.translatable("gui.engies_chaos.developer_mode_gui.button_set_difficulty"), e -> {
 			int x = DeveloperModeGUIScreen.this.x;
 			int y = DeveloperModeGUIScreen.this.y;
 			if (true) {
@@ -212,15 +212,12 @@ public class DeveloperModeGUIScreen extends AbstractContainerScreen<DeveloperMod
 			}
 		});
 		this.addRenderableWidget(button_give_immunity1);
-		button_kill_mobs_nearby = new Button(this.leftPos + 3, this.topPos + 140, 113, 20, Component.translatable("gui.engies_chaos.developer_mode_gui.button_kill_mobs_nearby"), e -> {
-		});
-		this.addRenderableWidget(button_kill_mobs_nearby);
-		button_stun_nearby_mobs = new Button(this.leftPos + 3, this.topPos + 119, 113, 20, Component.translatable("gui.engies_chaos.developer_mode_gui.button_stun_nearby_mobs"), e -> {
+		button_stun_nearby_mobs = new Button(this.leftPos + 129, this.topPos + 98, 113, 20, Component.translatable("gui.engies_chaos.developer_mode_gui.button_stun_nearby_mobs"), e -> {
 			int x = DeveloperModeGUIScreen.this.x;
 			int y = DeveloperModeGUIScreen.this.y;
 			if (true) {
-				EngiesChaosMod.PACKET_HANDLER.sendToServer(new DeveloperModeGUIButtonMessage(8, x, y, z));
-				DeveloperModeGUIButtonMessage.handleButtonAction(entity, 8, x, y, z);
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new DeveloperModeGUIButtonMessage(7, x, y, z));
+				DeveloperModeGUIButtonMessage.handleButtonAction(entity, 7, x, y, z);
 			}
 		});
 		this.addRenderableWidget(button_stun_nearby_mobs);
@@ -228,8 +225,8 @@ public class DeveloperModeGUIScreen extends AbstractContainerScreen<DeveloperMod
 			int x = DeveloperModeGUIScreen.this.x;
 			int y = DeveloperModeGUIScreen.this.y;
 			if (true) {
-				EngiesChaosMod.PACKET_HANDLER.sendToServer(new DeveloperModeGUIButtonMessage(9, x, y, z));
-				DeveloperModeGUIButtonMessage.handleButtonAction(entity, 9, x, y, z);
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new DeveloperModeGUIButtonMessage(8, x, y, z));
+				DeveloperModeGUIButtonMessage.handleButtonAction(entity, 8, x, y, z);
 			}
 		});
 		this.addRenderableWidget(button_toggle_special_health);
@@ -237,11 +234,20 @@ public class DeveloperModeGUIScreen extends AbstractContainerScreen<DeveloperMod
 			int x = DeveloperModeGUIScreen.this.x;
 			int y = DeveloperModeGUIScreen.this.y;
 			if (true) {
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new DeveloperModeGUIButtonMessage(9, x, y, z));
+				DeveloperModeGUIButtonMessage.handleButtonAction(entity, 9, x, y, z);
+			}
+		});
+		this.addRenderableWidget(button_confirm_stat_clock_number_count);
+		button_set_doomsday_risk = new Button(this.leftPos + 3, this.topPos + 119, 119, 20, Component.translatable("gui.engies_chaos.developer_mode_gui.button_set_doomsday_risk"), e -> {
+			int x = DeveloperModeGUIScreen.this.x;
+			int y = DeveloperModeGUIScreen.this.y;
+			if (true) {
 				EngiesChaosMod.PACKET_HANDLER.sendToServer(new DeveloperModeGUIButtonMessage(10, x, y, z));
 				DeveloperModeGUIButtonMessage.handleButtonAction(entity, 10, x, y, z);
 			}
 		});
-		this.addRenderableWidget(button_confirm_stat_clock_number_count);
+		this.addRenderableWidget(button_set_doomsday_risk);
 	}
 
 	@Override

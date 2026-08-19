@@ -23,7 +23,7 @@ public class GlitchSharkoOnEntityTickUpdateProcedure {
 						if (entity instanceof GlitchSharkoEntity _datEntSetI)
 							_datEntSetI.getEntityData().set(GlitchSharkoEntity.DATA_SharkoState, 3);
 					}
-					if (world instanceof Level _lvl8 && _lvl8.isDay() && entity.getPersistentData().getDouble("SharkoStateTimerForChance") >= 120) {
+					if (world instanceof Level _lvl8 && _lvl8.isDay() && entity.getPersistentData().getDouble("SharkoStateTimerForChance") >= 60) {
 						entity.getPersistentData().putDouble("SharkoStateTimerForChance", 0);
 						if (!entity.isInWater() && !entity.isInLava()) {
 							if ((entity instanceof GlitchSharkoEntity _datEntI ? _datEntI.getEntityData().get(GlitchSharkoEntity.DATA_SharkoState) : 0) == 1) {
@@ -80,7 +80,7 @@ public class GlitchSharkoOnEntityTickUpdateProcedure {
 						}
 					}
 				} else {
-					if (world instanceof Level _lvl27 && _lvl27.isDay() && entity.getPersistentData().getDouble("SharkoStateTimerForChance") >= 120) {
+					if (world instanceof Level _lvl27 && _lvl27.isDay() && entity.getPersistentData().getDouble("SharkoStateTimerForChance") >= 60) {
 						entity.getPersistentData().putDouble("SharkoStateTimerForChance", 0);
 						if (!entity.isInWater() && !entity.isInLava()) {
 							if ((entity instanceof GlitchSharkoEntity _datEntI ? _datEntI.getEntityData().get(GlitchSharkoEntity.DATA_SharkoState) : 0) == 1) {

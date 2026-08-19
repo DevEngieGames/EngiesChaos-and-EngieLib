@@ -15,7 +15,6 @@ import engiegames.engies_chaos.EngiesChaosMod;
 public class EngiesChaosModSounds {
 	public static final DeferredRegister<SoundEvent> REGISTRY = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, EngiesChaosMod.MODID);
 	public static final RegistryObject<SoundEvent> BYEBYETHERE = REGISTRY.register("byebyethere", () -> new SoundEvent(new ResourceLocation("engies_chaos", "byebyethere")));
-	public static final RegistryObject<SoundEvent> DOOMSDAY_START = REGISTRY.register("doomsday_start", () -> new SoundEvent(new ResourceLocation("engies_chaos", "doomsday_start")));
 	public static final RegistryObject<SoundEvent> HOTLINEMIAMI2_RUN = REGISTRY.register("hotlinemiami2-run", () -> new SoundEvent(new ResourceLocation("engies_chaos", "hotlinemiami2-run")));
 	public static final RegistryObject<SoundEvent> RIFTOPENS = REGISTRY.register("riftopens", () -> new SoundEvent(new ResourceLocation("engies_chaos", "riftopens")));
 	public static final RegistryObject<SoundEvent> CHURCHBELLS = REGISTRY.register("churchbells", () -> new SoundEvent(new ResourceLocation("engies_chaos", "churchbells")));
@@ -33,8 +32,9 @@ public class EngiesChaosModSounds {
 	public static final RegistryObject<SoundEvent> DIALOGUEPROMT = REGISTRY.register("dialoguepromt", () -> new SoundEvent(new ResourceLocation("engies_chaos", "dialoguepromt")));
 	public static final RegistryObject<SoundEvent> GOBLETHEAL = REGISTRY.register("gobletheal", () -> new SoundEvent(new ResourceLocation("engies_chaos", "gobletheal")));
 	public static final RegistryObject<SoundEvent> AVALANCHE = REGISTRY.register("avalanche", () -> new SoundEvent(new ResourceLocation("engies_chaos", "avalanche")));
-	public static final RegistryObject<SoundEvent> ALARMFORDDAY = REGISTRY.register("alarmfordday", () -> new SoundEvent(new ResourceLocation("engies_chaos", "alarmfordday")));
 	public static final RegistryObject<SoundEvent> NONESHALLIVE = REGISTRY.register("noneshallive", () -> new SoundEvent(new ResourceLocation("engies_chaos", "noneshallive")));
 	public static final RegistryObject<SoundEvent> INTOBATTLE = REGISTRY.register("intobattle", () -> new SoundEvent(new ResourceLocation("engies_chaos", "intobattle")));
 	public static final RegistryObject<SoundEvent> DOOMSDAYDISASTERREVEAL = REGISTRY.register("doomsdaydisasterreveal", () -> new SoundEvent(new ResourceLocation("engies_chaos", "doomsdaydisasterreveal")));
+	public static final RegistryObject<SoundEvent> DOOMSHALF1 = REGISTRY.register("doomshalf1", () -> new SoundEvent(new ResourceLocation("engies_chaos", "doomshalf1")));
+	public static final RegistryObject<SoundEvent> DOOMSHALF2 = REGISTRY.register("doomshalf2", () -> new SoundEvent(new ResourceLocation("engies_chaos", "doomshalf2")));
 }

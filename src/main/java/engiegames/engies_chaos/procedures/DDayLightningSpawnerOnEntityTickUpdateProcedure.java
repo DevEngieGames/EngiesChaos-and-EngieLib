@@ -40,11 +40,13 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 			}
 		} else if ((world.getBlockState(new BlockPos(x, y - 1, z))).is(BlockTags.create(new ResourceLocation("engies_chaos:ddaylightningstrikeable")))
 				&& (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true || EngiesChaosModVariables.MapVariables.get(world).sddaystart == true || EngiesChaosModVariables.MapVariables.get(world).thestart == true)) {
+			if (!entity.level.isClientSide())
+				entity.discard();
 			if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == true) {
 				if (EngiesChaosModVariables.MapVariables.get(world).ddayscornerlightning == true) {
 					for (Entity entityiterator : new ArrayList<>(world.players())) {
 						{
-							double _setval = 2.5;
+							double _setval = 0.25;
 							entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.lightningflashnum = _setval;
 								capability.syncPlayerVariables(entityiterator);
@@ -79,7 +81,7 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayscornerlightning == false) {
 					for (Entity entityiterator : new ArrayList<>(world.players())) {
 						{
-							double _setval = 2.5;
+							double _setval = 0.25;
 							entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.lightningflashnum = _setval;
 								capability.syncPlayerVariables(entityiterator);
@@ -124,7 +126,7 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 				if (EngiesChaosModVariables.MapVariables.get(world).ddayscornerlightning == true) {
 					for (Entity entityiterator : new ArrayList<>(world.players())) {
 						{
-							double _setval = 2.5;
+							double _setval = 0.25;
 							entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.lightningflashnum = _setval;
 								capability.syncPlayerVariables(entityiterator);
@@ -159,7 +161,7 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayscornerlightning == false) {
 					for (Entity entityiterator : new ArrayList<>(world.players())) {
 						{
-							double _setval = 2.5;
+							double _setval = 0.25;
 							entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.lightningflashnum = _setval;
 								capability.syncPlayerVariables(entityiterator);
@@ -202,10 +204,14 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 				}
 			}
 		} else if (!((world.getBlockState(new BlockPos(x, y - 1, z))).getBlock() == Blocks.AIR) && EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true) {
+			if (!entity.level.isClientSide())
+				entity.discard();
 			if (EngiesChaosModVariables.MapVariables.get(world).ddayscornerlightning == true) {
+				if (!entity.level.isClientSide())
+					entity.discard();
 				for (Entity entityiterator : new ArrayList<>(world.players())) {
 					{
-						double _setval = 2.5;
+						double _setval = 0.25;
 						entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.lightningflashnum = _setval;
 							capability.syncPlayerVariables(entityiterator);
@@ -238,9 +244,11 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 					}
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayscornerlightning == false) {
+				if (!entity.level.isClientSide())
+					entity.discard();
 				for (Entity entityiterator : new ArrayList<>(world.players())) {
 					{
-						double _setval = 2.5;
+						double _setval = 0.25;
 						entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.lightningflashnum = _setval;
 							capability.syncPlayerVariables(entityiterator);
@@ -282,10 +290,12 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 				}
 			}
 		} else if ((world.getBlockState(new BlockPos(x, y - 1, z))).is(BlockTags.create(new ResourceLocation("engies_chaos:ddaylightningstrikeable")))) {
+			if (!entity.level.isClientSide())
+				entity.discard();
 			if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == true && world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == true) {
 				for (Entity entityiterator : new ArrayList<>(world.players())) {
 					{
-						double _setval = 2.5;
+						double _setval = 0.25;
 						entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.lightningflashnum = _setval;
 							capability.syncPlayerVariables(entityiterator);
@@ -328,7 +338,7 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 			} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == false && world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == true) {
 				for (Entity entityiterator : new ArrayList<>(world.players())) {
 					{
-						double _setval = 2.5;
+						double _setval = 0.25;
 						entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.lightningflashnum = _setval;
 							capability.syncPlayerVariables(entityiterator);
@@ -371,7 +381,7 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 			} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == false && world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == false) {
 				for (Entity entityiterator : new ArrayList<>(world.players())) {
 					{
-						double _setval = 2.5;
+						double _setval = 0.25;
 						entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.lightningflashnum = _setval;
 							capability.syncPlayerVariables(entityiterator);

@@ -23,7 +23,7 @@ public class BiblicallyDeathSharkoOnEntityTickUpdateProcedure {
 						if (entity instanceof BiblicallyDeathSharkoEntity _datEntSetI)
 							_datEntSetI.getEntityData().set(BiblicallyDeathSharkoEntity.DATA_SharkoState, 3);
 					}
-					if (entity.getPersistentData().getDouble("SharkoStateTimerForChance") >= 120) {
+					if (entity.getPersistentData().getDouble("SharkoStateTimerForChance") >= 60) {
 						entity.getPersistentData().putDouble("SharkoStateTimerForChance", 0);
 						if (!entity.isInWater() && !entity.isInLava()) {
 							if ((entity instanceof BiblicallyDeathSharkoEntity _datEntI ? _datEntI.getEntityData().get(BiblicallyDeathSharkoEntity.DATA_SharkoState) : 0) == 1) {
@@ -80,7 +80,7 @@ public class BiblicallyDeathSharkoOnEntityTickUpdateProcedure {
 						}
 					}
 				} else {
-					if (world instanceof Level _lvl26 && _lvl26.isDay() && entity.getPersistentData().getDouble("SharkoStateTimerForChance") >= 120) {
+					if (world instanceof Level _lvl26 && _lvl26.isDay() && entity.getPersistentData().getDouble("SharkoStateTimerForChance") >= 60) {
 						entity.getPersistentData().putDouble("SharkoStateTimerForChance", 0);
 						if (!entity.isInWater() && !entity.isInLava()) {
 							if ((entity instanceof BiblicallyDeathSharkoEntity _datEntI ? _datEntI.getEntityData().get(BiblicallyDeathSharkoEntity.DATA_SharkoState) : 0) == 1) {

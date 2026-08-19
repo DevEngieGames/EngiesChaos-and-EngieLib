@@ -9,13 +9,14 @@
         "data": {
           "name": "label_only16characters",
           "text": {
-            "fixedValue": "Only16Characters"
+            "fixedValue": "Only16Characters",
+            "name": "Only16Characters2"
           },
           "color": {
             "value": -16777216,
             "falpha": 0.0
           },
-          "anchorPoint": "CENTER",
+          "anchorPoint": "BOTTOM_LEFT",
           "x": 4,
           "y": 202,
           "locked": false

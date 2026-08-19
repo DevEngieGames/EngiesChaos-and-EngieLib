@@ -112,13 +112,8 @@ public class SuperDoomsdayDialogueProcedure {
 											EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 										});
 										EngiesChaosMod.queueServerWork(200, () -> {
-											if (world.players().size() == 1) {
-												EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 4;
-												EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-											} else if (world.players().size() >= 2) {
-												EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 5;
-												EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-											}
+											EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 4;
+											EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 											EngiesChaosModVariables.MapVariables.get(world).ddaydialogue = true;
 											EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 											EngiesChaosMod.queueServerWork(120, () -> {
@@ -126,7 +121,7 @@ public class SuperDoomsdayDialogueProcedure {
 												EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 											});
 											EngiesChaosMod.queueServerWork(200, () -> {
-												EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 6;
+												EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 5;
 												EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 												EngiesChaosModVariables.MapVariables.get(world).ddaydialogue = true;
 												EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -135,7 +130,7 @@ public class SuperDoomsdayDialogueProcedure {
 													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 												});
 												EngiesChaosMod.queueServerWork(200, () -> {
-													EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 7;
+													EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 6;
 													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 													EngiesChaosModVariables.MapVariables.get(world).ddaydialogue = true;
 													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -150,10 +145,6 @@ public class SuperDoomsdayDialogueProcedure {
 															EngiesChaosModVariables.MapVariables.get(world).ddaymainsongplay = true;
 															EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 														});
-														EngiesChaosModVariables.MapVariables.get(world).doomsdaymainsongtimer = 14.5;
-														EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-														EngiesChaosModVariables.MapVariables.get(world).doomsdayaltsongtimer = 191;
-														EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 														EngiesChaosModVariables.MapVariables.get(world).sddaytimerminutes = Math.round(Mth.nextDouble(RandomSource.create(), 7, 30));
 														EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 														EngiesChaosMod.queueServerWork(1, () -> {

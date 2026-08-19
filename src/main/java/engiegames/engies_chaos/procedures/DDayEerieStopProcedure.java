@@ -1,6 +1,5 @@
 package engiegames.engies_chaos.procedures;
 
-import net.minecraftforge.server.ServerLifecycleHooks;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
@@ -11,7 +10,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
-import net.minecraft.client.Minecraft;
 
 import javax.annotation.Nullable;
 
@@ -51,7 +49,7 @@ public class DDayEerieStopProcedure {
 								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @s neutral engies_chaos:engieswrath_eerie");
 					}
 				}
-				EngiesChaosModVariables.MapVariables.get(world).ddayplayerdeadcount = world.isClientSide() ? Minecraft.getInstance().getConnection().getOnlinePlayers().size() : ServerLifecycleHooks.getCurrentServer().getPlayerCount();
+				EngiesChaosModVariables.MapVariables.get(world).ddayplayerdeadcount = 0;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive == false) {
 					{
@@ -62,8 +60,6 @@ public class DDayEerieStopProcedure {
 						});
 					}
 					EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount = EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount + 1;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).ddayplayerdeadcount = EngiesChaosModVariables.MapVariables.get(world).ddayplayerdeadcount - 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				}
 			}

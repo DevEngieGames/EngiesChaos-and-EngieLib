@@ -30,137 +30,137 @@ public class DoomsHordeSpawnsTickProcedure {
 		if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.OVERWORLD && !world.isClientSide()) {
 			if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true) {
 				if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 1) {
-					if (EngiesChaosModVariables.MapVariables.get(world).doomsdaytimer == (EngiesChaosModVariables.MapVariables.get(world).doomsdaymaxtime / 4) * 4 - 12) {
-						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					} else if (EngiesChaosModVariables.MapVariables.get(world).doomsdaytimer == (EngiesChaosModVariables.MapVariables.get(world).doomsdaymaxtime / 4) * 3 + 5) {
+					if (EngiesChaosModVariables.MapVariables.get(world).doomsdaytimer <= (EngiesChaosModVariables.MapVariables.get(world).doomsdaymaxtime / 4) * 3 + 10) {
 						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = false;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					} else if (EngiesChaosModVariables.MapVariables.get(world).doomsdaytimer <= (EngiesChaosModVariables.MapVariables.get(world).doomsdaymaxtime / 4) * 4 - 15) {
+						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 2) {
-					if (EngiesChaosModVariables.MapVariables.get(world).doomsdaytimer == (EngiesChaosModVariables.MapVariables.get(world).doomsdaymaxtime / 4) * 3 - 12) {
-						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					} else if (EngiesChaosModVariables.MapVariables.get(world).doomsdaytimer == (EngiesChaosModVariables.MapVariables.get(world).doomsdaymaxtime / 4) * 2 + 5) {
+					if (EngiesChaosModVariables.MapVariables.get(world).doomsdaytimer <= (EngiesChaosModVariables.MapVariables.get(world).doomsdaymaxtime / 4) * 2 + 10) {
 						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = false;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					} else if (EngiesChaosModVariables.MapVariables.get(world).doomsdaytimer <= (EngiesChaosModVariables.MapVariables.get(world).doomsdaymaxtime / 4) * 3 - 15) {
+						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 3) {
-					if (EngiesChaosModVariables.MapVariables.get(world).doomsdaytimer == (EngiesChaosModVariables.MapVariables.get(world).doomsdaymaxtime / 4) * 2 - 12) {
-						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					} else if (EngiesChaosModVariables.MapVariables.get(world).doomsdaytimer == (EngiesChaosModVariables.MapVariables.get(world).doomsdaymaxtime / 4) * 1 + 5) {
+					if (EngiesChaosModVariables.MapVariables.get(world).doomsdaytimer <= (EngiesChaosModVariables.MapVariables.get(world).doomsdaymaxtime / 4) * 1 + 10) {
 						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = false;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					} else if (EngiesChaosModVariables.MapVariables.get(world).doomsdaytimer <= (EngiesChaosModVariables.MapVariables.get(world).doomsdaymaxtime / 4) * 2 - 15) {
+						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 4) {
-					if (EngiesChaosModVariables.MapVariables.get(world).doomsdaytimer == (EngiesChaosModVariables.MapVariables.get(world).doomsdaymaxtime / 4) * 1 - 12) {
-						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					} else if (EngiesChaosModVariables.MapVariables.get(world).doomsdaytimer == (EngiesChaosModVariables.MapVariables.get(world).doomsdaymaxtime / 4) * 0 + 5) {
+					if (EngiesChaosModVariables.MapVariables.get(world).doomsdaytimer <= (EngiesChaosModVariables.MapVariables.get(world).doomsdaymaxtime / 4) * 0 + 10) {
 						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = false;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					} else if (EngiesChaosModVariables.MapVariables.get(world).doomsdaytimer <= (EngiesChaosModVariables.MapVariables.get(world).doomsdaymaxtime / 4) * 1 - 15) {
+						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).sddaystart == true) {
 				if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 1) {
-					if (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime == (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime / 4) * 4 - 12) {
-						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					} else if (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime == (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime / 4) * 3 + 5) {
+					if (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime <= (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime / 4) * 3 + 10) {
 						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = false;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					} else if (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime <= (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime / 4) * 4 - 15) {
+						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 2) {
-					if (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime == (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime / 4) * 3 - 12) {
-						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					} else if (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime == (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime / 4) * 2 + 5) {
+					if (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime <= (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime / 4) * 2 + 5) {
 						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = false;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					} else if (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime <= (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime / 4) * 3 - 15) {
+						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 3) {
-					if (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime == (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime / 4) * 2 - 12) {
-						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					} else if (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime == (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime / 4) * 1 + 5) {
+					if (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime <= (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime / 4) * 1 + 10) {
 						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = false;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					} else if (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime <= (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime / 4) * 2 - 15) {
+						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 4) {
-					if (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime == (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime / 4) * 1 - 12) {
-						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					} else if (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime == (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime / 4) * 0 + 5) {
+					if (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime <= (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime / 4) * 0 + 10) {
 						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = false;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					} else if (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime <= (EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime / 4) * 1 - 15) {
+						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
 				if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 1) {
-					if (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime == (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime / 4) * 4 - 12) {
-						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					} else if (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime == (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime / 4) * 3 + 5) {
+					if (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime <= (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime / 4) * 3 + 10) {
 						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = false;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					} else if (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime <= (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime / 4) * 4 - 15) {
+						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 2) {
-					if (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime == (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime / 4) * 3 - 12) {
-						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					} else if (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime == (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime / 4) * 2 + 5) {
+					if (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime <= (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime / 4) * 2 + 5) {
 						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = false;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					} else if (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime <= (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime / 4) * 3 - 15) {
+						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 3) {
-					if (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime == (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime / 4) * 2 - 12) {
-						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					} else if (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime == (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime / 4) * 1 + 5) {
+					if (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime <= (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime / 4) * 1 + 10) {
 						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = false;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					} else if (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime <= (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime / 4) * 2 - 15) {
+						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 4) {
-					if (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime == (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime / 4) * 1 - 12) {
-						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					} else if (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime == (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime / 4) * 0 + 5) {
+					if (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime <= (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime / 4) * 0 + 10) {
 						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = false;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					} else if (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime <= (EngiesChaosModVariables.MapVariables.get(world).theendmaxtime / 4) * 1 - 15) {
+						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true) {
 				if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 1) {
-					if (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime == (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime / 4) * 4 - 12) {
-						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					} else if (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime == (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime / 4) * 3 + 5) {
+					if (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime <= (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime / 4) * 3 + 10) {
 						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = false;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					} else if (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime <= (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime / 4) * 4 - 15) {
+						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 2) {
-					if (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime == (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime / 4) * 3 - 12) {
-						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					} else if (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime == (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime / 4) * 2 + 5) {
+					if (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime <= (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime / 4) * 2 + 10) {
 						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = false;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					} else if (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime <= (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime / 4) * 3 - 15) {
+						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 3) {
-					if (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime == (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime / 4) * 2 - 12) {
-						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					} else if (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime == (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime / 4) * 1 + 5) {
+					if (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime <= (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime / 4) * 1 + 10) {
 						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = false;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					} else if (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime <= (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime / 4) * 2 - 15) {
+						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 4) {
-					if (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime == (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime / 4) * 1 - 12) {
-						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					} else if (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime == (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime / 4) * 0 + 5) {
+					if (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime <= (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime / 4) * 0 + 10) {
 						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = false;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					} else if (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime <= (EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime / 4) * 1 - 15) {
+						EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 				}

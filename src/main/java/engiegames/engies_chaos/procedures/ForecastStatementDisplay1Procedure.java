@@ -9,7 +9,7 @@ public class ForecastStatementDisplay1Procedure {
 		if (EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart == true || EngiesChaosModVariables.MapVariables.get(world).TheEndStart == true
 				|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart == true) {
 			if (EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart == true) {
-				if (EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum < 5) {
+				if (EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum < 5 && EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum >= 1) {
 					return true;
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).TheEndStart == true || EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart == true) {
@@ -17,7 +17,9 @@ public class ForecastStatementDisplay1Procedure {
 			}
 		} else if (!(EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart == true || EngiesChaosModVariables.MapVariables.get(world).TheEndStart == true
 				|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart == true)) {
-			return true;
+			if (EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum >= 1) {
+				return true;
+			}
 		}
 		return false;
 	}

@@ -38,8 +38,8 @@
             "value": -16777216,
             "falpha": 0.0
           },
-          "x": 208,
-          "y": 123,
+          "x": 220,
+          "y": 139,
           "locked": false
         }
       },
@@ -232,8 +232,8 @@
           },
           "width": 51,
           "height": 20,
-          "x": 208,
-          "y": 140,
+          "x": 220,
+          "y": 119,
           "locked": false
         }
       },
@@ -249,7 +249,7 @@
           "width": 51,
           "height": 20,
           "x": 282,
-          "y": 140,
+          "y": 119,
           "locked": false
         }
       },
@@ -280,8 +280,8 @@
           },
           "width": 103,
           "height": 20,
-          "x": 230,
-          "y": 98,
+          "x": 94,
+          "y": 140,
           "locked": false
         }
       },
@@ -342,19 +342,6 @@
       {
         "type": "button",
         "data": {
-          "name": "button_kill_mobs_nearby",
-          "text": "Kill nearby hostiles.",
-          "isUndecorated": false,
-          "width": 113,
-          "height": 20,
-          "x": 94,
-          "y": 140,
-          "locked": false
-        }
-      },
-      {
-        "type": "button",
-        "data": {
           "name": "button_stun_nearby_mobs",
           "text": "Stun nearby hostiles.",
           "isUndecorated": false,
@@ -363,8 +350,8 @@
           },
           "width": 113,
           "height": 20,
-          "x": 94,
-          "y": 119,
+          "x": 220,
+          "y": 98,
           "locked": false
         }
       },
@@ -491,6 +478,22 @@
           "dropItemsWhenNotBound": false,
           "x": 115,
           "y": 161,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_set_doomsday_risk",
+          "text": "Set Doomsday Risk.",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SetRiskDevMode"
+          },
+          "width": 119,
+          "height": 20,
+          "x": 94,
+          "y": 119,
           "locked": false
         }
       }

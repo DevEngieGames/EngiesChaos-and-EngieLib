@@ -23,7 +23,7 @@ public class LegendarySharkoOnEntityTickUpdateProcedure {
 						if (entity instanceof LegendarySharkoEntity _datEntSetI)
 							_datEntSetI.getEntityData().set(LegendarySharkoEntity.DATA_SharkoState, 3);
 					}
-					if (entity.getPersistentData().getDouble("SharkoStateTimerForChance") >= 120) {
+					if (entity.getPersistentData().getDouble("SharkoStateTimerForChance") >= 60) {
 						entity.getPersistentData().putDouble("SharkoStateTimerForChance", 0);
 						if (!entity.isInWater() && !entity.isInLava()) {
 							if ((entity instanceof LegendarySharkoEntity _datEntI ? _datEntI.getEntityData().get(LegendarySharkoEntity.DATA_SharkoState) : 0) == 1) {
@@ -68,7 +68,7 @@ public class LegendarySharkoOnEntityTickUpdateProcedure {
 						}
 					}
 				} else {
-					if (world instanceof Level _lvl23 && _lvl23.isDay() && entity.getPersistentData().getDouble("SharkoStateTimerForChance") >= 120) {
+					if (world instanceof Level _lvl23 && _lvl23.isDay() && entity.getPersistentData().getDouble("SharkoStateTimerForChance") >= 60) {
 						entity.getPersistentData().putDouble("SharkoStateTimerForChance", 0);
 						if (!entity.isInWater() && !entity.isInLava()) {
 							if ((entity instanceof LegendarySharkoEntity _datEntI ? _datEntI.getEntityData().get(LegendarySharkoEntity.DATA_SharkoState) : 0) == 1) {

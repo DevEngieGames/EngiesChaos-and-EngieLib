@@ -121,7 +121,7 @@
     },
     "entityDataEntries": [],
     "onRightClickedOn": {
-      "name": "UncommonRC"
+      "name": "UncommonEngieRC"
     },
     "hasAI": true,
     "aiBase": "(none)",

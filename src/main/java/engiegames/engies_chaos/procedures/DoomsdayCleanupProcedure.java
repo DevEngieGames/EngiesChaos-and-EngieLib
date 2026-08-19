@@ -49,6 +49,10 @@ public class DoomsdayCleanupProcedure {
 			if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO,
 						_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "kill @e[type=item]");
+			EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount = 0;
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			EngiesChaosModVariables.MapVariables.get(world).ddayplayerdeadcount = 0;
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			EngiesChaosModVariables.MapVariables.get(world).doomsdaymaxtime = 0;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			EngiesChaosModVariables.MapVariables.get(world).superdoomsdaymaxtime = 0;

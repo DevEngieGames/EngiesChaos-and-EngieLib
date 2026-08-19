@@ -23,7 +23,7 @@ public class AlienSharkoOnEntityTickUpdateProcedure {
 						if (entity instanceof AlienSharkoEntity _datEntSetI)
 							_datEntSetI.getEntityData().set(AlienSharkoEntity.DATA_SharkoState, 3);
 					}
-					if (entity.getPersistentData().getDouble("SharkoStateTimerForChance") >= 120) {
+					if (entity.getPersistentData().getDouble("SharkoStateTimerForChance") >= 60) {
 						entity.getPersistentData().putDouble("SharkoStateTimerForChance", 0);
 						if (!entity.isInWater() && !entity.isInLava()) {
 							if ((entity instanceof AlienSharkoEntity _datEntI ? _datEntI.getEntityData().get(AlienSharkoEntity.DATA_SharkoState) : 0) == 1) {
@@ -80,7 +80,7 @@ public class AlienSharkoOnEntityTickUpdateProcedure {
 						}
 					}
 				} else {
-					if (world instanceof Level _lvl26 && _lvl26.isDay() && entity.getPersistentData().getDouble("SharkoStateTimerForChance") >= 120) {
+					if (world instanceof Level _lvl26 && _lvl26.isDay() && entity.getPersistentData().getDouble("SharkoStateTimerForChance") >= 60) {
 						entity.getPersistentData().putDouble("SharkoStateTimerForChance", 0);
 						if (!entity.isInWater() && !entity.isInLava()) {
 							if ((entity instanceof AlienSharkoEntity _datEntI ? _datEntI.getEntityData().get(AlienSharkoEntity.DATA_SharkoState) : 0) == 1) {

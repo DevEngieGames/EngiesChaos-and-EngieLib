@@ -5,7 +5,7 @@ import net.minecraft.util.Mth;
 
 public class WormholeSpawningCondProcedure {
 	public static boolean execute() {
-		if (Mth.nextDouble(RandomSource.create(), 0, 101) <= 0.05) {
+		if (Mth.nextDouble(RandomSource.create(), 0, 101) <= 0.001) {
 			return true;
 		}
 		return false;
