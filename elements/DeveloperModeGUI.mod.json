@@ -281,7 +281,7 @@
           "width": 103,
           "height": 20,
           "x": 94,
-          "y": 140,
+          "y": 119,
           "locked": false
         }
       },
@@ -490,10 +490,13 @@
           "onClick": {
             "name": "SetRiskDevMode"
           },
+          "displayCondition": {
+            "name": "DevCheck"
+          },
           "width": 119,
           "height": 20,
           "x": 94,
-          "y": 119,
+          "y": 140,
           "locked": false
         }
       }

@@ -18,7 +18,7 @@ public class AvalancheSpawnProcedure {
 		if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true) {
 			EngiesChaosModVariables.MapVariables.get(world).ddayavalanche = true;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-			for (int index0 = 0; index0 < 25; index0++) {
+			for (int index0 = 0; index0 < 50; index0++) {
 				if (Math.random() > 0.125) {
 					EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount = EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -32,7 +32,7 @@ public class AvalancheSpawnProcedure {
 		} else if (EngiesChaosModVariables.MapVariables.get(world).sddaystart == true) {
 			EngiesChaosModVariables.MapVariables.get(world).ddayavalanche = true;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-			for (int index1 = 0; index1 < 25; index1++) {
+			for (int index1 = 0; index1 < 50; index1++) {
 				if (Math.random() > 0.25) {
 					EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount = EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -46,7 +46,7 @@ public class AvalancheSpawnProcedure {
 		} else if (EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
 			EngiesChaosModVariables.MapVariables.get(world).ddayavalanche = true;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-			for (int index2 = 0; index2 < 25; index2++) {
+			for (int index2 = 0; index2 < 50; index2++) {
 				if (Math.random() > 0.375) {
 					EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount = EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -60,7 +60,7 @@ public class AvalancheSpawnProcedure {
 		} else if (EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true) {
 			EngiesChaosModVariables.MapVariables.get(world).ddayavalanche = true;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-			for (int index3 = 0; index3 < 25; index3++) {
+			for (int index3 = 0; index3 < 50; index3++) {
 				if (Math.random() < 0.5) {
 					EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount = EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);

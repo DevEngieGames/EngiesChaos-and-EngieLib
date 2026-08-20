@@ -38,6 +38,7 @@ import net.minecraft.nbt.CompoundTag;
 import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.procedures.MindscapeManLookAtPlayerProcedure;
+import engiegames.engies_chaos.procedures.MindscapeEngieSpawningCondProcedure;
 import engiegames.engies_chaos.procedures.MindscapeEngieRightClickedOnEntityTradeProcedure;
 import engiegames.engies_chaos.procedures.MindscapeEngieOnInitialEntitySpawnProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
@@ -175,7 +176,12 @@ public class MindscapeEngieEntity extends PathfinderMob {
 	}
 
 	public static void init() {
-		SpawnPlacements.register(EngiesChaosModEntities.MINDSCAPE_ENGIE.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
+		SpawnPlacements.register(EngiesChaosModEntities.MINDSCAPE_ENGIE.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			return MindscapeEngieSpawningCondProcedure.execute();
+		});
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

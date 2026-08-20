@@ -101,7 +101,7 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 					for (int index0 = 0; index0 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 3, 6)); index0++) {
 						if (world instanceof ServerLevel _level) {
 							LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-							entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(Math.round(Mth.nextDouble(RandomSource.create(), -6, 6)), y, Math.round(Mth.nextDouble(RandomSource.create(), -6, 6)))));
+							entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Math.round(Mth.nextDouble(RandomSource.create(), -6, 6)), y, z + Math.round(Mth.nextDouble(RandomSource.create(), -6, 6)))));
 							entityToSpawn.setVisualOnly(true);
 							_level.addFreshEntity(entityToSpawn);
 						}
@@ -135,7 +135,7 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 					}
 					EngiesChaosModVariables.MapVariables.get(world).playlightningsound = true;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).playlightningsound2 = true;
+					EngiesChaosModVariables.MapVariables.get(world).playlightningsound4 = true;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					if (world instanceof ServerLevel _level) {
 						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
@@ -181,7 +181,7 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 					for (int index1 = 0; index1 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 2, 4)); index1++) {
 						if (world instanceof ServerLevel _level) {
 							LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-							entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(Math.round(Mth.nextDouble(RandomSource.create(), -5, 5)), y, Math.round(Mth.nextDouble(RandomSource.create(), -5, 5)))));
+							entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Math.round(Mth.nextDouble(RandomSource.create(), -5, 5)), y, z + Math.round(Mth.nextDouble(RandomSource.create(), -5, 5)))));
 							entityToSpawn.setVisualOnly(true);
 							_level.addFreshEntity(entityToSpawn);
 						}
@@ -207,8 +207,6 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 			if (!entity.level.isClientSide())
 				entity.discard();
 			if (EngiesChaosModVariables.MapVariables.get(world).ddayscornerlightning == true) {
-				if (!entity.level.isClientSide())
-					entity.discard();
 				for (Entity entityiterator : new ArrayList<>(world.players())) {
 					{
 						double _setval = 0.25;
@@ -244,8 +242,6 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 					}
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayscornerlightning == false) {
-				if (!entity.level.isClientSide())
-					entity.discard();
 				for (Entity entityiterator : new ArrayList<>(world.players())) {
 					{
 						double _setval = 0.25;
@@ -268,7 +264,7 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 				for (int index2 = 0; index2 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 5, 10)); index2++) {
 					if (world instanceof ServerLevel _level) {
 						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(Math.round(Mth.nextDouble(RandomSource.create(), -8, 8)), y, Math.round(Mth.nextDouble(RandomSource.create(), -8, 8)))));
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Math.round(Mth.nextDouble(RandomSource.create(), -8, 8)), y, z + Math.round(Mth.nextDouble(RandomSource.create(), -8, 8)))));
 						entityToSpawn.setVisualOnly(true);
 						_level.addFreshEntity(entityToSpawn);
 					}
@@ -315,7 +311,7 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 				for (int index3 = 0; index3 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 3, 6)); index3++) {
 					if (world instanceof ServerLevel _level) {
 						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(Math.round(Mth.nextDouble(RandomSource.create(), -6, 6)), y, Math.round(Mth.nextDouble(RandomSource.create(), -6, 6)))));
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Math.round(Mth.nextDouble(RandomSource.create(), -6, 6)), y, z + Math.round(Mth.nextDouble(RandomSource.create(), -6, 6)))));
 						entityToSpawn.setVisualOnly(true);
 						_level.addFreshEntity(entityToSpawn);
 					}
@@ -358,7 +354,7 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 				for (int index4 = 0; index4 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 2, 4)); index4++) {
 					if (world instanceof ServerLevel _level) {
 						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(Math.round(Mth.nextDouble(RandomSource.create(), -5, 5)), y, Math.round(Mth.nextDouble(RandomSource.create(), -5, 5)))));
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Math.round(Mth.nextDouble(RandomSource.create(), -5, 5)), y, z + Math.round(Mth.nextDouble(RandomSource.create(), -5, 5)))));
 						entityToSpawn.setVisualOnly(true);
 						_level.addFreshEntity(entityToSpawn);
 					}
@@ -401,7 +397,7 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 				for (int index5 = 0; index5 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 3, 6)); index5++) {
 					if (world instanceof ServerLevel _level) {
 						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(Math.round(Mth.nextDouble(RandomSource.create(), -6, 6)), y, Math.round(Mth.nextDouble(RandomSource.create(), -6, 6)))));
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Math.round(Mth.nextDouble(RandomSource.create(), -6, 6)), y, z + Math.round(Mth.nextDouble(RandomSource.create(), -6, 6)))));
 						entityToSpawn.setVisualOnly(true);
 						_level.addFreshEntity(entityToSpawn);
 					}

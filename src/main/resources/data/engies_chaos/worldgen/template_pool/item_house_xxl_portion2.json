@@ -3,10 +3,10 @@
   "fallback": "minecraft:empty",
   "elements": [
     {
-      "weight": 1,
+      "weight": 100,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "engies_chaos:itemhousexxl3",
+        "location": "engies_chaos:itemhousexxlpart2",
         "projection": "rigid",
         "processors": {
           "processors": []

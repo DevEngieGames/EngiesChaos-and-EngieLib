@@ -18,23 +18,11 @@
         "value": "Blocks.CAVE_AIR"
       }
     ],
-    "spacing": 50,
+    "spacing": 75,
     "separation": 5,
     "restrictionBiomes": [
       {
-        "value": "basalt_deltas"
-      },
-      {
-        "value": "crimson_forest"
-      },
-      {
-        "value": "nether"
-      },
-      {
-        "value": "soul_sand_valley"
-      },
-      {
-        "value": "warped_forest"
+        "value": "#minecraft:is_nether"
       }
     ],
     "terrainAdaptation": "beard_thin",

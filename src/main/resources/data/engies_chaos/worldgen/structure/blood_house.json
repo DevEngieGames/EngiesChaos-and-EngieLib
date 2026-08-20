@@ -15,12 +15,6 @@
       "absolute": 100
     }
   },
-  "biomes": [
-    "basalt_deltas",
-    "crimson_forest",
-    "nether_wastes",
-    "soul_sand_valley",
-    "warped_forest"
-  ],
+  "biomes": "#minecraft:is_nether",
   "use_expansion_hack": false
 }

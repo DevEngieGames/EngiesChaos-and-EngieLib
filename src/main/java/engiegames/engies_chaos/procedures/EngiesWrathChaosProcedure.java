@@ -205,12 +205,16 @@ public class EngiesWrathChaosProcedure {
 				if (EngiesChaosModVariables.MapVariables.get(world).missilecooldown <= 0) {
 					EngiesChaosModVariables.MapVariables.get(world).missilecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5));
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					MissileSpawnProcedure.execute(world);
+					for (int index4 = 0; index4 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 5)); index4++) {
+						MissileSpawnProcedure.execute(world);
+					}
 				}
 				if (EngiesChaosModVariables.MapVariables.get(world).riftcooldown <= 0) {
 					EngiesChaosModVariables.MapVariables.get(world).riftcooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5));
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					RiftSpawnsProcedure.execute(world);
+					for (int index5 = 0; index5 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 5)); index5++) {
+						RiftSpawnsProcedure.execute(world);
+					}
 				}
 				if (EngiesChaosModVariables.MapVariables.get(world).spikecooldown <= 0) {
 					EngiesChaosModVariables.MapVariables.get(world).spikecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5));
@@ -222,10 +226,10 @@ public class EngiesWrathChaosProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					AvalancheSpawnProcedure.execute(world);
 				}
-				if (EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle == true) {
-					if (EngiesChaosModVariables.MapVariables.get(world).hordecooldown <= 0) {
-						EngiesChaosModVariables.MapVariables.get(world).hordecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5));
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+				if (EngiesChaosModVariables.MapVariables.get(world).hordecooldown <= 0) {
+					EngiesChaosModVariables.MapVariables.get(world).hordecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5));
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					for (int index6 = 0; index6 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 5)); index6++) {
 						HordeSpawnsProcedure.execute(world);
 					}
 				}

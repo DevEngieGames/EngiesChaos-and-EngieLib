@@ -18,20 +18,11 @@
         "value": "Blocks.CAVE_AIR"
       }
     ],
-    "spacing": 75,
+    "spacing": 100,
     "separation": 5,
     "restrictionBiomes": [
       {
-        "value": "end_barrens"
-      },
-      {
-        "value": "end_highlands"
-      },
-      {
-        "value": "end_midlands"
-      },
-      {
-        "value": "small_end_islands"
+        "value": "#minecraft:is_end"
       }
     ],
     "terrainAdaptation": "beard_thin",

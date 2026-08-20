@@ -53,8 +53,13 @@ public class DDaySFXPlayProcedure {
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			}
 			if (EngiesChaosModVariables.MapVariables.get(world).churchbellsewrath == true) {
-				EngiesChaosModVariables.MapVariables.get(world).churchbellsewrath = false;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "playsound engies_chaos:churchbells2 neutral @s");
+					}
+				}
 				if (EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true) {
 					{
 						Entity _ent = entity;
@@ -64,13 +69,8 @@ public class DDaySFXPlayProcedure {
 						}
 					}
 				}
-				{
-					Entity _ent = entity;
-					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "playsound engies_chaos:churchbells2 neutral @s");
-					}
-				}
+				EngiesChaosModVariables.MapVariables.get(world).churchbellsewrath = false;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			}
 			if (EngiesChaosModVariables.MapVariables.get(world).ddaymainsongplay == true) {
 				EngiesChaosModVariables.MapVariables.get(world).ddaymainsongplay = false;

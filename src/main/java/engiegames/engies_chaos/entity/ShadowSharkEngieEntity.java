@@ -134,7 +134,7 @@ public class ShadowSharkEngieEntity extends PathfinderMob {
 	}
 
 	public static void init() {
-		SpawnPlacements.register(EngiesChaosModEntities.SHADOW_SHARK_ENGIE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
+		SpawnPlacements.register(EngiesChaosModEntities.SHADOW_SHARK_ENGIE.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();

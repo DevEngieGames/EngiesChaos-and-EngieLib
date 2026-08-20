@@ -310,7 +310,7 @@ public class EngiesChaosModEntities {
 			EntityType.Builder.<ThrowbackSharkoEntity>of(ThrowbackSharkoEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ThrowbackSharkoEntity::new)
 
 					.sized(0.7f, 0.9f));
-	public static final RegistryObject<EntityType<WormholeEngieEntity>> WORMHOLE_ENGIE = register("wormhole_engie", EntityType.Builder.<WormholeEngieEntity>of(WormholeEngieEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true)
+	public static final RegistryObject<EntityType<WormholeEngieEntity>> WORMHOLE_ENGIE = register("wormhole_engie", EntityType.Builder.<WormholeEngieEntity>of(WormholeEngieEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
 			.setTrackingRange(128).setUpdateInterval(3).setCustomClientFactory(WormholeEngieEntity::new).fireImmune().sized(0.6f, 1.9f));
 	public static final RegistryObject<EntityType<RoughianTheRealEngieGamesEntity>> ROUGHIAN_THE_REAL_ENGIE_GAMES = register("roughian_the_real_engie_games",
 			EntityType.Builder.<RoughianTheRealEngieGamesEntity>of(RoughianTheRealEngieGamesEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
@@ -360,7 +360,7 @@ public class EngiesChaosModEntities {
 					.setCustomClientFactory(TheRealEngieGamesHalloweenEntity::new)
 
 					.sized(0.6f, 1.9f));
-	public static final RegistryObject<EntityType<ShadowSharkEngieEntity>> SHADOW_SHARK_ENGIE = register("shadow_shark_engie", EntityType.Builder.<ShadowSharkEngieEntity>of(ShadowSharkEngieEntity::new, MobCategory.CREATURE)
+	public static final RegistryObject<EntityType<ShadowSharkEngieEntity>> SHADOW_SHARK_ENGIE = register("shadow_shark_engie", EntityType.Builder.<ShadowSharkEngieEntity>of(ShadowSharkEngieEntity::new, MobCategory.AMBIENT)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ShadowSharkEngieEntity::new).fireImmune().sized(0.6f, 1.9f));
 	public static final RegistryObject<EntityType<ShadowSharkEngieBlindEntity>> SHADOW_SHARK_ENGIE_BLIND = register("shadow_shark_engie_blind", EntityType.Builder.<ShadowSharkEngieBlindEntity>of(ShadowSharkEngieBlindEntity::new, MobCategory.CREATURE)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ShadowSharkEngieBlindEntity::new).fireImmune().sized(0.6f, 1.9f));
@@ -495,7 +495,7 @@ public class EngiesChaosModEntities {
 
 					.sized(0.7f, 0.9f));
 	public static final RegistryObject<EntityType<OMENEntity>> OMEN = register("omen",
-			EntityType.Builder.<OMENEntity>of(OMENEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(OMENEntity::new).fireImmune().sized(0.6f, 1.9f));
+			EntityType.Builder.<OMENEntity>of(OMENEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(OMENEntity::new).fireImmune().sized(0.6f, 1.9f));
 	public static final RegistryObject<EntityType<DDaySpikeEntity>> D_DAY_SPIKE = register("d_day_spike", EntityType.Builder.<DDaySpikeEntity>of(DDaySpikeEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
 			.setUpdateInterval(3).setCustomClientFactory(DDaySpikeEntity::new).fireImmune().sized(0.5f, 1.8f));
 	public static final RegistryObject<EntityType<DDayAvalancheEntity>> D_DAY_AVALANCHE = register("d_day_avalanche", EntityType.Builder.<DDayAvalancheEntity>of(DDayAvalancheEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)

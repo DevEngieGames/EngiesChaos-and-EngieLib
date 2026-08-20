@@ -15,11 +15,6 @@
       "absolute": 100
     }
   },
-  "biomes": [
-    "end_barrens",
-    "end_highlands",
-    "end_midlands",
-    "small_end_islands"
-  ],
+  "biomes": "#minecraft:is_end",
   "use_expansion_hack": false
 }

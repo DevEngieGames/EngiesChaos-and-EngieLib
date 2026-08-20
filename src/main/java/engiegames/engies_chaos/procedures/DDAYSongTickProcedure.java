@@ -18,6 +18,7 @@ import javax.annotation.Nullable;
 import java.util.ArrayList;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
+import engiegames.engies_chaos.EngiesChaosMod;
 
 @Mod.EventBusSubscriber
 public class DDAYSongTickProcedure {
@@ -49,19 +50,17 @@ public class DDAYSongTickProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).firstplayofaltsoundtrack = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayhalf1 == false) {
-					EngiesChaosModVariables.MapVariables.get(world).doomsdayaltsongtimer = EngiesChaosModVariables.MapVariables.get(world).doomsdayaltsongtimer + 0.05;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					if (EngiesChaosModVariables.MapVariables.get(world).firstplayofaltsoundtrack == false) {
 						EngiesChaosModVariables.MapVariables.get(world).ddayaltsongplay = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						EngiesChaosModVariables.MapVariables.get(world).firstplayofaltsoundtrack = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					}
-					if (EngiesChaosModVariables.MapVariables.get(world).doomsdayaltsongtimer >= 4.75 && EngiesChaosModVariables.MapVariables.get(world).firstplayofaltsoundtrack == false) {
-						EngiesChaosModVariables.MapVariables.get(world).ddayprophshow = true;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = false;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosMod.queueServerWork(190, () -> {
+							EngiesChaosModVariables.MapVariables.get(world).ddayprophshow = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						});
 					}
 				}
 			}

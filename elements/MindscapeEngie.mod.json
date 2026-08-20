@@ -144,6 +144,9 @@
     "rangedAttackRadius": 10.0,
     "spawnThisMob": true,
     "doesDespawnWhenIdle": false,
+    "spawningCondition": {
+      "name": "MindscapeEngieSpawningCond"
+    },
     "spawningProbability": 1,
     "mobSpawningType": "ambient",
     "minNumberOfMobsPerGroup": 1,

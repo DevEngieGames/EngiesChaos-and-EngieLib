@@ -14,6 +14,7 @@ import engiegames.engies_chaos.world.inventory.DeveloperModeGUIMenu;
 import engiegames.engies_chaos.procedures.StunRadiusGetForDevGUIProcedure;
 import engiegames.engies_chaos.procedures.RemovePlayerImmunityShowProcedure;
 import engiegames.engies_chaos.procedures.GivePlayerImmunityShowProcedure;
+import engiegames.engies_chaos.procedures.DevCheckProcedure;
 import engiegames.engies_chaos.network.DeveloperModeGUIButtonMessage;
 import engiegames.engies_chaos.init.EngiesChaosModScreens;
 import engiegames.engies_chaos.EngiesChaosMod;
@@ -176,7 +177,7 @@ public class DeveloperModeGUIScreen extends AbstractContainerScreen<DeveloperMod
 			}
 		});
 		this.addRenderableWidget(button_heal_self);
-		button_set_difficulty = new Button(this.leftPos + 3, this.topPos + 140, 103, 20, Component.translatable("gui.engies_chaos.developer_mode_gui.button_set_difficulty"), e -> {
+		button_set_difficulty = new Button(this.leftPos + 3, this.topPos + 119, 103, 20, Component.translatable("gui.engies_chaos.developer_mode_gui.button_set_difficulty"), e -> {
 			int x = DeveloperModeGUIScreen.this.x;
 			int y = DeveloperModeGUIScreen.this.y;
 			if (true) {
@@ -239,10 +240,10 @@ public class DeveloperModeGUIScreen extends AbstractContainerScreen<DeveloperMod
 			}
 		});
 		this.addRenderableWidget(button_confirm_stat_clock_number_count);
-		button_set_doomsday_risk = new Button(this.leftPos + 3, this.topPos + 119, 119, 20, Component.translatable("gui.engies_chaos.developer_mode_gui.button_set_doomsday_risk"), e -> {
+		button_set_doomsday_risk = new Button(this.leftPos + 3, this.topPos + 140, 119, 20, Component.translatable("gui.engies_chaos.developer_mode_gui.button_set_doomsday_risk"), e -> {
 			int x = DeveloperModeGUIScreen.this.x;
 			int y = DeveloperModeGUIScreen.this.y;
-			if (true) {
+			if (DevCheckProcedure.execute(entity)) {
 				EngiesChaosMod.PACKET_HANDLER.sendToServer(new DeveloperModeGUIButtonMessage(10, x, y, z));
 				DeveloperModeGUIButtonMessage.handleButtonAction(entity, 10, x, y, z);
 			}
@@ -257,5 +258,6 @@ public class DeveloperModeGUIScreen extends AbstractContainerScreen<DeveloperMod
 		number.tick();
 		this.button_give_immunity.visible = GivePlayerImmunityShowProcedure.execute(entity);
 		this.button_give_immunity1.visible = RemovePlayerImmunityShowProcedure.execute(entity);
+		this.button_set_doomsday_risk.visible = DevCheckProcedure.execute(entity);
 	}
 }
