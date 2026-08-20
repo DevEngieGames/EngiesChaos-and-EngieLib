@@ -149,7 +149,7 @@ public class EngiesWrathDialogueProcedure {
 														}
 													}
 												});
-												if (Math.round(Mth.nextDouble(RandomSource.create(), 1, 525)) <= 1) {
+												if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 525)) <= 1) {
 													EngiesChaosModVariables.MapVariables.get(world).ewrathtimerminutes = 52;
 													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 													EngiesChaosMod.queueServerWork(1, () -> {
@@ -165,7 +165,7 @@ public class EngiesWrathDialogueProcedure {
 														EngiesChaosModVariables.MapVariables.get(world).engieswrathtimer = EngiesChaosModVariables.MapVariables.get(world).engieswrathmaxtime;
 														EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 													});
-												} else if (Math.round(Mth.nextDouble(RandomSource.create(), 1, 525)) > 1) {
+												} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 525)) > 1) {
 													EngiesChaosModVariables.MapVariables.get(world).ewrathtimerminutes = Math.round(Mth.nextDouble(RandomSource.create(), 7, 30));
 													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 													EngiesChaosMod.queueServerWork(1, () -> {
