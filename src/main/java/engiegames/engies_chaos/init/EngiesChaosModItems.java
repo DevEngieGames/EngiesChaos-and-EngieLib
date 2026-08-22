@@ -1889,11 +1889,11 @@ public class EngiesChaosModItems {
 	public static final RegistryObject<Item> X_ENGIE_SHARKO_SPAWN_EGG = REGISTRY.register("x_engie_sharko_spawn_egg",
 			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.X_ENGIE_SHARKO, -3584, -1237980, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_SHARKOS)));
 	public static final RegistryObject<Item> ENRAGED_NORMAL_SPAWN_EGG = REGISTRY.register("enraged_normal_spawn_egg",
-			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.ENRAGED_NORMAL, -16358652, -7405568, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ZOMBIES)));
+			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.ENRAGED_NORMAL, -15921907, -7405568, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ZOMBIES)));
 	public static final RegistryObject<Item> ENRAGED_TNT_SPAWN_EGG = REGISTRY.register("enraged_tnt_spawn_egg",
-			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.ENRAGED_TNT, -2412774, -7405568, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ZOMBIES)));
+			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.ENRAGED_TNT, -15921907, -11513776, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ZOMBIES)));
 	public static final RegistryObject<Item> ENRAGED_SPEED_SPAWN_EGG = REGISTRY.register("enraged_speed_spawn_egg",
-			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.ENRAGED_SPEED, -16489688, -7405568, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ZOMBIES)));
+			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.ENRAGED_SPEED, -15921907, -22016, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ZOMBIES)));
 	public static final RegistryObject<Item> DOUGH = REGISTRY.register("dough", DoughItem::new);
 	public static final RegistryObject<Item> DOUGH_WITH_SAUCE = REGISTRY.register("dough_with_sauce", DoughWithSauceItem::new);
 	public static final RegistryObject<Item> UNCOOKED_PIZZA = REGISTRY.register("uncooked_pizza", UncookedPizzaItem::new);

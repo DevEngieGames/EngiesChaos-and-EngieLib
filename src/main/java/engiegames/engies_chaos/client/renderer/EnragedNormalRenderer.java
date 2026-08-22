@@ -5,13 +5,13 @@ import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
 import engiegames.engies_chaos.entity.EnragedNormalEntity;
-import engiegames.engies_chaos.client.model.Modelenragedzombie;
+import engiegames.engies_chaos.client.model.Modelhostile;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 
-public class EnragedNormalRenderer extends MobRenderer<EnragedNormalEntity, Modelenragedzombie<EnragedNormalEntity>> {
+public class EnragedNormalRenderer extends MobRenderer<EnragedNormalEntity, Modelhostile<EnragedNormalEntity>> {
 	public EnragedNormalRenderer(EntityRendererProvider.Context context) {
-		super(context, new Modelenragedzombie<EnragedNormalEntity>(context.bakeLayer(Modelenragedzombie.LAYER_LOCATION)), 0.5f);
+		super(context, new Modelhostile<EnragedNormalEntity>(context.bakeLayer(Modelhostile.LAYER_LOCATION)), 0.5f);
 	}
 
 	@Override
@@ -21,6 +21,6 @@ public class EnragedNormalRenderer extends MobRenderer<EnragedNormalEntity, Mode
 
 	@Override
 	public ResourceLocation getTextureLocation(EnragedNormalEntity entity) {
-		return new ResourceLocation("engies_chaos:textures/entities/enragednormal.png");
+		return new ResourceLocation("engies_chaos:textures/entities/enragedzombie_normal.png");
 	}
 }

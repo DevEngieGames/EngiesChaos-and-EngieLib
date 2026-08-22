@@ -31,7 +31,6 @@ import engiegames.engies_chaos.client.model.Modelhostile;
 import engiegames.engies_chaos.client.model.Modelhalloweenoutraged;
 import engiegames.engies_chaos.client.model.Modelhalloweenenraged;
 import engiegames.engies_chaos.client.model.Modelhalloweenangry;
-import engiegames.engies_chaos.client.model.Modelenragedzombie;
 import engiegames.engies_chaos.client.model.Modelenraged_new;
 import engiegames.engies_chaos.client.model.Modelengiepochostile;
 import engiegames.engies_chaos.client.model.Modelengiearmorforhostilel2;
@@ -101,7 +100,6 @@ public class EngiesChaosModModels {
 		event.registerLayerDefinition(Modelmissileexplosionleftbehind.LAYER_LOCATION, Modelmissileexplosionleftbehind::createBodyLayer);
 		event.registerLayerDefinition(Modelavalanche_ball.LAYER_LOCATION, Modelavalanche_ball::createBodyLayer);
 		event.registerLayerDefinition(Modelboyosleepalt.LAYER_LOCATION, Modelboyosleepalt::createBodyLayer);
-		event.registerLayerDefinition(Modelenragedzombie.LAYER_LOCATION, Modelenragedzombie::createBodyLayer);
 		event.registerLayerDefinition(Modelddayrift.LAYER_LOCATION, Modelddayrift::createBodyLayer);
 		event.registerLayerDefinition(Modelboyorockysleep.LAYER_LOCATION, Modelboyorockysleep::createBodyLayer);
 		event.registerLayerDefinition(Modelrougharmor.LAYER_LOCATION, Modelrougharmor::createBodyLayer);
