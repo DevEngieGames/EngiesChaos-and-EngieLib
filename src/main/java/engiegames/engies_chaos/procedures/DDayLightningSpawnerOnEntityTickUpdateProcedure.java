@@ -74,8 +74,7 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 						Entity _ent = entity;
 						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
-									("execute as @a[distance=..12.5] run damage @s " + Math.round(Mth.nextDouble(RandomSource.create(), 40, 100)) + " minecraft:lightning_bolt"));
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("damages @a[distance=..12.5] " + Math.round(Mth.nextDouble(RandomSource.create(), 40, 100)) + " 5"));
 						}
 					}
 				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayscornerlightning == false) {
@@ -117,8 +116,7 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 						Entity _ent = entity;
 						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
-									("execute as @a[distance=..12.5] run damage @s " + Math.round(Mth.nextDouble(RandomSource.create(), 40, 100)) + " minecraft:lightning_bolt"));
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("damages @a[distance=..12.5] " + Math.round(Mth.nextDouble(RandomSource.create(), 40, 100)) + " 5"));
 						}
 					}
 				}
@@ -154,8 +152,7 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 						Entity _ent = entity;
 						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
-									("execute as @a[distance=..6.25] run damage @s " + Math.round(Mth.nextDouble(RandomSource.create(), 30, 100)) + " minecraft:lightning_bolt"));
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("damages @a[distance=..6.25] " + Math.round(Mth.nextDouble(RandomSource.create(), 30, 100)) + " 5"));
 						}
 					}
 				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayscornerlightning == false) {
@@ -197,8 +194,7 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 						Entity _ent = entity;
 						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
-									("execute as @a[distance=..6.25] run damage @s " + Math.round(Mth.nextDouble(RandomSource.create(), 30, 100)) + " minecraft:lightning_bolt"));
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("damages @a[distance=..6.25] " + Math.round(Mth.nextDouble(RandomSource.create(), 30, 100)) + " 5"));
 						}
 					}
 				}
@@ -237,8 +233,7 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 					Entity _ent = entity;
 					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
-								("execute as @a[distance=..25] run damage @s " + Math.round(Mth.nextDouble(RandomSource.create(), 50, 100)) + " minecraft:lightning_bolt"));
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("damages @a[distance=..25] " + Math.round(Mth.nextDouble(RandomSource.create(), 50, 100)) + " 5"));
 					}
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayscornerlightning == false) {
@@ -280,8 +275,7 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 					Entity _ent = entity;
 					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
-								("execute as @a[distance=..25] run damage @s " + Math.round(Mth.nextDouble(RandomSource.create(), 50, 100)) + " minecraft:lightning_bolt"));
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("damages @a[distance=..25] " + Math.round(Mth.nextDouble(RandomSource.create(), 50, 100)) + " 5"));
 					}
 				}
 			}
@@ -327,8 +321,7 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 					Entity _ent = entity;
 					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
-								("execute as @a[distance=..12.5] run damage @s " + Math.round(Mth.nextDouble(RandomSource.create(), 45, 100)) + " minecraft:lightning_bolt"));
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("damages @a[distance=..12.5] " + Math.round(Mth.nextDouble(RandomSource.create(), 45, 100)) + " 5"));
 					}
 				}
 			} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == false && world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == true) {
@@ -370,8 +363,7 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 					Entity _ent = entity;
 					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
-								("execute as @a[distance=..6.25] run damage @s " + Math.round(Mth.nextDouble(RandomSource.create(), 35, 100)) + " minecraft:lightning_bolt"));
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("damages @a[distance=..6.25] " + Math.round(Mth.nextDouble(RandomSource.create(), 35, 100)) + " 5"));
 					}
 				}
 			} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == false && world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == false) {
@@ -413,8 +405,7 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 					Entity _ent = entity;
 					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
-								("execute as @a[distance=..12.5] run damage @s " + Math.round(Mth.nextDouble(RandomSource.create(), 45, 100)) + " minecraft:lightning_bolt"));
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("damages @a[distance=..12.5] " + Math.round(Mth.nextDouble(RandomSource.create(), 45, 100)) + " 5"));
 					}
 				}
 			}

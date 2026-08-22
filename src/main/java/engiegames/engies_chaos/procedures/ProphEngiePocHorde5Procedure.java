@@ -6,9 +6,9 @@ import engiegames.engies_chaos.network.EngiesChaosModVariables;
 
 public class ProphEngiePocHorde5Procedure {
 	public static boolean execute(LevelAccessor world) {
-		if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 4 && EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 5) {
+		if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb >= 4 && EngiesChaosModVariables.MapVariables.get(world).ddayprophengiepochordenumb == 5) {
 			return true;
-		} else if (!(EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 4 && EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 5)) {
+		} else if (!(EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb >= 4 && EngiesChaosModVariables.MapVariables.get(world).ddayprophengiepochordenumb == 5)) {
 			return false;
 		}
 		return false;

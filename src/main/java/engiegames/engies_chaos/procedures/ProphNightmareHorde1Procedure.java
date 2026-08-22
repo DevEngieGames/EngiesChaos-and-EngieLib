@@ -6,9 +6,9 @@ import engiegames.engies_chaos.network.EngiesChaosModVariables;
 
 public class ProphNightmareHorde1Procedure {
 	public static boolean execute(LevelAccessor world) {
-		if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb >= 2 && EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 1) {
+		if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb >= 2 && EngiesChaosModVariables.MapVariables.get(world).ddayprophnightmarehordenumb == 1) {
 			return true;
-		} else if (!(EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb >= 2 && EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 1)) {
+		} else if (!(EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb >= 2 && EngiesChaosModVariables.MapVariables.get(world).ddayprophnightmarehordenumb == 1)) {
 			return false;
 		}
 		return false;

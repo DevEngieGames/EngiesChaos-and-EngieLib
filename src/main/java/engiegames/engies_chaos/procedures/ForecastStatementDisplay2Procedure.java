@@ -13,7 +13,9 @@ public class ForecastStatementDisplay2Procedure {
 					return true;
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).TheEndStart == true || EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart == true) {
-				return true;
+				if (EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum >= 1) {
+					return true;
+				}
 			}
 		} else if (!(EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart == true || EngiesChaosModVariables.MapVariables.get(world).TheEndStart == true
 				|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart == true)) {

@@ -34,8 +34,7 @@ public class DDayEeriePlayProcedure {
 
 	private static void execute(@Nullable Event event, LevelAccessor world) {
 		if (!world.isClientSide()) {
-			if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == true
-					&& (EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart == true || EngiesChaosModVariables.MapVariables.get(world).TheEndStart == true)) {
+			if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == true && (EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart == true)) {
 				if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayEeriePlayOnce == false) {
 					EngiesChaosModVariables.MapVariables.get(world).DoomsdayEeriePlayOnce = true;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -80,6 +79,128 @@ public class DDayEeriePlayProcedure {
 							boolean _setval = true;
 							entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.healthreductiondday = _setval;
+								capability.syncPlayerVariables(entityiterator);
+							});
+						}
+						{
+							boolean _setval = false;
+							entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.DoomsdayAlive = _setval;
+								capability.syncPlayerVariables(entityiterator);
+							});
+						}
+						{
+							Entity _ent = entityiterator;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "clear @a engies_chaos:gravity_coil");
+							}
+						}
+						{
+							Entity _ent = entityiterator;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "clear @a engies_chaos:small_goblet");
+							}
+						}
+						{
+							Entity _ent = entityiterator;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "clear @a engies_chaos:goblet");
+							}
+						}
+						{
+							Entity _ent = entityiterator;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "clear @a engies_chaos:engie_goblet");
+							}
+						}
+						EngiesChaosMod.queueServerWork(1, () -> {
+							{
+								Entity _ent = entityiterator;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @a engies_chaos:gravity_coil");
+								}
+							}
+							{
+								Entity _ent = entityiterator;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @a engies_chaos:small_goblet");
+								}
+							}
+							{
+								Entity _ent = entityiterator;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @a engies_chaos:goblet");
+								}
+							}
+							{
+								Entity _ent = entityiterator;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give xEngie engies_chaos:engie_goblet");
+								}
+							}
+						});
+					}
+				}
+			} else if (EngiesChaosModVariables.MapVariables.get(world).OHBOY == true && EngiesChaosModVariables.MapVariables.get(world).TheEndStart == true) {
+				if (EngiesChaosModVariables.MapVariables.get(world).TheEndEeriePlayOnce == false) {
+					EngiesChaosModVariables.MapVariables.get(world).TheEndEeriePlayOnce = true;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false, world.getServer());
+					for (Entity entityiterator : new ArrayList<>(world.players())) {
+						{
+							Entity _ent = entityiterator;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @s instant_health 1 28 true");
+							}
+						}
+						{
+							Entity _ent = entityiterator;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "playsound engies_chaos:theend_eerie neutral @s");
+							}
+						}
+						{
+							Entity _ent = entityiterator;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "worldborder set 338");
+							}
+						}
+						{
+							Entity _ent = entityiterator;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "spreadplayers 0 0 0 128 false @s");
+							}
+						}
+						{
+							boolean _setval = false;
+							entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.ddayplayeraddedtodeadcount = _setval;
+								capability.syncPlayerVariables(entityiterator);
+							});
+						}
+						{
+							boolean _setval = true;
+							entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.healthreductiondday = _setval;
+								capability.syncPlayerVariables(entityiterator);
+							});
+						}
+						{
+							boolean _setval = false;
+							entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.DoomsdayAlive = _setval;
 								capability.syncPlayerVariables(entityiterator);
 							});
 						}
@@ -188,6 +309,13 @@ public class DDayEeriePlayProcedure {
 							boolean _setval = true;
 							entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.healthreductiondday = _setval;
+								capability.syncPlayerVariables(entityiterator);
+							});
+						}
+						{
+							boolean _setval = false;
+							entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.DoomsdayAlive = _setval;
 								capability.syncPlayerVariables(entityiterator);
 							});
 						}

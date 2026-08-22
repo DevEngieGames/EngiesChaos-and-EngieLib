@@ -22,7 +22,7 @@ import com.mojang.brigadier.arguments.DoubleArgumentType;
 public class DamageCommand {
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {
-		event.getDispatcher().register(Commands.literal("damage").requires(s -> s.hasPermission(3)).then(Commands.argument("entity", EntityArgument.entity()).then(Commands.argument("amount", DoubleArgumentType.doubleArg()).executes(arguments -> {
+		event.getDispatcher().register(Commands.literal("damages").requires(s -> s.hasPermission(3)).then(Commands.argument("entity", EntityArgument.entities()).then(Commands.argument("amount", DoubleArgumentType.doubleArg()).executes(arguments -> {
 			Level world = arguments.getSource().getUnsidedLevel();
 			double x = arguments.getSource().getPosition().x();
 			double y = arguments.getSource().getPosition().y();

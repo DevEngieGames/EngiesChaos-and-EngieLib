@@ -37,4 +37,5 @@ public class EngiesChaosModSounds {
 	public static final RegistryObject<SoundEvent> DOOMSDAYDISASTERREVEAL = REGISTRY.register("doomsdaydisasterreveal", () -> new SoundEvent(new ResourceLocation("engies_chaos", "doomsdaydisasterreveal")));
 	public static final RegistryObject<SoundEvent> DOOMSHALF1 = REGISTRY.register("doomshalf1", () -> new SoundEvent(new ResourceLocation("engies_chaos", "doomshalf1")));
 	public static final RegistryObject<SoundEvent> DOOMSHALF2 = REGISTRY.register("doomshalf2", () -> new SoundEvent(new ResourceLocation("engies_chaos", "doomshalf2")));
+	public static final RegistryObject<SoundEvent> THEEND_EERIE = REGISTRY.register("theend_eerie", () -> new SoundEvent(new ResourceLocation("engies_chaos", "theend_eerie")));
 }

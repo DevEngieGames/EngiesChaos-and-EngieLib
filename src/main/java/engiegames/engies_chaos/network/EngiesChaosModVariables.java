@@ -190,7 +190,6 @@ public class EngiesChaosModVariables {
 			clone.ddayplayeraddedtodeadcount = original.ddayplayeraddedtodeadcount;
 			clone.doublejumping = original.doublejumping;
 			if (!event.isWasDeath()) {
-				clone.playeroverhealhp = original.playeroverhealhp;
 				clone.firstplay = original.firstplay;
 				clone.RespawnNormInstantHealth = original.RespawnNormInstantHealth;
 				clone.RespawnTrueHardcoreGraceStart = original.RespawnTrueHardcoreGraceStart;
@@ -501,6 +500,7 @@ public class EngiesChaosModVariables {
 		public double previoustime = 0;
 		public double forecastdialogue = 0;
 		public boolean hordespawnstoggle = false;
+		public double randnumforproph = 0;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -746,6 +746,7 @@ public class EngiesChaosModVariables {
 			previoustime = nbt.getDouble("previoustime");
 			forecastdialogue = nbt.getDouble("forecastdialogue");
 			hordespawnstoggle = nbt.getBoolean("hordespawnstoggle");
+			randnumforproph = nbt.getDouble("randnumforproph");
 		}
 
 		@Override
@@ -987,6 +988,7 @@ public class EngiesChaosModVariables {
 			nbt.putDouble("previoustime", previoustime);
 			nbt.putDouble("forecastdialogue", forecastdialogue);
 			nbt.putBoolean("hordespawnstoggle", hordespawnstoggle);
+			nbt.putDouble("randnumforproph", randnumforproph);
 			return nbt;
 		}
 
@@ -1079,7 +1081,6 @@ public class EngiesChaosModVariables {
 	}
 
 	public static class PlayerVariables {
-		public double playeroverhealhp = 0;
 		public double RiftX = 0;
 		public double RiftY = 0;
 		public double RiftZ = 0;
@@ -1212,7 +1213,6 @@ public class EngiesChaosModVariables {
 
 		public Tag writeNBT() {
 			CompoundTag nbt = new CompoundTag();
-			nbt.putDouble("playeroverhealhp", playeroverhealhp);
 			nbt.putDouble("RiftX", RiftX);
 			nbt.putDouble("RiftY", RiftY);
 			nbt.putDouble("RiftZ", RiftZ);
@@ -1342,7 +1342,6 @@ public class EngiesChaosModVariables {
 
 		public void readNBT(Tag tag) {
 			CompoundTag nbt = (CompoundTag) tag;
-			playeroverhealhp = nbt.getDouble("playeroverhealhp");
 			RiftX = nbt.getDouble("RiftX");
 			RiftY = nbt.getDouble("RiftY");
 			RiftZ = nbt.getDouble("RiftZ");
@@ -1491,7 +1490,6 @@ public class EngiesChaosModVariables {
 			context.enqueueWork(() -> {
 				if (!context.getDirection().getReceptionSide().isServer()) {
 					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
-					variables.playeroverhealhp = message.data.playeroverhealhp;
 					variables.RiftX = message.data.RiftX;
 					variables.RiftY = message.data.RiftY;
 					variables.RiftZ = message.data.RiftZ;

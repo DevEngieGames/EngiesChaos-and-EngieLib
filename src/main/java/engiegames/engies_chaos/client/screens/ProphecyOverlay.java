@@ -39,6 +39,7 @@ import engiegames.engies_chaos.procedures.ProphInsanityHorde3Procedure;
 import engiegames.engies_chaos.procedures.ProphInsanityHorde2Procedure;
 import engiegames.engies_chaos.procedures.ProphInsanityHorde1Procedure;
 import engiegames.engies_chaos.procedures.ProphHorde4Procedure;
+import engiegames.engies_chaos.procedures.ProphHorde3Procedure;
 import engiegames.engies_chaos.procedures.ProphHorde2Procedure;
 import engiegames.engies_chaos.procedures.ProphHorde1Procedure;
 import engiegames.engies_chaos.procedures.ProphEngiePocHorde7Procedure;
@@ -158,7 +159,7 @@ public class ProphecyOverlay {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/horde27.png"));
 				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
 			}
-			if (ProphNormalHorde3Procedure.execute(world)) {
+			if (ProphHorde3Procedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/horde3.png"));
 				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
 			}

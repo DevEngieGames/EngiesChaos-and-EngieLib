@@ -290,7 +290,7 @@
           "image": "horde3.png",
           "use1Xscale": true,
           "displayCondition": {
-            "name": "ProphNormalHorde3"
+            "name": "ProphHorde3"
           },
           "anchorPoint": "TOP_CENTER",
           "x": 33,

@@ -219,7 +219,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 					}
 				});
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 2) {
-				if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 1) {
+				if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnightmarehordenumb == 1) {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount != 0) {
 						for (int index7 = 0; index7 < (int) EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount; index7++) {
 							if (world instanceof ServerLevel _level) {
@@ -239,7 +239,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 							_level.addFreshEntity(entityToSpawn);
 						}
 					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 2) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnightmarehordenumb == 2) {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount != 0) {
 						for (int index8 = 0; index8 < (int) EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount; index8++) {
 							if (world instanceof ServerLevel _level) {
@@ -259,7 +259,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 							_level.addFreshEntity(entityToSpawn);
 						}
 					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 3) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnightmarehordenumb == 3) {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount != 0) {
 						for (int index9 = 0; index9 < (int) EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount; index9++) {
 							if (world instanceof ServerLevel _level) {
@@ -279,7 +279,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 							_level.addFreshEntity(entityToSpawn);
 						}
 					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 4) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnightmarehordenumb == 4) {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount != 0) {
 						for (int index10 = 0; index10 < (int) EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount; index10++) {
 							if (world instanceof ServerLevel _level) {
@@ -299,7 +299,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 							_level.addFreshEntity(entityToSpawn);
 						}
 					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 5) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnightmarehordenumb == 5) {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount != 0) {
 						for (int index11 = 0; index11 < (int) EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount; index11++) {
 							if (world instanceof ServerLevel _level) {
@@ -319,7 +319,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 							_level.addFreshEntity(entityToSpawn);
 						}
 					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 6) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnightmarehordenumb == 6) {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount != 0) {
 						for (int index12 = 0; index12 < (int) EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount; index12++) {
 							if (world instanceof ServerLevel _level) {
@@ -339,7 +339,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 							_level.addFreshEntity(entityToSpawn);
 						}
 					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 7) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnightmarehordenumb == 7) {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount != 0) {
 						for (int index13 = 0; index13 < (int) EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount; index13++) {
 							if (world instanceof ServerLevel _level) {
@@ -371,7 +371,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 					}
 				});
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 3) {
-				if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 1) {
+				if (EngiesChaosModVariables.MapVariables.get(world).ddayprophinsanityhordenumb == 1) {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount != 0) {
 						for (int index14 = 0; index14 < (int) EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount; index14++) {
 							if (world instanceof ServerLevel _level) {
@@ -391,7 +391,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 							_level.addFreshEntity(entityToSpawn);
 						}
 					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 2) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophinsanityhordenumb == 2) {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount != 0) {
 						for (int index15 = 0; index15 < (int) EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount; index15++) {
 							if (world instanceof ServerLevel _level) {
@@ -411,7 +411,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 							_level.addFreshEntity(entityToSpawn);
 						}
 					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 3) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophinsanityhordenumb == 3) {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount != 0) {
 						for (int index16 = 0; index16 < (int) EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount; index16++) {
 							if (world instanceof ServerLevel _level) {
@@ -431,7 +431,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 							_level.addFreshEntity(entityToSpawn);
 						}
 					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 4) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophinsanityhordenumb == 4) {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount != 0) {
 						for (int index17 = 0; index17 < (int) EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount; index17++) {
 							if (world instanceof ServerLevel _level) {
@@ -451,7 +451,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 							_level.addFreshEntity(entityToSpawn);
 						}
 					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 5) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophinsanityhordenumb == 5) {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount != 0) {
 						for (int index18 = 0; index18 < (int) EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount; index18++) {
 							if (world instanceof ServerLevel _level) {
@@ -471,7 +471,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 							_level.addFreshEntity(entityToSpawn);
 						}
 					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 6) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophinsanityhordenumb == 6) {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount != 0) {
 						for (int index19 = 0; index19 < (int) EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount; index19++) {
 							if (world instanceof ServerLevel _level) {
@@ -491,7 +491,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 							_level.addFreshEntity(entityToSpawn);
 						}
 					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 7) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophinsanityhordenumb == 7) {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount != 0) {
 						for (int index20 = 0; index20 < (int) EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount; index20++) {
 							if (world instanceof ServerLevel _level) {
@@ -523,7 +523,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 					}
 				});
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 4) {
-				if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 1) {
+				if (EngiesChaosModVariables.MapVariables.get(world).ddayprophengiepochordenumb == 1) {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount != 0) {
 						for (int index21 = 0; index21 < (int) EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount; index21++) {
 							if (world instanceof ServerLevel _level) {
@@ -543,7 +543,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 							_level.addFreshEntity(entityToSpawn);
 						}
 					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 2) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophengiepochordenumb == 2) {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount != 0) {
 						for (int index22 = 0; index22 < (int) EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount; index22++) {
 							if (world instanceof ServerLevel _level) {
@@ -563,7 +563,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 							_level.addFreshEntity(entityToSpawn);
 						}
 					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 3) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophengiepochordenumb == 3) {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount != 0) {
 						for (int index23 = 0; index23 < (int) EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount; index23++) {
 							if (world instanceof ServerLevel _level) {
@@ -583,7 +583,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 							_level.addFreshEntity(entityToSpawn);
 						}
 					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 4) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophengiepochordenumb == 4) {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount != 0) {
 						for (int index24 = 0; index24 < (int) EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount; index24++) {
 							if (world instanceof ServerLevel _level) {
@@ -603,7 +603,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 							_level.addFreshEntity(entityToSpawn);
 						}
 					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 5) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophengiepochordenumb == 5) {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount != 0) {
 						for (int index25 = 0; index25 < (int) EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount; index25++) {
 							if (world instanceof ServerLevel _level) {
@@ -623,7 +623,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 							_level.addFreshEntity(entityToSpawn);
 						}
 					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 6) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophengiepochordenumb == 6) {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount != 0) {
 						for (int index26 = 0; index26 < (int) EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount; index26++) {
 							if (world instanceof ServerLevel _level) {
@@ -643,7 +643,7 @@ public class HordeSpawnerOnEntityTickUpdateProcedure {
 							_level.addFreshEntity(entityToSpawn);
 						}
 					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb == 7) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophengiepochordenumb == 7) {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount != 0) {
 						for (int index27 = 0; index27 < (int) EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount; index27++) {
 							if (world instanceof ServerLevel _level) {

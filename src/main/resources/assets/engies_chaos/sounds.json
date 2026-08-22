@@ -200,5 +200,13 @@
         "stream": true
       }
     ]
+  },
+  "theend_eerie": {
+    "sounds": [
+      {
+        "name": "engies_chaos:theendeerie",
+        "stream": false
+      }
+    ]
   }
 }
