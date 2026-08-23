@@ -139,7 +139,7 @@
     "spawnThisMob": true,
     "doesDespawnWhenIdle": false,
     "spawningCondition": {
-      "name": "EnragedNormalNaturalEntitySpawningCondition"
+      "name": "EnragedNPCNaturalEntitySpawningCondition"
     },
     "spawningProbability": 30,
     "mobSpawningType": "creature",

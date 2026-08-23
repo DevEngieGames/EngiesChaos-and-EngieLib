@@ -33,7 +33,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.Packet;
 
 import engiegames.engies_chaos.procedures.UncommonEngieRCProcedure;
-import engiegames.engies_chaos.procedures.EnragedNormalNaturalEntitySpawningConditionProcedure;
+import engiegames.engies_chaos.procedures.EnragedNPCNaturalEntitySpawningConditionProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
@@ -122,7 +122,7 @@ public class UncommonEngieEntity extends PathfinderMob {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			return EnragedNormalNaturalEntitySpawningConditionProcedure.execute(world, x, y, z);
+			return EnragedNPCNaturalEntitySpawningConditionProcedure.execute(world, x, y, z);
 		});
 	}
 
