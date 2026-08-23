@@ -177,6 +177,13 @@ public class DoomsdayCleanupProcedure {
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			EngiesChaosModVariables.MapVariables.get(world).engieswrathstart = false;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			{
+				boolean _setval = false;
+				entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.healthreductiondday = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
 			EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = 0;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			EngiesChaosModVariables.MapVariables.get(world).ddayhalf1 = true;
