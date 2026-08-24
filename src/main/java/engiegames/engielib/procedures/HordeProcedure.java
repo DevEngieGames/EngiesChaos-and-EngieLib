@@ -11,7 +11,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
-public class SpikeProcedure {
+public class HordeProcedure {
 	public static void execute(LevelAccessor world) {
 		if (world instanceof ServerLevel _level)
 			_level.getServer().getCommands()
@@ -19,6 +19,6 @@ public class SpikeProcedure {
 							new Vec3((Mth.nextDouble(RandomSource.create(), -168, 168)),
 									(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) Mth.nextDouble(RandomSource.create(), -168, 168), (int) Mth.nextDouble(RandomSource.create(), -168, 168))),
 									(Mth.nextDouble(RandomSource.create(), -168, 168))),
-							Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "summon engies_chaos:d_day_spike");
+							Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "summon engies_chaos:horde_spawner");
 	}
 }

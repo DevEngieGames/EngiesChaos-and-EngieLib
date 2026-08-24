@@ -7,7 +7,7 @@ import net.minecraft.commands.CommandSourceStack;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.StringArgumentType;
 
-public class REAAELibStuffProcedure {
+public class LibStuffProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, CommandContext<CommandSourceStack> arguments, Entity entity) {
 		if (entity == null)
 			return;
@@ -24,6 +24,8 @@ public class REAAELibStuffProcedure {
 				RiftProcedure.execute(world);
 			} else if ((StringArgumentType.getString(arguments, "LibStuff")).equals("spike")) {
 				SpikeProcedure.execute(world);
+			} else if ((StringArgumentType.getString(arguments, "LibStuff")).equals("horde")) {
+				HordeProcedure.execute(world);
 			} else if ((StringArgumentType.getString(arguments, "LibStuff")).equals("startchallenge")) {
 				StartchallengeProcedure.execute(world, entity);
 			} else if ((StringArgumentType.getString(arguments, "LibStuff")).equals("challengecompleted")) {

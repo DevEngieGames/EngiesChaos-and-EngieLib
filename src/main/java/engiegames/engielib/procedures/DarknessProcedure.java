@@ -15,7 +15,7 @@ public class DarknessProcedure {
 		if (EngielibModVariables.MapVariables.get(world).darknessapplied == false) {
 			if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-						"effect give @a darkness 18 1 true");
+						"effect give @a darkness 20 1 true");
 			EngielibModVariables.MapVariables.get(world).darknessapplied = true;
 			EngielibModVariables.MapVariables.get(world).syncData(world);
 		} else if (EngielibModVariables.MapVariables.get(world).darknessapplied == true) {

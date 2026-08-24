@@ -165,6 +165,8 @@ public class EngielibModVariables {
 		public double totalplayersjoinedworld = 0;
 		public double playerscantries = 0;
 		public boolean playerscanfound = false;
+		public double rx = 0;
+		public double rz = 0;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -198,6 +200,8 @@ public class EngielibModVariables {
 			totalplayersjoinedworld = nbt.getDouble("totalplayersjoinedworld");
 			playerscantries = nbt.getDouble("playerscantries");
 			playerscanfound = nbt.getBoolean("playerscanfound");
+			rx = nbt.getDouble("rx");
+			rz = nbt.getDouble("rz");
 		}
 
 		@Override
@@ -227,6 +231,8 @@ public class EngielibModVariables {
 			nbt.putDouble("totalplayersjoinedworld", totalplayersjoinedworld);
 			nbt.putDouble("playerscantries", playerscantries);
 			nbt.putBoolean("playerscanfound", playerscanfound);
+			nbt.putDouble("rx", rx);
+			nbt.putDouble("rz", rz);
 			return nbt;
 		}
 

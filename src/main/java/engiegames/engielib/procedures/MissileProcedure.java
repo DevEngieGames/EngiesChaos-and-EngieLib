@@ -17,28 +17,36 @@ public class MissileProcedure {
 			if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands()
 						.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL,
-								new Vec3((Mth.nextDouble(RandomSource.create(), -168, 168)), (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0)), (Mth.nextDouble(RandomSource.create(), -168, 168))), Vec2.ZERO, _level, 4, "",
-								Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "summon engies_chaos:yellow_lightning");
+								new Vec3((Mth.nextDouble(RandomSource.create(), -168, 168)),
+										(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) Mth.nextDouble(RandomSource.create(), -168, 168), (int) Mth.nextDouble(RandomSource.create(), -168, 168))),
+										(Mth.nextDouble(RandomSource.create(), -168, 168))),
+								Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "summon engies_chaos:yellow_lightning");
 		} else {
 			if (Mth.nextDouble(RandomSource.create(), 1, 100) <= 35) {
 				if (world instanceof ServerLevel _level)
 					_level.getServer().getCommands()
 							.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL,
-									new Vec3((Mth.nextDouble(RandomSource.create(), -168, 168)), (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0)), (Mth.nextDouble(RandomSource.create(), -168, 168))), Vec2.ZERO, _level, 4, "",
-									Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "summon engies_chaos:blue_burst");
+									new Vec3((Mth.nextDouble(RandomSource.create(), -168, 168)),
+											(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) Mth.nextDouble(RandomSource.create(), -168, 168), (int) Mth.nextDouble(RandomSource.create(), -168, 168))),
+											(Mth.nextDouble(RandomSource.create(), -168, 168))),
+									Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "summon engies_chaos:blue_burst");
 			} else {
 				if (Mth.nextDouble(RandomSource.create(), 1, 100) <= 35) {
 					if (world instanceof ServerLevel _level)
 						_level.getServer().getCommands()
 								.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL,
-										new Vec3((Mth.nextDouble(RandomSource.create(), -168, 168)), (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0)), (Mth.nextDouble(RandomSource.create(), -168, 168))), Vec2.ZERO, _level, 4, "",
-										Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "summon engies_chaos:normal");
+										new Vec3((Mth.nextDouble(RandomSource.create(), -168, 168)),
+												(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) Mth.nextDouble(RandomSource.create(), -168, 168), (int) Mth.nextDouble(RandomSource.create(), -168, 168))),
+												(Mth.nextDouble(RandomSource.create(), -168, 168))),
+										Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "summon engies_chaos:normal");
 				} else {
 					if (world instanceof ServerLevel _level)
 						_level.getServer().getCommands()
 								.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL,
-										new Vec3((Mth.nextDouble(RandomSource.create(), -168, 168)), (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0)), (Mth.nextDouble(RandomSource.create(), -168, 168))), Vec2.ZERO, _level, 4, "",
-										Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "summon engies_chaos:moab");
+										new Vec3((Mth.nextDouble(RandomSource.create(), -168, 168)),
+												(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) Mth.nextDouble(RandomSource.create(), -168, 168), (int) Mth.nextDouble(RandomSource.create(), -168, 168))),
+												(Mth.nextDouble(RandomSource.create(), -168, 168))),
+										Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "summon engies_chaos:moab");
 				}
 			}
 		}

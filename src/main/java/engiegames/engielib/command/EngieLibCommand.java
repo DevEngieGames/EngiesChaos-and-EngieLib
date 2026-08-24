@@ -11,7 +11,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.commands.Commands;
 
-import engiegames.engielib.procedures.REAAELibStuffProcedure;
+import engiegames.engielib.procedures.LibStuffProcedure;
 import engiegames.engielib.procedures.LibNeedProcedure;
 
 import com.mojang.brigadier.arguments.StringArgumentType;
@@ -49,7 +49,7 @@ public class EngieLibCommand {
 					if (entity != null)
 						direction = entity.getDirection();
 
-					REAAELibStuffProcedure.execute(world, x, y, z, arguments, entity);
+					LibStuffProcedure.execute(world, x, y, z, arguments, entity);
 					return 0;
 				}).then(Commands.argument("Number", DoubleArgumentType.doubleArg()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
@@ -63,7 +63,7 @@ public class EngieLibCommand {
 					if (entity != null)
 						direction = entity.getDirection();
 
-					REAAELibStuffProcedure.execute(world, x, y, z, arguments, entity);
+					LibStuffProcedure.execute(world, x, y, z, arguments, entity);
 					return 0;
 				})))));
 	}
