@@ -33,8 +33,6 @@ import engiegames.engies_chaos.client.model.Modelhalloweenenraged;
 import engiegames.engies_chaos.client.model.Modelhalloweenangry;
 import engiegames.engies_chaos.client.model.Modelenraged_new;
 import engiegames.engies_chaos.client.model.Modelengiepochostile;
-import engiegames.engies_chaos.client.model.Modelengiearmorforhostilel2;
-import engiegames.engies_chaos.client.model.Modelengiearmorforhostilel1;
 import engiegames.engies_chaos.client.model.Modelengiearmor;
 import engiegames.engies_chaos.client.model.Modelddayspike;
 import engiegames.engies_chaos.client.model.Modelddayrift;
@@ -119,7 +117,6 @@ public class EngiesChaosModModels {
 		event.registerLayerDefinition(Modelboyorockylayonside.LAYER_LOCATION, Modelboyorockylayonside::createBodyLayer);
 		event.registerLayerDefinition(Modelboyotamed.LAYER_LOCATION, Modelboyotamed::createBodyLayer);
 		event.registerLayerDefinition(Modelboyosleep.LAYER_LOCATION, Modelboyosleep::createBodyLayer);
-		event.registerLayerDefinition(Modelengiearmorforhostilel1.LAYER_LOCATION, Modelengiearmorforhostilel1::createBodyLayer);
 		event.registerLayerDefinition(Modelboyolayonside.LAYER_LOCATION, Modelboyolayonside::createBodyLayer);
 		event.registerLayerDefinition(Modelboyositxengie.LAYER_LOCATION, Modelboyositxengie::createBodyLayer);
 		event.registerLayerDefinition(Modelengiearmor.LAYER_LOCATION, Modelengiearmor::createBodyLayer);
@@ -143,7 +140,6 @@ public class EngiesChaosModModels {
 		event.registerLayerDefinition(Modelhostile.LAYER_LOCATION, Modelhostile::createBodyLayer);
 		event.registerLayerDefinition(Modelengiepochostile.LAYER_LOCATION, Modelengiepochostile::createBodyLayer);
 		event.registerLayerDefinition(Modelbigboyosit.LAYER_LOCATION, Modelbigboyosit::createBodyLayer);
-		event.registerLayerDefinition(Modelengiearmorforhostilel2.LAYER_LOCATION, Modelengiearmorforhostilel2::createBodyLayer);
 		event.registerLayerDefinition(Modeloutraged_new.LAYER_LOCATION, Modeloutraged_new::createBodyLayer);
 		event.registerLayerDefinition(Modelbigboyotamed.LAYER_LOCATION, Modelbigboyotamed::createBodyLayer);
 		event.registerLayerDefinition(Modelthrowbackboyo.LAYER_LOCATION, Modelthrowbackboyo::createBodyLayer);
