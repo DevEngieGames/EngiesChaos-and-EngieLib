@@ -3,42 +3,34 @@
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
-    "textureHelmet": "superdoomsdayhelmetbase",
+    "textureHelmet": "superdoomshelm",
     "enableBody": true,
-    "textureBody": "superdoomsdaychestplatebase",
+    "textureBody": "superdoomschest",
     "enableLeggings": true,
-    "textureLeggings": "superdoomsdayleggingsbase",
+    "textureLeggings": "superdoomsleg",
     "enableBoots": true,
-    "textureBoots": "superdoomsdaybootsbase",
+    "textureBoots": "superdoomsboot",
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"
       }
     ],
     "armorTextureFile": "backup_",
-    "helmetName": "Super DoomsDay Helmet",
-    "bodyName": "Super DoomsDay Chestplate",
-    "leggingsName": "Super DoomsDay Leggings",
-    "bootsName": "Super DoomsDay Boots",
+    "helmetName": "Super Doomsday Helmet",
+    "bodyName": "Super Doomsday Chestplate",
+    "leggingsName": "Super Doomsday Leggings",
+    "bootsName": "Super Doomsday Boots",
     "helmetSpecialInformation": {
-      "fixedValue": [
-        "Congratulations!"
-      ]
+      "fixedValue": []
     },
     "bodySpecialInformation": {
-      "fixedValue": [
-        "Congratulations"
-      ]
+      "fixedValue": []
     },
     "leggingsSpecialInformation": {
-      "fixedValue": [
-        "Congratulations"
-      ]
+      "fixedValue": []
     },
     "bootsSpecialInformation": {
-      "fixedValue": [
-        "Congratulations"
-      ]
+      "fixedValue": []
     },
     "helmetModelName": "Modelengiearmor",
     "helmetModelPart": "Head",

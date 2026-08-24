@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "engies_chaos:item/theendbootsbase"
+    "layer0": "engies_chaos:item/darktheendboot"
   }
 }

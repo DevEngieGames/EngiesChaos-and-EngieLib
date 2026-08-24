@@ -3,13 +3,13 @@
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
-    "textureHelmet": "theendhelmetbase",
+    "textureHelmet": "darktheendhelm",
     "enableBody": true,
-    "textureBody": "theendchestplatebase",
+    "textureBody": "darktheendchest",
     "enableLeggings": true,
-    "textureLeggings": "theendleggingsbase",
+    "textureLeggings": "darktheendleg",
     "enableBoots": true,
-    "textureBoots": "theendbootsbase",
+    "textureBoots": "darktheendboot",
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"
@@ -21,24 +21,16 @@
     "leggingsName": "Dark Matter The End Leggings",
     "bootsName": "Dark Matter The End Boots",
     "helmetSpecialInformation": {
-      "fixedValue": [
-        "Congratulations!"
-      ]
+      "fixedValue": []
     },
     "bodySpecialInformation": {
-      "fixedValue": [
-        "Congratulations"
-      ]
+      "fixedValue": []
     },
     "leggingsSpecialInformation": {
-      "fixedValue": [
-        "Congratulations"
-      ]
+      "fixedValue": []
     },
     "bootsSpecialInformation": {
-      "fixedValue": [
-        "Congratulations"
-      ]
+      "fixedValue": []
     },
     "helmetModelName": "Modelengiearmor",
     "helmetModelPart": "Head",

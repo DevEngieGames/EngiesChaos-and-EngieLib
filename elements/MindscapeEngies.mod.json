@@ -3,13 +3,13 @@
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
-    "textureHelmet": "mindscapehelmetbase",
+    "textureHelmet": "mindscapehelm",
     "enableBody": true,
-    "textureBody": "mindscapechestplatebase",
+    "textureBody": "mindscapechest",
     "enableLeggings": true,
-    "textureLeggings": "mindscapeleggingsbase",
+    "textureLeggings": "mindscapeleg",
     "enableBoots": true,
-    "textureBoots": "mindscapebootsbase",
+    "textureBoots": "mindscapeboot",
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"
@@ -21,24 +21,16 @@
     "leggingsName": "Mindscape Engies Leggings",
     "bootsName": "Mindscape Engies Boots",
     "helmetSpecialInformation": {
-      "fixedValue": [
-        "He who watches."
-      ]
+      "fixedValue": []
     },
     "bodySpecialInformation": {
-      "fixedValue": [
-        "He who watches."
-      ]
+      "fixedValue": []
     },
     "leggingsSpecialInformation": {
-      "fixedValue": [
-        "He who watches."
-      ]
+      "fixedValue": []
     },
     "bootsSpecialInformation": {
-      "fixedValue": [
-        "He who watches."
-      ]
+      "fixedValue": []
     },
     "helmetModelName": "Modelengiearmor",
     "helmetModelPart": "Head",

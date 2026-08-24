@@ -3,13 +3,13 @@
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
-    "textureHelmet": "therealengiegameshelmbase",
+    "textureHelmet": "darktherealengiegameshelm",
     "enableBody": true,
-    "textureBody": "therealengiegameschestplatebase",
+    "textureBody": "darktherealengiegameschest",
     "enableLeggings": true,
-    "textureLeggings": "therealengiegamesleggingsbase",
+    "textureLeggings": "darktherealengiegamesleg",
     "enableBoots": true,
-    "textureBoots": "therealengiegamesbootsbase",
+    "textureBoots": "darktherealengiegamesboot",
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"

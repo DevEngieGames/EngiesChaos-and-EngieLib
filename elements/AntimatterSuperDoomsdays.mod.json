@@ -3,42 +3,34 @@
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
-    "textureHelmet": "superdoomsdayhelmetbase",
+    "textureHelmet": "antisuperdoomshelm",
     "enableBody": true,
-    "textureBody": "superdoomsdaychestplatebase",
+    "textureBody": "antisuperdoomschest",
     "enableLeggings": true,
-    "textureLeggings": "superdoomsdayleggingsbase",
+    "textureLeggings": "antisuperdoomsleg",
     "enableBoots": true,
-    "textureBoots": "superdoomsdaybootsbase",
+    "textureBoots": "antisuperdoomsboot",
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"
       }
     ],
     "armorTextureFile": "backup_",
-    "helmetName": "Antimatter Super DoomsDay Helmet",
-    "bodyName": "Antimatter Super DoomsDay Chestplate",
-    "leggingsName": "Antimatter Super DoomsDay Leggings",
-    "bootsName": "Antimatter Super DoomsDay Boots",
+    "helmetName": "Antimatter Super Doomsday Helmet",
+    "bodyName": "Antimatter Super Doomsday Chestplate",
+    "leggingsName": "Antimatter Super Doomsday Leggings",
+    "bootsName": "Antimatter Super Doomsday Boots",
     "helmetSpecialInformation": {
-      "fixedValue": [
-        "Congratulations!"
-      ]
+      "fixedValue": []
     },
     "bodySpecialInformation": {
-      "fixedValue": [
-        "Congratulations"
-      ]
+      "fixedValue": []
     },
     "leggingsSpecialInformation": {
-      "fixedValue": [
-        "Congratulations"
-      ]
+      "fixedValue": []
     },
     "bootsSpecialInformation": {
-      "fixedValue": [
-        "Congratulations"
-      ]
+      "fixedValue": []
     },
     "helmetModelName": "Modelengiearmor",
     "helmetModelPart": "Head",

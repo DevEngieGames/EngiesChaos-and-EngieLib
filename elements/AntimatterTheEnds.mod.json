@@ -3,13 +3,13 @@
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
-    "textureHelmet": "theendhelmetbase",
+    "textureHelmet": "antitheendhelm",
     "enableBody": true,
-    "textureBody": "theendchestplatebase",
+    "textureBody": "antitheendchest",
     "enableLeggings": true,
-    "textureLeggings": "theendleggingsbase",
+    "textureLeggings": "antitheendleg",
     "enableBoots": true,
-    "textureBoots": "theendbootsbase",
+    "textureBoots": "antitheendboot",
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"
@@ -21,24 +21,16 @@
     "leggingsName": "Antimatter The End Leggings",
     "bootsName": "Antimatter The End Boots",
     "helmetSpecialInformation": {
-      "fixedValue": [
-        "Congratulations!"
-      ]
+      "fixedValue": []
     },
     "bodySpecialInformation": {
-      "fixedValue": [
-        "Congratulations"
-      ]
+      "fixedValue": []
     },
     "leggingsSpecialInformation": {
-      "fixedValue": [
-        "Congratulations"
-      ]
+      "fixedValue": []
     },
     "bootsSpecialInformation": {
-      "fixedValue": [
-        "Congratulations"
-      ]
+      "fixedValue": []
     },
     "helmetModelName": "Modelengiearmor",
     "helmetModelPart": "Head",

@@ -3,13 +3,13 @@
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
-    "textureHelmet": "engiegameshelmbase",
+    "textureHelmet": "engiegameshelm",
     "enableBody": true,
-    "textureBody": "engiegameschestplatebase",
+    "textureBody": "engiegameschest",
     "enableLeggings": true,
-    "textureLeggings": "engiegamesleggingsbase",
+    "textureLeggings": "engiegamesleg",
     "enableBoots": true,
-    "textureBoots": "engiegamesbootsbase",
+    "textureBoots": "engiegamesboot",
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"
@@ -21,24 +21,16 @@
     "leggingsName": "Engies Leggings",
     "bootsName": "Engies Boots",
     "helmetSpecialInformation": {
-      "fixedValue": [
-        "Congratulations!"
-      ]
+      "fixedValue": []
     },
     "bodySpecialInformation": {
-      "fixedValue": [
-        "Congratulations"
-      ]
+      "fixedValue": []
     },
     "leggingsSpecialInformation": {
-      "fixedValue": [
-        "Congratulations"
-      ]
+      "fixedValue": []
     },
     "bootsSpecialInformation": {
-      "fixedValue": [
-        "Congratulations"
-      ]
+      "fixedValue": []
     },
     "helmetModelName": "Modelengiearmor",
     "helmetModelPart": "Head",

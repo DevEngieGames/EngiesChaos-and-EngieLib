@@ -3,13 +3,13 @@
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
-    "textureHelmet": "xengiehelmet",
+    "textureHelmet": "truexengiehelm",
     "enableBody": true,
-    "textureBody": "truexengiechestplate",
+    "textureBody": "truexengiechest",
     "enableLeggings": true,
-    "textureLeggings": "xengieleggings",
+    "textureLeggings": "truexengieleg",
     "enableBoots": true,
-    "textureBoots": "xengieboots",
+    "textureBoots": "truexengieboot",
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"

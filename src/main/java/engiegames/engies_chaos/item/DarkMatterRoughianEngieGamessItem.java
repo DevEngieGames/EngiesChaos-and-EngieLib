@@ -163,7 +163,7 @@ public abstract class DarkMatterRoughianEngieGamessItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "engies_chaos:textures/entities/rougharmorlayer2.png";
+			return "engies_chaos:textures/entities/darkmatterrougharmorlayer2.png";
 		}
 	}
 

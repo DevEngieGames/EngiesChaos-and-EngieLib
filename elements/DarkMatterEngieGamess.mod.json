@@ -3,13 +3,13 @@
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
-    "textureHelmet": "engiegameshelmbase",
+    "textureHelmet": "darkengiegameshelm",
     "enableBody": true,
-    "textureBody": "engiegameschestplatebase",
+    "textureBody": "darkengiegameschest",
     "enableLeggings": true,
-    "textureLeggings": "engiegamesleggingsbase",
+    "textureLeggings": "darkengiegamesleg",
     "enableBoots": true,
-    "textureBoots": "engiegamesbootsbase",
+    "textureBoots": "darkengiegamesboot",
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"
@@ -21,24 +21,16 @@
     "leggingsName": "Dark Matter Engies Leggings",
     "bootsName": "Dark Matter Engies Boots",
     "helmetSpecialInformation": {
-      "fixedValue": [
-        "Congratulations!"
-      ]
+      "fixedValue": []
     },
     "bodySpecialInformation": {
-      "fixedValue": [
-        "Congratulations"
-      ]
+      "fixedValue": []
     },
     "leggingsSpecialInformation": {
-      "fixedValue": [
-        "Congratulations"
-      ]
+      "fixedValue": []
     },
     "bootsSpecialInformation": {
-      "fixedValue": [
-        "Congratulations"
-      ]
+      "fixedValue": []
     },
     "helmetModelName": "Modelengiearmor",
     "helmetModelPart": "Head",

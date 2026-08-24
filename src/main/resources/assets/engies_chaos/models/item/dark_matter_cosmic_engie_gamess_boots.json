@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "engies_chaos:item/cosmicengiebootsbase"
+    "layer0": "engies_chaos:item/darkcosmicboot"
   }
 }

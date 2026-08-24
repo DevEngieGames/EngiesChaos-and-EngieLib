@@ -3,13 +3,13 @@
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
-    "textureHelmet": "engiegameshelmbase",
+    "textureHelmet": "roughhelm",
     "enableBody": true,
-    "textureBody": "engiegameschestplatebase",
+    "textureBody": "roughchest",
     "enableLeggings": true,
-    "textureLeggings": "engiegamesleggingsbase",
+    "textureLeggings": "roughleg",
     "enableBoots": true,
-    "textureBoots": "engiegamesbootsbase",
+    "textureBoots": "roughianboot",
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"

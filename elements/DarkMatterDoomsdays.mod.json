@@ -3,42 +3,34 @@
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
-    "textureHelmet": "doomsdayhelmbase",
+    "textureHelmet": "darkdoomshelm",
     "enableBody": true,
-    "textureBody": "doomsdaychestplatebase",
+    "textureBody": "darkdoomschest",
     "enableLeggings": true,
-    "textureLeggings": "doomsdayleggingsbase",
+    "textureLeggings": "darkdoomsleg",
     "enableBoots": true,
-    "textureBoots": "doomsdaybootsbase",
+    "textureBoots": "darkdoomsboot",
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"
       }
     ],
     "armorTextureFile": "backup_",
-    "helmetName": "Dark Matter DoomsDay Helmet",
-    "bodyName": "Dark Matter DoomsDay Chestplate",
-    "leggingsName": "Dark Matter DoomsDay Leggings",
-    "bootsName": "Dark Matter DoomsDay Boots",
+    "helmetName": "Dark Matter Doomsday Helmet",
+    "bodyName": "Dark Matter Doomsday Chestplate",
+    "leggingsName": "Dark Matter Doomsday Leggings",
+    "bootsName": "Dark Matter Doomsday Boots",
     "helmetSpecialInformation": {
-      "fixedValue": [
-        "Congratulations!"
-      ]
+      "fixedValue": []
     },
     "bodySpecialInformation": {
-      "fixedValue": [
-        "Congratulations"
-      ]
+      "fixedValue": []
     },
     "leggingsSpecialInformation": {
-      "fixedValue": [
-        "Congratulations"
-      ]
+      "fixedValue": []
     },
     "bootsSpecialInformation": {
-      "fixedValue": [
-        "Congratulations"
-      ]
+      "fixedValue": []
     },
     "helmetModelName": "Modelengiearmor",
     "helmetModelPart": "Head",

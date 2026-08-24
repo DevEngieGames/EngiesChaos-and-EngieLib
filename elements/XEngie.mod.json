@@ -3,13 +3,13 @@
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
-    "textureHelmet": "xengiehelmet",
+    "textureHelmet": "xengiehelm",
     "enableBody": true,
-    "textureBody": "xengiechestplate",
+    "textureBody": "xengiechest",
     "enableLeggings": true,
-    "textureLeggings": "xengieleggings",
+    "textureLeggings": "xengieleg",
     "enableBoots": true,
-    "textureBoots": "xengieboots",
+    "textureBoots": "xengieboot",
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"
@@ -21,28 +21,16 @@
     "leggingsName": "xEngie Leggings",
     "bootsName": "xEngie Boots",
     "helmetSpecialInformation": {
-      "fixedValue": [
-        "Thanks for playing RE:All About Engie.",
-        "- EngieGames(xEngie)"
-      ]
+      "fixedValue": []
     },
     "bodySpecialInformation": {
-      "fixedValue": [
-        "Thanks for playing RE:All About Engie.",
-        "- EngieGames(xEngie)"
-      ]
+      "fixedValue": []
     },
     "leggingsSpecialInformation": {
-      "fixedValue": [
-        "Thanks for playing RE:All About Engie.",
-        "- EngieGames(xEngie)"
-      ]
+      "fixedValue": []
     },
     "bootsSpecialInformation": {
-      "fixedValue": [
-        "Thanks for playing RE:All About Engie.",
-        "- EngieGames(xEngie)"
-      ]
+      "fixedValue": []
     },
     "helmetModelName": "Modelxengiearmor",
     "helmetModelPart": "Head",

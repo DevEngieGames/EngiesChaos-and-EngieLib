@@ -3,13 +3,13 @@
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
-    "textureHelmet": "cosmicengiehelmetbase",
+    "textureHelmet": "cosmichelm",
     "enableBody": true,
-    "textureBody": "cosmicengiechestplatebase",
+    "textureBody": "cosmicchest",
     "enableLeggings": true,
-    "textureLeggings": "cosmicengieleggingsbase",
+    "textureLeggings": "cosmicleg",
     "enableBoots": true,
-    "textureBoots": "cosmicengiebootsbase",
+    "textureBoots": "cosmicboot",
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"

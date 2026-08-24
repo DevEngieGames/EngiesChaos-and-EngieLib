@@ -3,13 +3,13 @@
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
-    "textureHelmet": "therealengiegameshelmbase",
+    "textureHelmet": "darkroughhelm",
     "enableBody": true,
-    "textureBody": "therealengiegameschestplatebase",
+    "textureBody": "darkroughchest",
     "enableLeggings": true,
-    "textureLeggings": "therealengiegamesleggingsbase",
+    "textureLeggings": "darkroughleg",
     "enableBoots": true,
-    "textureBoots": "therealengiegamesbootsbase",
+    "textureBoots": "darkroughboot",
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"
@@ -43,7 +43,7 @@
     "leggingsModelName": "Modelrougharmor",
     "leggingsModelPartL": "LeftLeg",
     "leggingsModelPartR": "RightLeg",
-    "leggingsModelTexture": "rougharmorlayer2.png",
+    "leggingsModelTexture": "darkmatterrougharmorlayer2.png",
     "bootsModelName": "Modelrougharmor",
     "bootsModelPartL": "LeftLeg",
     "bootsModelPartR": "RightLeg",
