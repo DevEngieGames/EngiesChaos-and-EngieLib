@@ -796,9 +796,9 @@ public class EngiesChaosModItems {
 	public static final RegistryObject<Item> THE_END_BAN_HAMMER = REGISTRY.register("the_end_ban_hammer", TheEndBanHammerItem::new);
 	public static final RegistryObject<Item> ENGIE_SCYTHE = REGISTRY.register("engie_scythe", EngieScytheItem::new);
 	public static final RegistryObject<Item> ENGIES_BAN_HAMMER = REGISTRY.register("engies_ban_hammer", EngiesBanHammerItem::new);
-	public static final RegistryObject<Item> ENGIEGAMES_SWORD = REGISTRY.register("engiegames_sword", EngieGamesSwordItem::new);
 	public static final RegistryObject<Item> MINDSCAPE_ENGIE_SCYTHE = REGISTRY.register("mindscape_engie_scythe", MindscapeScytheItem::new);
 	public static final RegistryObject<Item> MINDSCAPE_ENGIES_BAN_HAMMER = REGISTRY.register("mindscape_engies_ban_hammer", MindscapeBanHammerItem::new);
+	public static final RegistryObject<Item> ENGIEGAMES_SWORD = REGISTRY.register("engiegames_sword", EngieGamesSwordItem::new);
 	public static final RegistryObject<Item> ANTIMATTER_MINI_SCYTHE = REGISTRY.register("antimatter_mini_scythe", AntimatterMiniScytheItem::new);
 	public static final RegistryObject<Item> ANTIMATTER_MINI_BAN_HAMMER = REGISTRY.register("antimatter_mini_ban_hammer", AntimatterMiniBanHammerItem::new);
 	public static final RegistryObject<Item> ANTIMATTER_SCYTHE = REGISTRY.register("antimatter_scythe", AntimatterScytheItem::new);

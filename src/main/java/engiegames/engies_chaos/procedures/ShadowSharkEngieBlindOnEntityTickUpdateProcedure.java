@@ -13,6 +13,8 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.Direction;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.CommandSource;
 
 import java.util.ArrayList;
 
@@ -119,6 +121,19 @@ public class ShadowSharkEngieBlindOnEntityTickUpdateProcedure {
 				} else if ((player.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).BlindShadowSharkEngieAttack == true) {
 					if (entity instanceof Mob _entity)
 						_entity.getNavigation().moveTo((player.getX()), (player.getY()), (player.getZ()), 1);
+					if (!world.getEntitiesOfClass(Player.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(2 / 2d), e -> true).isEmpty()) {
+						{
+							Entity _ent = player;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @s blindness 10 255 true");
+							}
+						}
+						if (!entity.level.isClientSide())
+							entity.discard();
+						if (world instanceof ServerLevel _level)
+							_level.sendParticles(ParticleTypes.ENCHANT, x, y, z, 15, 1, 2, 1, 1);
+					}
 				}
 			}
 		}
