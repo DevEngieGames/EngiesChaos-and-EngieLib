@@ -84,7 +84,7 @@ public class QuizzetEntity extends PathfinderMob {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			return NPCNaturalEntitySpawningProcedure.execute(world);
+			return NPCNaturalEntitySpawningProcedure.execute(world, x, y, z);
 		});
 	}
 

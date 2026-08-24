@@ -501,6 +501,8 @@ public class EngiesChaosModVariables {
 		public double forecastdialogue = 0;
 		public boolean hordespawnstoggle = false;
 		public double randnumforproph = 0;
+		public double tradertimercounttick = 0;
+		public boolean traderneedcount = false;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -747,6 +749,8 @@ public class EngiesChaosModVariables {
 			forecastdialogue = nbt.getDouble("forecastdialogue");
 			hordespawnstoggle = nbt.getBoolean("hordespawnstoggle");
 			randnumforproph = nbt.getDouble("randnumforproph");
+			tradertimercounttick = nbt.getDouble("tradertimercounttick");
+			traderneedcount = nbt.getBoolean("traderneedcount");
 		}
 
 		@Override
@@ -989,6 +993,8 @@ public class EngiesChaosModVariables {
 			nbt.putDouble("forecastdialogue", forecastdialogue);
 			nbt.putBoolean("hordespawnstoggle", hordespawnstoggle);
 			nbt.putDouble("randnumforproph", randnumforproph);
+			nbt.putDouble("tradertimercounttick", tradertimercounttick);
+			nbt.putBoolean("traderneedcount", traderneedcount);
 			return nbt;
 		}
 

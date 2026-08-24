@@ -36,7 +36,6 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.chat.Component;
 import net.minecraft.nbt.CompoundTag;
 
 import javax.annotation.Nullable;
@@ -57,8 +56,6 @@ public class ClippedbyengieEntity extends PathfinderMob {
 		maxUpStep = 0.6f;
 		xpReward = 0;
 		setNoAi(false);
-		setCustomName(Component.literal("clippedbyengie"));
-		setCustomNameVisible(true);
 		setPersistenceRequired();
 		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(EngiesChaosModItems.ENGIEGAMES_SWORD.get()));
 		this.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(EngiesChaosModItems.ENGIE_GAMES_CRUCIFIX.get()));

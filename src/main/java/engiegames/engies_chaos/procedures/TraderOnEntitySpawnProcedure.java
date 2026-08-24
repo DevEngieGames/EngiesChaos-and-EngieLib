@@ -35,11 +35,7 @@ public class TraderOnEntitySpawnProcedure {
 			EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = EngiesChaosModVariables.MapVariables.get(world).numberofdistorted + 1;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 		}
-		if (entity instanceof TheRealEngieGamesEntity || entity instanceof TheRealEngieGamesHalloweenEntity) {
-			EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = EngiesChaosModVariables.MapVariables.get(world).numberofengiegames + 1;
-			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-		}
-		if (entity instanceof ScorchedEntity) {
+		if (entity instanceof TheRealEngieGamesEntity || entity instanceof TheRealEngieGamesHalloweenEntity || entity instanceof ScorchedEntity) {
 			EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = EngiesChaosModVariables.MapVariables.get(world).numberofengiegames + 1;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 		}

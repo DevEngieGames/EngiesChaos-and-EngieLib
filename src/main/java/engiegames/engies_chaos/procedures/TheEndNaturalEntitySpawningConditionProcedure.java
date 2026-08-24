@@ -11,13 +11,7 @@ public class TheEndNaturalEntitySpawningConditionProcedure {
 	public static boolean execute(LevelAccessor world) {
 		if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIES_CHAOS_TOGGLE) == true) {
 			if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.OVERWORLD) {
-				if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DOOMSDAY_TOGGLE) == true) {
-					if (EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
-						return true;
-					} else if (EngiesChaosModVariables.MapVariables.get(world).thestart == false) {
-						return false;
-					}
-				} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DOOMSDAY_TOGGLE) == false) {
+				if (EngiesChaosModVariables.MapVariables.get(world).TraderTheEndSpawnLock == false) {
 					if (world.getLevelData().isRaining() && world.getLevelData().isThundering()) {
 						if (Math.random() <= 0.25) {
 							return true;

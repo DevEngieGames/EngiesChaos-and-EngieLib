@@ -11,8 +11,20 @@ public class CosmicNaturalSpawningProcedure {
 	public static boolean execute(LevelAccessor world) {
 		if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIES_CHAOS_TOGGLE) == true) {
 			if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.OVERWORLD) {
-				if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty >= 29 && world.dimensionType().moonPhase(world.dayTime()) == 5) {
-					return true;
+				if (EngiesChaosModVariables.MapVariables.get(world).difficultytoggle == true) {
+					if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty >= 29 && world.dimensionType().moonPhase(world.dayTime()) == 5) {
+						if (!(world instanceof Level _lvl5 && _lvl5.isDay())) {
+							if (EngiesChaosModVariables.MapVariables.get(world).TraderCosmicEngieGamesSpawnLock == false) {
+								return true;
+							}
+						}
+					}
+				} else if (EngiesChaosModVariables.MapVariables.get(world).difficultytoggle == false) {
+					if (!(world instanceof Level _lvl6 && _lvl6.isDay())) {
+						if (EngiesChaosModVariables.MapVariables.get(world).TraderCosmicEngieGamesSpawnLock == false) {
+							return true;
+						}
+					}
 				}
 			} else if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.NETHER) {
 				return false;

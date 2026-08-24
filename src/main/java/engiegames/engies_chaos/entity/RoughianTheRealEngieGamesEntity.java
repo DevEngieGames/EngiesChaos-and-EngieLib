@@ -21,6 +21,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.SpawnGroupData;
+import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.MobSpawnType;
@@ -28,6 +29,7 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.InteractionResult;
@@ -36,7 +38,6 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.chat.Component;
 import net.minecraft.nbt.CompoundTag;
 
 import javax.annotation.Nullable;
@@ -44,6 +45,7 @@ import javax.annotation.Nullable;
 import engiegames.engies_chaos.procedures.TraderOnEntitySpawnProcedure;
 import engiegames.engies_chaos.procedures.RoughianNaturalSpawningProcedure;
 import engiegames.engies_chaos.procedures.RoughianEngieGamesRightClickedOnEntityTradeProcedure;
+import engiegames.engies_chaos.procedures.MobHitboxScalingProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
@@ -57,8 +59,6 @@ public class RoughianTheRealEngieGamesEntity extends PathfinderMob {
 		maxUpStep = 0.6f;
 		xpReward = 0;
 		setNoAi(false);
-		setCustomName(Component.literal("Level 482 | clippedbyengie"));
-		setCustomNameVisible(true);
 		setPersistenceRequired();
 		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(EngiesChaosModItems.ENGIE_GAMES_HALLOW_SCYTHE.get()));
 		this.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(EngiesChaosModItems.ROUGHIAN_ENGIE_GAMES_CRUCIFIX.get()));
@@ -137,12 +137,28 @@ public class RoughianTheRealEngieGamesEntity extends PathfinderMob {
 		return retval;
 	}
 
+	@Override
+	public void baseTick() {
+		super.baseTick();
+		this.refreshDimensions();
+	}
+
+	@Override
+	public EntityDimensions getDimensions(Pose pose) {
+		Entity entity = this;
+		Level world = this.level;
+		double x = this.getX();
+		double y = this.getY();
+		double z = this.getZ();
+		return super.getDimensions(pose).scale((float) MobHitboxScalingProcedure.execute());
+	}
+
 	public static void init() {
 		SpawnPlacements.register(EngiesChaosModEntities.ROUGHIAN_THE_REAL_ENGIE_GAMES.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			return RoughianNaturalSpawningProcedure.execute(world);
+			return RoughianNaturalSpawningProcedure.execute(world, x, y, z);
 		});
 	}
 

@@ -11,13 +11,7 @@ public class DoomsDayNaturalEntitySpawningConditionProcedure {
 	public static boolean execute(LevelAccessor world) {
 		if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIES_CHAOS_TOGGLE) == true) {
 			if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.OVERWORLD) {
-				if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DOOMSDAY_TOGGLE) == true) {
-					if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true) {
-						return true;
-					} else if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == false) {
-						return false;
-					}
-				} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DOOMSDAY_TOGGLE) == false) {
+				if (EngiesChaosModVariables.MapVariables.get(world).TraderDoomsdaySpawnLock == false) {
 					if (world.getLevelData().isRaining() && !world.getLevelData().isThundering()) {
 						return true;
 					} else if (!(world.getLevelData().isRaining() && !world.getLevelData().isThundering())) {

@@ -16,11 +16,13 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.SpawnGroupData;
+import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.damagesource.DamageSource;
@@ -28,7 +30,6 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.chat.Component;
 import net.minecraft.nbt.CompoundTag;
 
 import javax.annotation.Nullable;
@@ -36,6 +37,7 @@ import javax.annotation.Nullable;
 import engiegames.engies_chaos.procedures.WormholeSpawningCondProcedure;
 import engiegames.engies_chaos.procedures.WormholeEngieOnInitialEntitySpawnProcedure;
 import engiegames.engies_chaos.procedures.WormholeEngieOnEntityTickUpdateProcedure;
+import engiegames.engies_chaos.procedures.MobHitboxScalingProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class WormholeEngieEntity extends PathfinderMob {
@@ -48,8 +50,6 @@ public class WormholeEngieEntity extends PathfinderMob {
 		maxUpStep = 1f;
 		xpReward = 0;
 		setNoAi(false);
-		setCustomName(Component.literal("Wormhole Engie"));
-		setCustomNameVisible(true);
 		setPersistenceRequired();
 	}
 
@@ -130,6 +130,7 @@ public class WormholeEngieEntity extends PathfinderMob {
 	public void baseTick() {
 		super.baseTick();
 		WormholeEngieOnEntityTickUpdateProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+		this.refreshDimensions();
 	}
 
 	@Override
@@ -143,6 +144,16 @@ public class WormholeEngieEntity extends PathfinderMob {
 
 	@Override
 	protected void pushEntities() {
+	}
+
+	@Override
+	public EntityDimensions getDimensions(Pose pose) {
+		Entity entity = this;
+		Level world = this.level;
+		double x = this.getX();
+		double y = this.getY();
+		double z = this.getZ();
+		return super.getDimensions(pose).scale((float) MobHitboxScalingProcedure.execute());
 	}
 
 	public static void init() {

@@ -145,7 +145,7 @@
     "spawnThisMob": true,
     "doesDespawnWhenIdle": false,
     "spawningCondition": {
-      "name": "NPCNaturalEntitySpawning"
+      "name": "EngieGamesNaturalEntitySpawning"
     },
     "spawningProbability": 10,
     "mobSpawningType": "creature",

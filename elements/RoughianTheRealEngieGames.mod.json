@@ -3,7 +3,7 @@
   "_type": "livingentity",
   "definition": {
     "mobName": "Roughian EngieGames",
-    "mobLabel": "Level 482 | clippedbyengie",
+    "mobLabel": "",
     "mobModelName": "Biped",
     "mobModelTexture": "d08cf709f3038f7c5869d8c23b4698263a884ae4.png",
     "transparentModelCondition": {
@@ -16,10 +16,12 @@
       "fixedValue": false
     },
     "visualScale": {
-      "fixedValue": 0.93
+      "fixedValue": 0.93,
+      "name": "MobModelScaling"
     },
     "boundingBoxScale": {
-      "fixedValue": 1.0
+      "fixedValue": 1.0,
+      "name": "MobHitboxScaling"
     },
     "modelLayers": [],
     "animations": [],

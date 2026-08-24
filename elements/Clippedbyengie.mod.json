@@ -3,7 +3,7 @@
   "_type": "livingentity",
   "definition": {
     "mobName": "clippedbyengie",
-    "mobLabel": "clippedbyengie",
+    "mobLabel": "",
     "mobModelName": "Modelclippedbyengie",
     "mobModelTexture": "clippedbyengieentity.png",
     "transparentModelCondition": {
@@ -143,9 +143,6 @@
     "rangedAttackRadius": 10.0,
     "spawnThisMob": false,
     "doesDespawnWhenIdle": false,
-    "spawningCondition": {
-      "name": "NPCNaturalEntitySpawning"
-    },
     "spawningProbability": 5,
     "mobSpawningType": "creature",
     "minNumberOfMobsPerGroup": 1,

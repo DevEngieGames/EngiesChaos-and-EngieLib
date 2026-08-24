@@ -1717,8 +1717,10 @@ public class EngiesChaosModItems {
 			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.THROWBACK_CREATOR, -6723841, -154, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_MOBS)));
 	public static final RegistryObject<Item> DOOMS_DAY_SPAWN_EGG = REGISTRY.register("dooms_day_spawn_egg",
 			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.DOOMS_DAY, -15329770, -602330, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_MOBS)));
-	public static final RegistryObject<Item> DOOMS_DAY_HOSTILE_SPAWN_EGG = REGISTRY.register("dooms_day_hostile_spawn_egg",
-			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.DOOMS_DAY_HOSTILE, -15329770, -602330, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_MOBS)));
+	public static final RegistryObject<Item> SUPER_DOOMS_DAY_SPAWN_EGG = REGISTRY.register("super_dooms_day_spawn_egg",
+			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.SUPER_DOOMS_DAY, -16250872, -602330, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_MOBS)));
+	public static final RegistryObject<Item> THE_END_SPAWN_EGG = REGISTRY.register("the_end_spawn_egg",
+			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.THE_END, -4978150, -16777216, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_MOBS)));
 	public static final RegistryObject<Item> ENGIE_GAMES_SPAWN_EGG = REGISTRY.register("engie_games_spawn_egg",
 			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.ENGIE_GAMES, -2143665, -2125238, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_MOBS)));
 	public static final RegistryObject<Item> MINDSCAPE_ENGIE_SPAWN_EGG = REGISTRY.register("mindscape_engie_spawn_egg",
@@ -1818,12 +1820,10 @@ public class EngiesChaosModItems {
 			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.INSANITY_ENGIE, -16777216, -2143665, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_MOBS)));
 	public static final RegistryObject<Item> ENGIE_POC_ENGIE_SPAWN_EGG = REGISTRY.register("engie_poc_engie_spawn_egg",
 			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.ENGIE_POC_ENGIE, -16777216, -2143665, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_MOBS)));
-	public static final RegistryObject<Item> SUPER_DOOMS_DAY_SPAWN_EGG = REGISTRY.register("super_dooms_day_spawn_egg",
-			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.SUPER_DOOMS_DAY, -16250872, -602330, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_MOBS)));
+	public static final RegistryObject<Item> DOOMS_DAY_HOSTILE_SPAWN_EGG = REGISTRY.register("dooms_day_hostile_spawn_egg",
+			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.DOOMS_DAY_HOSTILE, -15329770, -602330, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_MOBS)));
 	public static final RegistryObject<Item> SUPER_DOOMS_DAY_HOSTILE_SPAWN_EGG = REGISTRY.register("super_dooms_day_hostile_spawn_egg",
 			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.SUPER_DOOMS_DAY_HOSTILE, -16250872, -602330, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_MOBS)));
-	public static final RegistryObject<Item> THE_END_SPAWN_EGG = REGISTRY.register("the_end_spawn_egg",
-			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.THE_END, -4978150, -16777216, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_MOBS)));
 	public static final RegistryObject<Item> THE_END_HOSTILE_SPAWN_EGG = REGISTRY.register("the_end_hostile_spawn_egg",
 			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.THE_END_HOSTILE, -4978150, -16777216, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_MOBS)));
 	public static final RegistryObject<Item> SHADOW_SHARK_ENGIE_SPAWN_EGG = REGISTRY.register("shadow_shark_engie_spawn_egg",

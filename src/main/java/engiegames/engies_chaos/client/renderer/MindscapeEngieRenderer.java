@@ -1,5 +1,6 @@
 package engiegames.engies_chaos.client.renderer;
 
+import net.minecraft.world.level.Level;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
 import net.minecraft.client.renderer.entity.HumanoidMobRenderer;
@@ -7,6 +8,7 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.model.HumanoidModel;
 
+import engiegames.engies_chaos.procedures.MobModelScalingProcedure;
 import engiegames.engies_chaos.entity.MindscapeEngieEntity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -19,7 +21,12 @@ public class MindscapeEngieRenderer extends HumanoidMobRenderer<MindscapeEngieEn
 
 	@Override
 	protected void scale(MindscapeEngieEntity entity, PoseStack poseStack, float f) {
-		poseStack.scale(0.93f, 0.93f, 0.93f);
+		Level world = entity.level;
+		double x = entity.getX();
+		double y = entity.getY();
+		double z = entity.getZ();
+		float scale = (float) MobModelScalingProcedure.execute();
+		poseStack.scale(scale, scale, scale);
 	}
 
 	@Override

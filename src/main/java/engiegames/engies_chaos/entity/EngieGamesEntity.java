@@ -41,9 +41,9 @@ import net.minecraft.nbt.CompoundTag;
 import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.procedures.TraderOnEntitySpawnProcedure;
-import engiegames.engies_chaos.procedures.NPCNaturalEntitySpawningProcedure;
 import engiegames.engies_chaos.procedures.EngieGamesRightClickedOnEntityTradeProcedure;
 import engiegames.engies_chaos.procedures.EngieGamesOnEntityTickUpdateProcedure;
+import engiegames.engies_chaos.procedures.EngieGamesNaturalEntitySpawningProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
@@ -146,7 +146,7 @@ public class EngieGamesEntity extends PathfinderMob {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			return NPCNaturalEntitySpawningProcedure.execute(world);
+			return EngieGamesNaturalEntitySpawningProcedure.execute(world);
 		});
 	}
 

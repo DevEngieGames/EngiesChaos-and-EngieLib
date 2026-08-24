@@ -14,8 +14,7 @@ import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.Minecraft;
 
 import engiegames.engies_chaos.entity.DoomsDayHostileEntity;
-import engiegames.engies_chaos.client.model.Modelengiearmorforhostilel2;
-import engiegames.engies_chaos.client.model.Modelengiearmorforhostilel1;
+import engiegames.engies_chaos.client.model.Modelengiearmor;
 
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -30,7 +29,7 @@ public class DoomsDayHostileRenderer extends HumanoidMobRenderer<DoomsDayHostile
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, DoomsDayHostileEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
 				VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-				EntityModel model = new Modelengiearmorforhostilel1(Minecraft.getInstance().getEntityModels().bakeLayer(Modelengiearmorforhostilel1.LAYER_LOCATION));
+				EntityModel model = new Modelengiearmor(Minecraft.getInstance().getEntityModels().bakeLayer(Modelengiearmor.LAYER_LOCATION));
 				this.getParentModel().copyPropertiesTo(model);
 				model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
 				model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
@@ -43,7 +42,7 @@ public class DoomsDayHostileRenderer extends HumanoidMobRenderer<DoomsDayHostile
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, DoomsDayHostileEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
 				VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-				EntityModel model = new Modelengiearmorforhostilel2(Minecraft.getInstance().getEntityModels().bakeLayer(Modelengiearmorforhostilel2.LAYER_LOCATION));
+				EntityModel model = new Modelengiearmor(Minecraft.getInstance().getEntityModels().bakeLayer(Modelengiearmor.LAYER_LOCATION));
 				this.getParentModel().copyPropertiesTo(model);
 				model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
 				model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);

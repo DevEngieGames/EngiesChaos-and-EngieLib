@@ -13,7 +13,6 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.OpenDoorGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
@@ -26,9 +25,11 @@ import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
@@ -37,6 +38,7 @@ import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.procedures.TheEndNaturalEntitySpawningConditionProcedure;
 import engiegames.engies_chaos.procedures.TheEndHostileEntityDiesProcedure;
+import engiegames.engies_chaos.procedures.NegativeDifficultyAICheckProcedure;
 import engiegames.engies_chaos.procedures.EntitySpawnsProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
@@ -60,22 +62,100 @@ public class TheEndHostileEntity extends Monster {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.getNavigation().getNodeEvaluator().setCanOpenDoors(true);
-		this.goalSelector.addGoal(1, new OpenDoorGoal(this, true));
-		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2, false) {
+		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 3, false) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
 		});
-		this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, Player.class, true, false));
-		this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Monster.class, (float) 6));
-		this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, (float) 12));
-		this.goalSelector.addGoal(6, new RandomStrollGoal(this, 1));
+		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
+		this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, Player.class, true, false) {
+			@Override
+			public boolean canUse() {
+				double x = TheEndHostileEntity.this.getX();
+				double y = TheEndHostileEntity.this.getY();
+				double z = TheEndHostileEntity.this.getZ();
+				Entity entity = TheEndHostileEntity.this;
+				Level world = TheEndHostileEntity.this.level;
+				return super.canUse() && NegativeDifficultyAICheckProcedure.execute(world);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = TheEndHostileEntity.this.getX();
+				double y = TheEndHostileEntity.this.getY();
+				double z = TheEndHostileEntity.this.getZ();
+				Entity entity = TheEndHostileEntity.this;
+				Level world = TheEndHostileEntity.this.level;
+				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
+			}
+		});
+		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal(this, ServerPlayer.class, true, false) {
+			@Override
+			public boolean canUse() {
+				double x = TheEndHostileEntity.this.getX();
+				double y = TheEndHostileEntity.this.getY();
+				double z = TheEndHostileEntity.this.getZ();
+				Entity entity = TheEndHostileEntity.this;
+				Level world = TheEndHostileEntity.this.level;
+				return super.canUse() && NegativeDifficultyAICheckProcedure.execute(world);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = TheEndHostileEntity.this.getX();
+				double y = TheEndHostileEntity.this.getY();
+				double z = TheEndHostileEntity.this.getZ();
+				Entity entity = TheEndHostileEntity.this;
+				Level world = TheEndHostileEntity.this.level;
+				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
+			}
+		});
+		this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, (float) 6) {
+			@Override
+			public boolean canUse() {
+				double x = TheEndHostileEntity.this.getX();
+				double y = TheEndHostileEntity.this.getY();
+				double z = TheEndHostileEntity.this.getZ();
+				Entity entity = TheEndHostileEntity.this;
+				Level world = TheEndHostileEntity.this.level;
+				return super.canUse() && NegativeDifficultyAICheckProcedure.execute(world);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = TheEndHostileEntity.this.getX();
+				double y = TheEndHostileEntity.this.getY();
+				double z = TheEndHostileEntity.this.getZ();
+				Entity entity = TheEndHostileEntity.this;
+				Level world = TheEndHostileEntity.this.level;
+				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
+			}
+		});
+		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, ServerPlayer.class, (float) 6) {
+			@Override
+			public boolean canUse() {
+				double x = TheEndHostileEntity.this.getX();
+				double y = TheEndHostileEntity.this.getY();
+				double z = TheEndHostileEntity.this.getZ();
+				Entity entity = TheEndHostileEntity.this;
+				Level world = TheEndHostileEntity.this.level;
+				return super.canUse() && NegativeDifficultyAICheckProcedure.execute(world);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = TheEndHostileEntity.this.getX();
+				double y = TheEndHostileEntity.this.getY();
+				double z = TheEndHostileEntity.this.getZ();
+				Entity entity = TheEndHostileEntity.this;
+				Level world = TheEndHostileEntity.this.level;
+				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
+			}
+		});
 		this.targetSelector.addGoal(7, new HurtByTargetGoal(this));
 		this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(9, new FloatGoal(this));
-		this.goalSelector.addGoal(10, new OpenDoorGoal(this, false));
 	}
 
 	@Override
@@ -122,7 +202,7 @@ public class TheEndHostileEntity extends Monster {
 
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
-		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.6);
+		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.25);
 		builder = builder.add(Attributes.MAX_HEALTH, 975);
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 1);

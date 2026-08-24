@@ -3,7 +3,7 @@
   "_type": "livingentity",
   "definition": {
     "mobName": "Mindscape Engie",
-    "mobLabel": "Engie from the Mindscape",
+    "mobLabel": "",
     "mobModelName": "Biped",
     "mobModelTexture": "mindscapemanentity.png",
     "transparentModelCondition": {
@@ -16,10 +16,12 @@
       "fixedValue": false
     },
     "visualScale": {
-      "fixedValue": 0.93
+      "fixedValue": 0.93,
+      "name": "MobModelScaling"
     },
     "boundingBoxScale": {
-      "fixedValue": 1.0
+      "fixedValue": 1.0,
+      "name": "MobHitboxScaling"
     },
     "modelLayers": [],
     "animations": [],
