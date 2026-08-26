@@ -4,6 +4,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
@@ -23,6 +24,7 @@ import java.util.Comparator;
 
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 import engiegames.engies_chaos.entity.ShadowSharkEngieBlindEntity;
+import engiegames.engies_chaos.EngiesChaosMod;
 
 public class ShadowSharkEngieOnInitialEntitySpawnProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -76,6 +78,14 @@ public class ShadowSharkEngieOnInitialEntitySpawnProcedure {
 							((findEntityInWorldRange(world, Player.class, x, y, z, 1000)).getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("ambient.cave")), SoundSource.AMBIENT, 1, 1, false);
 				}
 			}
+			EngiesChaosMod.queueServerWork(1, () -> {
+				{
+					Entity _ent = entity;
+					_ent.teleportTo((entity.getX()), (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) entity.getX(), (int) entity.getZ())), (entity.getZ()));
+					if (_ent instanceof ServerPlayer _serverPlayer)
+						_serverPlayer.connection.teleport((entity.getX()), (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) entity.getX(), (int) entity.getZ())), (entity.getZ()), _ent.getYRot(), _ent.getXRot());
+				}
+			});
 		} else if (Math.random() >= 0.5) {
 			if (!entity.level.isClientSide())
 				entity.discard();

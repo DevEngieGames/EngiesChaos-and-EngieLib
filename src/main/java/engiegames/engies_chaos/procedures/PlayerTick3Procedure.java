@@ -15,7 +15,6 @@ import javax.annotation.Nullable;
 
 import java.util.Comparator;
 
-import engiegames.engies_chaos.entity.ShadowSharkEngieBlindEntity;
 import engiegames.engies_chaos.entity.OMENEntity;
 
 @Mod.EventBusSubscriber
@@ -46,8 +45,7 @@ public class PlayerTick3Procedure {
 				rx = entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity)).getBlockPos().getX();
 				ry = entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity)).getBlockPos().getY();
 				rz = entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ();
-				if (!world.getEntitiesOfClass(ShadowSharkEngieBlindEntity.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(rx, ry, rz)).inflate(2 / 2d), e -> true).isEmpty()
-						&& !((findEntityInWorldRange(world, OMENEntity.class, rx, ry, rz, 4)) == entity)) {
+				if (!world.getEntitiesOfClass(OMENEntity.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(rx, ry, rz)).inflate(4 / 2d), e -> true).isEmpty() && !((findEntityInWorldRange(world, OMENEntity.class, rx, ry, rz, 4)) == entity)) {
 					if (!(findEntityInWorldRange(world, OMENEntity.class, rx, ry, rz, 4)).level.isClientSide())
 						(findEntityInWorldRange(world, OMENEntity.class, rx, ry, rz, 4)).discard();
 					entity_found = true;

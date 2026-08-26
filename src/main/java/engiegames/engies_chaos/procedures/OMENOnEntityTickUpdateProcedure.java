@@ -6,7 +6,6 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 
 import java.util.Comparator;
@@ -28,31 +27,6 @@ public class OMENOnEntityTickUpdateProcedure {
 				if (!world.getEntitiesOfClass(Player.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(10 / 2d), e -> true).isEmpty()) {
 					if (!entity.level.isClientSide())
 						entity.discard();
-					{
-						Entity _ent = (findEntityInWorldRange(world, Player.class, x, y, z, 300));
-						_ent.teleportTo(
-								(((findEntityInWorldRange(world, Player.class, x, y, z, 300)) instanceof ServerPlayer _player && !_player.level.isClientSide())
-										? ((_player.getRespawnDimension().equals(_player.level.dimension()) && _player.getRespawnPosition() != null) ? _player.getRespawnPosition().getX() : _player.level.getLevelData().getXSpawn())
-										: 0),
-								(((findEntityInWorldRange(world, Player.class, x, y, z, 300)) instanceof ServerPlayer _player && !_player.level.isClientSide())
-										? ((_player.getRespawnDimension().equals(_player.level.dimension()) && _player.getRespawnPosition() != null) ? _player.getRespawnPosition().getY() : _player.level.getLevelData().getYSpawn())
-										: 0),
-								(((findEntityInWorldRange(world, Player.class, x, y, z, 300)) instanceof ServerPlayer _player && !_player.level.isClientSide())
-										? ((_player.getRespawnDimension().equals(_player.level.dimension()) && _player.getRespawnPosition() != null) ? _player.getRespawnPosition().getZ() : _player.level.getLevelData().getZSpawn())
-										: 0));
-						if (_ent instanceof ServerPlayer _serverPlayer)
-							_serverPlayer.connection.teleport(
-									(((findEntityInWorldRange(world, Player.class, x, y, z, 300)) instanceof ServerPlayer _player && !_player.level.isClientSide())
-											? ((_player.getRespawnDimension().equals(_player.level.dimension()) && _player.getRespawnPosition() != null) ? _player.getRespawnPosition().getX() : _player.level.getLevelData().getXSpawn())
-											: 0),
-									(((findEntityInWorldRange(world, Player.class, x, y, z, 300)) instanceof ServerPlayer _player && !_player.level.isClientSide())
-											? ((_player.getRespawnDimension().equals(_player.level.dimension()) && _player.getRespawnPosition() != null) ? _player.getRespawnPosition().getY() : _player.level.getLevelData().getYSpawn())
-											: 0),
-									(((findEntityInWorldRange(world, Player.class, x, y, z, 300)) instanceof ServerPlayer _player && !_player.level.isClientSide())
-											? ((_player.getRespawnDimension().equals(_player.level.dimension()) && _player.getRespawnPosition() != null) ? _player.getRespawnPosition().getZ() : _player.level.getLevelData().getZSpawn())
-											: 0),
-									_ent.getYRot(), _ent.getXRot());
-					}
 				}
 			}
 		}

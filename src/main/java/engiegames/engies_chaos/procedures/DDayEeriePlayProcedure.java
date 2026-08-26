@@ -1,5 +1,7 @@
 package engiegames.engies_chaos.procedures;
 
+import org.checkerframework.checker.units.qual.s;
+
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
@@ -14,6 +16,7 @@ import net.minecraft.commands.CommandSource;
 
 import javax.annotation.Nullable;
 
+import java.util.UUID;
 import java.util.ArrayList;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
@@ -122,28 +125,62 @@ public class DDayEeriePlayProcedure {
 								Entity _ent = entityiterator;
 								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @a engies_chaos:gravity_coil");
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @s engies_chaos:gravity_coil");
 								}
 							}
 							{
 								Entity _ent = entityiterator;
 								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @a engies_chaos:small_goblet");
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @s engies_chaos:small_goblet");
 								}
 							}
 							{
 								Entity _ent = entityiterator;
 								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @a engies_chaos:goblet");
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @s engies_chaos:goblet");
 								}
 							}
-							{
-								Entity _ent = entityiterator;
-								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give xEngie engies_chaos:engie_goblet");
+							if (entityiterator.getUUID().equals(new Object() {
+								UUID UUIDSafeParse(String s) {
+									try {
+										return UUID.fromString(s);
+									} catch (Exception e) {
+									}
+									return new UUID(0, 0);
+								}
+							}.UUIDSafeParse("0b2e6bf517764c90a0797cd0addc1320")) || entityiterator.getUUID().equals(new Object() {
+								UUID UUIDSafeParse(String s) {
+									try {
+										return UUID.fromString(s);
+									} catch (Exception e) {
+									}
+									return new UUID(0, 0);
+								}
+							}.UUIDSafeParse("0b2e6bf5-1776-4c90-a079-7cd0addc1320")) || entityiterator.getUUID().equals(new Object() {
+								UUID UUIDSafeParse(String s) {
+									try {
+										return UUID.fromString(s);
+									} catch (Exception e) {
+									}
+									return new UUID(0, 0);
+								}
+							}.UUIDSafeParse("447fceafed574b92be559ae4a47b33bf")) || entityiterator.getUUID().equals(new Object() {
+								UUID UUIDSafeParse(String s) {
+									try {
+										return UUID.fromString(s);
+									} catch (Exception e) {
+									}
+									return new UUID(0, 0);
+								}
+							}.UUIDSafeParse("447fceaf-ed57-4b92-be55-9ae4a47b33bf"))) {
+								{
+									Entity _ent = entityiterator;
+									if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+										_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null,
+												4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @s engies_chaos:engie_goblet");
+									}
 								}
 							}
 						});
@@ -237,28 +274,62 @@ public class DDayEeriePlayProcedure {
 								Entity _ent = entityiterator;
 								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @a engies_chaos:gravity_coil");
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @s engies_chaos:gravity_coil");
 								}
 							}
 							{
 								Entity _ent = entityiterator;
 								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @a engies_chaos:small_goblet");
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @s engies_chaos:small_goblet");
 								}
 							}
 							{
 								Entity _ent = entityiterator;
 								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @a engies_chaos:goblet");
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @s engies_chaos:goblet");
 								}
 							}
-							{
-								Entity _ent = entityiterator;
-								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give xEngie engies_chaos:engie_goblet");
+							if (entityiterator.getUUID().equals(new Object() {
+								UUID UUIDSafeParse(String s) {
+									try {
+										return UUID.fromString(s);
+									} catch (Exception e) {
+									}
+									return new UUID(0, 0);
+								}
+							}.UUIDSafeParse("0b2e6bf517764c90a0797cd0addc1320")) || entityiterator.getUUID().equals(new Object() {
+								UUID UUIDSafeParse(String s) {
+									try {
+										return UUID.fromString(s);
+									} catch (Exception e) {
+									}
+									return new UUID(0, 0);
+								}
+							}.UUIDSafeParse("0b2e6bf5-1776-4c90-a079-7cd0addc1320")) || entityiterator.getUUID().equals(new Object() {
+								UUID UUIDSafeParse(String s) {
+									try {
+										return UUID.fromString(s);
+									} catch (Exception e) {
+									}
+									return new UUID(0, 0);
+								}
+							}.UUIDSafeParse("447fceafed574b92be559ae4a47b33bf")) || entityiterator.getUUID().equals(new Object() {
+								UUID UUIDSafeParse(String s) {
+									try {
+										return UUID.fromString(s);
+									} catch (Exception e) {
+									}
+									return new UUID(0, 0);
+								}
+							}.UUIDSafeParse("447fceaf-ed57-4b92-be55-9ae4a47b33bf"))) {
+								{
+									Entity _ent = entityiterator;
+									if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+										_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null,
+												4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @s engies_chaos:engie_goblet");
+									}
 								}
 							}
 						});
@@ -352,28 +423,62 @@ public class DDayEeriePlayProcedure {
 								Entity _ent = entityiterator;
 								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @a engies_chaos:gravity_coil");
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @s engies_chaos:gravity_coil");
 								}
 							}
 							{
 								Entity _ent = entityiterator;
 								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @a engies_chaos:small_goblet");
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @s engies_chaos:small_goblet");
 								}
 							}
 							{
 								Entity _ent = entityiterator;
 								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @a engies_chaos:goblet");
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @s engies_chaos:goblet");
 								}
 							}
-							{
-								Entity _ent = entityiterator;
-								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give xEngie engies_chaos:engie_goblet");
+							if (entityiterator.getUUID().equals(new Object() {
+								UUID UUIDSafeParse(String s) {
+									try {
+										return UUID.fromString(s);
+									} catch (Exception e) {
+									}
+									return new UUID(0, 0);
+								}
+							}.UUIDSafeParse("0b2e6bf517764c90a0797cd0addc1320")) || entityiterator.getUUID().equals(new Object() {
+								UUID UUIDSafeParse(String s) {
+									try {
+										return UUID.fromString(s);
+									} catch (Exception e) {
+									}
+									return new UUID(0, 0);
+								}
+							}.UUIDSafeParse("0b2e6bf5-1776-4c90-a079-7cd0addc1320")) || entityiterator.getUUID().equals(new Object() {
+								UUID UUIDSafeParse(String s) {
+									try {
+										return UUID.fromString(s);
+									} catch (Exception e) {
+									}
+									return new UUID(0, 0);
+								}
+							}.UUIDSafeParse("447fceafed574b92be559ae4a47b33bf")) || entityiterator.getUUID().equals(new Object() {
+								UUID UUIDSafeParse(String s) {
+									try {
+										return UUID.fromString(s);
+									} catch (Exception e) {
+									}
+									return new UUID(0, 0);
+								}
+							}.UUIDSafeParse("447fceaf-ed57-4b92-be55-9ae4a47b33bf"))) {
+								{
+									Entity _ent = entityiterator;
+									if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+										_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null,
+												4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @s engies_chaos:engie_goblet");
+									}
 								}
 							}
 						});

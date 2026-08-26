@@ -1,6 +1,7 @@
 package engiegames.engies_chaos.procedures;
 
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
@@ -10,6 +11,7 @@ import net.minecraft.advancements.Advancement;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.init.EngiesChaosModGameRules;
+import engiegames.engies_chaos.EngiesChaosMod;
 
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.StringArgumentType;
@@ -123,6 +125,10 @@ public class EngieLibNeedProcedure {
 										: 0),
 								_ent.getYRot(), _ent.getXRot());
 				}
+				EngiesChaosMod.queueServerWork(1, () -> {
+					if (entity instanceof LivingEntity _entity)
+						_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
+				});
 			}
 		}
 	}
