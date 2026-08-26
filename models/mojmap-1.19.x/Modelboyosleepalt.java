@@ -9,9 +9,9 @@ public class Modelboyosleepalt<T extends Entity> extends EntityModel<T> {
 			new ResourceLocation("modid", "boyosleepalt"), "main");
 	private final ModelPart Root;
 	private final ModelPart Head;
+	private final ModelPart Hat;
 	private final ModelPart Ear1;
 	private final ModelPart Ear2;
-	private final ModelPart Hat;
 	private final ModelPart Snout;
 	private final ModelPart Body;
 	private final ModelPart tail;
@@ -50,9 +50,9 @@ public class Modelboyosleepalt<T extends Entity> extends EntityModel<T> {
 	public Modelboyosleepalt(ModelPart root) {
 		this.Root = root.getChild("Root");
 		this.Head = this.Root.getChild("Head");
+		this.Hat = this.Head.getChild("Hat");
 		this.Ear1 = this.Head.getChild("Ear1");
 		this.Ear2 = this.Head.getChild("Ear2");
-		this.Hat = this.Head.getChild("Hat");
 		this.Snout = this.Head.getChild("Snout");
 		this.Body = this.Root.getChild("Body");
 		this.tail = this.Body.getChild("tail");
@@ -106,32 +106,6 @@ public class Modelboyosleepalt<T extends Entity> extends EntityModel<T> {
 						.addBox(-4.0F, -6.5F, -8.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.3F)),
 				PartPose.offsetAndRotation(0.0F, -12.0F, -5.525F, 0.7854F, 0.0F, 0.0F));
 
-		PartDefinition Ear1 = Head.addOrReplaceChild("Ear1", CubeListBuilder.create(),
-				PartPose.offsetAndRotation(3.4785F, -7.2486F, -1.681F, -0.9163F, 0.4363F, 0.0F));
-
-		PartDefinition cube_r1 = Ear1.addOrReplaceChild("cube_r1",
-				CubeListBuilder.create().texOffs(36, 31).addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F,
-						new CubeDeformation(0.01F)),
-				PartPose.offsetAndRotation(0.4875F, 0.0F, 0.0F, 0.0F, -0.4363F, 0.0F));
-
-		PartDefinition cube_r2 = Ear1.addOrReplaceChild("cube_r2",
-				CubeListBuilder.create().texOffs(36, 31).mirror()
-						.addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
-				PartPose.offsetAndRotation(-0.4875F, 0.0F, 0.0F, 0.0F, 0.4363F, 0.0F));
-
-		PartDefinition Ear2 = Head.addOrReplaceChild("Ear2", CubeListBuilder.create(),
-				PartPose.offsetAndRotation(-3.5215F, -7.2486F, -1.681F, -0.9163F, -0.4363F, 0.0F));
-
-		PartDefinition cube_r3 = Ear2.addOrReplaceChild("cube_r3",
-				CubeListBuilder.create().texOffs(36, 31).addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F,
-						new CubeDeformation(0.01F)),
-				PartPose.offsetAndRotation(0.4875F, 0.0F, 0.0F, 0.0F, -0.4363F, 0.0F));
-
-		PartDefinition cube_r4 = Ear2.addOrReplaceChild("cube_r4",
-				CubeListBuilder.create().texOffs(36, 31).mirror()
-						.addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
-				PartPose.offsetAndRotation(-0.4875F, 0.0F, 0.0F, 0.0F, 0.4363F, 0.0F));
-
 		PartDefinition Hat = Head.addOrReplaceChild("Hat",
 				CubeListBuilder.create().texOffs(0, 59)
 						.addBox(-7.0F, 0.6176F, -7.0F, 14.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 62)
@@ -140,7 +114,7 @@ public class Modelboyosleepalt<T extends Entity> extends EntityModel<T> {
 						.addBox(-2.0F, -1.8824F, -2.0F, 4.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)),
 				PartPose.offsetAndRotation(0.0F, -7.6176F, -5.0F, -0.3927F, 0.0F, 0.0F));
 
-		PartDefinition cube_r5 = Hat.addOrReplaceChild("cube_r5",
+		PartDefinition cube_r1 = Hat.addOrReplaceChild("cube_r1",
 				CubeListBuilder.create().texOffs(0, 48)
 						.addBox(-1.0F, -0.5F, -1.0F, 2.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 71)
 						.addBox(-3.0F, 0.5F, -3.0F, 6.0F, 1.0F, 6.0F, new CubeDeformation(0.0F)).texOffs(0, 48)
@@ -151,19 +125,45 @@ public class Modelboyosleepalt<T extends Entity> extends EntityModel<T> {
 						.addBox(-7.0F, 2.5F, -7.0F, 14.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)),
 				PartPose.offsetAndRotation(0.0F, -1.8824F, 0.0F, 0.0F, 3.1416F, 0.0F));
 
-		PartDefinition cube_r6 = Hat.addOrReplaceChild("cube_r6",
+		PartDefinition cube_r2 = Hat.addOrReplaceChild("cube_r2",
 				CubeListBuilder.create().texOffs(0, 65)
 						.addBox(-2.0F, -0.5F, -4.0F, 4.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 62)
 						.addBox(-4.0F, 0.5F, -6.0F, 8.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 59)
 						.addBox(-5.0F, 1.0F, -7.0F, 10.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)),
 				PartPose.offsetAndRotation(0.0F, -0.3824F, 0.0F, 0.0F, 1.5708F, 0.0F));
 
-		PartDefinition cube_r7 = Hat.addOrReplaceChild("cube_r7",
+		PartDefinition cube_r3 = Hat.addOrReplaceChild("cube_r3",
 				CubeListBuilder.create().texOffs(0, 65)
 						.addBox(-2.0F, -0.5F, -4.0F, 4.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 62)
 						.addBox(-4.0F, 0.5F, -6.0F, 8.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 59)
 						.addBox(-5.0F, 1.0F, -7.0F, 10.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)),
 				PartPose.offsetAndRotation(0.0F, -0.3824F, 0.0F, 0.0F, -1.5708F, 0.0F));
+
+		PartDefinition Ear1 = Head.addOrReplaceChild("Ear1", CubeListBuilder.create(),
+				PartPose.offsetAndRotation(3.4668F, -7.25F, -1.681F, -0.9163F, 0.4363F, 0.0F));
+
+		PartDefinition cube_r4 = Ear1.addOrReplaceChild("cube_r4",
+				CubeListBuilder.create().texOffs(36, 31).addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F,
+						new CubeDeformation(0.01F)),
+				PartPose.offsetAndRotation(0.4875F, 0.0F, 0.0F, 0.0F, -0.4363F, 0.0F));
+
+		PartDefinition cube_r5 = Ear1.addOrReplaceChild("cube_r5",
+				CubeListBuilder.create().texOffs(36, 31).mirror()
+						.addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
+				PartPose.offsetAndRotation(-0.4875F, 0.0F, 0.0F, 0.0F, 0.4363F, 0.0F));
+
+		PartDefinition Ear2 = Head.addOrReplaceChild("Ear2", CubeListBuilder.create(),
+				PartPose.offsetAndRotation(-3.4582F, -7.25F, -1.681F, -0.9163F, -0.4363F, 0.0F));
+
+		PartDefinition cube_r6 = Ear2.addOrReplaceChild("cube_r6",
+				CubeListBuilder.create().texOffs(36, 31).addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F,
+						new CubeDeformation(0.01F)),
+				PartPose.offsetAndRotation(0.4875F, 0.0F, 0.0F, 0.0F, -0.4363F, 0.0F));
+
+		PartDefinition cube_r7 = Ear2.addOrReplaceChild("cube_r7",
+				CubeListBuilder.create().texOffs(36, 31).mirror()
+						.addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
+				PartPose.offsetAndRotation(-0.4875F, 0.0F, 0.0F, 0.0F, 0.4363F, 0.0F));
 
 		PartDefinition Snout = Head.addOrReplaceChild("Snout",
 				CubeListBuilder.create().texOffs(36, 39)
@@ -172,14 +172,14 @@ public class Modelboyosleepalt<T extends Entity> extends EntityModel<T> {
 				PartPose.offset(2.0F, -1.51F, -10.025F));
 
 		PartDefinition Whisker_r1 = Snout.addOrReplaceChild("Whisker_r1",
-				CubeListBuilder.create().texOffs(54, 31).addBox(-2.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.0F,
-						new CubeDeformation(0.0F)),
-				PartPose.offsetAndRotation(-4.05F, 1.01F, 1.0F, 0.0F, -0.2618F, 0.0F));
-
-		PartDefinition Whisker_r2 = Snout.addOrReplaceChild("Whisker_r2",
 				CubeListBuilder.create().texOffs(54, 34).addBox(0.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.0F,
 						new CubeDeformation(0.0F)),
 				PartPose.offsetAndRotation(0.05F, 1.01F, 0.975F, 0.0F, 0.2618F, 0.0F));
+
+		PartDefinition Whisker_r2 = Snout.addOrReplaceChild("Whisker_r2",
+				CubeListBuilder.create().texOffs(54, 31).addBox(-2.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.0F,
+						new CubeDeformation(0.0F)),
+				PartPose.offsetAndRotation(-4.05F, 1.01F, 1.0F, 0.0F, -0.2618F, 0.0F));
 
 		PartDefinition Snout_r1 = Snout.addOrReplaceChild("Snout_r1",
 				CubeListBuilder.create().texOffs(58, 39).addBox(0.0F, 1.01F, 0.0F, 2.0F, 1.0F, 3.0F,

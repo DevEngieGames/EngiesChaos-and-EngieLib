@@ -9,10 +9,10 @@ public class Modelboyoxengie<T extends Entity> extends EntityModel<T> {
 			new ResourceLocation("modid", "boyoxengie"), "main");
 	private final ModelPart Head;
 	private final ModelPart Hat;
-	private final ModelPart Ear1;
-	private final ModelPart Ear2;
 	private final ModelPart Crown;
 	private final ModelPart Snout;
+	private final ModelPart Ear1;
+	private final ModelPart Ear2;
 	private final ModelPart Body;
 	private final ModelPart tail;
 	private final ModelPart base;
@@ -48,10 +48,10 @@ public class Modelboyoxengie<T extends Entity> extends EntityModel<T> {
 	public Modelboyoxengie(ModelPart root) {
 		this.Head = root.getChild("Head");
 		this.Hat = this.Head.getChild("Hat");
-		this.Ear1 = this.Head.getChild("Ear1");
-		this.Ear2 = this.Head.getChild("Ear2");
 		this.Crown = this.Head.getChild("Crown");
 		this.Snout = this.Head.getChild("Snout");
+		this.Ear1 = this.Head.getChild("Ear1");
+		this.Ear2 = this.Head.getChild("Ear2");
 		this.Body = root.getChild("Body");
 		this.tail = this.Body.getChild("tail");
 		this.base = this.tail.getChild("base");
@@ -132,32 +132,6 @@ public class Modelboyoxengie<T extends Entity> extends EntityModel<T> {
 						.addBox(-5.0F, 1.0F, -7.0F, 10.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)),
 				PartPose.offsetAndRotation(0.0F, -0.3824F, 0.0F, 0.0F, -1.5708F, 0.0F));
 
-		PartDefinition Ear1 = Head.addOrReplaceChild("Ear1", CubeListBuilder.create(),
-				PartPose.offsetAndRotation(3.4668F, -7.25F, -1.681F, -0.9163F, 0.4363F, 0.0F));
-
-		PartDefinition cube_r4 = Ear1.addOrReplaceChild("cube_r4",
-				CubeListBuilder.create().texOffs(36, 31).addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F,
-						new CubeDeformation(0.01F)),
-				PartPose.offsetAndRotation(0.4875F, 0.0F, 0.0F, 0.0F, -0.4363F, 0.0F));
-
-		PartDefinition cube_r5 = Ear1.addOrReplaceChild("cube_r5",
-				CubeListBuilder.create().texOffs(36, 31).mirror()
-						.addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
-				PartPose.offsetAndRotation(-0.4875F, 0.0F, 0.0F, 0.0F, 0.4363F, 0.0F));
-
-		PartDefinition Ear2 = Head.addOrReplaceChild("Ear2", CubeListBuilder.create(),
-				PartPose.offsetAndRotation(-3.5332F, -7.25F, -1.681F, -0.9163F, -0.4363F, 0.0F));
-
-		PartDefinition cube_r6 = Ear2.addOrReplaceChild("cube_r6",
-				CubeListBuilder.create().texOffs(36, 31).addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F,
-						new CubeDeformation(0.01F)),
-				PartPose.offsetAndRotation(0.4875F, 0.0F, 0.0F, 0.0F, -0.4363F, 0.0F));
-
-		PartDefinition cube_r7 = Ear2.addOrReplaceChild("cube_r7",
-				CubeListBuilder.create().texOffs(36, 31).mirror()
-						.addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
-				PartPose.offsetAndRotation(-0.4875F, 0.0F, 0.0F, 0.0F, 0.4363F, 0.0F));
-
 		PartDefinition Crown = Head.addOrReplaceChild("Crown",
 				CubeListBuilder.create().texOffs(38, 60)
 						.addBox(-4.9977F, 0.75F, -5.0F, 10.0F, 1.0F, 1.0F, new CubeDeformation(0.001F)).texOffs(38, 60)
@@ -231,6 +205,32 @@ public class Modelboyoxengie<T extends Entity> extends EntityModel<T> {
 						CubeListBuilder.create().texOffs(48, 39).addBox(-2.0F, 0.01F, 0.0F, 2.0F, 2.0F, 3.0F,
 								new CubeDeformation(0.0F)),
 						PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.4625F, 0.0F));
+
+		PartDefinition Ear1 = Head.addOrReplaceChild("Ear1", CubeListBuilder.create(),
+				PartPose.offsetAndRotation(3.4668F, -7.25F, -1.681F, -0.9163F, 0.4363F, 0.0F));
+
+		PartDefinition cube_r4 = Ear1.addOrReplaceChild("cube_r4",
+				CubeListBuilder.create().texOffs(36, 31).addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F,
+						new CubeDeformation(0.01F)),
+				PartPose.offsetAndRotation(0.4875F, 0.0F, 0.0F, 0.0F, -0.4363F, 0.0F));
+
+		PartDefinition cube_r5 = Ear1.addOrReplaceChild("cube_r5",
+				CubeListBuilder.create().texOffs(36, 31).mirror()
+						.addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
+				PartPose.offsetAndRotation(-0.4875F, 0.0F, 0.0F, 0.0F, 0.4363F, 0.0F));
+
+		PartDefinition Ear2 = Head.addOrReplaceChild("Ear2", CubeListBuilder.create(),
+				PartPose.offsetAndRotation(-3.4582F, -7.25F, -1.681F, -0.9163F, -0.4363F, 0.0F));
+
+		PartDefinition cube_r6 = Ear2.addOrReplaceChild("cube_r6",
+				CubeListBuilder.create().texOffs(36, 31).addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F,
+						new CubeDeformation(0.01F)),
+				PartPose.offsetAndRotation(0.4875F, 0.0F, 0.0F, 0.0F, -0.4363F, 0.0F));
+
+		PartDefinition cube_r7 = Ear2.addOrReplaceChild("cube_r7",
+				CubeListBuilder.create().texOffs(36, 31).mirror()
+						.addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
+				PartPose.offsetAndRotation(-0.4875F, 0.0F, 0.0F, 0.0F, 0.4363F, 0.0F));
 
 		PartDefinition Body = partdefinition.addOrReplaceChild("Body",
 				CubeListBuilder.create().texOffs(0, 16)

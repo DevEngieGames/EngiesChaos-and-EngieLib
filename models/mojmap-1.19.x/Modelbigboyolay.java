@@ -9,9 +9,9 @@ public class Modelbigboyolay<T extends Entity> extends EntityModel<T> {
 			new ResourceLocation("modid", "bigboyolay"), "main");
 	private final ModelPart Head;
 	private final ModelPart Hat;
+	private final ModelPart Snout;
 	private final ModelPart Ear1;
 	private final ModelPart Ear2;
-	private final ModelPart Snout;
 	private final ModelPart Body;
 	private final ModelPart tail;
 	private final ModelPart base;
@@ -49,9 +49,9 @@ public class Modelbigboyolay<T extends Entity> extends EntityModel<T> {
 	public Modelbigboyolay(ModelPart root) {
 		this.Head = root.getChild("Head");
 		this.Hat = this.Head.getChild("Hat");
+		this.Snout = this.Head.getChild("Snout");
 		this.Ear1 = this.Head.getChild("Ear1");
 		this.Ear2 = this.Head.getChild("Ear2");
-		this.Snout = this.Head.getChild("Snout");
 		this.Body = root.getChild("Body");
 		this.tail = this.Body.getChild("tail");
 		this.base = this.tail.getChild("base");
@@ -147,37 +147,11 @@ public class Modelbigboyolay<T extends Entity> extends EntityModel<T> {
 						new CubeDeformation(0.0F)),
 				PartPose.offsetAndRotation(-0.5F, -1.1074F, -0.5F, 0.0F, -1.5708F, 0.0F));
 
-		PartDefinition Ear1 = Head.addOrReplaceChild("Ear1", CubeListBuilder.create(),
-				PartPose.offsetAndRotation(3.4668F, -6.75F, -2.181F, -0.9163F, 0.4363F, 0.0F));
-
-		PartDefinition cube_r9 = Ear1.addOrReplaceChild("cube_r9",
-				CubeListBuilder.create().texOffs(36, 31).addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F,
-						new CubeDeformation(0.01F)),
-				PartPose.offsetAndRotation(0.4875F, 0.0F, 0.0F, 0.0F, -0.4363F, 0.0F));
-
-		PartDefinition cube_r10 = Ear1.addOrReplaceChild("cube_r10",
-				CubeListBuilder.create().texOffs(36, 31).mirror()
-						.addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
-				PartPose.offsetAndRotation(-0.4875F, 0.0F, 0.0F, 0.0F, 0.4363F, 0.0F));
-
-		PartDefinition Ear2 = Head.addOrReplaceChild("Ear2", CubeListBuilder.create(),
-				PartPose.offsetAndRotation(-3.5332F, -6.75F, -2.181F, -0.9163F, -0.4363F, 0.0F));
-
-		PartDefinition cube_r11 = Ear2.addOrReplaceChild("cube_r11",
-				CubeListBuilder.create().texOffs(36, 31).addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F,
-						new CubeDeformation(0.01F)),
-				PartPose.offsetAndRotation(0.4875F, 0.0F, 0.0F, 0.0F, -0.4363F, 0.0F));
-
-		PartDefinition cube_r12 = Ear2.addOrReplaceChild("cube_r12",
-				CubeListBuilder.create().texOffs(36, 31).mirror()
-						.addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
-				PartPose.offsetAndRotation(-0.4875F, 0.0F, 0.0F, 0.0F, 0.4363F, 0.0F));
-
 		PartDefinition Snout = Head.addOrReplaceChild("Snout",
 				CubeListBuilder.create().texOffs(36, 39)
 						.addBox(-4.0F, 0.01F, 0.0F, 4.0F, 2.0F, 2.0F, new CubeDeformation(0.001F)).texOffs(36, 43)
 						.addBox(-4.0F, 1.51F, 0.25F, 4.0F, 1.0F, 2.0F, new CubeDeformation(0.001F)),
-				PartPose.offset(2.0F, -1.01F, -10.025F));
+				PartPose.offset(2.0F, -1.51F, -10.025F));
 
 		PartDefinition Whisker_r1 = Snout.addOrReplaceChild("Whisker_r1",
 				CubeListBuilder.create().texOffs(54, 34).addBox(0.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.0F,
@@ -210,6 +184,32 @@ public class Modelbigboyolay<T extends Entity> extends EntityModel<T> {
 						CubeListBuilder.create().texOffs(48, 39).addBox(-2.0F, 0.01F, 0.0F, 2.0F, 2.0F, 3.0F,
 								new CubeDeformation(0.0F)),
 						PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.4625F, 0.0F));
+
+		PartDefinition Ear1 = Head.addOrReplaceChild("Ear1", CubeListBuilder.create(),
+				PartPose.offsetAndRotation(3.4668F, -6.75F, -1.731F, -0.9163F, 0.4363F, 0.0F));
+
+		PartDefinition cube_r9 = Ear1.addOrReplaceChild("cube_r9",
+				CubeListBuilder.create().texOffs(36, 31).addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F,
+						new CubeDeformation(0.01F)),
+				PartPose.offsetAndRotation(0.4875F, 0.0F, 0.0F, 0.0F, -0.4363F, 0.0F));
+
+		PartDefinition cube_r10 = Ear1.addOrReplaceChild("cube_r10",
+				CubeListBuilder.create().texOffs(36, 31).mirror()
+						.addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
+				PartPose.offsetAndRotation(-0.4875F, 0.0F, 0.0F, 0.0F, 0.4363F, 0.0F));
+
+		PartDefinition Ear2 = Head.addOrReplaceChild("Ear2", CubeListBuilder.create(),
+				PartPose.offsetAndRotation(-3.4582F, -6.75F, -1.731F, -0.9163F, -0.4363F, 0.0F));
+
+		PartDefinition cube_r11 = Ear2.addOrReplaceChild("cube_r11",
+				CubeListBuilder.create().texOffs(36, 31).addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F,
+						new CubeDeformation(0.01F)),
+				PartPose.offsetAndRotation(0.4875F, 0.0F, 0.0F, 0.0F, -0.4363F, 0.0F));
+
+		PartDefinition cube_r12 = Ear2.addOrReplaceChild("cube_r12",
+				CubeListBuilder.create().texOffs(36, 31).mirror()
+						.addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
+				PartPose.offsetAndRotation(-0.4875F, 0.0F, 0.0F, 0.0F, 0.4363F, 0.0F));
 
 		PartDefinition Body = partdefinition.addOrReplaceChild("Body",
 				CubeListBuilder.create().texOffs(0, 16)

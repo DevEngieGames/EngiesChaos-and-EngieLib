@@ -25,8 +25,8 @@ public class Modelbigboyotamed<T extends Entity> extends EntityModel<T> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation("engies_chaos", "modelbigboyotamed"), "main");
 	public final ModelPart Head;
 	public final ModelPart Hat;
-	public final ModelPart Ear1;
 	public final ModelPart Ear2;
+	public final ModelPart Ear1;
 	public final ModelPart Snout;
 	public final ModelPart Body;
 	public final ModelPart tail;
@@ -65,8 +65,8 @@ public class Modelbigboyotamed<T extends Entity> extends EntityModel<T> {
 	public Modelbigboyotamed(ModelPart root) {
 		this.Head = root.getChild("Head");
 		this.Hat = this.Head.getChild("Hat");
-		this.Ear1 = this.Head.getChild("Ear1");
 		this.Ear2 = this.Head.getChild("Ear2");
+		this.Ear1 = this.Head.getChild("Ear1");
 		this.Snout = this.Head.getChild("Snout");
 		this.Body = root.getChild("Body");
 		this.tail = this.Body.getChild("tail");
@@ -130,15 +130,15 @@ public class Modelbigboyotamed<T extends Entity> extends EntityModel<T> {
 				PartPose.offsetAndRotation(0.5F, 3.1176F, -0.5F, 0.0F, 3.1416F, 0.0F));
 		PartDefinition cube_r8 = Hat.addOrReplaceChild("cube_r8", CubeListBuilder.create().texOffs(0, 58).addBox(-6.0F, -0.5F, -7.0F, 12.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)),
 				PartPose.offsetAndRotation(-0.5F, 3.1176F, 0.0F, 0.0F, -1.5708F, 0.0F));
-		PartDefinition Ear1 = Head.addOrReplaceChild("Ear1", CubeListBuilder.create(), PartPose.offsetAndRotation(3.4668F, -7.25F, -1.681F, -0.9163F, 0.4363F, 0.0F));
-		PartDefinition cube_r9 = Ear1.addOrReplaceChild("cube_r9", CubeListBuilder.create().texOffs(36, 31).addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)),
+		PartDefinition Ear2 = Head.addOrReplaceChild("Ear2", CubeListBuilder.create(), PartPose.offsetAndRotation(-3.4582F, -7.25F, -1.681F, -0.9163F, -0.4363F, 0.0F));
+		PartDefinition cube_r9 = Ear2.addOrReplaceChild("cube_r9", CubeListBuilder.create().texOffs(36, 31).addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)),
 				PartPose.offsetAndRotation(0.4875F, 0.0F, 0.0F, 0.0F, -0.4363F, 0.0F));
-		PartDefinition cube_r10 = Ear1.addOrReplaceChild("cube_r10", CubeListBuilder.create().texOffs(36, 31).mirror().addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
+		PartDefinition cube_r10 = Ear2.addOrReplaceChild("cube_r10", CubeListBuilder.create().texOffs(36, 31).mirror().addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
 				PartPose.offsetAndRotation(-0.4875F, 0.0F, 0.0F, 0.0F, 0.4363F, 0.0F));
-		PartDefinition Ear2 = Head.addOrReplaceChild("Ear2", CubeListBuilder.create(), PartPose.offsetAndRotation(-3.5332F, -7.25F, -1.681F, -0.9163F, -0.4363F, 0.0F));
-		PartDefinition cube_r11 = Ear2.addOrReplaceChild("cube_r11", CubeListBuilder.create().texOffs(36, 31).addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)),
+		PartDefinition Ear1 = Head.addOrReplaceChild("Ear1", CubeListBuilder.create(), PartPose.offsetAndRotation(3.4668F, -7.25F, -1.681F, -0.9163F, 0.4363F, 0.0F));
+		PartDefinition cube_r11 = Ear1.addOrReplaceChild("cube_r11", CubeListBuilder.create().texOffs(36, 31).addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)),
 				PartPose.offsetAndRotation(0.4875F, 0.0F, 0.0F, 0.0F, -0.4363F, 0.0F));
-		PartDefinition cube_r12 = Ear2.addOrReplaceChild("cube_r12", CubeListBuilder.create().texOffs(36, 31).mirror().addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
+		PartDefinition cube_r12 = Ear1.addOrReplaceChild("cube_r12", CubeListBuilder.create().texOffs(36, 31).mirror().addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
 				PartPose.offsetAndRotation(-0.4875F, 0.0F, 0.0F, 0.0F, 0.4363F, 0.0F));
 		PartDefinition Snout = Head.addOrReplaceChild("Snout",
 				CubeListBuilder.create().texOffs(36, 39).addBox(-4.0F, 0.01F, 0.0F, 4.0F, 2.0F, 2.0F, new CubeDeformation(0.001F)).texOffs(36, 43).addBox(-4.0F, 1.51F, 0.25F, 4.0F, 1.0F, 2.0F, new CubeDeformation(0.001F)),

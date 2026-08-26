@@ -86,7 +86,7 @@
         }
       },
       {
-        "model": "Modelboyosleepalt",
+        "model": "Modelbigboyosleepalt",
         "texture": "angrynewtired.png",
         "disableHurtOverlay": false,
         "glow": false,

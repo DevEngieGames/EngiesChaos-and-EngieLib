@@ -1,4 +1,4 @@
-// Made with Blockbench 5.1.3
+// Made with Blockbench 5.1.6
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
@@ -9,8 +9,9 @@ public class Modelboyorockysleep<T extends Entity> extends EntityModel<T> {
 			new ResourceLocation("modid", "boyorockysleep"), "main");
 	private final ModelPart Root;
 	private final ModelPart Head;
-	private final ModelPart Ear1;
+	private final ModelPart TobyWhiskers;
 	private final ModelPart Ear2;
+	private final ModelPart Ear1;
 	private final ModelPart Body;
 	private final ModelPart tail;
 	private final ModelPart base;
@@ -43,8 +44,9 @@ public class Modelboyorockysleep<T extends Entity> extends EntityModel<T> {
 	public Modelboyorockysleep(ModelPart root) {
 		this.Root = root.getChild("Root");
 		this.Head = this.Root.getChild("Head");
-		this.Ear1 = this.Head.getChild("Ear1");
+		this.TobyWhiskers = this.Head.getChild("TobyWhiskers");
 		this.Ear2 = this.Head.getChild("Ear2");
+		this.Ear1 = this.Head.getChild("Ear1");
 		this.Body = this.Root.getChild("Body");
 		this.tail = this.Body.getChild("tail");
 		this.base = this.tail.getChild("base");
@@ -92,28 +94,41 @@ public class Modelboyorockysleep<T extends Entity> extends EntityModel<T> {
 						.addBox(-4.0F, -6.5F, -8.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.3F)),
 				PartPose.offset(0.0F, -12.0F, -5.525F));
 
-		PartDefinition Ear1 = Head.addOrReplaceChild("Ear1", CubeListBuilder.create(),
-				PartPose.offsetAndRotation(3.4785F, -7.2486F, -1.681F, -0.9163F, 0.4363F, 0.0F));
+		PartDefinition TobyWhiskers = Head.addOrReplaceChild("TobyWhiskers", CubeListBuilder.create(),
+				PartPose.offset(2.989F, -0.4881F, -8.0F));
 
-		PartDefinition cube_r1 = Ear1.addOrReplaceChild("cube_r1",
+		PartDefinition TobyWhisker_r1 = TobyWhiskers.addOrReplaceChild("TobyWhisker_r1",
+				CubeListBuilder.create().texOffs(71, 35).addBox(-2.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.0F,
+						new CubeDeformation(0.0F)),
+				PartPose.offsetAndRotation(-6.0F, 0.0F, 0.0F, 0.0F, -0.2618F, 0.0F));
+
+		PartDefinition TobyWhisker_r2 = TobyWhiskers.addOrReplaceChild("TobyWhisker_r2",
+				CubeListBuilder.create().texOffs(71, 38).addBox(0.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.0F,
+						new CubeDeformation(0.0F)),
+				PartPose.offsetAndRotation(0.025F, 0.0F, 0.0F, 0.0F, 0.2618F, 0.0F));
+
+		PartDefinition Ear2 = Head.addOrReplaceChild("Ear2", CubeListBuilder.create(),
+				PartPose.offsetAndRotation(-3.4582F, -7.25F, -1.681F, -0.9163F, -0.4363F, 0.0F));
+
+		PartDefinition cube_r1 = Ear2.addOrReplaceChild("cube_r1",
 				CubeListBuilder.create().texOffs(36, 31).addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F,
 						new CubeDeformation(0.01F)),
 				PartPose.offsetAndRotation(0.4875F, 0.0F, 0.0F, 0.0F, -0.4363F, 0.0F));
 
-		PartDefinition cube_r2 = Ear1.addOrReplaceChild("cube_r2",
+		PartDefinition cube_r2 = Ear2.addOrReplaceChild("cube_r2",
 				CubeListBuilder.create().texOffs(36, 31).mirror()
 						.addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
 				PartPose.offsetAndRotation(-0.4875F, 0.0F, 0.0F, 0.0F, 0.4363F, 0.0F));
 
-		PartDefinition Ear2 = Head.addOrReplaceChild("Ear2", CubeListBuilder.create(),
-				PartPose.offsetAndRotation(-3.5215F, -7.2486F, -1.681F, -0.9163F, -0.4363F, 0.0F));
+		PartDefinition Ear1 = Head.addOrReplaceChild("Ear1", CubeListBuilder.create(),
+				PartPose.offsetAndRotation(3.4668F, -7.25F, -1.681F, -0.9163F, 0.4363F, 0.0F));
 
-		PartDefinition cube_r3 = Ear2.addOrReplaceChild("cube_r3",
+		PartDefinition cube_r3 = Ear1.addOrReplaceChild("cube_r3",
 				CubeListBuilder.create().texOffs(36, 31).addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F,
 						new CubeDeformation(0.01F)),
 				PartPose.offsetAndRotation(0.4875F, 0.0F, 0.0F, 0.0F, -0.4363F, 0.0F));
 
-		PartDefinition cube_r4 = Ear2.addOrReplaceChild("cube_r4",
+		PartDefinition cube_r4 = Ear1.addOrReplaceChild("cube_r4",
 				CubeListBuilder.create().texOffs(36, 31).mirror()
 						.addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
 				PartPose.offsetAndRotation(-0.4875F, 0.0F, 0.0F, 0.0F, 0.4363F, 0.0F));

@@ -15,7 +15,7 @@ import net.minecraft.client.model.EntityModel;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.PoseStack;
 
-// Made with Blockbench 5.1.3
+// Made with Blockbench 5.1.6
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 public class Modelboyorockysit<T extends Entity> extends EntityModel<T> {
@@ -25,6 +25,7 @@ public class Modelboyorockysit<T extends Entity> extends EntityModel<T> {
 	public final ModelPart Head;
 	public final ModelPart Ear1;
 	public final ModelPart Ear2;
+	public final ModelPart TobyWhiskers;
 	public final ModelPart Body;
 	public final ModelPart Collar;
 	public final ModelPart Bell;
@@ -58,6 +59,7 @@ public class Modelboyorockysit<T extends Entity> extends EntityModel<T> {
 		this.Head = root.getChild("Head");
 		this.Ear1 = this.Head.getChild("Ear1");
 		this.Ear2 = this.Head.getChild("Ear2");
+		this.TobyWhiskers = this.Head.getChild("TobyWhiskers");
 		this.Body = root.getChild("Body");
 		this.Collar = this.Body.getChild("Collar");
 		this.Bell = this.Collar.getChild("Bell");
@@ -101,11 +103,16 @@ public class Modelboyorockysit<T extends Entity> extends EntityModel<T> {
 				PartPose.offsetAndRotation(0.4875F, 0.0F, 0.0F, 0.0F, -0.4363F, 0.0F));
 		PartDefinition cube_r2 = Ear1.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(36, 31).mirror().addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
 				PartPose.offsetAndRotation(-0.4875F, 0.0F, 0.0F, 0.0F, 0.4363F, 0.0F));
-		PartDefinition Ear2 = Head.addOrReplaceChild("Ear2", CubeListBuilder.create(), PartPose.offsetAndRotation(-3.5332F, -7.25F, -1.681F, -0.9163F, -0.4363F, 0.0F));
+		PartDefinition Ear2 = Head.addOrReplaceChild("Ear2", CubeListBuilder.create(), PartPose.offsetAndRotation(-3.4582F, -7.25F, -1.681F, -0.9163F, -0.4363F, 0.0F));
 		PartDefinition cube_r3 = Ear2.addOrReplaceChild("cube_r3", CubeListBuilder.create().texOffs(36, 31).addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)),
 				PartPose.offsetAndRotation(0.4875F, 0.0F, 0.0F, 0.0F, -0.4363F, 0.0F));
 		PartDefinition cube_r4 = Ear2.addOrReplaceChild("cube_r4", CubeListBuilder.create().texOffs(36, 31).mirror().addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
 				PartPose.offsetAndRotation(-0.4875F, 0.0F, 0.0F, 0.0F, 0.4363F, 0.0F));
+		PartDefinition TobyWhiskers = Head.addOrReplaceChild("TobyWhiskers", CubeListBuilder.create(), PartPose.offset(2.989F, -0.4881F, -8.0F));
+		PartDefinition TobyWhisker_r1 = TobyWhiskers.addOrReplaceChild("TobyWhisker_r1", CubeListBuilder.create().texOffs(71, 35).addBox(-2.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.0F, new CubeDeformation(0.0F)),
+				PartPose.offsetAndRotation(-6.0F, 0.0F, 0.0F, 0.0F, -0.2618F, 0.0F));
+		PartDefinition TobyWhisker_r2 = TobyWhiskers.addOrReplaceChild("TobyWhisker_r2", CubeListBuilder.create().texOffs(71, 38).addBox(0.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.0F, new CubeDeformation(0.0F)),
+				PartPose.offsetAndRotation(0.025F, 0.0F, 0.0F, 0.0F, 0.2618F, 0.0F));
 		PartDefinition Body = partdefinition.addOrReplaceChild("Body",
 				CubeListBuilder.create().texOffs(0, 16).addBox(-5.1183F, -7.0437F, -5.9279F, 10.0F, 16.0F, 8.0F, new CubeDeformation(0.025F)).texOffs(60, 72).addBox(-5.1183F, -7.0437F, -5.9279F, 10.0F, 16.0F, 8.0F, new CubeDeformation(0.275F)),
 				PartPose.offsetAndRotation(0.0933F, 14.5539F, -0.8898F, 1.0908F, 0.0F, 0.0F));

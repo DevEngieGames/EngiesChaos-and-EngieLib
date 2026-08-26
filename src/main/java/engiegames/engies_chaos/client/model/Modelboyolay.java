@@ -125,19 +125,19 @@ public class Modelboyolay<T extends Entity> extends EntityModel<T> {
 				.addBox(-4.0F, 0.5F, -6.0F, 8.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 59).addBox(-5.0F, 1.0F, -7.0F, 10.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -4.3824F, 0.0F, 0.0F, 1.5708F, 0.0F));
 		PartDefinition cube_r3 = Hat.addOrReplaceChild("cube_r3", CubeListBuilder.create().texOffs(0, 65).addBox(-2.0F, -0.5F, -4.0F, 4.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 62)
 				.addBox(-4.0F, 0.5F, -6.0F, 8.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 59).addBox(-5.0F, 1.0F, -7.0F, 10.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -4.3824F, 0.0F, 0.0F, -1.5708F, 0.0F));
-		PartDefinition Ear1 = Head.addOrReplaceChild("Ear1", CubeListBuilder.create(), PartPose.offsetAndRotation(3.4668F, -6.75F, -2.181F, -0.9163F, 0.4363F, 0.0F));
+		PartDefinition Ear1 = Head.addOrReplaceChild("Ear1", CubeListBuilder.create(), PartPose.offsetAndRotation(3.4668F, -6.75F, -1.731F, -0.9163F, 0.4363F, 0.0F));
 		PartDefinition cube_r4 = Ear1.addOrReplaceChild("cube_r4", CubeListBuilder.create().texOffs(36, 31).addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)),
 				PartPose.offsetAndRotation(0.4875F, 0.0F, 0.0F, 0.0F, -0.4363F, 0.0F));
 		PartDefinition cube_r5 = Ear1.addOrReplaceChild("cube_r5", CubeListBuilder.create().texOffs(36, 31).mirror().addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
 				PartPose.offsetAndRotation(-0.4875F, 0.0F, 0.0F, 0.0F, 0.4363F, 0.0F));
-		PartDefinition Ear2 = Head.addOrReplaceChild("Ear2", CubeListBuilder.create(), PartPose.offsetAndRotation(-3.5332F, -6.75F, -2.181F, -0.9163F, -0.4363F, 0.0F));
+		PartDefinition Ear2 = Head.addOrReplaceChild("Ear2", CubeListBuilder.create(), PartPose.offsetAndRotation(-3.4582F, -6.75F, -1.731F, -0.9163F, -0.4363F, 0.0F));
 		PartDefinition cube_r6 = Ear2.addOrReplaceChild("cube_r6", CubeListBuilder.create().texOffs(36, 31).addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)),
 				PartPose.offsetAndRotation(0.4875F, 0.0F, 0.0F, 0.0F, -0.4363F, 0.0F));
 		PartDefinition cube_r7 = Ear2.addOrReplaceChild("cube_r7", CubeListBuilder.create().texOffs(36, 31).mirror().addBox(-1.0F, -3.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.01F)).mirror(false),
 				PartPose.offsetAndRotation(-0.4875F, 0.0F, 0.0F, 0.0F, 0.4363F, 0.0F));
 		PartDefinition Snout = Head.addOrReplaceChild("Snout",
 				CubeListBuilder.create().texOffs(36, 39).addBox(-4.0F, 0.01F, 0.0F, 4.0F, 2.0F, 2.0F, new CubeDeformation(0.001F)).texOffs(36, 43).addBox(-4.0F, 1.51F, 0.25F, 4.0F, 1.0F, 2.0F, new CubeDeformation(0.001F)),
-				PartPose.offset(2.0F, -1.01F, -10.025F));
+				PartPose.offset(2.0F, -1.51F, -10.025F));
 		PartDefinition Whisker_r1 = Snout.addOrReplaceChild("Whisker_r1", CubeListBuilder.create().texOffs(54, 34).addBox(0.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.0F, new CubeDeformation(0.0F)),
 				PartPose.offsetAndRotation(0.05F, 1.01F, 0.975F, 0.0F, 0.2618F, 0.0F));
 		PartDefinition Whisker_r2 = Snout.addOrReplaceChild("Whisker_r2", CubeListBuilder.create().texOffs(54, 31).addBox(-2.0F, -1.5F, 0.0F, 2.0F, 3.0F, 0.0F, new CubeDeformation(0.0F)),
