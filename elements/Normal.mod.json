@@ -23,7 +23,7 @@
     },
     "modelLayers": [],
     "animations": [],
-    "modelWidth": 1.0,
+    "modelWidth": 0.6,
     "modelHeight": 1.0,
     "modelShadowSize": 0.0,
     "mountedYOffset": 0.0,
@@ -119,9 +119,20 @@
     "raidCelebrationSound": {
       "value": ""
     },
-    "entityDataEntries": [],
+    "entityDataEntries": [
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "scalemult",
+        "type": "integer",
+        "value": 0
+      }
+    ],
     "onMobTickUpdate": {
       "name": "MissileTickUpdate"
+    },
+    "onInitialSpawn": {
+      "name": "MissilesOnInitialEntitySpawn"
     },
     "hasAI": true,
     "aiBase": "(none)",
@@ -138,6 +149,9 @@
     "rangedAttackRadius": 10.0,
     "spawnThisMob": false,
     "doesDespawnWhenIdle": false,
+    "spawningCondition": {
+      "name": "HeWhoGamesNaturalEntitySpawningCondition"
+    },
     "spawningProbability": 20,
     "mobSpawningType": "misc",
     "minNumberOfMobsPerGroup": 1,

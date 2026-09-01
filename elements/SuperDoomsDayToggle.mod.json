@@ -3,7 +3,7 @@
   "_type": "gamerule",
   "definition": {
     "type": "Logic",
-    "displayName": "Super Doomsday",
+    "displayName": "[Engie's Chaos] Super Doomsday",
     "description": "Enable a harder version of Doomsday.",
     "category": "MISC",
     "defaultValueLogic": false,

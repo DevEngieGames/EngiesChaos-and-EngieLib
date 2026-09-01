@@ -8,7 +8,7 @@
     "guiTexture": "",
     "customProperties": {},
     "states": [],
-    "name": "Roughian EngieGames Plush?",
+    "name": "Roughian EngieGames Crucifix",
     "rarity": "EPIC",
     "creativeTabs": [
       {
@@ -30,9 +30,7 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInformation": {
-      "fixedValue": [
-        "I stuffed a crucifix inside of this plush."
-      ]
+      "fixedValue": []
     },
     "glowCondition": {
       "fixedValue": false

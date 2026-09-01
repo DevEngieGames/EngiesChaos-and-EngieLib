@@ -3,7 +3,7 @@
   "_type": "gamerule",
   "definition": {
     "type": "Logic",
-    "displayName": "\"He's one tap.\" (1 HP)",
+    "displayName": "[Engie's Chaos] \"He's one tap.\" (1 HP)",
     "description": "Play survival, adventure, or hardcore, you'll only have 1 hit point anyway. Enable trueHardcore to get the life count as well. (RECOMMENDED: 10 MINIMUM, 25 MAX). This also negates the requirement for trueHardcore's 100% and 101%.",
     "category": "PLAYER",
     "defaultValueLogic": false,

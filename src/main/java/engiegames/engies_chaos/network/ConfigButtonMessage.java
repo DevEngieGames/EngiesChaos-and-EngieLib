@@ -18,11 +18,12 @@ import engiegames.engies_chaos.procedures.ConfigRaiseDiff1Procedure;
 import engiegames.engies_chaos.procedures.ConfigLowerDiff1Procedure;
 import engiegames.engies_chaos.procedures.ConfigGoToGearGiverProcedure;
 import engiegames.engies_chaos.procedures.ConfigGoToCodeRedemptionsProcedure;
+import engiegames.engies_chaos.procedures.ConfigButtonMobHPBaseMult2Procedure;
+import engiegames.engies_chaos.procedures.ConfigButtonMobHPBaseMult1Procedure;
 import engiegames.engies_chaos.procedures.ConfigButton9Procedure;
 import engiegames.engies_chaos.procedures.ConfigButton8Procedure;
 import engiegames.engies_chaos.procedures.ConfigButton7Procedure;
 import engiegames.engies_chaos.procedures.ConfigButton6Procedure;
-import engiegames.engies_chaos.procedures.ConfigButton5Procedure;
 import engiegames.engies_chaos.procedures.ConfigButton4Procedure;
 import engiegames.engies_chaos.procedures.ConfigButton3Procedure;
 import engiegames.engies_chaos.procedures.ConfigButton2Procedure;
@@ -85,55 +86,59 @@ public class ConfigButtonMessage {
 		}
 		if (buttonID == 4) {
 
-			ConfigButton5Procedure.execute(entity);
+			ConfigButton10Procedure.execute(entity);
 		}
 		if (buttonID == 5) {
 
-			ConfigButton10Procedure.execute(entity);
+			DifficultyToggleOffProcedure.execute(world);
 		}
 		if (buttonID == 6) {
 
-			DifficultyToggleOffProcedure.execute(world);
+			DifficultyToggleOnProcedure.execute(world);
 		}
 		if (buttonID == 7) {
 
-			DifficultyToggleOnProcedure.execute(world);
+			ConfigGoToCodeRedemptionsProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 8) {
 
-			ConfigGoToCodeRedemptionsProcedure.execute(world, x, y, z, entity);
+			ConfigGoToGearGiverProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 9) {
 
-			ConfigGoToGearGiverProcedure.execute(world, x, y, z, entity);
+			ConfigRaiseDiff1Procedure.execute(world);
 		}
 		if (buttonID == 10) {
 
-			ConfigRaiseDiff1Procedure.execute(world);
+			ConfigLowerDiff1Procedure.execute(world);
 		}
 		if (buttonID == 11) {
 
-			ConfigLowerDiff1Procedure.execute(world);
+			ConfigButton11Procedure.execute(entity);
 		}
 		if (buttonID == 12) {
 
-			ConfigButton11Procedure.execute(entity);
+			ConfigButton6Procedure.execute(entity);
 		}
 		if (buttonID == 13) {
 
-			ConfigButton6Procedure.execute(entity);
+			ConfigButton7Procedure.execute(entity);
 		}
 		if (buttonID == 14) {
 
-			ConfigButton7Procedure.execute(entity);
+			ConfigButton8Procedure.execute(entity);
 		}
 		if (buttonID == 15) {
 
-			ConfigButton8Procedure.execute(entity);
-		}
-		if (buttonID == 16) {
-
 			ConfigButton9Procedure.execute(entity);
+		}
+		if (buttonID == 17) {
+
+			ConfigButtonMobHPBaseMult1Procedure.execute(world);
+		}
+		if (buttonID == 18) {
+
+			ConfigButtonMobHPBaseMult2Procedure.execute(world);
 		}
 	}
 

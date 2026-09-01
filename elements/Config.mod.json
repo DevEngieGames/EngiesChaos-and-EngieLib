@@ -38,7 +38,7 @@
             "falpha": 0.0
           },
           "x": 93,
-          "y": 55,
+          "y": 53,
           "locked": false
         }
       },
@@ -54,7 +54,7 @@
           "width": 30,
           "height": 20,
           "x": 93,
-          "y": 64,
+          "y": 63,
           "locked": false
         }
       },
@@ -70,7 +70,7 @@
           "width": 30,
           "height": 20,
           "x": 124,
-          "y": 64,
+          "y": 63,
           "locked": false
         }
       },
@@ -86,7 +86,7 @@
           "width": 30,
           "height": 20,
           "x": 155,
-          "y": 64,
+          "y": 63,
           "locked": false
         }
       },
@@ -102,23 +102,7 @@
           "width": 30,
           "height": 20,
           "x": 186,
-          "y": 64,
-          "locked": false
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "name": "button_1111111",
-          "text": "None",
-          "isUndecorated": false,
-          "onClick": {
-            "name": "ConfigButton5"
-          },
-          "width": 61,
-          "height": 20,
-          "x": 217,
-          "y": 64,
+          "y": 63,
           "locked": false
         }
       },
@@ -165,8 +149,11 @@
             "value": -16777216,
             "falpha": 0.0
           },
+          "displayCondition": {
+            "name": "ConfigCheckForOP"
+          },
           "x": 93,
-          "y": 114,
+          "y": 115,
           "locked": false
         }
       },
@@ -185,7 +172,7 @@
           "width": 77,
           "height": 20,
           "x": 93,
-          "y": 124,
+          "y": 125,
           "locked": false
         }
       },
@@ -204,7 +191,7 @@
           "width": 77,
           "height": 20,
           "x": 93,
-          "y": 124,
+          "y": 125,
           "locked": false
         }
       },
@@ -223,7 +210,7 @@
             "name": "AttributeFixCheck"
           },
           "x": 93,
-          "y": 124,
+          "y": 125,
           "locked": false
         }
       },
@@ -242,26 +229,7 @@
             "name": "AttributeFixCheck"
           },
           "x": 93,
-          "y": 134,
-          "locked": false
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_you_do_not_have_access_to_toggle",
-          "text": {
-            "fixedValue": "You do not have permission to change this."
-          },
-          "color": {
-            "value": -16777216,
-            "falpha": 0.0
-          },
-          "displayCondition": {
-            "name": "DifficultyToggleCheckForOP"
-          },
-          "x": 93,
-          "y": 124,
+          "y": 135,
           "locked": false
         }
       },
@@ -312,7 +280,7 @@
           "width": 51,
           "height": 20,
           "x": 171,
-          "y": 124,
+          "y": 125,
           "locked": false
         }
       },
@@ -331,7 +299,7 @@
           "width": 51,
           "height": 20,
           "x": 223,
-          "y": 124,
+          "y": 125,
           "locked": false
         }
       },
@@ -347,8 +315,11 @@
             "value": -16777216,
             "falpha": 0.0
           },
+          "displayCondition": {
+            "name": "ConfigCheckForOP"
+          },
           "x": 153,
-          "y": 114,
+          "y": 115,
           "locked": false
         }
       },
@@ -366,8 +337,8 @@
           },
           "width": 56,
           "height": 20,
-          "x": 93,
-          "y": 155,
+          "x": 263,
+          "y": 94,
           "locked": false
         }
       },
@@ -382,8 +353,8 @@
             "value": -16777216,
             "falpha": 0.0
           },
-          "x": 93,
-          "y": 145,
+          "x": 263,
+          "y": 84,
           "locked": false
         }
       },
@@ -460,6 +431,76 @@
           "height": 20,
           "x": 181,
           "y": 94,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_0",
+          "text": "0",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 217,
+          "y": 63,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_mob_base_hp_mults",
+          "text": {
+            "fixedValue": "Mob base HP mults:"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "ConfigCheckForOP"
+          },
+          "x": 93,
+          "y": 146,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_off1",
+          "text": "ON",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ConfigButtonMobHPBaseMult1"
+          },
+          "displayCondition": {
+            "name": "MobHPBaseMultToggledOffCheck"
+          },
+          "width": 40,
+          "height": 20,
+          "x": 93,
+          "y": 156,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_off",
+          "text": "OFF",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ConfigButtonMobHPBaseMult2"
+          },
+          "displayCondition": {
+            "name": "MobHPBaseMultToggledOnCheck"
+          },
+          "width": 40,
+          "height": 20,
+          "x": 93,
+          "y": 156,
           "locked": false
         }
       }

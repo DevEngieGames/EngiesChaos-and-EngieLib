@@ -3,7 +3,7 @@
   "_type": "gamerule",
   "definition": {
     "type": "Logic",
-    "displayName": "True Hardcore ",
+    "displayName": "[Engie's Chaos] True Hardcore ",
     "description": "RECCOMMENDED: PLAY WITH HARDCORE ENABLED. Sets the players HP to 50(25 during DoomsDay.) Life count: Can be adjusted from the trueHardcoreLifeCount gameRule. (RECOMMENDED: 5 MIN, 15 MAX)",
     "category": "PLAYER",
     "defaultValueLogic": false,

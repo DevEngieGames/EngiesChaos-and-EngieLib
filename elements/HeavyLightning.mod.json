@@ -3,7 +3,7 @@
   "_type": "gamerule",
   "definition": {
     "type": "Logic",
-    "displayName": "Heavy Lightning",
+    "displayName": "[Engie's Chaos] Heavy Lightning",
     "description": "Experience Zeus Strike the world down during thunderstorms.",
     "category": "MISC",
     "defaultValueLogic": false,

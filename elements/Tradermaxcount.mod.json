@@ -7,6 +7,6 @@
     "description": "MINIMUM 1. UNLESS YOU WANT TO TURN TRADERS OFF",
     "category": "MOBS",
     "defaultValueLogic": false,
-    "defaultValueNumber": 1
+    "defaultValueNumber": 10
   }
 }

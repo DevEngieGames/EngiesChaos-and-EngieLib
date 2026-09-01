@@ -17,6 +17,8 @@ import javax.annotation.Nullable;
 
 import java.util.List;
 
+import engiegames.engies_chaos.init.EngiesChaosModItems;
+
 @Mod.EventBusSubscriber
 public class TooltipOfItemProcedure {
 	@OnlyIn(Dist.CLIENT)
@@ -32,7 +34,8 @@ public class TooltipOfItemProcedure {
 	private static void execute(@Nullable Event event, ItemStack itemstack, List<Component> tooltip) {
 		if (tooltip == null)
 			return;
-		if (itemstack.is(ItemTags.create(new ResourceLocation("minecraft:tools"))) || itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:crucifixes"))) || itemstack.is(ItemTags.create(new ResourceLocation("minecraft:armor")))) {
+		if (itemstack.is(ItemTags.create(new ResourceLocation("minecraft:tools"))) || itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:crucifixes"))) || itemstack.is(ItemTags.create(new ResourceLocation("minecraft:armor")))
+				|| itemstack.getItem() == EngiesChaosModItems.GOBLET.get() || itemstack.getItem() == EngiesChaosModItems.ENGIE_GOBLET.get() || itemstack.getItem() == EngiesChaosModItems.SMALL_GOBLET.get()) {
 			if (Screen.hasShiftDown()) {
 				tooltip.add(1, Component.literal(("\u00A76Durability: " + (itemstack.getMaxDamage() - itemstack.getDamageValue()) + "/" + itemstack.getMaxDamage())));
 			} else {

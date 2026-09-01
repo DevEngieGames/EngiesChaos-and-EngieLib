@@ -7,20 +7,13 @@ import net.minecraft.util.Mth;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.entity.DDAYRiftEntity;
-import engiegames.engies_chaos.EngiesChaosMod;
 
 public class DDAYRiftOnInitialEntitySpawnProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		EngiesChaosModVariables.MapVariables.get(world).playriftsound = false;
+		EngiesChaosModVariables.MapVariables.get(world).playriftsound = true;
 		EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-		EngiesChaosMod.queueServerWork(1, () -> {
-			EngiesChaosModVariables.MapVariables.get(world).playriftsound = true;
-			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-			EngiesChaosModVariables.MapVariables.get(world).playriftsound2 = true;
-			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-		});
 		if (Math.random() <= 0.75) {
 			if (entity instanceof DDAYRiftEntity _datEntSetI)
 				_datEntSetI.getEntityData().set(DDAYRiftEntity.DATA_riftsize, (int) Math.round(Mth.nextDouble(RandomSource.create(), 5, 15)));

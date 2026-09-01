@@ -3,7 +3,7 @@
   "_type": "gamerule",
   "definition": {
     "type": "Number",
-    "displayName": "True Hardcore Life Count",
+    "displayName": "[Engie's Chaos] True Hardcore Life Count",
     "description": "You can screw around with this if you want to. Otherwise... Default: 10",
     "category": "PLAYER",
     "defaultValueLogic": false,

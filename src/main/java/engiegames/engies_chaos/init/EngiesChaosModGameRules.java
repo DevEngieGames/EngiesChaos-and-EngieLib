@@ -32,5 +32,6 @@ public class EngiesChaosModGameRules {
 	public static final GameRules.Key<GameRules.BooleanValue> ENGIE_POC = GameRules.register("engiePoc", GameRules.Category.UPDATES, GameRules.BooleanValue.create(false));
 	public static final GameRules.Key<GameRules.BooleanValue> THE_END_TOGGLE = GameRules.register("theEndToggle", GameRules.Category.MISC, GameRules.BooleanValue.create(false));
 	public static final GameRules.Key<GameRules.BooleanValue> ENGIES_WRATH_TOGGLE = GameRules.register("engiesWrathToggle", GameRules.Category.MISC, GameRules.BooleanValue.create(false));
-	public static final GameRules.Key<GameRules.IntegerValue> TRADERMAXCOUNT = GameRules.register("tradermaxcount", GameRules.Category.MOBS, GameRules.IntegerValue.create(1));
+	public static final GameRules.Key<GameRules.IntegerValue> TRADERMAXCOUNT = GameRules.register("tradermaxcount", GameRules.Category.MOBS, GameRules.IntegerValue.create(10));
+	public static final GameRules.Key<GameRules.BooleanValue> RANDOM = GameRules.register("random", GameRules.Category.UPDATES, GameRules.BooleanValue.create(false));
 }

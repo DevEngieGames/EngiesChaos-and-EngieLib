@@ -46,6 +46,13 @@ public class DoomsdayCleanupProcedure {
 								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "execute as @a run EChaos EngieLib DoomsdayCleanupPlayer");
 					}
 				}
+				{
+					boolean _setval = false;
+					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.crucifixbypass = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
 			});
 			{
 				Entity _ent = entity;

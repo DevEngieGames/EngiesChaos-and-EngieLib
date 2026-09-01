@@ -9,13 +9,15 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.Button;
 
 import engiegames.engies_chaos.world.inventory.ConfigMenu;
+import engiegames.engies_chaos.procedures.MobHPBaseMultToggledOnCheckProcedure;
+import engiegames.engies_chaos.procedures.MobHPBaseMultToggledOffCheckProcedure;
 import engiegames.engies_chaos.procedures.HealthOverlayButtonDisplayProcedure;
 import engiegames.engies_chaos.procedures.DifficultyToggledOnCheckProcedure;
 import engiegames.engies_chaos.procedures.DifficultyToggledOnCheck3Procedure;
 import engiegames.engies_chaos.procedures.DifficultyToggledOnCheck2Procedure;
 import engiegames.engies_chaos.procedures.DifficultyToggledOffCheckProcedure;
-import engiegames.engies_chaos.procedures.DifficultyToggleCheckForOPProcedure;
 import engiegames.engies_chaos.procedures.ConfigShowDiffProcedure;
+import engiegames.engies_chaos.procedures.ConfigCheckForOPProcedure;
 import engiegames.engies_chaos.procedures.ConfigButton9ShowProcedure;
 import engiegames.engies_chaos.procedures.ConfigButton8ShowProcedure;
 import engiegames.engies_chaos.procedures.ConfigButton7ShowProcedure;
@@ -37,7 +39,6 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 	Button button_2;
 	Button button_3;
 	Button button_4;
-	Button button_1111111;
 	Button button_x;
 	Button button_toggle_off;
 	Button button_toggle_off1;
@@ -50,6 +51,9 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 	Button button_untrack_risk1;
 	Button button_untrack;
 	Button button_untrack1;
+	Button button_0;
+	Button button_off1;
+	Button button_off;
 
 	public ConfigScreen(ConfigMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -99,23 +103,25 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 	@Override
 	protected void renderLabels(PoseStack ms, int mouseX, int mouseY) {
 		this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_reall_about_engie_configuration"), 4, 4, -16777216);
-		this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_difficulty_overlay"), 4, 18, -16777216);
+		this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_difficulty_overlay"), 4, 16, -16777216);
 		this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_doomsday"), 4, 47, -16777216);
-		this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_difficulty"), 4, 77, -16777216);
+		if (ConfigCheckForOPProcedure.execute(entity))
+			this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_difficulty"), 4, 78, -16777216);
 		if (AttributeFixCheckProcedure.execute())
-			this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_you_do_not_have_attributefix_ins"), 4, 87, -16777216);
+			this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_you_do_not_have_attributefix_ins"), 4, 88, -16777216);
 		if (AttributeFixCheckProcedure.execute())
-			this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_this_config_is_disabled_until_th"), 4, 97, -16777216);
-		if (DifficultyToggleCheckForOPProcedure.execute(entity))
-			this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_you_do_not_have_access_to_toggle"), 4, 87, -16777216);
-		this.font.draw(ms, ConfigShowDiffProcedure.execute(world), 64, 77, -16777216);
-		this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_toggle_custom_hp_hud"), 4, 108, -16777216);
+			this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_this_config_is_disabled_until_th"), 4, 98, -16777216);
+		if (ConfigCheckForOPProcedure.execute(entity))
+			this.font.draw(ms, ConfigShowDiffProcedure.execute(world), 64, 78, -16777216);
+		this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_toggle_custom_hp_hud"), 174, 47, -16777216);
+		if (ConfigCheckForOPProcedure.execute(entity))
+			this.font.draw(ms, Component.translatable("gui.engies_chaos.config.label_mob_base_hp_mults"), 4, 109, -16777216);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		button_1 = new Button(this.leftPos + 4, this.topPos + 27, 30, 20, Component.translatable("gui.engies_chaos.config.button_1"), e -> {
+		button_1 = new Button(this.leftPos + 4, this.topPos + 26, 30, 20, Component.translatable("gui.engies_chaos.config.button_1"), e -> {
 			int x = ConfigScreen.this.x;
 			int y = ConfigScreen.this.y;
 			if (true) {
@@ -124,7 +130,7 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 			}
 		});
 		this.addRenderableWidget(button_1);
-		button_2 = new Button(this.leftPos + 35, this.topPos + 27, 30, 20, Component.translatable("gui.engies_chaos.config.button_2"), e -> {
+		button_2 = new Button(this.leftPos + 35, this.topPos + 26, 30, 20, Component.translatable("gui.engies_chaos.config.button_2"), e -> {
 			int x = ConfigScreen.this.x;
 			int y = ConfigScreen.this.y;
 			if (true) {
@@ -133,7 +139,7 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 			}
 		});
 		this.addRenderableWidget(button_2);
-		button_3 = new Button(this.leftPos + 66, this.topPos + 27, 30, 20, Component.translatable("gui.engies_chaos.config.button_3"), e -> {
+		button_3 = new Button(this.leftPos + 66, this.topPos + 26, 30, 20, Component.translatable("gui.engies_chaos.config.button_3"), e -> {
 			int x = ConfigScreen.this.x;
 			int y = ConfigScreen.this.y;
 			if (true) {
@@ -142,7 +148,7 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 			}
 		});
 		this.addRenderableWidget(button_3);
-		button_4 = new Button(this.leftPos + 97, this.topPos + 27, 30, 20, Component.translatable("gui.engies_chaos.config.button_4"), e -> {
+		button_4 = new Button(this.leftPos + 97, this.topPos + 26, 30, 20, Component.translatable("gui.engies_chaos.config.button_4"), e -> {
 			int x = ConfigScreen.this.x;
 			int y = ConfigScreen.this.y;
 			if (true) {
@@ -151,7 +157,7 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 			}
 		});
 		this.addRenderableWidget(button_4);
-		button_1111111 = new Button(this.leftPos + 128, this.topPos + 27, 61, 20, Component.translatable("gui.engies_chaos.config.button_1111111"), e -> {
+		button_x = new Button(this.leftPos + 217, this.topPos + 3, 30, 20, Component.translatable("gui.engies_chaos.config.button_x"), e -> {
 			int x = ConfigScreen.this.x;
 			int y = ConfigScreen.this.y;
 			if (true) {
@@ -159,31 +165,22 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 				ConfigButtonMessage.handleButtonAction(entity, 4, x, y, z);
 			}
 		});
-		this.addRenderableWidget(button_1111111);
-		button_x = new Button(this.leftPos + 217, this.topPos + 3, 30, 20, Component.translatable("gui.engies_chaos.config.button_x"), e -> {
+		this.addRenderableWidget(button_x);
+		button_toggle_off = new Button(this.leftPos + 4, this.topPos + 88, 77, 20, Component.translatable("gui.engies_chaos.config.button_toggle_off"), e -> {
 			int x = ConfigScreen.this.x;
 			int y = ConfigScreen.this.y;
-			if (true) {
+			if (DifficultyToggledOnCheckProcedure.execute(world, entity)) {
 				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(5, x, y, z));
 				ConfigButtonMessage.handleButtonAction(entity, 5, x, y, z);
 			}
 		});
-		this.addRenderableWidget(button_x);
-		button_toggle_off = new Button(this.leftPos + 4, this.topPos + 87, 77, 20, Component.translatable("gui.engies_chaos.config.button_toggle_off"), e -> {
-			int x = ConfigScreen.this.x;
-			int y = ConfigScreen.this.y;
-			if (DifficultyToggledOnCheckProcedure.execute(world, entity)) {
-				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(6, x, y, z));
-				ConfigButtonMessage.handleButtonAction(entity, 6, x, y, z);
-			}
-		});
 		this.addRenderableWidget(button_toggle_off);
-		button_toggle_off1 = new Button(this.leftPos + 4, this.topPos + 87, 77, 20, Component.translatable("gui.engies_chaos.config.button_toggle_off1"), e -> {
+		button_toggle_off1 = new Button(this.leftPos + 4, this.topPos + 88, 77, 20, Component.translatable("gui.engies_chaos.config.button_toggle_off1"), e -> {
 			int x = ConfigScreen.this.x;
 			int y = ConfigScreen.this.y;
 			if (DifficultyToggledOffCheckProcedure.execute(world, entity)) {
-				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(7, x, y, z));
-				ConfigButtonMessage.handleButtonAction(entity, 7, x, y, z);
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(6, x, y, z));
+				ConfigButtonMessage.handleButtonAction(entity, 6, x, y, z);
 			}
 		});
 		this.addRenderableWidget(button_toggle_off1);
@@ -191,8 +188,8 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 			int x = ConfigScreen.this.x;
 			int y = ConfigScreen.this.y;
 			if (true) {
-				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(8, x, y, z));
-				ConfigButtonMessage.handleButtonAction(entity, 8, x, y, z);
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(7, x, y, z));
+				ConfigButtonMessage.handleButtonAction(entity, 7, x, y, z);
 			}
 		});
 		this.addRenderableWidget(button_empty);
@@ -200,35 +197,35 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 			int x = ConfigScreen.this.x;
 			int y = ConfigScreen.this.y;
 			if (true) {
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(8, x, y, z));
+				ConfigButtonMessage.handleButtonAction(entity, 8, x, y, z);
+			}
+		});
+		this.addRenderableWidget(button_empty1);
+		button_raise = new Button(this.leftPos + 82, this.topPos + 88, 51, 20, Component.translatable("gui.engies_chaos.config.button_raise"), e -> {
+			int x = ConfigScreen.this.x;
+			int y = ConfigScreen.this.y;
+			if (DifficultyToggledOnCheck2Procedure.execute(world, entity)) {
 				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(9, x, y, z));
 				ConfigButtonMessage.handleButtonAction(entity, 9, x, y, z);
 			}
 		});
-		this.addRenderableWidget(button_empty1);
-		button_raise = new Button(this.leftPos + 82, this.topPos + 87, 51, 20, Component.translatable("gui.engies_chaos.config.button_raise"), e -> {
+		this.addRenderableWidget(button_raise);
+		button_lower = new Button(this.leftPos + 134, this.topPos + 88, 51, 20, Component.translatable("gui.engies_chaos.config.button_lower"), e -> {
 			int x = ConfigScreen.this.x;
 			int y = ConfigScreen.this.y;
-			if (DifficultyToggledOnCheck2Procedure.execute(world, entity)) {
+			if (DifficultyToggledOnCheck3Procedure.execute(world, entity)) {
 				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(10, x, y, z));
 				ConfigButtonMessage.handleButtonAction(entity, 10, x, y, z);
 			}
 		});
-		this.addRenderableWidget(button_raise);
-		button_lower = new Button(this.leftPos + 134, this.topPos + 87, 51, 20, Component.translatable("gui.engies_chaos.config.button_lower"), e -> {
-			int x = ConfigScreen.this.x;
-			int y = ConfigScreen.this.y;
-			if (DifficultyToggledOnCheck3Procedure.execute(world, entity)) {
-				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(11, x, y, z));
-				ConfigButtonMessage.handleButtonAction(entity, 11, x, y, z);
-			}
-		});
 		this.addRenderableWidget(button_lower);
-		button_toggle = new Button(this.leftPos + 4, this.topPos + 118, 56, 20, Component.translatable("gui.engies_chaos.config.button_toggle"), e -> {
+		button_toggle = new Button(this.leftPos + 174, this.topPos + 57, 56, 20, Component.translatable("gui.engies_chaos.config.button_toggle"), e -> {
 			int x = ConfigScreen.this.x;
 			int y = ConfigScreen.this.y;
 			if (HealthOverlayButtonDisplayProcedure.execute(entity)) {
-				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(12, x, y, z));
-				ConfigButtonMessage.handleButtonAction(entity, 12, x, y, z);
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(11, x, y, z));
+				ConfigButtonMessage.handleButtonAction(entity, 11, x, y, z);
 			}
 		});
 		this.addRenderableWidget(button_toggle);
@@ -236,8 +233,8 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 			int x = ConfigScreen.this.x;
 			int y = ConfigScreen.this.y;
 			if (ConfigButton6ShowProcedure.execute(entity)) {
-				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(13, x, y, z));
-				ConfigButtonMessage.handleButtonAction(entity, 13, x, y, z);
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(12, x, y, z));
+				ConfigButtonMessage.handleButtonAction(entity, 12, x, y, z);
 			}
 		});
 		this.addRenderableWidget(button_untrack_risk);
@@ -245,8 +242,8 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 			int x = ConfigScreen.this.x;
 			int y = ConfigScreen.this.y;
 			if (ConfigButton7ShowProcedure.execute(entity)) {
-				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(14, x, y, z));
-				ConfigButtonMessage.handleButtonAction(entity, 14, x, y, z);
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(13, x, y, z));
+				ConfigButtonMessage.handleButtonAction(entity, 13, x, y, z);
 			}
 		});
 		this.addRenderableWidget(button_untrack_risk1);
@@ -254,8 +251,8 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 			int x = ConfigScreen.this.x;
 			int y = ConfigScreen.this.y;
 			if (ConfigButton8ShowProcedure.execute(entity)) {
-				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(15, x, y, z));
-				ConfigButtonMessage.handleButtonAction(entity, 15, x, y, z);
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(14, x, y, z));
+				ConfigButtonMessage.handleButtonAction(entity, 14, x, y, z);
 			}
 		});
 		this.addRenderableWidget(button_untrack);
@@ -263,11 +260,32 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 			int x = ConfigScreen.this.x;
 			int y = ConfigScreen.this.y;
 			if (ConfigButton9ShowProcedure.execute(entity)) {
-				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(16, x, y, z));
-				ConfigButtonMessage.handleButtonAction(entity, 16, x, y, z);
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(15, x, y, z));
+				ConfigButtonMessage.handleButtonAction(entity, 15, x, y, z);
 			}
 		});
 		this.addRenderableWidget(button_untrack1);
+		button_0 = new Button(this.leftPos + 128, this.topPos + 26, 30, 20, Component.translatable("gui.engies_chaos.config.button_0"), e -> {
+		});
+		this.addRenderableWidget(button_0);
+		button_off1 = new Button(this.leftPos + 4, this.topPos + 119, 40, 20, Component.translatable("gui.engies_chaos.config.button_off1"), e -> {
+			int x = ConfigScreen.this.x;
+			int y = ConfigScreen.this.y;
+			if (MobHPBaseMultToggledOffCheckProcedure.execute(world, entity)) {
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(17, x, y, z));
+				ConfigButtonMessage.handleButtonAction(entity, 17, x, y, z);
+			}
+		});
+		this.addRenderableWidget(button_off1);
+		button_off = new Button(this.leftPos + 4, this.topPos + 119, 40, 20, Component.translatable("gui.engies_chaos.config.button_off"), e -> {
+			int x = ConfigScreen.this.x;
+			int y = ConfigScreen.this.y;
+			if (MobHPBaseMultToggledOnCheckProcedure.execute(world, entity)) {
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(18, x, y, z));
+				ConfigButtonMessage.handleButtonAction(entity, 18, x, y, z);
+			}
+		});
+		this.addRenderableWidget(button_off);
 	}
 
 	@Override
@@ -282,5 +300,7 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 		this.button_untrack_risk1.visible = ConfigButton7ShowProcedure.execute(entity);
 		this.button_untrack.visible = ConfigButton8ShowProcedure.execute(entity);
 		this.button_untrack1.visible = ConfigButton9ShowProcedure.execute(entity);
+		this.button_off1.visible = MobHPBaseMultToggledOffCheckProcedure.execute(world, entity);
+		this.button_off.visible = MobHPBaseMultToggledOnCheckProcedure.execute(world, entity);
 	}
 }

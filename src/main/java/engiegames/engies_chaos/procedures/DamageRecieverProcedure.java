@@ -22,8 +22,9 @@ public class DamageRecieverProcedure {
 			(commandParameterEntity(arguments, "entity")).hurt(EngiesChaosModDamageSources.NORMAL_EXPLOSION, (float) DoubleArgumentType.getDouble(arguments, "amount"));
 		} else if (DoubleArgumentType.getDouble(arguments, "missiletype") == 4) {
 			(commandParameterEntity(arguments, "entity")).hurt(EngiesChaosModDamageSources.MOAB_EXPLOSION, (float) DoubleArgumentType.getDouble(arguments, "amount"));
-		} else {
-			(commandParameterEntity(arguments, "entity")).hurt(DamageSource.GENERIC, (float) DoubleArgumentType.getDouble(arguments, "amount"));
+		} else if (!(DoubleArgumentType.getDouble(arguments, "missiletype") == 1 || DoubleArgumentType.getDouble(arguments, "missiletype") == 2 || DoubleArgumentType.getDouble(arguments, "missiletype") == 3
+				|| DoubleArgumentType.getDouble(arguments, "missiletype") == 4)) {
+			(commandParameterEntity(arguments, "entity")).hurt(DamageSource.OUT_OF_WORLD, (float) DoubleArgumentType.getDouble(arguments, "amount"));
 		}
 	}
 

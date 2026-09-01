@@ -3,7 +3,7 @@
   "_type": "gamerule",
   "definition": {
     "type": "Logic",
-    "displayName": "Enraged Zombies Toggle",
+    "displayName": "[Engie's Chaos] Enraged Zombies Toggle",
     "description": "Toggle the entirety of Enraged Zombies. MUST BE TURNED OFF WHEN PLAYING TRUETHROWBACK!!!!",
     "category": "MISC",
     "defaultValueLogic": false,

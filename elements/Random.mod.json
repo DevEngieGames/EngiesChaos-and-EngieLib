@@ -1,0 +1,12 @@
+{
+  "_fv": 79,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Logic",
+    "displayName": "[Engie's Chaos] Random 101",
+    "description": "Every 25 minutes, all gamerules will be randomized. Even if you want them on or not. DOES NOT AFFECT ENGIEPOC.",
+    "category": "UPDATES",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 0
+  }
+}

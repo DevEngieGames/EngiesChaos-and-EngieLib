@@ -3,8 +3,8 @@
   "_type": "gamerule",
   "definition": {
     "type": "Logic",
-    "displayName": "The End",
-    "description": "Enable a even harder version of Doomsday.",
+    "displayName": "[Engie's Chaos] The End",
+    "description": "Enable a even harder version of Doomsday. DOOMSDAY TOGGLE MUST BE ENABLED FOR THIS TO WORK!!!!",
     "category": "MISC",
     "defaultValueLogic": false,
     "defaultValueNumber": 0

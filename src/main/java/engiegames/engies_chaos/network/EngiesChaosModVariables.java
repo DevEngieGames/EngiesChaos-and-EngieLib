@@ -189,6 +189,8 @@ public class EngiesChaosModVariables {
 			clone.diffadvancement32 = original.diffadvancement32;
 			clone.ddayplayeraddedtodeadcount = original.ddayplayeraddedtodeadcount;
 			clone.doublejumping = original.doublejumping;
+			clone.CrucifixMainHandDurabilityPercentage = original.CrucifixMainHandDurabilityPercentage;
+			clone.CrucifixOffHandDurabilityPercentage = original.CrucifixOffHandDurabilityPercentage;
 			if (!event.isWasDeath()) {
 				clone.firstplay = original.firstplay;
 				clone.RespawnNormInstantHealth = original.RespawnNormInstantHealth;
@@ -197,8 +199,6 @@ public class EngiesChaosModVariables {
 				clone.missileblueburstscale = original.missileblueburstscale;
 				clone.missilenormalscale = original.missilenormalscale;
 				clone.missilemoabscale = original.missilemoabscale;
-				clone.avascale = original.avascale;
-				clone.riftballscale = original.riftballscale;
 			}
 		}
 
@@ -407,15 +407,12 @@ public class EngiesChaosModVariables {
 		public boolean playlightningsound2 = false;
 		public boolean playlightningcornersound = false;
 		public boolean ddayscornerlightning = false;
-		public boolean playriftsound2 = false;
 		public boolean playlightningsound3 = false;
 		public boolean playlightningsound4 = false;
 		public boolean DDAYCleanup = false;
 		public boolean playlightningsound5 = false;
 		public boolean playmissilespawnsound = false;
-		public boolean playmissilespawnsound2 = false;
 		public boolean playmissileexplosionsound = false;
-		public boolean playmissileexplosionsound2 = false;
 		public boolean shadowsharkdevspawn = false;
 		public boolean DayCheck = false;
 		public boolean NightCheck = false;
@@ -503,6 +500,8 @@ public class EngiesChaosModVariables {
 		public double randnumforproph = 0;
 		public double tradertimercounttick = 0;
 		public boolean traderneedcount = false;
+		public double random25minutetimer = 0;
+		public boolean mobbasehpmulttoggle = false;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -655,15 +654,12 @@ public class EngiesChaosModVariables {
 			playlightningsound2 = nbt.getBoolean("playlightningsound2");
 			playlightningcornersound = nbt.getBoolean("playlightningcornersound");
 			ddayscornerlightning = nbt.getBoolean("ddayscornerlightning");
-			playriftsound2 = nbt.getBoolean("playriftsound2");
 			playlightningsound3 = nbt.getBoolean("playlightningsound3");
 			playlightningsound4 = nbt.getBoolean("playlightningsound4");
 			DDAYCleanup = nbt.getBoolean("DDAYCleanup");
 			playlightningsound5 = nbt.getBoolean("playlightningsound5");
 			playmissilespawnsound = nbt.getBoolean("playmissilespawnsound");
-			playmissilespawnsound2 = nbt.getBoolean("playmissilespawnsound2");
 			playmissileexplosionsound = nbt.getBoolean("playmissileexplosionsound");
-			playmissileexplosionsound2 = nbt.getBoolean("playmissileexplosionsound2");
 			shadowsharkdevspawn = nbt.getBoolean("shadowsharkdevspawn");
 			DayCheck = nbt.getBoolean("DayCheck");
 			NightCheck = nbt.getBoolean("NightCheck");
@@ -751,6 +747,8 @@ public class EngiesChaosModVariables {
 			randnumforproph = nbt.getDouble("randnumforproph");
 			tradertimercounttick = nbt.getDouble("tradertimercounttick");
 			traderneedcount = nbt.getBoolean("traderneedcount");
+			random25minutetimer = nbt.getDouble("random25minutetimer");
+			mobbasehpmulttoggle = nbt.getBoolean("mobbasehpmulttoggle");
 		}
 
 		@Override
@@ -899,15 +897,12 @@ public class EngiesChaosModVariables {
 			nbt.putBoolean("playlightningsound2", playlightningsound2);
 			nbt.putBoolean("playlightningcornersound", playlightningcornersound);
 			nbt.putBoolean("ddayscornerlightning", ddayscornerlightning);
-			nbt.putBoolean("playriftsound2", playriftsound2);
 			nbt.putBoolean("playlightningsound3", playlightningsound3);
 			nbt.putBoolean("playlightningsound4", playlightningsound4);
 			nbt.putBoolean("DDAYCleanup", DDAYCleanup);
 			nbt.putBoolean("playlightningsound5", playlightningsound5);
 			nbt.putBoolean("playmissilespawnsound", playmissilespawnsound);
-			nbt.putBoolean("playmissilespawnsound2", playmissilespawnsound2);
 			nbt.putBoolean("playmissileexplosionsound", playmissileexplosionsound);
-			nbt.putBoolean("playmissileexplosionsound2", playmissileexplosionsound2);
 			nbt.putBoolean("shadowsharkdevspawn", shadowsharkdevspawn);
 			nbt.putBoolean("DayCheck", DayCheck);
 			nbt.putBoolean("NightCheck", NightCheck);
@@ -995,6 +990,8 @@ public class EngiesChaosModVariables {
 			nbt.putDouble("randnumforproph", randnumforproph);
 			nbt.putDouble("tradertimercounttick", tradertimercounttick);
 			nbt.putBoolean("traderneedcount", traderneedcount);
+			nbt.putDouble("random25minutetimer", random25minutetimer);
+			nbt.putBoolean("mobbasehpmulttoggle", mobbasehpmulttoggle);
 			return nbt;
 		}
 
@@ -1163,8 +1160,6 @@ public class EngiesChaosModVariables {
 		public double missileblueburstscale = 1.0;
 		public double missilenormalscale = 1.0;
 		public double missilemoabscale = 1.0;
-		public double avascale = 3.0;
-		public double riftballscale = 3.0;
 		public boolean hphudtoggle = true;
 		public double HostileBiblicallyKillCount = 0;
 		public double HostileEngieKillCount = 0;
@@ -1211,6 +1206,8 @@ public class EngiesChaosModVariables {
 		public boolean diffadvancement32 = false;
 		public boolean ddayplayeraddedtodeadcount = false;
 		public boolean doublejumping = false;
+		public double CrucifixMainHandDurabilityPercentage = 0;
+		public double CrucifixOffHandDurabilityPercentage = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -1295,8 +1292,6 @@ public class EngiesChaosModVariables {
 			nbt.putDouble("missileblueburstscale", missileblueburstscale);
 			nbt.putDouble("missilenormalscale", missilenormalscale);
 			nbt.putDouble("missilemoabscale", missilemoabscale);
-			nbt.putDouble("avascale", avascale);
-			nbt.putDouble("riftballscale", riftballscale);
 			nbt.putBoolean("hphudtoggle", hphudtoggle);
 			nbt.putDouble("HostileBiblicallyKillCount", HostileBiblicallyKillCount);
 			nbt.putDouble("HostileEngieKillCount", HostileEngieKillCount);
@@ -1343,6 +1338,8 @@ public class EngiesChaosModVariables {
 			nbt.putBoolean("diffadvancement32", diffadvancement32);
 			nbt.putBoolean("ddayplayeraddedtodeadcount", ddayplayeraddedtodeadcount);
 			nbt.putBoolean("doublejumping", doublejumping);
+			nbt.putDouble("CrucifixMainHandDurabilityPercentage", CrucifixMainHandDurabilityPercentage);
+			nbt.putDouble("CrucifixOffHandDurabilityPercentage", CrucifixOffHandDurabilityPercentage);
 			return nbt;
 		}
 
@@ -1424,8 +1421,6 @@ public class EngiesChaosModVariables {
 			missileblueburstscale = nbt.getDouble("missileblueburstscale");
 			missilenormalscale = nbt.getDouble("missilenormalscale");
 			missilemoabscale = nbt.getDouble("missilemoabscale");
-			avascale = nbt.getDouble("avascale");
-			riftballscale = nbt.getDouble("riftballscale");
 			hphudtoggle = nbt.getBoolean("hphudtoggle");
 			HostileBiblicallyKillCount = nbt.getDouble("HostileBiblicallyKillCount");
 			HostileEngieKillCount = nbt.getDouble("HostileEngieKillCount");
@@ -1472,6 +1467,8 @@ public class EngiesChaosModVariables {
 			diffadvancement32 = nbt.getBoolean("diffadvancement32");
 			ddayplayeraddedtodeadcount = nbt.getBoolean("ddayplayeraddedtodeadcount");
 			doublejumping = nbt.getBoolean("doublejumping");
+			CrucifixMainHandDurabilityPercentage = nbt.getDouble("CrucifixMainHandDurabilityPercentage");
+			CrucifixOffHandDurabilityPercentage = nbt.getDouble("CrucifixOffHandDurabilityPercentage");
 		}
 	}
 
@@ -1572,8 +1569,6 @@ public class EngiesChaosModVariables {
 					variables.missileblueburstscale = message.data.missileblueburstscale;
 					variables.missilenormalscale = message.data.missilenormalscale;
 					variables.missilemoabscale = message.data.missilemoabscale;
-					variables.avascale = message.data.avascale;
-					variables.riftballscale = message.data.riftballscale;
 					variables.hphudtoggle = message.data.hphudtoggle;
 					variables.HostileBiblicallyKillCount = message.data.HostileBiblicallyKillCount;
 					variables.HostileEngieKillCount = message.data.HostileEngieKillCount;
@@ -1620,6 +1615,8 @@ public class EngiesChaosModVariables {
 					variables.diffadvancement32 = message.data.diffadvancement32;
 					variables.ddayplayeraddedtodeadcount = message.data.ddayplayeraddedtodeadcount;
 					variables.doublejumping = message.data.doublejumping;
+					variables.CrucifixMainHandDurabilityPercentage = message.data.CrucifixMainHandDurabilityPercentage;
+					variables.CrucifixOffHandDurabilityPercentage = message.data.CrucifixOffHandDurabilityPercentage;
 				}
 			});
 			context.setPacketHandled(true);

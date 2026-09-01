@@ -21,7 +21,6 @@ import engiegames.engies_chaos.entity.YellowLightningEntity;
 import engiegames.engies_chaos.entity.NormalEntity;
 import engiegames.engies_chaos.entity.MOABEntity;
 import engiegames.engies_chaos.entity.BlueBurstEntity;
-import engiegames.engies_chaos.EngiesChaosMod;
 
 public class MissileTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -34,46 +33,33 @@ public class MissileTickUpdateProcedure {
 						_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "team join DDayNoCol");
 			}
 		}
-		for (Entity entityiterator : new ArrayList<>(world.players())) {
-			if (entityiterator instanceof LivingEntity _livEnt1 && _livEnt1.hasEffect(MobEffects.DARKNESS)) {
-				if (entity instanceof LivingEntity _entity)
-					_entity.removeEffect(MobEffects.GLOWING);
-			} else {
-				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 999999, 255, false, false));
-			}
-		}
 		{
 			Entity _ent = entity;
 			_ent.teleportTo(x, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) x, (int) z)), z);
 			if (_ent instanceof ServerPlayer _serverPlayer)
 				_serverPlayer.connection.teleport(x, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) x, (int) z)), z, _ent.getYRot(), _ent.getXRot());
 		}
-		if (entity instanceof YellowLightningEntity) {
-			{
-				Entity _ent = entity;
-				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "team join YellowLightning @e[type=engies_chaos:yellow_lightning]");
-				}
+		for (Entity entityiterator : new ArrayList<>(world.players())) {
+			if (entityiterator instanceof LivingEntity _livEnt3 && _livEnt3.hasEffect(MobEffects.DARKNESS)) {
+				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+					_entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 1, 255, false, false));
+			} else if (!(entityiterator instanceof LivingEntity _livEnt5 && _livEnt5.hasEffect(MobEffects.DARKNESS))) {
+				if (entity instanceof LivingEntity _entity)
+					_entity.removeEffect(MobEffects.GLOWING);
 			}
+		}
+		if (entity instanceof YellowLightningEntity) {
 			entity.getPersistentData().putDouble("YellowLightningTimeBeforeExplosion", (entity.getPersistentData().getDouble("YellowLightningTimeBeforeExplosion") + 0.05));
 			if (entity.getPersistentData().getDouble("YellowLightningTimeBeforeExplosion") >= 1) {
 				EngiesChaosModVariables.MapVariables.get(world).playmissileexplosionsound = true;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosModVariables.MapVariables.get(world).playmissileexplosionsound2 = true;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosMod.queueServerWork(1, () -> {
-					EngiesChaosModVariables.MapVariables.get(world).playmissileexplosionsound = true;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				});
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.EXPLOSION, x, y, z, 1, 1, 1, 1, 1);
 				{
 					Entity _ent = entity;
 					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("damages @a[distance=..21] " + Math.round(Mth.nextDouble(RandomSource.create(), 40, 60)) + " 4"));
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("damages @a[distance=..7] " + Math.round(Mth.nextDouble(RandomSource.create(), 40, 60)) + " 1"));
 					}
 				}
 				entity.getPersistentData().putDouble("YellowLightningTimeBeforeExplosion", 0);
@@ -83,30 +69,17 @@ public class MissileTickUpdateProcedure {
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			}
 		} else if (entity instanceof BlueBurstEntity) {
-			{
-				Entity _ent = entity;
-				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "team join BlueBurst @e[type=engies_chaos:blue_burst]");
-				}
-			}
 			entity.getPersistentData().putDouble("BlueBurstTimeBeforeExplosion", (entity.getPersistentData().getDouble("BlueBurstTimeBeforeExplosion") + 0.05));
 			if (entity.getPersistentData().getDouble("BlueBurstTimeBeforeExplosion") >= 3) {
 				EngiesChaosModVariables.MapVariables.get(world).playmissileexplosionsound = true;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosModVariables.MapVariables.get(world).playmissileexplosionsound2 = true;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosMod.queueServerWork(1, () -> {
-					EngiesChaosModVariables.MapVariables.get(world).playmissileexplosionsound = true;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				});
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.EXPLOSION, x, y, z, 5, 5, 5, 5, 1);
 				{
 					Entity _ent = entity;
 					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("damages @a[distance=..21] " + Math.round(Mth.nextDouble(RandomSource.create(), 40, 60)) + " 4"));
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("damages @a[distance=..21] " + Math.round(Mth.nextDouble(RandomSource.create(), 40, 60)) + " 2"));
 					}
 				}
 				entity.getPersistentData().putDouble("BlueBurstTimeBeforeExplosion", 0);
@@ -116,30 +89,17 @@ public class MissileTickUpdateProcedure {
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			}
 		} else if (entity instanceof NormalEntity) {
-			{
-				Entity _ent = entity;
-				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "team join Normal @e[type=engies_chaos:normal]");
-				}
-			}
 			entity.getPersistentData().putDouble("NormalTimeBeforeExplosion", (entity.getPersistentData().getDouble("NormalTimeBeforeExplosion") + 0.05));
 			if (entity.getPersistentData().getDouble("NormalTimeBeforeExplosion") >= 6) {
 				EngiesChaosModVariables.MapVariables.get(world).playmissileexplosionsound = true;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosModVariables.MapVariables.get(world).playmissileexplosionsound2 = true;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosMod.queueServerWork(1, () -> {
-					EngiesChaosModVariables.MapVariables.get(world).playmissileexplosionsound = true;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				});
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.EXPLOSION, x, y, z, 10, 10, 10, 10, 1);
 				{
 					Entity _ent = entity;
 					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("damages @a[distance=..70] " + Math.round(Mth.nextDouble(RandomSource.create(), 25, 40)) + " 4"));
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("damages @a[distance=..70] " + Math.round(Mth.nextDouble(RandomSource.create(), 25, 40)) + " 3"));
 					}
 				}
 				entity.getPersistentData().putDouble("NormalTimeBeforeExplosion", 0);
@@ -153,12 +113,6 @@ public class MissileTickUpdateProcedure {
 			if (entity.getPersistentData().getDouble("MoabTimeBeforeExplosion") >= 16) {
 				EngiesChaosModVariables.MapVariables.get(world).playmissileexplosionsound = true;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosModVariables.MapVariables.get(world).playmissileexplosionsound2 = true;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosMod.queueServerWork(1, () -> {
-					EngiesChaosModVariables.MapVariables.get(world).playmissileexplosionsound = true;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				});
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.EXPLOSION, x, y, z, 15, 15, 15, 15, 1);
 				{

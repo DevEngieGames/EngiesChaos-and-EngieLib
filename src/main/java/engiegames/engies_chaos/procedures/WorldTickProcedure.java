@@ -41,7 +41,7 @@ public class WorldTickProcedure {
 				}
 			}
 			if (EngiesChaosModVariables.MapVariables.get(world).timecheckstop == false) {
-				EngiesChaosModVariables.MapVariables.get(world).timeticks = EngiesChaosModVariables.MapVariables.get(world).timeticks + 1;
+				EngiesChaosModVariables.MapVariables.get(world).timeticks = world.dayTime();
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			}
 			if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_HARDCORE) == true) {
