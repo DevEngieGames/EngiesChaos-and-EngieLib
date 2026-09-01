@@ -23,9 +23,7 @@ import engiegames.engies_chaos.client.model.Modelnightmarehostile;
 import engiegames.engies_chaos.client.model.Modelmonstrositynewhalloween;
 import engiegames.engies_chaos.client.model.Modelmonstrositynew;
 import engiegames.engies_chaos.client.model.Modelmonstrosity;
-import engiegames.engies_chaos.client.model.Modelmissileexplosionleftbehind;
 import engiegames.engies_chaos.client.model.Modelmissilebombs;
-import engiegames.engies_chaos.client.model.Modelmissilebeam;
 import engiegames.engies_chaos.client.model.Modelinsanitymonstrosity;
 import engiegames.engies_chaos.client.model.Modelinsanityhostile;
 import engiegames.engies_chaos.client.model.Modelhostile;
@@ -92,7 +90,6 @@ public class EngiesChaosModModels {
 		event.registerLayerDefinition(ModelHeWhoGames.LAYER_LOCATION, ModelHeWhoGames::createBodyLayer);
 		event.registerLayerDefinition(Modelcustomarmorr.LAYER_LOCATION, Modelcustomarmorr::createBodyLayer);
 		event.registerLayerDefinition(Modelboyosit.LAYER_LOCATION, Modelboyosit::createBodyLayer);
-		event.registerLayerDefinition(Modelmissileexplosionleftbehind.LAYER_LOCATION, Modelmissileexplosionleftbehind::createBodyLayer);
 		event.registerLayerDefinition(Modelavalanche_ball.LAYER_LOCATION, Modelavalanche_ball::createBodyLayer);
 		event.registerLayerDefinition(Modelboyosleepalt.LAYER_LOCATION, Modelboyosleepalt::createBodyLayer);
 		event.registerLayerDefinition(Modelddayrift.LAYER_LOCATION, Modelddayrift::createBodyLayer);
@@ -155,7 +152,6 @@ public class EngiesChaosModModels {
 		event.registerLayerDefinition(Modelhalloweenenraged.LAYER_LOCATION, Modelhalloweenenraged::createBodyLayer);
 		event.registerLayerDefinition(Modelnightmaremon.LAYER_LOCATION, Modelnightmaremon::createBodyLayer);
 		event.registerLayerDefinition(Modeltechnoarmor.LAYER_LOCATION, Modeltechnoarmor::createBodyLayer);
-		event.registerLayerDefinition(Modelmissilebeam.LAYER_LOCATION, Modelmissilebeam::createBodyLayer);
 		event.registerLayerDefinition(Modelenraged_new.LAYER_LOCATION, Modelenraged_new::createBodyLayer);
 		event.registerLayerDefinition(Modelcustom_lighting_bolt.LAYER_LOCATION, Modelcustom_lighting_bolt::createBodyLayer);
 		event.registerLayerDefinition(Modelinsanitymonstrosity.LAYER_LOCATION, Modelinsanitymonstrosity::createBodyLayer);

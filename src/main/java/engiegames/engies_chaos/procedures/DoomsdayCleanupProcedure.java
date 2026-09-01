@@ -18,7 +18,6 @@ import net.minecraft.commands.CommandSource;
 import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
-import engiegames.engies_chaos.init.EngiesChaosModGameRules;
 import engiegames.engies_chaos.EngiesChaosMod;
 
 @Mod.EventBusSubscriber
@@ -216,8 +215,7 @@ public class DoomsdayCleanupProcedure {
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			EngiesChaosModVariables.MapVariables.get(world).BYEBYE = false;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-			if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIE_POC) == true && world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ONE_HP) == true
-					&& EngiesChaosModVariables.MapVariables.get(world).MobDifficulty == 525000) {
+			if (EngiesChaosModVariables.MapVariables.get(world).engiepoctruehardest == true) {
 				if (EngiesChaosModVariables.MapVariables.get(world).timecheckstop == true) {
 					if (world instanceof ServerLevel _level)
 						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),

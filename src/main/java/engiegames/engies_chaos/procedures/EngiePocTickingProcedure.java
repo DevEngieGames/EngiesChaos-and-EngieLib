@@ -69,6 +69,8 @@ public class EngiePocTickingProcedure {
 					world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.EXTREME_LIGHTNING).set(true, world.getServer());
 					world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.ENRAGED_ZOMBIES_TOGGLE).set(true, world.getServer());
 					if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ONE_HP) == true && EngiesChaosModVariables.MapVariables.get(world).MobDifficulty == 525000) {
+						EngiesChaosModVariables.MapVariables.get(world).engiepoctruehardest = true;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false, world.getServer());
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
@@ -84,6 +86,9 @@ public class EngiePocTickingProcedure {
 								EngiePocDoomsdayTriggerProcedure.execute(world);
 							}
 						}
+					} else {
+						EngiesChaosModVariables.MapVariables.get(world).engiepoctruehardest = false;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 					if (EngiesChaosModVariables.MapVariables.get(world).EngiePocSpawnedHelper == false) {
 						EngiesChaosModVariables.MapVariables.get(world).EngiePocSpawnedHelper = true;
