@@ -12,15 +12,15 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import engiegames.engies_chaos.procedures.MonstrosityEngieNormalDisplayProcedure;
 import engiegames.engies_chaos.procedures.MonstrosityEngieColdSeasonedDisplayProcedure;
 import engiegames.engies_chaos.entity.MonstrosityEngieEntity;
-import engiegames.engies_chaos.client.model.Modelmonstrositynew;
+import engiegames.engies_chaos.client.model.Modelhostile;
 
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.PoseStack;
 
-public class MonstrosityEngieRenderer extends MobRenderer<MonstrosityEngieEntity, Modelmonstrositynew<MonstrosityEngieEntity>> {
+public class MonstrosityEngieRenderer extends MobRenderer<MonstrosityEngieEntity, Modelhostile<MonstrosityEngieEntity>> {
 	public MonstrosityEngieRenderer(EntityRendererProvider.Context context) {
-		super(context, new Modelmonstrositynew<MonstrosityEngieEntity>(context.bakeLayer(Modelmonstrositynew.LAYER_LOCATION)), 0.5f);
-		this.addLayer(new RenderLayer<MonstrosityEngieEntity, Modelmonstrositynew<MonstrosityEngieEntity>>(this) {
+		super(context, new Modelhostile<MonstrosityEngieEntity>(context.bakeLayer(Modelhostile.LAYER_LOCATION)), 0.5f);
+		this.addLayer(new RenderLayer<MonstrosityEngieEntity, Modelhostile<MonstrosityEngieEntity>>(this) {
 			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/monstrosityengie.png");
 
 			@Override
@@ -35,7 +35,7 @@ public class MonstrosityEngieRenderer extends MobRenderer<MonstrosityEngieEntity
 				}
 			}
 		});
-		this.addLayer(new RenderLayer<MonstrosityEngieEntity, Modelmonstrositynew<MonstrosityEngieEntity>>(this) {
+		this.addLayer(new RenderLayer<MonstrosityEngieEntity, Modelhostile<MonstrosityEngieEntity>>(this) {
 			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/monstrosityengiecoldseasoned.png");
 
 			@Override
