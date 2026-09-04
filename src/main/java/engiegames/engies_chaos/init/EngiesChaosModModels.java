@@ -20,7 +20,6 @@ import engiegames.engies_chaos.client.model.Modelprotogen;
 import engiegames.engies_chaos.client.model.Modeloutraged_new;
 import engiegames.engies_chaos.client.model.Modelnightmaremon;
 import engiegames.engies_chaos.client.model.Modelnightmarehostile;
-import engiegames.engies_chaos.client.model.Modelmonstrositynew;
 import engiegames.engies_chaos.client.model.Modelmissilebombs;
 import engiegames.engies_chaos.client.model.Modelinsanitymonstrosity;
 import engiegames.engies_chaos.client.model.Modelinsanityhostile;
@@ -101,7 +100,6 @@ public class EngiesChaosModModels {
 		event.registerLayerDefinition(Modelboyorockylayalt.LAYER_LOCATION, Modelboyorockylayalt::createBodyLayer);
 		event.registerLayerDefinition(Modelcoldseason.LAYER_LOCATION, Modelcoldseason::createBodyLayer);
 		event.registerLayerDefinition(Modelboyolayaltxengie.LAYER_LOCATION, Modelboyolayaltxengie::createBodyLayer);
-		event.registerLayerDefinition(Modelmonstrositynew.LAYER_LOCATION, Modelmonstrositynew::createBodyLayer);
 		event.registerLayerDefinition(Modelboyorockylayonside.LAYER_LOCATION, Modelboyorockylayonside::createBodyLayer);
 		event.registerLayerDefinition(Modelboyotamed.LAYER_LOCATION, Modelboyotamed::createBodyLayer);
 		event.registerLayerDefinition(Modelboyosleep.LAYER_LOCATION, Modelboyosleep::createBodyLayer);
