@@ -4,7 +4,7 @@ license="Apache License version 2.0"
 
 [[mods]]
 modId="engielib"
-version="0.2.6"
+version="0.2.7"
 displayName="EngieLib"
 updateJSONURL="https://raw.githubusercontent.com/DevEngieGames/RE-All-About-Engie/refs/heads/Update-Check/EngieLib.json"
 displayURL="https://github.com/DevEngieGames/EngiesChaos-and-EngieLib"
