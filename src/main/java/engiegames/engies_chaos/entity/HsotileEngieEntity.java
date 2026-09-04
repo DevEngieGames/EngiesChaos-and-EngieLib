@@ -43,6 +43,7 @@ import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.procedures.NegativeDifficultyAICheckProcedure;
 import engiegames.engies_chaos.procedures.MobHitboxScalingProcedure;
+import engiegames.engies_chaos.procedures.HostileEngieTickProcedure;
 import engiegames.engies_chaos.procedures.HostileEngieSpawningConditionProcedure;
 import engiegames.engies_chaos.procedures.EntitySpawnsProcedure;
 import engiegames.engies_chaos.procedures.AnyEngieDiesAddCountProcedure;
@@ -216,6 +217,7 @@ public class HsotileEngieEntity extends Monster {
 	@Override
 	public void baseTick() {
 		super.baseTick();
+		HostileEngieTickProcedure.execute(this.level, this);
 		this.refreshDimensions();
 	}
 

@@ -150,6 +150,9 @@
     "whenMobDies": {
       "name": "AnyEngieDiesAddCount"
     },
+    "onMobTickUpdate": {
+      "name": "HostileEngieTick"
+    },
     "onInitialSpawn": {
       "name": "EntitySpawns"
     },

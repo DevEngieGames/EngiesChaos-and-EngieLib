@@ -22,7 +22,7 @@ public class AngryEngieTickProcedure {
 				if (entity instanceof AngryEngieEntity _datEntSetL)
 					_datEntSetL.getEntityData().set(AngryEngieEntity.DATA_coldseasoned, true);
 				if (entity instanceof AngryEngieEntity _datEntSetL)
-					_datEntSetL.getEntityData().set(AngryEngieEntity.DATA_holloweened, true);
+					_datEntSetL.getEntityData().set(AngryEngieEntity.DATA_holloweened, false);
 			}
 		} else {
 			if (entity instanceof AngryEngieEntity _datEntSetL)
