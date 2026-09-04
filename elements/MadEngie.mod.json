@@ -23,8 +23,8 @@
     },
     "modelLayers": [
       {
-        "model": "Modelhostile",
-        "texture": "madengienew.png",
+        "model": "Default",
+        "texture": "madengie.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
@@ -32,8 +32,8 @@
         }
       },
       {
-        "model": "Modelcoldseason",
-        "texture": "madnewcoldseason.png",
+        "model": "Default",
+        "texture": "madengiecoldseasoned.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {

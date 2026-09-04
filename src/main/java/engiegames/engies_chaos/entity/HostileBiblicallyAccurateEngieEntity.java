@@ -42,12 +42,11 @@ import javax.annotation.Nullable;
 import engiegames.engies_chaos.procedures.NegativeDifficultyAICheckProcedure;
 import engiegames.engies_chaos.procedures.HostileEngieSpawningConditionProcedure;
 import engiegames.engies_chaos.procedures.HostileBiblicallyAccurateEngieTickProcedure;
-import engiegames.engies_chaos.procedures.HostileBiblicallyAccurateEngieOnInitialEntitySpawnProcedure;
-import engiegames.engies_chaos.procedures.BiblicallyAccurateEngieThisEntityKillsAnotherOneProcedure;
+import engiegames.engies_chaos.procedures.EntitySpawnsProcedure;
+import engiegames.engies_chaos.procedures.AnyEngieDiesAddCountProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class HostileBiblicallyAccurateEngieEntity extends Monster {
-	public static final EntityDataAccessor<Integer> DATA_style = SynchedEntityData.defineId(HostileBiblicallyAccurateEngieEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Boolean> DATA_coldseasoned = SynchedEntityData.defineId(HostileBiblicallyAccurateEngieEntity.class, EntityDataSerializers.BOOLEAN);
 
 	public HostileBiblicallyAccurateEngieEntity(PlayMessages.SpawnEntity packet, Level world) {
@@ -69,7 +68,6 @@ public class HostileBiblicallyAccurateEngieEntity extends Monster {
 	@Override
 	protected void defineSynchedData() {
 		super.defineSynchedData();
-		this.entityData.define(DATA_style, 1);
 		this.entityData.define(DATA_coldseasoned, false);
 	}
 
@@ -204,32 +202,29 @@ public class HostileBiblicallyAccurateEngieEntity extends Monster {
 	}
 
 	@Override
+	public void die(DamageSource source) {
+		super.die(source);
+		AnyEngieDiesAddCountProcedure.execute(this, source.getEntity());
+	}
+
+	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		HostileBiblicallyAccurateEngieOnInitialEntitySpawnProcedure.execute(world, this);
+		EntitySpawnsProcedure.execute(world, this);
 		return retval;
 	}
 
 	@Override
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
-		compound.putInt("Datastyle", this.entityData.get(DATA_style));
 		compound.putBoolean("Datacoldseasoned", this.entityData.get(DATA_coldseasoned));
 	}
 
 	@Override
 	public void readAdditionalSaveData(CompoundTag compound) {
 		super.readAdditionalSaveData(compound);
-		if (compound.contains("Datastyle"))
-			this.entityData.set(DATA_style, compound.getInt("Datastyle"));
 		if (compound.contains("Datacoldseasoned"))
 			this.entityData.set(DATA_coldseasoned, compound.getBoolean("Datacoldseasoned"));
-	}
-
-	@Override
-	public void awardKillScore(Entity entity, int score, DamageSource damageSource) {
-		super.awardKillScore(entity, score, damageSource);
-		BiblicallyAccurateEngieThisEntityKillsAnotherOneProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), entity, this);
 	}
 
 	@Override

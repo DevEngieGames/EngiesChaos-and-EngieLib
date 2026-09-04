@@ -5,7 +5,7 @@
     "mobName": "Hostile Engie",
     "mobLabel": "",
     "mobModelName": "Modelhostile",
-    "mobModelTexture": "engie_new.png",
+    "mobModelTexture": "nothingness.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -23,7 +23,26 @@
       "fixedValue": 1.0,
       "name": "MobHitboxScaling"
     },
-    "modelLayers": [],
+    "modelLayers": [
+      {
+        "model": "Default",
+        "texture": "hostileengie.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "HostileEngieNormalDisplay"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "hostileengiecoldseasoned.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "HostileEngieColdSeasonedDisplay"
+        }
+      }
+    ],
     "animations": [],
     "modelWidth": 0.6,
     "modelHeight": 1.9000000000000001,
@@ -121,7 +140,13 @@
     "raidCelebrationSound": {
       "value": ""
     },
-    "entityDataEntries": [],
+    "entityDataEntries": [
+      {
+        "name": "coldseasoned",
+        "type": "logic",
+        "value": false
+      }
+    ],
     "whenMobDies": {
       "name": "AnyEngieDiesAddCount"
     },

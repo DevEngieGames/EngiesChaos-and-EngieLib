@@ -266,6 +266,12 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 		});
 		this.addRenderableWidget(button_untrack1);
 		button_0 = new Button(this.leftPos + 128, this.topPos + 26, 30, 20, Component.translatable("gui.engies_chaos.config.button_0"), e -> {
+			int x = ConfigScreen.this.x;
+			int y = ConfigScreen.this.y;
+			if (true) {
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(16, x, y, z));
+				ConfigButtonMessage.handleButtonAction(entity, 16, x, y, z);
+			}
 		});
 		this.addRenderableWidget(button_0);
 		button_off1 = new Button(this.leftPos + 4, this.topPos + 119, 40, 20, Component.translatable("gui.engies_chaos.config.button_off1"), e -> {

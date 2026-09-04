@@ -23,48 +23,21 @@
     },
     "modelLayers": [
       {
-        "model": "Modelhostile",
-        "texture": "enragednew_style1.png",
+        "model": "Default",
+        "texture": "enragedengie.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "EnragedEngieStyle1Display"
+          "name": "EnragedEngieNormalDisplay"
         }
       },
       {
-        "model": "Modelhostile",
-        "texture": "enragednew_style2.png",
-        "disableHurtOverlay": false,
-        "glow": false,
-        "condition": {
-          "name": "EnragedEngieStyle2Display"
-        }
-      },
-      {
-        "model": "Modelhostile",
-        "texture": "enragednew_style3.png",
-        "disableHurtOverlay": false,
-        "glow": false,
-        "condition": {
-          "name": "EnragedEngieStyle3Display"
-        }
-      },
-      {
-        "model": "Modelcoldseason",
-        "texture": "enragednewcoldseason.png",
+        "model": "Default",
+        "texture": "enragedengiecoldseasoned.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
           "name": "EnragedEngieColdSeasonedDisplay"
-        }
-      },
-      {
-        "model": "Modelhalloweenenraged",
-        "texture": "enragednewhalloween.png",
-        "disableHurtOverlay": false,
-        "glow": false,
-        "condition": {
-          "name": "EnragedEngieHalloweenedDisplay"
         }
       }
     ],
@@ -167,13 +140,6 @@
     },
     "entityDataEntries": [
       {
-        "min": -2147483648,
-        "max": 2147483647,
-        "name": "style",
-        "type": "integer",
-        "value": 1
-      },
-      {
         "name": "coldseasoned",
         "type": "logic",
         "value": false
@@ -191,7 +157,7 @@
       "name": "EnragedEngieTick"
     },
     "onInitialSpawn": {
-      "name": "EnragedEngieOnInitialEntitySpawn"
+      "name": "EntitySpawns"
     },
     "hasAI": true,
     "aiBase": "(none)",

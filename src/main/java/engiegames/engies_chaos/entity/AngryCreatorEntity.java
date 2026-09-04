@@ -40,14 +40,13 @@ import net.minecraft.nbt.CompoundTag;
 import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.procedures.OutragedEngieTickProcedure;
-import engiegames.engies_chaos.procedures.OutragedEngieOnInitialEntitySpawnProcedure;
 import engiegames.engies_chaos.procedures.NegativeDifficultyAICheckProcedure;
 import engiegames.engies_chaos.procedures.HostileEngieSpawningConditionProcedure;
+import engiegames.engies_chaos.procedures.EntitySpawnsProcedure;
 import engiegames.engies_chaos.procedures.AnyEngieDiesAddCountProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class AngryCreatorEntity extends Monster {
-	public static final EntityDataAccessor<Integer> DATA_style = SynchedEntityData.defineId(AngryCreatorEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Boolean> DATA_coldseasoned = SynchedEntityData.defineId(AngryCreatorEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<Boolean> DATA_holloweened = SynchedEntityData.defineId(AngryCreatorEntity.class, EntityDataSerializers.BOOLEAN);
 
@@ -70,7 +69,6 @@ public class AngryCreatorEntity extends Monster {
 	@Override
 	protected void defineSynchedData() {
 		super.defineSynchedData();
-		this.entityData.define(DATA_style, 1);
 		this.entityData.define(DATA_coldseasoned, false);
 		this.entityData.define(DATA_holloweened, false);
 	}
@@ -198,14 +196,13 @@ public class AngryCreatorEntity extends Monster {
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		OutragedEngieOnInitialEntitySpawnProcedure.execute(world, this);
+		EntitySpawnsProcedure.execute(world, this);
 		return retval;
 	}
 
 	@Override
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
-		compound.putInt("Datastyle", this.entityData.get(DATA_style));
 		compound.putBoolean("Datacoldseasoned", this.entityData.get(DATA_coldseasoned));
 		compound.putBoolean("Dataholloweened", this.entityData.get(DATA_holloweened));
 	}
@@ -213,8 +210,6 @@ public class AngryCreatorEntity extends Monster {
 	@Override
 	public void readAdditionalSaveData(CompoundTag compound) {
 		super.readAdditionalSaveData(compound);
-		if (compound.contains("Datastyle"))
-			this.entityData.set(DATA_style, compound.getInt("Datastyle"));
 		if (compound.contains("Datacoldseasoned"))
 			this.entityData.set(DATA_coldseasoned, compound.getBoolean("Datacoldseasoned"));
 		if (compound.contains("Dataholloweened"))

@@ -5,7 +5,6 @@ import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.levelgen.Heightmap;
-import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
@@ -19,16 +18,13 @@ import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.SpawnPlacements;
-import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.MobType;
-import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.DifficultyInstance;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -37,16 +33,12 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
-import javax.annotation.Nullable;
-
 import engiegames.engies_chaos.procedures.BiblicallyAccurateEngieTickProcedure;
 import engiegames.engies_chaos.procedures.BiblicallyAccurateEngieThisEntityKillsAnotherOneProcedure;
-import engiegames.engies_chaos.procedures.BiblicallyAccurateEngieOnInitialEntitySpawnProcedure;
 import engiegames.engies_chaos.procedures.BiblicallyAccurateEngieNaturalEntitySpawningConditionProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class BiblicallyAccurateEngieEntity extends PathfinderMob {
-	public static final EntityDataAccessor<Integer> DATA_style = SynchedEntityData.defineId(BiblicallyAccurateEngieEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Boolean> DATA_coldseasoned = SynchedEntityData.defineId(BiblicallyAccurateEngieEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<Boolean> DATA_holloweened = SynchedEntityData.defineId(BiblicallyAccurateEngieEntity.class, EntityDataSerializers.BOOLEAN);
 
@@ -69,7 +61,6 @@ public class BiblicallyAccurateEngieEntity extends PathfinderMob {
 	@Override
 	protected void defineSynchedData() {
 		super.defineSynchedData();
-		this.entityData.define(DATA_style, 1);
 		this.entityData.define(DATA_coldseasoned, false);
 		this.entityData.define(DATA_holloweened, false);
 	}
@@ -123,16 +114,8 @@ public class BiblicallyAccurateEngieEntity extends PathfinderMob {
 	}
 
 	@Override
-	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
-		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		BiblicallyAccurateEngieOnInitialEntitySpawnProcedure.execute(world, this.getX(), this.getY(), this.getZ(), this);
-		return retval;
-	}
-
-	@Override
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
-		compound.putInt("Datastyle", this.entityData.get(DATA_style));
 		compound.putBoolean("Datacoldseasoned", this.entityData.get(DATA_coldseasoned));
 		compound.putBoolean("Dataholloweened", this.entityData.get(DATA_holloweened));
 	}
@@ -140,8 +123,6 @@ public class BiblicallyAccurateEngieEntity extends PathfinderMob {
 	@Override
 	public void readAdditionalSaveData(CompoundTag compound) {
 		super.readAdditionalSaveData(compound);
-		if (compound.contains("Datastyle"))
-			this.entityData.set(DATA_style, compound.getInt("Datastyle"));
 		if (compound.contains("Datacoldseasoned"))
 			this.entityData.set(DATA_coldseasoned, compound.getBoolean("Datacoldseasoned"));
 		if (compound.contains("Dataholloweened"))

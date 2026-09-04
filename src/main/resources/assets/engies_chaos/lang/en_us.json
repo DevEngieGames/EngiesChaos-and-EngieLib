@@ -2806,7 +2806,7 @@
   "gui.engies_chaos.config.button_0": "0",
   "gamerule.random.description": "Every 25 minutes, all gamerules will be randomized. Even if you want them on or not. DOES NOT AFFECT ENGIEPOC.",
   "gamerule.random": "[Engie\u0027s Chaos] Random 101",
-  "gui.engies_chaos.config.button_off": "OFF",
-  "gui.engies_chaos.config.button_off1": "ON",
+  "gui.engies_chaos.config.button_off": "ON",
+  "gui.engies_chaos.config.button_off1": "OFF",
   "gui.engies_chaos.config.label_mob_base_hp_mults": "Mob base HP mults:"
 }

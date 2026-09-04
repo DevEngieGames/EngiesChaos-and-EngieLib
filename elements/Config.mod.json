@@ -440,6 +440,9 @@
           "name": "button_0",
           "text": "0",
           "isUndecorated": false,
+          "onClick": {
+            "name": "ConfigButton5"
+          },
           "width": 30,
           "height": 20,
           "x": 217,
@@ -470,7 +473,7 @@
         "type": "button",
         "data": {
           "name": "button_off1",
-          "text": "ON",
+          "text": "OFF",
           "isUndecorated": false,
           "onClick": {
             "name": "ConfigButtonMobHPBaseMult1"
@@ -489,7 +492,7 @@
         "type": "button",
         "data": {
           "name": "button_off",
-          "text": "OFF",
+          "text": "ON",
           "isUndecorated": false,
           "onClick": {
             "name": "ConfigButtonMobHPBaseMult2"

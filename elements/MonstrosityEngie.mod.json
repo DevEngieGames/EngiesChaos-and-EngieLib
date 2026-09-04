@@ -23,39 +23,21 @@
     },
     "modelLayers": [
       {
-        "model": "Modelhostile",
-        "texture": "monstrositynew_style1.png",
+        "model": "Default",
+        "texture": "monstrosityengie.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "MonstrosityEngieStyle1Display"
+          "name": "MonstrosityEngieNormalDisplay"
         }
       },
       {
-        "model": "Modelhostile",
-        "texture": "monstrositynew_style2.png",
-        "disableHurtOverlay": false,
-        "glow": false,
-        "condition": {
-          "name": "MonstrosityEngieStyle2Display"
-        }
-      },
-      {
-        "model": "Modelcoldseason",
-        "texture": "monstrositynewcoldseason.png",
+        "model": "Default",
+        "texture": "monstrosityengiecoldseasoned.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
           "name": "MonstrosityEngieColdSeasonedDisplay"
-        }
-      },
-      {
-        "model": "Modelmonstrositynewhalloween",
-        "texture": "monstrositynewhalloween.png",
-        "disableHurtOverlay": false,
-        "glow": false,
-        "condition": {
-          "name": "MonstrosityEngieHalloweenedDisplay"
         }
       }
     ],
@@ -158,13 +140,6 @@
     },
     "entityDataEntries": [
       {
-        "min": -2147483648,
-        "max": 2147483647,
-        "name": "variant",
-        "type": "integer",
-        "value": 1
-      },
-      {
         "name": "coldseasoned",
         "type": "logic",
         "value": false
@@ -182,7 +157,7 @@
       "name": "MonstrosityEngieTick"
     },
     "onInitialSpawn": {
-      "name": "MonstrosityEngieOnInitialEntitySpawn"
+      "name": "EntitySpawns"
     },
     "hasAI": true,
     "aiBase": "(none)",

@@ -1,4 +1,4 @@
-// Made with Blockbench 5.0.7
+// Made with Blockbench 5.1.6
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
@@ -68,9 +68,9 @@ public class Modelhostile<T extends Entity> extends EntityModel<T> {
 		PartDefinition Head = partdefinition.addOrReplaceChild("Head",
 				CubeListBuilder.create().texOffs(32, 0)
 						.addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.0F)).texOffs(64, 0)
-						.addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.5F)).texOffs(0, 23)
-						.addBox(-2.15F, -4.125F, -4.1F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)).texOffs(0, 23)
-						.addBox(1.15F, -4.125F, -4.1F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)).texOffs(0, 32)
+						.addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.5F)).texOffs(0, 0)
+						.addBox(1.0F, -4.0F, -4.1F, 1.0F, 1.0F, 1.0F, new CubeDeformation(-0.05F)).texOffs(0, 0)
+						.addBox(-2.0F, -4.0F, -4.1F, 1.0F, 1.0F, 1.0F, new CubeDeformation(-0.05F)).texOffs(0, 32)
 						.addBox(-4.65F, -8.8F, 0.5F, 9.3F, 0.3F, 0.5F, new CubeDeformation(0.0F)).texOffs(0, 32)
 						.addBox(-4.65F, -8.8F, -1.0F, 9.3F, 0.3F, 0.5F, new CubeDeformation(0.0F)).texOffs(0, 32)
 						.addBox(-4.25F, -8.4F, -1.0F, 8.5F, 0.4F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 32)
@@ -101,10 +101,10 @@ public class Modelhostile<T extends Entity> extends EntityModel<T> {
 
 		PartDefinition Scarf = Body.addOrReplaceChild("Scarf",
 				CubeListBuilder.create().texOffs(0, 8)
-						.addBox(-4.275F, -1.0F, -4.125F, 8.55F, 1.0F, 8.55F, new CubeDeformation(0.0F)).texOffs(0, 9)
+						.addBox(-4.275F, -1.0F, -4.125F, 8.55F, 1.0F, 8.55F, new CubeDeformation(0.0F)).texOffs(1, 11)
 						.addBox(-4.25F, -0.5F, -3.475F, 8.5F, 2.0F, 6.925F, new CubeDeformation(0.05F)).texOffs(0, 9)
-						.addBox(-4.25F, 1.325F, -1.575F, 8.5F, 2.0F, 3.0F, new CubeDeformation(0.05F)).texOffs(0, 8)
-						.addBox(-4.525F, -1.6F, -4.525F, 9.05F, 2.125F, 9.05F, new CubeDeformation(0.05F)).texOffs(0, 9)
+						.addBox(-4.25F, 1.325F, -1.575F, 8.5F, 2.0F, 3.0F, new CubeDeformation(0.05F)).texOffs(0, 9)
+						.addBox(-4.5F, -1.475F, -4.475F, 9.0F, 2.0F, 9.0F, new CubeDeformation(0.1F)).texOffs(0, 9)
 						.addBox(-3.525F, -2.6F, -3.525F, 7.05F, 0.025F, 7.05F, new CubeDeformation(0.05F)),
 				PartPose.offset(0.0F, 0.0F, 0.0F));
 
@@ -284,13 +284,13 @@ public class Modelhostile<T extends Entity> extends EntityModel<T> {
 				CubeListBuilder.create().texOffs(72, 16)
 						.addBox(-4.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)).texOffs(72, 32)
 						.addBox(-4.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.25F)),
-				PartPose.offsetAndRotation(-4.0F, 2.0F, 0.0F, 0.0F, -0.0436F, 0.0F));
+				PartPose.offset(-4.0F, 2.0F, 0.0F));
 
 		PartDefinition LeftArm = partdefinition.addOrReplaceChild("LeftArm",
 				CubeListBuilder.create().texOffs(64, 48)
 						.addBox(0.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)).texOffs(80, 48)
 						.addBox(0.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.25F)),
-				PartPose.offsetAndRotation(4.0F, 2.0F, 0.0F, 0.0F, 0.0436F, 0.0F));
+				PartPose.offset(4.0F, 2.0F, 0.0F));
 
 		return LayerDefinition.create(meshdefinition, 96, 64);
 	}

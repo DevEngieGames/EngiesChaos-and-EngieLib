@@ -8,6 +8,7 @@ import net.minecraftforge.event.TickEvent;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.Difficulty;
 
 import javax.annotation.Nullable;
 
@@ -75,6 +76,12 @@ public class WorldTickProcedure {
 			} else {
 				EngiesChaosModVariables.MapVariables.get(world).extremeddaylightningenabled = false;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			}
+			if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.NIGHTMARE_DIFFICULTY) == false || world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.INSANITY_DIFFICULTY) == false
+					|| world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.APOCALYPSE_ONE) == false || world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.APOCALYPSE_TWO) == false
+					|| world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.APOCALYPSE_THREE) == false || world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIE_POC) == false) {
+				if (world.getServer() != null)
+					world.getServer().setDifficulty(Difficulty.HARD, true);
 			}
 			for (Entity entityiterator : new ArrayList<>(world.players())) {
 				if (entityiterator.getPersistentData().getDouble("riftballdmgcd") > 0) {

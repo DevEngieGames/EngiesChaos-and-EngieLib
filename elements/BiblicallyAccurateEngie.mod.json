@@ -23,39 +23,21 @@
     },
     "modelLayers": [
       {
-        "model": "Modelhostile",
-        "texture": "biblicallynew_style1.png",
+        "model": "Default",
+        "texture": "biblicallyaccurateengie.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "BiblicallyAccurateEngieStyle1Display"
+          "name": "BiblicallyAccurateEngieNormalDisplay"
         }
       },
       {
-        "model": "Modelhostile",
-        "texture": "biblicallynew_style2.png",
-        "disableHurtOverlay": false,
-        "glow": false,
-        "condition": {
-          "name": "BiblicallyAccurateEngieStyle2Display"
-        }
-      },
-      {
-        "model": "Modelcoldseason",
-        "texture": "biblicallynewcoldseason.png",
+        "model": "Default",
+        "texture": "biblicallyaccurateengiecoldseasoned.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
           "name": "BiblicallyAccurateEngieColdSeasonedDisplay"
-        }
-      },
-      {
-        "model": "Modelhostile",
-        "texture": "biblicallynewhalloween.png",
-        "disableHurtOverlay": false,
-        "glow": false,
-        "condition": {
-          "name": "BiblicallyAccurateEngieHalloweenedDisplay"
         }
       }
     ],
@@ -158,13 +140,6 @@
     },
     "entityDataEntries": [
       {
-        "min": -2147483648,
-        "max": 2147483647,
-        "name": "style",
-        "type": "integer",
-        "value": 1
-      },
-      {
         "name": "coldseasoned",
         "type": "logic",
         "value": false
@@ -180,9 +155,6 @@
     },
     "onMobTickUpdate": {
       "name": "BiblicallyAccurateEngieTick"
-    },
-    "onInitialSpawn": {
-      "name": "BiblicallyAccurateEngieOnInitialEntitySpawn"
     },
     "hasAI": true,
     "aiBase": "(none)",

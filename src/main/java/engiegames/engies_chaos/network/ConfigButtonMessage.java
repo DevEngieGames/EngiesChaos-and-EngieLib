@@ -24,6 +24,7 @@ import engiegames.engies_chaos.procedures.ConfigButton9Procedure;
 import engiegames.engies_chaos.procedures.ConfigButton8Procedure;
 import engiegames.engies_chaos.procedures.ConfigButton7Procedure;
 import engiegames.engies_chaos.procedures.ConfigButton6Procedure;
+import engiegames.engies_chaos.procedures.ConfigButton5Procedure;
 import engiegames.engies_chaos.procedures.ConfigButton4Procedure;
 import engiegames.engies_chaos.procedures.ConfigButton3Procedure;
 import engiegames.engies_chaos.procedures.ConfigButton2Procedure;
@@ -131,6 +132,10 @@ public class ConfigButtonMessage {
 		if (buttonID == 15) {
 
 			ConfigButton9Procedure.execute(entity);
+		}
+		if (buttonID == 16) {
+
+			ConfigButton5Procedure.execute(entity);
 		}
 		if (buttonID == 17) {
 
