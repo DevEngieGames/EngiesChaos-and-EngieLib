@@ -26,54 +26,78 @@
         "model": "ModelEngie",
         "texture": "engienew.png",
         "disableHurtOverlay": false,
-        "glow": false
+        "glow": false,
+        "condition": {
+          "name": "EngiDisplayCondition1"
+        }
       },
       {
         "model": "Default",
         "texture": "00ab310b3eec96bf.png",
         "disableHurtOverlay": false,
-        "glow": false
+        "glow": false,
+        "condition": {
+          "name": "EngiDisplayCondition2"
+        }
       },
       {
         "model": "Default",
         "texture": "6c22ae11914e859c.png",
         "disableHurtOverlay": false,
-        "glow": false
+        "glow": false,
+        "condition": {
+          "name": "EngiDisplayCondition3"
+        }
       },
       {
         "model": "Default",
         "texture": "0ebfdd674f8c4f95.png",
         "disableHurtOverlay": false,
-        "glow": false
+        "glow": false,
+        "condition": {
+          "name": "EngiDisplayCondition4"
+        }
       },
       {
         "model": "Default",
         "texture": "ac3935ff9e9599e8.png",
         "disableHurtOverlay": false,
-        "glow": false
+        "glow": false,
+        "condition": {
+          "name": "EngiDisplayCondition5"
+        }
       },
       {
         "model": "Default",
         "texture": "b6599d1b1cefd4ac.png",
         "disableHurtOverlay": false,
-        "glow": false
+        "glow": false,
+        "condition": {
+          "name": "EngiDisplayCondition6"
+        }
       },
       {
         "model": "Default",
         "texture": "21db06ae607a5b6a.png",
         "disableHurtOverlay": false,
-        "glow": false
+        "glow": false,
+        "condition": {
+          "name": "EngiDisplayCondition7"
+        }
       },
       {
         "model": "Default",
         "texture": "78c5d915f6017698e3d78166f211f09508db5a56.png",
         "disableHurtOverlay": false,
-        "glow": false
+        "glow": false,
+        "condition": {
+          "name": "EngiDisplayCondition8"
+        }
       }
     ],
     "animations": [],
     "modelWidth": 0.6,
-    "modelHeight": 1.8,
+    "modelHeight": 1.9000000000000001,
     "modelShadowSize": 0.5,
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,

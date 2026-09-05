@@ -55,7 +55,7 @@ public class DDAYSongTickProcedure {
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						EngiesChaosModVariables.MapVariables.get(world).firstplayofaltsoundtrack = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosMod.queueServerWork(97, () -> {
+						EngiesChaosMod.queueServerWork(100, () -> {
 							EngiesChaosModVariables.MapVariables.get(world).ddayprophshow = true;
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = false;

@@ -1,5 +1,6 @@
 package engiegames.engies_chaos.client.renderer;
 
+import net.minecraft.world.level.Level;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
@@ -13,6 +14,14 @@ import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.Minecraft;
 
+import engiegames.engies_chaos.procedures.EngiDisplayCondition8Procedure;
+import engiegames.engies_chaos.procedures.EngiDisplayCondition7Procedure;
+import engiegames.engies_chaos.procedures.EngiDisplayCondition6Procedure;
+import engiegames.engies_chaos.procedures.EngiDisplayCondition5Procedure;
+import engiegames.engies_chaos.procedures.EngiDisplayCondition4Procedure;
+import engiegames.engies_chaos.procedures.EngiDisplayCondition3Procedure;
+import engiegames.engies_chaos.procedures.EngiDisplayCondition2Procedure;
+import engiegames.engies_chaos.procedures.EngiDisplayCondition1Procedure;
 import engiegames.engies_chaos.entity.EngiEntity;
 import engiegames.engies_chaos.client.model.ModelEngie;
 
@@ -28,12 +37,18 @@ public class EngiRenderer extends HumanoidMobRenderer<EngiEntity, HumanoidModel<
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, EngiEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-				VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-				EntityModel model = new ModelEngie(Minecraft.getInstance().getEntityModels().bakeLayer(ModelEngie.LAYER_LOCATION));
-				this.getParentModel().copyPropertiesTo(model);
-				model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
-				model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-				model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (EngiDisplayCondition1Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new ModelEngie(Minecraft.getInstance().getEntityModels().bakeLayer(ModelEngie.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
 			}
 		});
 		this.addLayer(new RenderLayer<EngiEntity, HumanoidModel<EngiEntity>>(this) {
@@ -41,8 +56,14 @@ public class EngiRenderer extends HumanoidMobRenderer<EngiEntity, HumanoidModel<
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, EngiEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-				VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-				this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (EngiDisplayCondition2Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
 			}
 		});
 		this.addLayer(new RenderLayer<EngiEntity, HumanoidModel<EngiEntity>>(this) {
@@ -50,8 +71,14 @@ public class EngiRenderer extends HumanoidMobRenderer<EngiEntity, HumanoidModel<
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, EngiEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-				VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-				this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (EngiDisplayCondition3Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
 			}
 		});
 		this.addLayer(new RenderLayer<EngiEntity, HumanoidModel<EngiEntity>>(this) {
@@ -59,8 +86,14 @@ public class EngiRenderer extends HumanoidMobRenderer<EngiEntity, HumanoidModel<
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, EngiEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-				VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-				this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (EngiDisplayCondition4Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
 			}
 		});
 		this.addLayer(new RenderLayer<EngiEntity, HumanoidModel<EngiEntity>>(this) {
@@ -68,8 +101,14 @@ public class EngiRenderer extends HumanoidMobRenderer<EngiEntity, HumanoidModel<
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, EngiEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-				VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-				this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (EngiDisplayCondition5Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
 			}
 		});
 		this.addLayer(new RenderLayer<EngiEntity, HumanoidModel<EngiEntity>>(this) {
@@ -77,8 +116,14 @@ public class EngiRenderer extends HumanoidMobRenderer<EngiEntity, HumanoidModel<
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, EngiEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-				VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-				this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (EngiDisplayCondition6Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
 			}
 		});
 		this.addLayer(new RenderLayer<EngiEntity, HumanoidModel<EngiEntity>>(this) {
@@ -86,8 +131,14 @@ public class EngiRenderer extends HumanoidMobRenderer<EngiEntity, HumanoidModel<
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, EngiEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-				VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-				this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (EngiDisplayCondition7Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
 			}
 		});
 		this.addLayer(new RenderLayer<EngiEntity, HumanoidModel<EngiEntity>>(this) {
@@ -95,8 +146,14 @@ public class EngiRenderer extends HumanoidMobRenderer<EngiEntity, HumanoidModel<
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, EngiEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-				VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-				this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (EngiDisplayCondition8Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
 			}
 		});
 	}

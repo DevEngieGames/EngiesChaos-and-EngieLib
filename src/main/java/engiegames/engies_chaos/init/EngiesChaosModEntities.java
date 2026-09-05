@@ -142,7 +142,7 @@ public class EngiesChaosModEntities {
 	public static final RegistryObject<EntityType<EngiEntity>> ENGIE = register("engie",
 			EntityType.Builder.<EngiEntity>of(EngiEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EngiEntity::new)
 
-					.sized(0.6f, 1.8f));
+					.sized(0.6f, 1.9f));
 	public static final RegistryObject<EntityType<MadEngieEntity>> MAD_ENGIE = register("mad_engie",
 			EntityType.Builder.<MadEngieEntity>of(MadEngieEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MadEngieEntity::new)
 

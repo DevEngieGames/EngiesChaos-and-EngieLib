@@ -8,7 +8,7 @@
     "texture": "redeempixel",
     "customModelName": "ban_hammer_redeem:default",
     "blockingModelName": "Normal blocking",
-    "guiTexture": "",
+    "guiTexture": "redeempixel",
     "name": "Code Redeemers Ban Hammer",
     "specialInformation": {
       "fixedValue": []
