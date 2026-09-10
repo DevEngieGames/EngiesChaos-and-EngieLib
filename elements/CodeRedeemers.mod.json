@@ -17,41 +17,33 @@
     "leggingsName": "Code Redeemers Leggings",
     "bootsName": "Code Redeemers Boots",
     "helmetSpecialInformation": {
-      "fixedValue": [
-        "\"Happy holidays!\" -DevEngie(Games)"
-      ]
+      "fixedValue": []
     },
     "bodySpecialInformation": {
-      "fixedValue": [
-        "\"Happy holidays!\" -DevEngie(Games)"
-      ]
+      "fixedValue": []
     },
     "leggingsSpecialInformation": {
-      "fixedValue": [
-        "\"Happy holidays!\" -DevEngie(Games)"
-      ]
+      "fixedValue": []
     },
     "bootsSpecialInformation": {
-      "fixedValue": [
-        "\"Happy holidays!\" -DevEngie(Games)"
-      ]
+      "fixedValue": []
     },
-    "helmetModelName": "Default",
-    "helmetModelPart": "Helmet",
-    "helmetModelTexture": "From armor",
-    "bodyModelName": "Default",
+    "helmetModelName": "Modelengiearmor",
+    "helmetModelPart": "Head",
+    "helmetModelTexture": "coderedeemerarmorlayer1.png",
+    "bodyModelName": "Modelengiearmor",
     "bodyModelPart": "Body",
-    "armsModelPartL": "Arms L",
-    "armsModelPartR": "Arms R",
-    "bodyModelTexture": "From armor",
-    "leggingsModelName": "Default",
-    "leggingsModelPartL": "Leggings L",
-    "leggingsModelPartR": "Leggings R",
-    "leggingsModelTexture": "From armor",
-    "bootsModelName": "Default",
-    "bootsModelPartL": "Boots L",
-    "bootsModelPartR": "Boots R",
-    "bootsModelTexture": "From armor",
+    "armsModelPartL": "LeftArm",
+    "armsModelPartR": "RightArm",
+    "bodyModelTexture": "coderedeemerarmorlayer1.png",
+    "leggingsModelName": "Modelengiearmor",
+    "leggingsModelPartL": "LeftLeg2",
+    "leggingsModelPartR": "RightLeg2",
+    "leggingsModelTexture": "coderedeemerarmorlayer2.png",
+    "bootsModelName": "Modelengiearmor",
+    "bootsModelPartL": "LeftLeg",
+    "bootsModelPartR": "RightLeg",
+    "bootsModelTexture": "coderedeemerarmorlayer1.png",
     "helmetItemRenderType": 0,
     "helmetItemCustomModelName": "Normal",
     "bodyItemRenderType": 0,
@@ -64,6 +56,30 @@
     "bodyImmuneToFire": false,
     "leggingsImmuneToFire": false,
     "bootsImmuneToFire": false,
+    "helmetGlowCondition": {
+      "fixedValue": false
+    },
+    "bodyGlowCondition": {
+      "fixedValue": false
+    },
+    "leggingsGlowCondition": {
+      "fixedValue": false
+    },
+    "bootsGlowCondition": {
+      "fixedValue": false
+    },
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
     "maxDamage": 50,
     "damageValueHelmet": 50,
     "damageValueBody": 50,

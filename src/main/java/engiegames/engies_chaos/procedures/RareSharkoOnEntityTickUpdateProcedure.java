@@ -31,7 +31,7 @@ public class RareSharkoOnEntityTickUpdateProcedure {
 						entity.getPersistentData().putDouble("SharkoStateTimerForChance", Math.floor(Mth.nextDouble(RandomSource.create(), 5, 60)));
 						if (!entity.isInWater() && !entity.isInLava()) {
 							if ((entity instanceof RareSharkoEntity _datEntI ? _datEntI.getEntityData().get(RareSharkoEntity.DATA_SharkoState) : 0) == 1) {
-								if (Math.random() <= 0.5) {
+								if (Math.random() <= 0.25) {
 									if (entity instanceof RareSharkoEntity _datEntSetI)
 										_datEntSetI.getEntityData().set(RareSharkoEntity.DATA_SharkoState, 2);
 									if (Math.random() <= 0.49) {
@@ -42,9 +42,8 @@ public class RareSharkoOnEntityTickUpdateProcedure {
 											_datEntSetL.getEntityData().set(RareSharkoEntity.DATA_AlternateState, true);
 									}
 								}
-							}
-							if ((entity instanceof RareSharkoEntity _datEntI ? _datEntI.getEntityData().get(RareSharkoEntity.DATA_SharkoState) : 0) == 2) {
-								if (Math.random() <= 0.5) {
+							} else if ((entity instanceof RareSharkoEntity _datEntI ? _datEntI.getEntityData().get(RareSharkoEntity.DATA_SharkoState) : 0) == 2) {
+								if (Math.random() <= 0.25) {
 									if (Math.random() <= 0.49) {
 										if (entity instanceof RareSharkoEntity _datEntSetI)
 											_datEntSetI.getEntityData().set(RareSharkoEntity.DATA_SharkoState, 3);
@@ -55,9 +54,8 @@ public class RareSharkoOnEntityTickUpdateProcedure {
 										}
 									}
 								}
-							}
-							if ((entity instanceof RareSharkoEntity _datEntI ? _datEntI.getEntityData().get(RareSharkoEntity.DATA_SharkoState) : 0) == 3) {
-								if (Math.random() >= 0.75) {
+							} else if ((entity instanceof RareSharkoEntity _datEntI ? _datEntI.getEntityData().get(RareSharkoEntity.DATA_SharkoState) : 0) == 3) {
+								if (Math.random() >= 0.25) {
 									if (entity instanceof RareSharkoEntity _datEntSetI)
 										_datEntSetI.getEntityData().set(RareSharkoEntity.DATA_SharkoState, 2);
 									if (Math.random() <= 0.49) {
@@ -75,7 +73,7 @@ public class RareSharkoOnEntityTickUpdateProcedure {
 							entity.getPersistentData().putDouble("SharkoStateTimerForChance", Math.floor(Mth.nextDouble(RandomSource.create(), 10, 60)));
 							if (!entity.isInWater() && !entity.isInLava()) {
 								if ((entity instanceof RareSharkoEntity _datEntI ? _datEntI.getEntityData().get(RareSharkoEntity.DATA_SharkoState) : 0) == 1) {
-									if (Math.random() <= 0.5) {
+									if (Math.random() <= 0.25) {
 										if (entity instanceof RareSharkoEntity _datEntSetI)
 											_datEntSetI.getEntityData().set(RareSharkoEntity.DATA_SharkoState, 2);
 										if (Math.random() <= 0.49) {
@@ -87,15 +85,13 @@ public class RareSharkoOnEntityTickUpdateProcedure {
 										}
 									}
 								} else if ((entity instanceof RareSharkoEntity _datEntI ? _datEntI.getEntityData().get(RareSharkoEntity.DATA_SharkoState) : 0) == 2) {
-									if (Math.random() <= 0.5) {
+									if (Math.random() <= 0.25) {
 										if (Math.random() <= 0.49) {
 											if (entity instanceof RareSharkoEntity _datEntSetI)
 												_datEntSetI.getEntityData().set(RareSharkoEntity.DATA_SharkoState, 3);
 										} else {
-											if (Math.random() >= 0.75) {
-												if (entity instanceof RareSharkoEntity _datEntSetI)
-													_datEntSetI.getEntityData().set(RareSharkoEntity.DATA_SharkoState, 1);
-											}
+											if (entity instanceof RareSharkoEntity _datEntSetI)
+												_datEntSetI.getEntityData().set(RareSharkoEntity.DATA_SharkoState, 1);
 										}
 									}
 								} else if ((entity instanceof RareSharkoEntity _datEntI ? _datEntI.getEntityData().get(RareSharkoEntity.DATA_SharkoState) : 0) == 3) {
@@ -110,7 +106,7 @@ public class RareSharkoOnEntityTickUpdateProcedure {
 												_datEntSetL.getEntityData().set(RareSharkoEntity.DATA_AlternateState, true);
 										}
 									} else {
-										if (Math.random() >= 0.75) {
+										if (Math.random() >= 0.25) {
 											if (entity instanceof RareSharkoEntity _datEntSetI)
 												_datEntSetI.getEntityData().set(RareSharkoEntity.DATA_SharkoState, 2);
 											if (Math.random() <= 0.49) {
@@ -123,7 +119,7 @@ public class RareSharkoOnEntityTickUpdateProcedure {
 										}
 									}
 								} else if ((entity instanceof RareSharkoEntity _datEntI ? _datEntI.getEntityData().get(RareSharkoEntity.DATA_SharkoState) : 0) == 4) {
-									if (Math.random() <= 0.5) {
+									if (Math.random() <= 0.25) {
 										if (entity instanceof RareSharkoEntity _datEntSetI)
 											_datEntSetI.getEntityData().set(RareSharkoEntity.DATA_SharkoState, 3);
 									}

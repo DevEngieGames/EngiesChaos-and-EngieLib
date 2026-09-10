@@ -72,7 +72,8 @@ public class EngieGamesMonstrosityEngieEntity extends Monster {
 			}
 		});
 		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
-		this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, Player.class, true, false) {
+		this.targetSelector.addGoal(3, new HurtByTargetGoal(this).setAlertOthers());
+		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal(this, Player.class, true, false) {
 			@Override
 			public boolean canUse() {
 				double x = EngieGamesMonstrosityEngieEntity.this.getX();
@@ -93,7 +94,7 @@ public class EngieGamesMonstrosityEngieEntity extends Monster {
 				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 		});
-		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal(this, ServerPlayer.class, true, false) {
+		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal(this, ServerPlayer.class, true, false) {
 			@Override
 			public boolean canUse() {
 				double x = EngieGamesMonstrosityEngieEntity.this.getX();
@@ -114,7 +115,7 @@ public class EngieGamesMonstrosityEngieEntity extends Monster {
 				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 		});
-		this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, (float) 6) {
+		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, (float) 6) {
 			@Override
 			public boolean canUse() {
 				double x = EngieGamesMonstrosityEngieEntity.this.getX();
@@ -135,7 +136,7 @@ public class EngieGamesMonstrosityEngieEntity extends Monster {
 				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 		});
-		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, ServerPlayer.class, (float) 6) {
+		this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, ServerPlayer.class, (float) 6) {
 			@Override
 			public boolean canUse() {
 				double x = EngieGamesMonstrosityEngieEntity.this.getX();
@@ -156,7 +157,6 @@ public class EngieGamesMonstrosityEngieEntity extends Monster {
 				return super.canContinueToUse() && NegativeDifficultyAICheckProcedure.execute(world);
 			}
 		});
-		this.targetSelector.addGoal(7, new HurtByTargetGoal(this));
 		this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(9, new FloatGoal(this));
 	}

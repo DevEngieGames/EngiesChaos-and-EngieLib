@@ -2,12 +2,12 @@
   "_fv": 79,
   "_type": "block",
   "definition": {
-    "texture": "thanksforplayingreaae",
-    "textureTop": "thanksforplayingreaae",
-    "textureLeft": "thanksforplayingreaae",
-    "textureFront": "thanksforplayingreaae",
-    "textureRight": "thanksforplayingreaae",
-    "textureBack": "thanksforplayingreaae",
+    "texture": "thanksforplayingechaos",
+    "textureTop": "thanksforplayingechaos",
+    "textureLeft": "thanksforplayingechaos",
+    "textureFront": "thanksforplayingechaos",
+    "textureRight": "thanksforplayingechaos",
+    "textureBack": "thanksforplayingechaos",
     "renderType": 10,
     "customModelName": "Normal",
     "rotationMode": 0,
@@ -38,7 +38,9 @@
     "customProperties": [],
     "name": "Thanks for playing!",
     "specialInformation": {
-      "fixedValue": []
+      "fixedValue": [
+        "3,810"
+      ]
     },
     "hardness": 1.5,
     "resistance": 64000.0,

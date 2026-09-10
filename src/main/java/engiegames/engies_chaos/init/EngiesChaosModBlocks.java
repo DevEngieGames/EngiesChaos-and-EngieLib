@@ -47,6 +47,7 @@ import engiegames.engies_chaos.block.MadEngieOreBlock;
 import engiegames.engies_chaos.block.MadEngieCrystalFullBlock;
 import engiegames.engies_chaos.block.MadEngieCrystalBlock;
 import engiegames.engies_chaos.block.MadEngieBlockBlock;
+import engiegames.engies_chaos.block.LuckyBlockBlock;
 import engiegames.engies_chaos.block.EnragedEngieCrystalFullBlock;
 import engiegames.engies_chaos.block.EnragedEngieCrystalBlock;
 import engiegames.engies_chaos.block.EnragedEngieBlockBlock;
@@ -340,6 +341,7 @@ public class EngiesChaosModBlocks {
 	public static final RegistryObject<Block> DARK_MATTER_ENGIE_CRYSTAL = REGISTRY.register("dark_matter_engie_crystal", DarkMatterEngieCrystalBlock::new);
 	public static final RegistryObject<Block> DARK_MATTER_ENGIE_CRYSTAL_FULL = REGISTRY.register("dark_matter_engie_crystal_full", DarkMatterEngieCrystalFullBlock::new);
 	public static final RegistryObject<Block> CEASAR = REGISTRY.register("ceasar", CeasarBlock::new);
+	public static final RegistryObject<Block> LUCKY_BLOCK = REGISTRY.register("lucky_block", LuckyBlockBlock::new);
 
 	// Start of user code block custom blocks
 	// End of user code block custom blocks
@@ -403,6 +405,8 @@ public class EngiesChaosModBlocks {
 		} else if (below == EngiesChaosModBlocks.ENGIE_ORE.get()) {
 			event.setInstrument(NoteBlockInstrument.BASEDRUM);
 		} else if (below == EngiesChaosModBlocks.DEEPSLATE_ENGIE_ORE.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.LUCKY_BLOCK.get()) {
 			event.setInstrument(NoteBlockInstrument.BASEDRUM);
 		}
 	}

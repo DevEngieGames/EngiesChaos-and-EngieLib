@@ -31,7 +31,7 @@ public class AngryDeathSharkoOnEntityTickUpdateProcedure {
 						entity.getPersistentData().putDouble("SharkoStateTimerForChance", Math.floor(Mth.nextDouble(RandomSource.create(), 5, 60)));
 						if (!entity.isInWater() && !entity.isInLava()) {
 							if ((entity instanceof AngryDeathSharkoEntity _datEntI ? _datEntI.getEntityData().get(AngryDeathSharkoEntity.DATA_SharkoState) : 0) == 1) {
-								if (Math.random() <= 0.5) {
+								if (Math.random() <= 0.25) {
 									if (entity instanceof AngryDeathSharkoEntity _datEntSetI)
 										_datEntSetI.getEntityData().set(AngryDeathSharkoEntity.DATA_SharkoState, 2);
 									if (Math.random() <= 0.49) {
@@ -43,19 +43,17 @@ public class AngryDeathSharkoOnEntityTickUpdateProcedure {
 									}
 								}
 							} else if ((entity instanceof AngryDeathSharkoEntity _datEntI ? _datEntI.getEntityData().get(AngryDeathSharkoEntity.DATA_SharkoState) : 0) == 2) {
-								if (Math.random() <= 0.5) {
+								if (Math.random() <= 0.25) {
 									if (Math.random() <= 0.49) {
 										if (entity instanceof AngryDeathSharkoEntity _datEntSetI)
 											_datEntSetI.getEntityData().set(AngryDeathSharkoEntity.DATA_SharkoState, 3);
 									} else {
-										if (Math.random() >= 0.75) {
-											if (entity instanceof AngryDeathSharkoEntity _datEntSetI)
-												_datEntSetI.getEntityData().set(AngryDeathSharkoEntity.DATA_SharkoState, 1);
-										}
+										if (entity instanceof AngryDeathSharkoEntity _datEntSetI)
+											_datEntSetI.getEntityData().set(AngryDeathSharkoEntity.DATA_SharkoState, 1);
 									}
 								}
 							} else if ((entity instanceof AngryDeathSharkoEntity _datEntI ? _datEntI.getEntityData().get(AngryDeathSharkoEntity.DATA_SharkoState) : 0) == 3) {
-								if (Math.random() >= 0.75) {
+								if (Math.random() >= 0.25) {
 									if (entity instanceof AngryDeathSharkoEntity _datEntSetI)
 										_datEntSetI.getEntityData().set(AngryDeathSharkoEntity.DATA_SharkoState, 2);
 									if (Math.random() <= 0.49) {
@@ -73,7 +71,7 @@ public class AngryDeathSharkoOnEntityTickUpdateProcedure {
 							entity.getPersistentData().putDouble("SharkoStateTimerForChance", Math.floor(Mth.nextDouble(RandomSource.create(), 10, 60)));
 							if (!entity.isInWater() && !entity.isInLava()) {
 								if ((entity instanceof AngryDeathSharkoEntity _datEntI ? _datEntI.getEntityData().get(AngryDeathSharkoEntity.DATA_SharkoState) : 0) == 1) {
-									if (Math.random() <= 0.5) {
+									if (Math.random() <= 0.25) {
 										if (entity instanceof AngryDeathSharkoEntity _datEntSetI)
 											_datEntSetI.getEntityData().set(AngryDeathSharkoEntity.DATA_SharkoState, 2);
 										if (Math.random() <= 0.49) {
@@ -85,15 +83,13 @@ public class AngryDeathSharkoOnEntityTickUpdateProcedure {
 										}
 									}
 								} else if ((entity instanceof AngryDeathSharkoEntity _datEntI ? _datEntI.getEntityData().get(AngryDeathSharkoEntity.DATA_SharkoState) : 0) == 2) {
-									if (Math.random() <= 0.5) {
+									if (Math.random() <= 0.25) {
 										if (Math.random() <= 0.49) {
 											if (entity instanceof AngryDeathSharkoEntity _datEntSetI)
 												_datEntSetI.getEntityData().set(AngryDeathSharkoEntity.DATA_SharkoState, 3);
 										} else {
-											if (Math.random() >= 0.75) {
-												if (entity instanceof AngryDeathSharkoEntity _datEntSetI)
-													_datEntSetI.getEntityData().set(AngryDeathSharkoEntity.DATA_SharkoState, 1);
-											}
+											if (entity instanceof AngryDeathSharkoEntity _datEntSetI)
+												_datEntSetI.getEntityData().set(AngryDeathSharkoEntity.DATA_SharkoState, 1);
 										}
 									}
 								} else if ((entity instanceof AngryDeathSharkoEntity _datEntI ? _datEntI.getEntityData().get(AngryDeathSharkoEntity.DATA_SharkoState) : 0) == 3) {
@@ -108,7 +104,7 @@ public class AngryDeathSharkoOnEntityTickUpdateProcedure {
 												_datEntSetL.getEntityData().set(AngryDeathSharkoEntity.DATA_AlternateState, true);
 										}
 									} else {
-										if (Math.random() >= 0.75) {
+										if (Math.random() >= 0.25) {
 											if (entity instanceof AngryDeathSharkoEntity _datEntSetI)
 												_datEntSetI.getEntityData().set(AngryDeathSharkoEntity.DATA_SharkoState, 2);
 											if (Math.random() <= 0.49) {
@@ -121,7 +117,7 @@ public class AngryDeathSharkoOnEntityTickUpdateProcedure {
 										}
 									}
 								} else if ((entity instanceof AngryDeathSharkoEntity _datEntI ? _datEntI.getEntityData().get(AngryDeathSharkoEntity.DATA_SharkoState) : 0) == 4) {
-									if (Math.random() <= 0.5) {
+									if (Math.random() <= 0.25) {
 										if (entity instanceof AngryDeathSharkoEntity _datEntSetI)
 											_datEntSetI.getEntityData().set(AngryDeathSharkoEntity.DATA_SharkoState, 3);
 									}

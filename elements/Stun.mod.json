@@ -3,7 +3,7 @@
   "_type": "keybind",
   "definition": {
     "triggerKey": "X",
-    "keyBindingName": "Stun [AAE]",
+    "keyBindingName": "[Engie's Chaos] Stun",
     "keyBindingCategoryKey": "gameplay",
     "onKeyPressed": {
       "name": "StunOnKeyPressed"

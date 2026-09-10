@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "engies_chaos:block/luckyblockreal",
+    "particle": "engies_chaos:block/luckyblockreal"
+  },
+  "render_type": "translucent"
+}

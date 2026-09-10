@@ -11,8 +11,7 @@
     "guiTexture": "",
     "name": "Dark Matter EngieGames' AIOT",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem2"
+      "fixedValue": []
     },
     "creativeTabs": [
       {
@@ -39,6 +38,9 @@
     "damageOnCrafting": false,
     "onRightClickedOnBlock": {
       "name": "AIOTRightClickBlock"
+    },
+    "onItemInInventoryTick": {
+      "name": "StunKeyTick"
     }
   }
 }

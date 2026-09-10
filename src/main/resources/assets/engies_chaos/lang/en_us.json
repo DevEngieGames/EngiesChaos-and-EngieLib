@@ -1634,9 +1634,9 @@
   "block.engies_chaos.antimatter_metal_chest_mangrove": "Mangrove Antimatter Metal Chest",
   "item.engies_chaos.punisher_plush.description_0": "It\u0027s not going to hurt you.",
   "item.engies_chaos.punisher_plush": "Punisher Plush",
-  "key.engies_chaos.stun": "Stun [AAE]",
+  "key.engies_chaos.stun": "[Engie\u0027s Chaos] Stun",
   "item.engies_chaos.engie_games_golden_hallow_scythe": "Golden Hallow\u0027s Scythe",
-  "key.engies_chaos.double_jump": "Double Jump (DO NOT REBIND) [AAE]",
+  "key.engies_chaos.double_jump": "[Engie\u0027s Chaos] Double Jump (BIND TO JUMP)",
   "block.engies_chaos.metal_chest_cherry": "Cherry Metal Chest",
   "block.engies_chaos.antimatter_metal_chest_cherry": "Cherry Antimatter Metal Chest",
   "gui.engies_chaos.mindscape_trade_ui.button_trade": "Trade",
@@ -2823,5 +2823,8 @@
   "item.engies_chaos.insanity_hostile_engie_spawn_egg": "[INSANITY] Hostile Engie Spawn Egg",
   "entity.engies_chaos.insanity_hostile_engie": "[INSANITY] Hostile Engie",
   "entity.engies_chaos.engie_games_hostile_engie": "[EngieGames] Hostile Engie",
-  "item.engies_chaos.engie_games_hostile_engie_spawn_egg": "[EngieGames] Hostile Engie Spawn Egg"
+  "item.engies_chaos.engie_games_hostile_engie_spawn_egg": "[EngieGames] Hostile Engie Spawn Egg",
+  "block.engies_chaos.thanks_for_playing.description_0": "3,810",
+  "block.engies_chaos.lucky_block": "EngieGames Lucky Block",
+  "block.engies_chaos.lucky_block.description_0": "From: EngieGames/EngieSharks. To: You!"
 }

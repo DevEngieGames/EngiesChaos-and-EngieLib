@@ -3,7 +3,7 @@
   "_type": "keybind",
   "definition": {
     "triggerKey": "SPACE",
-    "keyBindingName": "Double Jump (DO NOT REBIND) [AAE]",
+    "keyBindingName": "[Engie's Chaos] Double Jump (BIND TO JUMP)",
     "keyBindingCategoryKey": "gameplay",
     "onKeyPressed": {
       "name": "DoubleJumpOnKeyPressed"

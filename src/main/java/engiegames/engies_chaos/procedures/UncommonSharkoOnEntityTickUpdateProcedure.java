@@ -73,7 +73,7 @@ public class UncommonSharkoOnEntityTickUpdateProcedure {
 							entity.getPersistentData().putDouble("SharkoStateTimerForChance", Math.floor(Mth.nextDouble(RandomSource.create(), 10, 60)));
 							if (!entity.isInWater() && !entity.isInLava()) {
 								if ((entity instanceof UncommonSharkoEntity _datEntI ? _datEntI.getEntityData().get(UncommonSharkoEntity.DATA_SharkoState) : 0) == 1) {
-									if (Math.random() <= 0.5) {
+									if (Math.random() <= 0.25) {
 										if (entity instanceof UncommonSharkoEntity _datEntSetI)
 											_datEntSetI.getEntityData().set(UncommonSharkoEntity.DATA_SharkoState, 2);
 										if (Math.random() <= 0.49) {
@@ -85,15 +85,13 @@ public class UncommonSharkoOnEntityTickUpdateProcedure {
 										}
 									}
 								} else if ((entity instanceof UncommonSharkoEntity _datEntI ? _datEntI.getEntityData().get(UncommonSharkoEntity.DATA_SharkoState) : 0) == 2) {
-									if (Math.random() <= 0.5) {
+									if (Math.random() <= 0.25) {
 										if (Math.random() <= 0.49) {
 											if (entity instanceof UncommonSharkoEntity _datEntSetI)
 												_datEntSetI.getEntityData().set(UncommonSharkoEntity.DATA_SharkoState, 3);
 										} else {
-											if (Math.random() >= 0.75) {
-												if (entity instanceof UncommonSharkoEntity _datEntSetI)
-													_datEntSetI.getEntityData().set(UncommonSharkoEntity.DATA_SharkoState, 1);
-											}
+											if (entity instanceof UncommonSharkoEntity _datEntSetI)
+												_datEntSetI.getEntityData().set(UncommonSharkoEntity.DATA_SharkoState, 1);
 										}
 									}
 								} else if ((entity instanceof UncommonSharkoEntity _datEntI ? _datEntI.getEntityData().get(UncommonSharkoEntity.DATA_SharkoState) : 0) == 3) {
@@ -108,7 +106,7 @@ public class UncommonSharkoOnEntityTickUpdateProcedure {
 												_datEntSetL.getEntityData().set(UncommonSharkoEntity.DATA_AlternateState, true);
 										}
 									} else {
-										if (Math.random() >= 0.75) {
+										if (Math.random() >= 0.25) {
 											if (entity instanceof UncommonSharkoEntity _datEntSetI)
 												_datEntSetI.getEntityData().set(UncommonSharkoEntity.DATA_SharkoState, 2);
 											if (Math.random() <= 0.49) {
@@ -121,7 +119,7 @@ public class UncommonSharkoOnEntityTickUpdateProcedure {
 										}
 									}
 								} else if ((entity instanceof UncommonSharkoEntity _datEntI ? _datEntI.getEntityData().get(UncommonSharkoEntity.DATA_SharkoState) : 0) == 4) {
-									if (Math.random() <= 0.5) {
+									if (Math.random() <= 0.25) {
 										if (entity instanceof UncommonSharkoEntity _datEntSetI)
 											_datEntSetI.getEntityData().set(UncommonSharkoEntity.DATA_SharkoState, 3);
 									}

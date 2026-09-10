@@ -2112,6 +2112,7 @@ public class EngiesChaosModItems {
 	public static final RegistryObject<Item> ENGIES_CHAOS_RECIPE_BOOK_VOLUME_3 = REGISTRY.register("engies_chaos_recipe_book_volume_3", EngiesChaosRecipeBookVolume3Item::new);
 	public static final RegistryObject<Item> ENGIES_CHAOS_RECIPE_BOOK_VOLUME_5 = REGISTRY.register("engies_chaos_recipe_book_volume_5", EngiesChaosRecipeBookVolume5Item::new);
 	public static final RegistryObject<Item> OLD_ENRAGED_PLUSH_2 = REGISTRY.register("old_enraged_plush_2", OldEnragedPlush2Item::new);
+	public static final RegistryObject<Item> LUCKY_BLOCK = blockCMT(EngiesChaosModBlocks.LUCKY_BLOCK, null);
 
 	// Start of user code block custom items
 	// End of user code block custom items

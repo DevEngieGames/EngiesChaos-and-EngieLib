@@ -16,10 +16,12 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.core.BlockPos;
 
+import engiegames.engies_chaos.procedures.StunKeyTickProcedure;
 import engiegames.engies_chaos.procedures.AIOTRightClickBlockProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModTabs;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
@@ -101,5 +103,11 @@ public class DarkMatterEngieGamesPaxelItem extends TieredItem {
 		super.useOn(context);
 		AIOTRightClickBlockProcedure.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(), context.getClickedPos().getZ(), context.getPlayer());
 		return InteractionResult.SUCCESS;
+	}
+
+	@Override
+	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
+		super.inventoryTick(itemstack, world, entity, slot, selected);
+		StunKeyTickProcedure.execute(world, entity, itemstack);
 	}
 }
