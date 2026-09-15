@@ -19,7 +19,7 @@ public class WormholeSharkoOnEntityTickUpdateProcedure {
 			return;
 		if (!world.isClientSide()) {
 			if ((entity instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false) && (entity instanceof WormholeSharkoEntity _datEntI ? _datEntI.getEntityData().get(WormholeSharkoEntity.DATA_SharkoState) : 0) != 0) {
-				entity.getPersistentData().putDouble("SharkoStateTimerForChance", (entity.getPersistentData().getDouble("SharkoStateTimerForChance") + 0.05));
+				entity.getPersistentData().putDouble("SharkoStateTimerForChance", (entity.getPersistentData().getDouble("SharkoStateTimerForChance") - 0.05));
 				if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIE_POC) == true) {
 					if ((entity instanceof WormholeSharkoEntity _datEntI ? _datEntI.getEntityData().get(WormholeSharkoEntity.DATA_SharkoState) : 0) == 4) {
 						if (entity instanceof WormholeSharkoEntity _datEntSetI)

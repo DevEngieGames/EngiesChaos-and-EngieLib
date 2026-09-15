@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "engies_chaos:antimatter_obtain_icon_9"
+    },
+    "title": {
+      "translate": "advancements.cosmic_ban_scythe_obtain.title"
+    },
+    "description": {
+      "translate": "advancements.cosmic_ban_scythe_obtain.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "cosmic_ban_scythe_obtain_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 100
+  },
+  "parent": "engies_chaos:antimatter_engie_games_ban_scythe_obtained"
+}

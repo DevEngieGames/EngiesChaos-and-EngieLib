@@ -5,7 +5,7 @@
     "achievementName": "Good luck out there my friend, you'll need this.",
     "achievementDescription": "Hope you beat this.",
     "achievementIcon": {
-      "value": "CUSTOM:MiniBanHammer"
+      "value": "CUSTOM:RegularObtainIcon"
     },
     "background": "Default",
     "disableDisplay": false,

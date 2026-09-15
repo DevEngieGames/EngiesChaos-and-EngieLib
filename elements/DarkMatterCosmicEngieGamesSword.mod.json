@@ -3,10 +3,10 @@
   "_type": "tool",
   "definition": {
     "toolType": "Sword",
-    "renderType": 1,
+    "renderType": 0,
     "blockingRenderType": 0,
     "texture": "darkmattercosmicengie_sword",
-    "customModelName": "cosmicengiegamesword:darkmatter",
+    "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
     "guiTexture": "darkmattercosmicengie_sword",
     "name": "Dark Matter Cosmic EngieGames' Sword",
@@ -16,16 +16,13 @@
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsItems"
-      },
-      {
-        "value": "CUSTOM:BanHammers"
       }
     ],
     "efficiency": 148.0,
-    "attackSpeed": 1.0,
+    "attackSpeed": 19.8,
     "enchantability": 22,
-    "damageVsEntity": 13500.0,
-    "usageCount": 54000,
+    "damageVsEntity": 2100.0,
+    "usageCount": 51000,
     "glowCondition": {
       "fixedValue": false
     },

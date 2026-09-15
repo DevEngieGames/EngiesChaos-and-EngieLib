@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "cosmicban"
+      },
+      "name": "default"
+    },
+    "darkmatter": {
+      "map": {
+        "0": "darkmattercosmicban"
+      },
+      "name": "darkmatter"
+    }
+  }
+}

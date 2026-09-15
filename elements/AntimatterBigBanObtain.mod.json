@@ -5,7 +5,7 @@
     "achievementName": "\"Yes. I like this new weapon.\"",
     "achievementDescription": "Obtain a Antimatter Big Ban Hammer/Scythe.",
     "achievementIcon": {
-      "value": "CUSTOM:AntimatterBigScythe"
+      "value": "CUSTOM:AntimatterObtainIcon"
     },
     "background": "Default",
     "disableDisplay": false,

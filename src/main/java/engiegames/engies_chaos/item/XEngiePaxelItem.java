@@ -105,6 +105,6 @@ public class XEngiePaxelItem extends TieredItem {
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		XEngieGamesToolObtainProcedure.execute(entity);
+		XEngieGamesToolObtainProcedure.execute(world, entity, itemstack);
 	}
 }

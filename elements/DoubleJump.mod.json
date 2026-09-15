@@ -7,9 +7,6 @@
     "keyBindingCategoryKey": "gameplay",
     "onKeyPressed": {
       "name": "DoubleJumpOnKeyPressed"
-    },
-    "onKeyReleased": {
-      "name": "DoubleJumpOnKeyReleased"
     }
   }
 }

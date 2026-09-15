@@ -5,7 +5,7 @@
     "achievementName": "Very creepy.",
     "achievementDescription": "Obtain a Monstrosity Ban Hammer/Scythe.",
     "achievementIcon": {
-      "value": "CUSTOM:MonstrosityBanHammer"
+      "value": "CUSTOM:RegularObtainIcon3"
     },
     "background": "Default",
     "disableDisplay": false,

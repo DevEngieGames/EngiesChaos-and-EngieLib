@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "engies_chaos:antimatter_mini_scythe"
+      "item": "engies_chaos:antimatter_obtain_icon"
     },
     "title": {
       "translate": "advancements.antimatter_mini_ban_obtain.title"
@@ -22,5 +22,5 @@
   "rewards": {
     "experience": 5
   },
-  "parent": "engies_chaos:engie_games_sword_obtained"
+  "parent": "engies_chaos:engie_games_ban_scythe_obtained"
 }

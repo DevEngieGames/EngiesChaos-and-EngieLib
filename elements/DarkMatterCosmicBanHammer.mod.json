@@ -1,0 +1,46 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Special",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "darkmattercosmicbanpixel",
+    "customModelName": "ban_hammer_cosmic:darkmatter",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "darkmattercosmicbanpixel",
+    "name": "Dark Matter Cosmic Ban Hammer",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:BanHammers"
+      }
+    ],
+    "efficiency": 4.0,
+    "attackSpeed": 1.0,
+    "enchantability": 22,
+    "damageVsEntity": 13500.0,
+    "usageCount": 54000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:DarkMatterCosmicEngieCoin"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "STONE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onEntityHitWith": {
+      "name": "BanHammerParticleSpawn"
+    },
+    "onItemInInventoryTick": {
+      "name": "EngiesObtainPro"
+    }
+  }
+}

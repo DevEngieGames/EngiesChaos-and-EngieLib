@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "engies_chaos:antimatter_obtain_icon_8"
+    },
+    "title": {
+      "translate": "advancements.antimatter_engie_games_ban_scythe_obtained.title"
+    },
+    "description": {
+      "translate": "advancements.antimatter_engie_games_ban_scythe_obtained.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "antimatter_engie_games_ban_scythe_obtained_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 90
+  },
+  "parent": "engies_chaos:antimatter_engies_ban_scythe_obtain"
+}

@@ -8,7 +8,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.Entity;
 
-import engiegames.engies_chaos.procedures.EngieSwordsTickProcedure;
+import engiegames.engies_chaos.procedures.EngieGamesToolObtainProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModTabs;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 
@@ -16,7 +16,7 @@ public class DarkMatterEngieGamesSwordItem extends SwordItem {
 	public DarkMatterEngieGamesSwordItem() {
 		super(new Tier() {
 			public int getUses() {
-				return 53000;
+				return 50000;
 			}
 
 			public float getSpeed() {
@@ -24,7 +24,7 @@ public class DarkMatterEngieGamesSwordItem extends SwordItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 13246f;
+				return 2046f;
 			}
 
 			public int getLevel() {
@@ -38,12 +38,12 @@ public class DarkMatterEngieGamesSwordItem extends SwordItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.of(new ItemStack(EngiesChaosModItems.DARK_MATTER_ENGIE_GAMES_COIN.get()));
 			}
-		}, 3, -3f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_WEAPONS));
+		}, 3, 15.4f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}
 
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		EngieSwordsTickProcedure.execute(world, entity, itemstack);
+		EngieGamesToolObtainProcedure.execute(world, entity, itemstack);
 	}
 }

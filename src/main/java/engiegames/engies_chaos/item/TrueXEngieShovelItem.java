@@ -21,7 +21,7 @@ public class TrueXEngieShovelItem extends ShovelItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 2498f;
+				return 4998f;
 			}
 
 			public int getLevel() {

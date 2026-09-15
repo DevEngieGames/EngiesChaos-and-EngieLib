@@ -5,7 +5,7 @@
     "achievementName": "3/9",
     "achievementDescription": "Even knowing that this is HIS wrath, you still push on. Keep going.",
     "achievementIcon": {
-      "value": "CUSTOM:LargeBanHammer"
+      "value": "CUSTOM:RegularObtainIcon"
     },
     "background": "Default",
     "disableDisplay": false,

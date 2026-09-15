@@ -5,7 +5,7 @@
     "achievementName": "\"The weapon - it is so small!\"",
     "achievementDescription": "Obtain a Antimatter Ban Hammer/Scythe.",
     "achievementIcon": {
-      "value": "CUSTOM:AntimatterScythe"
+      "value": "CUSTOM:AntimatterObtainIcon"
     },
     "background": "Default",
     "disableDisplay": false,

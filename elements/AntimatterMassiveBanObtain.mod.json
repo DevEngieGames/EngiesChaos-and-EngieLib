@@ -5,7 +5,7 @@
     "achievementName": "\"Halfway there now?\" *CORRECT*",
     "achievementDescription": "Obtain a Antimatter Massive Ban Hammer/Scythe.",
     "achievementIcon": {
-      "value": "CUSTOM:AntimatterMassiveScythe"
+      "value": "CUSTOM:AntimatterObtainIcon"
     },
     "background": "Default",
     "disableDisplay": false,

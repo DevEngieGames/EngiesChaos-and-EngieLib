@@ -5,7 +5,7 @@
     "achievementName": "7/9",
     "achievementDescription": "Keep going, you're almost there!",
     "achievementIcon": {
-      "value": "CUSTOM:MassiveBanHammer"
+      "value": "CUSTOM:RegularObtainIcon"
     },
     "background": "Default",
     "disableDisplay": false,

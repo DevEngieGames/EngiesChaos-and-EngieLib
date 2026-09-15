@@ -44,6 +44,6 @@ public class EngieHoeItem extends HoeItem {
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		EngieToolObtainProcedure.execute(entity, itemstack);
+		EngieToolObtainProcedure.execute(world, entity, itemstack);
 	}
 }

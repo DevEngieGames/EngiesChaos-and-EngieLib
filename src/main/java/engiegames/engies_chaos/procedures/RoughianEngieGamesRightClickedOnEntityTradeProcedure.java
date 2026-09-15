@@ -15,8 +15,6 @@ import net.minecraft.core.BlockPos;
 
 import io.netty.buffer.Unpooled;
 
-import engiegames.engies_chaos.world.inventory.RoughianEngieGamesTradeUIMenu;
-
 public class RoughianEngieGamesRightClickedOnEntityTradeProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)

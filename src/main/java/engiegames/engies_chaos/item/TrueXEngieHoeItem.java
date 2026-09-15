@@ -21,7 +21,7 @@ public class TrueXEngieHoeItem extends HoeItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 2499f;
+				return 4999f;
 			}
 
 			public int getLevel() {

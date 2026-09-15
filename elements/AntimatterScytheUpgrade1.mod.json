@@ -12,7 +12,7 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "smithingInputStack": {
-      "value": "CUSTOM:EngieGamesSword"
+      "value": "CUSTOM:EngieGamesScythe"
     },
     "smithingInputAdditionStack": {
       "value": "CUSTOM:AntimatterEngieUpgrade"

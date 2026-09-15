@@ -1,0 +1,24 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "2": "scarf",
+        "3": "minecraft:spruce_planks",
+        "4": "scytheeyeengie",
+        "5": "gradiant",
+        "6": "handle"
+      },
+      "name": "default"
+    },
+    "truexengie": {
+      "map": {
+        "2": "truexengiescarf",
+        "3": "minecraft:dark_oak_planks",
+        "4": "scytheeyeengie",
+        "5": "truexengiegradiant",
+        "6": "handle"
+      },
+      "name": "truexengie"
+    }
+  }
+}

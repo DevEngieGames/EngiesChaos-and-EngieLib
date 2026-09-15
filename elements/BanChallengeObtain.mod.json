@@ -5,7 +5,7 @@
     "achievementName": "1/9",
     "achievementDescription": "It's only the beginning of HIS wrath.",
     "achievementIcon": {
-      "value": "CUSTOM:BanHammer"
+      "value": "CUSTOM:RegularObtainIcon"
     },
     "background": "Default",
     "disableDisplay": false,

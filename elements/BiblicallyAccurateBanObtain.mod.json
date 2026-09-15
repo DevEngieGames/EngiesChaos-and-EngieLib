@@ -5,7 +5,7 @@
     "achievementName": "Sweet.",
     "achievementDescription": "Obtain a Biblically Accurate Ban Hammer/Scythe",
     "achievementIcon": {
-      "value": "CUSTOM:BiblicallyAccuratEngieBanHammer"
+      "value": "CUSTOM:RegularObtainIcon2"
     },
     "background": "Default",
     "disableDisplay": false,

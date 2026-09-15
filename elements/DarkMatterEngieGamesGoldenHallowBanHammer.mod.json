@@ -1,0 +1,44 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Special",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "darkmatterroughiangoldbanpixel",
+    "customModelName": "ban_hammer_rough:darkgold",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "darkmatterroughiangoldbanpixel",
+    "name": "Dark Matter Golden Hallow's Ban Hammer",
+    "specialInformation": {
+      "fixedValue": [],
+      "name": "GoldHallowsBanHammerInfo"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:BanHammers"
+      }
+    ],
+    "efficiency": 156.0,
+    "attackSpeed": 1.0,
+    "enchantability": 22,
+    "damageVsEntity": 14000.0,
+    "usageCount": 56000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "DarkMatterEngieGamesGoldenHallowScytheToolInHandTick"
+    }
+  }
+}

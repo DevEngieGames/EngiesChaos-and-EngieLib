@@ -44,6 +44,6 @@ public class MonstrosityEngieSwordItem extends SwordItem {
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		MonstrosityToolObtainProcedure.execute(entity, itemstack);
+		MonstrosityToolObtainProcedure.execute(world, entity, itemstack);
 	}
 }

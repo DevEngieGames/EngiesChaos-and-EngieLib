@@ -1,0 +1,40 @@
+{
+  "mappings": {
+    "gold": {
+      "map": {
+        "0": "roughgoldban"
+      },
+      "name": "gold"
+    },
+    "default": {
+      "map": {
+        "0": "roughnormban"
+      },
+      "name": "default"
+    },
+    "collectors": {
+      "map": {
+        "0": "roughcollectban"
+      },
+      "name": "collectors"
+    },
+    "darkgold": {
+      "map": {
+        "0": "darkmatterroughgoldban"
+      },
+      "name": "darkgold"
+    },
+    "darkcollectors": {
+      "map": {
+        "0": "darkmatterroughcollectban"
+      },
+      "name": "darkcollectors"
+    },
+    "darkdefault": {
+      "map": {
+        "0": "darkmatterroughnormban"
+      },
+      "name": "darkdefault"
+    }
+  }
+}

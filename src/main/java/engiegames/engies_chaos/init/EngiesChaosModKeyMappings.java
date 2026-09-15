@@ -45,11 +45,6 @@ public class EngiesChaosModKeyMappings {
 			if (isDownOld != isDown && isDown) {
 				EngiesChaosMod.PACKET_HANDLER.sendToServer(new DoubleJumpMessage(0, 0));
 				DoubleJumpMessage.pressAction(Minecraft.getInstance().player, 0, 0);
-				DOUBLE_JUMP_LASTPRESS = System.currentTimeMillis();
-			} else if (isDownOld != isDown && !isDown) {
-				int dt = (int) (System.currentTimeMillis() - DOUBLE_JUMP_LASTPRESS);
-				EngiesChaosMod.PACKET_HANDLER.sendToServer(new DoubleJumpMessage(1, dt));
-				DoubleJumpMessage.pressAction(Minecraft.getInstance().player, 1, dt);
 			}
 			isDownOld = isDown;
 		}
@@ -96,7 +91,6 @@ public class EngiesChaosModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
-	private static long DOUBLE_JUMP_LASTPRESS = 0;
 	private static long TRASH_GUI_LASTPRESS = 0;
 
 	@SubscribeEvent

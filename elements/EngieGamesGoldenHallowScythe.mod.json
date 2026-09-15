@@ -12,7 +12,7 @@
     "name": "Golden Hallow's Scythe",
     "specialInformation": {
       "fixedValue": [],
-      "name": "EngieGamesHallowScytheSpecialInformation"
+      "name": "GoldHallowsScytheInfo"
     },
     "creativeTabs": [
       {
@@ -38,7 +38,7 @@
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
     "onItemInInventoryTick": {
-      "name": "EngieGamesGoldenHallowScytheToolInHandTick"
+      "name": "GoldHallowsTick"
     }
   }
 }

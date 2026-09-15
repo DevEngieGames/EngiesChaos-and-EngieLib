@@ -2,11 +2,18 @@
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
+	"textures": {
+		"2": "C:/Users/Engie/Downloads/truexengiescarf",
+		"3": "C:/Users/Engie/Downloads/darkmatter16x",
+		"4": "Images/.png/scytheeyeengie",
+		"5": "C:/Users/Engie/Downloads/truexengiegradiant",
+		"6": "Images/.png/Handle"
+	},
 	"elements": [
 		{
 			"from": [6.5, -14.5, 6.5],
 			"to": [9.5, 9.5, 9.5],
-			"rotation": {"angle": 0, "axis": "y", "origin": [8, -13, 8]},
+			"rotation": {"angle": 0, "axis": "x", "origin": [8, -13, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 3, 16], "texture": "#3"},
 				"east": {"uv": [3, 0, 6, 16], "texture": "#3"},
@@ -448,11 +455,11 @@
 	],
 	"display": {
 		"thirdperson_righthand": {
-			"translation": [0, 5.25, 2],
+			"translation": [0, 7.5, 2],
 			"scale": [0.5, 0.5, 0.5]
 		},
 		"thirdperson_lefthand": {
-			"translation": [0, 5.25, 2],
+			"translation": [0, 7.5, 2],
 			"scale": [0.5, 0.5, 0.5]
 		},
 		"firstperson_righthand": {

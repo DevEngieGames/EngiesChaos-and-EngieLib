@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "engies_chaos:engie_games_hallow_scythe"
+      "item": "engies_chaos:antimatter_obtain_icon_10"
     },
     "title": {
       "translate": "advancements.roughian_scythe_obtained.title"
@@ -22,5 +22,5 @@
   "rewards": {
     "experience": 125
   },
-  "parent": "engies_chaos:cosmic_sword_obtain"
+  "parent": "engies_chaos:cosmic_ban_scythe_obtain"
 }

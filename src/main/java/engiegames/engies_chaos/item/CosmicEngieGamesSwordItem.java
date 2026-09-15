@@ -16,15 +16,15 @@ public class CosmicEngieGamesSwordItem extends SwordItem {
 	public CosmicEngieGamesSwordItem() {
 		super(new Tier() {
 			public int getUses() {
-				return 35000;
+				return 75000;
 			}
 
 			public float getSpeed() {
-				return 96f;
+				return 100f;
 			}
 
 			public float getAttackDamageBonus() {
-				return 8746f;
+				return 1096f;
 			}
 
 			public int getLevel() {
@@ -38,7 +38,7 @@ public class CosmicEngieGamesSwordItem extends SwordItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.of(new ItemStack(EngiesChaosModItems.COSMIC_ENGIE_COIN.get()));
 			}
-		}, 3, -3f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_WEAPONS));
+		}, 3, 6.2f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}
 
 	@Override

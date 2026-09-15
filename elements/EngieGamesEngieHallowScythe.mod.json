@@ -12,7 +12,7 @@
     "name": "Collectors Hallow's Scythe",
     "specialInformation": {
       "fixedValue": [],
-      "name": "EngieGamesHallowScytheSpecialInformation"
+      "name": "CollectorsHallowsScytheInfo"
     },
     "creativeTabs": [
       {
@@ -38,7 +38,7 @@
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
     "onItemInInventoryTick": {
-      "name": "EngieGamesEngieHallowScytheToolInHandTick"
+      "name": "CollectorsHallowsTick"
     }
   }
 }

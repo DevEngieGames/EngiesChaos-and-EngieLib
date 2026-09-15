@@ -5,7 +5,7 @@
     "achievementName": "OH MY GOD, HOW BIG DO THESE GET??????",
     "achievementDescription": "Obtain a Massive Ban Hammer/Scythe.",
     "achievementIcon": {
-      "value": "CUSTOM:MassiveBanHammer"
+      "value": "CUSTOM:RegularObtainIcon"
     },
     "background": "Default",
     "disableDisplay": false,

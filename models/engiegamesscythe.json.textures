@@ -1,0 +1,22 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "pixelscytheengiegames"
+      },
+      "name": "default"
+    },
+    "antimatter": {
+      "map": {
+        "0": "pixelantimatterscytheengiegames"
+      },
+      "name": "antimatter"
+    },
+    "darkmatter": {
+      "map": {
+        "0": "pixeldarkmatterscytheengiegames"
+      },
+      "name": "darkmatter"
+    }
+  }
+}

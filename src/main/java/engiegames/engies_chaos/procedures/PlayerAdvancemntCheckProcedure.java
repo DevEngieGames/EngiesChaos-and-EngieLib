@@ -463,7 +463,7 @@ public class PlayerAdvancemntCheckProcedure {
 				}
 			}
 			if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty < 14 && entity instanceof ServerPlayer _plr39 && _plr39.level instanceof ServerLevel
-					&& _plr39.getAdvancements().getOrStartProgress(_plr39.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_games_sword_obtained"))).isDone()) {
+					&& _plr39.getAdvancements().getOrStartProgress(_plr39.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_games_ban_scythe_obtained"))).isDone()) {
 				if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).diffadvancement14 == false) {
 					{
 						boolean _setval = true;
@@ -482,7 +482,7 @@ public class PlayerAdvancemntCheckProcedure {
 					});
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty < 14 && !(entity instanceof ServerPlayer _plr41 && _plr41.level instanceof ServerLevel
-					&& _plr41.getAdvancements().getOrStartProgress(_plr41.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_games_sword_obtained"))).isDone())) {
+					&& _plr41.getAdvancements().getOrStartProgress(_plr41.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_games_ban_scythe_obtained"))).isDone())) {
 				if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).diffadvancement14 == true) {
 					{
 						boolean _setval = false;
@@ -958,7 +958,7 @@ public class PlayerAdvancemntCheckProcedure {
 				}
 			}
 			if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty < 29 && entity instanceof ServerPlayer _plr84 && _plr84.level instanceof ServerLevel
-					&& _plr84.getAdvancements().getOrStartProgress(_plr84.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:antimatter_engie_games_sword_obtained"))).isDone()) {
+					&& _plr84.getAdvancements().getOrStartProgress(_plr84.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:antimatter_engie_games_ban_scythe_obtained"))).isDone()) {
 				if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).diffadvancement29 == false) {
 					{
 						boolean _setval = true;
@@ -977,7 +977,7 @@ public class PlayerAdvancemntCheckProcedure {
 					});
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty < 29 && !(entity instanceof ServerPlayer _plr86 && _plr86.level instanceof ServerLevel
-					&& _plr86.getAdvancements().getOrStartProgress(_plr86.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:antimatter_engie_games_sword_obtained"))).isDone())) {
+					&& _plr86.getAdvancements().getOrStartProgress(_plr86.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:antimatter_engie_games_ban_scythe_obtained"))).isDone())) {
 				if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).diffadvancement29 == true) {
 					{
 						boolean _setval = false;
@@ -991,7 +991,7 @@ public class PlayerAdvancemntCheckProcedure {
 				}
 			}
 			if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty < 30 && entity instanceof ServerPlayer _plr87 && _plr87.level instanceof ServerLevel
-					&& _plr87.getAdvancements().getOrStartProgress(_plr87.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:cosmic_sword_obtain"))).isDone()) {
+					&& _plr87.getAdvancements().getOrStartProgress(_plr87.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:cosmic_ban_scythe_obtain"))).isDone()) {
 				if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).diffadvancement30 == false) {
 					{
 						boolean _setval = true;
@@ -1010,7 +1010,7 @@ public class PlayerAdvancemntCheckProcedure {
 					});
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty < 30 && !(entity instanceof ServerPlayer _plr89 && _plr89.level instanceof ServerLevel
-					&& _plr89.getAdvancements().getOrStartProgress(_plr89.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:cosmic_sword_obtain"))).isDone())) {
+					&& _plr89.getAdvancements().getOrStartProgress(_plr89.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:cosmic_ban_scythe_obtain"))).isDone())) {
 				if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).diffadvancement30 == true) {
 					{
 						boolean _setval = false;

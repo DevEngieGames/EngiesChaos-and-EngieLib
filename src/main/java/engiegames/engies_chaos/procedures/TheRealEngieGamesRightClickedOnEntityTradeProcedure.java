@@ -15,7 +15,7 @@ import net.minecraft.core.BlockPos;
 
 import io.netty.buffer.Unpooled;
 
-import engiegames.engies_chaos.world.inventory.EngieGamesTradeUIMenu;
+import engiegames.engies_chaos.world.inventory.EngieGamesTradeMenu;
 
 public class TheRealEngieGamesRightClickedOnEntityTradeProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity) {
@@ -37,12 +37,12 @@ public class TheRealEngieGamesRightClickedOnEntityTradeProcedure {
 				NetworkHooks.openScreen((ServerPlayer) _ent, new MenuProvider() {
 					@Override
 					public Component getDisplayName() {
-						return Component.literal("EngieGamesTradeUI");
+						return Component.literal("EngieGamesTrade");
 					}
 
 					@Override
 					public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-						return new EngieGamesTradeUIMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
+						return new EngieGamesTradeMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
 					}
 				}, _bpos);
 			}

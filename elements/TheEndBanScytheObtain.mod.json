@@ -5,7 +5,7 @@
     "achievementName": "The red makes this look cool to be honest.",
     "achievementDescription": "Obtain a The End Ban Hammer/Scythe",
     "achievementIcon": {
-      "value": "CUSTOM:TheEndScythe"
+      "value": "CUSTOM:RegularObtainIcon6"
     },
     "background": "Default",
     "disableDisplay": false,

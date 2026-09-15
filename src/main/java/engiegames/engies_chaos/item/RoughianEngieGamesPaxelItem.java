@@ -108,6 +108,6 @@ public class RoughianEngieGamesPaxelItem extends TieredItem {
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		RoughianEngieGamesToolObtainProcedure.execute(entity);
+		RoughianEngieGamesToolObtainProcedure.execute(world, entity, itemstack);
 	}
 }

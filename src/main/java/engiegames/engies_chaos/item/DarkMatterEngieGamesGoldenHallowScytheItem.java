@@ -12,7 +12,7 @@ import net.minecraft.network.chat.Component;
 
 import java.util.List;
 
-import engiegames.engies_chaos.procedures.EngieGamesHallowScytheSpecialInformationProcedure;
+import engiegames.engies_chaos.procedures.GoldHallowsScytheInfoProcedure;
 import engiegames.engies_chaos.procedures.DarkMatterEngieGamesGoldenHallowScytheToolInHandTickProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModTabs;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
@@ -50,7 +50,7 @@ public class DarkMatterEngieGamesGoldenHallowScytheItem extends SwordItem {
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
 		Entity entity = itemstack.getEntityRepresentation();
-		String hoverText = EngieGamesHallowScytheSpecialInformationProcedure.execute(itemstack);
+		String hoverText = GoldHallowsScytheInfoProcedure.execute(itemstack);
 		if (hoverText != null) {
 			for (String line : hoverText.split("\n")) {
 				list.add(Component.literal(line));

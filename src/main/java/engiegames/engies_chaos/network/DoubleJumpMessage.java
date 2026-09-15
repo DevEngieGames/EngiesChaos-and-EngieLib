@@ -11,7 +11,6 @@ import net.minecraft.network.FriendlyByteBuf;
 
 import java.util.function.Supplier;
 
-import engiegames.engies_chaos.procedures.DoubleJumpOnKeyReleasedProcedure;
 import engiegames.engies_chaos.procedures.DoubleJumpOnKeyPressedProcedure;
 import engiegames.engies_chaos.EngiesChaosMod;
 
@@ -53,10 +52,6 @@ public class DoubleJumpMessage {
 		if (type == 0) {
 
 			DoubleJumpOnKeyPressedProcedure.execute(world, entity);
-		}
-		if (type == 1) {
-
-			DoubleJumpOnKeyReleasedProcedure.execute(world, entity);
 		}
 	}
 

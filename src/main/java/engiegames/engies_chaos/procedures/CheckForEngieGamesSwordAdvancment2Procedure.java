@@ -33,7 +33,7 @@ public class CheckForEngieGamesSwordAdvancment2Procedure {
 			return;
 		if (!world.isClientSide()) {
 			if (entity instanceof ServerPlayer _plr1 && _plr1.level instanceof ServerLevel
-					&& _plr1.getAdvancements().getOrStartProgress(_plr1.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_games_sword_obtained"))).isDone()) {
+					&& _plr1.getAdvancements().getOrStartProgress(_plr1.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_games_ban_scythe_obtained"))).isDone()) {
 				{
 					boolean _setval = true;
 					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -42,7 +42,7 @@ public class CheckForEngieGamesSwordAdvancment2Procedure {
 					});
 				}
 			} else if (!(entity instanceof ServerPlayer _plr2 && _plr2.level instanceof ServerLevel
-					&& _plr2.getAdvancements().getOrStartProgress(_plr2.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_games_sword_obtained"))).isDone())) {
+					&& _plr2.getAdvancements().getOrStartProgress(_plr2.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_games_ban_scythe_obtained"))).isDone())) {
 				{
 					boolean _setval = false;
 					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {

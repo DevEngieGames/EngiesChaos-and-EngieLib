@@ -5,7 +5,7 @@
     "achievementName": "6/9",
     "achievementDescription": "3 more.",
     "achievementIcon": {
-      "value": "CUSTOM:GiganticBanHammer"
+      "value": "CUSTOM:RegularObtainIcon"
     },
     "background": "Default",
     "disableDisplay": false,

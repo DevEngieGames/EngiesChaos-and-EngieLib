@@ -5,7 +5,7 @@
     "achievementName": "9/9",
     "achievementDescription": "CONGRATULATIONS!",
     "achievementIcon": {
-      "value": "CUSTOM:MonstrosityBanHammer"
+      "value": "CUSTOM:RegularObtainIcon3"
     },
     "background": "Default",
     "disableDisplay": false,

@@ -5,7 +5,7 @@
     "achievementName": "Not bad, not bad at all.",
     "achievementDescription": "Obtain a Mindscape Ban Hammer/Scythe.",
     "achievementIcon": {
-      "value": "CUSTOM:MindscapeAdvancementIcon"
+      "value": "CUSTOM:RegularObtainIcon8"
     },
     "background": "Default",
     "disableDisplay": false,

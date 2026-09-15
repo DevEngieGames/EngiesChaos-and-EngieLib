@@ -5,7 +5,7 @@
     "achievementName": "This reminds me of 2023 All About Engie.",
     "achievementDescription": "Obtain a Big Ban Hammer/Scythe.",
     "achievementIcon": {
-      "value": "CUSTOM:BigBanHammer"
+      "value": "CUSTOM:RegularObtainIcon"
     },
     "background": "Default",
     "disableDisplay": false,

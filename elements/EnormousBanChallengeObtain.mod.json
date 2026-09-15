@@ -5,7 +5,7 @@
     "achievementName": "5/9",
     "achievementDescription": "Halfway there. Keep pushing through.",
     "achievementIcon": {
-      "value": "CUSTOM:EnormousBanHammer"
+      "value": "CUSTOM:RegularObtainIcon"
     },
     "background": "Default",
     "disableDisplay": false,

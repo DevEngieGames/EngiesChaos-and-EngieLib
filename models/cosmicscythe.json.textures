@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "pixelscythecosmic"
+      },
+      "name": "default"
+    },
+    "darkmatter": {
+      "map": {
+        "0": "pixeldarkmatterscythecosmic"
+      },
+      "name": "darkmatter"
+    }
+  }
+}

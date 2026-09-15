@@ -1,10 +1,10 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "item": "engies_chaos:dark_matter_engie_games_sword"
+    "item": "engies_chaos:dark_matter_engie_games_ban_hammer"
   },
   "addition": {
-    "item": "engies_chaos:dark_matter_engie_upgrade"
+    "item": "engies_chaos:dark_matter_cosmic_engie_games_coin_block"
   },
   "result": {
     "item": "engies_chaos:dark_matter_cosmic_engie_games_sword"

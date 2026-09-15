@@ -5,7 +5,7 @@
     "achievementName": "Still getting bigger...",
     "achievementDescription": "Obtain a Antimatter Enormous Ban Hammer/Scythe.",
     "achievementIcon": {
-      "value": "CUSTOM:AntimatterEnormousScythe"
+      "value": "CUSTOM:AntimatterObtainIcon"
     },
     "background": "Default",
     "disableDisplay": false,

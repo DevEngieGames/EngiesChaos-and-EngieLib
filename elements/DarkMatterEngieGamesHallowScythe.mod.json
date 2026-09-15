@@ -12,7 +12,7 @@
     "name": "Dark Matter Hallow's Scythe",
     "specialInformation": {
       "fixedValue": [],
-      "name": "EngieGamesHallowScytheSpecialInformation"
+      "name": "RegularHallowsScytheInfo"
     },
     "creativeTabs": [
       {
@@ -38,7 +38,7 @@
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
     "onItemInInventoryTick": {
-      "name": "DarkMatterEngieGamesHallowScytheToolInInventoryTick"
+      "name": "RegularHallowsTick"
     }
   }
 }

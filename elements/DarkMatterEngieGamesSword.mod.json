@@ -3,10 +3,10 @@
   "_type": "tool",
   "definition": {
     "toolType": "Sword",
-    "renderType": 1,
+    "renderType": 0,
     "blockingRenderType": 0,
     "texture": "darkmatterengiegames_sword",
-    "customModelName": "engiegamesword:darkmatter",
+    "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
     "guiTexture": "darkmatterengiegames_sword",
     "name": "Dark Matter EngieGames' Sword",
@@ -16,16 +16,13 @@
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsItems"
-      },
-      {
-        "value": "CUSTOM:BanHammers"
       }
     ],
     "efficiency": 144.0,
-    "attackSpeed": 1.0,
+    "attackSpeed": 19.4,
     "enchantability": 22,
-    "damageVsEntity": 13250.0,
-    "usageCount": 53000,
+    "damageVsEntity": 2050.0,
+    "usageCount": 50000,
     "glowCondition": {
       "fixedValue": false
     },
@@ -40,7 +37,7 @@
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
     "onItemInInventoryTick": {
-      "name": "EngieSwordsTick"
+      "name": "EngieGamesToolObtain"
     }
   }
 }

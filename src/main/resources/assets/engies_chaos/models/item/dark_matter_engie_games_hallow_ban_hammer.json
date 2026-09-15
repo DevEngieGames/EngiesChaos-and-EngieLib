@@ -1,0 +1,31 @@
+{
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "engies_chaos:custom/ban_hammer_rough",
+    "textures": {
+      "0": "engies_chaos:block/darkmatterroughnormban",
+      "particle": "engies_chaos:item/darkmatterroughianregularbanpixel"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/darkmatterroughianregularbanpixel"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/darkmatterroughianregularbanpixel"
+      }
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/darkmatterroughianregularbanpixel"
+      }
+    }
+  }
+}

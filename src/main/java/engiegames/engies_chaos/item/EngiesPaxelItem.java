@@ -108,6 +108,6 @@ public class EngiesPaxelItem extends TieredItem {
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		EngiesToolObtainProcedure.execute(entity, itemstack);
+		EngiesToolObtainProcedure.execute(world, entity, itemstack);
 	}
 }

@@ -5,7 +5,7 @@
     "achievementName": "Interesting..",
     "achievementDescription": "Obtain a Huge Ban Hammer/Scythe",
     "achievementIcon": {
-      "value": "CUSTOM:HugeBanHammer"
+      "value": "CUSTOM:RegularObtainIcon"
     },
     "background": "Default",
     "disableDisplay": false,

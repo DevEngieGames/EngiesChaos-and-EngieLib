@@ -5,7 +5,7 @@
     "achievementName": "Why do I feel like this guy isn't Engie.",
     "achievementDescription": "Obtain a Engies Ban Hammer/Scythe.",
     "achievementIcon": {
-      "value": "CUSTOM:EngieScythe"
+      "value": "CUSTOM:RegularObtainIcon7"
     },
     "background": "Default",
     "disableDisplay": false,

@@ -108,6 +108,6 @@ public class AntimatterBiblicallyAccurateEngiePaxelItem extends TieredItem {
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		BiblicallyAccurateToolObtainProcedure.execute(entity, itemstack);
+		BiblicallyAccurateToolObtainProcedure.execute(world, entity, itemstack);
 	}
 }

@@ -5,7 +5,7 @@
     "achievementName": "\"Halfway there-\" *INCORRECT*",
     "achievementDescription": "Obtain a Antimatter Huge Ban Hammer/Scythe",
     "achievementIcon": {
-      "value": "CUSTOM:AntimatterHugeScythe"
+      "value": "CUSTOM:AntimatterObtainIcon"
     },
     "background": "Default",
     "disableDisplay": false,

@@ -28,34 +28,7 @@
     },
     "repairItems": [
       {
-        "value": "CUSTOM:EngieCoin"
-      },
-      {
-        "value": "CUSTOM:EnragedCoin"
-      },
-      {
-        "value": "CUSTOM:DoomsDayCoin"
-      },
-      {
-        "value": "CUSTOM:SuperDoomsDayCoin"
-      },
-      {
-        "value": "CUSTOM:TheEndCoin"
-      },
-      {
-        "value": "CUSTOM:AngryEngieEssence"
-      },
-      {
-        "value": "CUSTOM:EnragedEngieEssence"
-      },
-      {
-        "value": "CUSTOM:OutragedEngieEssence"
-      },
-      {
-        "value": "CUSTOM:BiblicallyAccurateEngieEssence"
-      },
-      {
-        "value": "CUSTOM:MonstrosityEngieEssence"
+        "value": "CUSTOM:MindscapeCoin"
       }
     ],
     "immuneToFire": false,

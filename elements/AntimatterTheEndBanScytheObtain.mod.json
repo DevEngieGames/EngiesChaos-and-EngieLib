@@ -5,7 +5,7 @@
     "achievementName": "Red + Purple = Really Cool",
     "achievementDescription": "Obtain a The End Ban Hammer/Scythe",
     "achievementIcon": {
-      "value": "CUSTOM:AntimatterTheEndBanHammer"
+      "value": "CUSTOM:AntimatterObtainIcon6"
     },
     "background": "Default",
     "disableDisplay": false,

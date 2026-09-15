@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "engies_chaos:huge_ban_hammer"
+      "item": "engies_chaos:regular_obtain_icon"
     },
     "title": {
       "translate": "advancements.huge_ban_obtain.title"

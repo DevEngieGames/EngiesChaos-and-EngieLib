@@ -21,7 +21,7 @@ public class TrueXEngieAxeItem extends AxeItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 2498f;
+				return 4998f;
 			}
 
 			public int getLevel() {

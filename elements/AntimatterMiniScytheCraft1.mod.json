@@ -7,7 +7,7 @@
     "group": "antimatterminiscythe",
     "unlockingItems": [
       {
-        "value": "CUSTOM:EngieGamesSword"
+        "value": "CUSTOM:EngieGamesScythe"
       }
     ],
     "cookingBookCategory": "MISC",
@@ -29,7 +29,7 @@
         "value": "CUSTOM:AntimatterAngryEngieEssence"
       },
       {
-        "value": "CUSTOM:EngieGamesSword"
+        "value": "CUSTOM:EngieGamesScythe"
       },
       {
         "value": ""

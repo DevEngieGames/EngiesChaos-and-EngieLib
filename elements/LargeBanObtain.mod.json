@@ -5,7 +5,7 @@
     "achievementName": "Perfect size for a Ban Hammer.",
     "achievementDescription": "Obtain a Large Ban Hammer/Scythe.",
     "achievementIcon": {
-      "value": "CUSTOM:LargeBanHammer"
+      "value": "CUSTOM:RegularObtainIcon"
     },
     "background": "Default",
     "disableDisplay": false,

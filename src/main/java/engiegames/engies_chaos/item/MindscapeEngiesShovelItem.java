@@ -47,6 +47,6 @@ public class MindscapeEngiesShovelItem extends ShovelItem {
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		MindscapeEngieGamesToolObtainProcedure.execute(entity);
+		MindscapeEngieGamesToolObtainProcedure.execute(world, entity, itemstack);
 	}
 }

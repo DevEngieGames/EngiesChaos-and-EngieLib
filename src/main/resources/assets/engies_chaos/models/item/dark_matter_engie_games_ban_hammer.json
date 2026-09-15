@@ -1,0 +1,31 @@
+{
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "engies_chaos:custom/ban_hammer_engiegames",
+    "textures": {
+      "0": "engies_chaos:block/darkmatterengiegamesban",
+      "particle": "engies_chaos:item/darkmatterengiegamesbanpixel"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/darkmatterengiegamesbanpixel"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/darkmatterengiegamesbanpixel"
+      }
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/darkmatterengiegamesbanpixel"
+      }
+    }
+  }
+}

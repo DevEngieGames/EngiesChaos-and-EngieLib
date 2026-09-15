@@ -3,10 +3,10 @@
   "_type": "tool",
   "definition": {
     "toolType": "Sword",
-    "renderType": 1,
+    "renderType": 0,
     "blockingRenderType": 0,
     "texture": "cosmicengie_sword",
-    "customModelName": "cosmicengiegamesword:default",
+    "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
     "guiTexture": "cosmicengie_sword",
     "name": "Cosmic EngieGames' Sword",
@@ -16,16 +16,13 @@
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsItems"
-      },
-      {
-        "value": "CUSTOM:BanHammers"
       }
     ],
-    "efficiency": 96.0,
-    "attackSpeed": 1.0,
+    "efficiency": 100.0,
+    "attackSpeed": 10.2,
     "enchantability": 22,
-    "damageVsEntity": 8750.0,
-    "usageCount": 35000,
+    "damageVsEntity": 1100.0,
+    "usageCount": 75000,
     "glowCondition": {
       "fixedValue": false
     },

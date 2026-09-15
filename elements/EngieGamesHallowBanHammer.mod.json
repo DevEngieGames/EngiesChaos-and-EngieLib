@@ -1,0 +1,44 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Special",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "roughianregularbanpixel",
+    "customModelName": "ban_hammer_rough:default",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "roughianregularbanpixel",
+    "name": "Hallow's Ban Hammer",
+    "specialInformation": {
+      "fixedValue": [],
+      "name": "RegularHallowsBanHammerInfo"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:BanHammers"
+      }
+    ],
+    "efficiency": 125.0,
+    "attackSpeed": 1.0,
+    "enchantability": 22,
+    "damageVsEntity": 9000.0,
+    "usageCount": 36000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "RegularHallowsTick"
+    }
+  }
+}

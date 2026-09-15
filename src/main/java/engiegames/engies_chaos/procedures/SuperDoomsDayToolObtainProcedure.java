@@ -1,5 +1,6 @@
 package engiegames.engies_chaos.procedures;
 
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.tags.ItemTags;
@@ -10,7 +11,7 @@ import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
 public class SuperDoomsDayToolObtainProcedure {
-	public static void execute(Entity entity, ItemStack itemstack) {
+	public static void execute(LevelAccessor world, Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
 		if (itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:tools/nonantimatter")))) {
@@ -37,6 +38,10 @@ public class SuperDoomsDayToolObtainProcedure {
 					}
 				}
 			}
+		}
+		if (itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:items/pickaxe_only/strong_stun"))) || itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:items/pickaxe_only/normal_stun")))
+				|| itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:items/pickaxe_only/strong_stun")))) {
+			StunKeyTickProcedure.execute(world, entity, itemstack);
 		}
 	}
 }

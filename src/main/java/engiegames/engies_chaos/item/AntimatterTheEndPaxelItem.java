@@ -108,6 +108,6 @@ public class AntimatterTheEndPaxelItem extends TieredItem {
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		TheEndToolObtainProcedure.execute(entity, itemstack);
+		TheEndToolObtainProcedure.execute(world, entity, itemstack);
 	}
 }

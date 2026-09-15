@@ -5,7 +5,7 @@
     "achievementName": "Yeah, 100% went overboard...",
     "achievementDescription": "Obtain a Monstrosity Ban Hammer/Scythe.",
     "achievementIcon": {
-      "value": "CUSTOM:AntimatterMonstrosityScythe"
+      "value": "CUSTOM:AntimatterObtainIcon3"
     },
     "background": "Default",
     "disableDisplay": false,

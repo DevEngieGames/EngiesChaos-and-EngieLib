@@ -1,0 +1,44 @@
+{
+  "_fv": 79,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Special",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "roughiangoldbanpixel",
+    "customModelName": "ban_hammer_rough:gold",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "roughiangoldbanpixel",
+    "name": "Golden Hallow's Ban Hammer",
+    "specialInformation": {
+      "fixedValue": [],
+      "name": "GoldHallowsBanHammerInfo"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:BanHammers"
+      }
+    ],
+    "efficiency": 125.0,
+    "attackSpeed": 1.0,
+    "enchantability": 22,
+    "damageVsEntity": 9250.0,
+    "usageCount": 37000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "GoldHallowsTick"
+    }
+  }
+}

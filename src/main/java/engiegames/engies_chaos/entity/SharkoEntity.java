@@ -8,19 +8,24 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
+import net.minecraft.world.entity.ai.goal.FollowOwnerGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.BreedGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.MobType;
@@ -54,7 +59,7 @@ import engiegames.engies_chaos.procedures.SharkoMoveAroundCheckProcedure;
 import engiegames.engies_chaos.procedures.AprilFoolsDespawningProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
-public class SharkoEntity extends Animal {
+public class SharkoEntity extends TamableAnimal {
 	public static final EntityDataAccessor<Boolean> DATA_Albino = SynchedEntityData.defineId(SharkoEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<Integer> DATA_SharkoState = SynchedEntityData.defineId(SharkoEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Boolean> DATA_AlternateState = SynchedEntityData.defineId(SharkoEntity.class, EntityDataSerializers.BOOLEAN);
@@ -87,6 +92,48 @@ public class SharkoEntity extends Animal {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
+		this.goalSelector.addGoal(1, new OwnerHurtByTargetGoal(this) {
+			@Override
+			public boolean canUse() {
+				double x = SharkoEntity.this.getX();
+				double y = SharkoEntity.this.getY();
+				double z = SharkoEntity.this.getZ();
+				Entity entity = SharkoEntity.this;
+				Level world = SharkoEntity.this.level;
+				return super.canUse() && SharkoMoveAroundCheckProcedure.execute(entity);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = SharkoEntity.this.getX();
+				double y = SharkoEntity.this.getY();
+				double z = SharkoEntity.this.getZ();
+				Entity entity = SharkoEntity.this;
+				Level world = SharkoEntity.this.level;
+				return super.canContinueToUse() && SharkoMoveAroundCheckProcedure.execute(entity);
+			}
+		});
+		this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this) {
+			@Override
+			public boolean canUse() {
+				double x = SharkoEntity.this.getX();
+				double y = SharkoEntity.this.getY();
+				double z = SharkoEntity.this.getZ();
+				Entity entity = SharkoEntity.this;
+				Level world = SharkoEntity.this.level;
+				return super.canUse() && SharkoMoveAroundCheckProcedure.execute(entity);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = SharkoEntity.this.getX();
+				double y = SharkoEntity.this.getY();
+				double z = SharkoEntity.this.getZ();
+				Entity entity = SharkoEntity.this;
+				Level world = SharkoEntity.this.level;
+				return super.canContinueToUse() && SharkoMoveAroundCheckProcedure.execute(entity);
+			}
+		});
 		this.targetSelector.addGoal(3, new HurtByTargetGoal(this) {
 			@Override
 			public boolean canUse() {
@@ -134,6 +181,27 @@ public class SharkoEntity extends Animal {
 				return super.canContinueToUse() && SharkoMoveAroundCheckProcedure.execute(entity);
 			}
 
+		});
+		this.goalSelector.addGoal(5, new FollowOwnerGoal(this, 1, (float) 10, (float) 2, false) {
+			@Override
+			public boolean canUse() {
+				double x = SharkoEntity.this.getX();
+				double y = SharkoEntity.this.getY();
+				double z = SharkoEntity.this.getZ();
+				Entity entity = SharkoEntity.this;
+				Level world = SharkoEntity.this.level;
+				return super.canUse() && SharkoMoveAroundCheckProcedure.execute(entity);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = SharkoEntity.this.getX();
+				double y = SharkoEntity.this.getY();
+				double z = SharkoEntity.this.getZ();
+				Entity entity = SharkoEntity.this;
+				Level world = SharkoEntity.this.level;
+				return super.canContinueToUse() && SharkoMoveAroundCheckProcedure.execute(entity);
+			}
 		});
 		this.goalSelector.addGoal(6, new RandomStrollGoal(this, 1) {
 			@Override
@@ -294,7 +362,42 @@ public class SharkoEntity extends Animal {
 	public InteractionResult mobInteract(Player sourceentity, InteractionHand hand) {
 		ItemStack itemstack = sourceentity.getItemInHand(hand);
 		InteractionResult retval = InteractionResult.sidedSuccess(this.level.isClientSide());
-		super.mobInteract(sourceentity, hand);
+		Item item = itemstack.getItem();
+		if (itemstack.getItem() instanceof SpawnEggItem) {
+			retval = super.mobInteract(sourceentity, hand);
+		} else if (this.level.isClientSide()) {
+			retval = (this.isTame() && this.isOwnedBy(sourceentity) || this.isFood(itemstack)) ? InteractionResult.sidedSuccess(this.level.isClientSide()) : InteractionResult.PASS;
+		} else {
+			if (this.isTame()) {
+				if (this.isOwnedBy(sourceentity)) {
+					if (item.isEdible() && this.isFood(itemstack) && this.getHealth() < this.getMaxHealth()) {
+						this.usePlayerItem(sourceentity, hand, itemstack);
+						this.heal((float) item.getFoodProperties().getNutrition());
+						retval = InteractionResult.sidedSuccess(this.level.isClientSide());
+					} else if (this.isFood(itemstack) && this.getHealth() < this.getMaxHealth()) {
+						this.usePlayerItem(sourceentity, hand, itemstack);
+						this.heal(4);
+						retval = InteractionResult.sidedSuccess(this.level.isClientSide());
+					} else {
+						retval = super.mobInteract(sourceentity, hand);
+					}
+				}
+			} else if (this.isFood(itemstack)) {
+				this.usePlayerItem(sourceentity, hand, itemstack);
+				if (this.random.nextInt(3) == 0 && !net.minecraftforge.event.ForgeEventFactory.onAnimalTame(this, sourceentity)) {
+					this.tame(sourceentity);
+					this.level.broadcastEntityEvent(this, (byte) 7);
+				} else {
+					this.level.broadcastEntityEvent(this, (byte) 6);
+				}
+				this.setPersistenceRequired();
+				retval = InteractionResult.sidedSuccess(this.level.isClientSide());
+			} else {
+				retval = super.mobInteract(sourceentity, hand);
+				if (retval == InteractionResult.SUCCESS || retval == InteractionResult.CONSUME)
+					this.setPersistenceRequired();
+			}
+		}
 		double x = this.getX();
 		double y = this.getY();
 		double z = this.getZ();

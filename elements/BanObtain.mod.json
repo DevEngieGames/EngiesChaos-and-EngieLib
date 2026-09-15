@@ -5,7 +5,7 @@
     "achievementName": "Small but deadly.",
     "achievementDescription": "Obtain a Ban Hammer/Scythe.",
     "achievementIcon": {
-      "value": "CUSTOM:BanHammer"
+      "value": "CUSTOM:RegularObtainIcon"
     },
     "background": "Default",
     "disableDisplay": false,

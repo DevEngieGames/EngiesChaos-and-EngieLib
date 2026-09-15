@@ -15,7 +15,7 @@ import net.minecraft.core.BlockPos;
 
 import io.netty.buffer.Unpooled;
 
-import engiegames.engies_chaos.world.inventory.CosmicEngieGamesTradeUIMenu;
+import engiegames.engies_chaos.world.inventory.CosmicTradeMenu;
 
 public class CosmicEngieGamesRightClickedOnEntityTradeProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity) {
@@ -37,12 +37,12 @@ public class CosmicEngieGamesRightClickedOnEntityTradeProcedure {
 				NetworkHooks.openScreen((ServerPlayer) _ent, new MenuProvider() {
 					@Override
 					public Component getDisplayName() {
-						return Component.literal("CosmicEngieGamesTradeUI");
+						return Component.literal("CosmicTrade");
 					}
 
 					@Override
 					public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-						return new CosmicEngieGamesTradeUIMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
+						return new CosmicTradeMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
 					}
 				}, _bpos);
 			}

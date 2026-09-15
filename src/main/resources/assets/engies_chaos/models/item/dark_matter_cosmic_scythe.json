@@ -1,0 +1,31 @@
+{
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "engies_chaos:custom/engiegamesscythe",
+    "textures": {
+      "0": "engies_chaos:block/pixeldarkmatterscytheengiegames",
+      "particle": "engies_chaos:item/pixeldarkmatterscythecosmic"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/pixeldarkmatterscythecosmic"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/pixeldarkmatterscythecosmic"
+      }
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "engies_chaos:item/pixeldarkmatterscythecosmic"
+      }
+    }
+  }
+}

@@ -3,10 +3,10 @@
   "_type": "tool",
   "definition": {
     "toolType": "Sword",
-    "renderType": 1,
+    "renderType": 0,
     "blockingRenderType": 0,
     "texture": "engiegames_sword",
-    "customModelName": "engiegamesword:default",
+    "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
     "guiTexture": "engiegames_sword",
     "name": "EngieGames' Sword",
@@ -16,16 +16,13 @@
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsItems"
-      },
-      {
-        "value": "CUSTOM:BanHammers"
       }
     ],
     "efficiency": 52.0,
-    "attackSpeed": 1.0,
+    "attackSpeed": 5.5,
     "enchantability": 16,
-    "damageVsEntity": 3500.0,
-    "usageCount": 14000,
+    "damageVsEntity": 500.0,
+    "usageCount": 25000,
     "glowCondition": {
       "fixedValue": false
     },
@@ -40,7 +37,7 @@
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
     "onItemInInventoryTick": {
-      "name": "EngieSwordsTick"
+      "name": "EngieGamesToolObtain"
     }
   }
 }

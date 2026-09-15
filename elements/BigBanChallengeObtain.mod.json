@@ -5,7 +5,7 @@
     "achievementName": "2/9",
     "achievementDescription": "The more you manage to obtain, the more upset HE gets.",
     "achievementIcon": {
-      "value": "CUSTOM:BigBanHammer"
+      "value": "CUSTOM:RegularObtainIcon"
     },
     "background": "Default",
     "disableDisplay": false,

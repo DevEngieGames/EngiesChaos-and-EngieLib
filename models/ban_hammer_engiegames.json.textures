@@ -2,9 +2,21 @@
   "mappings": {
     "default": {
       "map": {
-        "0": "engiegamesbanhammer"
+        "0": "engiegamesban"
       },
       "name": "default"
+    },
+    "antimatter": {
+      "map": {
+        "0": "antimatterengiegamesban"
+      },
+      "name": "antimatter"
+    },
+    "darkmatter": {
+      "map": {
+        "0": "darkmatterengiegamesban"
+      },
+      "name": "darkmatter"
     }
   }
 }

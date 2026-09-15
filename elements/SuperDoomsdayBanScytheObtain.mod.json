@@ -5,7 +5,7 @@
     "achievementName": "Ok bro this is getting ridiculous.",
     "achievementDescription": "Obtain a Super Doomsday Ban Hammer/Scythe",
     "achievementIcon": {
-      "value": "CUSTOM:SuperDoomsDayScythe"
+      "value": "CUSTOM:RegularObtainIcon5"
     },
     "background": "Default",
     "disableDisplay": false,

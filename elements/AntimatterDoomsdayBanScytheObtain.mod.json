@@ -5,7 +5,7 @@
     "achievementName": "Cool.",
     "achievementDescription": "Obtain a Doomsday Ban Hammer/Scythe",
     "achievementIcon": {
-      "value": "CUSTOM:AntimatterDoomsdayBanHammer"
+      "value": "CUSTOM:AntimatterObtainIcon4"
     },
     "background": "Default",
     "disableDisplay": false,
