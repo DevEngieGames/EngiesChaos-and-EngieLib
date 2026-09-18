@@ -68,8 +68,8 @@ public class PlayerTagCheckProcedure {
 					return new UUID(0, 0);
 				}
 			}.UUIDSafeParse("447fceaf-ed57-4b92-be55-9ae4a47b33bf"))) {
-				if (entity.getPersistentData().getBoolean("EngiesChaos_Dev") == false) {
-					entity.getPersistentData().putBoolean("EngiesChaos_Dev", true);
+				if (entity.getPersistentData().getBoolean("EngiesChaos_Contributor") == false) {
+					entity.getPersistentData().putBoolean("EngiesChaos_Contributor", true);
 				}
 			} else if (entity.getUUID().equals(new Object() {
 				UUID UUIDSafeParse(String s) {
@@ -168,6 +168,26 @@ public class PlayerTagCheckProcedure {
 					return new UUID(0, 0);
 				}
 			}.UUIDSafeParse("29930f5d-d23e-47b6-aad6-e04406663341"))) {
+				if (entity.getPersistentData().getBoolean("EngiesChaos_Tester") == false) {
+					entity.getPersistentData().putBoolean("EngiesChaos_Tester", true);
+				}
+			} else if (entity.getUUID().equals(new Object() {
+				UUID UUIDSafeParse(String s) {
+					try {
+						return UUID.fromString(s);
+					} catch (Exception e) {
+					}
+					return new UUID(0, 0);
+				}
+			}.UUIDSafeParse("6354d03991a041be89156cbff9c46475")) || entity.getUUID().equals(new Object() {
+				UUID UUIDSafeParse(String s) {
+					try {
+						return UUID.fromString(s);
+					} catch (Exception e) {
+					}
+					return new UUID(0, 0);
+				}
+			}.UUIDSafeParse("6354d039-91a0-41be-8915-6cbff9c46475"))) {
 				if (entity.getPersistentData().getBoolean("EngiesChaos_Tester") == false) {
 					entity.getPersistentData().putBoolean("EngiesChaos_Tester", true);
 				}

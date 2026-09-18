@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4835044e-5263-4cfe-9dec-e05f7f84ea95" name="Changes" comment="i forgot to commit 0.2.5 and 0.2.6 mb gng">
+    <list default="true" id="4835044e-5263-4cfe-9dec-e05f7f84ea95" name="Changes" comment="v0.2.7">
       <change beforePath="$PROJECT_DIR$/.eclipse/configurations/Client.launch" beforeDir="false" afterPath="$PROJECT_DIR$/.eclipse/configurations/Client.launch" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eclipse/configurations/Server.launch" beforeDir="false" afterPath="$PROJECT_DIR$/.eclipse/configurations/Server.launch" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/elements/LibNeed.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/LibNeed.mod.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/PlayerTagCheck.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/PlayerTagCheck.mod.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/EngielibMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/EngielibMod.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/EgmCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/command/EgmCommand.java" afterDir="false" />
@@ -52,129 +53,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/TeamCreateProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/TeamCreateProcedure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/TesterGearProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/engiegames/engielib/procedures/TesterGearProcedure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/mods.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/forge/tags/blocks/minable/paxel.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/forge/tags/items/paxels.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/acacia_planks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/andesite.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/bamboo_mosaic.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/bamboo_planks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/birch_planks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/blackstone.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/bricks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/cherry_planks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/cobbled_deepslate.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/cobblestone.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/crimson_planks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/cut_copper.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/cut_red_sandstone.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/cut_sandstone.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/dark_oak_planks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/dark_prismarine.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/deepslate_bricks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/deepslate_tiles.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/diorite.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/end_stone_bricks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/exposed_cut_copper.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/granite.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/jungle_planks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/mangrove_planks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/mossy_cobblestone.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/mossy_stone_bricks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/mud_bricks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/nether_bricks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/oak_planks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/oxidized_cut_copper.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/polished_andesite.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/polished_blackstone.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/polished_blackstone_bricks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/polished_deepslate.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/polished_diorite.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/polished_granite.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/polished_tuff.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/prismarine.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/prismarine_bricks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/purpur_block.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/quartz_block.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/red_nether_bricks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/red_sandstone.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/sandstone.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/smooth_quartz.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/smooth_red_sandstone.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/smooth_sandstone.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/smooth_stone.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/spruce_planks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/stone.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/stone_bricks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/tuff.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/tuff_bricks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/warped_planks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/waxed_cut_copper.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/waxed_exposed_cut_copper.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/waxed_oxidized_cut_copper.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/waxed_weathered_cut_copper.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/slabs/weathered_cut_copper.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/acacia_planks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/andesite.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/bamboo_mosaic.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/bamboo_planks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/birch_planks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/blackstone.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/bricks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/cherry_planks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/cobbled_deepslate.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/cobblestone.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/crimson_planks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/cut_copper.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/dark_oak_planks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/dark_prismarine.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/deepslate_bricks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/deepslate_tiles.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/diorite.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/end_stone_bricks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/exposed_cut_copper.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/granite.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/jungle_planks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/mangrove_planks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/mossy_cobblestone.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/mossy_stone_bricks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/mud_bricks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/nether_bricks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/oak_planks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/oxidized_cut_copper.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/polished_andesite.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/polished_blackstone.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/polished_blackstone_bricks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/polished_deepslate.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/polished_diorite.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/polished_granite.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/polished_tuff.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/prismarine.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/prismarine_bricks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/purpur_block.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/quartz_block.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/red_nether_bricks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/red_sandstone.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/sandstone.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/smooth_quartz.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/smooth_red_sandstone.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/smooth_sandstone.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/spruce_planks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/stone.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/stone_bricks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/stone_stairs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/tuff.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/tuff_bricks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/warped_planks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/waxed_cut_copper.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/waxed_exposed_cut_copper.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/waxed_oxidized_cut_copper.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/waxed_weathered_cut_copper.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/stairs/weathered_cut_copper.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/spawnanimations/tags/entity_type/dig_up_animation.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/spawnanimations/tags/entity_types/dig_up_animation.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/swordblockingmechanics/tags/items/can_perform_sword_blocking.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/swordblockitems/tags/item/can_perform_sword_blocking.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/swordblockitems/tags/items/can_perform_sword_blocking.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/pack.mcmeta" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pack.mcmeta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -234,27 +112,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;EngieLib-Code&quot;,
-    &quot;git.auto.fetch.suggestion.counter&quot;: &quot;2&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/Repositories/2025.2/engielib&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "EngieLib-Code",
+    "git.auto.fetch.suggestion.counter": "2",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "F:/Repositories/2025.2/engielib",
+    "nodejs_package_manager_path": "npm",
+    "python.packages.toolwindow.project.migrated.to.right.top.v2": "true",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.Client">
     <configuration name="Client" type="Application" factoryName="Application">
-      <envs>
-        <env name="MOD_CLASSES" value="mcreator%%F:\Repositories\2025.2\engielib\build\classes\java\main;mcreator%%F:\Repositories\2025.2\engielib\build\resources\main" />
-      </envs>
       <option name="MAIN_CLASS_NAME" value="net.neoforged.devlaunch.Main" />
       <module name="engielib.main" />
       <option name="PROGRAM_PARAMETERS" value="@F:\\Repositories\\2025.2\\engielib\\build\\moddev\\clientRunProgramArgs.txt" />
@@ -265,9 +141,6 @@
       </method>
     </configuration>
     <configuration name="Server" type="Application" factoryName="Application">
-      <envs>
-        <env name="MOD_CLASSES" value="mcreator%%F:\Repositories\2025.2\engielib\build\classes\java\main;mcreator%%F:\Repositories\2025.2\engielib\build\resources\main" />
-      </envs>
       <option name="MAIN_CLASS_NAME" value="net.neoforged.devlaunch.Main" />
       <module name="engielib.main" />
       <option name="PROGRAM_PARAMETERS" value="@F:\\Repositories\\2025.2\\engielib\\build\\moddev\\serverRunProgramArgs.txt" />
@@ -281,8 +154,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-34e2839f716b-intellij.indexing.shared.core-IU-262.9437.185" />
-        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.9437.185" />
+        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10315.125" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10315.125" />
       </set>
     </attachedChunks>
   </component>
@@ -358,7 +231,15 @@
       <option name="project" value="LOCAL" />
       <updated>1787602100755</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="v0.2.7">
+      <option name="closed" value="true" />
+      <created>1788538527072</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1788538527072</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,7 +263,8 @@
     <MESSAGE value="v0.2.4" />
     <MESSAGE value="v0.2.5" />
     <MESSAGE value="i forgot to commit 0.2.5 and 0.2.6 mb gng" />
-    <option name="LAST_COMMIT_MESSAGE" value="i forgot to commit 0.2.5 and 0.2.6 mb gng" />
+    <MESSAGE value="v0.2.7" />
+    <option name="LAST_COMMIT_MESSAGE" value="v0.2.7" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
