@@ -16,8 +16,8 @@ import net.minecraft.core.BlockPos;
 
 import java.util.List;
 
-import engiegames.engies_chaos.procedures.RegularHallowsTickProcedure;
 import engiegames.engies_chaos.procedures.RegularHallowsBanHammerInfoProcedure;
+import engiegames.engies_chaos.procedures.DarkRegularHallowsTickProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModTabs;
 
 import com.google.common.collect.Multimap;
@@ -77,6 +77,6 @@ public class DarkMatterEngieGamesHallowBanHammerItem extends Item {
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		RegularHallowsTickProcedure.execute(world, entity, itemstack);
+		DarkRegularHallowsTickProcedure.execute(world, entity, itemstack);
 	}
 }

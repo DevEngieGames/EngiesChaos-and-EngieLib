@@ -14,7 +14,7 @@
         "type": "inputslot",
         "data": {
           "inputLimit": {
-            "value": "CUSTOM:EngieCoin"
+            "value": "CUSTOM:MindscapeCoin"
           },
           "disablePlacement": {
             "fixedValue": false
@@ -33,7 +33,7 @@
         "type": "inputslot",
         "data": {
           "inputLimit": {
-            "value": "CUSTOM:EngieCoin"
+            "value": "CUSTOM:MindscapeCoin"
           },
           "disablePlacement": {
             "fixedValue": false
@@ -67,7 +67,7 @@
           },
           "dropItemsWhenNotBound": false,
           "onTakenFromSlot": {
-            "name": "EngieTradeItemTakenFromRegSlot1"
+            "name": "MindscapeTradeItemTakenFromSlot1"
           },
           "x": 232,
           "y": 70,
@@ -83,7 +83,7 @@
           },
           "dropItemsWhenNotBound": false,
           "onTakenFromSlot": {
-            "name": "EngieTradeItemTakenFromRegSlot1"
+            "name": "MindscapeTradeItemTakenFromSlot2"
           },
           "x": 268,
           "y": 70,
@@ -92,7 +92,7 @@
       }
     ],
     "onTick": {
-      "name": "EngieTradeTick"
+      "name": "MindscapeTradeTick"
     },
     "gridSettings": {
       "sx": 18,

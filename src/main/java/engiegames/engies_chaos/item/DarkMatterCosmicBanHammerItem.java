@@ -12,7 +12,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.core.BlockPos;
 
-import engiegames.engies_chaos.procedures.EngiesObtainProProcedure;
+import engiegames.engies_chaos.procedures.CosmicObtainProProcedure;
 import engiegames.engies_chaos.procedures.BanHammerParticleSpawnProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModTabs;
 
@@ -62,6 +62,6 @@ public class DarkMatterCosmicBanHammerItem extends Item {
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		EngiesObtainProProcedure.execute(world, entity, itemstack);
+		CosmicObtainProProcedure.execute(world, entity, itemstack);
 	}
 }

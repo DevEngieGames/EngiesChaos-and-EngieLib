@@ -1,37 +1,52 @@
 {
   "replace": false,
   "values": [
-    {
-      "id": "#allaboutengie:mobs/biblicallyhostile",
-      "required": false
-    },
-    {
-      "id": "#allaboutengie:mobs/outraged_engie",
-      "required": false
-    },
-    {
-      "id": "#allaboutengie:dday_related",
-      "required": false
-    },
-    {
-      "id": "#allaboutengie:mobs/angry_engie",
-      "required": false
-    },
-    {
-      "id": "#allaboutengie:mobs/enraged_engie",
-      "required": false
-    },
-    {
-      "id": "#allaboutengie:mobs/monstrosity_engie",
-      "required": false
-    },
-    {
-      "id": "#allaboutengie:mobs/mad_engie",
-      "required": false
-    },
-    {
-      "id": "#allaboutengie:mobs/hostile_engie",
-      "required": false
-    }
+    "engies_chaos:angry_engie",
+    "engies_chaos:blue_burst",
+    "engies_chaos:engie_poc_enraged_engie",
+    "engies_chaos:super_dooms_day_hostile",
+    "engies_chaos:d_day_spike",
+    "engies_chaos:d_day_avalanche",
+    "engies_chaos:normal",
+    "engies_chaos:engie_poc_hostile_biblically_accurate_engie",
+    "engies_chaos:hostile_engie",
+    "engies_chaos:engie_poc_angry_engie",
+    "engies_chaos:engie_games_hostile_engie",
+    "engies_chaos:engie_games_angry_engie",
+    "engies_chaos:nightmare_outraged_engie",
+    "engies_chaos:engie_poc_mad_engie",
+    "engies_chaos:horde_spawner",
+    "engies_chaos:mad_engie",
+    "engies_chaos:insanity_hostile_biblically_accurate_engie",
+    "engies_chaos:insanity_outraged_engie",
+    "engies_chaos:nightmare_angry_engie",
+    "engies_chaos:nightmare_hostile_engie",
+    "engies_chaos:insanity_hostile_engie",
+    "engies_chaos:insanity_angry_engie",
+    "engies_chaos:dooms_day_hostile",
+    "engies_chaos:engie_games_outraged_engie",
+    "engies_chaos:hostile_biblically_accurate_engie",
+    "engies_chaos:enraged_engie",
+    "engies_chaos:nightmare_hostile_biblically_accurate_engie",
+    "engies_chaos:engie_poc_outraged_engie",
+    "engies_chaos:engie_games_enraged_engie",
+    "engies_chaos:engie_poc_hostile_engie",
+    "engies_chaos:engie_games_hostile_biblically_accurate_engie",
+    "engies_chaos:engie_games_mad_engie",
+    "engies_chaos:nightmare_monstrosity_engie",
+    "engies_chaos:engie_poc_monstrosity_engie",
+    "engies_chaos:insanity_mad_engie",
+    "engies_chaos:yellow_lightning",
+    "engies_chaos:engie_games_monstrosity_engie",
+    "engies_chaos:nightmare_enraged_engie",
+    "engies_chaos:dday_rift",
+    "engies_chaos:insanity_enraged_engie",
+    "engies_chaos:outraged_engie",
+    "engies_chaos:nightmare_mad_engie",
+    "engies_chaos:monstrosity_engie",
+    "engies_chaos:d_day_lightning_spawner",
+    "engies_chaos:moab",
+    "engies_chaos:insanity_monstrosity_engie",
+    "engies_chaos:the_end_hostile"
   ]
 }

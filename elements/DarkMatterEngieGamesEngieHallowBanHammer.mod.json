@@ -6,13 +6,13 @@
     "renderType": 1,
     "blockingRenderType": 0,
     "texture": "darkmatterroughiancollectbanpixel",
-    "customModelName": "hallowsscythe:engiedark",
+    "customModelName": "ban_hammer_rough:darkcollectors",
     "blockingModelName": "Normal blocking",
     "guiTexture": "darkmatterroughiancollectbanpixel",
     "name": "Dark Matter Collectors Hallow's Ban Hammer",
     "specialInformation": {
       "fixedValue": [],
-      "name": "CollectorsHallowsBanHammerInfo"
+      "name": "DarkCollectorsHallowsBanHammerInfo"
     },
     "creativeTabs": [
       {
@@ -38,7 +38,7 @@
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
     "onItemInInventoryTick": {
-      "name": "DarkMatterEngieGamesEngieHallowScytheToolInHandTick"
+      "name": "DarkCollectorsHallowsTick"
     }
   }
 }

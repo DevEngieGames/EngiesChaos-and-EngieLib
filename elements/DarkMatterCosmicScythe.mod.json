@@ -6,7 +6,7 @@
     "renderType": 1,
     "blockingRenderType": 0,
     "texture": "pixeldarkmatterscythecosmic",
-    "customModelName": "engiegamesscythe:darkmatter",
+    "customModelName": "cosmicscythe:darkmatter",
     "blockingModelName": "Normal blocking",
     "guiTexture": "pixeldarkmatterscythecosmic",
     "name": "Dark Matter Cosmic Scythe",
@@ -37,7 +37,7 @@
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
     "onItemInInventoryTick": {
-      "name": "EngiesObtainPro"
+      "name": "CosmicObtainPro"
     }
   }
 }

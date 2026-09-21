@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "engies_chaos:antimatter_doomsday_scythe",
+    "engies_chaos:engie_games_golden_hallow_ban_hammer",
     "engies_chaos:antimatter_ban_hammer",
     "engies_chaos:antimatter_enormous_ban_hammer",
     "engies_chaos:antimatter_engie_games_sword",
@@ -14,7 +15,9 @@
     "engies_chaos:antimatter_big_ban_hammer",
     "engies_chaos:antimatter_mini_scythe",
     "engies_chaos:antimatter_massive_ban_hammer",
+    "engies_chaos:engie_games_hallow_scythe",
     "engies_chaos:antimatter_monstrosity_scythe",
+    "engies_chaos:engie_games_golden_hallow_scythe",
     "engies_chaos:antimatter_the_end_scythe",
     "engies_chaos:antimatter_gigantic_ban_hammer",
     "engies_chaos:antimatter_engie_scythe",
@@ -27,9 +30,12 @@
     "engies_chaos:antimatter_engies_ban_hammer",
     "engies_chaos:cosmic_engie_games_sword",
     "engies_chaos:antimatter_biblically_accurate_engie_scythe",
+    "engies_chaos:engie_games_anchor",
     "engies_chaos:antimatter_the_end_ban_hammer",
     "engies_chaos:antimatter_huge_scythe",
+    "engies_chaos:engie_games_hallow_ban_hammer",
     "engies_chaos:antimatter_large_scythe",
+    "engies_chaos:engie_games_golden_anchor",
     "engies_chaos:antimatter_gigantic_scythe"
   ]
 }

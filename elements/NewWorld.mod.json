@@ -2,8 +2,8 @@
   "_fv": 79,
   "_type": "achievement",
   "definition": {
-    "achievementName": "Engie's Chaos",
-    "achievementDescription": "Create a new world with the Engie's Chaos mod installed.",
+    "achievementName": "Engie's Chaos // Main",
+    "achievementDescription": "Create a world with Engie's Chaos installed.",
     "achievementIcon": {
       "value": "CUSTOM:REAllAboutEngieAdvancementIcon"
     },
@@ -14,7 +14,9 @@
     "hideIfNotCompleted": false,
     "rewardLoot": [],
     "rewardRecipes": [
-      "SharkoClothCraft"
+      "SharkoClothCraft",
+      "AntimatterCraft",
+      "DarkMatterCraft"
     ],
     "rewardXP": 0,
     "achievementType": "task",

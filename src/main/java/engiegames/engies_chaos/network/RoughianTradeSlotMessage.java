@@ -12,10 +12,10 @@ import net.minecraft.core.BlockPos;
 
 import java.util.function.Supplier;
 
-import engiegames.engies_chaos.procedures.CosmicTradeItemTakenFromRegSlot2Procedure;
-import engiegames.engies_chaos.procedures.CosmicTradeItemTakenFromRegSlot1Procedure;
-import engiegames.engies_chaos.procedures.CosmicTradeItemTakenFromDarkSlot2Procedure;
-import engiegames.engies_chaos.procedures.CosmicTradeItemTakenFromDarkSlot1Procedure;
+import engiegames.engies_chaos.procedures.RoughianTradeItemTakenFromRegSlot2Procedure;
+import engiegames.engies_chaos.procedures.RoughianTradeItemTakenFromRegSlot1Procedure;
+import engiegames.engies_chaos.procedures.RoughianTradeItemTakenFromDarkSlot2Procedure;
+import engiegames.engies_chaos.procedures.RoughianTradeItemTakenFromDarkSlot1Procedure;
 import engiegames.engies_chaos.EngiesChaosMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -63,22 +63,22 @@ public class RoughianTradeSlotMessage {
 		if (slot == 2 && changeType == 1) {
 			int amount = meta;
 
-			CosmicTradeItemTakenFromRegSlot1Procedure.execute(entity);
+			RoughianTradeItemTakenFromRegSlot1Procedure.execute(entity);
 		}
 		if (slot == 3 && changeType == 1) {
 			int amount = meta;
 
-			CosmicTradeItemTakenFromRegSlot2Procedure.execute(entity);
+			RoughianTradeItemTakenFromRegSlot2Procedure.execute(entity);
 		}
 		if (slot == 6 && changeType == 1) {
 			int amount = meta;
 
-			CosmicTradeItemTakenFromDarkSlot1Procedure.execute(entity);
+			RoughianTradeItemTakenFromDarkSlot1Procedure.execute(entity);
 		}
 		if (slot == 7 && changeType == 1) {
 			int amount = meta;
 
-			CosmicTradeItemTakenFromDarkSlot2Procedure.execute(entity);
+			RoughianTradeItemTakenFromDarkSlot2Procedure.execute(entity);
 		}
 	}
 

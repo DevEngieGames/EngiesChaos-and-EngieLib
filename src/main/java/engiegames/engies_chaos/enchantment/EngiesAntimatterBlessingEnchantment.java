@@ -13,7 +13,7 @@ import java.util.List;
 
 public class EngiesAntimatterBlessingEnchantment extends Enchantment {
 	private static final EnchantmentCategory ENCHANTMENT_CATEGORY = EnchantmentCategory.create("engies_chaos_engies_antimatter_blessing",
-			item -> Ingredient.of(ItemTags.create(new ResourceLocation("allaboutengie:enchantable/engiesantimatterblessing"))).test(new ItemStack(item)));
+			item -> Ingredient.of(ItemTags.create(new ResourceLocation("engies_chaos:enchantable/engies_matter_blessing"))).test(new ItemStack(item)));
 
 	public EngiesAntimatterBlessingEnchantment() {
 		super(Enchantment.Rarity.UNCOMMON, ENCHANTMENT_CATEGORY, new EquipmentSlot[]{EquipmentSlot.MAINHAND});

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:roughian_engie_games_sword"
+  },
+  "addition": {
+    "item": "engies_chaos:x_engie_upgrade_sword"
+  },
+  "result": {
+    "item": "engies_chaos:x_engie_sword"
+  }
+}

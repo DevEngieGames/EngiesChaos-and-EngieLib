@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#engies_chaos:mobs/stunable",
+      "required": false
+    }
+  ]
+}

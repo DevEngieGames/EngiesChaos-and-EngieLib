@@ -15,6 +15,8 @@ import net.minecraft.core.BlockPos;
 
 import io.netty.buffer.Unpooled;
 
+import engiegames.engies_chaos.world.inventory.SuperDoomsdayTradeMenu;
+
 public class SuperDoomsdayButtonClickedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
@@ -24,12 +26,12 @@ public class SuperDoomsdayButtonClickedProcedure {
 			NetworkHooks.openScreen((ServerPlayer) _ent, new MenuProvider() {
 				@Override
 				public Component getDisplayName() {
-					return Component.literal("SuperDoomsDayTradeUI");
+					return Component.literal("SuperDoomsdayTrade");
 				}
 
 				@Override
 				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-					return new SuperDoomsDayTradeUIMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
+					return new SuperDoomsdayTradeMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
 				}
 			}, _bpos);
 		}

@@ -27,7 +27,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Collections;
 
-import engiegames.engies_chaos.procedures.CosmicTradeTickProcedure;
+import engiegames.engies_chaos.procedures.RoughianTradeTickProcedure;
 import engiegames.engies_chaos.network.RoughianTradeSlotMessage;
 import engiegames.engies_chaos.init.EngiesChaosModMenus;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
@@ -100,7 +100,7 @@ public class RoughianTradeMenu extends AbstractContainerMenu implements EngiesCh
 
 			@Override
 			public boolean mayPlace(ItemStack stack) {
-				return EngiesChaosModItems.COSMIC_ENGIE_COIN.get() == stack.getItem();
+				return EngiesChaosModItems.ENGIE_GAMES_TESSERACT.get() == stack.getItem();
 			}
 		}));
 		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 52, 16) {
@@ -110,7 +110,7 @@ public class RoughianTradeMenu extends AbstractContainerMenu implements EngiesCh
 
 			@Override
 			public boolean mayPlace(ItemStack stack) {
-				return EngiesChaosModItems.COSMIC_ENGIE_COIN.get() == stack.getItem();
+				return EngiesChaosModItems.ENGIE_GAMES_TESSERACT.get() == stack.getItem();
 			}
 		}));
 		this.customSlots.put(4, this.addSlot(new SlotItemHandler(internal, 4, 17, 42) {
@@ -120,7 +120,7 @@ public class RoughianTradeMenu extends AbstractContainerMenu implements EngiesCh
 
 			@Override
 			public boolean mayPlace(ItemStack stack) {
-				return EngiesChaosModItems.DARK_MATTER_COSMIC_ENGIE_COIN.get() == stack.getItem();
+				return EngiesChaosModItems.DARK_MATTER_ENGIE_GAMES_TESSERACT.get() == stack.getItem();
 			}
 		}));
 		this.customSlots.put(5, this.addSlot(new SlotItemHandler(internal, 5, 52, 42) {
@@ -130,7 +130,7 @@ public class RoughianTradeMenu extends AbstractContainerMenu implements EngiesCh
 
 			@Override
 			public boolean mayPlace(ItemStack stack) {
-				return EngiesChaosModItems.DARK_MATTER_COSMIC_ENGIE_COIN.get() == stack.getItem();
+				return EngiesChaosModItems.DARK_MATTER_ENGIE_GAMES_TESSERACT.get() == stack.getItem();
 			}
 		}));
 		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 107, 16) {
@@ -384,7 +384,7 @@ public class RoughianTradeMenu extends AbstractContainerMenu implements EngiesCh
 			double x = menu.x;
 			double y = menu.y;
 			double z = menu.z;
-			CosmicTradeTickProcedure.execute(entity);
+			RoughianTradeTickProcedure.execute(entity);
 		}
 	}
 }

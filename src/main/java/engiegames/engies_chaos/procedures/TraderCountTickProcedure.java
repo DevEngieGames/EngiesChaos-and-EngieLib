@@ -30,7 +30,7 @@ public class TraderCountTickProcedure {
 		if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.OVERWORLD) {
 			EngiesChaosModVariables.MapVariables.get(world).tradertimercounttick = EngiesChaosModVariables.MapVariables.get(world).tradertimercounttick + 0.05;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-			if (EngiesChaosModVariables.MapVariables.get(world).tradertimercounttick >= 1) {
+			if (EngiesChaosModVariables.MapVariables.get(world).tradertimercounttick >= 5) {
 				EngiesChaosModVariables.MapVariables.get(world).tradertimercounttick = 0;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
@@ -48,6 +48,8 @@ public class TraderCountTickProcedure {
 				EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+				EngiesChaosModVariables.MapVariables.get(world).traderneedcount = true;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			}
 		}

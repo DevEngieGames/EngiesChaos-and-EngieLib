@@ -12,7 +12,8 @@ import net.minecraft.core.BlockPos;
 
 import java.util.function.Supplier;
 
-import engiegames.engies_chaos.procedures.EngieTradeItemTakenFromRegSlot1Procedure;
+import engiegames.engies_chaos.procedures.MindscapeTradeItemTakenFromSlot2Procedure;
+import engiegames.engies_chaos.procedures.MindscapeTradeItemTakenFromSlot1Procedure;
 import engiegames.engies_chaos.EngiesChaosMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -60,12 +61,12 @@ public class MindscapeTradeSlotMessage {
 		if (slot == 2 && changeType == 1) {
 			int amount = meta;
 
-			EngieTradeItemTakenFromRegSlot1Procedure.execute(entity);
+			MindscapeTradeItemTakenFromSlot1Procedure.execute(entity);
 		}
 		if (slot == 3 && changeType == 1) {
 			int amount = meta;
 
-			EngieTradeItemTakenFromRegSlot1Procedure.execute(entity);
+			MindscapeTradeItemTakenFromSlot2Procedure.execute(entity);
 		}
 	}
 

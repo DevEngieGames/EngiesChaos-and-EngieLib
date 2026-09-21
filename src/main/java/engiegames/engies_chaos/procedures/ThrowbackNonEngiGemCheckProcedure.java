@@ -38,7 +38,7 @@ public class ThrowbackNonEngiGemCheckProcedure {
 			if (entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null) instanceof IItemHandler _modHandlerIter) {
 				for (int _idx = 0; _idx < _modHandlerIter.getSlots(); _idx++) {
 					ItemStack itemstackiterator = _modHandlerIter.getStackInSlot(_idx).copy();
-					if (itemstackiterator.is(ItemTags.create(new ResourceLocation("allaboutengie:throwback/disableditems")))) {
+					if (itemstackiterator.is(ItemTags.create(new ResourceLocation("engies_chaos:throwback/disableditems")))) {
 						if (entity instanceof Player _player) {
 							ItemStack _stktoremove = itemstackiterator;
 							_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());

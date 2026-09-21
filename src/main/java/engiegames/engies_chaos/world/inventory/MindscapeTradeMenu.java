@@ -27,7 +27,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Collections;
 
-import engiegames.engies_chaos.procedures.EngieTradeTickProcedure;
+import engiegames.engies_chaos.procedures.MindscapeTradeTickProcedure;
 import engiegames.engies_chaos.network.MindscapeTradeSlotMessage;
 import engiegames.engies_chaos.init.EngiesChaosModMenus;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
@@ -100,7 +100,7 @@ public class MindscapeTradeMenu extends AbstractContainerMenu implements EngiesC
 
 			@Override
 			public boolean mayPlace(ItemStack stack) {
-				return EngiesChaosModItems.ENGIE_COIN.get() == stack.getItem();
+				return EngiesChaosModItems.MINDSCAPE_COIN.get() == stack.getItem();
 			}
 		}));
 		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 52, 34) {
@@ -110,7 +110,7 @@ public class MindscapeTradeMenu extends AbstractContainerMenu implements EngiesC
 
 			@Override
 			public boolean mayPlace(ItemStack stack) {
-				return EngiesChaosModItems.ENGIE_COIN.get() == stack.getItem();
+				return EngiesChaosModItems.MINDSCAPE_COIN.get() == stack.getItem();
 			}
 		}));
 		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 107, 34) {
@@ -328,7 +328,7 @@ public class MindscapeTradeMenu extends AbstractContainerMenu implements EngiesC
 			double x = menu.x;
 			double y = menu.y;
 			double z = menu.z;
-			EngieTradeTickProcedure.execute(entity);
+			MindscapeTradeTickProcedure.execute(entity);
 		}
 	}
 }

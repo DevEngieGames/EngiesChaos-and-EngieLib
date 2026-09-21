@@ -19,7 +19,7 @@
       ],
       "rotation": {
         "angle": 0,
-        "axis": "y",
+        "axis": "x",
         "origin": [
           8,
           -13,
@@ -2661,7 +2661,7 @@
     "thirdperson_righthand": {
       "translation": [
         0,
-        5.25,
+        7.5,
         2
       ],
       "scale": [
@@ -2673,7 +2673,7 @@
     "thirdperson_lefthand": {
       "translation": [
         0,
-        5.25,
+        7.5,
         2
       ],
       "scale": [

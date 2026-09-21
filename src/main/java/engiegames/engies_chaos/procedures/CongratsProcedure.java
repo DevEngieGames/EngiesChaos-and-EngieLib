@@ -5,6 +5,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.TickEvent;
 
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
@@ -14,20 +15,22 @@ import net.minecraft.advancements.Advancement;
 
 import javax.annotation.Nullable;
 
+import engiegames.engies_chaos.init.EngiesChaosModGameRules;
+
 @Mod.EventBusSubscriber
 public class CongratsProcedure {
 	@SubscribeEvent
 	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
 		if (event.phase == TickEvent.Phase.END) {
-			execute(event, event.player);
+			execute(event, event.player.level, event.player);
 		}
 	}
 
-	public static void execute(Entity entity) {
-		execute(null, entity);
+	public static void execute(LevelAccessor world, Entity entity) {
+		execute(null, world, entity);
 	}
 
-	private static void execute(@Nullable Event event, Entity entity) {
+	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
 		if (entity instanceof ServerPlayer _plr0 && _plr0.level instanceof ServerLevel
@@ -84,7 +87,7 @@ public class CongratsProcedure {
 																										if (entity instanceof ServerPlayer _plr24 && _plr24.level instanceof ServerLevel
 																												&& _plr24.getAdvancements()
 																														.getOrStartProgress(
-																																_plr24.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:mindscape_engie_armor_obtained")))
+																																_plr24.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_games_armor_obtained")))
 																														.isDone()) {
 																											if (entity instanceof ServerPlayer _plr25 && _plr25.level instanceof ServerLevel
 																													&& _plr25.getAdvancements()
@@ -636,7 +639,7 @@ public class CongratsProcedure {
 																																																																																																.getAdvancements()
 																																																																																																.getAdvancement(
 																																																																																																		new ResourceLocation(
-																																																																																																				"engies_chaos:antimatter_super_doomsday_ban_scythe_obtain")))
+																																																																																																				"engies_chaos:antimatter_super_dooms_day_tools_obtained")))
 																																																																																												.isDone()) {
 																																																																																									if (entity instanceof ServerPlayer _plr87
 																																																																																											&& _plr87.level instanceof ServerLevel
@@ -904,6 +907,42 @@ public class CongratsProcedure {
 																																																																																																																_player.getAdvancements()
 																																																																																																																		.award(_adv,
 																																																																																																																				criteria);
+																																																																																																														}
+																																																																																																													}
+																																																																																																												}
+																																																																																																												if (world
+																																																																																																														.getLevelData()
+																																																																																																														.getGameRules()
+																																																																																																														.getBoolean(
+																																																																																																																EngiesChaosModGameRules.ENGIE_POC) == true) {
+																																																																																																													if (!(entity instanceof ServerPlayer _plr111
+																																																																																																															&& _plr111.level instanceof ServerLevel
+																																																																																																															&& _plr111
+																																																																																																																	.getAdvancements()
+																																																																																																																	.getOrStartProgress(
+																																																																																																																			_plr111.server
+																																																																																																																					.getAdvancements()
+																																																																																																																					.getAdvancement(
+																																																																																																																							new ResourceLocation(
+																																																																																																																									"engies_chaos:engie_poc_all_fully_done")))
+																																																																																																																	.isDone())) {
+																																																																																																														if (entity instanceof ServerPlayer _player) {
+																																																																																																															Advancement _adv = _player.server
+																																																																																																																	.getAdvancements()
+																																																																																																																	.getAdvancement(
+																																																																																																																			new ResourceLocation(
+																																																																																																																					"engies_chaos:engie_poc_all_fully_done"));
+																																																																																																															AdvancementProgress _ap = _player
+																																																																																																																	.getAdvancements()
+																																																																																																																	.getOrStartProgress(
+																																																																																																																			_adv);
+																																																																																																															if (!_ap.isDone()) {
+																																																																																																																for (String criteria : _ap
+																																																																																																																		.getRemainingCriteria())
+																																																																																																																	_player.getAdvancements()
+																																																																																																																			.award(_adv,
+																																																																																																																					criteria);
+																																																																																																															}
 																																																																																																														}
 																																																																																																													}
 																																																																																																												}

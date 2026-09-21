@@ -12,7 +12,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.core.BlockPos;
 
-import engiegames.engies_chaos.procedures.EngiesObtainProProcedure;
+import engiegames.engies_chaos.procedures.EngieGamesObtainProProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModTabs;
 
 import com.google.common.collect.Multimap;
@@ -60,6 +60,6 @@ public class AntimatterEngieGamesBanHammerItem extends Item {
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		EngiesObtainProProcedure.execute(world, entity, itemstack);
+		EngieGamesObtainProProcedure.execute(world, entity, itemstack);
 	}
 }

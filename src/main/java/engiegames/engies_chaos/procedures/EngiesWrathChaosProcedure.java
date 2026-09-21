@@ -136,101 +136,209 @@ public class EngiesWrathChaosProcedure {
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				EngiesChaosModVariables.MapVariables.get(world).hordecooldown = EngiesChaosModVariables.MapVariables.get(world).hordecooldown - 0.05;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				if (EngiesChaosModVariables.MapVariables.get(world).extremeddaylightningenabled == true) {
-					if (EngiesChaosModVariables.MapVariables.get(world).lightningcooldown >= 0.4) {
-						EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						if (Mth.nextDouble(RandomSource.create(), 1, 100) < 85) {
-							if (world instanceof ServerLevel _level)
-								_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
-										Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos lightning");
-						} else if (Mth.nextDouble(RandomSource.create(), 1, 100) >= 85) {
-							EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = -2.5;
+				if (EngiesChaosModVariables.MapVariables.get(world).engiestruewrath == true) {
+					if (EngiesChaosModVariables.MapVariables.get(world).extremeddaylightningenabled == true) {
+						if (EngiesChaosModVariables.MapVariables.get(world).lightningcooldown >= 0.15) {
+							EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = 0;
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							if (world instanceof ServerLevel _level)
-								_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
-										Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos lightning2");
-							EngiesChaosModVariables.MapVariables.get(world).ddayscornerlightning = true;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							EngiesChaosMod.queueServerWork(10, () -> {
+							if (Mth.nextDouble(RandomSource.create(), 1, 100) < 85) {
+								if (world instanceof ServerLevel _level)
+									_level.getServer().getCommands()
+											.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO, _level, 4,
+													"", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos lightning");
+							} else if (Mth.nextDouble(RandomSource.create(), 1, 100) >= 85) {
+								EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = -2.5;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								if (world instanceof ServerLevel _level)
+									_level.getServer().getCommands()
+											.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO, _level, 4,
+													"", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos lightning2");
+								EngiesChaosModVariables.MapVariables.get(world).ddayscornerlightning = true;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 								EngiesChaosMod.queueServerWork(10, () -> {
 									EngiesChaosMod.queueServerWork(10, () -> {
 										EngiesChaosMod.queueServerWork(10, () -> {
-											EngiesChaosModVariables.MapVariables.get(world).ddayscornerlightning = false;
-											EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+											EngiesChaosMod.queueServerWork(10, () -> {
+												EngiesChaosModVariables.MapVariables.get(world).ddayscornerlightning = false;
+												EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+											});
 										});
 									});
 								});
-							});
+							}
 						}
-					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).extremeddaylightningenabled == false) {
-					if (EngiesChaosModVariables.MapVariables.get(world).lightningcooldown >= 0.5) {
-						EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						if (Mth.nextDouble(RandomSource.create(), 1, 100) < 85) {
-							if (world instanceof ServerLevel _level)
-								_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
-										Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos lightning");
-						} else if (Mth.nextDouble(RandomSource.create(), 1, 100) >= 85) {
-							EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = -2.5;
+					} else if (EngiesChaosModVariables.MapVariables.get(world).extremeddaylightningenabled == false) {
+						if (EngiesChaosModVariables.MapVariables.get(world).lightningcooldown >= 0.25) {
+							EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = 0;
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							if (world instanceof ServerLevel _level)
-								_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
-										Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos lightning2");
-							EngiesChaosModVariables.MapVariables.get(world).ddayscornerlightning = true;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							EngiesChaosMod.queueServerWork(10, () -> {
+							if (Mth.nextDouble(RandomSource.create(), 1, 100) < 85) {
+								if (world instanceof ServerLevel _level)
+									_level.getServer().getCommands()
+											.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO, _level, 4,
+													"", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos lightning");
+							} else if (Mth.nextDouble(RandomSource.create(), 1, 100) >= 85) {
+								EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = -2.5;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								if (world instanceof ServerLevel _level)
+									_level.getServer().getCommands()
+											.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO, _level, 4,
+													"", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos lightning2");
+								EngiesChaosModVariables.MapVariables.get(world).ddayscornerlightning = true;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 								EngiesChaosMod.queueServerWork(10, () -> {
 									EngiesChaosMod.queueServerWork(10, () -> {
 										EngiesChaosMod.queueServerWork(10, () -> {
-											EngiesChaosModVariables.MapVariables.get(world).ddayscornerlightning = false;
-											EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+											EngiesChaosMod.queueServerWork(10, () -> {
+												EngiesChaosModVariables.MapVariables.get(world).ddayscornerlightning = false;
+												EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+											});
 										});
 									});
 								});
-							});
+							}
 						}
 					}
-				}
-				if (EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown <= 0) {
-					EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5));
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (Math.random() <= 0.25) {
-						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
-									Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos darkness");
+					if (EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown <= 0) {
+						EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 2.5));
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						if (Math.random() <= 0.25) {
+							if (world instanceof ServerLevel _level)
+								_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
+										Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos darkness");
+						}
 					}
-				}
-				if (EngiesChaosModVariables.MapVariables.get(world).missilecooldown <= 0) {
-					EngiesChaosModVariables.MapVariables.get(world).missilecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5));
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					for (int index4 = 0; index4 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 5)); index4++) {
-						MissileSpawnProcedure.execute(world);
+					if (EngiesChaosModVariables.MapVariables.get(world).missilecooldown <= 0) {
+						EngiesChaosModVariables.MapVariables.get(world).missilecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 2.5));
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						for (int index4 = 0; index4 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 5)); index4++) {
+							MissileSpawnProcedure.execute(world);
+						}
 					}
-				}
-				if (EngiesChaosModVariables.MapVariables.get(world).riftcooldown <= 0) {
-					EngiesChaosModVariables.MapVariables.get(world).riftcooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5));
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					for (int index5 = 0; index5 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 5)); index5++) {
-						RiftSpawnsProcedure.execute(world);
+					if (EngiesChaosModVariables.MapVariables.get(world).riftcooldown <= 0) {
+						EngiesChaosModVariables.MapVariables.get(world).riftcooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 2.5));
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						for (int index5 = 0; index5 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 5)); index5++) {
+							RiftSpawnsProcedure.execute(world);
+						}
 					}
-				}
-				if (EngiesChaosModVariables.MapVariables.get(world).spikecooldown <= 0) {
-					EngiesChaosModVariables.MapVariables.get(world).spikecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5));
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					SpikeSpawnsProcedure.execute(world);
-				}
-				if (EngiesChaosModVariables.MapVariables.get(world).avalanchecooldown <= 0) {
-					EngiesChaosModVariables.MapVariables.get(world).avalanchecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5));
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					AvalancheSpawnProcedure.execute(world);
-				}
-				if (EngiesChaosModVariables.MapVariables.get(world).hordecooldown <= 0) {
-					EngiesChaosModVariables.MapVariables.get(world).hordecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5));
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					for (int index6 = 0; index6 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 5)); index6++) {
-						HordeSpawnsProcedure.execute(world);
+					if (EngiesChaosModVariables.MapVariables.get(world).spikecooldown <= 0) {
+						EngiesChaosModVariables.MapVariables.get(world).spikecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 2.5));
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						SpikeSpawnsProcedure.execute(world);
+					}
+					if (EngiesChaosModVariables.MapVariables.get(world).avalanchecooldown <= 0) {
+						EngiesChaosModVariables.MapVariables.get(world).avalanchecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 2.5));
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						AvalancheSpawnProcedure.execute(world);
+					}
+					if (EngiesChaosModVariables.MapVariables.get(world).hordecooldown <= 0) {
+						EngiesChaosModVariables.MapVariables.get(world).hordecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 2.5));
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						for (int index6 = 0; index6 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 5)); index6++) {
+							HordeSpawnsProcedure.execute(world);
+						}
+					}
+				} else if (EngiesChaosModVariables.MapVariables.get(world).engiestruewrath == false) {
+					if (EngiesChaosModVariables.MapVariables.get(world).extremeddaylightningenabled == true) {
+						if (EngiesChaosModVariables.MapVariables.get(world).lightningcooldown >= 0.4) {
+							EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = 0;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							if (Mth.nextDouble(RandomSource.create(), 1, 100) < 85) {
+								if (world instanceof ServerLevel _level)
+									_level.getServer().getCommands()
+											.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO, _level, 4,
+													"", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos lightning");
+							} else if (Mth.nextDouble(RandomSource.create(), 1, 100) >= 85) {
+								EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = -2.5;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								if (world instanceof ServerLevel _level)
+									_level.getServer().getCommands()
+											.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO, _level, 4,
+													"", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos lightning2");
+								EngiesChaosModVariables.MapVariables.get(world).ddayscornerlightning = true;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosMod.queueServerWork(10, () -> {
+									EngiesChaosMod.queueServerWork(10, () -> {
+										EngiesChaosMod.queueServerWork(10, () -> {
+											EngiesChaosMod.queueServerWork(10, () -> {
+												EngiesChaosModVariables.MapVariables.get(world).ddayscornerlightning = false;
+												EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+											});
+										});
+									});
+								});
+							}
+						}
+					} else if (EngiesChaosModVariables.MapVariables.get(world).extremeddaylightningenabled == false) {
+						if (EngiesChaosModVariables.MapVariables.get(world).lightningcooldown >= 0.5) {
+							EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = 0;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							if (Mth.nextDouble(RandomSource.create(), 1, 100) < 85) {
+								if (world instanceof ServerLevel _level)
+									_level.getServer().getCommands()
+											.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO, _level, 4,
+													"", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos lightning");
+							} else if (Mth.nextDouble(RandomSource.create(), 1, 100) >= 85) {
+								EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = -2.5;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								if (world instanceof ServerLevel _level)
+									_level.getServer().getCommands()
+											.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO, _level, 4,
+													"", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos lightning2");
+								EngiesChaosModVariables.MapVariables.get(world).ddayscornerlightning = true;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosMod.queueServerWork(10, () -> {
+									EngiesChaosMod.queueServerWork(10, () -> {
+										EngiesChaosMod.queueServerWork(10, () -> {
+											EngiesChaosMod.queueServerWork(10, () -> {
+												EngiesChaosModVariables.MapVariables.get(world).ddayscornerlightning = false;
+												EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+											});
+										});
+									});
+								});
+							}
+						}
+					}
+					if (EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown <= 0) {
+						EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5));
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						if (Math.random() <= 0.25) {
+							if (world instanceof ServerLevel _level)
+								_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
+										Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos darkness");
+						}
+					}
+					if (EngiesChaosModVariables.MapVariables.get(world).missilecooldown <= 0) {
+						EngiesChaosModVariables.MapVariables.get(world).missilecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5));
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						for (int index7 = 0; index7 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 5)); index7++) {
+							MissileSpawnProcedure.execute(world);
+						}
+					}
+					if (EngiesChaosModVariables.MapVariables.get(world).riftcooldown <= 0) {
+						EngiesChaosModVariables.MapVariables.get(world).riftcooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5));
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						for (int index8 = 0; index8 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 5)); index8++) {
+							RiftSpawnsProcedure.execute(world);
+						}
+					}
+					if (EngiesChaosModVariables.MapVariables.get(world).spikecooldown <= 0) {
+						EngiesChaosModVariables.MapVariables.get(world).spikecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5));
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						SpikeSpawnsProcedure.execute(world);
+					}
+					if (EngiesChaosModVariables.MapVariables.get(world).avalanchecooldown <= 0) {
+						EngiesChaosModVariables.MapVariables.get(world).avalanchecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5));
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						AvalancheSpawnProcedure.execute(world);
+					}
+					if (EngiesChaosModVariables.MapVariables.get(world).hordecooldown <= 0) {
+						EngiesChaosModVariables.MapVariables.get(world).hordecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5));
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						for (int index9 = 0; index9 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 5)); index9++) {
+							HordeSpawnsProcedure.execute(world);
+						}
 					}
 				}
 			}

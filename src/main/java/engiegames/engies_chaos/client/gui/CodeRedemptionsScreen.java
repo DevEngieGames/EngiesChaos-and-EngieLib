@@ -91,16 +91,16 @@ public class CodeRedemptionsScreen extends AbstractContainerScreen<CodeRedemptio
 	@Override
 	protected void renderLabels(PoseStack ms, int mouseX, int mouseY) {
 		this.font.draw(ms, Component.translatable("gui.engies_chaos.code_redemptions.label_reall_about_engie_configuration"), 4, 4, -16777216);
-		this.font.draw(ms, Component.translatable("gui.engies_chaos.code_redemptions.label_yearly_codes"), 3, 23, -16777216);
-		this.font.draw(ms, Component.translatable("gui.engies_chaos.code_redemptions.label_happynewyears"), 3, 34, -16777216);
-		this.font.draw(ms, Component.translatable("gui.engies_chaos.code_redemptions.label_merrychristmas"), 3, 45, -16777216);
-		this.font.draw(ms, Component.translatable("gui.engies_chaos.code_redemptions.label_happybirthdayengie"), 3, 56, -16777216);
+		this.font.draw(ms, Component.translatable("gui.engies_chaos.code_redemptions.label_yearly_codes"), 4, 23, -16777216);
+		this.font.draw(ms, Component.translatable("gui.engies_chaos.code_redemptions.label_happynewyears"), 4, 34, -16777216);
+		this.font.draw(ms, Component.translatable("gui.engies_chaos.code_redemptions.label_merrychristmas"), 4, 45, -16777216);
+		this.font.draw(ms, Component.translatable("gui.engies_chaos.code_redemptions.label_happybirthdayengie"), 4, 56, -16777216);
 		if (StarCheckForCodeRedempProcedure.execute(entity))
-			this.font.draw(ms, Component.translatable("gui.engies_chaos.code_redemptions.label_for_star"), 200, 23, -16777216);
+			this.font.draw(ms, Component.translatable("gui.engies_chaos.code_redemptions.label_for_star"), 199, 24, -16777216);
 		if (StarCheckForCodeRedempProcedure.execute(entity))
-			this.font.draw(ms, Component.translatable("gui.engies_chaos.code_redemptions.label_phantom"), 200, 34, -16777216);
+			this.font.draw(ms, Component.translatable("gui.engies_chaos.code_redemptions.label_phantom"), 199, 35, -16777216);
 		if (StarCheckForCodeRedempProcedure.execute(entity))
-			this.font.draw(ms, Component.translatable("gui.engies_chaos.code_redemptions.label_scarlet"), 200, 45, -16777216);
+			this.font.draw(ms, Component.translatable("gui.engies_chaos.code_redemptions.label_scarlet"), 199, 46, -16777216);
 	}
 
 	@Override
@@ -114,7 +114,7 @@ public class CodeRedemptionsScreen extends AbstractContainerScreen<CodeRedemptio
 		});
 		codeinput.setSuggestion(Component.translatable("gui.engies_chaos.code_redemptions.codeinput").getString());
 		this.addWidget(this.codeinput);
-		button_x = new Button(this.leftPos + 217, this.topPos + 3, 30, 20, Component.translatable("gui.engies_chaos.code_redemptions.button_x"), e -> {
+		button_x = new Button(this.leftPos + 216, this.topPos + 4, 30, 20, Component.translatable("gui.engies_chaos.code_redemptions.button_x"), e -> {
 			int x = CodeRedemptionsScreen.this.x;
 			int y = CodeRedemptionsScreen.this.y;
 			if (true) {
@@ -123,7 +123,7 @@ public class CodeRedemptionsScreen extends AbstractContainerScreen<CodeRedemptio
 			}
 		});
 		this.addRenderableWidget(button_x);
-		button_empty = new Button(this.leftPos + 3, this.topPos + 143, 28, 20, Component.translatable("gui.engies_chaos.code_redemptions.button_empty"), e -> {
+		button_empty = new Button(this.leftPos + 4, this.topPos + 142, 28, 20, Component.translatable("gui.engies_chaos.code_redemptions.button_empty"), e -> {
 			int x = CodeRedemptionsScreen.this.x;
 			int y = CodeRedemptionsScreen.this.y;
 			if (true) {

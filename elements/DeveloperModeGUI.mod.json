@@ -44,24 +44,10 @@
         }
       },
       {
-        "type": "tooltip",
-        "data": {
-          "name": "tooltip_max_50525",
-          "text": {
-            "fixedValue": "Max: 50525"
-          },
-          "width": 24,
-          "height": 24,
-          "x": 219,
-          "y": 11,
-          "locked": false
-        }
-      },
-      {
         "type": "inputslot",
         "data": {
           "inputLimit": {
-            "value": "TAG:allaboutengie:roughtools"
+            "value": "TAG:engies_chaos:regular_rough"
           },
           "disablePlacement": {
             "fixedValue": false
@@ -81,24 +67,10 @@
         }
       },
       {
-        "type": "tooltip",
-        "data": {
-          "name": "tooltip_max_101050",
-          "text": {
-            "fixedValue": "Max: 101050"
-          },
-          "width": 24,
-          "height": 24,
-          "x": 243,
-          "y": 11,
-          "locked": false
-        }
-      },
-      {
         "type": "inputslot",
         "data": {
           "inputLimit": {
-            "value": "TAG:allaboutengie:goldtools"
+            "value": "TAG:engies_chaos:gold_rough"
           },
           "disablePlacement": {
             "fixedValue": false
@@ -118,24 +90,10 @@
         }
       },
       {
-        "type": "tooltip",
-        "data": {
-          "name": "tooltip_max_151575",
-          "text": {
-            "fixedValue": "Max: 151575"
-          },
-          "width": 24,
-          "height": 24,
-          "x": 267,
-          "y": 11,
-          "locked": false
-        }
-      },
-      {
         "type": "inputslot",
         "data": {
           "inputLimit": {
-            "value": "TAG:allaboutengie:engietools"
+            "value": "TAG:engies_chaos:collectors_rough"
           },
           "disablePlacement": {
             "fixedValue": false

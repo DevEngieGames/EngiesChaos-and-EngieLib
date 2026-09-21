@@ -193,6 +193,7 @@ public class EngiesChaosModVariables {
 			clone.CrucifixOffHandDurabilityPercentage = original.CrucifixOffHandDurabilityPercentage;
 			clone.luckyblockrandom = original.luckyblockrandom;
 			clone.luckyblockrandomalt = original.luckyblockrandomalt;
+			clone.pickaxeonly = original.pickaxeonly;
 			if (!event.isWasDeath()) {
 				clone.firstplay = original.firstplay;
 				clone.RespawnNormInstantHealth = original.RespawnNormInstantHealth;
@@ -319,7 +320,6 @@ public class EngiesChaosModVariables {
 		public double playerobtainedcollectorshallowscythe = 0;
 		public double playerobtainedhallowscythecount = 0;
 		public double MobDiffBeforeChallenge = 0;
-		public double playerkilledmobswithoutpickaxeonlycount = 0;
 		public double doomsdaymainsongtimer = 0;
 		public double doomsdaytimer = 720.0;
 		public double darknessretrycooldown = 0.0;
@@ -505,6 +505,7 @@ public class EngiesChaosModVariables {
 		public double random25minutetimer = 0;
 		public boolean mobbasehpmulttoggle = false;
 		public boolean engiestruewrath = false;
+		public boolean resetpickaxeonlycount = false;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -567,7 +568,6 @@ public class EngiesChaosModVariables {
 			playerobtainedcollectorshallowscythe = nbt.getDouble("playerobtainedcollectorshallowscythe");
 			playerobtainedhallowscythecount = nbt.getDouble("playerobtainedhallowscythecount");
 			MobDiffBeforeChallenge = nbt.getDouble("MobDiffBeforeChallenge");
-			playerkilledmobswithoutpickaxeonlycount = nbt.getDouble("playerkilledmobswithoutpickaxeonlycount");
 			doomsdaymainsongtimer = nbt.getDouble("doomsdaymainsongtimer");
 			doomsdaytimer = nbt.getDouble("doomsdaytimer");
 			darknessretrycooldown = nbt.getDouble("darknessretrycooldown");
@@ -753,6 +753,7 @@ public class EngiesChaosModVariables {
 			random25minutetimer = nbt.getDouble("random25minutetimer");
 			mobbasehpmulttoggle = nbt.getBoolean("mobbasehpmulttoggle");
 			engiestruewrath = nbt.getBoolean("engiestruewrath");
+			resetpickaxeonlycount = nbt.getBoolean("resetpickaxeonlycount");
 		}
 
 		@Override
@@ -811,7 +812,6 @@ public class EngiesChaosModVariables {
 			nbt.putDouble("playerobtainedcollectorshallowscythe", playerobtainedcollectorshallowscythe);
 			nbt.putDouble("playerobtainedhallowscythecount", playerobtainedhallowscythecount);
 			nbt.putDouble("MobDiffBeforeChallenge", MobDiffBeforeChallenge);
-			nbt.putDouble("playerkilledmobswithoutpickaxeonlycount", playerkilledmobswithoutpickaxeonlycount);
 			nbt.putDouble("doomsdaymainsongtimer", doomsdaymainsongtimer);
 			nbt.putDouble("doomsdaytimer", doomsdaytimer);
 			nbt.putDouble("darknessretrycooldown", darknessretrycooldown);
@@ -997,6 +997,7 @@ public class EngiesChaosModVariables {
 			nbt.putDouble("random25minutetimer", random25minutetimer);
 			nbt.putBoolean("mobbasehpmulttoggle", mobbasehpmulttoggle);
 			nbt.putBoolean("engiestruewrath", engiestruewrath);
+			nbt.putBoolean("resetpickaxeonlycount", resetpickaxeonlycount);
 			return nbt;
 		}
 
@@ -1215,6 +1216,7 @@ public class EngiesChaosModVariables {
 		public double CrucifixOffHandDurabilityPercentage = 0;
 		public double luckyblockrandom = 0;
 		public double luckyblockrandomalt = 0;
+		public double pickaxeonly = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -1349,6 +1351,7 @@ public class EngiesChaosModVariables {
 			nbt.putDouble("CrucifixOffHandDurabilityPercentage", CrucifixOffHandDurabilityPercentage);
 			nbt.putDouble("luckyblockrandom", luckyblockrandom);
 			nbt.putDouble("luckyblockrandomalt", luckyblockrandomalt);
+			nbt.putDouble("pickaxeonly", pickaxeonly);
 			return nbt;
 		}
 
@@ -1480,6 +1483,7 @@ public class EngiesChaosModVariables {
 			CrucifixOffHandDurabilityPercentage = nbt.getDouble("CrucifixOffHandDurabilityPercentage");
 			luckyblockrandom = nbt.getDouble("luckyblockrandom");
 			luckyblockrandomalt = nbt.getDouble("luckyblockrandomalt");
+			pickaxeonly = nbt.getDouble("pickaxeonly");
 		}
 	}
 
@@ -1630,6 +1634,7 @@ public class EngiesChaosModVariables {
 					variables.CrucifixOffHandDurabilityPercentage = message.data.CrucifixOffHandDurabilityPercentage;
 					variables.luckyblockrandom = message.data.luckyblockrandom;
 					variables.luckyblockrandomalt = message.data.luckyblockrandomalt;
+					variables.pickaxeonly = message.data.pickaxeonly;
 				}
 			});
 			context.setPacketHandled(true);

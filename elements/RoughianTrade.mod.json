@@ -14,7 +14,7 @@
         "type": "inputslot",
         "data": {
           "inputLimit": {
-            "value": "CUSTOM:CosmicEngieCoin"
+            "value": "CUSTOM:EngieGamesTesseract"
           },
           "disablePlacement": {
             "fixedValue": false
@@ -33,7 +33,7 @@
         "type": "inputslot",
         "data": {
           "inputLimit": {
-            "value": "CUSTOM:CosmicEngieCoin"
+            "value": "CUSTOM:EngieGamesTesseract"
           },
           "disablePlacement": {
             "fixedValue": false
@@ -62,7 +62,7 @@
         "type": "inputslot",
         "data": {
           "inputLimit": {
-            "value": "CUSTOM:DarkMatterCosmicEngieCoin"
+            "value": "CUSTOM:DarkMatterEngieGamesTesseract"
           },
           "disablePlacement": {
             "fixedValue": false
@@ -81,7 +81,7 @@
         "type": "inputslot",
         "data": {
           "inputLimit": {
-            "value": "CUSTOM:DarkMatterCosmicEngieCoin"
+            "value": "CUSTOM:DarkMatterEngieGamesTesseract"
           },
           "disablePlacement": {
             "fixedValue": false
@@ -115,7 +115,7 @@
           },
           "dropItemsWhenNotBound": false,
           "onTakenFromSlot": {
-            "name": "CosmicTradeItemTakenFromRegSlot1"
+            "name": "RoughianTradeItemTakenFromRegSlot1"
           },
           "x": 232,
           "y": 52,
@@ -131,7 +131,7 @@
           },
           "dropItemsWhenNotBound": false,
           "onTakenFromSlot": {
-            "name": "CosmicTradeItemTakenFromRegSlot2"
+            "name": "RoughianTradeItemTakenFromRegSlot2"
           },
           "x": 268,
           "y": 52,
@@ -147,7 +147,7 @@
           },
           "dropItemsWhenNotBound": true,
           "onTakenFromSlot": {
-            "name": "CosmicTradeItemTakenFromDarkSlot1"
+            "name": "RoughianTradeItemTakenFromDarkSlot1"
           },
           "x": 232,
           "y": 78,
@@ -163,7 +163,7 @@
           },
           "dropItemsWhenNotBound": false,
           "onTakenFromSlot": {
-            "name": "CosmicTradeItemTakenFromDarkSlot2"
+            "name": "RoughianTradeItemTakenFromDarkSlot2"
           },
           "x": 268,
           "y": 78,
@@ -172,7 +172,7 @@
       }
     ],
     "onTick": {
-      "name": "CosmicTradeTick"
+      "name": "RoughianTradeTick"
     },
     "gridSettings": {
       "sx": 18,

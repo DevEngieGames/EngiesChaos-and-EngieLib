@@ -5,9 +5,10 @@
     "renderType": 1,
     "texture": "engie_bundle",
     "customModelName": "engies_own_bundle:default",
+    "guiTexture": "",
     "customProperties": {},
     "states": [],
-    "name": "Engies own Engie Bundle",
+    "name": "Engie's own Engie Bundle",
     "rarity": "EPIC",
     "creativeTabs": [],
     "stackSize": 1,
@@ -29,12 +30,18 @@
         "Happy birthday me."
       ]
     },
+    "glowCondition": {
+      "fixedValue": false
+    },
     "guiBoundTo": "EngiesOwnEngieBundleUI",
     "inventorySize": 125,
     "inventoryStackSize": 64,
     "enableRanged": false,
     "shootConstantly": false,
     "rangedItemChargesPower": false,
+    "projectile": {
+      "value": "Arrow"
+    },
     "projectileDisableAmmoCheck": false,
     "isFood": false,
     "nutritionalValue": 4,
@@ -46,6 +53,10 @@
     "isAlwaysEdible": false,
     "animation": "none",
     "isMusicDisc": false,
+    "musicDiscMusic": {
+      "value": ""
+    },
+    "musicDiscDescription": "",
     "musicDiscLengthInTicks": 0,
     "musicDiscAnalogOutput": 0,
     "providedBannerPatterns": []

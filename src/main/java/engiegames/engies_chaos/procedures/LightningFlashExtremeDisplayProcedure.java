@@ -16,10 +16,8 @@ public class LightningFlashExtremeDisplayProcedure {
 				|| EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart == true && EngiesChaosModVariables.MapVariables.get(world).sddaystart == true
 				|| EngiesChaosModVariables.MapVariables.get(world).TheEndStart == true && EngiesChaosModVariables.MapVariables.get(world).thestart == true
 				|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart == true && EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true)) {
-			if (world.getLevelData().isThundering()) {
-				if (EngiesChaosModVariables.MapVariables.get(world).heavylightningenabled == true && EngiesChaosModVariables.MapVariables.get(world).extremelightningenabled == true) {
-					return true;
-				}
+			if (EngiesChaosModVariables.MapVariables.get(world).heavylightningenabled == true && EngiesChaosModVariables.MapVariables.get(world).extremelightningenabled == true) {
+				return true;
 			}
 		}
 		return false;

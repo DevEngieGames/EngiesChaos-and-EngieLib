@@ -8,7 +8,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.Entity;
 
-import engiegames.engies_chaos.procedures.EngiesObtainProProcedure;
+import engiegames.engies_chaos.procedures.EngieGamesObtainProProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModTabs;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 
@@ -44,6 +44,6 @@ public class AntimatterEngieGamesScytheItem extends SwordItem {
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		EngiesObtainProProcedure.execute(world, entity, itemstack);
+		EngieGamesObtainProProcedure.execute(world, entity, itemstack);
 	}
 }

@@ -12,7 +12,7 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "smithingInputStack": {
-      "value": "CUSTOM:DarkMatterCosmicEngieGamesSword"
+      "value": "CUSTOM:DarkMatterCosmicScythe"
     },
     "smithingInputAdditionStack": {
       "value": "CUSTOM:DarkMatterEngieUpgrade"

@@ -11,6 +11,8 @@ import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
+import java.util.ArrayList;
+
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.init.EngiesChaosModGameRules;
 import engiegames.engies_chaos.EngiesChaosMod;
@@ -104,161 +106,50 @@ public class AAEAllCommandsProcedure {
 					}
 				}
 			}
-		} else if ((StringArgumentType.getString(arguments, "MainType")).equals("TraderCount") || (StringArgumentType.getString(arguments, "MainType")).equals("tradercount")) {
+		} else if ((StringArgumentType.getString(arguments, "MainType")).equals("PickaxeOnly") || (StringArgumentType.getString(arguments, "MainType")).equals("PickaxeOnly")) {
 			if ((StringArgumentType.getString(arguments, "AltType")).equals("Reset") || (StringArgumentType.getString(arguments, "AltType")).equals("reset")) {
 				if (entity.getPersistentData().getBoolean("EngiesChaos_Dev") == true) {
-					EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(Component.literal("Successfully reset trader counts."), false);
-					for (int index0 = 0; index0 < 10; index0++) {
-						EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 10;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 10;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 10;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 10;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 10;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 10;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 10;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosMod.queueServerWork(1, () -> {
-							EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						});
-					}
-					EngiesChaosMod.LOGGER.debug("THE DEVELOPER RESET THE TRADER COUNT!!!!!");
-				} else if (world.players().size() == 1) {
-					if (entity.hasPermissions(4)) {
-						EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						if (entity instanceof Player _player && !_player.level.isClientSide())
-							_player.displayClientMessage(Component.literal("Successfully reset trader counts."), false);
-						for (int index1 = 0; index1 < 10; index1++) {
-							EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 10;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 10;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 10;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 10;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 10;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 10;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 10;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							EngiesChaosMod.queueServerWork(1, () -> {
-								EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						_player.displayClientMessage(Component.literal("Successfully reset the Pickaxe Only count!"), true);
+					EngiesChaosMod.LOGGER.info((entity.getDisplayName().getString() + " reset the Pickaxe Only count for all players."));
+					for (Entity entityiterator : new ArrayList<>(world.players())) {
+						{
+							double _setval = 0;
+							entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.pickaxeonly = _setval;
+								capability.syncPlayerVariables(entityiterator);
 							});
 						}
-						EngiesChaosMod.LOGGER.debug((entity + " reset the trader count."));
+					}
+				} else if (world.players().size() == 1) {
+					if (entity.hasPermissions(4)) {
+						if (entity instanceof Player _player && !_player.level.isClientSide())
+							_player.displayClientMessage(Component.literal("Successfully reset the Pickaxe Only count!"), true);
+						EngiesChaosMod.LOGGER.info((entity.getDisplayName().getString() + " reset the Pickaxe Only count for all players."));
+						for (Entity entityiterator : new ArrayList<>(world.players())) {
+							{
+								double _setval = 0;
+								entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.pickaxeonly = _setval;
+									capability.syncPlayerVariables(entityiterator);
+								});
+							}
+						}
 					}
 				} else if (world.players().size() > 1) {
 					if (entity.hasPermissions(4)) {
-						EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						if (entity instanceof Player _player && !_player.level.isClientSide())
-							_player.displayClientMessage(Component.literal("Successfully reset trader counts."), false);
-						for (int index2 = 0; index2 < 10; index2++) {
-							EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 10;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 10;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 10;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 10;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 10;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 10;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 10;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							EngiesChaosMod.queueServerWork(1, () -> {
-								EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays = 0;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays = 0;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).numberoftheend = 0;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).numberofdistorted = 0;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).numberofengiegames = 0;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames = 0;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames = 0;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							});
+							_player.displayClientMessage(Component.literal("Successfully reset the Pickaxe Only count!"), true);
+						EngiesChaosMod.LOGGER.info((entity.getDisplayName().getString() + " reset the Pickaxe Only count for all players."));
+						for (Entity entityiterator : new ArrayList<>(world.players())) {
+							{
+								double _setval = 0;
+								entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.pickaxeonly = _setval;
+									capability.syncPlayerVariables(entityiterator);
+								});
+							}
 						}
-						EngiesChaosMod.LOGGER.debug((entity + " reset the trader count"));
 					}
 				} else {
 					{

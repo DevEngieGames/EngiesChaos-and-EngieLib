@@ -3,8 +3,8 @@
   "_type": "gamerule",
   "definition": {
     "type": "Logic",
-    "displayName": "[Engie's Chaos] Detective Mode",
-    "description": "Learn about lore, sets the in game day to above 100 days with a few different advancements to be obtained.",
+    "displayName": "Engie's Chaos // Lore Mode",
+    "description": "GETTING REWORKED SOON, NOT SUGGESTED TO ENABLE.",
     "category": "MISC",
     "defaultValueLogic": false,
     "defaultValueNumber": 0

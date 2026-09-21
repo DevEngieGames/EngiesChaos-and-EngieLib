@@ -41,7 +41,7 @@ public class SuperDoomsdayObtainProProcedure {
 				}
 			}
 		}
-		if (itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:items/strong_stun"))) || itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:items/normal_stun")))
+		if (itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:items/weak_stun"))) || itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:items/normal_stun")))
 				|| itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:items/strong_stun")))) {
 			StunKeyTickProcedure.execute(world, entity, itemstack);
 		}

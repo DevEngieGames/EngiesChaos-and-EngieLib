@@ -39,7 +39,7 @@ public class OutragedEngieToolObtainProcedure {
 				}
 			}
 		}
-		if (itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:items/pickaxe_only/strong_stun"))) || itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:items/pickaxe_only/normal_stun")))
+		if (itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:items/pickaxe_only/weak_stun"))) || itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:items/pickaxe_only/normal_stun")))
 				|| itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:items/pickaxe_only/strong_stun")))) {
 			StunKeyTickProcedure.execute(world, entity, itemstack);
 		}

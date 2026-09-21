@@ -38,7 +38,7 @@ public class DeveloperModeGUIMenu extends AbstractContainerMenu implements Engie
 	public final Map<String, Object> menuState = new HashMap<>() {
 		@Override
 		public Object put(String key, Object value) {
-			if (!this.containsKey(key) && this.size() >= 30)
+			if (!this.containsKey(key) && this.size() >= 27)
 				return null;
 			return super.put(key, value);
 		}
@@ -100,7 +100,7 @@ public class DeveloperModeGUIMenu extends AbstractContainerMenu implements Engie
 
 			@Override
 			public boolean mayPlace(ItemStack stack) {
-				return stack.is(ItemTags.create(new ResourceLocation("allaboutengie:roughtools")));
+				return stack.is(ItemTags.create(new ResourceLocation("engies_chaos:regular_rough")));
 			}
 		}));
 		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 156, 15) {
@@ -110,7 +110,7 @@ public class DeveloperModeGUIMenu extends AbstractContainerMenu implements Engie
 
 			@Override
 			public boolean mayPlace(ItemStack stack) {
-				return stack.is(ItemTags.create(new ResourceLocation("allaboutengie:goldtools")));
+				return stack.is(ItemTags.create(new ResourceLocation("engies_chaos:gold_rough")));
 			}
 		}));
 		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 180, 15) {
@@ -120,7 +120,7 @@ public class DeveloperModeGUIMenu extends AbstractContainerMenu implements Engie
 
 			@Override
 			public boolean mayPlace(ItemStack stack) {
-				return stack.is(ItemTags.create(new ResourceLocation("allaboutengie:engietools")));
+				return stack.is(ItemTags.create(new ResourceLocation("engies_chaos:collectors_rough")));
 			}
 		}));
 		this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 210, 59) {

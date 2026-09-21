@@ -12,7 +12,7 @@
     "name": "Hallow's Anchor",
     "specialInformation": {
       "fixedValue": [],
-      "name": "EngieGamesAnchorSpecialInformation"
+      "name": "RegularHallowsAnchorInfo"
     },
     "creativeTabs": [
       {
@@ -38,7 +38,7 @@
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
     "onItemInInventoryTick": {
-      "name": "EngieGamesAnchorToolInInventoryTick"
+      "name": "RegularHallowsTick"
     }
   }
 }

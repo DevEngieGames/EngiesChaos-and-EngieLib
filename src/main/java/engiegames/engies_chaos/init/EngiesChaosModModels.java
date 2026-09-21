@@ -131,8 +131,8 @@ public class EngiesChaosModModels {
 		event.registerLayerDefinition(Modelboyooldlay.LAYER_LOCATION, Modelboyooldlay::createBodyLayer);
 		event.registerLayerDefinition(Modelboyorockylay.LAYER_LOCATION, Modelboyorockylay::createBodyLayer);
 		event.registerLayerDefinition(Modelangry_new.LAYER_LOCATION, Modelangry_new::createBodyLayer);
-		event.registerLayerDefinition(Modelboyo.LAYER_LOCATION, Modelboyo::createBodyLayer);
 		event.registerLayerDefinition(Modelinsanity.LAYER_LOCATION, Modelinsanity::createBodyLayer);
+		event.registerLayerDefinition(Modelboyo.LAYER_LOCATION, Modelboyo::createBodyLayer);
 		event.registerLayerDefinition(Modelboyolayxengie.LAYER_LOCATION, Modelboyolayxengie::createBodyLayer);
 		event.registerLayerDefinition(Modelbigboyolayonside.LAYER_LOCATION, Modelbigboyolayonside::createBodyLayer);
 		event.registerLayerDefinition(Modelboyoxengie.LAYER_LOCATION, Modelboyoxengie::createBodyLayer);
@@ -140,8 +140,8 @@ public class EngiesChaosModModels {
 		event.registerLayerDefinition(Modelenraged_new.LAYER_LOCATION, Modelenraged_new::createBodyLayer);
 		event.registerLayerDefinition(Modelcustom_lighting_bolt.LAYER_LOCATION, Modelcustom_lighting_bolt::createBodyLayer);
 		event.registerLayerDefinition(Modelboyorocky.LAYER_LOCATION, Modelboyorocky::createBodyLayer);
-		event.registerLayerDefinition(Modelbigboyosleep.LAYER_LOCATION, Modelbigboyosleep::createBodyLayer);
 		event.registerLayerDefinition(Modelinsanityhostile.LAYER_LOCATION, Modelinsanityhostile::createBodyLayer);
+		event.registerLayerDefinition(Modelbigboyosleep.LAYER_LOCATION, Modelbigboyosleep::createBodyLayer);
 		event.registerLayerDefinition(Modelboyosleepaltxengie.LAYER_LOCATION, Modelboyosleepaltxengie::createBodyLayer);
 		event.registerLayerDefinition(Modelboyolayalt.LAYER_LOCATION, Modelboyolayalt::createBodyLayer);
 		event.registerLayerDefinition(Modelxengiearmor.LAYER_LOCATION, Modelxengiearmor::createBodyLayer);

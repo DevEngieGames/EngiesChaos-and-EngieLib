@@ -48,7 +48,7 @@ public class EngiesOwnEngieBundleItem extends Item {
 			NetworkHooks.openScreen(serverPlayer, new MenuProvider() {
 				@Override
 				public Component getDisplayName() {
-					return Component.literal("Engies own Engie Bundle");
+					return Component.literal("Engie's own Engie Bundle");
 				}
 
 				@Override

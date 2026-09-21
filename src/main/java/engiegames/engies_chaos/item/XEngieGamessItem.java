@@ -73,7 +73,7 @@ public abstract class XEngieGamessItem extends ArmorItem {
 
 			@Override
 			public float getToughness() {
-				return 200f;
+				return 525f;
 			}
 
 			@Override

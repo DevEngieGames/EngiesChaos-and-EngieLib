@@ -37,8 +37,8 @@
           },
           "width": 30,
           "height": 20,
-          "x": 306,
-          "y": 40,
+          "x": 305,
+          "y": 41,
           "locked": false
         }
       },
@@ -53,8 +53,8 @@
           },
           "width": 28,
           "height": 20,
-          "x": 92,
-          "y": 180,
+          "x": 93,
+          "y": 179,
           "locked": false
         }
       },
@@ -81,7 +81,7 @@
             "value": -16777216,
             "falpha": 0.0
           },
-          "x": 92,
+          "x": 93,
           "y": 60,
           "locked": false
         }
@@ -97,7 +97,7 @@
             "value": -16777216,
             "falpha": 0.0
           },
-          "x": 92,
+          "x": 93,
           "y": 71,
           "locked": false
         }
@@ -113,7 +113,7 @@
             "value": -16777216,
             "falpha": 0.0
           },
-          "x": 92,
+          "x": 93,
           "y": 82,
           "locked": false
         }
@@ -129,7 +129,7 @@
             "value": -16777216,
             "falpha": 0.0
           },
-          "x": 92,
+          "x": 93,
           "y": 93,
           "locked": false
         }
@@ -164,8 +164,8 @@
           "displayCondition": {
             "name": "StarCheckForCodeRedemp"
           },
-          "x": 289,
-          "y": 60,
+          "x": 288,
+          "y": 61,
           "locked": false
         }
       },
@@ -183,8 +183,8 @@
           "displayCondition": {
             "name": "StarCheckForCodeRedemp"
           },
-          "x": 289,
-          "y": 71,
+          "x": 288,
+          "y": 72,
           "locked": false
         }
       },
@@ -202,8 +202,8 @@
           "displayCondition": {
             "name": "StarCheckForCodeRedemp"
           },
-          "x": 289,
-          "y": 82,
+          "x": 288,
+          "y": 83,
           "locked": false
         }
       }

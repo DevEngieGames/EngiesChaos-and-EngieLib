@@ -73,7 +73,7 @@ public abstract class OMENsItem extends ArmorItem {
 
 			@Override
 			public float getToughness() {
-				return 200f;
+				return 500f;
 			}
 
 			@Override

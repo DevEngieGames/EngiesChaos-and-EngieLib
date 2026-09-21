@@ -101,7 +101,6 @@ import engiegames.engies_chaos.client.renderer.EngieGamesMadEngieRenderer;
 import engiegames.engies_chaos.client.renderer.EngieGamesHostileEngieRenderer;
 import engiegames.engies_chaos.client.renderer.EngieGamesHostileBiblicallyAccurateEngieRenderer;
 import engiegames.engies_chaos.client.renderer.EngieGamesEnragedEngieRenderer;
-import engiegames.engies_chaos.client.renderer.EngieGamesDetectiveRenderer;
 import engiegames.engies_chaos.client.renderer.EngieGamesAngryEngieRenderer;
 import engiegames.engies_chaos.client.renderer.EngiRenderer;
 import engiegames.engies_chaos.client.renderer.DoomsDayRenderer;
@@ -173,7 +172,6 @@ public class EngiesChaosModEntityRenderers {
 		event.registerEntityRenderer(EngiesChaosModEntities.SUPER_DOOMS_DAY_HOSTILE.get(), SuperDoomsDayHostileRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.THE_END.get(), TheEndRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.THE_END_HOSTILE.get(), TheEndHostileRenderer::new);
-		event.registerEntityRenderer(EngiesChaosModEntities.ENGIE_GAMES_DETECTIVE.get(), EngieGamesDetectiveRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.ENGIE_GAMES.get(), EngieGamesRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.D_DAY_LIGHTNING_SPAWNER.get(), DDayLightningSpawnerRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.DDAY_RIFT.get(), DDAYRiftRenderer::new);

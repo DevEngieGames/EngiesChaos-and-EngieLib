@@ -5,9 +5,10 @@
     "renderType": 1,
     "texture": "engie_bundle",
     "customModelName": "birthday_engie_bundle_for_youngest:default",
+    "guiTexture": "",
     "customProperties": {},
     "states": [],
-    "name": "Youngens Birthday Bundle (2025)",
+    "name": "Youngens Birthday Bundle",
     "rarity": "RARE",
     "creativeTabs": [],
     "stackSize": 1,
@@ -29,12 +30,18 @@
         "Happy birthday youngen."
       ]
     },
+    "glowCondition": {
+      "fixedValue": false
+    },
     "guiBoundTo": "BirthdayBundleForYoungestUI",
     "inventorySize": 105,
     "inventoryStackSize": 64,
     "enableRanged": false,
     "shootConstantly": false,
     "rangedItemChargesPower": false,
+    "projectile": {
+      "value": "Arrow"
+    },
     "projectileDisableAmmoCheck": false,
     "isFood": false,
     "nutritionalValue": 4,
@@ -46,6 +53,10 @@
     "isAlwaysEdible": false,
     "animation": "none",
     "isMusicDisc": false,
+    "musicDiscMusic": {
+      "value": ""
+    },
+    "musicDiscDescription": "",
     "musicDiscLengthInTicks": 0,
     "musicDiscAnalogOutput": 0,
     "providedBannerPatterns": []

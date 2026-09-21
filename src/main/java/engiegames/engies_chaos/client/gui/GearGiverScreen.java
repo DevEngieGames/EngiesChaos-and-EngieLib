@@ -86,7 +86,7 @@ public class GearGiverScreen extends AbstractContainerScreen<GearGiverMenu> impl
 	@Override
 	public void init() {
 		super.init();
-		button_x = new Button(this.leftPos + 217, this.topPos + 3, 30, 20, Component.translatable("gui.engies_chaos.gear_giver.button_x"), e -> {
+		button_x = new Button(this.leftPos + 216, this.topPos + 4, 30, 20, Component.translatable("gui.engies_chaos.gear_giver.button_x"), e -> {
 			int x = GearGiverScreen.this.x;
 			int y = GearGiverScreen.this.y;
 			if (true) {
@@ -95,7 +95,7 @@ public class GearGiverScreen extends AbstractContainerScreen<GearGiverMenu> impl
 			}
 		});
 		this.addRenderableWidget(button_x);
-		button_empty = new Button(this.leftPos + 219, this.topPos + 143, 28, 20, Component.translatable("gui.engies_chaos.gear_giver.button_empty"), e -> {
+		button_empty = new Button(this.leftPos + 218, this.topPos + 142, 28, 20, Component.translatable("gui.engies_chaos.gear_giver.button_empty"), e -> {
 			int x = GearGiverScreen.this.x;
 			int y = GearGiverScreen.this.y;
 			if (true) {
@@ -104,7 +104,7 @@ public class GearGiverScreen extends AbstractContainerScreen<GearGiverMenu> impl
 			}
 		});
 		this.addRenderableWidget(button_empty);
-		button_starter_kit = new Button(this.leftPos + 3, this.topPos + 24, 82, 20, Component.translatable("gui.engies_chaos.gear_giver.button_starter_kit"), e -> {
+		button_starter_kit = new Button(this.leftPos + 4, this.topPos + 24, 82, 20, Component.translatable("gui.engies_chaos.gear_giver.button_starter_kit"), e -> {
 			int x = GearGiverScreen.this.x;
 			int y = GearGiverScreen.this.y;
 			if (true) {
@@ -122,7 +122,7 @@ public class GearGiverScreen extends AbstractContainerScreen<GearGiverMenu> impl
 			}
 		});
 		this.addRenderableWidget(button_bundle);
-		button_recipe_book = new Button(this.leftPos + 165, this.topPos + 24, 82, 20, Component.translatable("gui.engies_chaos.gear_giver.button_recipe_book"), e -> {
+		button_recipe_book = new Button(this.leftPos + 164, this.topPos + 24, 82, 20, Component.translatable("gui.engies_chaos.gear_giver.button_recipe_book"), e -> {
 			int x = GearGiverScreen.this.x;
 			int y = GearGiverScreen.this.y;
 			if (true) {
@@ -131,7 +131,7 @@ public class GearGiverScreen extends AbstractContainerScreen<GearGiverMenu> impl
 			}
 		});
 		this.addRenderableWidget(button_recipe_book);
-		button_operator = new Button(this.leftPos + 3, this.topPos + 56, 67, 20, Component.translatable("gui.engies_chaos.gear_giver.button_operator"), e -> {
+		button_operator = new Button(this.leftPos + 4, this.topPos + 56, 67, 20, Component.translatable("gui.engies_chaos.gear_giver.button_operator"), e -> {
 			int x = GearGiverScreen.this.x;
 			int y = GearGiverScreen.this.y;
 			if (true) {
@@ -149,7 +149,7 @@ public class GearGiverScreen extends AbstractContainerScreen<GearGiverMenu> impl
 			}
 		});
 		this.addRenderableWidget(button_developer);
-		button_idea_giver = new Button(this.leftPos + 170, this.topPos + 56, 77, 20, Component.translatable("gui.engies_chaos.gear_giver.button_idea_giver"), e -> {
+		button_idea_giver = new Button(this.leftPos + 169, this.topPos + 56, 77, 20, Component.translatable("gui.engies_chaos.gear_giver.button_idea_giver"), e -> {
 			int x = GearGiverScreen.this.x;
 			int y = GearGiverScreen.this.y;
 			if (true) {
@@ -158,7 +158,7 @@ public class GearGiverScreen extends AbstractContainerScreen<GearGiverMenu> impl
 			}
 		});
 		this.addRenderableWidget(button_idea_giver);
-		button_beta_tester = new Button(this.leftPos + 3, this.topPos + 88, 82, 20, Component.translatable("gui.engies_chaos.gear_giver.button_beta_tester"), e -> {
+		button_beta_tester = new Button(this.leftPos + 4, this.topPos + 88, 82, 20, Component.translatable("gui.engies_chaos.gear_giver.button_beta_tester"), e -> {
 			int x = GearGiverScreen.this.x;
 			int y = GearGiverScreen.this.y;
 			if (true) {
@@ -176,7 +176,7 @@ public class GearGiverScreen extends AbstractContainerScreen<GearGiverMenu> impl
 			}
 		});
 		this.addRenderableWidget(button_tester);
-		button_creator = new Button(this.leftPos + 186, this.topPos + 88, 61, 20, Component.translatable("gui.engies_chaos.gear_giver.button_creator"), e -> {
+		button_creator = new Button(this.leftPos + 185, this.topPos + 88, 61, 20, Component.translatable("gui.engies_chaos.gear_giver.button_creator"), e -> {
 			int x = GearGiverScreen.this.x;
 			int y = GearGiverScreen.this.y;
 			if (true) {

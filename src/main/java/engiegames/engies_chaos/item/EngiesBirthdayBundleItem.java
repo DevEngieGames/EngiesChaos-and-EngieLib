@@ -48,7 +48,7 @@ public class EngiesBirthdayBundleItem extends Item {
 			NetworkHooks.openScreen(serverPlayer, new MenuProvider() {
 				@Override
 				public Component getDisplayName() {
-					return Component.literal("Engies Birthday Bundle (2025)");
+					return Component.literal("Engie's Birthday Bundle");
 				}
 
 				@Override

@@ -22,7 +22,6 @@ import net.minecraft.client.Minecraft;
 import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
-import engiegames.engies_chaos.init.EngiesChaosModItems;
 
 @Mod.EventBusSubscriber
 public class DoubleJumpOnKeyReleasedProcedure {
@@ -40,9 +39,7 @@ public class DoubleJumpOnKeyReleasedProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(new ResourceLocation("engies_chaos:weapons/antimatter")))
-				|| (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.ENGIE_GAMES_HALLOW_SCYTHE.get()
-				|| (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.ENGIE_GAMES_GOLDEN_HALLOW_SCYTHE.get()) {
+		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(new ResourceLocation("engies_chaos:weapons/antimatter")))) {
 			if ((getEntityGameType(entity) == GameType.SURVIVAL || getEntityGameType(entity) == GameType.ADVENTURE)
 					&& !(world.getBlockState(new BlockPos(entity.getX(), entity.getY() - 0.5, entity.getZ()))).is(BlockTags.create(new ResourceLocation("engies_chaos:doublejumpallow")))
 					&& (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).doublejumpcount < 1) {
@@ -78,8 +75,7 @@ public class DoubleJumpOnKeyReleasedProcedure {
 					});
 				}
 			}
-		} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.ENGIE_GAMES_ENGIE_HALLOW_SCYTHE.get()
-				|| (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(new ResourceLocation("engies_chaos:weapons/darkmatter")))) {
+		} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(new ResourceLocation("engies_chaos:weapons/darkmatter")))) {
 			if ((getEntityGameType(entity) == GameType.SURVIVAL || getEntityGameType(entity) == GameType.ADVENTURE)
 					&& !(world.getBlockState(new BlockPos(entity.getX(), entity.getY() - 0.5, entity.getZ()))).is(BlockTags.create(new ResourceLocation("engies_chaos:doublejumpallow")))
 					&& (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).doublejumpcount < 2) {

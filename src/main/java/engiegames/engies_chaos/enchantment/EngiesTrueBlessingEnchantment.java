@@ -14,7 +14,7 @@ import java.util.List;
 
 public class EngiesTrueBlessingEnchantment extends Enchantment {
 	private static final EnchantmentCategory ENCHANTMENT_CATEGORY = EnchantmentCategory.create("engies_chaos_engies_true_blessing",
-			item -> Ingredient.of(ItemTags.create(new ResourceLocation("allaboutengie:enchantable/engiestrueblessing"))).test(new ItemStack(item)));
+			item -> Ingredient.of(ItemTags.create(new ResourceLocation("engies_chaos:enchantable/engies_true_blessing"))).test(new ItemStack(item)));
 
 	public EngiesTrueBlessingEnchantment() {
 		super(Enchantment.Rarity.VERY_RARE, ENCHANTMENT_CATEGORY, EquipmentSlot.values());

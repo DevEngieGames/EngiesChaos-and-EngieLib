@@ -10,22 +10,38 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
+import engiegames.engies_chaos.init.EngiesChaosModItems;
+
 public class EngieGamesObtainProProcedure {
 	public static void execute(LevelAccessor world, Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
-		if ((entity instanceof ServerPlayer _plr0 && _plr0.level instanceof ServerLevel
-				&& _plr0.getAdvancements().getOrStartProgress(_plr0.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_games_ban_scythe_obtained"))).isDone()) == false) {
-			if (entity instanceof ServerPlayer _player) {
-				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_games_ban_scythe_obtained"));
-				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-				if (!_ap.isDone()) {
-					for (String criteria : _ap.getRemainingCriteria())
-						_player.getAdvancements().award(_adv, criteria);
+		if (itemstack.getItem() == EngiesChaosModItems.ANTIMATTER_ENGIE_GAMES_SCYTHE.get() || itemstack.getItem() == EngiesChaosModItems.ANTIMATTER_ENGIE_GAMES_BAN_HAMMER.get()) {
+			if ((entity instanceof ServerPlayer _plr4 && _plr4.level instanceof ServerLevel
+					&& _plr4.getAdvancements().getOrStartProgress(_plr4.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:antimatter_engie_games_ban_scythe_obtained"))).isDone()) == false) {
+				if (entity instanceof ServerPlayer _player) {
+					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:antimatter_engie_games_ban_scythe_obtained"));
+					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+					if (!_ap.isDone()) {
+						for (String criteria : _ap.getRemainingCriteria())
+							_player.getAdvancements().award(_adv, criteria);
+					}
+				}
+			}
+		} else {
+			if ((entity instanceof ServerPlayer _plr6 && _plr6.level instanceof ServerLevel
+					&& _plr6.getAdvancements().getOrStartProgress(_plr6.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_games_ban_scythe_obtained"))).isDone()) == false) {
+				if (entity instanceof ServerPlayer _player) {
+					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_games_ban_scythe_obtained"));
+					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+					if (!_ap.isDone()) {
+						for (String criteria : _ap.getRemainingCriteria())
+							_player.getAdvancements().award(_adv, criteria);
+					}
 				}
 			}
 		}
-		if (itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:items/strong_stun"))) || itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:items/normal_stun")))
+		if (itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:items/weak_stun"))) || itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:items/normal_stun")))
 				|| itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:items/strong_stun")))) {
 			StunKeyTickProcedure.execute(world, entity, itemstack);
 		}

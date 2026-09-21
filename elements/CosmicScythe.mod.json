@@ -6,7 +6,7 @@
     "renderType": 1,
     "blockingRenderType": 0,
     "texture": "pixelscythecosmic",
-    "customModelName": "ban_hammer_cosmic:default",
+    "customModelName": "cosmicscythe:default",
     "blockingModelName": "Normal blocking",
     "guiTexture": "pixelscythecosmic",
     "name": "Cosmic Scythe",
@@ -37,7 +37,7 @@
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
     "onItemInInventoryTick": {
-      "name": "EngiesObtainPro"
+      "name": "CosmicObtainPro"
     }
   }
 }

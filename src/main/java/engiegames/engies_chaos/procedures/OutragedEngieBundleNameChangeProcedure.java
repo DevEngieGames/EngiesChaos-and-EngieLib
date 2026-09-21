@@ -14,14 +14,19 @@ public class OutragedEngieBundleNameChangeProcedure {
 		if (entity == null)
 			return;
 		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.OUTRAGED_ENGIE_BUNDLE.get()) {
-			(entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)
-					.setHoverName(Component.literal(((entity instanceof Player _entity2 && _entity2.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu2) ? _menu2.getMenuState(0, "ChangeBundleName", "") : "")));
+			if (!((((entity instanceof Player _entity2 && _entity2.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu2) ? _menu2.getMenuState(0, "ChangeBundleName", "") : "").replace(" ", "")).equals("")
+					|| (((entity instanceof Player _entity3 && _entity3.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu3) ? _menu3.getMenuState(0, "ChangeBundleName", "") : "").replace(" ", "")).equals("\u00A0"))) {
+				(entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)
+						.setHoverName(Component.literal(((entity instanceof Player _entity4 && _entity4.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu4) ? _menu4.getMenuState(0, "ChangeBundleName", "") : "")));
+			}
 		} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EngiesChaosModItems.OUTRAGED_ENGIE_BUNDLE.get()) {
-			(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
-					.setHoverName(Component.literal(((entity instanceof Player _entity7 && _entity7.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu7) ? _menu7.getMenuState(0, "ChangeBundleName", "") : "")));
+			if (!((((entity instanceof Player _entity9 && _entity9.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu9) ? _menu9.getMenuState(0, "ChangeBundleName", "") : "").replace(" ", "")).equals("")
+					|| (((entity instanceof Player _entity10 && _entity10.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu10) ? _menu10.getMenuState(0, "ChangeBundleName", "") : "").replace(" ", "")).equals("\u00A0"))) {
+				(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
+						.setHoverName(Component.literal(((entity instanceof Player _entity11 && _entity11.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu11) ? _menu11.getMenuState(0, "ChangeBundleName", "") : "")));
+			}
 		} else {
-			new ItemStack(EngiesChaosModItems.OUTRAGED_ENGIE_BUNDLE.get())
-					.setHoverName(Component.literal(((entity instanceof Player _entity10 && _entity10.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu10) ? _menu10.getMenuState(0, "ChangeBundleName", "") : "")));
+			new ItemStack(EngiesChaosModItems.OUTRAGED_ENGIE_BUNDLE.get()).setHoverName(Component.literal("Outraged Engie Bundle"));
 		}
 	}
 }

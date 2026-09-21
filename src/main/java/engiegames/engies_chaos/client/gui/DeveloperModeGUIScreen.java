@@ -73,18 +73,6 @@ public class DeveloperModeGUIScreen extends AbstractContainerScreen<DeveloperMod
 		statclocknum.render(ms, mouseX, mouseY, partialTicks);
 		number.render(ms, mouseX, mouseY, partialTicks);
 		boolean customTooltipShown = false;
-		if (mouseX > leftPos + 128 && mouseX < leftPos + 152 && mouseY > topPos + 11 && mouseY < topPos + 35) {
-			this.renderTooltip(ms, Component.translatable("gui.engies_chaos.developer_mode_gui.tooltip_max_50525"), mouseX, mouseY);
-			customTooltipShown = true;
-		}
-		if (mouseX > leftPos + 152 && mouseX < leftPos + 176 && mouseY > topPos + 11 && mouseY < topPos + 35) {
-			this.renderTooltip(ms, Component.translatable("gui.engies_chaos.developer_mode_gui.tooltip_max_101050"), mouseX, mouseY);
-			customTooltipShown = true;
-		}
-		if (mouseX > leftPos + 176 && mouseX < leftPos + 200 && mouseY > topPos + 11 && mouseY < topPos + 35) {
-			this.renderTooltip(ms, Component.translatable("gui.engies_chaos.developer_mode_gui.tooltip_max_151575"), mouseX, mouseY);
-			customTooltipShown = true;
-		}
 		if (mouseX > leftPos + 206 && mouseX < leftPos + 230 && mouseY > topPos + 55 && mouseY < topPos + 79) {
 			this.renderTooltip(ms, Component.translatable("gui.engies_chaos.developer_mode_gui.tooltip_input_item_here"), mouseX, mouseY);
 			customTooltipShown = true;

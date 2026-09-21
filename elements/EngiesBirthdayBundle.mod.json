@@ -5,9 +5,10 @@
     "renderType": 1,
     "texture": "engie_bundle",
     "customModelName": "engies_birthday_bundle25:default",
+    "guiTexture": "",
     "customProperties": {},
     "states": [],
-    "name": "Engies Birthday Bundle (2025)",
+    "name": "Engie's Birthday Bundle",
     "rarity": "RARE",
     "creativeTabs": [],
     "stackSize": 1,
@@ -29,12 +30,18 @@
         "Thanks for the \"Happy Birthday\"! -Engie"
       ]
     },
+    "glowCondition": {
+      "fixedValue": false
+    },
     "guiBoundTo": "EngiesBirthdayBundleUI",
     "inventorySize": 105,
     "inventoryStackSize": 64,
     "enableRanged": false,
     "shootConstantly": false,
     "rangedItemChargesPower": false,
+    "projectile": {
+      "value": "Arrow"
+    },
     "projectileDisableAmmoCheck": false,
     "isFood": false,
     "nutritionalValue": 4,
@@ -46,6 +53,10 @@
     "isAlwaysEdible": false,
     "animation": "none",
     "isMusicDisc": false,
+    "musicDiscMusic": {
+      "value": ""
+    },
+    "musicDiscDescription": "",
     "musicDiscLengthInTicks": 0,
     "musicDiscAnalogOutput": 0,
     "providedBannerPatterns": []

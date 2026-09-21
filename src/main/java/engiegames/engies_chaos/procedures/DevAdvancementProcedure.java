@@ -44,7 +44,7 @@ public class DevAdvancementProcedure {
 				}
 			}
 		}
-		if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DETECTIVE_MODE) == true) {
+		if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.LORE_MODE) == true) {
 			if (entity.getPersistentData().getBoolean("EngiesChaos_Dev") == true) {
 				{
 					final Vec3 _center = new Vec3(x, y, z);

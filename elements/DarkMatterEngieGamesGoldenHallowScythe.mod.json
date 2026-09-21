@@ -12,7 +12,7 @@
     "name": "Dark Matter Golden Hallow's Scythe",
     "specialInformation": {
       "fixedValue": [],
-      "name": "GoldHallowsScytheInfo"
+      "name": "DarkGoldHallowsScytheInfo"
     },
     "creativeTabs": [
       {
@@ -38,7 +38,7 @@
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
     "onItemInInventoryTick": {
-      "name": "DarkMatterEngieGamesGoldenHallowScytheToolInHandTick"
+      "name": "DarkGoldHallowsTick"
     }
   }
 }

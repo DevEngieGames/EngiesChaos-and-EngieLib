@@ -11,18 +11,6 @@
     "doesPauseGame": false,
     "components": [
       {
-        "type": "textfield",
-        "data": {
-          "placeholder": "You're Special!",
-          "name": "ChangeBundleName",
-          "width": 120,
-          "height": 20,
-          "x": 30,
-          "y": 11,
-          "locked": false
-        }
-      },
-      {
         "type": "label",
         "data": {
           "name": "label_proc_bundle_display_name_check",
@@ -34,24 +22,8 @@
             "value": -12829636,
             "falpha": 0.0
           },
-          "x": 30,
-          "y": 34,
-          "locked": false
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "name": "button_set_name",
-          "text": "Set Name",
-          "isUndecorated": false,
-          "onClick": {
-            "name": "ETCEngieBundleNameChange"
-          },
-          "width": 66,
-          "height": 20,
-          "x": 154,
-          "y": 11,
+          "x": 29,
+          "y": 10,
           "locked": false
         }
       },

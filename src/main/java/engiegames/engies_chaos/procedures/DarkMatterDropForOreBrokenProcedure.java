@@ -47,8 +47,8 @@ public class DarkMatterDropForOreBrokenProcedure {
 				&& (getEntityGameType(entity) == GameType.SURVIVAL || getEntityGameType(entity) == GameType.ADVENTURE)) {
 			if ((world.getBlockState(new BlockPos(x, y, z))).is(BlockTags.create(new ResourceLocation("forge:ores"))) || (world.getBlockState(new BlockPos(x, y, z))).is(BlockTags.create(new ResourceLocation("c:ores")))) {
 				if (Math.round(
-						Mth.nextDouble(RandomSource.create(), 1, 100)) <= (entity instanceof LivingEntity _livingEntity9 && _livingEntity9.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
-								? _livingEntity9.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
+						Mth.nextDouble(RandomSource.create(), 1, 100)) <= (entity instanceof LivingEntity _livingEntity9 && _livingEntity9.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_DARK_MATTER_BLESSING_CHANCE_FOR_PLAYER.get())
+								? _livingEntity9.getAttribute(EngiesChaosModAttributes.ENGIES_DARK_MATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
 								: 0)) {
 					if (Math.round(Mth.nextDouble(RandomSource.create(), 1, 100)) <= 5) {
 						if (world instanceof ServerLevel _level) {

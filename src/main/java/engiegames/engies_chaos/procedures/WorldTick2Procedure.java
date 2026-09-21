@@ -41,9 +41,9 @@ public class WorldTick2Procedure {
 							|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart) == false) {
 						if (Math.random() <= 0.25) {
 							if (Math.random() <= 0.5) {
-								world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.DETECTIVE_MODE).set((world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DETECTIVE_MODE)), world.getServer());
+								world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.LORE_MODE).set((world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.LORE_MODE)), world.getServer());
 							} else {
-								world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.DETECTIVE_MODE).set((!world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DETECTIVE_MODE)), world.getServer());
+								world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.LORE_MODE).set((!world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.LORE_MODE)), world.getServer());
 							}
 						}
 						if (Math.random() <= 0.25) {

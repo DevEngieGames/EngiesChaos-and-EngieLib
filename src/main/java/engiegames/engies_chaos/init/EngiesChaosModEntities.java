@@ -108,7 +108,6 @@ import engiegames.engies_chaos.entity.EngieGamesHostileEngieEntity;
 import engiegames.engies_chaos.entity.EngieGamesHostileBiblicallyAccurateEngieEntity;
 import engiegames.engies_chaos.entity.EngieGamesEntity;
 import engiegames.engies_chaos.entity.EngieGamesEnragedEngieEntity;
-import engiegames.engies_chaos.entity.EngieGamesDetectiveEntity;
 import engiegames.engies_chaos.entity.EngieGamesAngryEngieEntity;
 import engiegames.engies_chaos.entity.EngiEntity;
 import engiegames.engies_chaos.entity.DoomsDayHostileEntity;
@@ -266,10 +265,6 @@ public class EngiesChaosModEntities {
 					.sized(0.6f, 1.9f));
 	public static final RegistryObject<EntityType<TheEndHostileEntity>> THE_END_HOSTILE = register("the_end_hostile",
 			EntityType.Builder.<TheEndHostileEntity>of(TheEndHostileEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(TheEndHostileEntity::new)
-
-					.sized(0.6f, 1.9f));
-	public static final RegistryObject<EntityType<EngieGamesDetectiveEntity>> ENGIE_GAMES_DETECTIVE = register("engie_games_detective",
-			EntityType.Builder.<EngieGamesDetectiveEntity>of(EngieGamesDetectiveEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EngieGamesDetectiveEntity::new)
 
 					.sized(0.6f, 1.9f));
 	public static final RegistryObject<EntityType<EngieGamesEntity>> ENGIE_GAMES = register("engie_games",
@@ -675,7 +670,6 @@ public class EngiesChaosModEntities {
 			SuperDoomsDayHostileEntity.init();
 			TheEndEntity.init();
 			TheEndHostileEntity.init();
-			EngieGamesDetectiveEntity.init();
 			EngieGamesEntity.init();
 			DDayLightningSpawnerEntity.init();
 			DDAYRiftEntity.init();
@@ -806,7 +800,6 @@ public class EngiesChaosModEntities {
 		event.put(SUPER_DOOMS_DAY_HOSTILE.get(), SuperDoomsDayHostileEntity.createAttributes().build());
 		event.put(THE_END.get(), TheEndEntity.createAttributes().build());
 		event.put(THE_END_HOSTILE.get(), TheEndHostileEntity.createAttributes().build());
-		event.put(ENGIE_GAMES_DETECTIVE.get(), EngieGamesDetectiveEntity.createAttributes().build());
 		event.put(ENGIE_GAMES.get(), EngieGamesEntity.createAttributes().build());
 		event.put(D_DAY_LIGHTNING_SPAWNER.get(), DDayLightningSpawnerEntity.createAttributes().build());
 		event.put(DDAY_RIFT.get(), DDAYRiftEntity.createAttributes().build());

@@ -37,7 +37,7 @@
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
     "onItemInInventoryTick": {
-      "name": "EngiesObtainPro"
+      "name": "EngieGamesObtainPro"
     }
   }
 }

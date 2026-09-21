@@ -12,7 +12,7 @@
     "name": "Dark Matter Golden Hallow's Ban Hammer",
     "specialInformation": {
       "fixedValue": [],
-      "name": "GoldHallowsBanHammerInfo"
+      "name": "DarkGoldHallowsBanHammerInfo"
     },
     "creativeTabs": [
       {
@@ -38,7 +38,7 @@
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
     "onItemInInventoryTick": {
-      "name": "DarkMatterEngieGamesGoldenHallowScytheToolInHandTick"
+      "name": "DarkGoldHallowsTick"
     }
   }
 }

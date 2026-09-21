@@ -38,7 +38,7 @@ public class EngiesBlessingDamagesProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, DamageSource damagesource, Entity entity, Entity sourceentity, double amount) {
 		if (damagesource == null || entity == null || sourceentity == null)
 			return;
-		if ((sourceentity instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false) && sourceentity.getPersistentData().getBoolean("allaboutengie:sharkos")) {
+		if ((sourceentity instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false) && sourceentity.getPersistentData().getBoolean("engies_chaos:mobs/sharkos")) {
 			if (EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get(),
 					((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0
 					&& !(EnchantmentHelper.getItemEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get(),
@@ -51,7 +51,7 @@ public class EngiesBlessingDamagesProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						if (entity.getPersistentData().getBoolean("entityattackedbyblessing") == false) {
 							entity.getPersistentData().putBoolean("entityattackedbyblessing", true);
-							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/engiesblessingable")))) {
+							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/blessing_works")))) {
 								entity.hurt(damagesource, (float) (amount * 2.5 * ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
 										.getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get())));
 							}
@@ -65,7 +65,7 @@ public class EngiesBlessingDamagesProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						if (entity.getPersistentData().getBoolean("entityattackedbyblessing") == false) {
 							entity.getPersistentData().putBoolean("entityattackedbyblessing", true);
-							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/engiesblessingable")))) {
+							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/blessing_works")))) {
 								entity.hurt(damagesource,
 										(float) (amount * 2.5
 												* ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
@@ -83,7 +83,7 @@ public class EngiesBlessingDamagesProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						if (entity.getPersistentData().getBoolean("entityattackedbyblessing") == false) {
 							entity.getPersistentData().putBoolean("entityattackedbyblessing", true);
-							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/engiesblessingable")))) {
+							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/blessing_works")))) {
 								entity.hurt(damagesource,
 										(float) (amount * 2.5
 												* ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
@@ -101,7 +101,7 @@ public class EngiesBlessingDamagesProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						if (entity.getPersistentData().getBoolean("entityattackedbyblessing") == false) {
 							entity.getPersistentData().putBoolean("entityattackedbyblessing", true);
-							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/engiesblessingable")))) {
+							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/blessing_works")))) {
 								entity.hurt(damagesource,
 										(float) (amount * 2.5
 												* ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
@@ -127,7 +127,7 @@ public class EngiesBlessingDamagesProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						if (entity.getPersistentData().getBoolean("entityattackedbyblessing") == false) {
 							entity.getPersistentData().putBoolean("entityattackedbyblessing", true);
-							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/engiesblessingable")))) {
+							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/blessing_works")))) {
 								entity.hurt(damagesource, (float) (amount * 2.5 * ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
 										.getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get())));
 							}
@@ -141,7 +141,7 @@ public class EngiesBlessingDamagesProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						if (entity.getPersistentData().getBoolean("entityattackedbyblessing") == false) {
 							entity.getPersistentData().putBoolean("entityattackedbyblessing", true);
-							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/engiesblessingable")))) {
+							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/blessing_works")))) {
 								entity.hurt(damagesource,
 										(float) (amount * 2.5
 												* ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
@@ -159,7 +159,7 @@ public class EngiesBlessingDamagesProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						if (entity.getPersistentData().getBoolean("entityattackedbyblessing") == false) {
 							entity.getPersistentData().putBoolean("entityattackedbyblessing", true);
-							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/engiesblessingable")))) {
+							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/blessing_works")))) {
 								entity.hurt(damagesource,
 										(float) (amount * 2.5
 												* ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
@@ -177,7 +177,7 @@ public class EngiesBlessingDamagesProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						if (entity.getPersistentData().getBoolean("entityattackedbyblessing") == false) {
 							entity.getPersistentData().putBoolean("entityattackedbyblessing", true);
-							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/engiesblessingable")))) {
+							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/blessing_works")))) {
 								entity.hurt(damagesource,
 										(float) (amount * 2.5
 												* ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
@@ -203,13 +203,13 @@ public class EngiesBlessingDamagesProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						if (entity.getPersistentData().getBoolean("entityattackedbyblessing") == false) {
 							entity.getPersistentData().putBoolean("entityattackedbyblessing", true);
-							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/engiesblessingable")))) {
+							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/blessing_works")))) {
 								entity.hurt(damagesource,
 										(float) (amount * 2.5
-												* ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
+												* (((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
 														.getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get())
-												* ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
-														.getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get())));
+														+ ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
+																.getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get()))));
 							}
 						}
 					});
@@ -221,13 +221,13 @@ public class EngiesBlessingDamagesProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						if (entity.getPersistentData().getBoolean("entityattackedbyblessing") == false) {
 							entity.getPersistentData().putBoolean("entityattackedbyblessing", true);
-							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/engiesblessingable")))) {
+							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/blessing_works")))) {
 								entity.hurt(damagesource,
 										(float) (amount * 2.5
-												* ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
+												* (((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
 														.getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get())
-												* ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
-														.getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get())
+														+ ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
+																.getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get()))
 												* (((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
 														.getEnchantmentLevel(Enchantments.MOB_LOOTING) + 1)));
 							}
@@ -241,13 +241,13 @@ public class EngiesBlessingDamagesProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						if (entity.getPersistentData().getBoolean("entityattackedbyblessing") == false) {
 							entity.getPersistentData().putBoolean("entityattackedbyblessing", true);
-							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/engiesblessingable")))) {
+							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/blessing_works")))) {
 								entity.hurt(damagesource,
 										(float) (amount * 2.5
-												* ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
+												* (((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
 														.getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get())
-												* ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
-														.getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get())
+														+ ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
+																.getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get()))
 												* (((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
 														.getEnchantmentLevel(Enchantments.BLOCK_FORTUNE) + 1)));
 							}
@@ -261,13 +261,13 @@ public class EngiesBlessingDamagesProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						if (entity.getPersistentData().getBoolean("entityattackedbyblessing") == false) {
 							entity.getPersistentData().putBoolean("entityattackedbyblessing", true);
-							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/engiesblessingable")))) {
+							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/blessing_works")))) {
 								entity.hurt(damagesource,
 										(float) (amount * 2.5
-												* ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
+												* (((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
 														.getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get())
-												* ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
-														.getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get())
+														+ ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
+																.getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get()))
 												* (((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
 														.getEnchantmentLevel(Enchantments.MOB_LOOTING) + 1
 														+ ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
@@ -287,7 +287,7 @@ public class EngiesBlessingDamagesProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						if (entity.getPersistentData().getBoolean("entityattackedbyblessing") == false) {
 							entity.getPersistentData().putBoolean("entityattackedbyblessing", true);
-							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/engiesblessingable")))) {
+							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/blessing_works")))) {
 								entity.hurt(damagesource, (float) (amount * 2.5 * (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get())));
 							}
 						}
@@ -298,7 +298,7 @@ public class EngiesBlessingDamagesProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						if (entity.getPersistentData().getBoolean("entityattackedbyblessing") == false) {
 							entity.getPersistentData().putBoolean("entityattackedbyblessing", true);
-							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/engiesblessingable")))) {
+							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/blessing_works")))) {
 								entity.hurt(damagesource, (float) (amount * 2.5 * (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get())
 										* ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(Enchantments.MOB_LOOTING) + 1)));
 							}
@@ -310,7 +310,7 @@ public class EngiesBlessingDamagesProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						if (entity.getPersistentData().getBoolean("entityattackedbyblessing") == false) {
 							entity.getPersistentData().putBoolean("entityattackedbyblessing", true);
-							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/engiesblessingable")))) {
+							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/blessing_works")))) {
 								entity.hurt(damagesource, (float) (amount * 2.5 * (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get())
 										* ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(Enchantments.BLOCK_FORTUNE) + 1)));
 							}
@@ -322,7 +322,7 @@ public class EngiesBlessingDamagesProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						if (entity.getPersistentData().getBoolean("entityattackedbyblessing") == false) {
 							entity.getPersistentData().putBoolean("entityattackedbyblessing", true);
-							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/engiesblessingable")))) {
+							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/blessing_works")))) {
 								entity.hurt(damagesource,
 										(float) (amount * 2.5 * (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get())
 												* ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(Enchantments.MOB_LOOTING) + 1
@@ -339,7 +339,7 @@ public class EngiesBlessingDamagesProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						if (entity.getPersistentData().getBoolean("entityattackedbyblessing") == false) {
 							entity.getPersistentData().putBoolean("entityattackedbyblessing", true);
-							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/engiesblessingable")))) {
+							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/blessing_works")))) {
 								entity.hurt(damagesource,
 										(float) (amount * 2.5 * (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get())));
 							}
@@ -351,7 +351,7 @@ public class EngiesBlessingDamagesProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						if (entity.getPersistentData().getBoolean("entityattackedbyblessing") == false) {
 							entity.getPersistentData().putBoolean("entityattackedbyblessing", true);
-							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/engiesblessingable")))) {
+							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/blessing_works")))) {
 								entity.hurt(damagesource, (float) (amount * 2.5 * (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get())
 										* ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(Enchantments.MOB_LOOTING) + 1)));
 							}
@@ -363,7 +363,7 @@ public class EngiesBlessingDamagesProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						if (entity.getPersistentData().getBoolean("entityattackedbyblessing") == false) {
 							entity.getPersistentData().putBoolean("entityattackedbyblessing", true);
-							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/engiesblessingable")))) {
+							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/blessing_works")))) {
 								entity.hurt(damagesource, (float) (amount * 2.5 * (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get())
 										* ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(Enchantments.BLOCK_FORTUNE) + 1)));
 							}
@@ -375,7 +375,7 @@ public class EngiesBlessingDamagesProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						if (entity.getPersistentData().getBoolean("entityattackedbyblessing") == false) {
 							entity.getPersistentData().putBoolean("entityattackedbyblessing", true);
-							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/engiesblessingable")))) {
+							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/blessing_works")))) {
 								entity.hurt(damagesource,
 										(float) (amount * 2.5 * (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get())
 												* ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(Enchantments.MOB_LOOTING) + 1
@@ -392,9 +392,9 @@ public class EngiesBlessingDamagesProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						if (entity.getPersistentData().getBoolean("entityattackedbyblessing") == false) {
 							entity.getPersistentData().putBoolean("entityattackedbyblessing", true);
-							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/engiesblessingable")))) {
-								entity.hurt(damagesource, (float) (amount * 2.5 * (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get())
-										* (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get())));
+							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/blessing_works")))) {
+								entity.hurt(damagesource, (float) (amount * 2.5 * ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get())
+										+ (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get()))));
 							}
 						}
 					});
@@ -404,10 +404,11 @@ public class EngiesBlessingDamagesProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						if (entity.getPersistentData().getBoolean("entityattackedbyblessing") == false) {
 							entity.getPersistentData().putBoolean("entityattackedbyblessing", true);
-							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/engiesblessingable")))) {
+							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/blessing_works")))) {
 								entity.hurt(damagesource,
-										(float) (amount * 2.5 * (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get())
-												* (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get())
+										(float) (amount * 2.5
+												* ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get())
+														+ (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get()))
 												* ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(Enchantments.MOB_LOOTING) + 1)));
 							}
 						}
@@ -418,10 +419,11 @@ public class EngiesBlessingDamagesProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						if (entity.getPersistentData().getBoolean("entityattackedbyblessing") == false) {
 							entity.getPersistentData().putBoolean("entityattackedbyblessing", true);
-							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/engiesblessingable")))) {
+							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/blessing_works")))) {
 								entity.hurt(damagesource,
-										(float) (amount * 2.5 * (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get())
-												* (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get())
+										(float) (amount * 2.5
+												* ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get())
+														+ (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get()))
 												* ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(Enchantments.BLOCK_FORTUNE) + 1)));
 							}
 						}
@@ -432,10 +434,11 @@ public class EngiesBlessingDamagesProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						if (entity.getPersistentData().getBoolean("entityattackedbyblessing") == false) {
 							entity.getPersistentData().putBoolean("entityattackedbyblessing", true);
-							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/engiesblessingable")))) {
+							if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/blessing_works")))) {
 								entity.hurt(damagesource,
-										(float) (amount * 2.5 * (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get())
-												* (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get())
+										(float) (amount * 2.5
+												* ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get())
+														+ (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get()))
 												* ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(Enchantments.MOB_LOOTING) + 1
 														+ (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(Enchantments.BLOCK_FORTUNE) + 1)));
 							}

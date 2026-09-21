@@ -15,6 +15,8 @@ import net.minecraft.core.BlockPos;
 
 import io.netty.buffer.Unpooled;
 
+import engiegames.engies_chaos.world.inventory.MindscapeTradeMenu;
+
 public class MindscapeButtonClickedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
@@ -24,12 +26,12 @@ public class MindscapeButtonClickedProcedure {
 			NetworkHooks.openScreen((ServerPlayer) _ent, new MenuProvider() {
 				@Override
 				public Component getDisplayName() {
-					return Component.literal("MindscapeTradeUI");
+					return Component.literal("MindscapeTrade");
 				}
 
 				@Override
 				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-					return new MindscapeTradeUIMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
+					return new MindscapeTradeMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
 				}
 			}, _bpos);
 		}

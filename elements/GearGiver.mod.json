@@ -37,8 +37,8 @@
           },
           "width": 30,
           "height": 20,
-          "x": 306,
-          "y": 40,
+          "x": 305,
+          "y": 41,
           "locked": false
         }
       },
@@ -53,8 +53,8 @@
           },
           "width": 28,
           "height": 20,
-          "x": 308,
-          "y": 180,
+          "x": 307,
+          "y": 179,
           "locked": false
         }
       },
@@ -69,7 +69,7 @@
           },
           "width": 82,
           "height": 20,
-          "x": 92,
+          "x": 93,
           "y": 61,
           "locked": false
         }
@@ -101,7 +101,7 @@
           },
           "width": 82,
           "height": 20,
-          "x": 254,
+          "x": 253,
           "y": 61,
           "locked": false
         }
@@ -117,7 +117,7 @@
           },
           "width": 67,
           "height": 20,
-          "x": 92,
+          "x": 93,
           "y": 93,
           "locked": false
         }
@@ -149,7 +149,7 @@
           },
           "width": 77,
           "height": 20,
-          "x": 259,
+          "x": 258,
           "y": 93,
           "locked": false
         }
@@ -165,7 +165,7 @@
           },
           "width": 82,
           "height": 20,
-          "x": 92,
+          "x": 93,
           "y": 125,
           "locked": false
         }
@@ -197,7 +197,7 @@
           },
           "width": 61,
           "height": 20,
-          "x": 275,
+          "x": 274,
           "y": 125,
           "locked": false
         }

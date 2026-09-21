@@ -20,9 +20,9 @@ public class GoldHallowsTickProcedure {
 		if (entity == null)
 			return;
 		if (!(entity instanceof ServerPlayer _plr0 && _plr0.level instanceof ServerLevel
-				&& _plr0.getAdvancements().getOrStartProgress(_plr0.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:roughian_scythe_obtained"))).isDone())) {
+				&& _plr0.getAdvancements().getOrStartProgress(_plr0.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_roughian_scythe_obtained"))).isDone())) {
 			if (entity instanceof ServerPlayer _player) {
-				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:roughian_scythe_obtained"));
+				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_roughian_scythe_obtained"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 				if (!_ap.isDone()) {
 					for (String criteria : _ap.getRemainingCriteria())
@@ -39,14 +39,14 @@ public class GoldHallowsTickProcedure {
 		} else if (itemstack.getOrCreateTag().getDouble("goldhallowskillcount") >= 10000) {
 			if (itemstack.getOrCreateTag().getBoolean("givenupgradeitem") == false) {
 				if (entity instanceof Player _player) {
-					ItemStack _setstack = new ItemStack(EngiesChaosModItems.HALLOW_UPGRADE_TO_GOLD.get()).copy();
+					ItemStack _setstack = new ItemStack(EngiesChaosModItems.GOLD_HALLOW_UPGRADE_TO_COLLECTOR.get()).copy();
 					_setstack.setCount(1);
 					ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 				}
 				itemstack.getOrCreateTag().putBoolean("givenupgradeitem", true);
 			}
 		}
-		if (itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:items/strong_stun"))) || itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:items/normal_stun")))
+		if (itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:items/weak_stun"))) || itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:items/normal_stun")))
 				|| itemstack.is(ItemTags.create(new ResourceLocation("engies_chaos:items/strong_stun")))) {
 			StunKeyTickProcedure.execute(world, entity, itemstack);
 		}

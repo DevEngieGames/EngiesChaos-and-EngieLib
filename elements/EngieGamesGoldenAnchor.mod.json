@@ -12,7 +12,7 @@
     "name": "Golden Hallow's Anchor",
     "specialInformation": {
       "fixedValue": [],
-      "name": "EngieGamesAnchorSpecialInformation"
+      "name": "GoldHallowsAnchorInfo"
     },
     "creativeTabs": [
       {
@@ -38,7 +38,7 @@
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
     "onItemInInventoryTick": {
-      "name": "EngieGamesGoldenAnchorToolInHandTick"
+      "name": "GoldHallowsTick"
     }
   }
 }

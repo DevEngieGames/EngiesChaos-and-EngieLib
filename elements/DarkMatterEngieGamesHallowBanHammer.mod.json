@@ -38,7 +38,7 @@
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
     "onItemInInventoryTick": {
-      "name": "RegularHallowsTick"
+      "name": "DarkRegularHallowsTick"
     }
   }
 }

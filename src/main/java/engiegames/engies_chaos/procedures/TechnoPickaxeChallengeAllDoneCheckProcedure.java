@@ -18,6 +18,7 @@ import net.minecraft.advancements.Advancement;
 import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
+import engiegames.engies_chaos.init.EngiesChaosModGameRules;
 
 @Mod.EventBusSubscriber
 public class TechnoPickaxeChallengeAllDoneCheckProcedure {
@@ -36,7 +37,7 @@ public class TechnoPickaxeChallengeAllDoneCheckProcedure {
 		if (entity == null)
 			return;
 		if (entity instanceof ServerPlayer _plr0 && _plr0.level instanceof ServerLevel && _plr0.getAdvancements().getOrStartProgress(_plr0.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_done"))).isDone()
-				&& EngiesChaosModVariables.MapVariables.get(world).playerkilledmobswithoutpickaxeonlycount == 0) {
+				&& (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pickaxeonly == 0) {
 			if (!(entity instanceof ServerPlayer _plr1 && _plr1.level instanceof ServerLevel
 					&& _plr1.getAdvancements().getOrStartProgress(_plr1.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:pickaxe_only_all_done"))).isDone())) {
 				if (entity instanceof ServerPlayer _player) {
@@ -50,7 +51,7 @@ public class TechnoPickaxeChallengeAllDoneCheckProcedure {
 			}
 		}
 		if (entity instanceof ServerPlayer _plr3 && _plr3.level instanceof ServerLevel && _plr3.getAdvancements().getOrStartProgress(_plr3.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()
-				&& EngiesChaosModVariables.MapVariables.get(world).playerkilledmobswithoutpickaxeonlycount == 0) {
+				&& (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pickaxeonly == 0) {
 			if (!(entity instanceof ServerPlayer _plr4 && _plr4.level instanceof ServerLevel
 					&& _plr4.getAdvancements().getOrStartProgress(_plr4.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:pickaxe_only_all_fully_done"))).isDone())) {
 				if (entity instanceof ServerPlayer _player) {
@@ -87,6 +88,23 @@ public class TechnoPickaxeChallengeAllDoneCheckProcedure {
 					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
 								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "give @s engies_chaos:technoblade_boots");
+					}
+				}
+			}
+		}
+		if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIE_POC) == true) {
+			if (entity instanceof ServerPlayer _plr11 && _plr11.level instanceof ServerLevel
+					&& _plr11.getAdvancements().getOrStartProgress(_plr11.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_poc_all_fully_done"))).isDone()
+					&& (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pickaxeonly == 0) {
+				if (!(entity instanceof ServerPlayer _plr12 && _plr12.level instanceof ServerLevel
+						&& _plr12.getAdvancements().getOrStartProgress(_plr12.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_poc_pickaxe_only_all_fully_done"))).isDone())) {
+					if (entity instanceof ServerPlayer _player) {
+						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_poc_pickaxe_only_all_fully_done"));
+						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+						if (!_ap.isDone()) {
+							for (String criteria : _ap.getRemainingCriteria())
+								_player.getAdvancements().award(_adv, criteria);
+						}
 					}
 				}
 			}

@@ -1,0 +1,31 @@
+{
+  "display": {
+    "background": "engies_chaos:textures/screens/regularsadvancementbg.png",
+    "icon": {
+      "item": "engies_chaos:engies_chaos_advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.engies_chaos_main.title"
+    },
+    "description": {
+      "translate": "advancements.engies_chaos_main.descr"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "engies_chaos_main_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "engies_chaos:sharko_cloth_craft",
+      "engies_chaos:antimatter_craft",
+      "engies_chaos:dark_matter_craft"
+    ]
+  }
+}

@@ -12,8 +12,8 @@ import net.minecraft.network.chat.Component;
 
 import java.util.List;
 
-import engiegames.engies_chaos.procedures.EngieGamesGoldenAnchorToolInHandTickProcedure;
-import engiegames.engies_chaos.procedures.EngieGamesAnchorSpecialInformationProcedure;
+import engiegames.engies_chaos.procedures.GoldHallowsTickProcedure;
+import engiegames.engies_chaos.procedures.GoldHallowsAnchorInfoProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModTabs;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 
@@ -50,7 +50,7 @@ public class EngieGamesGoldenAnchorItem extends PickaxeItem {
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
 		Entity entity = itemstack.getEntityRepresentation();
-		String hoverText = EngieGamesAnchorSpecialInformationProcedure.execute(itemstack);
+		String hoverText = GoldHallowsAnchorInfoProcedure.execute(itemstack);
 		if (hoverText != null) {
 			for (String line : hoverText.split("\n")) {
 				list.add(Component.literal(line));
@@ -61,6 +61,6 @@ public class EngieGamesGoldenAnchorItem extends PickaxeItem {
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		EngieGamesGoldenAnchorToolInHandTickProcedure.execute(world, entity, itemstack);
+		GoldHallowsTickProcedure.execute(world, entity, itemstack);
 	}
 }

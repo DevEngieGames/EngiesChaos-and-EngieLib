@@ -40,7 +40,7 @@
       "name": "BanHammerParticleSpawn"
     },
     "onItemInInventoryTick": {
-      "name": "EngiesObtainPro"
+      "name": "EngieGamesObtainPro"
     }
   }
 }

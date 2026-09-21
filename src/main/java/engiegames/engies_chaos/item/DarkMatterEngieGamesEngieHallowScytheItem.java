@@ -12,8 +12,8 @@ import net.minecraft.network.chat.Component;
 
 import java.util.List;
 
-import engiegames.engies_chaos.procedures.DarkMatterEngieGamesEngieHallowScytheToolInHandTickProcedure;
-import engiegames.engies_chaos.procedures.CollectorsHallowsScytheInfoProcedure;
+import engiegames.engies_chaos.procedures.DarkCollectorsHallowsTickProcedure;
+import engiegames.engies_chaos.procedures.DarkCollectorsHallowsScytheInfoProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModTabs;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 
@@ -50,7 +50,7 @@ public class DarkMatterEngieGamesEngieHallowScytheItem extends SwordItem {
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
 		Entity entity = itemstack.getEntityRepresentation();
-		String hoverText = CollectorsHallowsScytheInfoProcedure.execute(itemstack);
+		String hoverText = DarkCollectorsHallowsScytheInfoProcedure.execute(itemstack);
 		if (hoverText != null) {
 			for (String line : hoverText.split("\n")) {
 				list.add(Component.literal(line));
@@ -61,6 +61,6 @@ public class DarkMatterEngieGamesEngieHallowScytheItem extends SwordItem {
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		DarkMatterEngieGamesEngieHallowScytheToolInHandTickProcedure.execute(world, entity, itemstack);
+		DarkCollectorsHallowsTickProcedure.execute(world, entity, itemstack);
 	}
 }
