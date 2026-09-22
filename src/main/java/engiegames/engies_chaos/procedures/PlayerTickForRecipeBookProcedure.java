@@ -41,9 +41,9 @@ public class PlayerTickForRecipeBookProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
-			} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber > 67) {
+			} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber > 61) {
 				{
-					double _setval = 67;
+					double _setval = 61;
 					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.pageNumber = _setval;
 						capability.syncPlayerVariables(entity);
@@ -59,9 +59,9 @@ public class PlayerTickForRecipeBookProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
-			} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber > 31) {
+			} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber > 32) {
 				{
-					double _setval = 31;
+					double _setval = 32;
 					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.pageNumber = _setval;
 						capability.syncPlayerVariables(entity);
@@ -95,9 +95,9 @@ public class PlayerTickForRecipeBookProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
-			} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber > 123) {
+			} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber > 125) {
 				{
-					double _setval = 123;
+					double _setval = 125;
 					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.pageNumber = _setval;
 						capability.syncPlayerVariables(entity);

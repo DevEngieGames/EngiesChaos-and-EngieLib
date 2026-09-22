@@ -17,7 +17,7 @@
   },
   "criteria": {
     "engies_chaos_main_0": {
-      "trigger": "minecraft:impossible"
+      "trigger": "minecraft:tick"
     }
   },
   "rewards": {

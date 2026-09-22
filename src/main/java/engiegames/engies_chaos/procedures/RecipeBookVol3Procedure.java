@@ -63,7 +63,7 @@ public class RecipeBookVol3Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Items.STICK).copy();
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_GAMES_ENGIE_HALLOW_BAN_HAMMER.get()).copy();
 				final int _sltid = 4;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -163,7 +163,7 @@ public class RecipeBookVol3Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Items.STICK).copy();
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_GAMES_ENGIE_HALLOW_SCYTHE.get()).copy();
 				final int _sltid = 4;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {

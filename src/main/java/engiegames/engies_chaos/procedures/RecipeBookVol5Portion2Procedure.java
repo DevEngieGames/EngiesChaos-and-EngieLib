@@ -16,7 +16,7 @@ public class RecipeBookVol5Portion2Procedure {
 	public static void execute(Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
-		if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 60) {
+		if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 62) {
 			{
 				ItemStack _isc = itemstack;
 				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ANTIMATTER_MAD_ENGIE_ESSENCE.get()).copy();
@@ -63,7 +63,7 @@ public class RecipeBookVol5Portion2Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIEGAMES_SWORD.get()).copy();
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_GAMES_BAN_HAMMER.get()).copy();
 				final int _sltid = 4;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -127,7 +127,7 @@ public class RecipeBookVol5Portion2Procedure {
 					}
 				});
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 61) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 63) {
 			{
 				ItemStack _isc = itemstack;
 				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ANTIMATTER_MAD_ENGIE_ESSENCE.get()).copy();
@@ -163,7 +163,7 @@ public class RecipeBookVol5Portion2Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIEGAMES_SWORD.get()).copy();
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_GAMES_SCYTHE.get()).copy();
 				final int _sltid = 4;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -238,7 +238,7 @@ public class RecipeBookVol5Portion2Procedure {
 					}
 				});
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 62) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 64) {
 			{
 				ItemStack _isc = itemstack;
 				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ANTIMATTER_MAD_ENGIE_ESSENCE.get()).copy();
@@ -349,7 +349,7 @@ public class RecipeBookVol5Portion2Procedure {
 					}
 				});
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 63) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 65) {
 			{
 				ItemStack _isc = itemstack;
 				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ANTIMATTER_MAD_ENGIE_ESSENCE.get()).copy();
@@ -460,7 +460,7 @@ public class RecipeBookVol5Portion2Procedure {
 					}
 				});
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 64) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 66) {
 			{
 				ItemStack _isc = itemstack;
 				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ANTIMATTER_ANGRY_ENGIE_ESSENCE.get()).copy();
@@ -571,7 +571,7 @@ public class RecipeBookVol5Portion2Procedure {
 					}
 				});
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 65) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 67) {
 			{
 				ItemStack _isc = itemstack;
 				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ANTIMATTER_ANGRY_ENGIE_ESSENCE.get()).copy();
@@ -682,7 +682,7 @@ public class RecipeBookVol5Portion2Procedure {
 					}
 				});
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 66) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 68) {
 			{
 				ItemStack _isc = itemstack;
 				final ItemStack _setstack = new ItemStack(EngiesChaosModBlocks.ANTIMATTER_ANGRY_ENGIE_BLOCK.get()).copy();
@@ -793,7 +793,7 @@ public class RecipeBookVol5Portion2Procedure {
 					}
 				});
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 67) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 69) {
 			{
 				ItemStack _isc = itemstack;
 				final ItemStack _setstack = new ItemStack(EngiesChaosModBlocks.ANTIMATTER_ANGRY_ENGIE_BLOCK.get()).copy();
@@ -904,7 +904,7 @@ public class RecipeBookVol5Portion2Procedure {
 					}
 				});
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 68) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 70) {
 			{
 				ItemStack _isc = itemstack;
 				final ItemStack _setstack = new ItemStack(EngiesChaosModBlocks.ANTIMATTER_ENRAGED_ENGIE_BLOCK.get()).copy();
@@ -1015,7 +1015,7 @@ public class RecipeBookVol5Portion2Procedure {
 					}
 				});
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 69) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 71) {
 			{
 				ItemStack _isc = itemstack;
 				final ItemStack _setstack = new ItemStack(EngiesChaosModBlocks.ANTIMATTER_ENRAGED_ENGIE_BLOCK.get()).copy();
@@ -1126,7 +1126,7 @@ public class RecipeBookVol5Portion2Procedure {
 					}
 				});
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 70) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 72) {
 			{
 				ItemStack _isc = itemstack;
 				final ItemStack _setstack = new ItemStack(EngiesChaosModBlocks.ANTIMATTER_ENRAGED_ENGIE_BLOCK.get()).copy();
@@ -1237,7 +1237,7 @@ public class RecipeBookVol5Portion2Procedure {
 					}
 				});
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 71) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 73) {
 			{
 				ItemStack _isc = itemstack;
 				final ItemStack _setstack = new ItemStack(EngiesChaosModBlocks.ANTIMATTER_ENRAGED_ENGIE_BLOCK.get()).copy();
@@ -1348,7 +1348,7 @@ public class RecipeBookVol5Portion2Procedure {
 					}
 				});
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 72) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 74) {
 			{
 				ItemStack _isc = itemstack;
 				final ItemStack _setstack = new ItemStack(EngiesChaosModBlocks.ANTIMATTER_ENRAGED_ENGIE_BLOCK.get()).copy();
@@ -1459,7 +1459,7 @@ public class RecipeBookVol5Portion2Procedure {
 					}
 				});
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 73) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 75) {
 			{
 				ItemStack _isc = itemstack;
 				final ItemStack _setstack = new ItemStack(EngiesChaosModBlocks.ANTIMATTER_ENRAGED_ENGIE_BLOCK.get()).copy();
@@ -1570,7 +1570,7 @@ public class RecipeBookVol5Portion2Procedure {
 					}
 				});
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 74) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 76) {
 			{
 				ItemStack _isc = itemstack;
 				final ItemStack _setstack = new ItemStack(EngiesChaosModBlocks.ANTIMATTER_OUTRAGED_ENGIE_BLOCK.get()).copy();
@@ -1681,7 +1681,7 @@ public class RecipeBookVol5Portion2Procedure {
 					}
 				});
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 75) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 77) {
 			{
 				ItemStack _isc = itemstack;
 				final ItemStack _setstack = new ItemStack(EngiesChaosModBlocks.ANTIMATTER_OUTRAGED_ENGIE_BLOCK.get()).copy();
@@ -1792,7 +1792,7 @@ public class RecipeBookVol5Portion2Procedure {
 					}
 				});
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 76) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 78) {
 			{
 				ItemStack _isc = itemstack;
 				final ItemStack _setstack = new ItemStack(EngiesChaosModBlocks.ANTIMATTER_OUTRAGED_ENGIE_BLOCK.get()).copy();
@@ -1903,7 +1903,7 @@ public class RecipeBookVol5Portion2Procedure {
 					}
 				});
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 77) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 79) {
 			{
 				ItemStack _isc = itemstack;
 				final ItemStack _setstack = new ItemStack(EngiesChaosModBlocks.ANTIMATTER_OUTRAGED_ENGIE_BLOCK.get()).copy();
@@ -2014,7 +2014,7 @@ public class RecipeBookVol5Portion2Procedure {
 					}
 				});
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 78) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 80) {
 			{
 				ItemStack _isc = itemstack;
 				final ItemStack _setstack = new ItemStack(EngiesChaosModBlocks.ANTIMATTER_BIBLICALLY_ACCURATE_BLOCK.get()).copy();
@@ -2125,7 +2125,7 @@ public class RecipeBookVol5Portion2Procedure {
 					}
 				});
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 79) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 81) {
 			{
 				ItemStack _isc = itemstack;
 				final ItemStack _setstack = new ItemStack(EngiesChaosModBlocks.ANTIMATTER_BIBLICALLY_ACCURATE_BLOCK.get()).copy();
@@ -2237,7 +2237,7 @@ public class RecipeBookVol5Portion2Procedure {
 				});
 			}
 		}
-		if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 80) {
+		if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 82) {
 			if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerArmor") == 0) {
 				itemstack.getOrCreateTag().putDouble("RecipeBookTimerArmor", 60);
 			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerArmor") > 0) {
@@ -2695,7 +2695,7 @@ public class RecipeBookVol5Portion2Procedure {
 			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerArmor") == 0 && itemstack.getOrCreateTag().getDouble("RecipeBookGroupIDArmor") == 4) {
 				itemstack.getOrCreateTag().putDouble("RecipeBookGroupIDArmor", 0);
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 81) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 83) {
 			if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerArmor") == 0) {
 				itemstack.getOrCreateTag().putDouble("RecipeBookTimerArmor", 60);
 			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerArmor") > 0) {
@@ -3153,7 +3153,7 @@ public class RecipeBookVol5Portion2Procedure {
 			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerArmor") == 0 && itemstack.getOrCreateTag().getDouble("RecipeBookGroupIDArmor") == 4) {
 				itemstack.getOrCreateTag().putDouble("RecipeBookGroupIDArmor", 0);
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 82) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 84) {
 			if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerArmor") == 0) {
 				itemstack.getOrCreateTag().putDouble("RecipeBookTimerArmor", 60);
 			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerArmor") > 0) {
@@ -3611,7 +3611,7 @@ public class RecipeBookVol5Portion2Procedure {
 			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerArmor") == 0 && itemstack.getOrCreateTag().getDouble("RecipeBookGroupIDArmor") == 4) {
 				itemstack.getOrCreateTag().putDouble("RecipeBookGroupIDArmor", 0);
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 83) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 85) {
 			if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerArmor") == 0) {
 				itemstack.getOrCreateTag().putDouble("RecipeBookTimerArmor", 60);
 			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerArmor") > 0) {
@@ -4069,7 +4069,7 @@ public class RecipeBookVol5Portion2Procedure {
 			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerArmor") == 0 && itemstack.getOrCreateTag().getDouble("RecipeBookGroupIDArmor") == 4) {
 				itemstack.getOrCreateTag().putDouble("RecipeBookGroupIDArmor", 0);
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 84) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 86) {
 			if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerArmor") == 0) {
 				itemstack.getOrCreateTag().putDouble("RecipeBookTimerArmor", 60);
 			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerArmor") > 0) {
@@ -4527,7 +4527,7 @@ public class RecipeBookVol5Portion2Procedure {
 			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerArmor") == 0 && itemstack.getOrCreateTag().getDouble("RecipeBookGroupIDArmor") == 4) {
 				itemstack.getOrCreateTag().putDouble("RecipeBookGroupIDArmor", 0);
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 85) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 87) {
 			if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerArmor") == 0) {
 				itemstack.getOrCreateTag().putDouble("RecipeBookTimerArmor", 60);
 			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerArmor") > 0) {
@@ -4985,7 +4985,7 @@ public class RecipeBookVol5Portion2Procedure {
 			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerArmor") == 0 && itemstack.getOrCreateTag().getDouble("RecipeBookGroupIDArmor") == 4) {
 				itemstack.getOrCreateTag().putDouble("RecipeBookGroupIDArmor", 0);
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 86) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 88) {
 			if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerArmor") == 0) {
 				itemstack.getOrCreateTag().putDouble("RecipeBookTimerArmor", 60);
 			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerArmor") > 0) {
@@ -5444,7 +5444,7 @@ public class RecipeBookVol5Portion2Procedure {
 				itemstack.getOrCreateTag().putDouble("RecipeBookGroupIDArmor", 0);
 			}
 		}
-		if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 87) {
+		if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 89) {
 			if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerETC") == 0) {
 				itemstack.getOrCreateTag().putDouble("RecipeBookTimerETC", 60);
 			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerETC") > 0) {
@@ -5929,7 +5929,7 @@ public class RecipeBookVol5Portion2Procedure {
 			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerETC") == 0 && itemstack.getOrCreateTag().getDouble("RecipeBookGroupIDETC") == 8) {
 				itemstack.getOrCreateTag().putDouble("RecipeBookGroupIDETC", 0);
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 88) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 90) {
 			if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerETC2") == 0) {
 				itemstack.getOrCreateTag().putDouble("RecipeBookTimerETC2", 60);
 			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerETC2") > 0) {
@@ -6720,7 +6720,7 @@ public class RecipeBookVol5Portion2Procedure {
 			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerETC2") == 0 && itemstack.getOrCreateTag().getDouble("RecipeBookGroupIDETC2") == 10) {
 				itemstack.getOrCreateTag().putDouble("RecipeBookGroupIDETC2", 0);
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 89) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 91) {
 			if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerETC3") == 0) {
 				itemstack.getOrCreateTag().putDouble("RecipeBookTimerETC3", 60);
 			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerETC3") > 0) {
@@ -6917,7 +6917,7 @@ public class RecipeBookVol5Portion2Procedure {
 			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerETC3") == 0 && itemstack.getOrCreateTag().getDouble("RecipeBookGroupIDETC3") == 6) {
 				itemstack.getOrCreateTag().putDouble("RecipeBookGroupIDETC3", 0);
 			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 90) {
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 92) {
 			if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerETC4") == 0) {
 				itemstack.getOrCreateTag().putDouble("RecipeBookTimerETC4", 60);
 			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerETC4") > 0) {
@@ -7179,6 +7179,229 @@ public class RecipeBookVol5Portion2Procedure {
 				itemstack.getOrCreateTag().putDouble("RecipeBookGroupIDETC4", (itemstack.getOrCreateTag().getDouble("RecipeBookGroupIDETC4") + 1));
 			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimerETC4") == 0 && itemstack.getOrCreateTag().getDouble("RecipeBookGroupIDETC4") >= 6) {
 				itemstack.getOrCreateTag().putDouble("RecipeBookGroupIDETC4", 0);
+			}
+		}
+		if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 93) {
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ANTIMATTER_BIBLICALLY_ACCURATE_ENGIE_ESSENCE.get()).copy();
+				final int _sltid = 0;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ANTIMATTER_ENGIE_GEM.get()).copy();
+				final int _sltid = 1;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ANTIMATTER_BIBLICALLY_ACCURATE_ENGIE_ESSENCE.get()).copy();
+				final int _sltid = 2;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ANTIMATTER_ENGIE_GEM.get()).copy();
+				final int _sltid = 3;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ANTIMATTER_BIBLICALLY_ACCURATE_ENGIE_ESSENCE.get()).copy();
+				final int _sltid = 4;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ANTIMATTER_ENGIE_GEM.get()).copy();
+				final int _sltid = 5;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ANTIMATTER_BIBLICALLY_ACCURATE_ENGIE_ESSENCE.get()).copy();
+				final int _sltid = 6;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ANTIMATTER_ENGIE_GEM.get()).copy();
+				final int _sltid = 7;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ANTIMATTER_BIBLICALLY_ACCURATE_ENGIE_ESSENCE.get()).copy();
+				final int _sltid = 8;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ANTIMATTER_ENGIE_UPGRADE.get()).copy();
+				final int _sltid = 9;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 94) {
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARKMATTER_FRAGMENT.get()).copy();
+				final int _sltid = 0;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARKMATTER_FRAGMENT.get()).copy();
+				final int _sltid = 1;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARKMATTER_FRAGMENT.get()).copy();
+				final int _sltid = 2;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARKMATTER_FRAGMENT.get()).copy();
+				final int _sltid = 3;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARKMATTER_FRAGMENT.get()).copy();
+				final int _sltid = 4;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARKMATTER_FRAGMENT.get()).copy();
+				final int _sltid = 5;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARKMATTER_FRAGMENT.get()).copy();
+				final int _sltid = 6;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARKMATTER_FRAGMENT.get()).copy();
+				final int _sltid = 7;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARKMATTER_FRAGMENT.get()).copy();
+				final int _sltid = 8;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARKMATTER.get()).copy();
+				final int _sltid = 9;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
 			}
 		}
 	}
