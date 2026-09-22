@@ -12,7 +12,7 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "smithingInputStack": {
-      "value": "CUSTOM:DarkMatterEngiesBanHammer"
+      "value": "CUSTOM:DarkMatterCosmicBanHammer"
     },
     "smithingInputAdditionStack": {
       "value": "CUSTOM:DarkMatterEngieUpgrade"
@@ -21,7 +21,7 @@
       "value": ""
     },
     "smithingReturnStack": {
-      "value": "CUSTOM:DarkMatterEngieGamesBanHammer"
+      "value": "CUSTOM:DarkMatterEngieGamesHallowBanHammer"
     },
     "name": "dark_matter_ban_hammer_upgrade_17",
     "namespace": "mod"

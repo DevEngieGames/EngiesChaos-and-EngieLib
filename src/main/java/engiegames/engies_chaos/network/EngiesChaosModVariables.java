@@ -191,8 +191,6 @@ public class EngiesChaosModVariables {
 			clone.doublejumping = original.doublejumping;
 			clone.CrucifixMainHandDurabilityPercentage = original.CrucifixMainHandDurabilityPercentage;
 			clone.CrucifixOffHandDurabilityPercentage = original.CrucifixOffHandDurabilityPercentage;
-			clone.luckyblockrandom = original.luckyblockrandom;
-			clone.luckyblockrandomalt = original.luckyblockrandomalt;
 			clone.pickaxeonly = original.pickaxeonly;
 			if (!event.isWasDeath()) {
 				clone.firstplay = original.firstplay;
@@ -1214,8 +1212,6 @@ public class EngiesChaosModVariables {
 		public boolean doublejumping = false;
 		public double CrucifixMainHandDurabilityPercentage = 0;
 		public double CrucifixOffHandDurabilityPercentage = 0;
-		public double luckyblockrandom = 0;
-		public double luckyblockrandomalt = 0;
 		public double pickaxeonly = 0;
 
 		public void syncPlayerVariables(Entity entity) {
@@ -1349,8 +1345,6 @@ public class EngiesChaosModVariables {
 			nbt.putBoolean("doublejumping", doublejumping);
 			nbt.putDouble("CrucifixMainHandDurabilityPercentage", CrucifixMainHandDurabilityPercentage);
 			nbt.putDouble("CrucifixOffHandDurabilityPercentage", CrucifixOffHandDurabilityPercentage);
-			nbt.putDouble("luckyblockrandom", luckyblockrandom);
-			nbt.putDouble("luckyblockrandomalt", luckyblockrandomalt);
 			nbt.putDouble("pickaxeonly", pickaxeonly);
 			return nbt;
 		}
@@ -1481,8 +1475,6 @@ public class EngiesChaosModVariables {
 			doublejumping = nbt.getBoolean("doublejumping");
 			CrucifixMainHandDurabilityPercentage = nbt.getDouble("CrucifixMainHandDurabilityPercentage");
 			CrucifixOffHandDurabilityPercentage = nbt.getDouble("CrucifixOffHandDurabilityPercentage");
-			luckyblockrandom = nbt.getDouble("luckyblockrandom");
-			luckyblockrandomalt = nbt.getDouble("luckyblockrandomalt");
 			pickaxeonly = nbt.getDouble("pickaxeonly");
 		}
 	}
@@ -1632,8 +1624,6 @@ public class EngiesChaosModVariables {
 					variables.doublejumping = message.data.doublejumping;
 					variables.CrucifixMainHandDurabilityPercentage = message.data.CrucifixMainHandDurabilityPercentage;
 					variables.CrucifixOffHandDurabilityPercentage = message.data.CrucifixOffHandDurabilityPercentage;
-					variables.luckyblockrandom = message.data.luckyblockrandom;
-					variables.luckyblockrandomalt = message.data.luckyblockrandomalt;
 					variables.pickaxeonly = message.data.pickaxeonly;
 				}
 			});

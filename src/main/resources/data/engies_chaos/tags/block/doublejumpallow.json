@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:seagrass",
+    "minecraft:cave_air",
+    "minecraft:oak_sapling",
+    "minecraft:birch_sapling",
+    "minecraft:fern",
+    "minecraft:spruce_sapling",
+    "minecraft:void_air",
+    "minecraft:air",
+    "minecraft:short_grass",
+    "minecraft:tall_seagrass",
+    "minecraft:acacia_sapling",
+    "minecraft:jungle_sapling",
+    "minecraft:dark_oak_sapling",
+    "minecraft:tall_grass"
+  ]
+}

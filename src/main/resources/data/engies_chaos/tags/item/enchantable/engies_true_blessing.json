@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#minecraft:enchantable/equippable",
+      "required": false
+    },
+    {
+      "id": "#minecraft:enchantable/weapon",
+      "required": false
+    },
+    {
+      "id": "#engies_chaos:crucifixes",
+      "required": false
+    },
+    {
+      "id": "#minecraft:enchantable/bow",
+      "required": false
+    },
+    {
+      "id": "#minecraft:enchantable/mining",
+      "required": false
+    }
+  ]
+}

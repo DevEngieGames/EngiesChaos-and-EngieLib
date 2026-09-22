@@ -350,7 +350,6 @@ import engiegames.engies_chaos.item.EngieGamesCoinItem;
 import engiegames.engies_chaos.item.EngieGamesBanHammerItem;
 import engiegames.engies_chaos.item.EngieGamesAxeItem;
 import engiegames.engies_chaos.item.EngieGamesAnchorItem;
-import engiegames.engies_chaos.item.EngieGamesAdvancementIconItem;
 import engiegames.engies_chaos.item.EngieCrucifixItem;
 import engiegames.engies_chaos.item.EngieCookieItem;
 import engiegames.engies_chaos.item.EngieCoinItem;
@@ -2052,7 +2051,6 @@ public class EngiesChaosModItems {
 	public static final RegistryObject<Item> DOOMS_DAY_ADVANCEMENT_ICON = REGISTRY.register("dooms_day_advancement_icon", DoomsDayAdvancementIconItem::new);
 	public static final RegistryObject<Item> SUPER_DOOMS_DAY_ADVANCEMENT_ICON = REGISTRY.register("super_dooms_day_advancement_icon", SuperDoomsDayAdvancementIconItem::new);
 	public static final RegistryObject<Item> THE_END_ADVANCEMENT_ICON = REGISTRY.register("the_end_advancement_icon", TheEndAdvancementIconItem::new);
-	public static final RegistryObject<Item> ENGIE_GAMES_ADVANCEMENT_ICON = REGISTRY.register("engie_games_advancement_icon", EngieGamesAdvancementIconItem::new);
 	public static final RegistryObject<Item> ENGIE_BIRTHDAY_BUNDLE_FOR_YOUNGEST = REGISTRY.register("engie_birthday_bundle_for_youngest", EngieBirthdayBundleForYoungestItem::new);
 	public static final RegistryObject<Item> A_REAL_BAN_HAMMER = REGISTRY.register("a_real_ban_hammer", ARealBanHammerItem::new);
 	public static final RegistryObject<Item> BYE_BYE_THERE = REGISTRY.register("bye_bye_there", ByeByeThereItem::new);

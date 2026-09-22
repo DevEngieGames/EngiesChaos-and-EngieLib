@@ -12,7 +12,7 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "smithingInputStack": {
-      "value": "CUSTOM:DarkMatterCosmicScythe"
+      "value": "CUSTOM:DarkMatterEngieGamesScythe"
     },
     "smithingInputAdditionStack": {
       "value": "CUSTOM:DarkMatterEngieUpgrade"
@@ -21,7 +21,7 @@
       "value": ""
     },
     "smithingReturnStack": {
-      "value": "CUSTOM:DarkMatterEngieGamesHallowScythe"
+      "value": "CUSTOM:DarkMatterCosmicScythe"
     },
     "name": "dark_matter_scythe_upgrade_16",
     "namespace": "mod"
