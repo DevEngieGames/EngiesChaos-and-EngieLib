@@ -1,14 +1,14 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
+name: Engie's Chaos Feature Request
+about: Suggest an idea for Engie's Chaos.
 title: 'Feature Request: '
 labels: Engie's Chaos, Feature Request.
 assignees: DevEngieGames
 
 ---
 
-**Is your feature request related to a problem?.**
-- [x] No
+**Is your feature request related to a problem?. Check ONE of these.**
+- [ ] No
 - [ ] Yes
 
 **Describe what you'd like to see.**
