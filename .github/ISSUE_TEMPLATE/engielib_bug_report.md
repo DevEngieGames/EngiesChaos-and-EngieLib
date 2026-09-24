@@ -26,4 +26,4 @@ assignees: DevEngieGames
 
 **Reproduction**
 
-**Proof. (Optional, you can delete this if you wanna.)**
+**Proof.**
