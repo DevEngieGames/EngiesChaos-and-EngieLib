@@ -26,4 +26,4 @@ assignees: DevEngieGames
 
 **Reproduction**
 
-**Screenshots/Recording (Optional, you can delete this if you wanna.)**
+**Proof. (Optional, you can delete this if you wanna.)**
