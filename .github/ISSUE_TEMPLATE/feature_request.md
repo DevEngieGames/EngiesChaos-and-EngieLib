@@ -2,7 +2,7 @@
 name: Feature request
 about: Suggest an idea for this project
 title: 'Feature Request: '
-labels: 'Engie's Chaos, Feature Request.'
+labels: Engie's Chaos, Feature Request.
 assignees: DevEngieGames
 
 ---
