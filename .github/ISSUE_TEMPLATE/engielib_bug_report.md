@@ -21,7 +21,6 @@ assignees: DevEngieGames
 - [ ] 1.19.4
 - [ ] 1.19.2
 - [ ] 1.18.2
-- [ ] Resourcepack
 
 **Describe the bug**
 (Describe the bug)
