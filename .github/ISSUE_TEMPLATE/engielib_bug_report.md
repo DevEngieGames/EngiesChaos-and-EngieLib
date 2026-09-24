@@ -7,11 +7,11 @@ assignees: DevEngieGames
 
 ---
 
-**Has this bug been reported before?**
-- [x] No
+**Has this bug been reported before? Check ONE of these.**
+- [ ] No
 - [ ] Yes
 
-**Version the bug occurs on.**
+**Which version/versions does the bug occur on?**
 - [ ] All Versions
 - [ ] 1.21.4
 - [ ] 1.21.1
@@ -22,11 +22,8 @@ assignees: DevEngieGames
 - [ ] 1.19.2
 - [ ] 1.18.2
 
-**Describe the bug**
-(Describe the bug)
+**Description of the bug**
 
-**To Reproduce**
-(Not required to add the steps here if it's anything resourcepack related.)
+**Reproduction**
 
-**Screenshots/Recording (Optional)**
-(Required if resourepack related, add screenshots to help explain the bug.)
+**Screenshots/Recording (Optional, you can delete this if you wanna.)**
