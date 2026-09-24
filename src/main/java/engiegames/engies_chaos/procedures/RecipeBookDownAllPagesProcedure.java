@@ -9,7 +9,7 @@ public class RecipeBookDownAllPagesProcedure {
 		if (entity == null)
 			return;
 		{
-			double _setval = 123;
+			double _setval = 1;
 			entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.pageNumber = _setval;
 				capability.syncPlayerVariables(entity);

@@ -2032,7 +2032,6 @@ public class EngiesChaosModItems {
 	public static final RegistryObject<Item> CODE_REDEEMERS_CHESTPLATE = REGISTRY.register("code_redeemers_chestplate", CodeRedeemersItem.Chestplate::new);
 	public static final RegistryObject<Item> CODE_REDEEMERS_LEGGINGS = REGISTRY.register("code_redeemers_leggings", CodeRedeemersItem.Leggings::new);
 	public static final RegistryObject<Item> CODE_REDEEMERS_BOOTS = REGISTRY.register("code_redeemers_boots", CodeRedeemersItem.Boots::new);
-	public static final RegistryObject<Item> TEXTBOXYEAH = blockCMT(EngiesChaosModBlocks.TEXTBOXYEAH, null);
 	public static final RegistryObject<Item> AAE_DEV_ENGIE = REGISTRY.register("aae_dev_engie", AAEDevEngieItem::new);
 	public static final RegistryObject<Item> BROWNIES_EMPTY = REGISTRY.register("brownies_empty", BrowniesEmptyItem::new);
 	public static final RegistryObject<Item> COMICALLY_MASSIVE_BAN_HAMMER = REGISTRY.register("comically_massive_ban_hammer", BahemothBanHammerItem::new);
@@ -2197,6 +2196,8 @@ public class EngiesChaosModItems {
 	public static final RegistryObject<Item> ANTIMATTER_OBTAIN_ICON_10 = REGISTRY.register("antimatter_obtain_icon_10", AntimatterObtainIcon10Item::new);
 	public static final RegistryObject<Item> ANTIMATTER_OBTAIN_ICON_11 = REGISTRY.register("antimatter_obtain_icon_11", AntimatterObtainIcon11Item::new);
 	public static final RegistryObject<Item> ANTIMATTER_OBTAIN_ICON_12 = REGISTRY.register("antimatter_obtain_icon_12", AntimatterObtainIcon12Item::new);
+	public static final RegistryObject<Item> UNLUCKY_BLOCK = blockCMT(EngiesChaosModBlocks.UNLUCKY_BLOCK, null);
+	public static final RegistryObject<Item> VERY_LUCKY_BLOCK = blockCMT(EngiesChaosModBlocks.VERY_LUCKY_BLOCK, null);
 
 	// Start of user code block custom items
 	// End of user code block custom items

@@ -13,11 +13,12 @@ import net.minecraftforge.event.level.NoteBlockEvent;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.Block;
 
+import engiegames.engies_chaos.block.VeryLuckyBlockBlock;
 import engiegames.engies_chaos.block.UnobtainiumOreBlock;
+import engiegames.engies_chaos.block.UnluckyBlockBlock;
 import engiegames.engies_chaos.block.TheEndCoinBlockBlock;
 import engiegames.engies_chaos.block.ThanksForPlayingOldBlock;
 import engiegames.engies_chaos.block.ThanksForPlayingBlock;
-import engiegames.engies_chaos.block.TextboxyeahBlock;
 import engiegames.engies_chaos.block.SuperDoomsDayCoinBlockBlock;
 import engiegames.engies_chaos.block.ScarletBlock;
 import engiegames.engies_chaos.block.RoughianEngieGamesCoinBlockBlock;
@@ -205,7 +206,6 @@ public class EngiesChaosModBlocks {
 	public static final RegistryObject<Block> CYBER_BLOCK = REGISTRY.register("cyber_block", CyberBlockBlock::new);
 	public static final RegistryObject<Block> BLOOD_BLOCK = REGISTRY.register("blood_block", BloodBlockBlock::new);
 	public static final RegistryObject<Block> CYBERBLOOD_BLOCK = REGISTRY.register("cyberblood_block", CyberbloodBlockBlock::new);
-	public static final RegistryObject<Block> TEXTBOXYEAH = REGISTRY.register("textboxyeah", TextboxyeahBlock::new);
 	public static final RegistryObject<Block> BIBLICALLY_ACCURATE_BLOCK = REGISTRY.register("biblically_accurate_block", BiblicallyAccurateBlockBlock::new);
 	public static final RegistryObject<Block> MONSTROSITY_ENGIE_BLOCK = REGISTRY.register("monstrosity_engie_block", MonstrosityEngieBlockBlock::new);
 	public static final RegistryObject<Block> ANY_TYPE_OF_WOOD_HELP = REGISTRY.register("any_type_of_wood_help", AnyTypeOfWoodHelpBlock::new);
@@ -342,6 +342,8 @@ public class EngiesChaosModBlocks {
 	public static final RegistryObject<Block> DARK_MATTER_ENGIE_CRYSTAL_FULL = REGISTRY.register("dark_matter_engie_crystal_full", DarkMatterEngieCrystalFullBlock::new);
 	public static final RegistryObject<Block> CEASAR = REGISTRY.register("ceasar", CeasarBlock::new);
 	public static final RegistryObject<Block> LUCKY_BLOCK = REGISTRY.register("lucky_block", LuckyBlockBlock::new);
+	public static final RegistryObject<Block> UNLUCKY_BLOCK = REGISTRY.register("unlucky_block", UnluckyBlockBlock::new);
+	public static final RegistryObject<Block> VERY_LUCKY_BLOCK = REGISTRY.register("very_lucky_block", VeryLuckyBlockBlock::new);
 
 	// Start of user code block custom blocks
 	// End of user code block custom blocks
@@ -369,8 +371,6 @@ public class EngiesChaosModBlocks {
 		} else if (below == EngiesChaosModBlocks.UNOBTAINIUM_ORE.get()) {
 			event.setInstrument(NoteBlockInstrument.BASEDRUM);
 		} else if (below == EngiesChaosModBlocks.DEEPSLATE_UNOBTAINIUM_ORE.get()) {
-			event.setInstrument(NoteBlockInstrument.BASEDRUM);
-		} else if (below == EngiesChaosModBlocks.TEXTBOXYEAH.get()) {
 			event.setInstrument(NoteBlockInstrument.BASEDRUM);
 		} else if (below == EngiesChaosModBlocks.BIBLICALLY_ACCURATE_BLOCK.get()) {
 			event.setInstrument(NoteBlockInstrument.BASEDRUM);
@@ -407,6 +407,10 @@ public class EngiesChaosModBlocks {
 		} else if (below == EngiesChaosModBlocks.DEEPSLATE_ENGIE_ORE.get()) {
 			event.setInstrument(NoteBlockInstrument.BASEDRUM);
 		} else if (below == EngiesChaosModBlocks.LUCKY_BLOCK.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.UNLUCKY_BLOCK.get()) {
+			event.setInstrument(NoteBlockInstrument.BASEDRUM);
+		} else if (below == EngiesChaosModBlocks.VERY_LUCKY_BLOCK.get()) {
 			event.setInstrument(NoteBlockInstrument.BASEDRUM);
 		}
 	}

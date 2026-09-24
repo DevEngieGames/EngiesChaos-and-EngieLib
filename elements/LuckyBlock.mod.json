@@ -35,7 +35,22 @@
         "subtract": false
       }
     ],
-    "customProperties": [],
+    "customProperties": [
+      {
+        "min": 1,
+        "max": 25,
+        "name": "CUSTOM:randomdrop1",
+        "type": "integer",
+        "value": 1
+      },
+      {
+        "min": 1,
+        "max": 100,
+        "name": "CUSTOM:randomdrop2",
+        "type": "integer",
+        "value": 1
+      }
+    ],
     "name": "EngieGames Lucky Block",
     "specialInformation": {
       "fixedValue": []
@@ -129,6 +144,9 @@
     "fluidRestrictions": [],
     "onDestroyedByPlayer": {
       "name": "LuckyBlockBlockDestroyedByPlayer"
+    },
+    "onBlockPlayedBy": {
+      "name": "LuckyBlockPlaced"
     },
     "generateFeature": false,
     "restrictionBiomes": [],

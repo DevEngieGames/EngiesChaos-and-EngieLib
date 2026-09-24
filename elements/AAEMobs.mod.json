@@ -2,10 +2,10 @@
   "_fv": 79,
   "_type": "painting",
   "definition": {
-    "texture": "aae_mobs_logo.png",
+    "texture": "aae_mobs_logo",
     "width": 16,
     "height": 16,
     "title": "All About Engie Mobs Logo",
-    "author": "DevEngie"
+    "author": "DevEngie, EngieGames(xEngie)"
   }
 }

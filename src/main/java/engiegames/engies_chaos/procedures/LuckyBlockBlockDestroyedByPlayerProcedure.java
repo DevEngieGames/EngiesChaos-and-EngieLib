@@ -1,6 +1,8 @@
 package engiegames.engies_chaos.procedures;
 
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.GameType;
@@ -60,16 +62,12 @@ import engiegames.engies_chaos.entity.AngryEngieEntity;
 import engiegames.engies_chaos.entity.AngryCreatorEntity;
 
 public class LuckyBlockBlockDestroyedByPlayerProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+	public static void execute(LevelAccessor world, double x, double y, double z, BlockState blockstate, Entity entity) {
 		if (entity == null)
 			return;
-		double randommain = 0;
-		double randomalt = 0;
 		if (getEntityGameType(entity) == GameType.SURVIVAL) {
-			randommain = Math.round(Mth.nextInt(RandomSource.create(), 1, 25));
-			randomalt = Math.round(Mth.nextInt(RandomSource.create(), 1, 100));
-			if (randommain == 1) {
-				if (randomalt == 1) {
+			if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip2 ? blockstate.getValue(_getip2) : -1) == 1) {
+				if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop2") instanceof IntegerProperty _getip4 ? blockstate.getValue(_getip4) : -1) == 1) {
 					if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 1) {
 						for (int index0 = 0; index0 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 10)); index0++) {
 							if (world instanceof ServerLevel _level) {
@@ -186,8 +184,8 @@ public class LuckyBlockBlockDestroyedByPlayerProcedure {
 						}
 					}
 				}
-			} else if (randommain == 2) {
-				if (randomalt == 1) {
+			} else if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip48 ? blockstate.getValue(_getip48) : -1) == 2) {
+				if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop2") instanceof IntegerProperty _getip50 ? blockstate.getValue(_getip50) : -1) == 1) {
 					if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 1) {
 						if (world instanceof ServerLevel _level) {
 							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.DARK_MATTER_ENGIES_HELMET.get()));
@@ -486,8 +484,8 @@ public class LuckyBlockBlockDestroyedByPlayerProcedure {
 						}
 					}
 				}
-			} else if (randommain == 3) {
-				if (randomalt == 1) {
+			} else if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip122 ? blockstate.getValue(_getip122) : -1) == 3) {
+				if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop2") instanceof IntegerProperty _getip124 ? blockstate.getValue(_getip124) : -1) == 1) {
 					if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 1) {
 						if (world instanceof ServerLevel _level) {
 							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.DARK_MATTER_ENGIE_AIOT.get()));
@@ -576,8 +574,8 @@ public class LuckyBlockBlockDestroyedByPlayerProcedure {
 						}
 					}
 				}
-			} else if (randommain == 4) {
-				if (randomalt == 1) {
+			} else if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip154 ? blockstate.getValue(_getip154) : -1) == 4) {
+				if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop2") instanceof IntegerProperty _getip156 ? blockstate.getValue(_getip156) : -1) == 1) {
 					if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 1) {
 						if (world instanceof ServerLevel _level) {
 							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.DARK_MATTER_ENGIE_SWORD.get()));
@@ -946,7 +944,7 @@ public class LuckyBlockBlockDestroyedByPlayerProcedure {
 						}
 					}
 				}
-			} else if (randommain == 5) {
+			} else if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip242 ? blockstate.getValue(_getip242) : -1) == 5) {
 				if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 1) {
 					for (int index14 = 0; index14 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 4)); index14++) {
 						if (world instanceof ServerLevel _level) {
@@ -1018,7 +1016,7 @@ public class LuckyBlockBlockDestroyedByPlayerProcedure {
 						}
 					}
 				}
-			} else if (randommain == 6) {
+			} else if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip265 ? blockstate.getValue(_getip265) : -1) == 6) {
 				if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 1) {
 					for (int index21 = 0; index21 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 2, 8)); index21++) {
 						if (world instanceof ServerLevel _level) {
@@ -1090,7 +1088,7 @@ public class LuckyBlockBlockDestroyedByPlayerProcedure {
 						}
 					}
 				}
-			} else if (randommain == 7) {
+			} else if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip288 ? blockstate.getValue(_getip288) : -1) == 7) {
 				if (Math.round(Mth.nextInt(RandomSource.create(), 1, 9)) == 1) {
 					for (int index28 = 0; index28 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 3, 12)); index28++) {
 						if (world instanceof ServerLevel _level) {
@@ -1178,7 +1176,7 @@ public class LuckyBlockBlockDestroyedByPlayerProcedure {
 						_level.addFreshEntity(entityToSpawn);
 					}
 				}
-			} else if (randommain == 8) {
+			} else if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip324 ? blockstate.getValue(_getip324) : -1) == 8) {
 				if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 1) {
 					for (int index35 = 0; index35 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 4, 16)); index35++) {
 						if (world instanceof ServerLevel _level) {
@@ -1250,7 +1248,7 @@ public class LuckyBlockBlockDestroyedByPlayerProcedure {
 						}
 					}
 				}
-			} else if (randommain == 9) {
+			} else if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip347 ? blockstate.getValue(_getip347) : -1) == 9) {
 				if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 1) {
 					for (int index42 = 0; index42 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 5, 20)); index42++) {
 						if (world instanceof ServerLevel _level) {
@@ -1322,8 +1320,8 @@ public class LuckyBlockBlockDestroyedByPlayerProcedure {
 						}
 					}
 				}
-			} else if (randommain == 10) {
-				if (randomalt == 1) {
+			} else if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip370 ? blockstate.getValue(_getip370) : -1) == 10) {
+				if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop2") instanceof IntegerProperty _getip372 ? blockstate.getValue(_getip372) : -1) == 1) {
 					if (Math.round(Mth.nextInt(RandomSource.create(), 1, 6)) == 1) {
 						for (int index49 = 0; index49 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 10)); index49++) {
 							if (world instanceof ServerLevel _level) {
@@ -1424,8 +1422,8 @@ public class LuckyBlockBlockDestroyedByPlayerProcedure {
 						}
 					}
 				}
-			} else if (randommain == 11) {
-				if (randomalt == 1) {
+			} else if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip410 ? blockstate.getValue(_getip410) : -1) == 11) {
+				if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop2") instanceof IntegerProperty _getip412 ? blockstate.getValue(_getip412) : -1) == 1) {
 					if (Math.round(Mth.nextInt(RandomSource.create(), 1, 6)) == 1) {
 						if (world instanceof ServerLevel _level) {
 							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.DARK_MATTER_DOOMSDAYS_HELMET.get()));
@@ -1682,8 +1680,8 @@ public class LuckyBlockBlockDestroyedByPlayerProcedure {
 						}
 					}
 				}
-			} else if (randommain == 12) {
-				if (randomalt == 1) {
+			} else if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip474 ? blockstate.getValue(_getip474) : -1) == 12) {
+				if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop2") instanceof IntegerProperty _getip476 ? blockstate.getValue(_getip476) : -1) == 1) {
 					if (Math.round(Mth.nextInt(RandomSource.create(), 1, 6)) == 1) {
 						if (world instanceof ServerLevel _level) {
 							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.DARK_MATTER_DOOMS_DAY_AIOT.get()));
@@ -1760,8 +1758,8 @@ public class LuckyBlockBlockDestroyedByPlayerProcedure {
 						}
 					}
 				}
-			} else if (randommain == 13) {
-				if (randomalt == 1) {
+			} else if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip502 ? blockstate.getValue(_getip502) : -1) == 13) {
+				if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop2") instanceof IntegerProperty _getip504 ? blockstate.getValue(_getip504) : -1) == 1) {
 					if (Math.round(Mth.nextInt(RandomSource.create(), 1, 6)) == 1) {
 						if (world instanceof ServerLevel _level) {
 							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.DARK_MATTER_DOOMS_DAY_SWORD.get()));
@@ -2078,7 +2076,7 @@ public class LuckyBlockBlockDestroyedByPlayerProcedure {
 						}
 					}
 				}
-			} else if (randommain == 14) {
+			} else if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip578 ? blockstate.getValue(_getip578) : -1) == 14) {
 				if (Math.round(Mth.nextDouble(RandomSource.create(), 1, 13)) == 1) {
 					for (int index61 = 0; index61 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 16)); index61++) {
 						if (world instanceof ServerLevel _level) {
@@ -2182,44 +2180,44 @@ public class LuckyBlockBlockDestroyedByPlayerProcedure {
 						_level.addFreshEntity(entityToSpawn);
 					}
 				}
-			} else if (randommain == 15) {
+			} else if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip618 ? blockstate.getValue(_getip618) : -1) == 15) {
 				if (world instanceof ServerLevel _level) {
 					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.CRUCIFIX.get()));
 					entityToSpawn.setPickUpDelay(10);
 					_level.addFreshEntity(entityToSpawn);
 				}
-			} else if (randommain == 16) {
+			} else if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip621 ? blockstate.getValue(_getip621) : -1) == 16) {
 				if (world instanceof ServerLevel _level) {
 					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.DOOMS_DAY_CRUCIFIX.get()));
 					entityToSpawn.setPickUpDelay(10);
 					_level.addFreshEntity(entityToSpawn);
 				}
-			} else if (randommain == 17) {
+			} else if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip624 ? blockstate.getValue(_getip624) : -1) == 17) {
 				if (world instanceof ServerLevel _level) {
 					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.THE_END_CRUCIFIX.get()));
 					entityToSpawn.setPickUpDelay(10);
 					_level.addFreshEntity(entityToSpawn);
 				}
-			} else if (randommain == 18) {
+			} else if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip627 ? blockstate.getValue(_getip627) : -1) == 18) {
 				if (world instanceof ServerLevel _level) {
 					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.ENGIE_CRUCIFIX.get()));
 					entityToSpawn.setPickUpDelay(10);
 					_level.addFreshEntity(entityToSpawn);
 				}
-			} else if (randommain == 19) {
+			} else if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip630 ? blockstate.getValue(_getip630) : -1) == 19) {
 				if (world instanceof ServerLevel _level) {
 					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.MINDSCAPE_CRUCIFIX.get()));
 					entityToSpawn.setPickUpDelay(10);
 					_level.addFreshEntity(entityToSpawn);
 				}
-			} else if (randommain == 20) {
+			} else if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip633 ? blockstate.getValue(_getip633) : -1) == 20) {
 				if (world instanceof ServerLevel _level) {
 					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.ENGIE_GAMES_CRUCIFIX.get()));
 					entityToSpawn.setPickUpDelay(10);
 					_level.addFreshEntity(entityToSpawn);
 				}
-			} else if (randommain == 21) {
-				if (randomalt == 1) {
+			} else if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip636 ? blockstate.getValue(_getip636) : -1) == 21) {
+				if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop2") instanceof IntegerProperty _getip638 ? blockstate.getValue(_getip638) : -1) == 1) {
 					if (world instanceof ServerLevel _level) {
 						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModBlocks.BUDDING_DARK_MATTER_MAD_ENGIE_BLOCK.get()));
 						entityToSpawn.setPickUpDelay(10);
@@ -2292,40 +2290,22 @@ public class LuckyBlockBlockDestroyedByPlayerProcedure {
 						_level.addFreshEntity(entityToSpawn);
 					}
 				}
-			} else if (randommain == 22) {
-				if (world instanceof ServerLevel _level) {
-					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModBlocks.LUCKY_BLOCK.get()));
-					entityToSpawn.setPickUpDelay(10);
-					_level.addFreshEntity(entityToSpawn);
+			} else if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip654 ? blockstate.getValue(_getip654) : -1) == 22) {
+				for (int index73 = 0; index73 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 1, 5)); index73++) {
+					if (world instanceof ServerLevel _level) {
+						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModBlocks.LUCKY_BLOCK.get()));
+						entityToSpawn.setPickUpDelay(10);
+						_level.addFreshEntity(entityToSpawn);
+					}
 				}
-				if (world instanceof ServerLevel _level) {
-					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModBlocks.LUCKY_BLOCK.get()));
-					entityToSpawn.setPickUpDelay(10);
-					_level.addFreshEntity(entityToSpawn);
-				}
-				if (world instanceof ServerLevel _level) {
-					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModBlocks.LUCKY_BLOCK.get()));
-					entityToSpawn.setPickUpDelay(10);
-					_level.addFreshEntity(entityToSpawn);
-				}
-				if (world instanceof ServerLevel _level) {
-					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModBlocks.LUCKY_BLOCK.get()));
-					entityToSpawn.setPickUpDelay(10);
-					_level.addFreshEntity(entityToSpawn);
-				}
-				if (world instanceof ServerLevel _level) {
-					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModBlocks.LUCKY_BLOCK.get()));
-					entityToSpawn.setPickUpDelay(10);
-					_level.addFreshEntity(entityToSpawn);
-				}
-			} else if (randommain == 23) {
+			} else if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip658 ? blockstate.getValue(_getip658) : -1) == 23) {
 				if (world instanceof ServerLevel _level) {
 					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.AAE_DEV_ENGIE.get()));
 					entityToSpawn.setPickUpDelay(10);
 					_level.addFreshEntity(entityToSpawn);
 				}
-			} else if (randommain == 24) {
-				if (randomalt == 1) {
+			} else if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip661 ? blockstate.getValue(_getip661) : -1) == 24) {
+				if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop2") instanceof IntegerProperty _getip663 ? blockstate.getValue(_getip663) : -1) == 1) {
 					if (world instanceof ServerLevel _level) {
 						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.TRUE_X_ENGIE_PICKAXE.get()));
 						entityToSpawn.setPickUpDelay(10);
@@ -2368,9 +2348,9 @@ public class LuckyBlockBlockDestroyedByPlayerProcedure {
 						_level.addFreshEntity(entityToSpawn);
 					}
 				}
-			} else if (randommain == 25) {
-				if (randomalt == 1) {
-					if (Math.round(Mth.nextInt(RandomSource.create(), 1, 250)) == 1) {
+			} else if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop1") instanceof IntegerProperty _getip673 ? blockstate.getValue(_getip673) : -1) == 25) {
+				if ((blockstate.getBlock().getStateDefinition().getProperty("randomdrop2") instanceof IntegerProperty _getip675 ? blockstate.getValue(_getip675) : -1) == 1) {
+					if (Math.round(Mth.nextDouble(RandomSource.create(), 1, 250)) == 1) {
 						if (world instanceof ServerLevel _level) {
 							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.ECHDEATH.get()));
 							entityToSpawn.setPickUpDelay(10);

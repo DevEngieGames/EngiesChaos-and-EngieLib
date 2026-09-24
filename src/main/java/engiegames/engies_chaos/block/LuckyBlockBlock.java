@@ -2,6 +2,7 @@ package engiegames.engies_chaos.block;
 
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
@@ -13,18 +14,23 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
+import engiegames.engies_chaos.procedures.LuckyBlockPlacedProcedure;
 import engiegames.engies_chaos.procedures.LuckyBlockBlockDestroyedByPlayerProcedure;
 
 public class LuckyBlockBlock extends Block {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+	public static final IntegerProperty RANDOMDROP1 = IntegerProperty.create("randomdrop1", 1, 25);
+	public static final IntegerProperty RANDOMDROP2 = IntegerProperty.create("randomdrop2", 1, 100);
 
 	public LuckyBlockBlock() {
 		super(BlockBehaviour.Properties.of(Material.BUILDABLE_GLASS).strength(0.5f, 10000f));
-		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
+		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(RANDOMDROP1, 1).setValue(RANDOMDROP2, 1));
 	}
 
 	@Override
@@ -40,12 +46,12 @@ public class LuckyBlockBlock extends Block {
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		super.createBlockStateDefinition(builder);
-		builder.add(FACING);
+		builder.add(FACING, RANDOMDROP1, RANDOMDROP2);
 	}
 
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		return super.getStateForPlacement(context).setValue(FACING, context.getHorizontalDirection().getOpposite());
+		return super.getStateForPlacement(context).setValue(FACING, context.getHorizontalDirection().getOpposite()).setValue(RANDOMDROP1, 1).setValue(RANDOMDROP2, 1);
 	}
 
 	public BlockState rotate(BlockState state, Rotation rot) {
@@ -64,7 +70,13 @@ public class LuckyBlockBlock extends Block {
 	@Override
 	public boolean onDestroyedByPlayer(BlockState blockstate, Level world, BlockPos pos, Player entity, boolean willHarvest, FluidState fluid) {
 		boolean retval = super.onDestroyedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
-		LuckyBlockBlockDestroyedByPlayerProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
+		LuckyBlockBlockDestroyedByPlayerProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), blockstate, entity);
 		return retval;
+	}
+
+	@Override
+	public void setPlacedBy(Level world, BlockPos pos, BlockState blockstate, LivingEntity entity, ItemStack itemstack) {
+		super.setPlacedBy(world, pos, blockstate, entity, itemstack);
+		LuckyBlockPlacedProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 }

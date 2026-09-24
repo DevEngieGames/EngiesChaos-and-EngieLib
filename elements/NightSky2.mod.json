@@ -1,0 +1,11 @@
+{
+  "_fv": 79,
+  "_type": "painting",
+  "definition": {
+    "texture": "night_sky",
+    "width": 64,
+    "height": 32,
+    "title": "Night Sky",
+    "author": "EngieGames"
+  }
+}
