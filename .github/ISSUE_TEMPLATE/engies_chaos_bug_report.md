@@ -1,6 +1,6 @@
 ---
 name: Engie's Chaos Bug report.
-about: Create a report to help me fix the damn mods.
+about: Create a report to help me fix Engie's Chaos.
 title: 'Bug Report: '
 labels: Bug., Engie's Chaos
 assignees: DevEngieGames
