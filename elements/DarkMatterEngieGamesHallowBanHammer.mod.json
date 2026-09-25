@@ -12,7 +12,7 @@
     "name": "Dark Matter Hallow's Ban Hammer",
     "specialInformation": {
       "fixedValue": [],
-      "name": "RegularHallowsBanHammerInfo"
+      "name": "DarkRegularHallowsBanHammerInfo"
     },
     "creativeTabs": [
       {

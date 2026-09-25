@@ -16,8 +16,8 @@ import net.minecraft.core.BlockPos;
 
 import java.util.List;
 
-import engiegames.engies_chaos.procedures.RegularHallowsBanHammerInfoProcedure;
 import engiegames.engies_chaos.procedures.DarkRegularHallowsTickProcedure;
+import engiegames.engies_chaos.procedures.DarkRegularHallowsBanHammerInfoProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModTabs;
 
 import com.google.common.collect.Multimap;
@@ -66,7 +66,7 @@ public class DarkMatterEngieGamesHallowBanHammerItem extends Item {
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
 		Entity entity = itemstack.getEntityRepresentation();
-		String hoverText = RegularHallowsBanHammerInfoProcedure.execute(itemstack);
+		String hoverText = DarkRegularHallowsBanHammerInfoProcedure.execute(itemstack);
 		if (hoverText != null) {
 			for (String line : hoverText.split("\n")) {
 				list.add(Component.literal(line));
