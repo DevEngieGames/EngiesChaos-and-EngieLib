@@ -59,6 +59,19 @@ public class PlayerJoinWorldProcedure {
 						}
 					}
 				}
+				if ((EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart || EngiesChaosModVariables.MapVariables.get(world).TheEndStart
+						|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart) == true) {
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands()
+									.performPrefixedCommand(
+											new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+													_ent.getDisplayName(), _ent.level.getServer(), _ent),
+											("execute in minecraft:overworld run tp @s 0 " + new java.text.DecimalFormat("##").format(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0)) + " 0"));
+						}
+					}
+				}
 			});
 			EngiesChaosMod.queueServerWork(200, () -> {
 				if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).playercountedtoplayercount == false) {
@@ -137,18 +150,6 @@ public class PlayerJoinWorldProcedure {
 				} else {
 					if (EngiesChaosModVariables.decembercodeblock == true) {
 						EngiesChaosModVariables.decembercodeblock = false;
-					}
-				}
-			}
-			if ((EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart || EngiesChaosModVariables.MapVariables.get(world).TheEndStart
-					|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart) == true) {
-				{
-					Entity _ent = entity;
-					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands()
-								.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
-										_ent.getDisplayName(), _ent.level.getServer(), _ent),
-										("execute in minecraft:overworld run tp @s 0 " + new java.text.DecimalFormat("##").format(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0)) + " 0"));
 					}
 				}
 			}

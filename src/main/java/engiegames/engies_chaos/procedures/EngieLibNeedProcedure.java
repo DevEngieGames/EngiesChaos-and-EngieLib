@@ -1,6 +1,7 @@
 package engiegames.engies_chaos.procedures;
 
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
@@ -11,7 +12,6 @@ import net.minecraft.advancements.Advancement;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.init.EngiesChaosModGameRules;
-import engiegames.engies_chaos.EngiesChaosMod;
 
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.StringArgumentType;
@@ -26,7 +26,7 @@ public class EngieLibNeedProcedure {
 			} else if ((StringArgumentType.getString(arguments, "Type")).equals("StartEndgameLoot")) {
 				EngiesChaosModVariables.MapVariables.get(world).antimatterdropcheck = true;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-			} else if ((StringArgumentType.getString(arguments, "Type")).equals("DoomsdayCleanupPlayer")) {
+			} else if ((StringArgumentType.getString(arguments, "Type")).equals("DoomsdayAwardPlayer")) {
 				if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive == true) {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayhappened == true || EngiesChaosModVariables.MapVariables.get(world).sddayhappened == true || EngiesChaosModVariables.MapVariables.get(world).theendhappened == true
 							|| EngiesChaosModVariables.MapVariables.get(world).ewrathhappened == true) {
@@ -100,6 +100,7 @@ public class EngieLibNeedProcedure {
 						}
 					}
 				}
+			} else if ((StringArgumentType.getString(arguments, "Type")).equals("DoomsdayCleanupPlayer")) {
 				{
 					Entity _ent = entity;
 					_ent.teleportTo(
@@ -125,10 +126,10 @@ public class EngieLibNeedProcedure {
 										: 0),
 								_ent.getYRot(), _ent.getXRot());
 				}
-				EngiesChaosMod.queueServerWork(1, () -> {
-					if (entity instanceof LivingEntity _entity)
-						_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
-				});
+				if (entity instanceof LivingEntity _entity)
+					_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
+				if (entity instanceof Player _player)
+					_player.getFoodData().setFoodLevel(20);
 			}
 		}
 	}

@@ -14,6 +14,7 @@ import net.minecraft.util.Mth;
 import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
+import engiegames.engies_chaos.EngiesChaosMod;
 
 @Mod.EventBusSubscriber
 public class ProphecyTickProcedure {
@@ -29,212 +30,370 @@ public class ProphecyTickProcedure {
 	}
 
 	private static void execute(@Nullable Event event, LevelAccessor world) {
-		if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.OVERWORLD && !world.isClientSide()) {
-			if (EngiesChaosModVariables.MapVariables.get(world).ddayprophshow == true) {
-				EngiesChaosModVariables.MapVariables.get(world).ddayprophnumbertotal = EngiesChaosModVariables.MapVariables.get(world).ddayprophnumbertotal + 0.05;
+		if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.OVERWORLD) {
+			if (EngiesChaosModVariables.MapVariables.get(world).ddayprophshow == false) {
+				EngiesChaosModVariables.MapVariables.get(world).ddayprophwaittime = 0;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumbertotal >= 8) {
-					EngiesChaosModVariables.MapVariables.get(world).ddayprophnumbertotal = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).ddayprophshow = false;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				}
-				if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumbertotal >= 3) {
+			} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophshow == true) {
+				EngiesChaosModVariables.MapVariables.get(world).ddayprophwaittime = EngiesChaosModVariables.MapVariables.get(world).ddayprophwaittime + 0.05;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+				if (EngiesChaosModVariables.MapVariables.get(world).ddayprophwaittime >= 3) {
 					if (EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait == false) {
+						EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = true;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 0) {
-							if (Mth.nextDouble(RandomSource.create(), 1, 100) <= 25) {
-								EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb = 1;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							} else {
-								if (Mth.nextDouble(RandomSource.create(), 1, 100) <= 25) {
-									EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb = 2;
-									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								} else {
-									if (Mth.nextDouble(RandomSource.create(), 1, 100) <= 25) {
-										EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb = 3;
-										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-									} else {
-										if (Mth.nextDouble(RandomSource.create(), 1, 100) <= 25) {
-											EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb = 4;
-											EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-										} else {
-											if (Mth.nextDouble(RandomSource.create(), 1, 100) <= 25) {
-												EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb = 5;
-												EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-											} else {
-												if (Mth.nextDouble(RandomSource.create(), 1, 100) <= 25) {
-													EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb = 6;
-													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-												} else {
-													EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb = 7;
-													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-												}
-											}
-										}
-									}
-								}
-							}
-							if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true || EngiesChaosModVariables.MapVariables.get(world).sddaystart == true || EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
+							EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 1;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddayprophnormhordenumb = Math.round(Mth.nextInt(RandomSource.create(), 1, 7));
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true) {
 								EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = true;
+								EngiesChaosModVariables.MapVariables.get(world).ddaytimerminutes = Math.round(Mth.nextInt(RandomSource.create(), 1, 10));
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 1;
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if (EngiesChaosModVariables.MapVariables.get(world).ddaytimerminutes == 10 || EngiesChaosModVariables.MapVariables.get(world).ddaytimerminutes == 1) {
+										EngiesChaosModVariables.MapVariables.get(world).ddaytimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 45));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									} else {
+										EngiesChaosModVariables.MapVariables.get(world).ddaytimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 59));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									}
+								});
+								EngiesChaosMod.queueServerWork(200, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
+							} else if (EngiesChaosModVariables.MapVariables.get(world).sddaystart == true) {
+								EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).sddaytimerminutes = Math.round(Mth.nextInt(RandomSource.create(), 1, 10));
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if (EngiesChaosModVariables.MapVariables.get(world).sddaytimerminutes == 10 || EngiesChaosModVariables.MapVariables.get(world).sddaytimerminutes == 1) {
+										EngiesChaosModVariables.MapVariables.get(world).sddaytimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 45));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									} else {
+										EngiesChaosModVariables.MapVariables.get(world).sddaytimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 59));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									}
+								});
+								EngiesChaosMod.queueServerWork(200, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
+							} else if (EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
+								EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).theendtimerminutes = Math.round(Mth.nextInt(RandomSource.create(), 1, 10));
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if (EngiesChaosModVariables.MapVariables.get(world).theendtimerminutes == 10 || EngiesChaosModVariables.MapVariables.get(world).theendtimerminutes == 1) {
+										EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 45));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									} else {
+										EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 59));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									}
+								});
+								EngiesChaosMod.queueServerWork(200, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
 							} else if (EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true) {
 								EngiesChaosModVariables.MapVariables.get(world).churchbellsewrath = true;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = true;
+								EngiesChaosModVariables.MapVariables.get(world).ewrathtimerminutes = Math.round(Mth.nextInt(RandomSource.create(), 1, 10));
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 1;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if (EngiesChaosModVariables.MapVariables.get(world).ewrathtimerminutes == 10 || EngiesChaosModVariables.MapVariables.get(world).ewrathtimerminutes == 1) {
+										EngiesChaosModVariables.MapVariables.get(world).ewrathtimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 45));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									} else {
+										EngiesChaosModVariables.MapVariables.get(world).ewrathtimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 59));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									}
+								});
+								EngiesChaosMod.queueServerWork(200, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
 							}
 						} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 1) {
-							if (Math.round(Mth.nextDouble(RandomSource.create(), 1, 100)) <= 25) {
-								EngiesChaosModVariables.MapVariables.get(world).ddayprophnightmarehordenumb = 1;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							} else {
-								if (Math.round(Mth.nextDouble(RandomSource.create(), 1, 100)) <= 25) {
-									EngiesChaosModVariables.MapVariables.get(world).ddayprophnightmarehordenumb = 2;
-									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								} else {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 1, 100)) <= 25) {
-										EngiesChaosModVariables.MapVariables.get(world).ddayprophnightmarehordenumb = 3;
-										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-									} else {
-										if (Math.round(Mth.nextDouble(RandomSource.create(), 1, 100)) <= 25) {
-											EngiesChaosModVariables.MapVariables.get(world).ddayprophnightmarehordenumb = 4;
-											EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-										} else {
-											if (Math.round(Mth.nextDouble(RandomSource.create(), 1, 100)) <= 25) {
-												EngiesChaosModVariables.MapVariables.get(world).ddayprophnightmarehordenumb = 5;
-												EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-											} else {
-												if (Math.round(Mth.nextDouble(RandomSource.create(), 1, 100)) <= 25) {
-													EngiesChaosModVariables.MapVariables.get(world).ddayprophnightmarehordenumb = 6;
-													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-												} else {
-													EngiesChaosModVariables.MapVariables.get(world).ddayprophnightmarehordenumb = 7;
-													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-												}
-											}
-										}
-									}
-								}
-							}
-							if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true || EngiesChaosModVariables.MapVariables.get(world).sddaystart == true || EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
+							EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 2;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddayprophnightmarehordenumb = Math.round(Mth.nextInt(RandomSource.create(), 1, 7));
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true) {
 								EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = true;
+								EngiesChaosModVariables.MapVariables.get(world).ddaytimerminutes = Math.round(Mth.nextInt(RandomSource.create(), 1, 10));
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 2;
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if (EngiesChaosModVariables.MapVariables.get(world).ddaytimerminutes == 10 || EngiesChaosModVariables.MapVariables.get(world).ddaytimerminutes == 1) {
+										EngiesChaosModVariables.MapVariables.get(world).ddaytimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 45));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									} else {
+										EngiesChaosModVariables.MapVariables.get(world).ddaytimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 59));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									}
+								});
+								EngiesChaosMod.queueServerWork(200, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
+							} else if (EngiesChaosModVariables.MapVariables.get(world).sddaystart == true) {
+								EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).sddaytimerminutes = Math.round(Mth.nextInt(RandomSource.create(), 1, 10));
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if (EngiesChaosModVariables.MapVariables.get(world).sddaytimerminutes == 10 || EngiesChaosModVariables.MapVariables.get(world).sddaytimerminutes == 1) {
+										EngiesChaosModVariables.MapVariables.get(world).sddaytimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 45));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									} else {
+										EngiesChaosModVariables.MapVariables.get(world).sddaytimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 59));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									}
+								});
+								EngiesChaosMod.queueServerWork(200, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
+							} else if (EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
+								EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).theendtimerminutes = Math.round(Mth.nextInt(RandomSource.create(), 1, 10));
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if (EngiesChaosModVariables.MapVariables.get(world).theendtimerminutes == 10 || EngiesChaosModVariables.MapVariables.get(world).theendtimerminutes == 1) {
+										EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 45));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									} else {
+										EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 59));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									}
+								});
+								EngiesChaosMod.queueServerWork(200, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
 							} else if (EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true) {
 								EngiesChaosModVariables.MapVariables.get(world).churchbellsewrath = true;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = true;
+								EngiesChaosModVariables.MapVariables.get(world).ewrathtimerminutes = Math.round(Mth.nextInt(RandomSource.create(), 1, 10));
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 2;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if (EngiesChaosModVariables.MapVariables.get(world).ewrathtimerminutes == 10 || EngiesChaosModVariables.MapVariables.get(world).ewrathtimerminutes == 1) {
+										EngiesChaosModVariables.MapVariables.get(world).ewrathtimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 45));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									} else {
+										EngiesChaosModVariables.MapVariables.get(world).ewrathtimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 59));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									}
+								});
+								EngiesChaosMod.queueServerWork(200, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
 							}
 						} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 2) {
-							if (Mth.nextDouble(RandomSource.create(), 1, 100) <= 25) {
-								EngiesChaosModVariables.MapVariables.get(world).ddayprophinsanityhordenumb = 1;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							} else {
-								if (Mth.nextDouble(RandomSource.create(), 1, 100) <= 25) {
-									EngiesChaosModVariables.MapVariables.get(world).ddayprophinsanityhordenumb = 2;
-									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								} else {
-									if (Mth.nextDouble(RandomSource.create(), 1, 100) <= 25) {
-										EngiesChaosModVariables.MapVariables.get(world).ddayprophinsanityhordenumb = 3;
-										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-									} else {
-										if (Mth.nextDouble(RandomSource.create(), 1, 100) <= 25) {
-											EngiesChaosModVariables.MapVariables.get(world).ddayprophinsanityhordenumb = 4;
-											EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-										} else {
-											if (Mth.nextDouble(RandomSource.create(), 1, 100) <= 25) {
-												EngiesChaosModVariables.MapVariables.get(world).ddayprophinsanityhordenumb = 5;
-												EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-											} else {
-												if (Mth.nextDouble(RandomSource.create(), 1, 100) <= 25) {
-													EngiesChaosModVariables.MapVariables.get(world).ddayprophinsanityhordenumb = 6;
-													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-												} else {
-													EngiesChaosModVariables.MapVariables.get(world).ddayprophinsanityhordenumb = 7;
-													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-												}
-											}
-										}
-									}
-								}
-							}
-							if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true || EngiesChaosModVariables.MapVariables.get(world).sddaystart == true || EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
+							EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 3;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddayprophinsanityhordenumb = Math.round(Mth.nextInt(RandomSource.create(), 1, 7));
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true) {
 								EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = true;
+								EngiesChaosModVariables.MapVariables.get(world).ddaytimerminutes = Math.round(Mth.nextInt(RandomSource.create(), 1, 10));
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 3;
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if (EngiesChaosModVariables.MapVariables.get(world).ddaytimerminutes == 10 || EngiesChaosModVariables.MapVariables.get(world).ddaytimerminutes == 1) {
+										EngiesChaosModVariables.MapVariables.get(world).ddaytimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 45));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									} else {
+										EngiesChaosModVariables.MapVariables.get(world).ddaytimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 59));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									}
+								});
+								EngiesChaosMod.queueServerWork(200, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
+							} else if (EngiesChaosModVariables.MapVariables.get(world).sddaystart == true) {
+								EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).sddaytimerminutes = Math.round(Mth.nextInt(RandomSource.create(), 1, 10));
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if (EngiesChaosModVariables.MapVariables.get(world).sddaytimerminutes == 10 || EngiesChaosModVariables.MapVariables.get(world).sddaytimerminutes == 1) {
+										EngiesChaosModVariables.MapVariables.get(world).sddaytimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 45));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									} else {
+										EngiesChaosModVariables.MapVariables.get(world).sddaytimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 59));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									}
+								});
+								EngiesChaosMod.queueServerWork(200, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
+							} else if (EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
+								EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).theendtimerminutes = Math.round(Mth.nextInt(RandomSource.create(), 1, 10));
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if (EngiesChaosModVariables.MapVariables.get(world).theendtimerminutes == 10 || EngiesChaosModVariables.MapVariables.get(world).theendtimerminutes == 1) {
+										EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 45));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									} else {
+										EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 59));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									}
+								});
+								EngiesChaosMod.queueServerWork(200, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
 							} else if (EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true) {
 								EngiesChaosModVariables.MapVariables.get(world).churchbellsewrath = true;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = true;
+								EngiesChaosModVariables.MapVariables.get(world).ewrathtimerminutes = Math.round(Mth.nextInt(RandomSource.create(), 1, 10));
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 3;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if (EngiesChaosModVariables.MapVariables.get(world).ewrathtimerminutes == 10 || EngiesChaosModVariables.MapVariables.get(world).ewrathtimerminutes == 1) {
+										EngiesChaosModVariables.MapVariables.get(world).ewrathtimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 45));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									} else {
+										EngiesChaosModVariables.MapVariables.get(world).ewrathtimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 59));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									}
+								});
+								EngiesChaosMod.queueServerWork(200, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
 							}
 						} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 3) {
-							if (Mth.nextDouble(RandomSource.create(), 1, 100) <= 25) {
-								EngiesChaosModVariables.MapVariables.get(world).ddayprophengiepochordenumb = 1;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							} else {
-								if (Mth.nextDouble(RandomSource.create(), 1, 100) <= 25) {
-									EngiesChaosModVariables.MapVariables.get(world).ddayprophengiepochordenumb = 2;
-									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								} else {
-									if (Mth.nextDouble(RandomSource.create(), 1, 100) <= 25) {
-										EngiesChaosModVariables.MapVariables.get(world).ddayprophengiepochordenumb = 3;
-										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-									} else {
-										if (Mth.nextDouble(RandomSource.create(), 1, 100) <= 25) {
-											EngiesChaosModVariables.MapVariables.get(world).ddayprophengiepochordenumb = 4;
-											EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-										} else {
-											if (Mth.nextDouble(RandomSource.create(), 1, 100) <= 25) {
-												EngiesChaosModVariables.MapVariables.get(world).ddayprophengiepochordenumb = 5;
-												EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-											} else {
-												if (Mth.nextDouble(RandomSource.create(), 1, 100) <= 25) {
-													EngiesChaosModVariables.MapVariables.get(world).ddayprophengiepochordenumb = 6;
-													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-												} else {
-													EngiesChaosModVariables.MapVariables.get(world).ddayprophengiepochordenumb = 7;
-													EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-												}
-											}
-										}
-									}
-								}
-							}
-							if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true || EngiesChaosModVariables.MapVariables.get(world).sddaystart == true || EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
+							EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 4;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddayprophengiepochordenumb = Math.round(Mth.nextInt(RandomSource.create(), 1, 7));
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true) {
 								EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = true;
+								EngiesChaosModVariables.MapVariables.get(world).ddaytimerminutes = Math.round(Mth.nextInt(RandomSource.create(), 1, 10));
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 4;
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if (EngiesChaosModVariables.MapVariables.get(world).ddaytimerminutes == 10 || EngiesChaosModVariables.MapVariables.get(world).ddaytimerminutes == 1) {
+										EngiesChaosModVariables.MapVariables.get(world).ddaytimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 45));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									} else {
+										EngiesChaosModVariables.MapVariables.get(world).ddaytimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 59));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									}
+								});
+								EngiesChaosMod.queueServerWork(200, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
+							} else if (EngiesChaosModVariables.MapVariables.get(world).sddaystart == true) {
+								EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).sddaytimerminutes = Math.round(Mth.nextInt(RandomSource.create(), 1, 10));
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if (EngiesChaosModVariables.MapVariables.get(world).sddaytimerminutes == 10 || EngiesChaosModVariables.MapVariables.get(world).sddaytimerminutes == 1) {
+										EngiesChaosModVariables.MapVariables.get(world).sddaytimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 45));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									} else {
+										EngiesChaosModVariables.MapVariables.get(world).sddaytimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 59));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									}
+								});
+								EngiesChaosMod.queueServerWork(200, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
+							} else if (EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
+								EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = true;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).theendtimerminutes = Math.round(Mth.nextInt(RandomSource.create(), 1, 10));
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if (EngiesChaosModVariables.MapVariables.get(world).theendtimerminutes == 10 || EngiesChaosModVariables.MapVariables.get(world).theendtimerminutes == 1) {
+										EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 45));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									} else {
+										EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 59));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									}
+								});
+								EngiesChaosMod.queueServerWork(200, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
 							} else if (EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true) {
 								EngiesChaosModVariables.MapVariables.get(world).churchbellsewrath = true;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = true;
+								EngiesChaosModVariables.MapVariables.get(world).ewrathtimerminutes = Math.round(Mth.nextInt(RandomSource.create(), 1, 10));
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-								EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 4;
-								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosMod.queueServerWork(1, () -> {
+									if (EngiesChaosModVariables.MapVariables.get(world).ewrathtimerminutes == 10 || EngiesChaosModVariables.MapVariables.get(world).ewrathtimerminutes == 1) {
+										EngiesChaosModVariables.MapVariables.get(world).ewrathtimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 45));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									} else {
+										EngiesChaosModVariables.MapVariables.get(world).ewrathtimerseconds = Math.round(Mth.nextInt(RandomSource.create(), 1, 59));
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									}
+								});
+								EngiesChaosMod.queueServerWork(200, () -> {
+									EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = false;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+									EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
+									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								});
 							}
 						}
+					} else if (EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait == true) {
+						EngiesChaosModVariables.MapVariables.get(world).ddayprophwaittime = 0;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
+				}
+				if (EngiesChaosModVariables.MapVariables.get(world).ddayprophwaittime >= 9) {
+					EngiesChaosModVariables.MapVariables.get(world).ddayprophshow = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				}
 			}
 		}

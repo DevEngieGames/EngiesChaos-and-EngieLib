@@ -1,12 +1,12 @@
 {
-  "name": "engies_chaos:item_house_xxl",
+  "name": "engies_chaos:trader_hut",
   "fallback": "minecraft:empty",
   "elements": [
     {
       "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "engies_chaos:itemhousexxl",
+        "location": "engies_chaos:traderhut",
         "projection": "rigid",
         "processors": {
           "processors": [

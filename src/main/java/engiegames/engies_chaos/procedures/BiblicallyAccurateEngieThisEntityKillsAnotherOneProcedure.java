@@ -36,7 +36,7 @@ public class BiblicallyAccurateEngieThisEntityKillsAnotherOneProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
-		if (sourceentity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("allaboutengie:mobs/biblically")))) {
+		if (sourceentity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/biblically")))) {
 			if (entity instanceof Monster) {
 				if (EngiesChaosModVariables.MapVariables.get(world).antimatterdropcheck == true) {
 					if (Math.random() <= 0.15) {

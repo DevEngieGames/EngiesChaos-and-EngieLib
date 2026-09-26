@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 
 @Mod.EventBusSubscriber
-public class DDaySFXPlayProcedure {
+public class DDAYSoundEffectsProcedure {
 	@SubscribeEvent
 	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
 		if (event.phase == TickEvent.Phase.END) {

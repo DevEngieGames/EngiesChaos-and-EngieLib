@@ -34,7 +34,7 @@ public class BanHammerParticleSpawnProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
-		if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(new ResourceLocation("allaboutengie:items/banhammer")))) {
+		if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(new ResourceLocation("engies_chaos:items/banhammer")))) {
 			if (world instanceof ServerLevel _level)
 				_level.sendParticles((SimpleParticleType) (EngiesChaosModParticleTypes.BAN_HAMMER_HIT.get()), (entity.getX()), (entity.getY() + 1), (entity.getZ()), 1, 0, 0, 0, 1);
 		}

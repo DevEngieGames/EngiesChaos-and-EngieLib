@@ -2,14 +2,14 @@
   "_fv": 79,
   "_type": "structure",
   "definition": {
-    "structure": "itemhousexxl",
+    "structure": "traderhut",
     "projection": "rigid",
     "ignoredBlocks": [
       {
         "value": "Blocks.STRUCTURE_BLOCK"
       }
     ],
-    "spacing": 200,
+    "spacing": 300,
     "separation": 5,
     "restrictionBiomes": [
       {

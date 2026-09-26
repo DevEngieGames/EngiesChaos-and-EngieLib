@@ -98,9 +98,6 @@ public class EngiesChaosModVariables {
 			clone.difficultyoverlaytoggle = original.difficultyoverlaytoggle;
 			clone.doublejumpcount = original.doublejumpcount;
 			clone.engiegameshallowscythestatclock = original.engiegameshallowscythestatclock;
-			clone.RX = original.RX;
-			clone.RY = original.RY;
-			clone.RZ = original.RZ;
 			clone.TrueHardcoreMaxLifeCount = original.TrueHardcoreMaxLifeCount;
 			clone.TrueHardcoreLifeChangeAmount = original.TrueHardcoreLifeChangeAmount;
 			clone.CountUntilBaseDrop = original.CountUntilBaseDrop;
@@ -318,6 +315,9 @@ public class EngiesChaosModVariables {
 		public double playerobtainedcollectorshallowscythe = 0;
 		public double playerobtainedhallowscythecount = 0;
 		public double MobDiffBeforeChallenge = 0;
+		public double RX = 0;
+		public double RY = 0;
+		public double RZ = 0;
 		public double doomsdaymainsongtimer = 0;
 		public double doomsdaytimer = 720.0;
 		public double darknessretrycooldown = 0.0;
@@ -341,7 +341,6 @@ public class EngiesChaosModVariables {
 		public double theendmaxtime = 0;
 		public double engieswrathmaxtime = 1525.0;
 		public double ddayprophnumb = 0;
-		public double ddayprophtimerdisaster = 0;
 		public double ddayprophnumbertotal = 0;
 		public double ddayprophwaittime = 0;
 		public double spikecooldownamount = 0;
@@ -440,10 +439,6 @@ public class EngiesChaosModVariables {
 		public double DDaySpikeAmount = 0;
 		public double DDayMissileAmount = 0;
 		public double DDayRiftAmount = 0;
-		public boolean waitforriftdespawn = false;
-		public boolean waitformissiledespawn = false;
-		public boolean waitforavalanchedespawn = false;
-		public boolean waitforspikedespawn = false;
 		public double engiepocgraceperiod = 0.0;
 		public boolean rangraceperiodcount = true;
 		public boolean EngiePocSpawnedHelper = false;
@@ -497,13 +492,15 @@ public class EngiesChaosModVariables {
 		public double previoustime = 0;
 		public double forecastdialogue = 0;
 		public boolean hordespawnstoggle = false;
-		public double randnumforproph = 0;
 		public double tradertimercounttick = 0;
 		public boolean traderneedcount = false;
 		public double random25minutetimer = 0;
 		public boolean mobbasehpmulttoggle = false;
 		public boolean engiestruewrath = false;
 		public boolean resetpickaxeonlycount = false;
+		public boolean ddayoncleanup = false;
+		public boolean ddaystoptimer = true;
+		public double doomsdaycleanuptimer = 0;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -566,6 +563,9 @@ public class EngiesChaosModVariables {
 			playerobtainedcollectorshallowscythe = nbt.getDouble("playerobtainedcollectorshallowscythe");
 			playerobtainedhallowscythecount = nbt.getDouble("playerobtainedhallowscythecount");
 			MobDiffBeforeChallenge = nbt.getDouble("MobDiffBeforeChallenge");
+			RX = nbt.getDouble("RX");
+			RY = nbt.getDouble("RY");
+			RZ = nbt.getDouble("RZ");
 			doomsdaymainsongtimer = nbt.getDouble("doomsdaymainsongtimer");
 			doomsdaytimer = nbt.getDouble("doomsdaytimer");
 			darknessretrycooldown = nbt.getDouble("darknessretrycooldown");
@@ -589,7 +589,6 @@ public class EngiesChaosModVariables {
 			theendmaxtime = nbt.getDouble("theendmaxtime");
 			engieswrathmaxtime = nbt.getDouble("engieswrathmaxtime");
 			ddayprophnumb = nbt.getDouble("ddayprophnumb");
-			ddayprophtimerdisaster = nbt.getDouble("ddayprophtimerdisaster");
 			ddayprophnumbertotal = nbt.getDouble("ddayprophnumbertotal");
 			ddayprophwaittime = nbt.getDouble("ddayprophwaittime");
 			spikecooldownamount = nbt.getDouble("spikecooldownamount");
@@ -688,10 +687,6 @@ public class EngiesChaosModVariables {
 			DDaySpikeAmount = nbt.getDouble("DDaySpikeAmount");
 			DDayMissileAmount = nbt.getDouble("DDayMissileAmount");
 			DDayRiftAmount = nbt.getDouble("DDayRiftAmount");
-			waitforriftdespawn = nbt.getBoolean("waitforriftdespawn");
-			waitformissiledespawn = nbt.getBoolean("waitformissiledespawn");
-			waitforavalanchedespawn = nbt.getBoolean("waitforavalanchedespawn");
-			waitforspikedespawn = nbt.getBoolean("waitforspikedespawn");
 			engiepocgraceperiod = nbt.getDouble("engiepocgraceperiod");
 			rangraceperiodcount = nbt.getBoolean("rangraceperiodcount");
 			EngiePocSpawnedHelper = nbt.getBoolean("EngiePocSpawnedHelper");
@@ -745,13 +740,15 @@ public class EngiesChaosModVariables {
 			previoustime = nbt.getDouble("previoustime");
 			forecastdialogue = nbt.getDouble("forecastdialogue");
 			hordespawnstoggle = nbt.getBoolean("hordespawnstoggle");
-			randnumforproph = nbt.getDouble("randnumforproph");
 			tradertimercounttick = nbt.getDouble("tradertimercounttick");
 			traderneedcount = nbt.getBoolean("traderneedcount");
 			random25minutetimer = nbt.getDouble("random25minutetimer");
 			mobbasehpmulttoggle = nbt.getBoolean("mobbasehpmulttoggle");
 			engiestruewrath = nbt.getBoolean("engiestruewrath");
 			resetpickaxeonlycount = nbt.getBoolean("resetpickaxeonlycount");
+			ddayoncleanup = nbt.getBoolean("ddayoncleanup");
+			ddaystoptimer = nbt.getBoolean("ddaystoptimer");
+			doomsdaycleanuptimer = nbt.getDouble("doomsdaycleanuptimer");
 		}
 
 		@Override
@@ -810,6 +807,9 @@ public class EngiesChaosModVariables {
 			nbt.putDouble("playerobtainedcollectorshallowscythe", playerobtainedcollectorshallowscythe);
 			nbt.putDouble("playerobtainedhallowscythecount", playerobtainedhallowscythecount);
 			nbt.putDouble("MobDiffBeforeChallenge", MobDiffBeforeChallenge);
+			nbt.putDouble("RX", RX);
+			nbt.putDouble("RY", RY);
+			nbt.putDouble("RZ", RZ);
 			nbt.putDouble("doomsdaymainsongtimer", doomsdaymainsongtimer);
 			nbt.putDouble("doomsdaytimer", doomsdaytimer);
 			nbt.putDouble("darknessretrycooldown", darknessretrycooldown);
@@ -833,7 +833,6 @@ public class EngiesChaosModVariables {
 			nbt.putDouble("theendmaxtime", theendmaxtime);
 			nbt.putDouble("engieswrathmaxtime", engieswrathmaxtime);
 			nbt.putDouble("ddayprophnumb", ddayprophnumb);
-			nbt.putDouble("ddayprophtimerdisaster", ddayprophtimerdisaster);
 			nbt.putDouble("ddayprophnumbertotal", ddayprophnumbertotal);
 			nbt.putDouble("ddayprophwaittime", ddayprophwaittime);
 			nbt.putDouble("spikecooldownamount", spikecooldownamount);
@@ -932,10 +931,6 @@ public class EngiesChaosModVariables {
 			nbt.putDouble("DDaySpikeAmount", DDaySpikeAmount);
 			nbt.putDouble("DDayMissileAmount", DDayMissileAmount);
 			nbt.putDouble("DDayRiftAmount", DDayRiftAmount);
-			nbt.putBoolean("waitforriftdespawn", waitforriftdespawn);
-			nbt.putBoolean("waitformissiledespawn", waitformissiledespawn);
-			nbt.putBoolean("waitforavalanchedespawn", waitforavalanchedespawn);
-			nbt.putBoolean("waitforspikedespawn", waitforspikedespawn);
 			nbt.putDouble("engiepocgraceperiod", engiepocgraceperiod);
 			nbt.putBoolean("rangraceperiodcount", rangraceperiodcount);
 			nbt.putBoolean("EngiePocSpawnedHelper", EngiePocSpawnedHelper);
@@ -989,13 +984,15 @@ public class EngiesChaosModVariables {
 			nbt.putDouble("previoustime", previoustime);
 			nbt.putDouble("forecastdialogue", forecastdialogue);
 			nbt.putBoolean("hordespawnstoggle", hordespawnstoggle);
-			nbt.putDouble("randnumforproph", randnumforproph);
 			nbt.putDouble("tradertimercounttick", tradertimercounttick);
 			nbt.putBoolean("traderneedcount", traderneedcount);
 			nbt.putDouble("random25minutetimer", random25minutetimer);
 			nbt.putBoolean("mobbasehpmulttoggle", mobbasehpmulttoggle);
 			nbt.putBoolean("engiestruewrath", engiestruewrath);
 			nbt.putBoolean("resetpickaxeonlycount", resetpickaxeonlycount);
+			nbt.putBoolean("ddayoncleanup", ddayoncleanup);
+			nbt.putBoolean("ddaystoptimer", ddaystoptimer);
+			nbt.putDouble("doomsdaycleanuptimer", doomsdaycleanuptimer);
 			return nbt;
 		}
 
@@ -1112,9 +1109,6 @@ public class EngiesChaosModVariables {
 		public double difficultyoverlaytoggle = 3.0;
 		public double doublejumpcount = 1.0;
 		public double engiegameshallowscythestatclock = 0;
-		public double RX = 0;
-		public double RY = 0;
-		public double RZ = 0;
 		public double TrueHardcoreMaxLifeCount = 0;
 		public double TrueHardcoreLifeChangeAmount = 0;
 		public double CountUntilBaseDrop = 0;
@@ -1245,9 +1239,6 @@ public class EngiesChaosModVariables {
 			nbt.putDouble("difficultyoverlaytoggle", difficultyoverlaytoggle);
 			nbt.putDouble("doublejumpcount", doublejumpcount);
 			nbt.putDouble("engiegameshallowscythestatclock", engiegameshallowscythestatclock);
-			nbt.putDouble("RX", RX);
-			nbt.putDouble("RY", RY);
-			nbt.putDouble("RZ", RZ);
 			nbt.putDouble("TrueHardcoreMaxLifeCount", TrueHardcoreMaxLifeCount);
 			nbt.putDouble("TrueHardcoreLifeChangeAmount", TrueHardcoreLifeChangeAmount);
 			nbt.putDouble("CountUntilBaseDrop", CountUntilBaseDrop);
@@ -1375,9 +1366,6 @@ public class EngiesChaosModVariables {
 			difficultyoverlaytoggle = nbt.getDouble("difficultyoverlaytoggle");
 			doublejumpcount = nbt.getDouble("doublejumpcount");
 			engiegameshallowscythestatclock = nbt.getDouble("engiegameshallowscythestatclock");
-			RX = nbt.getDouble("RX");
-			RY = nbt.getDouble("RY");
-			RZ = nbt.getDouble("RZ");
 			TrueHardcoreMaxLifeCount = nbt.getDouble("TrueHardcoreMaxLifeCount");
 			TrueHardcoreLifeChangeAmount = nbt.getDouble("TrueHardcoreLifeChangeAmount");
 			CountUntilBaseDrop = nbt.getDouble("CountUntilBaseDrop");
@@ -1524,9 +1512,6 @@ public class EngiesChaosModVariables {
 					variables.difficultyoverlaytoggle = message.data.difficultyoverlaytoggle;
 					variables.doublejumpcount = message.data.doublejumpcount;
 					variables.engiegameshallowscythestatclock = message.data.engiegameshallowscythestatclock;
-					variables.RX = message.data.RX;
-					variables.RY = message.data.RY;
-					variables.RZ = message.data.RZ;
 					variables.TrueHardcoreMaxLifeCount = message.data.TrueHardcoreMaxLifeCount;
 					variables.TrueHardcoreLifeChangeAmount = message.data.TrueHardcoreLifeChangeAmount;
 					variables.CountUntilBaseDrop = message.data.CountUntilBaseDrop;

@@ -41,9 +41,9 @@ public class WorldTick2Procedure {
 							|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart) == false) {
 						if (Math.random() <= 0.25) {
 							if (Math.random() <= 0.5) {
-								world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.LORE_MODE).set((world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.LORE_MODE)), world.getServer());
+								world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.DOOMSDAY_TOGGLE).set((world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DOOMSDAY_TOGGLE)), world.getServer());
 							} else {
-								world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.LORE_MODE).set((!world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.LORE_MODE)), world.getServer());
+								world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.LORE_MODE).set((world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DOOMSDAY_TOGGLE)), world.getServer());
 							}
 						}
 						if (Math.random() <= 0.25) {
@@ -55,7 +55,6 @@ public class WorldTick2Procedure {
 						}
 						if (Math.random() <= 0.25) {
 							if (Math.random() <= 0.5) {
-								world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.DOOMSDAY_TOGGLE).set((world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DOOMSDAY_TOGGLE)), world.getServer());
 								if (Math.random() <= 0.25) {
 									if (Math.random() <= 0.5) {
 										world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set((world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE)),
@@ -80,7 +79,6 @@ public class WorldTick2Procedure {
 									}
 								}
 							} else {
-								world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.DOOMSDAY_TOGGLE).set((!world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DOOMSDAY_TOGGLE)), world.getServer());
 								if (Math.random() <= 0.25) {
 									if (Math.random() <= 0.5) {
 										world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE).set((world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE)),
@@ -173,7 +171,7 @@ public class WorldTick2Procedure {
 							if (Math.random() <= 0.5) {
 								world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.DO_SHARKO_SPAWNING).set((world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DO_SHARKO_SPAWNING)), world.getServer());
 							} else {
-								world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.DO_SHARKO_SPAWNING).set((!world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.AMBIENCE_MODE)), world.getServer());
+								world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.DO_SHARKO_SPAWNING).set((!world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DO_SHARKO_SPAWNING)), world.getServer());
 							}
 						}
 						if (Math.random() <= 0.25) {

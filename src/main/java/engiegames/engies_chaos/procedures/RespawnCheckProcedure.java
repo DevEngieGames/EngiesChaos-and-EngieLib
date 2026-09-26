@@ -5,8 +5,10 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.TickEvent;
 
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
@@ -15,6 +17,7 @@ import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.init.EngiesChaosModGameRules;
+import engiegames.engies_chaos.EngiesChaosMod;
 
 @Mod.EventBusSubscriber
 public class RespawnCheckProcedure {
@@ -124,6 +127,17 @@ public class RespawnCheckProcedure {
 					}
 				}
 			}
+		}
+		if ((EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart || EngiesChaosModVariables.MapVariables.get(world).TheEndStart
+				|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart) == true) {
+			EngiesChaosMod.queueServerWork(5, () -> {
+				{
+					Entity _ent = entity;
+					_ent.teleportTo(0, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0)), 0);
+					if (_ent instanceof ServerPlayer _serverPlayer)
+						_serverPlayer.connection.teleport(0, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0)), 0, _ent.getYRot(), _ent.getXRot());
+				}
+			});
 		}
 	}
 }

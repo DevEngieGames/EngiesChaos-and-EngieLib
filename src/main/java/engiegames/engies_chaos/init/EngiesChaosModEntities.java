@@ -115,6 +115,7 @@ import engiegames.engies_chaos.entity.DoomsDayEntity;
 import engiegames.engies_chaos.entity.DistortedEntity;
 import engiegames.engies_chaos.entity.DDaySpikeEntity;
 import engiegames.engies_chaos.entity.DDayLightningSpawnerEntity;
+import engiegames.engies_chaos.entity.DDayLightningSpawner2Entity;
 import engiegames.engies_chaos.entity.DDayAvalancheEntity;
 import engiegames.engies_chaos.entity.DDAYRiftEntity;
 import engiegames.engies_chaos.entity.CosmicTheRealEngieGamesEntity;
@@ -626,6 +627,8 @@ public class EngiesChaosModEntities {
 					.setCustomClientFactory(EngieGamesHostileEngieEntity::new)
 
 					.sized(0.6f, 1.9f));
+	public static final RegistryObject<EntityType<DDayLightningSpawner2Entity>> D_DAY_LIGHTNING_SPAWNER_2 = register("d_day_lightning_spawner_2", EntityType.Builder.<DDayLightningSpawner2Entity>of(DDayLightningSpawner2Entity::new, MobCategory.MISC)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(DDayLightningSpawner2Entity::new).fireImmune().sized(1f, 1f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
@@ -761,6 +764,7 @@ public class EngiesChaosModEntities {
 			EngieGamesHostileBiblicallyAccurateEngieEntity.init();
 			EngieGamesMonstrosityEngieEntity.init();
 			EngieGamesHostileEngieEntity.init();
+			DDayLightningSpawner2Entity.init();
 		});
 	}
 
@@ -891,5 +895,6 @@ public class EngiesChaosModEntities {
 		event.put(ENGIE_GAMES_HOSTILE_BIBLICALLY_ACCURATE_ENGIE.get(), EngieGamesHostileBiblicallyAccurateEngieEntity.createAttributes().build());
 		event.put(ENGIE_GAMES_MONSTROSITY_ENGIE.get(), EngieGamesMonstrosityEngieEntity.createAttributes().build());
 		event.put(ENGIE_GAMES_HOSTILE_ENGIE.get(), EngieGamesHostileEngieEntity.createAttributes().build());
+		event.put(D_DAY_LIGHTNING_SPAWNER_2.get(), DDayLightningSpawner2Entity.createAttributes().build());
 	}
 }
