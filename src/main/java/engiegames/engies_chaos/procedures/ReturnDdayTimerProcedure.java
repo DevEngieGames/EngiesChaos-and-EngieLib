@@ -6,7 +6,7 @@ import engiegames.engies_chaos.network.EngiesChaosModVariables;
 
 public class ReturnDdayTimerProcedure {
 	public static String execute(LevelAccessor world) {
-		if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true) {
+		if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart == true) {
 			if (EngiesChaosModVariables.MapVariables.get(world).ddaytimerseconds >= 10) {
 				return new java.text.DecimalFormat("##").format(EngiesChaosModVariables.MapVariables.get(world).ddaytimerminutes) + ":" + new java.text.DecimalFormat("##.##").format(EngiesChaosModVariables.MapVariables.get(world).ddaytimerseconds);
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddaytimerseconds < 10) {

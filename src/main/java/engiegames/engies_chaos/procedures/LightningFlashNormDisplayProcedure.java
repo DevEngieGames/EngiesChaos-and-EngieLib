@@ -6,13 +6,13 @@ import engiegames.engies_chaos.network.EngiesChaosModVariables;
 
 public class LightningFlashNormDisplayProcedure {
 	public static boolean execute(LevelAccessor world) {
-		if (EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true && EngiesChaosModVariables.MapVariables.get(world).ddaystart == true
+		if (EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true && EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart == true
 				|| EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart == true && EngiesChaosModVariables.MapVariables.get(world).sddaystart == true
 				|| EngiesChaosModVariables.MapVariables.get(world).TheEndStart == true && EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
 			if (EngiesChaosModVariables.MapVariables.get(world).extremeddaylightningenabled == false) {
 				return true;
 			}
-		} else if (!(EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true && EngiesChaosModVariables.MapVariables.get(world).ddaystart == true
+		} else if (!(EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true && EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart == true
 				|| EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart == true && EngiesChaosModVariables.MapVariables.get(world).sddaystart == true
 				|| EngiesChaosModVariables.MapVariables.get(world).TheEndStart == true && EngiesChaosModVariables.MapVariables.get(world).thestart == true
 				|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart == true && EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true)) {

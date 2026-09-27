@@ -130,6 +130,13 @@ public class DoomsdayCleanupProcedure {
 							}
 						}
 						{
+							Entity _ent = entityiterator;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "worldborder set 59999968");
+							}
+						}
+						{
 							boolean _setval = false;
 							entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.healthreductiondday = _setval;
@@ -211,7 +218,9 @@ public class DoomsdayCleanupProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					world.getLevelData().getGameRules().getRule(GameRules.RULE_DOMOBSPAWNING).set(true, world.getServer());
 					world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(true, world.getServer());
-					EngiesChaosModVariables.MapVariables.get(world).missilecooldown = 0;
+					EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 0;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = 0;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -246,6 +255,12 @@ public class DoomsdayCleanupProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).hordecooldown = 0;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).forecastdialogue = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).doomsdaycleanuptimer = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).DoomsdayDialogueDelayTimer = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).DoomsdayNightTimeDelayTimer = 0;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).DoomsdayHalf = 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);

@@ -32,7 +32,7 @@ public class LightningStopSoundWhenEventProcedure {
 	}
 
 	private static void execute(@Nullable Event event, LevelAccessor world) {
-		if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true || EngiesChaosModVariables.MapVariables.get(world).sddaystart == true || EngiesChaosModVariables.MapVariables.get(world).thestart == true
+		if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart == true || EngiesChaosModVariables.MapVariables.get(world).sddaystart == true || EngiesChaosModVariables.MapVariables.get(world).thestart == true
 				|| EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true) {
 			for (Entity entityiterator : new ArrayList<>(world.players())) {
 				{
