@@ -35,8 +35,7 @@ public class DDAYSongTickProcedure {
 
 	private static void execute(@Nullable Event event, LevelAccessor world) {
 		if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.OVERWORLD) {
-			if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true || EngiesChaosModVariables.MapVariables.get(world).sddaystart == true || EngiesChaosModVariables.MapVariables.get(world).thestart == true
-					|| EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true) {
+			if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart == true) {
 				for (Entity entityiterator : new ArrayList<>(world.players())) {
 					{
 						Entity _ent = entityiterator;
@@ -46,10 +45,10 @@ public class DDAYSongTickProcedure {
 						}
 					}
 				}
-				if (EngiesChaosModVariables.MapVariables.get(world).ddayhalf1 == true) {
+				if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayHalf == 1) {
 					EngiesChaosModVariables.MapVariables.get(world).firstplayofaltsoundtrack = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				} else if (EngiesChaosModVariables.MapVariables.get(world).ddayhalf1 == false) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayHalf == 2) {
 					if (EngiesChaosModVariables.MapVariables.get(world).firstplayofaltsoundtrack == false) {
 						EngiesChaosModVariables.MapVariables.get(world).ddayaltsongplay = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -59,6 +58,8 @@ public class DDAYSongTickProcedure {
 							EngiesChaosModVariables.MapVariables.get(world).ddayprophshow = true;
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).prophallowticking = true;
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						});
 					}
