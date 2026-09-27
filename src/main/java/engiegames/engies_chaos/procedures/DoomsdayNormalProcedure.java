@@ -194,7 +194,7 @@ public class DoomsdayNormalProcedure {
 					if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayNightTime == false) {
 						EngiesChaosModVariables.MapVariables.get(world).DoomsdayNightTimeDelayTimer = EngiesChaosModVariables.MapVariables.get(world).DoomsdayNightTimeDelayTimer + 0.05;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayNightTimeDelayTimer >= 41) {
+						if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayNightTimeDelayTimer >= 17.85) {
 							if (world instanceof Level _lvl26 && _lvl26.isDay()) {
 								if (world instanceof ServerLevel _level)
 									_level.setDayTime((int) (world.dayTime() + 100));
@@ -211,7 +211,7 @@ public class DoomsdayNormalProcedure {
 					if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayDialogueDelay == true) {
 						EngiesChaosModVariables.MapVariables.get(world).DoomsdayDialogueDelayTimer = EngiesChaosModVariables.MapVariables.get(world).DoomsdayDialogueDelayTimer + 0.05;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayDialogueDelayTimer >= 37) {
+						if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayDialogueDelayTimer >= 13.85) {
 							for (Entity entityiterator : new ArrayList<>(world.players())) {
 								if (entityiterator instanceof ServerPlayer _player) {
 									Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:i_guess_this_is_dday"));
@@ -260,20 +260,28 @@ public class DoomsdayNormalProcedure {
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 										EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 1;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+										EngiesChaosModVariables.MapVariables.get(world).ddaydialogue = true;
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 									} else if (EngiesChaosModVariables.MapVariables.get(world).dialogueamount == 1) {
 										EngiesChaosModVariables.MapVariables.get(world).dialogueamount = 2;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 										EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 2;
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+										EngiesChaosModVariables.MapVariables.get(world).ddaydialogue = true;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 									} else if (EngiesChaosModVariables.MapVariables.get(world).dialogueamount == 2) {
 										EngiesChaosModVariables.MapVariables.get(world).dialogueamount = 3;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 										EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 3;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+										EngiesChaosModVariables.MapVariables.get(world).ddaydialogue = true;
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 									} else if (EngiesChaosModVariables.MapVariables.get(world).dialogueamount == 3) {
 										EngiesChaosModVariables.MapVariables.get(world).dialogueamount = 4;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 										EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 4;
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+										EngiesChaosModVariables.MapVariables.get(world).ddaydialogue = true;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 										EngiesChaosModVariables.MapVariables.get(world).StartDoomsdayBeginning = true;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
