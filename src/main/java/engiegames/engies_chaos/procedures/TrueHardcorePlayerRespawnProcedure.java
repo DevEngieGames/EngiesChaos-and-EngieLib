@@ -23,46 +23,33 @@ import engiegames.engies_chaos.EngiesChaosMod;
 public class TrueHardcorePlayerRespawnProcedure {
 	@SubscribeEvent
 	public static void onPlayerRespawned(PlayerEvent.PlayerRespawnEvent event) {
-		execute(event, event.getEntity().level, event.getEntity());
+		execute(event, event.getEntity().level, event.getEntity(), event.isEndConquered());
 	}
 
-	public static void execute(LevelAccessor world, Entity entity) {
-		execute(null, world, entity);
+	public static void execute(LevelAccessor world, Entity entity, boolean endconquered) {
+		execute(null, world, entity, endconquered);
 	}
 
-	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
+	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity, boolean endconquered) {
 		if (entity == null)
 			return;
-		if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_HARDCORE) == true) {
-			if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).TrueHardcoreLifeCount != 0) {
-				{
-					double _setval = (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).TrueHardcoreLifeCount - 1;
-					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.TrueHardcoreLifeCount = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				EngiesChaosMod.queueServerWork(5, () -> {
-					if (getEntityGameType(entity) == GameType.SPECTATOR) {
-						if (entity instanceof ServerPlayer _player)
-							_player.setGameMode(GameType.SURVIVAL);
-					}
+		if (endconquered == false) {
+			if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_HARDCORE) == true) {
+				if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).TrueHardcoreLifeCount != 0) {
 					{
-						boolean _setval = false;
+						double _setval = (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).TrueHardcoreLifeCount - 1;
 						entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.RespawnTrueHardcoreGraceStart = _setval;
+							capability.TrueHardcoreLifeCount = _setval;
 							capability.syncPlayerVariables(entity);
 						});
 					}
-				});
-			}
-		} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_HARDCORE) == false) {
-			{
-				boolean _setval = false;
-				entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.RespawnNormInstantHealth = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+					EngiesChaosMod.queueServerWork(5, () -> {
+						if (getEntityGameType(entity) == GameType.SPECTATOR) {
+							if (entity instanceof ServerPlayer _player)
+								_player.setGameMode(GameType.SURVIVAL);
+						}
+					});
+				}
 			}
 		}
 	}

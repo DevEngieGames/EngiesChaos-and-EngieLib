@@ -15,7 +15,7 @@ import engiegames.engies_chaos.network.EngiesChaosModVariables;
 
 public class AvalancheSpawnProcedure {
 	public static void execute(LevelAccessor world) {
-		if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true) {
+		if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart == true) {
 			EngiesChaosModVariables.MapVariables.get(world).ddayavalanche = true;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			for (int index0 = 0; index0 < 50; index0++) {
@@ -29,7 +29,7 @@ public class AvalancheSpawnProcedure {
 										"", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "summon engies_chaos:d_day_avalanche");
 				}
 			}
-		} else if (EngiesChaosModVariables.MapVariables.get(world).sddaystart == true) {
+		} else if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayFullStart == true) {
 			EngiesChaosModVariables.MapVariables.get(world).ddayavalanche = true;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			for (int index1 = 0; index1 < 50; index1++) {
@@ -43,7 +43,7 @@ public class AvalancheSpawnProcedure {
 										"", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "summon engies_chaos:d_day_avalanche");
 				}
 			}
-		} else if (EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
+		} else if (EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart == true) {
 			EngiesChaosModVariables.MapVariables.get(world).ddayavalanche = true;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			for (int index2 = 0; index2 < 50; index2++) {
@@ -57,7 +57,7 @@ public class AvalancheSpawnProcedure {
 										"", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "summon engies_chaos:d_day_avalanche");
 				}
 			}
-		} else if (EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true) {
+		} else if (EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart == true) {
 			EngiesChaosModVariables.MapVariables.get(world).ddayavalanche = true;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			for (int index3 = 0; index3 < 50; index3++) {

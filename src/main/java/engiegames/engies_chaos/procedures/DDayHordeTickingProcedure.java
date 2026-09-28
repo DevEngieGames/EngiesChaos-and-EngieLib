@@ -37,8 +37,8 @@ public class DDayHordeTickingProcedure {
 			return;
 		if (!world.isClientSide()) {
 			if (entity.getPersistentData().getBoolean("hordespawned") == true) {
-				if ((EngiesChaosModVariables.MapVariables.get(world).ddaystart || EngiesChaosModVariables.MapVariables.get(world).sddaystart || EngiesChaosModVariables.MapVariables.get(world).thestart
-						|| EngiesChaosModVariables.MapVariables.get(world).engieswrathstart) == true) {
+				if ((EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayFullStart || EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart
+						|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart) == true) {
 					if (EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle == true) {
 						for (Entity entityiterator : new ArrayList<>(world.players())) {
 							if ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive) {

@@ -9,12 +9,13 @@ public class InsanityNaturalEntitySpawningConditionProcedure {
 	public static boolean execute(LevelAccessor world) {
 		if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIES_CHAOS_TOGGLE) == true) {
 			if ((world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.INSANITY_DIFFICULTY) || world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.APOCALYPSE_THREE)
-					|| world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIE_POC) || EngiesChaosModVariables.MapVariables.get(world).thestart || EngiesChaosModVariables.MapVariables.get(world).engieswrathstart) == true) {
+					|| world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIE_POC) || EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart
+					|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart) == true) {
 				if ((world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.APOCALYPSE_THREE) || world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIE_POC)
-						|| EngiesChaosModVariables.MapVariables.get(world).thestart || EngiesChaosModVariables.MapVariables.get(world).engieswrathstart) == true) {
+						|| EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart || EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart) == true) {
 					return true;
 				} else if (!((world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.APOCALYPSE_THREE) || world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIE_POC)
-						|| EngiesChaosModVariables.MapVariables.get(world).thestart || EngiesChaosModVariables.MapVariables.get(world).engieswrathstart) == true)) {
+						|| EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart || EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart) == true)) {
 					if (EngiesChaosModVariables.MapVariables.get(world).ChallengeToggle == false) {
 						return true;
 					} else if (EngiesChaosModVariables.MapVariables.get(world).ChallengeToggle == true) {
@@ -26,7 +27,8 @@ public class InsanityNaturalEntitySpawningConditionProcedure {
 					}
 				}
 			} else if (!((world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.INSANITY_DIFFICULTY) || world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.APOCALYPSE_THREE)
-					|| world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIE_POC) || EngiesChaosModVariables.MapVariables.get(world).thestart || EngiesChaosModVariables.MapVariables.get(world).engieswrathstart) == true)) {
+					|| world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIE_POC) || EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart
+					|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart) == true)) {
 				return false;
 			}
 		}

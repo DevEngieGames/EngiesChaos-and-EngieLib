@@ -6,9 +6,9 @@ import engiegames.engies_chaos.network.EngiesChaosModVariables;
 
 public class EngieGamesPropMult2Procedure {
 	public static boolean execute(LevelAccessor world) {
-		if (EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true && EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 2) {
+		if (EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart == true && EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 2) {
 			return true;
-		} else if (!(EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true && EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 2)) {
+		} else if (!(EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart == true && EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 2)) {
 			return false;
 		}
 		return false;

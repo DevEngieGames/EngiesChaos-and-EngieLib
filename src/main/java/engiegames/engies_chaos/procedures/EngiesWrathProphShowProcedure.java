@@ -6,9 +6,9 @@ import engiegames.engies_chaos.network.EngiesChaosModVariables;
 
 public class EngiesWrathProphShowProcedure {
 	public static boolean execute(LevelAccessor world) {
-		if (EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true) {
+		if (EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart == true) {
 			return true;
-		} else if (!(EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true)) {
+		} else if (!(EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart == true)) {
 			return false;
 		}
 		return false;

@@ -46,7 +46,7 @@ public class ObjectiveUIOverlay {
 		RenderSystem.setShader(GameRenderer::getPositionTexShader);
 		RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
 		RenderSystem.setShaderColor(1, 1, 1, 1);
-		if (ObjectiveOverlayCheckProcedure.execute(world, entity)) {
+		if (ObjectiveOverlayCheckProcedure.execute(world)) {
 			if (DoomsDayCheckProcedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/objectiveline1.png"));
 				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -122, 69, 0, 0, 250, 75, 250, 75);

@@ -6,7 +6,7 @@ import engiegames.engies_chaos.network.EngiesChaosModVariables;
 
 public class DoomsDayCheckProcedure {
 	public static boolean execute(LevelAccessor world) {
-		if (EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true) {
+		if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart == true) {
 			return true;
 		}
 		return false;

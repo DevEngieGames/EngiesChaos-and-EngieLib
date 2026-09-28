@@ -59,7 +59,7 @@ public class PlayerJoinWorldProcedure {
 						}
 					}
 				}
-				if ((EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart || EngiesChaosModVariables.MapVariables.get(world).TheEndStart
+				if ((EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart || EngiesChaosModVariables.MapVariables.get(world).TheEndStart
 						|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart) == true) {
 					{
 						Entity _ent = entity;
@@ -153,8 +153,8 @@ public class PlayerJoinWorldProcedure {
 					}
 				}
 			}
-			if ((EngiesChaosModVariables.MapVariables.get(world).ddaystart || EngiesChaosModVariables.MapVariables.get(world).sddaystart || EngiesChaosModVariables.MapVariables.get(world).thestart
-					|| EngiesChaosModVariables.MapVariables.get(world).engieswrathstart) == true
+			if ((EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayFullStart || EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart
+					|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart) == true
 					&& !(world.getServer() != null ? world.getServer().isSingleplayer() : (Minecraft.getInstance().getSingleplayerServer() != null && !Minecraft.getInstance().getSingleplayerServer().isPublished()))) {
 				if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive == true
 						&& (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).ddayplayeraddedtodeadcount == false) {
@@ -173,8 +173,8 @@ public class PlayerJoinWorldProcedure {
 						});
 					}
 				}
-			} else if ((EngiesChaosModVariables.MapVariables.get(world).ddaystart || EngiesChaosModVariables.MapVariables.get(world).sddaystart || EngiesChaosModVariables.MapVariables.get(world).thestart
-					|| EngiesChaosModVariables.MapVariables.get(world).engieswrathstart) == true
+			} else if ((EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayFullStart || EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart
+					|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart) == true
 					&& (world.getServer() != null ? world.getServer().isSingleplayer() : (Minecraft.getInstance().getSingleplayerServer() != null && !Minecraft.getInstance().getSingleplayerServer().isPublished()))) {
 				if (EngiesChaosModVariables.MapVariables.get(world).userids.contains(entity.getUUID() + ", ")) {
 					if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive == true

@@ -108,7 +108,6 @@ import engiegames.engies_chaos.client.renderer.DoomsDayHostileRenderer;
 import engiegames.engies_chaos.client.renderer.DistortedRenderer;
 import engiegames.engies_chaos.client.renderer.DDaySpikeRenderer;
 import engiegames.engies_chaos.client.renderer.DDayLightningSpawnerRenderer;
-import engiegames.engies_chaos.client.renderer.DDayLightningSpawner2Renderer;
 import engiegames.engies_chaos.client.renderer.DDayAvalancheRenderer;
 import engiegames.engies_chaos.client.renderer.DDAYRiftRenderer;
 import engiegames.engies_chaos.client.renderer.CosmicTheRealEngieGamesRenderer;
@@ -264,6 +263,5 @@ public class EngiesChaosModEntityRenderers {
 		event.registerEntityRenderer(EngiesChaosModEntities.ENGIE_GAMES_HOSTILE_BIBLICALLY_ACCURATE_ENGIE.get(), EngieGamesHostileBiblicallyAccurateEngieRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.ENGIE_GAMES_MONSTROSITY_ENGIE.get(), EngieGamesMonstrosityEngieRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.ENGIE_GAMES_HOSTILE_ENGIE.get(), EngieGamesHostileEngieRenderer::new);
-		event.registerEntityRenderer(EngiesChaosModEntities.D_DAY_LIGHTNING_SPAWNER_2.get(), DDayLightningSpawner2Renderer::new);
 	}
 }

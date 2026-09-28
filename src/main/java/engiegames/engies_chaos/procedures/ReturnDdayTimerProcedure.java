@@ -12,14 +12,14 @@ public class ReturnDdayTimerProcedure {
 			} else if (EngiesChaosModVariables.MapVariables.get(world).ddaytimerseconds < 10) {
 				return new java.text.DecimalFormat("##").format(EngiesChaosModVariables.MapVariables.get(world).ddaytimerminutes) + ":0" + new java.text.DecimalFormat("##.##").format(EngiesChaosModVariables.MapVariables.get(world).ddaytimerseconds);
 			}
-		} else if (EngiesChaosModVariables.MapVariables.get(world).sddaystart == true) {
+		} else if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayFullStart == true) {
 			if (EngiesChaosModVariables.MapVariables.get(world).sddaytimerseconds >= 10) {
 				return new java.text.DecimalFormat("##").format(EngiesChaosModVariables.MapVariables.get(world).sddaytimerminutes) + ":" + new java.text.DecimalFormat("##.##").format(EngiesChaosModVariables.MapVariables.get(world).sddaytimerseconds);
 			} else if (EngiesChaosModVariables.MapVariables.get(world).sddaytimerseconds < 10) {
 				return new java.text.DecimalFormat("##").format(EngiesChaosModVariables.MapVariables.get(world).sddaytimerminutes) + ":0"
 						+ new java.text.DecimalFormat("##.##").format(EngiesChaosModVariables.MapVariables.get(world).sddaytimerseconds);
 			}
-		} else if (EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
+		} else if (EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart == true) {
 			if (EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds >= 10) {
 				return new java.text.DecimalFormat("##").format(EngiesChaosModVariables.MapVariables.get(world).theendtimerminutes) + ":"
 						+ new java.text.DecimalFormat("##.##").format(EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds);
@@ -27,7 +27,7 @@ public class ReturnDdayTimerProcedure {
 				return new java.text.DecimalFormat("##").format(EngiesChaosModVariables.MapVariables.get(world).theendtimerminutes) + ":0"
 						+ new java.text.DecimalFormat("##.##").format(EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds);
 			}
-		} else if (EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true) {
+		} else if (EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart == true) {
 			if (EngiesChaosModVariables.MapVariables.get(world).ewrathtimerseconds >= 10) {
 				return new java.text.DecimalFormat("##").format(EngiesChaosModVariables.MapVariables.get(world).ewrathtimerminutes) + ":"
 						+ new java.text.DecimalFormat("##.##").format(EngiesChaosModVariables.MapVariables.get(world).ewrathtimerseconds);

@@ -23,14 +23,14 @@ public class DoomsdaySummonProcedure {
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			});
 		} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.SUPER_DOOMSDAY_TOGGLE) == true) {
-			EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = true;
+			EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart = true;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			EngiesChaosMod.queueServerWork(1, () -> {
 				EngiesChaosModVariables.MapVariables.get(world).doomssentdebug1 = true;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			});
 		} else {
-			EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = true;
+			EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart = true;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			EngiesChaosMod.queueServerWork(1, () -> {
 				EngiesChaosModVariables.MapVariables.get(world).doomssentdebug1 = true;

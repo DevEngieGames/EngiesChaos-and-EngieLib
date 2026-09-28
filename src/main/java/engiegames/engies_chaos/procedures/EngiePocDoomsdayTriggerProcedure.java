@@ -29,12 +29,12 @@ public class EngiePocDoomsdayTriggerProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).DayCooldownToggle = true;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true) {
-						EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = false;
+					if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart == true) {
+						EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart = false;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
-					if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart == true) {
-						EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = false;
+					if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart == true) {
+						EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart = false;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 					if (EngiesChaosModVariables.MapVariables.get(world).TheEndStart == true) {
@@ -46,7 +46,7 @@ public class EngiePocDoomsdayTriggerProcedure {
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 					EngiesChaosMod.queueServerWork(1, () -> {
-						if ((EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart && EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart && EngiesChaosModVariables.MapVariables.get(world).TheEndStart
+						if ((EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart && EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart && EngiesChaosModVariables.MapVariables.get(world).TheEndStart
 								&& EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart) == false) {
 							DoomsdaySummonProcedure.execute(world);
 						}
@@ -71,12 +71,12 @@ public class EngiePocDoomsdayTriggerProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).DayCooldownToggle = true;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true) {
-						EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = false;
+					if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart == true) {
+						EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart = false;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
-					if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart == true) {
-						EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = false;
+					if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart == true) {
+						EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart = false;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 					if (EngiesChaosModVariables.MapVariables.get(world).TheEndStart == true) {
@@ -88,7 +88,7 @@ public class EngiePocDoomsdayTriggerProcedure {
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 					EngiesChaosMod.queueServerWork(1, () -> {
-						if ((EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart && EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart && EngiesChaosModVariables.MapVariables.get(world).TheEndStart
+						if ((EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart && EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart && EngiesChaosModVariables.MapVariables.get(world).TheEndStart
 								&& EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart) == false) {
 							DoomsdaySummonProcedure.execute(world);
 						}
@@ -113,12 +113,12 @@ public class EngiePocDoomsdayTriggerProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).DayCooldownToggle = true;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true) {
-						EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = false;
+					if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart == true) {
+						EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart = false;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
-					if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart == true) {
-						EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = false;
+					if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart == true) {
+						EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart = false;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 					if (EngiesChaosModVariables.MapVariables.get(world).TheEndStart == true) {
@@ -130,7 +130,7 @@ public class EngiePocDoomsdayTriggerProcedure {
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 					EngiesChaosMod.queueServerWork(1, () -> {
-						if ((EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart && EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart && EngiesChaosModVariables.MapVariables.get(world).TheEndStart
+						if ((EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart && EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart && EngiesChaosModVariables.MapVariables.get(world).TheEndStart
 								&& EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart) == false) {
 							DoomsdaySummonProcedure.execute(world);
 						}
@@ -155,12 +155,12 @@ public class EngiePocDoomsdayTriggerProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).DayCooldownToggle = true;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true) {
-						EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = false;
+					if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart == true) {
+						EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart = false;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
-					if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart == true) {
-						EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = false;
+					if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart == true) {
+						EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart = false;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 					if (EngiesChaosModVariables.MapVariables.get(world).TheEndStart == true) {
@@ -172,7 +172,7 @@ public class EngiePocDoomsdayTriggerProcedure {
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 					EngiesChaosMod.queueServerWork(1, () -> {
-						if ((EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart && EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart && EngiesChaosModVariables.MapVariables.get(world).TheEndStart
+						if ((EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart && EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart && EngiesChaosModVariables.MapVariables.get(world).TheEndStart
 								&& EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart) == false) {
 							DoomsdaySummonProcedure.execute(world);
 						}
@@ -196,12 +196,12 @@ public class EngiePocDoomsdayTriggerProcedure {
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				EngiesChaosModVariables.MapVariables.get(world).DayCooldownToggle = true;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				if (EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true) {
-					EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = false;
+				if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart == true) {
+					EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				}
-				if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart == true) {
-					EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = false;
+				if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart == true) {
+					EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				}
 				if (EngiesChaosModVariables.MapVariables.get(world).TheEndStart == true) {
@@ -213,7 +213,7 @@ public class EngiePocDoomsdayTriggerProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				}
 				EngiesChaosMod.queueServerWork(1, () -> {
-					if ((EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart && EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart && EngiesChaosModVariables.MapVariables.get(world).TheEndStart
+					if ((EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart && EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart && EngiesChaosModVariables.MapVariables.get(world).TheEndStart
 							&& EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart) == false) {
 						DoomsdaySummonProcedure.execute(world);
 					}

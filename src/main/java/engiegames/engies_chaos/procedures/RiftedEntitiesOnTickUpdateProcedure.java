@@ -42,8 +42,8 @@ public class RiftedEntitiesOnTickUpdateProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).DDayRiftedEntityCount = EngiesChaosModVariables.MapVariables.get(world).DDayRiftedEntityCount - 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				}
-				if ((EngiesChaosModVariables.MapVariables.get(world).ddaystart || EngiesChaosModVariables.MapVariables.get(world).sddaystart || EngiesChaosModVariables.MapVariables.get(world).thestart
-						|| EngiesChaosModVariables.MapVariables.get(world).engieswrathstart) == true) {
+				if ((EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayFullStart || EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart
+						|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart) == true) {
 					for (Entity entityiterator : new ArrayList<>(world.players())) {
 						if ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive) {
 							if (getEntityGameType(entityiterator) == GameType.SURVIVAL || getEntityGameType(entityiterator) == GameType.ADVENTURE) {

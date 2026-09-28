@@ -12,11 +12,11 @@ public class SuperDoomsdayEntitySpawningConditionProcedure {
 	public static boolean execute(LevelAccessor world, double x, double y, double z) {
 		if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIES_CHAOS_TOGGLE) == true) {
 			if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.OVERWORLD) {
-				if ((EngiesChaosModVariables.MapVariables.get(world).sddaystart || EngiesChaosModVariables.MapVariables.get(world).thestart || EngiesChaosModVariables.MapVariables.get(world).engieswrathstart) == true) {
+				if ((EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart || EngiesChaosModVariables.MapVariables.get(world).TheEndStart || EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart) == true) {
 					if (EngiesChaosModVariables.MapVariables.get(world).TraderSuperDoomsdaySpawnLock == false) {
 						return true;
 					}
-				} else if ((EngiesChaosModVariables.MapVariables.get(world).sddaystart && EngiesChaosModVariables.MapVariables.get(world).thestart && EngiesChaosModVariables.MapVariables.get(world).engieswrathstart) == false) {
+				} else if ((EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart || EngiesChaosModVariables.MapVariables.get(world).TheEndStart || EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart) == false) {
 					if (EngiesChaosModVariables.MapVariables.get(world).TraderSuperDoomsdaySpawnLock == false) {
 						if (EngiesChaosModVariables.MapVariables.get(world).difficultytoggle == true) {
 							if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty >= 11) {

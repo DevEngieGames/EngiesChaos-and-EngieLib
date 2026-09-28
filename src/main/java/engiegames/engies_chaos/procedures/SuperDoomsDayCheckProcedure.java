@@ -6,7 +6,7 @@ import engiegames.engies_chaos.network.EngiesChaosModVariables;
 
 public class SuperDoomsDayCheckProcedure {
 	public static boolean execute(LevelAccessor world) {
-		if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart == true) {
+		if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart == true) {
 			return true;
 		}
 		return false;

@@ -12,7 +12,7 @@ import engiegames.engies_chaos.network.EngiesChaosModVariables;
 
 public class RiftSpawnsProcedure {
 	public static void execute(LevelAccessor world) {
-		if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true) {
+		if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart == true) {
 			if (Math.random() > 0.125) {
 				EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount = EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount + 1;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -20,7 +20,7 @@ public class RiftSpawnsProcedure {
 					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO,
 							_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos rift");
 			}
-		} else if (EngiesChaosModVariables.MapVariables.get(world).sddaystart == true) {
+		} else if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayFullStart == true) {
 			if (Math.random() > 0.25) {
 				EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount = EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount + 1;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -28,7 +28,7 @@ public class RiftSpawnsProcedure {
 					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO,
 							_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos rift");
 			}
-		} else if (EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
+		} else if (EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart == true) {
 			if (Math.random() > 0.375) {
 				EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount = EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount + 1;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -36,7 +36,7 @@ public class RiftSpawnsProcedure {
 					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO,
 							_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos rift");
 			}
-		} else if (EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true) {
+		} else if (EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart == true) {
 			if (Math.random() > 0.5) {
 				EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount = EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount + 1;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);

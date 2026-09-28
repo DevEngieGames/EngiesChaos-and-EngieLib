@@ -41,81 +41,93 @@ public class DoomsdayCleanupProcedure {
 				EngiesChaosModVariables.MapVariables.get(world).doomsdaycleanuptimer = EngiesChaosModVariables.MapVariables.get(world).doomsdaycleanuptimer + 0.05;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				if (EngiesChaosModVariables.MapVariables.get(world).doomsdaycleanuptimer < 0.25) {
-					for (Entity entityiterator : new ArrayList<>(world.players())) {
-						{
-							Entity _ent = entityiterator;
-							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "kill @e[type=#engies_chaos:doomsday/entitycleanup]");
+					if (EngiesChaosModVariables.MapVariables.get(world).ranfirstcleanup == false) {
+						EngiesChaosModVariables.MapVariables.get(world).ranfirstcleanup = true;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						for (Entity entityiterator : new ArrayList<>(world.players())) {
+							{
+								Entity _ent = entityiterator;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "kill @e[type=#engies_chaos:doomsday/entitycleanup]");
+								}
 							}
-						}
-						{
-							Entity _ent = entityiterator;
-							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a");
+							{
+								Entity _ent = entityiterator;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a");
+								}
 							}
-						}
-						{
-							Entity _ent = entityiterator;
-							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect clear @a");
+							{
+								Entity _ent = entityiterator;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect clear @a");
+								}
 							}
 						}
 					}
 				}
 				if (EngiesChaosModVariables.MapVariables.get(world).doomsdaycleanuptimer >= 5) {
-					for (Entity entityiterator : new ArrayList<>(world.players())) {
-						{
-							Entity _ent = entityiterator;
-							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "EChaos EngieLib DoomsdayAwardPlayer");
+					if (EngiesChaosModVariables.MapVariables.get(world).spawnedfinaldisasters == false) {
+						EngiesChaosModVariables.MapVariables.get(world).spawnedfinaldisasters = true;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						for (Entity entityiterator : new ArrayList<>(world.players())) {
+							{
+								Entity _ent = entityiterator;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "EChaos EngieLib DoomsdayAwardPlayer");
+								}
+							}
+							{
+								boolean _setval = false;
+								entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.crucifixbypass = _setval;
+									capability.syncPlayerVariables(entityiterator);
+								});
+							}
+							{
+								Entity _ent = entityiterator;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @a darkness 20 1 true");
+								}
 							}
 						}
-						{
-							boolean _setval = false;
-							entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.crucifixbypass = _setval;
-								capability.syncPlayerVariables(entityiterator);
-							});
-						}
-						{
-							Entity _ent = entityiterator;
-							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @a darkness 20 1 true");
-							}
-						}
+						AvalancheSpawnProcedure.execute(world);
+						SpikeSpawnsProcedure.execute(world);
+						RiftSpawnsProcedure.execute(world);
+						MissileSpawnProcedure.execute(world);
+						HordeSpawnsProcedure.execute(world);
 					}
-					AvalancheSpawnProcedure.execute(world);
-					SpikeSpawnsProcedure.execute(world);
-					RiftSpawnsProcedure.execute(world);
-					MissileSpawnProcedure.execute(world);
-					HordeSpawnsProcedure.execute(world);
 				}
 				if (EngiesChaosModVariables.MapVariables.get(world).doomsdaycleanuptimer >= 8) {
-					for (Entity entityiterator : new ArrayList<>(world.players())) {
-						{
-							Entity _ent = entityiterator;
-							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "kill @e[type=#engies_chaos:doomsday/entitycleanup]");
+					if (EngiesChaosModVariables.MapVariables.get(world).ransecondcleanup == false) {
+						EngiesChaosModVariables.MapVariables.get(world).ransecondcleanup = true;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						for (Entity entityiterator : new ArrayList<>(world.players())) {
+							{
+								Entity _ent = entityiterator;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "kill @e[type=#engies_chaos:doomsday/entitycleanup]");
+								}
 							}
-						}
-						{
-							Entity _ent = entityiterator;
-							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a");
+							{
+								Entity _ent = entityiterator;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a");
+								}
 							}
-						}
-						{
-							Entity _ent = entityiterator;
-							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect clear @a");
+							{
+								Entity _ent = entityiterator;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect clear @a");
+								}
 							}
 						}
 					}
@@ -144,21 +156,31 @@ public class DoomsdayCleanupProcedure {
 							});
 						}
 					}
+					if (world instanceof ServerLevel _level)
+						_level.setDayTime((int) (EngiesChaosModVariables.MapVariables.get(world).timeticks + 11000));
+					EngiesChaosModVariables.MapVariables.get(world).spawnedfinaldisasters = true;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).ranfirstcleanup = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).ransecondcleanup = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).stopdialogue = true;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).OHBOY = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).ddayprophshow = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart = false;
+					EngiesChaosModVariables.MapVariables.get(world).pausedialogue = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).prophallowticking = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).DoomsdayNightTime = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).DoomsdayDialogueDelay = true;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).prophallowticking = false;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart = false;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).pausedialogue = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).StartDoomsdayBeginning = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -166,11 +188,47 @@ public class DoomsdayCleanupProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).DoomsdayTeleportedPlayers = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart = false;
+					EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayNightTime = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayDialogueDelay = true;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayFullStart = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).StartSuperDoomsdayBeginning = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayEerie = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayTeleportedPlayers = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).TheEndStart = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).TheEndNightTime = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).TheEndDialogueDelay = true;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).StartTheEndBeginning = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).TheEndEerie = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).TheEndTeleportedPlayers = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).EngiesWrathNightTime = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).EngiesWrathDialogueDelay = true;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).StartEngiesWrathBeginning = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).EngiesWrathEerie = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).EngiesWrathTeleportedPlayers = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).playlightningsound = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -218,6 +276,16 @@ public class DoomsdayCleanupProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					world.getLevelData().getGameRules().getRule(GameRules.RULE_DOMOBSPAWNING).set(true, world.getServer());
 					world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(true, world.getServer());
+					EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).DDayRiftedEntityCount = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 0;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 0;
@@ -258,13 +326,7 @@ public class DoomsdayCleanupProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).doomsdaycleanuptimer = 0;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).DoomsdayDialogueDelayTimer = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).DoomsdayNightTimeDelayTimer = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).DoomsdayHalf = 1;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).DoomsdayDialogueTimer = 0;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).ProphecyShowTimer = 0;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -272,7 +334,13 @@ public class DoomsdayCleanupProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).ProphecyTimerTotal = 0;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).ProphecyTimerTotal = 0;
+					EngiesChaosModVariables.MapVariables.get(world).dialogueamount = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).DoomsdayDialogueDelayTimer = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).DoomsdayNightTimeDelayTimer = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).DoomsdayDialogueTimer = 0;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).TimeBeforeNextDialogue = 0;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -280,11 +348,49 @@ public class DoomsdayCleanupProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).DialogueDisappearTimer = 0;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).dialogueamount = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).StartDoomsdayBeginningTimer = 0;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).DoomsdayTeleportTime = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayDialogueDelayTimer = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayNightTimeDelayTimer = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayDialogueTimer = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayTimeBeforeNextDialogue = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayTimeBeforeDialogueDisappear = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayDialogueDisappearTimer = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayTeleportTime = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).TheEndDialogueDelayTimer = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).TheEndNightTimeDelayTimer = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).TheEndDialogueTimer = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).TheEndTimeBeforeNextDialogue = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).TheEndTimeBeforeDialogueDisappear = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).TheEndDialogueDisappearTimer = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).TheEndTeleportTime = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).EngiesWrathDialogueDelayTimer = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).EngiesWrathNightTimeDelayTimer = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).EngiesWrathDialogueTimer = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).EngiesWrathTimeBeforeNextDialogue = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).EngiesWrathTimeBeforeDialogueDisappear = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).EngiesWrathDialogueDisappearTimer = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).EngiesWrathTeleportTime = 0;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				}
 			}

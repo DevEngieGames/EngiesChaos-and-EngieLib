@@ -12,25 +12,25 @@ import engiegames.engies_chaos.network.EngiesChaosModVariables;
 
 public class HordeSpawnsProcedure {
 	public static void execute(LevelAccessor world) {
-		if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true) {
+		if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart == true) {
 			if (Math.random() > 0.125) {
 				if (world instanceof ServerLevel _level)
 					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO,
 							_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos horde");
 			}
-		} else if (EngiesChaosModVariables.MapVariables.get(world).sddaystart == true) {
+		} else if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayFullStart == true) {
 			if (Math.random() > 0.25) {
 				if (world instanceof ServerLevel _level)
 					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO,
 							_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos horde");
 			}
-		} else if (EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
+		} else if (EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart == true) {
 			if (Math.random() > 0.375) {
 				if (world instanceof ServerLevel _level)
 					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO,
 							_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos horde");
 			}
-		} else if (EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true) {
+		} else if (EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart == true) {
 			if (Math.random() > 0.5) {
 				if (world instanceof ServerLevel _level)
 					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO,

@@ -13,7 +13,7 @@ import engiegames.engies_chaos.EngiesChaosMod;
 
 public class SpikeSpawnsProcedure {
 	public static void execute(LevelAccessor world) {
-		if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == true) {
+		if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart == true) {
 			for (int index0 = 0; index0 < 50; index0++) {
 				if (Math.random() > 0.125) {
 					EngiesChaosMod.queueServerWork(5, () -> {
@@ -25,7 +25,7 @@ public class SpikeSpawnsProcedure {
 					});
 				}
 			}
-		} else if (EngiesChaosModVariables.MapVariables.get(world).sddaystart == true) {
+		} else if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayFullStart == true) {
 			for (int index1 = 0; index1 < 50; index1++) {
 				if (Math.random() > 0.25) {
 					EngiesChaosMod.queueServerWork(5, () -> {
@@ -37,7 +37,7 @@ public class SpikeSpawnsProcedure {
 					});
 				}
 			}
-		} else if (EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
+		} else if (EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart == true) {
 			for (int index2 = 0; index2 < 50; index2++) {
 				if (Math.random() > 0.375) {
 					EngiesChaosMod.queueServerWork(5, () -> {
@@ -49,7 +49,7 @@ public class SpikeSpawnsProcedure {
 					});
 				}
 			}
-		} else if (EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true) {
+		} else if (EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart == true) {
 			for (int index3 = 0; index3 < 50; index3++) {
 				if (Math.random() > 0.5) {
 					EngiesChaosMod.queueServerWork(5, () -> {

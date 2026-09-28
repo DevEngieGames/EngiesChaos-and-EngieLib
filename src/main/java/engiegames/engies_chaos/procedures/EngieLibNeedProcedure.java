@@ -1,6 +1,7 @@
 package engiegames.engies_chaos.procedures;
 
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
@@ -11,6 +12,7 @@ import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
+import engiegames.engies_chaos.init.EngiesChaosModItems;
 import engiegames.engies_chaos.init.EngiesChaosModGameRules;
 
 import com.mojang.brigadier.context.CommandContext;
@@ -130,6 +132,22 @@ public class EngieLibNeedProcedure {
 					_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
 				if (entity instanceof Player _player)
 					_player.getFoodData().setFoodLevel(20);
+				if (entity instanceof Player _player) {
+					ItemStack _stktoremove = new ItemStack(EngiesChaosModItems.GRAVITY_COIL.get());
+					_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1000000000, _player.inventoryMenu.getCraftSlots());
+				}
+				if (entity instanceof Player _player) {
+					ItemStack _stktoremove = new ItemStack(EngiesChaosModItems.SMALL_GOBLET.get());
+					_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1000000000, _player.inventoryMenu.getCraftSlots());
+				}
+				if (entity instanceof Player _player) {
+					ItemStack _stktoremove = new ItemStack(EngiesChaosModItems.GOBLET.get());
+					_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1000000000, _player.inventoryMenu.getCraftSlots());
+				}
+				if (entity instanceof Player _player) {
+					ItemStack _stktoremove = new ItemStack(EngiesChaosModItems.ENGIE_GOBLET.get());
+					_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1000000000, _player.inventoryMenu.getCraftSlots());
+				}
 			}
 		}
 	}

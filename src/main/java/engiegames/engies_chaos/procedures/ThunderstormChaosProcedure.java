@@ -37,8 +37,8 @@ public class ThunderstormChaosProcedure {
 
 	private static void execute(@Nullable Event event, LevelAccessor world) {
 		if (world.getLevelData().isRaining() && world.getLevelData().isThundering()) {
-			if (EngiesChaosModVariables.MapVariables.get(world).ddaystart == false && EngiesChaosModVariables.MapVariables.get(world).sddaystart == false && EngiesChaosModVariables.MapVariables.get(world).thestart == false
-					&& EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == false) {
+			if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart == false && EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayFullStart == false && EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart == false
+					&& EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart == false) {
 				if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == true && world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == true) {
 					EngiesChaosModVariables.MapVariables.get(world).extremelightningcd = EngiesChaosModVariables.MapVariables.get(world).extremelightningcd + 0.05;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);

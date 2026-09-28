@@ -26,7 +26,7 @@ public class DDayLightningSpawnerOnEntityTickUpdate2Procedure {
 			return;
 		if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 			_entity.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 999999, 255, false, false));
-		if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart == true || EngiesChaosModVariables.MapVariables.get(world).sddaystart == true || EngiesChaosModVariables.MapVariables.get(world).thestart == true) {
+		if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart == true || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayFullStart == true || EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart == true) {
 			if (!entity.level.isClientSide())
 				entity.discard();
 			if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_DOOMSDAY_LIGHTNING) == true) {
@@ -77,6 +77,8 @@ public class DDayLightningSpawnerOnEntityTickUpdate2Procedure {
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				EngiesChaosModVariables.MapVariables.get(world).playlightningsound2 = true;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+				EngiesChaosModVariables.MapVariables.get(world).playlightningcornersound = true;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				if (world instanceof ServerLevel _level) {
 					LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
 					entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
@@ -98,29 +100,29 @@ public class DDayLightningSpawnerOnEntityTickUpdate2Procedure {
 					}
 				}
 			}
-		} else if (EngiesChaosModVariables.MapVariables.get(world).engieswrathstart == true) {
+		} else if (EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart == true) {
 			if (!entity.level.isClientSide())
 				entity.discard();
+			for (Entity entityiterator : new ArrayList<>(world.players())) {
+				{
+					double _setval = 0.25;
+					entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.lightningflashnum = _setval;
+						capability.syncPlayerVariables(entityiterator);
+					});
+				}
+			}
+			EngiesChaosModVariables.MapVariables.get(world).playlightningsound = true;
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			EngiesChaosModVariables.MapVariables.get(world).playlightningsound3 = true;
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			if (world instanceof ServerLevel _level) {
+				LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+				entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
+				entityToSpawn.setVisualOnly(true);
+				_level.addFreshEntity(entityToSpawn);
+			}
 			if (EngiesChaosModVariables.MapVariables.get(world).engiestruewrath == true) {
-				for (Entity entityiterator : new ArrayList<>(world.players())) {
-					{
-						double _setval = 0.25;
-						entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.lightningflashnum = _setval;
-							capability.syncPlayerVariables(entityiterator);
-						});
-					}
-				}
-				EngiesChaosModVariables.MapVariables.get(world).playlightningsound = true;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosModVariables.MapVariables.get(world).playlightningsound3 = true;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				if (world instanceof ServerLevel _level) {
-					LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-					entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
-					entityToSpawn.setVisualOnly(true);
-					_level.addFreshEntity(entityToSpawn);
-				}
 				{
 					Entity _ent = entity;
 					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
@@ -136,25 +138,6 @@ public class DDayLightningSpawnerOnEntityTickUpdate2Procedure {
 					}
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).engiestruewrath == false) {
-				for (Entity entityiterator : new ArrayList<>(world.players())) {
-					{
-						double _setval = 0.25;
-						entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.lightningflashnum = _setval;
-							capability.syncPlayerVariables(entityiterator);
-						});
-					}
-				}
-				EngiesChaosModVariables.MapVariables.get(world).playlightningsound = true;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosModVariables.MapVariables.get(world).playlightningsound3 = true;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				if (world instanceof ServerLevel _level) {
-					LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-					entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
-					entityToSpawn.setVisualOnly(true);
-					_level.addFreshEntity(entityToSpawn);
-				}
 				{
 					Entity _ent = entity;
 					if (!_ent.level.isClientSide() && _ent.getServer() != null) {

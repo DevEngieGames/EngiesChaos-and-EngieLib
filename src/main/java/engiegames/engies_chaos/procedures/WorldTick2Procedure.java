@@ -34,10 +34,10 @@ public class WorldTick2Procedure {
 			if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.RANDOM) == true) {
 				EngiesChaosModVariables.MapVariables.get(world).random25minutetimer = EngiesChaosModVariables.MapVariables.get(world).random25minutetimer + 0.05;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				if (EngiesChaosModVariables.MapVariables.get(world).random25minutetimer <= 0) {
+				if (EngiesChaosModVariables.MapVariables.get(world).random25minutetimer >= 1500) {
 					EngiesChaosModVariables.MapVariables.get(world).random25minutetimer = 0;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if ((EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart || EngiesChaosModVariables.MapVariables.get(world).TheEndStart
+					if ((EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart || EngiesChaosModVariables.MapVariables.get(world).TheEndStart
 							|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart) == false) {
 						if (Math.random() <= 0.25) {
 							if (Math.random() <= 0.5) {

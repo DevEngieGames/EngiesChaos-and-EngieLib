@@ -42,7 +42,8 @@ public class DDAYSoundEffectsProcedure {
 						}
 					}
 				}
-				if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart == true) {
+				if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart == true || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayFullStart == true
+						|| EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart == true) {
 					for (Entity entityiterator : new ArrayList<>(world.players())) {
 						{
 							Entity _ent = entityiterator;
@@ -54,6 +55,30 @@ public class DDAYSoundEffectsProcedure {
 					}
 				}
 				EngiesChaosModVariables.MapVariables.get(world).churchbellsnorm = false;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			}
+			if (EngiesChaosModVariables.MapVariables.get(world).churchbellsewrath == true) {
+				for (Entity entityiterator : new ArrayList<>(world.players())) {
+					{
+						Entity _ent = entityiterator;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "playsound engies_chaos:churchbells2 neutral @s");
+						}
+					}
+				}
+				if (EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart == true) {
+					for (Entity entityiterator : new ArrayList<>(world.players())) {
+						{
+							Entity _ent = entityiterator;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "playsound engies_chaos:doomsdaydisasterreveal neutral @s");
+							}
+						}
+					}
+				}
+				EngiesChaosModVariables.MapVariables.get(world).churchbellsewrath = false;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			}
 			if (EngiesChaosModVariables.MapVariables.get(world).ddaymainsongplay == true) {

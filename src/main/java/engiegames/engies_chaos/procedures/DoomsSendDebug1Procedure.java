@@ -34,12 +34,12 @@ public class DoomsSendDebug1Procedure {
 			EngiesChaosModVariables.MapVariables.get(world).doomssentdebug1 = false;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			if (EngiesChaosModVariables.MapVariables.get(world).doomsdaychance >= 6.25 && EngiesChaosModVariables.MapVariables.get(world).doomsdaychance < 12.5) {
-				if (EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true) {
+				if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart == true) {
 					if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
 						if (entity instanceof Player _player && !_player.level.isClientSide())
 							_player.displayClientMessage(Component.literal(("DEBUG: Attempted to spawn Doomsday with risk: " + "Low.")), false);
 					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart == true) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart == true) {
 					if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
 						if (entity instanceof Player _player && !_player.level.isClientSide())
 							_player.displayClientMessage(Component.literal(("DEBUG: Attempted to spawn Super Doomsday with risk: " + "Low.")), false);
@@ -56,12 +56,12 @@ public class DoomsSendDebug1Procedure {
 					}
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).doomsdaychance >= 12.5 && EngiesChaosModVariables.MapVariables.get(world).doomsdaychance < 18.75) {
-				if (EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true) {
+				if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart == true) {
 					if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
 						if (entity instanceof Player _player && !_player.level.isClientSide())
 							_player.displayClientMessage(Component.literal(("DEBUG: Attempted to spawn Doomsday with risk: " + "Medium.")), false);
 					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart == true) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart == true) {
 					if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
 						if (entity instanceof Player _player && !_player.level.isClientSide())
 							_player.displayClientMessage(Component.literal(("DEBUG: Attempted to spawn Super Doomsday with risk: " + "Medium.")), false);
@@ -78,12 +78,12 @@ public class DoomsSendDebug1Procedure {
 					}
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).doomsdaychance >= 18.75 && EngiesChaosModVariables.MapVariables.get(world).doomsdaychance < 25) {
-				if (EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true) {
+				if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart == true) {
 					if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
 						if (entity instanceof Player _player && !_player.level.isClientSide())
 							_player.displayClientMessage(Component.literal(("DEBUG: Attempted to spawn Doomsday with risk: " + "High.")), false);
 					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart == true) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart == true) {
 					if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
 						if (entity instanceof Player _player && !_player.level.isClientSide())
 							_player.displayClientMessage(Component.literal(("DEBUG: Attempted to spawn Super Doomsday with risk: " + "High.")), false);
@@ -100,12 +100,12 @@ public class DoomsSendDebug1Procedure {
 					}
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).doomsdaychance >= 25 && EngiesChaosModVariables.MapVariables.get(world).doomsdaychance < 50) {
-				if (EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true) {
+				if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart == true) {
 					if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
 						if (entity instanceof Player _player && !_player.level.isClientSide())
 							_player.displayClientMessage(Component.literal(("DEBUG: Attempted to spawn Doomsday with risk: " + "Extreme.")), false);
 					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart == true) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart == true) {
 					if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
 						if (entity instanceof Player _player && !_player.level.isClientSide())
 							_player.displayClientMessage(Component.literal(("DEBUG: Attempted to spawn Super Doomsday with risk: " + "Extreme.")), false);
@@ -122,12 +122,12 @@ public class DoomsSendDebug1Procedure {
 					}
 				}
 			} else if (EngiesChaosModVariables.MapVariables.get(world).doomsdaychance >= 50) {
-				if (EngiesChaosModVariables.MapVariables.get(world).DoomsDayStart == true) {
+				if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart == true) {
 					if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
 						if (entity instanceof Player _player && !_player.level.isClientSide())
 							_player.displayClientMessage(Component.literal(("DEBUG: Attempted to spawn Doomsday with risk: " + "Guaranteed.")), false);
 					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsDayStart == true) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart == true) {
 					if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayTrackToggle == true) {
 						if (entity instanceof Player _player && !_player.level.isClientSide())
 							_player.displayClientMessage(Component.literal(("DEBUG: Attempted to spawn Super Doomsday with risk: " + "Guaranteed.")), false);
