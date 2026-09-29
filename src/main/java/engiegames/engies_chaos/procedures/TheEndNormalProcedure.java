@@ -20,12 +20,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.BlockPos;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 import net.minecraft.advancements.AdvancementProgress;
@@ -217,7 +215,7 @@ public class TheEndNormalProcedure {
 						if (EngiesChaosModVariables.MapVariables.get(world).TheEndDialogueDelayTimer >= 37) {
 							for (Entity entityiterator : new ArrayList<>(world.players())) {
 								if (entityiterator instanceof ServerPlayer _player) {
-									Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:i_guess_this_is_dday"));
+									Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:theendofyourstory"));
 									AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 									if (!_ap.isDone()) {
 										for (String criteria : _ap.getRemainingCriteria())
@@ -238,7 +236,7 @@ public class TheEndNormalProcedure {
 						}
 					} else if (EngiesChaosModVariables.MapVariables.get(world).TheEndDialogueDelay == false) {
 						if (EngiesChaosModVariables.MapVariables.get(world).pausedialogue == true) {
-							if (EngiesChaosModVariables.MapVariables.get(world).stopdialogue == false) {
+							if (EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart == false) {
 								EngiesChaosModVariables.MapVariables.get(world).TheEndDialogueTimer = 0;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 								EngiesChaosModVariables.MapVariables.get(world).TheEndDialogueDisappearTimer = EngiesChaosModVariables.MapVariables.get(world).TheEndDialogueDisappearTimer + 0.05;
@@ -251,7 +249,7 @@ public class TheEndNormalProcedure {
 									EngiesChaosModVariables.MapVariables.get(world).pausedialogue = false;
 									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 								}
-							} else if (EngiesChaosModVariables.MapVariables.get(world).stopdialogue == true) {
+							} else if (EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart == true) {
 								EngiesChaosModVariables.MapVariables.get(world).TheEndDialogueTimer = 0;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 								EngiesChaosModVariables.MapVariables.get(world).TheEndDialogueDisappearTimer = 0;
@@ -307,8 +305,6 @@ public class TheEndNormalProcedure {
 									EngiesChaosModVariables.MapVariables.get(world).pausedialogue = true;
 									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 									EngiesChaosModVariables.MapVariables.get(world).ddaydialogue = true;
-									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-									EngiesChaosModVariables.MapVariables.get(world).stopdialogue = true;
 									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 									EngiesChaosModVariables.MapVariables.get(world).StartTheEndBeginning = true;
 									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -403,14 +399,14 @@ public class TheEndNormalProcedure {
 							}
 						}
 					}
-					EngiesChaosModVariables.MapVariables.get(world).RX = Math.round(Mth.nextDouble(RandomSource.create(), -168, 168));
+					EngiesChaosModVariables.MapVariables.get(world).RX = Mth.nextInt(RandomSource.create(), -168, 168);
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).RZ = Math.round(Mth.nextDouble(RandomSource.create(), -168, 168));
+					EngiesChaosModVariables.MapVariables.get(world).RZ = Mth.nextInt(RandomSource.create(), -168, 168);
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayoncleanup == false) {
 						if (EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer == false) {
 							if (EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds > 0) {
-								EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds = EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds - 0.05;
+								EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds = EngiesChaosModVariables.MapVariables.get(world).sddaytimerseconds - 0.05;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							}
 							if (EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds <= 0) {
@@ -421,16 +417,16 @@ public class TheEndNormalProcedure {
 									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 								} else {
 									if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 4) {
-										EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds = 0;
+										EngiesChaosModVariables.MapVariables.get(world).ddaytimerseconds = 0;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 										EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = true;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 										EngiesChaosModVariables.MapVariables.get(world).DDAYCleanup = true;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-										EngiesChaosModVariables.MapVariables.get(world).theendhappened = true;
+										EngiesChaosModVariables.MapVariables.get(world).ddayhappened = true;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 									} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 2) {
-										EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds = 0;
+										EngiesChaosModVariables.MapVariables.get(world).ddaytimerseconds = 0;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 										EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = true;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -441,7 +437,7 @@ public class TheEndNormalProcedure {
 											EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 										});
 									} else {
-										EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds = 0;
+										EngiesChaosModVariables.MapVariables.get(world).ddaytimerseconds = 0;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 										EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = true;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -478,13 +474,9 @@ public class TheEndNormalProcedure {
 								EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = 0;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 								if (Mth.nextDouble(RandomSource.create(), 1, 100) < 85) {
-									if ((world.getBlockState(new BlockPos(EngiesChaosModVariables.MapVariables.get(world).RX,
+									DoomsdayNormalLightningProcedure.execute(world, EngiesChaosModVariables.MapVariables.get(world).RX,
 											Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)),
-											EngiesChaosModVariables.MapVariables.get(world).RZ))).is(BlockTags.create(new ResourceLocation("engies_chaos:ddaylightningstrikeable")))) {
-										DoomsdayNormalLightningProcedure.execute(world, EngiesChaosModVariables.MapVariables.get(world).RX,
-												Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)),
-												EngiesChaosModVariables.MapVariables.get(world).RZ);
-									}
+											EngiesChaosModVariables.MapVariables.get(world).RZ);
 								} else if (Mth.nextDouble(RandomSource.create(), 1, 100) >= 85) {
 									EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = -2.5;
 									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -505,13 +497,9 @@ public class TheEndNormalProcedure {
 								EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = 0;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 								if (Mth.nextDouble(RandomSource.create(), 1, 100) < 85) {
-									if ((world.getBlockState(new BlockPos(EngiesChaosModVariables.MapVariables.get(world).RX,
+									DoomsdayNormalLightningProcedure.execute(world, EngiesChaosModVariables.MapVariables.get(world).RX,
 											Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)),
-											EngiesChaosModVariables.MapVariables.get(world).RZ))).is(BlockTags.create(new ResourceLocation("engies_chaos:ddaylightningstrikeable")))) {
-										DoomsdayNormalLightningProcedure.execute(world, EngiesChaosModVariables.MapVariables.get(world).RX,
-												Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)),
-												EngiesChaosModVariables.MapVariables.get(world).RZ);
-									}
+											EngiesChaosModVariables.MapVariables.get(world).RZ);
 								} else if (Mth.nextDouble(RandomSource.create(), 1, 100) >= 85) {
 									EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = -2.5;
 									EngiesChaosModVariables.MapVariables.get(world).syncData(world);

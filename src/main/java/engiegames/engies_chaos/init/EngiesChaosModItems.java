@@ -1904,6 +1904,8 @@ public class EngiesChaosModItems {
 			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.SUPER_DOOMS_DAY_HOSTILE, -16250872, -602330, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_MOBS)));
 	public static final RegistryObject<Item> THE_END_HOSTILE_SPAWN_EGG = REGISTRY.register("the_end_hostile_spawn_egg",
 			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.THE_END_HOSTILE, -4978150, -16777216, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_MOBS)));
+	public static final RegistryObject<Item> INSANITY_SPAWN_EGG = REGISTRY.register("insanity_spawn_egg",
+			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.INSANITY, -16777216, -1, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_MOBS)));
 	public static final RegistryObject<Item> SHADOW_SHARK_ENGIE_SPAWN_EGG = REGISTRY.register("shadow_shark_engie_spawn_egg",
 			() -> new ForgeSpawnEggItem(EngiesChaosModEntities.SHADOW_SHARK_ENGIE, -16777216, -16777216, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_MOBS)));
 	public static final RegistryObject<Item> OMEN_SPAWN_EGG = REGISTRY.register("omen_spawn_egg", () -> new ForgeSpawnEggItem(EngiesChaosModEntities.OMEN, -16777216, -16777216, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_MOBS)));

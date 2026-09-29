@@ -31,7 +31,7 @@ public class TryMaxDiffCommand {
 					if (entity != null)
 						direction = entity.getDirection();
 
-					TryMaxDiffProProcedure.execute(world);
+					TryMaxDiffProProcedure.execute(world, entity);
 					return 0;
 				}));
 	}

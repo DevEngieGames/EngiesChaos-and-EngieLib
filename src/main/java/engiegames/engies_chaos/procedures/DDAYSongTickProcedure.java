@@ -35,7 +35,8 @@ public class DDAYSongTickProcedure {
 
 	private static void execute(@Nullable Event event, LevelAccessor world) {
 		if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == Level.OVERWORLD) {
-			if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart == true) {
+			if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart == true || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayFullStart == true || EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart == true
+					|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart == true) {
 				for (Entity entityiterator : new ArrayList<>(world.players())) {
 					{
 						Entity _ent = entityiterator;

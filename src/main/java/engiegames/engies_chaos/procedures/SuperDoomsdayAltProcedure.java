@@ -18,12 +18,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.BlockPos;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 import net.minecraft.advancements.AdvancementProgress;
@@ -453,13 +451,9 @@ public class SuperDoomsdayAltProcedure {
 								EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = 0;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 								if (Mth.nextDouble(RandomSource.create(), 1, 100) < 85) {
-									if ((world.getBlockState(new BlockPos(EngiesChaosModVariables.MapVariables.get(world).RX,
+									DoomsdayNormalLightningProcedure.execute(world, EngiesChaosModVariables.MapVariables.get(world).RX,
 											Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)),
-											EngiesChaosModVariables.MapVariables.get(world).RZ))).is(BlockTags.create(new ResourceLocation("engies_chaos:ddaylightningstrikeable")))) {
-										DoomsdayNormalLightningProcedure.execute(world, EngiesChaosModVariables.MapVariables.get(world).RX,
-												Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)),
-												EngiesChaosModVariables.MapVariables.get(world).RZ);
-									}
+											EngiesChaosModVariables.MapVariables.get(world).RZ);
 								} else if (Mth.nextDouble(RandomSource.create(), 1, 100) >= 85) {
 									EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = -2.5;
 									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -480,13 +474,9 @@ public class SuperDoomsdayAltProcedure {
 								EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = 0;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 								if (Mth.nextDouble(RandomSource.create(), 1, 100) < 85) {
-									if ((world.getBlockState(new BlockPos(EngiesChaosModVariables.MapVariables.get(world).RX,
+									DoomsdayNormalLightningProcedure.execute(world, EngiesChaosModVariables.MapVariables.get(world).RX,
 											Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)),
-											EngiesChaosModVariables.MapVariables.get(world).RZ))).is(BlockTags.create(new ResourceLocation("engies_chaos:ddaylightningstrikeable")))) {
-										DoomsdayNormalLightningProcedure.execute(world, EngiesChaosModVariables.MapVariables.get(world).RX,
-												Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)),
-												EngiesChaosModVariables.MapVariables.get(world).RZ);
-									}
+											EngiesChaosModVariables.MapVariables.get(world).RZ);
 								} else if (Mth.nextDouble(RandomSource.create(), 1, 100) >= 85) {
 									EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = -2.5;
 									EngiesChaosModVariables.MapVariables.get(world).syncData(world);

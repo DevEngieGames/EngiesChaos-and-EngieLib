@@ -146,7 +146,7 @@ public class EntitySpawnsProcedure {
 												* EngiesChaosModVariables.MapVariables.get(world).MobDifficulty));
 						}
 					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).mobbasehpmulttoggle == true) {
+				} else if (EngiesChaosModVariables.MapVariables.get(world).mobbasehpmulttoggle == false) {
 					if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty >= 1 && EngiesChaosModVariables.MapVariables.get(world).MobDifficulty < 525) {
 						if (entity instanceof LivingEntity _livingEntity62 && _livingEntity62.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
 							_livingEntity62.getAttribute(Attributes.MAX_HEALTH)

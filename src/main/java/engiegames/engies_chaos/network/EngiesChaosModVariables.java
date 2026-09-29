@@ -188,6 +188,7 @@ public class EngiesChaosModVariables {
 			clone.CrucifixMainHandDurabilityPercentage = original.CrucifixMainHandDurabilityPercentage;
 			clone.CrucifixOffHandDurabilityPercentage = original.CrucifixOffHandDurabilityPercentage;
 			clone.pickaxeonly = original.pickaxeonly;
+			clone.playerrequested = original.playerrequested;
 			if (!event.isWasDeath()) {
 				clone.firstplay = original.firstplay;
 				clone.RespawnNormInstantHealth = original.RespawnNormInstantHealth;
@@ -1301,6 +1302,7 @@ public class EngiesChaosModVariables {
 		public double CrucifixMainHandDurabilityPercentage = 0;
 		public double CrucifixOffHandDurabilityPercentage = 0;
 		public double pickaxeonly = 0;
+		public boolean playerrequested = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -1430,6 +1432,7 @@ public class EngiesChaosModVariables {
 			nbt.putDouble("CrucifixMainHandDurabilityPercentage", CrucifixMainHandDurabilityPercentage);
 			nbt.putDouble("CrucifixOffHandDurabilityPercentage", CrucifixOffHandDurabilityPercentage);
 			nbt.putDouble("pickaxeonly", pickaxeonly);
+			nbt.putBoolean("playerrequested", playerrequested);
 			return nbt;
 		}
 
@@ -1556,6 +1559,7 @@ public class EngiesChaosModVariables {
 			CrucifixMainHandDurabilityPercentage = nbt.getDouble("CrucifixMainHandDurabilityPercentage");
 			CrucifixOffHandDurabilityPercentage = nbt.getDouble("CrucifixOffHandDurabilityPercentage");
 			pickaxeonly = nbt.getDouble("pickaxeonly");
+			playerrequested = nbt.getBoolean("playerrequested");
 		}
 	}
 
@@ -1701,6 +1705,7 @@ public class EngiesChaosModVariables {
 					variables.CrucifixMainHandDurabilityPercentage = message.data.CrucifixMainHandDurabilityPercentage;
 					variables.CrucifixOffHandDurabilityPercentage = message.data.CrucifixOffHandDurabilityPercentage;
 					variables.pickaxeonly = message.data.pickaxeonly;
+					variables.playerrequested = message.data.playerrequested;
 				}
 			});
 			context.setPacketHandled(true);
