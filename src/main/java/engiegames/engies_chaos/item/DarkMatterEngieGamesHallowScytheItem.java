@@ -12,7 +12,7 @@ import net.minecraft.network.chat.Component;
 
 import java.util.List;
 
-import engiegames.engies_chaos.procedures.RegularHallowsTickProcedure;
+import engiegames.engies_chaos.procedures.DarkRegularHallowsTickProcedure;
 import engiegames.engies_chaos.procedures.DarkRegularHallowsScytheInfoProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModTabs;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
@@ -61,6 +61,6 @@ public class DarkMatterEngieGamesHallowScytheItem extends SwordItem {
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		RegularHallowsTickProcedure.execute(world, entity, itemstack);
+		DarkRegularHallowsTickProcedure.execute(world, entity, itemstack);
 	}
 }
