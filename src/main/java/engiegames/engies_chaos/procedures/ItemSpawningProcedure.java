@@ -45,30 +45,28 @@ public class ItemSpawningProcedure {
 		if (entity == null || sourceentity == null)
 			return;
 		if (sourceentity instanceof Player) {
-			EngiesChaosMod.queueServerWork(1, () -> {
-				if (Math.random() < 0.01905) {
-					if (world instanceof ServerLevel _level) {
-						ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_PLUSH.get()));
-						entityToSpawn.setPickUpDelay(10);
-						entityToSpawn.setUnlimitedLifetime();
-						_level.addFreshEntity(entityToSpawn);
-					}
+			if (Mth.nextInt(RandomSource.create(), 1, 525) == 1) {
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_PLUSH.get()));
+					entityToSpawn.setPickUpDelay(10);
+					entityToSpawn.setUnlimitedLifetime();
+					_level.addFreshEntity(entityToSpawn);
 				}
-				if (Math.random() < 0.0004) {
-					if (world instanceof ServerLevel _level) {
-						ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DEV_ENGIE_PLUSH.get()));
-						entityToSpawn.setPickUpDelay(10);
-						entityToSpawn.setUnlimitedLifetime();
-						_level.addFreshEntity(entityToSpawn);
-					}
+			}
+			if (Mth.nextInt(RandomSource.create(), 1, 1250) == 1) {
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DEV_ENGIE_PLUSH.get()));
+					entityToSpawn.setPickUpDelay(10);
+					entityToSpawn.setUnlimitedLifetime();
+					_level.addFreshEntity(entityToSpawn);
 				}
-			});
+			}
 			if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("engies_chaos:mobs/mad_engie")))) {
 				EngiesChaosMod.queueServerWork(1, () -> {
 					if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).MadEngieKillCount >= 50
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).MadEngieKillCount < 100) {
-						if (!(sourceentity instanceof ServerPlayer _plr11 && _plr11.level instanceof ServerLevel
-								&& _plr11.getAdvancements().getOrStartProgress(_plr11.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:mad_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr12 && _plr12.level instanceof ServerLevel
+								&& _plr12.getAdvancements().getOrStartProgress(_plr12.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:mad_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.MAD_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -78,8 +76,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).MadEngieKillCount >= 100
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).MadEngieKillCount < 150) {
-						if (!(sourceentity instanceof ServerPlayer _plr16 && _plr16.level instanceof ServerLevel
-								&& _plr16.getAdvancements().getOrStartProgress(_plr16.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:mad_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr17 && _plr17.level instanceof ServerLevel
+								&& _plr17.getAdvancements().getOrStartProgress(_plr17.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:mad_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.MAD_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -87,8 +85,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr21 && _plr21.level instanceof ServerLevel
-								&& _plr21.getAdvancements().getOrStartProgress(_plr21.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_mad_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr22 && _plr22.level instanceof ServerLevel
+								&& _plr22.getAdvancements().getOrStartProgress(_plr22.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_mad_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_MAD_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -98,8 +96,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).MadEngieKillCount >= 150
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).MadEngieKillCount < 200) {
-						if (!(sourceentity instanceof ServerPlayer _plr26 && _plr26.level instanceof ServerLevel
-								&& _plr26.getAdvancements().getOrStartProgress(_plr26.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:mad_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr27 && _plr27.level instanceof ServerLevel
+								&& _plr27.getAdvancements().getOrStartProgress(_plr27.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:mad_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.MAD_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -107,8 +105,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr31 && _plr31.level instanceof ServerLevel
-								&& _plr31.getAdvancements().getOrStartProgress(_plr31.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_mad_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr32 && _plr32.level instanceof ServerLevel
+								&& _plr32.getAdvancements().getOrStartProgress(_plr32.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_mad_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_MAD_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -116,8 +114,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr36 && _plr36.level instanceof ServerLevel
-								&& _plr36.getAdvancements().getOrStartProgress(_plr36.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_mad_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr37 && _plr37.level instanceof ServerLevel
+								&& _plr37.getAdvancements().getOrStartProgress(_plr37.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_mad_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLD_MAD_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -127,8 +125,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).MadEngieKillCount >= 200
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).MadEngieKillCount < 250) {
-						if (!(sourceentity instanceof ServerPlayer _plr41 && _plr41.level instanceof ServerLevel
-								&& _plr41.getAdvancements().getOrStartProgress(_plr41.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:mad_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr42 && _plr42.level instanceof ServerLevel
+								&& _plr42.getAdvancements().getOrStartProgress(_plr42.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:mad_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.MAD_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -136,8 +134,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr46 && _plr46.level instanceof ServerLevel
-								&& _plr46.getAdvancements().getOrStartProgress(_plr46.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_mad_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr47 && _plr47.level instanceof ServerLevel
+								&& _plr47.getAdvancements().getOrStartProgress(_plr47.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_mad_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_MAD_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -145,8 +143,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr51 && _plr51.level instanceof ServerLevel
-								&& _plr51.getAdvancements().getOrStartProgress(_plr51.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_mad_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr52 && _plr52.level instanceof ServerLevel
+								&& _plr52.getAdvancements().getOrStartProgress(_plr52.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_mad_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLD_MAD_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -154,8 +152,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr56 && _plr56.level instanceof ServerLevel
-								&& _plr56.getAdvancements().getOrStartProgress(_plr56.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_mad_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr57 && _plr57.level instanceof ServerLevel
+								&& _plr57.getAdvancements().getOrStartProgress(_plr57.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_mad_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DIAMOND_MAD_ENGIE_PLUS.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -164,8 +162,8 @@ public class ItemSpawningProcedure {
 							}
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).MadEngieKillCount >= 250) {
-						if (!(sourceentity instanceof ServerPlayer _plr61 && _plr61.level instanceof ServerLevel
-								&& _plr61.getAdvancements().getOrStartProgress(_plr61.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:mad_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr62 && _plr62.level instanceof ServerLevel
+								&& _plr62.getAdvancements().getOrStartProgress(_plr62.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:mad_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.MAD_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -173,8 +171,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr66 && _plr66.level instanceof ServerLevel
-								&& _plr66.getAdvancements().getOrStartProgress(_plr66.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_mad_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr67 && _plr67.level instanceof ServerLevel
+								&& _plr67.getAdvancements().getOrStartProgress(_plr67.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_mad_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_MAD_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -182,8 +180,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr71 && _plr71.level instanceof ServerLevel
-								&& _plr71.getAdvancements().getOrStartProgress(_plr71.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_mad_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr72 && _plr72.level instanceof ServerLevel
+								&& _plr72.getAdvancements().getOrStartProgress(_plr72.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_mad_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLD_MAD_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -191,8 +189,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr76 && _plr76.level instanceof ServerLevel
-								&& _plr76.getAdvancements().getOrStartProgress(_plr76.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_mad_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr77 && _plr77.level instanceof ServerLevel
+								&& _plr77.getAdvancements().getOrStartProgress(_plr77.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_mad_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DIAMOND_MAD_ENGIE_PLUS.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -200,8 +198,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr81 && _plr81.level instanceof ServerLevel
-								&& _plr81.getAdvancements().getOrStartProgress(_plr81.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_mad_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr82 && _plr82.level instanceof ServerLevel
+								&& _plr82.getAdvancements().getOrStartProgress(_plr82.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_mad_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.NETHERITE_MAD_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -215,8 +213,8 @@ public class ItemSpawningProcedure {
 				EngiesChaosMod.queueServerWork(1, () -> {
 					if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).AngryEngieKillCount >= 50
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).AngryEngieKillCount < 100) {
-						if (!(sourceentity instanceof ServerPlayer _plr88 && _plr88.level instanceof ServerLevel
-								&& _plr88.getAdvancements().getOrStartProgress(_plr88.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:angry_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr89 && _plr89.level instanceof ServerLevel
+								&& _plr89.getAdvancements().getOrStartProgress(_plr89.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:angry_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ANGRY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -226,8 +224,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).AngryEngieKillCount >= 100
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).AngryEngieKillCount < 150) {
-						if (!(sourceentity instanceof ServerPlayer _plr93 && _plr93.level instanceof ServerLevel
-								&& _plr93.getAdvancements().getOrStartProgress(_plr93.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:angry_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr94 && _plr94.level instanceof ServerLevel
+								&& _plr94.getAdvancements().getOrStartProgress(_plr94.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:angry_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ANGRY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -235,8 +233,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr98 && _plr98.level instanceof ServerLevel
-								&& _plr98.getAdvancements().getOrStartProgress(_plr98.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_angry_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr99 && _plr99.level instanceof ServerLevel
+								&& _plr99.getAdvancements().getOrStartProgress(_plr99.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_angry_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_ANGRY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -246,8 +244,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).AngryEngieKillCount >= 150
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).AngryEngieKillCount < 200) {
-						if (!(sourceentity instanceof ServerPlayer _plr103 && _plr103.level instanceof ServerLevel
-								&& _plr103.getAdvancements().getOrStartProgress(_plr103.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:angry_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr104 && _plr104.level instanceof ServerLevel
+								&& _plr104.getAdvancements().getOrStartProgress(_plr104.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:angry_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ANGRY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -255,8 +253,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr108 && _plr108.level instanceof ServerLevel
-								&& _plr108.getAdvancements().getOrStartProgress(_plr108.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_angry_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr109 && _plr109.level instanceof ServerLevel
+								&& _plr109.getAdvancements().getOrStartProgress(_plr109.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_angry_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_ANGRY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -264,8 +262,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr113 && _plr113.level instanceof ServerLevel
-								&& _plr113.getAdvancements().getOrStartProgress(_plr113.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_angry_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr114 && _plr114.level instanceof ServerLevel
+								&& _plr114.getAdvancements().getOrStartProgress(_plr114.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_angry_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLDEN_ANGRY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -275,8 +273,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).AngryEngieKillCount >= 200
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).AngryEngieKillCount < 250) {
-						if (!(sourceentity instanceof ServerPlayer _plr118 && _plr118.level instanceof ServerLevel
-								&& _plr118.getAdvancements().getOrStartProgress(_plr118.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:angry_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr119 && _plr119.level instanceof ServerLevel
+								&& _plr119.getAdvancements().getOrStartProgress(_plr119.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:angry_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ANGRY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -284,8 +282,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr123 && _plr123.level instanceof ServerLevel
-								&& _plr123.getAdvancements().getOrStartProgress(_plr123.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_angry_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr124 && _plr124.level instanceof ServerLevel
+								&& _plr124.getAdvancements().getOrStartProgress(_plr124.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_angry_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_ANGRY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -293,8 +291,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr128 && _plr128.level instanceof ServerLevel
-								&& _plr128.getAdvancements().getOrStartProgress(_plr128.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_angry_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr129 && _plr129.level instanceof ServerLevel
+								&& _plr129.getAdvancements().getOrStartProgress(_plr129.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_angry_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLDEN_ANGRY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -302,8 +300,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr133 && _plr133.level instanceof ServerLevel
-								&& _plr133.getAdvancements().getOrStartProgress(_plr133.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_angry_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr134 && _plr134.level instanceof ServerLevel
+								&& _plr134.getAdvancements().getOrStartProgress(_plr134.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_angry_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DIAMOND_ANGRY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -312,8 +310,8 @@ public class ItemSpawningProcedure {
 							}
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).AngryEngieKillCount >= 250) {
-						if (!(sourceentity instanceof ServerPlayer _plr138 && _plr138.level instanceof ServerLevel
-								&& _plr138.getAdvancements().getOrStartProgress(_plr138.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:angry_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr139 && _plr139.level instanceof ServerLevel
+								&& _plr139.getAdvancements().getOrStartProgress(_plr139.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:angry_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ANGRY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -321,8 +319,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr143 && _plr143.level instanceof ServerLevel
-								&& _plr143.getAdvancements().getOrStartProgress(_plr143.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_angry_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr144 && _plr144.level instanceof ServerLevel
+								&& _plr144.getAdvancements().getOrStartProgress(_plr144.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_angry_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_ANGRY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -330,8 +328,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr148 && _plr148.level instanceof ServerLevel
-								&& _plr148.getAdvancements().getOrStartProgress(_plr148.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_angry_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr149 && _plr149.level instanceof ServerLevel
+								&& _plr149.getAdvancements().getOrStartProgress(_plr149.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_angry_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLDEN_ANGRY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -339,8 +337,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr153 && _plr153.level instanceof ServerLevel
-								&& _plr153.getAdvancements().getOrStartProgress(_plr153.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_angry_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr154 && _plr154.level instanceof ServerLevel
+								&& _plr154.getAdvancements().getOrStartProgress(_plr154.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_angry_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DIAMOND_ANGRY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -348,8 +346,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr158 && _plr158.level instanceof ServerLevel
-								&& _plr158.getAdvancements().getOrStartProgress(_plr158.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_angry_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr159 && _plr159.level instanceof ServerLevel
+								&& _plr159.getAdvancements().getOrStartProgress(_plr159.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_angry_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.NETHERITE_ANGRY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -363,8 +361,8 @@ public class ItemSpawningProcedure {
 				EngiesChaosMod.queueServerWork(1, () -> {
 					if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).EnragedEngieKillCount >= 50
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).EnragedEngieKillCount < 100) {
-						if (!(sourceentity instanceof ServerPlayer _plr165 && _plr165.level instanceof ServerLevel
-								&& _plr165.getAdvancements().getOrStartProgress(_plr165.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:enraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr166 && _plr166.level instanceof ServerLevel
+								&& _plr166.getAdvancements().getOrStartProgress(_plr166.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:enraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -374,8 +372,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).EnragedEngieKillCount >= 100
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).EnragedEngieKillCount < 150) {
-						if (!(sourceentity instanceof ServerPlayer _plr170 && _plr170.level instanceof ServerLevel
-								&& _plr170.getAdvancements().getOrStartProgress(_plr170.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:enraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr171 && _plr171.level instanceof ServerLevel
+								&& _plr171.getAdvancements().getOrStartProgress(_plr171.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:enraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -383,8 +381,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr175 && _plr175.level instanceof ServerLevel
-								&& _plr175.getAdvancements().getOrStartProgress(_plr175.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_enraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr176 && _plr176.level instanceof ServerLevel
+								&& _plr176.getAdvancements().getOrStartProgress(_plr176.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_enraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_ENRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -394,8 +392,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).EnragedEngieKillCount >= 150
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).EnragedEngieKillCount < 200) {
-						if (!(sourceentity instanceof ServerPlayer _plr180 && _plr180.level instanceof ServerLevel
-								&& _plr180.getAdvancements().getOrStartProgress(_plr180.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:enraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr181 && _plr181.level instanceof ServerLevel
+								&& _plr181.getAdvancements().getOrStartProgress(_plr181.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:enraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -403,8 +401,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr185 && _plr185.level instanceof ServerLevel
-								&& _plr185.getAdvancements().getOrStartProgress(_plr185.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_enraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr186 && _plr186.level instanceof ServerLevel
+								&& _plr186.getAdvancements().getOrStartProgress(_plr186.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_enraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_ENRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -412,8 +410,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr190 && _plr190.level instanceof ServerLevel
-								&& _plr190.getAdvancements().getOrStartProgress(_plr190.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_enraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr191 && _plr191.level instanceof ServerLevel
+								&& _plr191.getAdvancements().getOrStartProgress(_plr191.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_enraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLDEN_ENRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -423,8 +421,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).EnragedEngieKillCount >= 200
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).EnragedEngieKillCount < 250) {
-						if (!(sourceentity instanceof ServerPlayer _plr195 && _plr195.level instanceof ServerLevel
-								&& _plr195.getAdvancements().getOrStartProgress(_plr195.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:enraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr196 && _plr196.level instanceof ServerLevel
+								&& _plr196.getAdvancements().getOrStartProgress(_plr196.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:enraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -432,8 +430,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr200 && _plr200.level instanceof ServerLevel
-								&& _plr200.getAdvancements().getOrStartProgress(_plr200.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_enraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr201 && _plr201.level instanceof ServerLevel
+								&& _plr201.getAdvancements().getOrStartProgress(_plr201.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_enraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_ENRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -441,8 +439,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr205 && _plr205.level instanceof ServerLevel
-								&& _plr205.getAdvancements().getOrStartProgress(_plr205.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_enraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr206 && _plr206.level instanceof ServerLevel
+								&& _plr206.getAdvancements().getOrStartProgress(_plr206.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_enraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLDEN_ENRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -450,8 +448,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr210 && _plr210.level instanceof ServerLevel
-								&& _plr210.getAdvancements().getOrStartProgress(_plr210.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_enraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr211 && _plr211.level instanceof ServerLevel
+								&& _plr211.getAdvancements().getOrStartProgress(_plr211.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_enraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DIAMOND_ENRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -460,8 +458,8 @@ public class ItemSpawningProcedure {
 							}
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).EnragedEngieKillCount >= 250) {
-						if (!(sourceentity instanceof ServerPlayer _plr215 && _plr215.level instanceof ServerLevel
-								&& _plr215.getAdvancements().getOrStartProgress(_plr215.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:enraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr216 && _plr216.level instanceof ServerLevel
+								&& _plr216.getAdvancements().getOrStartProgress(_plr216.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:enraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -469,8 +467,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr220 && _plr220.level instanceof ServerLevel
-								&& _plr220.getAdvancements().getOrStartProgress(_plr220.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_enraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr221 && _plr221.level instanceof ServerLevel
+								&& _plr221.getAdvancements().getOrStartProgress(_plr221.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_enraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_ENRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -478,8 +476,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr225 && _plr225.level instanceof ServerLevel
-								&& _plr225.getAdvancements().getOrStartProgress(_plr225.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_enraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr226 && _plr226.level instanceof ServerLevel
+								&& _plr226.getAdvancements().getOrStartProgress(_plr226.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_enraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLDEN_ENRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -487,8 +485,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr230 && _plr230.level instanceof ServerLevel
-								&& _plr230.getAdvancements().getOrStartProgress(_plr230.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_enraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr231 && _plr231.level instanceof ServerLevel
+								&& _plr231.getAdvancements().getOrStartProgress(_plr231.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_enraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DIAMOND_ENRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -496,8 +494,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr235 && _plr235.level instanceof ServerLevel
-								&& _plr235.getAdvancements().getOrStartProgress(_plr235.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_enraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr236 && _plr236.level instanceof ServerLevel
+								&& _plr236.getAdvancements().getOrStartProgress(_plr236.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_enraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.NETHERITE_ENRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -511,8 +509,8 @@ public class ItemSpawningProcedure {
 				EngiesChaosMod.queueServerWork(1, () -> {
 					if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).OutragedEngieKillCount >= 50
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).OutragedEngieKillCount < 100) {
-						if (!(sourceentity instanceof ServerPlayer _plr242 && _plr242.level instanceof ServerLevel
-								&& _plr242.getAdvancements().getOrStartProgress(_plr242.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:outraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr243 && _plr243.level instanceof ServerLevel
+								&& _plr243.getAdvancements().getOrStartProgress(_plr243.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:outraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.OUTRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -522,8 +520,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).OutragedEngieKillCount >= 100
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).OutragedEngieKillCount < 150) {
-						if (!(sourceentity instanceof ServerPlayer _plr247 && _plr247.level instanceof ServerLevel
-								&& _plr247.getAdvancements().getOrStartProgress(_plr247.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:outraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr248 && _plr248.level instanceof ServerLevel
+								&& _plr248.getAdvancements().getOrStartProgress(_plr248.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:outraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.OUTRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -531,8 +529,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr252 && _plr252.level instanceof ServerLevel
-								&& _plr252.getAdvancements().getOrStartProgress(_plr252.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_outraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr253 && _plr253.level instanceof ServerLevel
+								&& _plr253.getAdvancements().getOrStartProgress(_plr253.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_outraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_OUTRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -542,8 +540,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).OutragedEngieKillCount >= 150
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).OutragedEngieKillCount < 200) {
-						if (!(sourceentity instanceof ServerPlayer _plr257 && _plr257.level instanceof ServerLevel
-								&& _plr257.getAdvancements().getOrStartProgress(_plr257.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:outraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr258 && _plr258.level instanceof ServerLevel
+								&& _plr258.getAdvancements().getOrStartProgress(_plr258.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:outraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.OUTRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -551,8 +549,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr262 && _plr262.level instanceof ServerLevel
-								&& _plr262.getAdvancements().getOrStartProgress(_plr262.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_outraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr263 && _plr263.level instanceof ServerLevel
+								&& _plr263.getAdvancements().getOrStartProgress(_plr263.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_outraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_OUTRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -560,8 +558,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr267 && _plr267.level instanceof ServerLevel
-								&& _plr267.getAdvancements().getOrStartProgress(_plr267.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_outraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr268 && _plr268.level instanceof ServerLevel
+								&& _plr268.getAdvancements().getOrStartProgress(_plr268.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_outraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLDEN_OUTRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -571,8 +569,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).OutragedEngieKillCount >= 200
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).OutragedEngieKillCount < 250) {
-						if (!(sourceentity instanceof ServerPlayer _plr272 && _plr272.level instanceof ServerLevel
-								&& _plr272.getAdvancements().getOrStartProgress(_plr272.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:outraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr273 && _plr273.level instanceof ServerLevel
+								&& _plr273.getAdvancements().getOrStartProgress(_plr273.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:outraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.OUTRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -580,8 +578,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr277 && _plr277.level instanceof ServerLevel
-								&& _plr277.getAdvancements().getOrStartProgress(_plr277.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_outraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr278 && _plr278.level instanceof ServerLevel
+								&& _plr278.getAdvancements().getOrStartProgress(_plr278.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_outraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_OUTRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -589,8 +587,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr282 && _plr282.level instanceof ServerLevel
-								&& _plr282.getAdvancements().getOrStartProgress(_plr282.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_outraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr283 && _plr283.level instanceof ServerLevel
+								&& _plr283.getAdvancements().getOrStartProgress(_plr283.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_outraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLDEN_OUTRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -598,8 +596,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr287 && _plr287.level instanceof ServerLevel
-								&& _plr287.getAdvancements().getOrStartProgress(_plr287.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_outraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr288 && _plr288.level instanceof ServerLevel
+								&& _plr288.getAdvancements().getOrStartProgress(_plr288.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_outraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DIAMOND_OUTRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -608,8 +606,8 @@ public class ItemSpawningProcedure {
 							}
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).OutragedEngieKillCount >= 250) {
-						if (!(sourceentity instanceof ServerPlayer _plr292 && _plr292.level instanceof ServerLevel
-								&& _plr292.getAdvancements().getOrStartProgress(_plr292.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:outraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr293 && _plr293.level instanceof ServerLevel
+								&& _plr293.getAdvancements().getOrStartProgress(_plr293.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:outraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.OUTRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -617,8 +615,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr297 && _plr297.level instanceof ServerLevel
-								&& _plr297.getAdvancements().getOrStartProgress(_plr297.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_outraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr298 && _plr298.level instanceof ServerLevel
+								&& _plr298.getAdvancements().getOrStartProgress(_plr298.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_outraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_OUTRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -626,8 +624,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr302 && _plr302.level instanceof ServerLevel
-								&& _plr302.getAdvancements().getOrStartProgress(_plr302.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_outraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr303 && _plr303.level instanceof ServerLevel
+								&& _plr303.getAdvancements().getOrStartProgress(_plr303.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_outraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLDEN_OUTRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -635,8 +633,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr307 && _plr307.level instanceof ServerLevel
-								&& _plr307.getAdvancements().getOrStartProgress(_plr307.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_outraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr308 && _plr308.level instanceof ServerLevel
+								&& _plr308.getAdvancements().getOrStartProgress(_plr308.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_outraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DIAMOND_OUTRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -644,8 +642,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr312 && _plr312.level instanceof ServerLevel
-								&& _plr312.getAdvancements().getOrStartProgress(_plr312.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_outraged_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr313 && _plr313.level instanceof ServerLevel
+								&& _plr313.getAdvancements().getOrStartProgress(_plr313.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_outraged_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.NETHERITE_OUTRAGED_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -659,8 +657,8 @@ public class ItemSpawningProcedure {
 				EngiesChaosMod.queueServerWork(1, () -> {
 					if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HostileBiblicallyKillCount >= 50
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HostileBiblicallyKillCount < 100) {
-						if (!(sourceentity instanceof ServerPlayer _plr319 && _plr319.level instanceof ServerLevel
-								&& _plr319.getAdvancements().getOrStartProgress(_plr319.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:biblically_accurate_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr320 && _plr320.level instanceof ServerLevel
+								&& _plr320.getAdvancements().getOrStartProgress(_plr320.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:biblically_accurate_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.BIBLICALLY_ACCURATE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -670,8 +668,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HostileBiblicallyKillCount >= 100
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HostileBiblicallyKillCount < 150) {
-						if (!(sourceentity instanceof ServerPlayer _plr324 && _plr324.level instanceof ServerLevel
-								&& _plr324.getAdvancements().getOrStartProgress(_plr324.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:biblically_accurate_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr325 && _plr325.level instanceof ServerLevel
+								&& _plr325.getAdvancements().getOrStartProgress(_plr325.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:biblically_accurate_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.BIBLICALLY_ACCURATE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -679,8 +677,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr329 && _plr329.level instanceof ServerLevel
-								&& _plr329.getAdvancements().getOrStartProgress(_plr329.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_biblically_accurate_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr330 && _plr330.level instanceof ServerLevel
+								&& _plr330.getAdvancements().getOrStartProgress(_plr330.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_biblically_accurate_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_BIBLICALLY_ACCURATE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -690,8 +688,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HostileBiblicallyKillCount >= 150
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HostileBiblicallyKillCount < 200) {
-						if (!(sourceentity instanceof ServerPlayer _plr334 && _plr334.level instanceof ServerLevel
-								&& _plr334.getAdvancements().getOrStartProgress(_plr334.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:biblically_accurate_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr335 && _plr335.level instanceof ServerLevel
+								&& _plr335.getAdvancements().getOrStartProgress(_plr335.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:biblically_accurate_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.BIBLICALLY_ACCURATE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -699,8 +697,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr339 && _plr339.level instanceof ServerLevel
-								&& _plr339.getAdvancements().getOrStartProgress(_plr339.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_biblically_accurate_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr340 && _plr340.level instanceof ServerLevel
+								&& _plr340.getAdvancements().getOrStartProgress(_plr340.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_biblically_accurate_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_BIBLICALLY_ACCURATE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -708,8 +706,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr344 && _plr344.level instanceof ServerLevel
-								&& _plr344.getAdvancements().getOrStartProgress(_plr344.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_biblically_accurate_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr345 && _plr345.level instanceof ServerLevel
+								&& _plr345.getAdvancements().getOrStartProgress(_plr345.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_biblically_accurate_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLDEN_BIBLICALLY_ACCURATE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -719,8 +717,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HostileBiblicallyKillCount >= 200
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HostileBiblicallyKillCount < 250) {
-						if (!(sourceentity instanceof ServerPlayer _plr349 && _plr349.level instanceof ServerLevel
-								&& _plr349.getAdvancements().getOrStartProgress(_plr349.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:biblically_accurate_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr350 && _plr350.level instanceof ServerLevel
+								&& _plr350.getAdvancements().getOrStartProgress(_plr350.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:biblically_accurate_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.BIBLICALLY_ACCURATE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -728,8 +726,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr354 && _plr354.level instanceof ServerLevel
-								&& _plr354.getAdvancements().getOrStartProgress(_plr354.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_biblically_accurate_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr355 && _plr355.level instanceof ServerLevel
+								&& _plr355.getAdvancements().getOrStartProgress(_plr355.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_biblically_accurate_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_BIBLICALLY_ACCURATE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -737,8 +735,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr359 && _plr359.level instanceof ServerLevel
-								&& _plr359.getAdvancements().getOrStartProgress(_plr359.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_biblically_accurate_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr360 && _plr360.level instanceof ServerLevel
+								&& _plr360.getAdvancements().getOrStartProgress(_plr360.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_biblically_accurate_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLDEN_BIBLICALLY_ACCURATE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -746,8 +744,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr364 && _plr364.level instanceof ServerLevel
-								&& _plr364.getAdvancements().getOrStartProgress(_plr364.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_biblically_accurate_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr365 && _plr365.level instanceof ServerLevel
+								&& _plr365.getAdvancements().getOrStartProgress(_plr365.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_biblically_accurate_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DIAMOND_BIBLICALLY_ACCURATE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -756,8 +754,8 @@ public class ItemSpawningProcedure {
 							}
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HostileBiblicallyKillCount >= 250) {
-						if (!(sourceentity instanceof ServerPlayer _plr369 && _plr369.level instanceof ServerLevel
-								&& _plr369.getAdvancements().getOrStartProgress(_plr369.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:biblically_accurate_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr370 && _plr370.level instanceof ServerLevel
+								&& _plr370.getAdvancements().getOrStartProgress(_plr370.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:biblically_accurate_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.BIBLICALLY_ACCURATE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -765,8 +763,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr374 && _plr374.level instanceof ServerLevel
-								&& _plr374.getAdvancements().getOrStartProgress(_plr374.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_biblically_accurate_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr375 && _plr375.level instanceof ServerLevel
+								&& _plr375.getAdvancements().getOrStartProgress(_plr375.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_biblically_accurate_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_BIBLICALLY_ACCURATE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -774,8 +772,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr379 && _plr379.level instanceof ServerLevel
-								&& _plr379.getAdvancements().getOrStartProgress(_plr379.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_biblically_accurate_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr380 && _plr380.level instanceof ServerLevel
+								&& _plr380.getAdvancements().getOrStartProgress(_plr380.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_biblically_accurate_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLDEN_BIBLICALLY_ACCURATE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -783,8 +781,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr384 && _plr384.level instanceof ServerLevel
-								&& _plr384.getAdvancements().getOrStartProgress(_plr384.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_biblically_accurate_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr385 && _plr385.level instanceof ServerLevel
+								&& _plr385.getAdvancements().getOrStartProgress(_plr385.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_biblically_accurate_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DIAMOND_BIBLICALLY_ACCURATE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -792,8 +790,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr389 && _plr389.level instanceof ServerLevel
-								&& _plr389.getAdvancements().getOrStartProgress(_plr389.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_biblically_accurate_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr390 && _plr390.level instanceof ServerLevel
+								&& _plr390.getAdvancements().getOrStartProgress(_plr390.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_biblically_accurate_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.NETHERITE_BIBLICALLY_ACCURATE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -807,8 +805,8 @@ public class ItemSpawningProcedure {
 				EngiesChaosMod.queueServerWork(1, () -> {
 					if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).MonstrosityEngieKillCount >= 50
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).MonstrosityEngieKillCount < 100) {
-						if (!(sourceentity instanceof ServerPlayer _plr396 && _plr396.level instanceof ServerLevel
-								&& _plr396.getAdvancements().getOrStartProgress(_plr396.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:monstrosity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr397 && _plr397.level instanceof ServerLevel
+								&& _plr397.getAdvancements().getOrStartProgress(_plr397.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:monstrosity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.MONSTROSITY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -818,8 +816,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).MonstrosityEngieKillCount >= 100
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).MonstrosityEngieKillCount < 150) {
-						if (!(sourceentity instanceof ServerPlayer _plr401 && _plr401.level instanceof ServerLevel
-								&& _plr401.getAdvancements().getOrStartProgress(_plr401.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:monstrosity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr402 && _plr402.level instanceof ServerLevel
+								&& _plr402.getAdvancements().getOrStartProgress(_plr402.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:monstrosity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.MONSTROSITY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -827,8 +825,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr406 && _plr406.level instanceof ServerLevel
-								&& _plr406.getAdvancements().getOrStartProgress(_plr406.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_monstrosity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr407 && _plr407.level instanceof ServerLevel
+								&& _plr407.getAdvancements().getOrStartProgress(_plr407.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_monstrosity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_MONSTROSITY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -838,8 +836,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).MonstrosityEngieKillCount >= 150
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).MonstrosityEngieKillCount < 200) {
-						if (!(sourceentity instanceof ServerPlayer _plr411 && _plr411.level instanceof ServerLevel
-								&& _plr411.getAdvancements().getOrStartProgress(_plr411.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:monstrosity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr412 && _plr412.level instanceof ServerLevel
+								&& _plr412.getAdvancements().getOrStartProgress(_plr412.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:monstrosity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.MONSTROSITY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -847,8 +845,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr416 && _plr416.level instanceof ServerLevel
-								&& _plr416.getAdvancements().getOrStartProgress(_plr416.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_monstrosity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr417 && _plr417.level instanceof ServerLevel
+								&& _plr417.getAdvancements().getOrStartProgress(_plr417.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_monstrosity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_MONSTROSITY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -856,8 +854,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr421 && _plr421.level instanceof ServerLevel
-								&& _plr421.getAdvancements().getOrStartProgress(_plr421.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_monstrosity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr422 && _plr422.level instanceof ServerLevel
+								&& _plr422.getAdvancements().getOrStartProgress(_plr422.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_monstrosity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLD_MONSTROSITY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -867,8 +865,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).MonstrosityEngieKillCount >= 200
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).MonstrosityEngieKillCount < 250) {
-						if (!(sourceentity instanceof ServerPlayer _plr426 && _plr426.level instanceof ServerLevel
-								&& _plr426.getAdvancements().getOrStartProgress(_plr426.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:monstrosity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr427 && _plr427.level instanceof ServerLevel
+								&& _plr427.getAdvancements().getOrStartProgress(_plr427.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:monstrosity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.MONSTROSITY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -876,8 +874,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr431 && _plr431.level instanceof ServerLevel
-								&& _plr431.getAdvancements().getOrStartProgress(_plr431.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_monstrosity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr432 && _plr432.level instanceof ServerLevel
+								&& _plr432.getAdvancements().getOrStartProgress(_plr432.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_monstrosity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_MONSTROSITY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -885,8 +883,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr436 && _plr436.level instanceof ServerLevel
-								&& _plr436.getAdvancements().getOrStartProgress(_plr436.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_monstrosity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr437 && _plr437.level instanceof ServerLevel
+								&& _plr437.getAdvancements().getOrStartProgress(_plr437.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_monstrosity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLD_MONSTROSITY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -894,8 +892,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr441 && _plr441.level instanceof ServerLevel
-								&& _plr441.getAdvancements().getOrStartProgress(_plr441.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_monstrosity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr442 && _plr442.level instanceof ServerLevel
+								&& _plr442.getAdvancements().getOrStartProgress(_plr442.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_monstrosity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DIAMOND_MONSTROSITY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -904,8 +902,8 @@ public class ItemSpawningProcedure {
 							}
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).MonstrosityEngieKillCount >= 250) {
-						if (!(sourceentity instanceof ServerPlayer _plr446 && _plr446.level instanceof ServerLevel
-								&& _plr446.getAdvancements().getOrStartProgress(_plr446.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:monstrosity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr447 && _plr447.level instanceof ServerLevel
+								&& _plr447.getAdvancements().getOrStartProgress(_plr447.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:monstrosity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.MONSTROSITY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -913,8 +911,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr451 && _plr451.level instanceof ServerLevel
-								&& _plr451.getAdvancements().getOrStartProgress(_plr451.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_monstrosity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr452 && _plr452.level instanceof ServerLevel
+								&& _plr452.getAdvancements().getOrStartProgress(_plr452.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_monstrosity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_MONSTROSITY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -922,8 +920,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr456 && _plr456.level instanceof ServerLevel
-								&& _plr456.getAdvancements().getOrStartProgress(_plr456.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_monstrosity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr457 && _plr457.level instanceof ServerLevel
+								&& _plr457.getAdvancements().getOrStartProgress(_plr457.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_monstrosity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLD_MONSTROSITY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -931,8 +929,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr461 && _plr461.level instanceof ServerLevel
-								&& _plr461.getAdvancements().getOrStartProgress(_plr461.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_monstrosity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr462 && _plr462.level instanceof ServerLevel
+								&& _plr462.getAdvancements().getOrStartProgress(_plr462.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_monstrosity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DIAMOND_MONSTROSITY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -940,8 +938,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr466 && _plr466.level instanceof ServerLevel
-								&& _plr466.getAdvancements().getOrStartProgress(_plr466.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_monstrosity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr467 && _plr467.level instanceof ServerLevel
+								&& _plr467.getAdvancements().getOrStartProgress(_plr467.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_monstrosity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.NETHERITE_MONSTROSITY_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -955,8 +953,8 @@ public class ItemSpawningProcedure {
 				EngiesChaosMod.queueServerWork(1, () -> {
 					if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HostileEngieKillCount >= 50
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HostileEngieKillCount < 100) {
-						if (!(sourceentity instanceof ServerPlayer _plr473 && _plr473.level instanceof ServerLevel
-								&& _plr473.getAdvancements().getOrStartProgress(_plr473.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:hostile_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr474 && _plr474.level instanceof ServerLevel
+								&& _plr474.getAdvancements().getOrStartProgress(_plr474.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:hostile_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.HOSTILE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -966,8 +964,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HostileEngieKillCount >= 100
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HostileEngieKillCount < 150) {
-						if (!(sourceentity instanceof ServerPlayer _plr478 && _plr478.level instanceof ServerLevel
-								&& _plr478.getAdvancements().getOrStartProgress(_plr478.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:hostile_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr479 && _plr479.level instanceof ServerLevel
+								&& _plr479.getAdvancements().getOrStartProgress(_plr479.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:hostile_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.HOSTILE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -975,8 +973,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr483 && _plr483.level instanceof ServerLevel
-								&& _plr483.getAdvancements().getOrStartProgress(_plr483.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_hostile_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr484 && _plr484.level instanceof ServerLevel
+								&& _plr484.getAdvancements().getOrStartProgress(_plr484.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_hostile_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_HOSTILE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -986,8 +984,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HostileEngieKillCount >= 150
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HostileEngieKillCount < 200) {
-						if (!(sourceentity instanceof ServerPlayer _plr488 && _plr488.level instanceof ServerLevel
-								&& _plr488.getAdvancements().getOrStartProgress(_plr488.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:hostile_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr489 && _plr489.level instanceof ServerLevel
+								&& _plr489.getAdvancements().getOrStartProgress(_plr489.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:hostile_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.HOSTILE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -995,8 +993,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr493 && _plr493.level instanceof ServerLevel
-								&& _plr493.getAdvancements().getOrStartProgress(_plr493.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_hostile_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr494 && _plr494.level instanceof ServerLevel
+								&& _plr494.getAdvancements().getOrStartProgress(_plr494.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_hostile_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_HOSTILE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1004,8 +1002,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr498 && _plr498.level instanceof ServerLevel
-								&& _plr498.getAdvancements().getOrStartProgress(_plr498.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_hostile_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr499 && _plr499.level instanceof ServerLevel
+								&& _plr499.getAdvancements().getOrStartProgress(_plr499.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_hostile_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLDEN_HOSTILE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1015,8 +1013,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HostileEngieKillCount >= 200
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HostileEngieKillCount < 250) {
-						if (!(sourceentity instanceof ServerPlayer _plr503 && _plr503.level instanceof ServerLevel
-								&& _plr503.getAdvancements().getOrStartProgress(_plr503.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:hostile_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr504 && _plr504.level instanceof ServerLevel
+								&& _plr504.getAdvancements().getOrStartProgress(_plr504.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:hostile_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.HOSTILE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1024,8 +1022,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr508 && _plr508.level instanceof ServerLevel
-								&& _plr508.getAdvancements().getOrStartProgress(_plr508.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_hostile_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr509 && _plr509.level instanceof ServerLevel
+								&& _plr509.getAdvancements().getOrStartProgress(_plr509.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_hostile_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_HOSTILE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1033,8 +1031,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr513 && _plr513.level instanceof ServerLevel
-								&& _plr513.getAdvancements().getOrStartProgress(_plr513.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_hostile_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr514 && _plr514.level instanceof ServerLevel
+								&& _plr514.getAdvancements().getOrStartProgress(_plr514.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_hostile_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLDEN_HOSTILE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1042,8 +1040,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr518 && _plr518.level instanceof ServerLevel
-								&& _plr518.getAdvancements().getOrStartProgress(_plr518.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_hostile_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr519 && _plr519.level instanceof ServerLevel
+								&& _plr519.getAdvancements().getOrStartProgress(_plr519.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_hostile_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DIAMOND_HOSTILE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1052,8 +1050,8 @@ public class ItemSpawningProcedure {
 							}
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HostileEngieKillCount >= 250) {
-						if (!(sourceentity instanceof ServerPlayer _plr523 && _plr523.level instanceof ServerLevel
-								&& _plr523.getAdvancements().getOrStartProgress(_plr523.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:hostile_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr524 && _plr524.level instanceof ServerLevel
+								&& _plr524.getAdvancements().getOrStartProgress(_plr524.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:hostile_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.HOSTILE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1061,8 +1059,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr528 && _plr528.level instanceof ServerLevel
-								&& _plr528.getAdvancements().getOrStartProgress(_plr528.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_hostile_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr529 && _plr529.level instanceof ServerLevel
+								&& _plr529.getAdvancements().getOrStartProgress(_plr529.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_hostile_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_HOSTILE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1070,8 +1068,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr533 && _plr533.level instanceof ServerLevel
-								&& _plr533.getAdvancements().getOrStartProgress(_plr533.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_hostile_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr534 && _plr534.level instanceof ServerLevel
+								&& _plr534.getAdvancements().getOrStartProgress(_plr534.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_hostile_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLDEN_HOSTILE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1079,8 +1077,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr538 && _plr538.level instanceof ServerLevel
-								&& _plr538.getAdvancements().getOrStartProgress(_plr538.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_hostile_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr539 && _plr539.level instanceof ServerLevel
+								&& _plr539.getAdvancements().getOrStartProgress(_plr539.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_hostile_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DIAMOND_HOSTILE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1088,8 +1086,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr543 && _plr543.level instanceof ServerLevel
-								&& _plr543.getAdvancements().getOrStartProgress(_plr543.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_hostile_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr544 && _plr544.level instanceof ServerLevel
+								&& _plr544.getAdvancements().getOrStartProgress(_plr544.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_hostile_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.NETHERITE_HOSTILE_ENGIE_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1103,8 +1101,8 @@ public class ItemSpawningProcedure {
 				EngiesChaosMod.queueServerWork(1, () -> {
 					if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).InsanityKillCount >= 50
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).InsanityKillCount < 100) {
-						if (!(sourceentity instanceof ServerPlayer _plr550 && _plr550.level instanceof ServerLevel
-								&& _plr550.getAdvancements().getOrStartProgress(_plr550.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr551 && _plr551.level instanceof ServerLevel
+								&& _plr551.getAdvancements().getOrStartProgress(_plr551.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1114,8 +1112,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).InsanityKillCount >= 100
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).InsanityKillCount < 150) {
-						if (!(sourceentity instanceof ServerPlayer _plr555 && _plr555.level instanceof ServerLevel
-								&& _plr555.getAdvancements().getOrStartProgress(_plr555.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr556 && _plr556.level instanceof ServerLevel
+								&& _plr556.getAdvancements().getOrStartProgress(_plr556.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1123,8 +1121,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr560 && _plr560.level instanceof ServerLevel
-								&& _plr560.getAdvancements().getOrStartProgress(_plr560.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr561 && _plr561.level instanceof ServerLevel
+								&& _plr561.getAdvancements().getOrStartProgress(_plr561.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1134,8 +1132,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).InsanityKillCount >= 150
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).InsanityKillCount < 200) {
-						if (!(sourceentity instanceof ServerPlayer _plr565 && _plr565.level instanceof ServerLevel
-								&& _plr565.getAdvancements().getOrStartProgress(_plr565.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr566 && _plr566.level instanceof ServerLevel
+								&& _plr566.getAdvancements().getOrStartProgress(_plr566.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1143,8 +1141,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr570 && _plr570.level instanceof ServerLevel
-								&& _plr570.getAdvancements().getOrStartProgress(_plr570.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr571 && _plr571.level instanceof ServerLevel
+								&& _plr571.getAdvancements().getOrStartProgress(_plr571.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1152,8 +1150,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr575 && _plr575.level instanceof ServerLevel
-								&& _plr575.getAdvancements().getOrStartProgress(_plr575.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr576 && _plr576.level instanceof ServerLevel
+								&& _plr576.getAdvancements().getOrStartProgress(_plr576.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLDEN_INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1163,8 +1161,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).InsanityKillCount >= 200
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).InsanityKillCount < 250) {
-						if (!(sourceentity instanceof ServerPlayer _plr580 && _plr580.level instanceof ServerLevel
-								&& _plr580.getAdvancements().getOrStartProgress(_plr580.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr581 && _plr581.level instanceof ServerLevel
+								&& _plr581.getAdvancements().getOrStartProgress(_plr581.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1172,8 +1170,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr585 && _plr585.level instanceof ServerLevel
-								&& _plr585.getAdvancements().getOrStartProgress(_plr585.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr586 && _plr586.level instanceof ServerLevel
+								&& _plr586.getAdvancements().getOrStartProgress(_plr586.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1181,8 +1179,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr590 && _plr590.level instanceof ServerLevel
-								&& _plr590.getAdvancements().getOrStartProgress(_plr590.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr591 && _plr591.level instanceof ServerLevel
+								&& _plr591.getAdvancements().getOrStartProgress(_plr591.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLDEN_INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1190,8 +1188,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr595 && _plr595.level instanceof ServerLevel
-								&& _plr595.getAdvancements().getOrStartProgress(_plr595.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr596 && _plr596.level instanceof ServerLevel
+								&& _plr596.getAdvancements().getOrStartProgress(_plr596.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DIAMOND_INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1200,8 +1198,8 @@ public class ItemSpawningProcedure {
 							}
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).InsanityKillCount >= 250) {
-						if (!(sourceentity instanceof ServerPlayer _plr600 && _plr600.level instanceof ServerLevel
-								&& _plr600.getAdvancements().getOrStartProgress(_plr600.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr601 && _plr601.level instanceof ServerLevel
+								&& _plr601.getAdvancements().getOrStartProgress(_plr601.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1209,8 +1207,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr605 && _plr605.level instanceof ServerLevel
-								&& _plr605.getAdvancements().getOrStartProgress(_plr605.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr606 && _plr606.level instanceof ServerLevel
+								&& _plr606.getAdvancements().getOrStartProgress(_plr606.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1218,8 +1216,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr610 && _plr610.level instanceof ServerLevel
-								&& _plr610.getAdvancements().getOrStartProgress(_plr610.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr611 && _plr611.level instanceof ServerLevel
+								&& _plr611.getAdvancements().getOrStartProgress(_plr611.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLDEN_INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1227,8 +1225,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr615 && _plr615.level instanceof ServerLevel
-								&& _plr615.getAdvancements().getOrStartProgress(_plr615.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr616 && _plr616.level instanceof ServerLevel
+								&& _plr616.getAdvancements().getOrStartProgress(_plr616.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DIAMOND_INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1236,8 +1234,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr620 && _plr620.level instanceof ServerLevel
-								&& _plr620.getAdvancements().getOrStartProgress(_plr620.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr621 && _plr621.level instanceof ServerLevel
+								&& _plr621.getAdvancements().getOrStartProgress(_plr621.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.NETHERITE_INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1251,8 +1249,8 @@ public class ItemSpawningProcedure {
 				EngiesChaosMod.queueServerWork(1, () -> {
 					if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).InsanityKillCount >= 50
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).InsanityKillCount < 100) {
-						if (!(sourceentity instanceof ServerPlayer _plr627 && _plr627.level instanceof ServerLevel
-								&& _plr627.getAdvancements().getOrStartProgress(_plr627.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr628 && _plr628.level instanceof ServerLevel
+								&& _plr628.getAdvancements().getOrStartProgress(_plr628.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1262,8 +1260,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).InsanityKillCount >= 100
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).InsanityKillCount < 150) {
-						if (!(sourceentity instanceof ServerPlayer _plr632 && _plr632.level instanceof ServerLevel
-								&& _plr632.getAdvancements().getOrStartProgress(_plr632.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr633 && _plr633.level instanceof ServerLevel
+								&& _plr633.getAdvancements().getOrStartProgress(_plr633.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1271,8 +1269,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr637 && _plr637.level instanceof ServerLevel
-								&& _plr637.getAdvancements().getOrStartProgress(_plr637.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr638 && _plr638.level instanceof ServerLevel
+								&& _plr638.getAdvancements().getOrStartProgress(_plr638.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1282,8 +1280,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).InsanityKillCount >= 150
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).InsanityKillCount < 200) {
-						if (!(sourceentity instanceof ServerPlayer _plr642 && _plr642.level instanceof ServerLevel
-								&& _plr642.getAdvancements().getOrStartProgress(_plr642.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr643 && _plr643.level instanceof ServerLevel
+								&& _plr643.getAdvancements().getOrStartProgress(_plr643.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1291,8 +1289,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr647 && _plr647.level instanceof ServerLevel
-								&& _plr647.getAdvancements().getOrStartProgress(_plr647.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr648 && _plr648.level instanceof ServerLevel
+								&& _plr648.getAdvancements().getOrStartProgress(_plr648.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1300,8 +1298,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr652 && _plr652.level instanceof ServerLevel
-								&& _plr652.getAdvancements().getOrStartProgress(_plr652.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr653 && _plr653.level instanceof ServerLevel
+								&& _plr653.getAdvancements().getOrStartProgress(_plr653.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLDEN_INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1311,8 +1309,8 @@ public class ItemSpawningProcedure {
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).InsanityKillCount >= 200
 							&& (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).InsanityKillCount < 250) {
-						if (!(sourceentity instanceof ServerPlayer _plr657 && _plr657.level instanceof ServerLevel
-								&& _plr657.getAdvancements().getOrStartProgress(_plr657.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr658 && _plr658.level instanceof ServerLevel
+								&& _plr658.getAdvancements().getOrStartProgress(_plr658.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1320,8 +1318,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr662 && _plr662.level instanceof ServerLevel
-								&& _plr662.getAdvancements().getOrStartProgress(_plr662.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr663 && _plr663.level instanceof ServerLevel
+								&& _plr663.getAdvancements().getOrStartProgress(_plr663.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1329,8 +1327,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr667 && _plr667.level instanceof ServerLevel
-								&& _plr667.getAdvancements().getOrStartProgress(_plr667.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr668 && _plr668.level instanceof ServerLevel
+								&& _plr668.getAdvancements().getOrStartProgress(_plr668.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLDEN_INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1338,8 +1336,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr672 && _plr672.level instanceof ServerLevel
-								&& _plr672.getAdvancements().getOrStartProgress(_plr672.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr673 && _plr673.level instanceof ServerLevel
+								&& _plr673.getAdvancements().getOrStartProgress(_plr673.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DIAMOND_INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1348,8 +1346,8 @@ public class ItemSpawningProcedure {
 							}
 						}
 					} else if ((sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).InsanityKillCount >= 250) {
-						if (!(sourceentity instanceof ServerPlayer _plr677 && _plr677.level instanceof ServerLevel
-								&& _plr677.getAdvancements().getOrStartProgress(_plr677.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr678 && _plr678.level instanceof ServerLevel
+								&& _plr678.getAdvancements().getOrStartProgress(_plr678.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1357,8 +1355,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr682 && _plr682.level instanceof ServerLevel
-								&& _plr682.getAdvancements().getOrStartProgress(_plr682.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr683 && _plr683.level instanceof ServerLevel
+								&& _plr683.getAdvancements().getOrStartProgress(_plr683.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:iron_insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.IRON_INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1366,8 +1364,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr687 && _plr687.level instanceof ServerLevel
-								&& _plr687.getAdvancements().getOrStartProgress(_plr687.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr688 && _plr688.level instanceof ServerLevel
+								&& _plr688.getAdvancements().getOrStartProgress(_plr688.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:gold_insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.GOLDEN_INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1375,8 +1373,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr692 && _plr692.level instanceof ServerLevel
-								&& _plr692.getAdvancements().getOrStartProgress(_plr692.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr693 && _plr693.level instanceof ServerLevel
+								&& _plr693.getAdvancements().getOrStartProgress(_plr693.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:diamond_insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DIAMOND_INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1384,8 +1382,8 @@ public class ItemSpawningProcedure {
 								_level.addFreshEntity(entityToSpawn);
 							}
 						}
-						if (!(sourceentity instanceof ServerPlayer _plr697 && _plr697.level instanceof ServerLevel
-								&& _plr697.getAdvancements().getOrStartProgress(_plr697.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_insanity_engie_plush_obtained"))).isDone())) {
+						if (!(sourceentity instanceof ServerPlayer _plr698 && _plr698.level instanceof ServerLevel
+								&& _plr698.getAdvancements().getOrStartProgress(_plr698.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:netherite_insanity_engie_plush_obtained"))).isDone())) {
 							if (world instanceof ServerLevel _level) {
 								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.NETHERITE_INSANITY_PLUSH.get()));
 								entityToSpawn.setPickUpDelay(10);
@@ -1398,8 +1396,8 @@ public class ItemSpawningProcedure {
 			}
 			if (EngiesChaosModVariables.MapVariables.get(world).antimatterdropcheck == true) {
 				if (Math.round(Mth.nextDouble(RandomSource.create(), 0,
-						100)) <= (sourceentity instanceof LivingEntity _livingEntity704 && _livingEntity704.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
-								? _livingEntity704.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
+						100)) <= (sourceentity instanceof LivingEntity _livingEntity705 && _livingEntity705.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
+								? _livingEntity705.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
 								: 0)) {
 					if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) <= 5) {
 						if (world instanceof ServerLevel _level) {
@@ -1418,11 +1416,11 @@ public class ItemSpawningProcedure {
 					}
 				}
 			}
-			if (entity instanceof ServerPlayer _plr714 && _plr714.level instanceof ServerLevel
-					&& _plr714.getAdvancements().getOrStartProgress(_plr714.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()) {
+			if (entity instanceof ServerPlayer _plr715 && _plr715.level instanceof ServerLevel
+					&& _plr715.getAdvancements().getOrStartProgress(_plr715.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()) {
 				if (Math.round(Mth.nextDouble(RandomSource.create(), 0,
-						100)) <= (sourceentity instanceof LivingEntity _livingEntity716 && _livingEntity716.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_DARK_MATTER_BLESSING_CHANCE_FOR_PLAYER.get())
-								? _livingEntity716.getAttribute(EngiesChaosModAttributes.ENGIES_DARK_MATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
+						100)) <= (sourceentity instanceof LivingEntity _livingEntity717 && _livingEntity717.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_DARK_MATTER_BLESSING_CHANCE_FOR_PLAYER.get())
+								? _livingEntity717.getAttribute(EngiesChaosModAttributes.ENGIES_DARK_MATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
 								: 0)) {
 					if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) <= 5) {
 						if (world instanceof ServerLevel _level) {
@@ -1441,8 +1439,19 @@ public class ItemSpawningProcedure {
 					}
 				}
 			}
+			if (EngiesChaosModVariables.MapVariables.get(world).unlockedtruechaos == false) {
+				if (Mth.nextInt(RandomSource.create(), 0, 2500) <= 1) {
+					if (world instanceof ServerLevel _level) {
+						ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.TRUE_CHAOS_MATTER_FRAGMENT.get()));
+						entityToSpawn.setPickUpDelay(10);
+						entityToSpawn.setUnlimitedLifetime();
+						_level.addFreshEntity(entityToSpawn);
+					}
+					TrueChaosMatterFragmentSpawnProcedure.execute(world, entity.getX(), entity.getY(), entity.getZ());
+				}
+			}
 		}
-		if (Math.random() < 0.0004) {
+		if (Mth.nextInt(RandomSource.create(), 1, 100) == 1) {
 			if (Mth.nextInt(RandomSource.create(), 1, 9) == 1) {
 				if (world instanceof ServerLevel _level) {
 					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EngiesChaosModItems.ITEMS_PLAQUE.get()));

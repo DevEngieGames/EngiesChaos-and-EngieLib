@@ -406,7 +406,7 @@ public class TheEndNormalProcedure {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayoncleanup == false) {
 						if (EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer == false) {
 							if (EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds > 0) {
-								EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds = EngiesChaosModVariables.MapVariables.get(world).sddaytimerseconds - 0.05;
+								EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds = EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds - 0.05;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							}
 							if (EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds <= 0) {

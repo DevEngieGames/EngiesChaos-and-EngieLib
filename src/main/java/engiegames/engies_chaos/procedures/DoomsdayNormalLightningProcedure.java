@@ -37,8 +37,6 @@ public class DoomsdayNormalLightningProcedure {
 					}
 					EngiesChaosModVariables.MapVariables.get(world).playlightningsound = true;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).playlightningsound3 = true;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					if (world instanceof ServerLevel _level) {
 						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
 						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
@@ -71,8 +69,6 @@ public class DoomsdayNormalLightningProcedure {
 					}
 					EngiesChaosModVariables.MapVariables.get(world).playlightningsound = true;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).playlightningsound2 = true;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					if (world instanceof ServerLevel _level) {
 						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
 						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
@@ -94,76 +90,6 @@ public class DoomsdayNormalLightningProcedure {
 						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 								("damages @a[distance=..6.25] " + Math.round(Mth.nextDouble(RandomSource.create(), 30, 100)) + " 5"));
 				}
-			}
-		} else if (EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart == true) {
-			if (EngiesChaosModVariables.MapVariables.get(world).engiestruewrath == true) {
-				for (Entity entityiterator : new ArrayList<>(world.players())) {
-					{
-						double _setval = 0.25;
-						entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.lightningflashnum = _setval;
-							capability.syncPlayerVariables(entityiterator);
-						});
-					}
-				}
-				EngiesChaosModVariables.MapVariables.get(world).playlightningsound = true;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosModVariables.MapVariables.get(world).playlightningsound3 = true;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				if (world instanceof ServerLevel _level) {
-					LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-					entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
-					entityToSpawn.setVisualOnly(true);
-					_level.addFreshEntity(entityToSpawn);
-				}
-				for (int index2 = 0; index2 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 5, 10)); index2++) {
-					if (world instanceof ServerLevel _level) {
-						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Math.round(Mth.nextDouble(RandomSource.create(), -8, 8)), y, z + Math.round(Mth.nextDouble(RandomSource.create(), -8, 8)))));
-						entityToSpawn.setVisualOnly(true);
-						_level.addFreshEntity(entityToSpawn);
-					}
-				}
-				if (world instanceof ServerLevel _level)
-					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-							"effect give @a[distance=..25] engies_chaos:stunned 5 0 true");
-				if (world instanceof ServerLevel _level)
-					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-							("damages @a[distance=..25] " + Math.round(Mth.nextDouble(RandomSource.create(), 75, 100)) + " 5"));
-			} else if (EngiesChaosModVariables.MapVariables.get(world).engiestruewrath == false) {
-				for (Entity entityiterator : new ArrayList<>(world.players())) {
-					{
-						double _setval = 0.25;
-						entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.lightningflashnum = _setval;
-							capability.syncPlayerVariables(entityiterator);
-						});
-					}
-				}
-				EngiesChaosModVariables.MapVariables.get(world).playlightningsound = true;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosModVariables.MapVariables.get(world).playlightningsound3 = true;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				if (world instanceof ServerLevel _level) {
-					LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-					entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
-					entityToSpawn.setVisualOnly(true);
-					_level.addFreshEntity(entityToSpawn);
-				}
-				for (int index3 = 0; index3 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 5, 10)); index3++) {
-					if (world instanceof ServerLevel _level) {
-						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Math.round(Mth.nextDouble(RandomSource.create(), -8, 8)), y, z + Math.round(Mth.nextDouble(RandomSource.create(), -8, 8)))));
-						entityToSpawn.setVisualOnly(true);
-						_level.addFreshEntity(entityToSpawn);
-					}
-				}
-				if (world instanceof ServerLevel _level)
-					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-							"effect give @a[distance=..25] engies_chaos:stunned 5 0 true");
-				if (world instanceof ServerLevel _level)
-					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-							("damages @a[distance=..25] " + Math.round(Mth.nextDouble(RandomSource.create(), 50, 100)) + " 5"));
 			}
 		}
 	}

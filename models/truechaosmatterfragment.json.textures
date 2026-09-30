@@ -1,0 +1,12 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "truechaosmatter",
+        "1": "truechaosring",
+        "2": "truechaosringalt"
+      },
+      "name": "default"
+    }
+  }
+}

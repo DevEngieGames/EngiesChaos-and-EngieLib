@@ -1,0 +1,9 @@
+{
+  "parent": "engies_chaos:custom/truechaosmatterfragment",
+  "textures": {
+    "0": "engies_chaos:block/truechaosmatter",
+    "1": "engies_chaos:block/truechaosring",
+    "2": "engies_chaos:block/truechaosringalt",
+    "particle": "engies_chaos:item/reaaeicon"
+  }
+}

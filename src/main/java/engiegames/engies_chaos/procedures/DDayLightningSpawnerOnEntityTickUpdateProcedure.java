@@ -53,8 +53,6 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 				}
 				EngiesChaosModVariables.MapVariables.get(world).playlightningsound = true;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosModVariables.MapVariables.get(world).playlightningsound5 = true;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				if (world instanceof ServerLevel _level) {
 					LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
 					entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
@@ -95,8 +93,6 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 				}
 				EngiesChaosModVariables.MapVariables.get(world).playlightningsound = true;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosModVariables.MapVariables.get(world).playlightningsound4 = true;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				if (world instanceof ServerLevel _level) {
 					LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
 					entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
@@ -136,8 +132,6 @@ public class DDayLightningSpawnerOnEntityTickUpdateProcedure {
 					}
 				}
 				EngiesChaosModVariables.MapVariables.get(world).playlightningsound = true;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosModVariables.MapVariables.get(world).playlightningsound4 = true;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				if (world instanceof ServerLevel _level) {
 					LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);

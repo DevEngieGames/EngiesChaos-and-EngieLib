@@ -1,7 +1,5 @@
 package engiegames.engies_chaos.procedures;
 
-import org.checkerframework.checker.units.qual.s;
-
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -31,7 +29,6 @@ import net.minecraft.advancements.Advancement;
 
 import javax.annotation.Nullable;
 
-import java.util.UUID;
 import java.util.ArrayList;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
@@ -150,44 +147,10 @@ public class TheEndAltProcedure {
 									_setstack.setCount(1);
 									ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 								}
-								if (entityiterator.getUUID().equals(new Object() {
-									UUID UUIDSafeParse(String s) {
-										try {
-											return UUID.fromString(s);
-										} catch (Exception e) {
-										}
-										return new UUID(0, 0);
-									}
-								}.UUIDSafeParse("0b2e6bf517764c90a0797cd0addc1320")) || entityiterator.getUUID().equals(new Object() {
-									UUID UUIDSafeParse(String s) {
-										try {
-											return UUID.fromString(s);
-										} catch (Exception e) {
-										}
-										return new UUID(0, 0);
-									}
-								}.UUIDSafeParse("0b2e6bf5-1776-4c90-a079-7cd0addc1320")) || entityiterator.getUUID().equals(new Object() {
-									UUID UUIDSafeParse(String s) {
-										try {
-											return UUID.fromString(s);
-										} catch (Exception e) {
-										}
-										return new UUID(0, 0);
-									}
-								}.UUIDSafeParse("447fceafed574b92be559ae4a47b33bf")) || entityiterator.getUUID().equals(new Object() {
-									UUID UUIDSafeParse(String s) {
-										try {
-											return UUID.fromString(s);
-										} catch (Exception e) {
-										}
-										return new UUID(0, 0);
-									}
-								}.UUIDSafeParse("447fceaf-ed57-4b92-be55-9ae4a47b33bf"))) {
-									if (entityiterator instanceof Player _player) {
-										ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_GOBLET.get()).copy();
-										_setstack.setCount(1);
-										ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-									}
+								if (entityiterator instanceof Player _player) {
+									ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_GOBLET.get()).copy();
+									_setstack.setCount(1);
+									ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 								}
 							}
 						}
@@ -196,10 +159,10 @@ public class TheEndAltProcedure {
 						EngiesChaosModVariables.MapVariables.get(world).TheEndNightTimeDelayTimer = EngiesChaosModVariables.MapVariables.get(world).TheEndNightTimeDelayTimer + 0.05;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						if (EngiesChaosModVariables.MapVariables.get(world).TheEndNightTimeDelayTimer >= 41) {
-							if (world instanceof Level _lvl30 && _lvl30.isDay()) {
+							if (world instanceof Level _lvl18 && _lvl18.isDay()) {
 								if (world instanceof ServerLevel _level)
 									_level.setDayTime((int) (world.dayTime() + 100));
-							} else if (!(world instanceof Level _lvl33 && _lvl33.isDay())) {
+							} else if (!(world instanceof Level _lvl21 && _lvl21.isDay())) {
 								EngiesChaosModVariables.MapVariables.get(world).TheEndNightTime = true;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 								for (int index0 = 0; index0 < 15; index0++) {
@@ -406,7 +369,7 @@ public class TheEndAltProcedure {
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayoncleanup == false) {
 						if (EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer == false) {
 							if (EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds > 0) {
-								EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds = EngiesChaosModVariables.MapVariables.get(world).sddaytimerseconds - 0.05;
+								EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds = EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds - 0.05;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							}
 							if (EngiesChaosModVariables.MapVariables.get(world).theendtimerseconds <= 0) {
@@ -470,7 +433,7 @@ public class TheEndAltProcedure {
 						EngiesChaosModVariables.MapVariables.get(world).hordecooldown = EngiesChaosModVariables.MapVariables.get(world).hordecooldown - 0.05;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						if (EngiesChaosModVariables.MapVariables.get(world).extremeddaylightningenabled == true) {
-							if (EngiesChaosModVariables.MapVariables.get(world).lightningcooldown >= 0.4) {
+							if (EngiesChaosModVariables.MapVariables.get(world).lightningcooldown >= 0.1) {
 								EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = 0;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 								if (Mth.nextDouble(RandomSource.create(), 1, 100) < 85) {
@@ -493,7 +456,7 @@ public class TheEndAltProcedure {
 								}
 							}
 						} else if (EngiesChaosModVariables.MapVariables.get(world).extremeddaylightningenabled == false) {
-							if (EngiesChaosModVariables.MapVariables.get(world).lightningcooldown >= 0.5) {
+							if (EngiesChaosModVariables.MapVariables.get(world).lightningcooldown >= 0.25) {
 								EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = 0;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 								if (Mth.nextDouble(RandomSource.create(), 1, 100) < 85) {
@@ -519,7 +482,7 @@ public class TheEndAltProcedure {
 						if (EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown <= 0) {
 							EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 10));
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							if (Math.random() <= 0.45) {
+							if (Math.random() <= 0.225) {
 								if (world instanceof ServerLevel _level)
 									_level.getServer().getCommands()
 											.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO, _level, 4,

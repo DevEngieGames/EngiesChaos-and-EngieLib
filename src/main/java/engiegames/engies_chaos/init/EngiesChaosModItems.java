@@ -63,6 +63,8 @@ import engiegames.engies_chaos.item.TrueXEngieItem;
 import engiegames.engies_chaos.item.TrueXEngieHoeItem;
 import engiegames.engies_chaos.item.TrueXEngieCrucifixItem;
 import engiegames.engies_chaos.item.TrueXEngieAxeItem;
+import engiegames.engies_chaos.item.TrueChaosMatterItem;
+import engiegames.engies_chaos.item.TrueChaosMatterFragmentItem;
 import engiegames.engies_chaos.item.ThrowbackBigBanHammerItem;
 import engiegames.engies_chaos.item.ThrowbackBanHammerItem;
 import engiegames.engies_chaos.item.TheRealEngieGamessItem;
@@ -365,6 +367,7 @@ import engiegames.engies_chaos.item.EnchantedExoticCookieItem;
 import engiegames.engies_chaos.item.EnchantedEngieCookieItem;
 import engiegames.engies_chaos.item.EmptyCheesePuffsBinItem;
 import engiegames.engies_chaos.item.EchdeathItem;
+import engiegames.engies_chaos.item.EChaosItem;
 import engiegames.engies_chaos.item.DoughWithSauceItem;
 import engiegames.engies_chaos.item.DoughItem;
 import engiegames.engies_chaos.item.DoomsdayBanHammerItem;
@@ -1518,6 +1521,8 @@ public class EngiesChaosModItems {
 	public static final RegistryObject<Item> CHALLENGE_INSANITY_ENGIE_GAMES_PLUSH_SOLO = REGISTRY.register("challenge_insanity_engie_games_plush_solo", ChallengeInsanityEngieGamesPlushSoloItem::new);
 	public static final RegistryObject<Item> CHALLENGE_INSANITY_ENGIE_GAMES_PLUSH_MULTIPLAYER = REGISTRY.register("challenge_insanity_engie_games_plush_multiplayer", ChallengeInsanityEngieGamesPlushMultiplayerItem::new);
 	public static final RegistryObject<Item> PUNISHER_PLUSH = REGISTRY.register("punisher_plush", PunisherPlushItem::new);
+	public static final RegistryObject<Item> TRUE_CHAOS_MATTER_FRAGMENT = REGISTRY.register("true_chaos_matter_fragment", TrueChaosMatterFragmentItem::new);
+	public static final RegistryObject<Item> TRUE_CHAOS_MATTER = REGISTRY.register("true_chaos_matter", TrueChaosMatterItem::new);
 	public static final RegistryObject<Item> ENGIES_HELMET = REGISTRY.register("engies_helmet", EngiesItem.Helmet::new);
 	public static final RegistryObject<Item> ENGIES_CHESTPLATE = REGISTRY.register("engies_chestplate", EngiesItem.Chestplate::new);
 	public static final RegistryObject<Item> ENGIES_LEGGINGS = REGISTRY.register("engies_leggings", EngiesItem.Leggings::new);
@@ -2200,6 +2205,7 @@ public class EngiesChaosModItems {
 	public static final RegistryObject<Item> ANTIMATTER_OBTAIN_ICON_12 = REGISTRY.register("antimatter_obtain_icon_12", AntimatterObtainIcon12Item::new);
 	public static final RegistryObject<Item> UNLUCKY_BLOCK = blockCMT(EngiesChaosModBlocks.UNLUCKY_BLOCK, null);
 	public static final RegistryObject<Item> VERY_LUCKY_BLOCK = blockCMT(EngiesChaosModBlocks.VERY_LUCKY_BLOCK, null);
+	public static final RegistryObject<Item> E_CHAOS = REGISTRY.register("e_chaos", EChaosItem::new);
 
 	// Start of user code block custom items
 	// End of user code block custom items

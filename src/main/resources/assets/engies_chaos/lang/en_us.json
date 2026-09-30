@@ -2737,7 +2737,7 @@
   "entity.engies_chaos.insanity_hostile_engie": "[INSANITY] Hostile Engie",
   "entity.engies_chaos.engie_games_hostile_engie": "[EngieGames] Hostile Engie",
   "item.engies_chaos.engie_games_hostile_engie_spawn_egg": "[EngieGames] Hostile Engie Spawn Egg",
-  "block.engies_chaos.thanks_for_playing.description_0": "3,906",
+  "block.engies_chaos.thanks_for_playing.description_0": "3,912",
   "block.engies_chaos.lucky_block": "EngieGames Lucky Block",
   "block.engies_chaos.lucky_block.description_0": "From: EngieGames/EngieSharks. To: You!",
   "item.engies_chaos.x_engie_games_ban_hammer": "xEngieGames Ban Hammer",
@@ -2861,5 +2861,9 @@
   "painting.engies_chaos.echaos_4.author": "EngieGames(xEngie)",
   "painting.engies_chaos.super_doomsday_farm_wide_4.author": "https://www.youtube.com/watch?v\u003dYdWCvz9jYMw",
   "painting.engies_chaos.super_doomsday_farm_wide_4.title": "PENTA M.O.A.B. Super Doomsday on Farm",
-  "item.engies_chaos.insanity_spawn_egg": "Insanity Spawn Egg"
+  "item.engies_chaos.insanity_spawn_egg": "Insanity Spawn Egg",
+  "item.engies_chaos.true_chaos_matter_fragment": "§4True Chaos Matter §fFragment",
+  "item.engies_chaos.true_chaos_matter": "§4True Chaos Matter",
+  "item.engies_chaos.e_chaos": "Engie\u0027s Chaos",
+  "item.engies_chaos.e_chaos.description_0": "enjoy"
 }

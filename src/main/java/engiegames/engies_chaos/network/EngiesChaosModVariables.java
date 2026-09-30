@@ -373,13 +373,9 @@ public class EngiesChaosModVariables {
 		public boolean specialhealth = false;
 		public boolean playlightningsound = false;
 		public boolean playriftsound = false;
-		public boolean playlightningsound2 = false;
 		public boolean playlightningcornersound = false;
 		public boolean ddayscornerlightning = false;
-		public boolean playlightningsound3 = false;
-		public boolean playlightningsound4 = false;
 		public boolean DDAYCleanup = false;
-		public boolean playlightningsound5 = false;
 		public boolean playmissilespawnsound = false;
 		public boolean playmissileexplosionsound = false;
 		public boolean shadowsharkdevspawn = false;
@@ -533,6 +529,8 @@ public class EngiesChaosModVariables {
 		public boolean ranfirstcleanup = false;
 		public boolean ransecondcleanup = false;
 		public boolean stopdialogue = false;
+		public boolean unlockedtruechaos = false;
+		public boolean truechaosenabledbydev = false;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -653,13 +651,9 @@ public class EngiesChaosModVariables {
 			specialhealth = nbt.getBoolean("specialhealth");
 			playlightningsound = nbt.getBoolean("playlightningsound");
 			playriftsound = nbt.getBoolean("playriftsound");
-			playlightningsound2 = nbt.getBoolean("playlightningsound2");
 			playlightningcornersound = nbt.getBoolean("playlightningcornersound");
 			ddayscornerlightning = nbt.getBoolean("ddayscornerlightning");
-			playlightningsound3 = nbt.getBoolean("playlightningsound3");
-			playlightningsound4 = nbt.getBoolean("playlightningsound4");
 			DDAYCleanup = nbt.getBoolean("DDAYCleanup");
-			playlightningsound5 = nbt.getBoolean("playlightningsound5");
 			playmissilespawnsound = nbt.getBoolean("playmissilespawnsound");
 			playmissileexplosionsound = nbt.getBoolean("playmissileexplosionsound");
 			shadowsharkdevspawn = nbt.getBoolean("shadowsharkdevspawn");
@@ -813,6 +807,8 @@ public class EngiesChaosModVariables {
 			ranfirstcleanup = nbt.getBoolean("ranfirstcleanup");
 			ransecondcleanup = nbt.getBoolean("ransecondcleanup");
 			stopdialogue = nbt.getBoolean("stopdialogue");
+			unlockedtruechaos = nbt.getBoolean("unlockedtruechaos");
+			truechaosenabledbydev = nbt.getBoolean("truechaosenabledbydev");
 		}
 
 		@Override
@@ -929,13 +925,9 @@ public class EngiesChaosModVariables {
 			nbt.putBoolean("specialhealth", specialhealth);
 			nbt.putBoolean("playlightningsound", playlightningsound);
 			nbt.putBoolean("playriftsound", playriftsound);
-			nbt.putBoolean("playlightningsound2", playlightningsound2);
 			nbt.putBoolean("playlightningcornersound", playlightningcornersound);
 			nbt.putBoolean("ddayscornerlightning", ddayscornerlightning);
-			nbt.putBoolean("playlightningsound3", playlightningsound3);
-			nbt.putBoolean("playlightningsound4", playlightningsound4);
 			nbt.putBoolean("DDAYCleanup", DDAYCleanup);
-			nbt.putBoolean("playlightningsound5", playlightningsound5);
 			nbt.putBoolean("playmissilespawnsound", playmissilespawnsound);
 			nbt.putBoolean("playmissileexplosionsound", playmissileexplosionsound);
 			nbt.putBoolean("shadowsharkdevspawn", shadowsharkdevspawn);
@@ -1089,6 +1081,8 @@ public class EngiesChaosModVariables {
 			nbt.putBoolean("ranfirstcleanup", ranfirstcleanup);
 			nbt.putBoolean("ransecondcleanup", ransecondcleanup);
 			nbt.putBoolean("stopdialogue", stopdialogue);
+			nbt.putBoolean("unlockedtruechaos", unlockedtruechaos);
+			nbt.putBoolean("truechaosenabledbydev", truechaosenabledbydev);
 			return nbt;
 		}
 

@@ -1,0 +1,64 @@
+package engiegames.engies_chaos.procedures;
+
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.Vec2;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.LightningBolt;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.network.chat.Component;
+import net.minecraft.core.BlockPos;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.CommandSource;
+
+import java.util.ArrayList;
+
+import engiegames.engies_chaos.network.EngiesChaosModVariables;
+
+public class EngiesWrathNormalLightningProcedure {
+	public static void execute(LevelAccessor world, double x, double y, double z) {
+		for (Entity entityiterator : new ArrayList<>(world.players())) {
+			{
+				double _setval = 0.25;
+				entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.lightningflashnum = _setval;
+					capability.syncPlayerVariables(entityiterator);
+				});
+			}
+		}
+		EngiesChaosModVariables.MapVariables.get(world).playlightningsound = true;
+		EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+		if (world instanceof ServerLevel _level) {
+			LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+			entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
+			entityToSpawn.setVisualOnly(true);
+			_level.addFreshEntity(entityToSpawn);
+		}
+		for (int index0 = 0; index0 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 5, 10)); index0++) {
+			if (world instanceof ServerLevel _level) {
+				LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+				entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x + Math.round(Mth.nextDouble(RandomSource.create(), -8, 8)), y, z + Math.round(Mth.nextDouble(RandomSource.create(), -8, 8)))));
+				entityToSpawn.setVisualOnly(true);
+				_level.addFreshEntity(entityToSpawn);
+			}
+		}
+		if (EngiesChaosModVariables.MapVariables.get(world).engiestruewrath == true) {
+			if (world instanceof ServerLevel _level)
+				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+						"effect give @a[distance=..25] engies_chaos:stunned 5 0 true");
+			if (world instanceof ServerLevel _level)
+				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+						("damages @a[distance=..25] " + Math.round(Mth.nextDouble(RandomSource.create(), 75, 100)) + " 5"));
+		} else if (EngiesChaosModVariables.MapVariables.get(world).engiestruewrath == false) {
+			if (world instanceof ServerLevel _level)
+				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+						"effect give @a[distance=..25] engies_chaos:stunned 5 0 true");
+			if (world instanceof ServerLevel _level)
+				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+						("damages @a[distance=..25] " + Math.round(Mth.nextDouble(RandomSource.create(), 50, 100)) + " 5"));
+		}
+	}
+}
