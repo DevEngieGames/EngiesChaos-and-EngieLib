@@ -437,19 +437,19 @@ public class EngiesWrathAltProcedure {
 								EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = 0;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 								if (Mth.nextDouble(RandomSource.create(), 1, 100) < 85) {
-									EngiesWrathNormalLightningProcedure.execute(world, EngiesChaosModVariables.MapVariables.get(world).RX,
+									DoomsdayNormalLightningProcedure.execute(world, EngiesChaosModVariables.MapVariables.get(world).RX,
 											Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)),
 											EngiesChaosModVariables.MapVariables.get(world).RZ);
 								} else if (Mth.nextDouble(RandomSource.create(), 1, 100) >= 85) {
 									EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = -2.5;
 									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-									EngiesWrathCornerLightningProcedure.execute(world, 168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 168, 168)), 168);
+									DoomsdayCornerLightningProcedure.execute(world, 168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 168, 168)), 168);
 									EngiesChaosMod.queueServerWork(10, () -> {
-										EngiesWrathCornerLightningProcedure.execute(world, 168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 168, -168)), -168);
+										DoomsdayCornerLightningProcedure.execute(world, 168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 168, -168)), -168);
 										EngiesChaosMod.queueServerWork(10, () -> {
-											EngiesWrathCornerLightningProcedure.execute(world, -168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -168, -168)), -168);
+											DoomsdayCornerLightningProcedure.execute(world, -168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -168, -168)), -168);
 											EngiesChaosMod.queueServerWork(10, () -> {
-												EngiesWrathCornerLightningProcedure.execute(world, -168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -168, 168)), 168);
+												DoomsdayCornerLightningProcedure.execute(world, -168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -168, 168)), 168);
 											});
 										});
 									});
@@ -460,19 +460,19 @@ public class EngiesWrathAltProcedure {
 								EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = 0;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 								if (Mth.nextDouble(RandomSource.create(), 1, 100) < 85) {
-									EngiesWrathNormalLightningProcedure.execute(world, EngiesChaosModVariables.MapVariables.get(world).RX,
+									DoomsdayNormalLightningProcedure.execute(world, EngiesChaosModVariables.MapVariables.get(world).RX,
 											Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)),
 											EngiesChaosModVariables.MapVariables.get(world).RZ);
 								} else if (Mth.nextDouble(RandomSource.create(), 1, 100) >= 85) {
 									EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = -2.5;
 									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-									EngiesWrathCornerLightningProcedure.execute(world, 168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 168, 168)), 168);
+									DoomsdayCornerLightningProcedure.execute(world, 168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 168, 168)), 168);
 									EngiesChaosMod.queueServerWork(10, () -> {
-										EngiesWrathCornerLightningProcedure.execute(world, 168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 168, -168)), -168);
+										DoomsdayCornerLightningProcedure.execute(world, 168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 168, -168)), -168);
 										EngiesChaosMod.queueServerWork(10, () -> {
-											EngiesWrathCornerLightningProcedure.execute(world, -168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -168, -168)), -168);
+											DoomsdayCornerLightningProcedure.execute(world, -168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -168, -168)), -168);
 											EngiesChaosMod.queueServerWork(10, () -> {
-												EngiesWrathCornerLightningProcedure.execute(world, -168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -168, 168)), 168);
+												DoomsdayCornerLightningProcedure.execute(world, -168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -168, 168)), 168);
 											});
 										});
 									});
