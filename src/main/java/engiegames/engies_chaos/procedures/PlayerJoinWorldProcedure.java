@@ -18,6 +18,7 @@ import javax.annotation.Nullable;
 import java.util.Calendar;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
+import engiegames.engies_chaos.init.EngiesChaosModGameRules;
 import engiegames.engies_chaos.EngiesChaosMod;
 
 @Mod.EventBusSubscriber
@@ -56,6 +57,79 @@ public class PlayerJoinWorldProcedure {
 									new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
 											_ent.level.getServer(), _ent),
 									"tellraw @p [\"\",{\"text\":\"-------------\",\"bold\":true,\"color\":\"dark_purple\"},{\"text\":\"<\",\"bold\":true,\"color\":\"white\"},{\"text\":\"Engie's\",\"bold\":true,\"underlined\":true,\"color\":\"gold\"},{\"text\":\" \",\"bold\":true,\"color\":\"white\"},{\"text\":\"Chaos\",\"bold\":true,\"underlined\":true,\"color\":\"red\"},{\"text\":\">\",\"bold\":true,\"color\":\"white\"},{\"text\":\"-------------\",\"bold\":true,\"color\":\"dark_purple\"},{\"text\":\"\\nHey \"},{\"selector\":\"@p\"},{\"text\":\"! If you do manage to find a bug with \"},{\"text\":\"Engie's\",\"color\":\"gold\"},{\"text\":\" Chaos\",\"color\":\"red\"},{\"text\":\", make sure to stop by the \",\"color\":\"white\"},{\"text\":\"GitHub\",\"underlined\":true,\"color\":\"blue\"},{\"text\":\" and report any issues you come across! It would be \",\"color\":\"white\"},{\"text\":\"VERY\",\"bold\":true,\"italic\":true,\"color\":\"white\"},{\"text\":\" appreciated if you did.\",\"color\":\"white\"},{\"text\":\"\\n\"},{\"text\":\"----------------------------------------\",\"bold\":true,\"color\":\"dark_purple\"}]");
+						}
+					}
+				}
+				if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_HARDCORE) == false) {
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @s regeneration 300 255 true");
+						}
+					}
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @s speed 600 1 true");
+						}
+					}
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @s resistance 300 255 true");
+						}
+					}
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @s strength 300 4 true");
+						}
+					}
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @s fire_resistance 300 255 true");
+						}
+					}
+				} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_HARDCORE) == true) {
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @s regeneration 600 255 true");
+						}
+					}
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @s speed 600 1 true");
+						}
+					}
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @s resistance 600 255 true");
+						}
+					}
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @s fire_resistance 600 255 true");
+						}
+					}
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @s strength 600 9 true");
 						}
 					}
 				}

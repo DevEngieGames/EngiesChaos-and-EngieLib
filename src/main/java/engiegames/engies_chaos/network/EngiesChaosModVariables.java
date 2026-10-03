@@ -531,6 +531,8 @@ public class EngiesChaosModVariables {
 		public boolean stopdialogue = false;
 		public boolean unlockedtruechaos = false;
 		public boolean truechaosenabledbydev = false;
+		public boolean playlightningsound2 = false;
+		public boolean EngiesWrathForceCreativePlayersAdventure = false;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -809,6 +811,8 @@ public class EngiesChaosModVariables {
 			stopdialogue = nbt.getBoolean("stopdialogue");
 			unlockedtruechaos = nbt.getBoolean("unlockedtruechaos");
 			truechaosenabledbydev = nbt.getBoolean("truechaosenabledbydev");
+			playlightningsound2 = nbt.getBoolean("playlightningsound2");
+			EngiesWrathForceCreativePlayersAdventure = nbt.getBoolean("EngiesWrathForceCreativePlayersAdventure");
 		}
 
 		@Override
@@ -1083,6 +1087,8 @@ public class EngiesChaosModVariables {
 			nbt.putBoolean("stopdialogue", stopdialogue);
 			nbt.putBoolean("unlockedtruechaos", unlockedtruechaos);
 			nbt.putBoolean("truechaosenabledbydev", truechaosenabledbydev);
+			nbt.putBoolean("playlightningsound2", playlightningsound2);
+			nbt.putBoolean("EngiesWrathForceCreativePlayersAdventure", EngiesWrathForceCreativePlayersAdventure);
 			return nbt;
 		}
 

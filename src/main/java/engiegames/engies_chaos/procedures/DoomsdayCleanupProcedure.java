@@ -158,7 +158,9 @@ public class DoomsdayCleanupProcedure {
 					}
 					if (world instanceof ServerLevel _level)
 						_level.setDayTime((int) (EngiesChaosModVariables.MapVariables.get(world).timeticks + 11000));
-					EngiesChaosModVariables.MapVariables.get(world).spawnedfinaldisasters = true;
+					EngiesChaosModVariables.MapVariables.get(world).EngiesWrathForceCreativePlayersAdventure = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).spawnedfinaldisasters = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).ranfirstcleanup = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);

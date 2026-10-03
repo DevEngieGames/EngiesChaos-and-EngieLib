@@ -8,10 +8,17 @@ import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.CommandSource;
+import net.minecraft.client.Minecraft;
 
 import javax.annotation.Nullable;
 
+import java.util.ArrayList;
+
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
+import engiegames.engies_chaos.EngiesChaosMod;
 
 @Mod.EventBusSubscriber
 public class PlayerDiesProcedure {
@@ -72,6 +79,26 @@ public class PlayerDiesProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).ddayplayerdeadcount = EngiesChaosModVariables.MapVariables.get(world).ddayplayerdeadcount + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					if (!(world.getServer() != null ? world.getServer().isSingleplayer() : (Minecraft.getInstance().getSingleplayerServer() != null && !Minecraft.getInstance().getSingleplayerServer().isPublished()))) {
+						EngiesChaosMod.queueServerWork(1, () -> {
+							if (EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount == 1) {
+								for (Entity entityiterator : new ArrayList<>(world.players())) {
+									if ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive == true) {
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+												_ent.getServer().getCommands()
+														.performPrefixedCommand(
+																new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+																		_ent.getDisplayName(), _ent.level.getServer(), _ent),
+																"tellraw @a [\"\",{\"selector\":\"@s\",\"bold\":true},{\"text\":\" is the last alive!\",\"bold\":true,\"color\":\"#50FF50\"}]");
+											}
+										}
+									}
+								}
+							}
+						});
+					}
 				}
 			}
 		}
