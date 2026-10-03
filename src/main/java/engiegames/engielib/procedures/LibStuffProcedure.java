@@ -16,10 +16,6 @@ public class LibStuffProcedure {
 				DarknessProcedure.execute(world, x, y, z);
 			} else if ((StringArgumentType.getString(arguments, "LibStuff")).equals("missile")) {
 				MissileProcedure.execute(world);
-			} else if ((StringArgumentType.getString(arguments, "LibStuff")).equals("lightning")) {
-				LightningProcedure.execute(world);
-			} else if ((StringArgumentType.getString(arguments, "LibStuff")).equals("lightning2")) {
-				Lightning2Procedure.execute(world);
 			} else if ((StringArgumentType.getString(arguments, "LibStuff")).equals("rift")) {
 				RiftProcedure.execute(world);
 			} else if ((StringArgumentType.getString(arguments, "LibStuff")).equals("spike")) {
