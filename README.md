@@ -1,6 +1,5 @@
 # Welcome to the Resourcepacks branch of both Engie's Chaos and EngieLib!
-## THE COMPATIBILITY RESOURCEPACKS WILL NOT BE UPLOADED TO ANY PLATFORM.
-### If you're having issues on figuring out on how to install these here's a guide.
+## If you're having issues on figuring out on how to install these here's a guide.
 
 ## Standard Minecraft:
 - ### Open File Explorer and navigate to your minecraft installation.
