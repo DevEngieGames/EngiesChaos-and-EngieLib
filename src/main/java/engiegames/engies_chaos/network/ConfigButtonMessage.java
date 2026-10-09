@@ -12,6 +12,7 @@ import net.minecraft.core.BlockPos;
 
 import java.util.function.Supplier;
 
+import engiegames.engies_chaos.procedures.PhotosensitivityButtonToggleProcedure;
 import engiegames.engies_chaos.procedures.EngiesTrueWrathToggleProcedure;
 import engiegames.engies_chaos.procedures.DifficultyToggleOnProcedure;
 import engiegames.engies_chaos.procedures.DifficultyToggleOffProcedure;
@@ -148,9 +149,13 @@ public class ConfigButtonMessage {
 		}
 		if (buttonID == 19) {
 
-			EngiesTrueWrathToggleProcedure.execute(world);
+			PhotosensitivityButtonToggleProcedure.execute(entity);
 		}
 		if (buttonID == 20) {
+
+			EngiesTrueWrathToggleProcedure.execute(world);
+		}
+		if (buttonID == 21) {
 
 			EngiesTrueWrathToggleProcedure.execute(world);
 		}

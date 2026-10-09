@@ -5,22 +5,26 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.TickEvent;
 
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.Vec2;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.LightningBolt;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.network.chat.Component;
+import net.minecraft.core.BlockPos;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.CommandSource;
 
 import javax.annotation.Nullable;
 
 import java.util.ArrayList;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
-import engiegames.engies_chaos.init.EngiesChaosModGameRules;
-import engiegames.engies_chaos.init.EngiesChaosModEntities;
-import engiegames.engies_chaos.entity.DDayLightningSpawnerEntity;
 
 @Mod.EventBusSubscriber
 public class ThunderstormChaosProcedure {
@@ -37,45 +41,168 @@ public class ThunderstormChaosProcedure {
 
 	private static void execute(@Nullable Event event, LevelAccessor world) {
 		if (world.getLevelData().isRaining() && world.getLevelData().isThundering()) {
-			if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart == false && EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayFullStart == false && EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart == false
-					&& EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart == false) {
-				if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == true && world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == true) {
-					EngiesChaosModVariables.MapVariables.get(world).extremelightningcd = EngiesChaosModVariables.MapVariables.get(world).extremelightningcd + 0.05;
+			if ((EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart && EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayFullStart && EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart
+					&& EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart) == false) {
+				if (EngiesChaosModVariables.MapVariables.get(world).extremelightningenabled == true) {
+					EngiesChaosModVariables.MapVariables.get(world).RX = Mth.nextInt(RandomSource.create(), -168, 168);
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (EngiesChaosModVariables.MapVariables.get(world).extremelightningcd >= 1.25) {
-						EngiesChaosModVariables.MapVariables.get(world).extremelightningcd = 0;
+					EngiesChaosModVariables.MapVariables.get(world).RZ = Mth.nextInt(RandomSource.create(), -168, 168);
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).tstormlightning = EngiesChaosModVariables.MapVariables.get(world).tstormlightning + 0.05;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					if (EngiesChaosModVariables.MapVariables.get(world).tstormlightning >= 0.85) {
+						EngiesChaosModVariables.MapVariables.get(world).tstormlightning = 0;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						for (Entity entityiterator : new ArrayList<>(world.players())) {
+							{
+								double _setval = 0.25;
+								entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.lightningflashnum = _setval;
+									capability.syncPlayerVariables(entityiterator);
+								});
+							}
+							{
+								Entity _ent = entityiterator;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @s weather engies_chaos:extreme_lightning_strike");
+								}
+							}
+							{
+								Entity _ent = entityiterator;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "playsound engies_chaos:extreme_lightning_strike weather @s ~ ~ ~ 0.5");
+								}
+							}
 							if (world instanceof ServerLevel _level) {
-								Entity entityToSpawn = new DDayLightningSpawnerEntity(EngiesChaosModEntities.D_DAY_LIGHTNING_SPAWNER.get(), _level);
-								entityToSpawn.moveTo(
-										((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX + Mth.nextDouble(RandomSource.create(), -96, 96)),
-										((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerY),
-										((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ + Mth.nextDouble(RandomSource.create(), -96, 96)),
-										world.getRandom().nextFloat() * 360F, 0);
-								if (entityToSpawn instanceof Mob _mobToSpawn)
-									_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+								LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+								entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(
+										(entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX + EngiesChaosModVariables.MapVariables.get(world).RX,
+										Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+												(int) ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX
+														+ EngiesChaosModVariables.MapVariables.get(world).RX),
+												(int) ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ
+														+ EngiesChaosModVariables.MapVariables.get(world).RZ))),
+										(entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ + EngiesChaosModVariables.MapVariables.get(world).RZ)));
+								entityToSpawn.setVisualOnly(true);
 								_level.addFreshEntity(entityToSpawn);
 							}
+							for (int index0 = 0; index0 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 3, 6)); index0++) {
+								if (world instanceof ServerLevel _level) {
+									LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+									entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(
+											(entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX + EngiesChaosModVariables.MapVariables.get(world).RX
+													+ Math.round(Mth.nextDouble(RandomSource.create(), -6, 6)),
+											Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+													(int) ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX
+															+ EngiesChaosModVariables.MapVariables.get(world).RX),
+													(int) ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ
+															+ EngiesChaosModVariables.MapVariables.get(world).RZ))),
+											(entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ + EngiesChaosModVariables.MapVariables.get(world).RZ
+													+ Math.round(Mth.nextDouble(RandomSource.create(), -6, 6)))));
+									entityToSpawn.setVisualOnly(true);
+									_level.addFreshEntity(entityToSpawn);
+								}
+							}
+							if (world instanceof ServerLevel _level)
+								_level.getServer().getCommands()
+										.performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL,
+														new Vec3(
+																((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX
+																		+ EngiesChaosModVariables.MapVariables.get(world).RX),
+																Math.round(
+																		world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+																				(int) ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX
+																						+ EngiesChaosModVariables.MapVariables.get(world).RX),
+																				(int) ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ
+																						+ EngiesChaosModVariables.MapVariables.get(world).RZ))),
+																((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ
+																		+ EngiesChaosModVariables.MapVariables.get(world).RZ)),
+														Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+												("damages @a[distance=..12.5] " + Math.round(Mth.nextDouble(RandomSource.create(), 40, 100)) + " 5"));
 						}
 					}
-				} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == true) {
-					EngiesChaosModVariables.MapVariables.get(world).heavylightningcd = EngiesChaosModVariables.MapVariables.get(world).heavylightningcd + 0.05;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (EngiesChaosModVariables.MapVariables.get(world).heavylightningcd >= 2.5) {
-						EngiesChaosModVariables.MapVariables.get(world).heavylightningcd = 0;
+				} else if (EngiesChaosModVariables.MapVariables.get(world).extremelightningenabled == false) {
+					if (EngiesChaosModVariables.MapVariables.get(world).heavylightningenabled == true) {
+						EngiesChaosModVariables.MapVariables.get(world).RX = Mth.nextInt(RandomSource.create(), -168, 168);
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						for (Entity entityiterator : new ArrayList<>(world.players())) {
-							if (world instanceof ServerLevel _level) {
-								Entity entityToSpawn = new DDayLightningSpawnerEntity(EngiesChaosModEntities.D_DAY_LIGHTNING_SPAWNER.get(), _level);
-								entityToSpawn.moveTo(
-										((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX + Mth.nextDouble(RandomSource.create(), -96, 96)),
-										((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerY),
-										((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ + Mth.nextDouble(RandomSource.create(), -96, 96)),
-										world.getRandom().nextFloat() * 360F, 0);
-								if (entityToSpawn instanceof Mob _mobToSpawn)
-									_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-								_level.addFreshEntity(entityToSpawn);
+						EngiesChaosModVariables.MapVariables.get(world).RZ = Mth.nextInt(RandomSource.create(), -168, 168);
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).tstormlightning = EngiesChaosModVariables.MapVariables.get(world).tstormlightning + 0.05;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						if (EngiesChaosModVariables.MapVariables.get(world).tstormlightning >= 1) {
+							EngiesChaosModVariables.MapVariables.get(world).tstormlightning = 0;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							for (Entity entityiterator : new ArrayList<>(world.players())) {
+								{
+									double _setval = 0.25;
+									entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+										capability.lightningflashnum = _setval;
+										capability.syncPlayerVariables(entityiterator);
+									});
+								}
+								{
+									Entity _ent = entityiterator;
+									if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+										_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null,
+												4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @s weather engies_chaos:ddaylightning");
+									}
+								}
+								{
+									Entity _ent = entityiterator;
+									if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+										_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null,
+												4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "playsound engies_chaos:ddaylightning weather @s ~ ~ ~ 0.5");
+									}
+								}
+								if (world instanceof ServerLevel _level) {
+									LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+									entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(
+											(entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX + EngiesChaosModVariables.MapVariables.get(world).RX,
+											Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+													(int) ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX
+															+ EngiesChaosModVariables.MapVariables.get(world).RX),
+													(int) ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ
+															+ EngiesChaosModVariables.MapVariables.get(world).RZ))),
+											(entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ
+													+ EngiesChaosModVariables.MapVariables.get(world).RZ)));
+									entityToSpawn.setVisualOnly(true);
+									_level.addFreshEntity(entityToSpawn);
+								}
+								for (int index1 = 0; index1 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 3, 6)); index1++) {
+									if (world instanceof ServerLevel _level) {
+										LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+										entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(
+												(entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX
+														+ EngiesChaosModVariables.MapVariables.get(world).RX + Math.round(Mth.nextDouble(RandomSource.create(), -6, 6)),
+												Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+														(int) ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX
+																+ EngiesChaosModVariables.MapVariables.get(world).RX),
+														(int) ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ
+																+ EngiesChaosModVariables.MapVariables.get(world).RZ))),
+												(entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ
+														+ EngiesChaosModVariables.MapVariables.get(world).RZ + Math.round(Mth.nextDouble(RandomSource.create(), -6, 6)))));
+										entityToSpawn.setVisualOnly(true);
+										_level.addFreshEntity(entityToSpawn);
+									}
+								}
+								if (world instanceof ServerLevel _level)
+									_level.getServer().getCommands().performPrefixedCommand(
+											new CommandSourceStack(CommandSource.NULL,
+													new Vec3(
+															((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX
+																	+ EngiesChaosModVariables.MapVariables.get(world).RX),
+															Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+																	(int) ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerX
+																			+ EngiesChaosModVariables.MapVariables.get(world).RX),
+																	(int) ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ
+																			+ EngiesChaosModVariables.MapVariables.get(world).RZ))),
+															((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).PlayerZ
+																	+ EngiesChaosModVariables.MapVariables.get(world).RZ)),
+													Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+											("damages @a[distance=..6.25] " + Math.round(Mth.nextDouble(RandomSource.create(), 40, 100)) + " 5"));
 							}
 						}
 					}

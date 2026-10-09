@@ -3,8 +3,8 @@
   "_type": "gamerule",
   "definition": {
     "type": "Logic",
-    "displayName": "[Engie's Chaos] Doomsday Toggle",
-    "description": "Toggle on the end of the world.",
+    "displayName": "Engie's Chaos // Doomsday Toggle",
+    "description": "Toggle on the Engie's Chaos take of TAU's Doomsdays. Doomsday related game rules rely on this being enabled.",
     "category": "MISC",
     "defaultValueLogic": false,
     "defaultValueNumber": 0

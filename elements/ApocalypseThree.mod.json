@@ -3,9 +3,9 @@
   "_type": "gamerule",
   "definition": {
     "type": "Logic",
-    "displayName": "[Engie's Chaos] Apocalypse 3",
-    "description": "Are you ready for the final Apocalypse challenge? No mob messes around anymore. \"Nightmare\"(Hardcore) is required to play this as intended!",
-    "category": "UPDATES",
+    "displayName": "Engie's Chaos Difficulty // Apocalypse 3",
+    "description": "Are you ready for the final Apocalypse challenge? No mob messes around anymore. Hardcore is required to play this as intended.",
+    "category": "MOBS",
     "defaultValueLogic": false,
     "defaultValueNumber": 0
   }

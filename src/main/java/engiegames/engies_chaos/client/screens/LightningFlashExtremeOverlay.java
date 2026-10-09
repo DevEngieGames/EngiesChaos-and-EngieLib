@@ -43,7 +43,7 @@ public class LightningFlashExtremeOverlay {
 		RenderSystem.setShader(GameRenderer::getPositionTexShader);
 		RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
 		RenderSystem.setShaderColor(1, 1, 1, (float) (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).lightningflashnum);
-		if (LightningFlashExtremeDisplayProcedure.execute(world)) {
+		if (LightningFlashExtremeDisplayProcedure.execute(world, entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/lightningflashextreme.png"));
 			Minecraft.getInstance().gui.blit(event.getPoseStack(), 0, 0, 0, 0, w, h, w, h);
 		}

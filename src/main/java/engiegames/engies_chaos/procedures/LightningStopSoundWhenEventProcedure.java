@@ -64,8 +64,7 @@ public class LightningStopSoundWhenEventProcedure {
 					}
 				}
 			}
-		} else if ((world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == true && world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == false
-				|| world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == true && world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == true)
+		} else if ((world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.HEAVY_LIGHTNING) == true || world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.EXTREME_LIGHTNING) == true)
 				&& world.getLevelData().isThundering()) {
 			for (Entity entityiterator : new ArrayList<>(world.players())) {
 				{

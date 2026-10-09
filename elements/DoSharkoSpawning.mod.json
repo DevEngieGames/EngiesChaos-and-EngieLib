@@ -3,8 +3,8 @@
   "_type": "gamerule",
   "definition": {
     "type": "Logic",
-    "displayName": "[Engie's Chaos] Sharko Spawning",
-    "description": "Toggle if Sharkos can spawn or not.",
+    "displayName": "Engie's Chaos // Sharko Spawning",
+    "description": "Toggle if Sharkos can spawn or not. Who wouldn't want the sillies after all?",
     "category": "MOBS",
     "defaultValueLogic": true,
     "defaultValueNumber": 0

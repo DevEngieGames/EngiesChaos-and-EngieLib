@@ -3,8 +3,8 @@
   "_type": "gamerule",
   "definition": {
     "type": "Number",
-    "displayName": "[Engie's Chaos] Doomsday Sub Disaster Limit",
-    "description": "[DEFAULT: 250] Set the limit for Doomsday Sub Disasters. Lower if the world gets too laggy during something like Engie's Wrath.",
+    "displayName": "Engie's Chaos // Doomsday Sub Disaster Limit",
+    "description": "Set the limit for Doomsday Sub Disasters. Lower if the world gets too laggy during something like Engie's Wrath.",
     "category": "UPDATES",
     "defaultValueLogic": false,
     "defaultValueNumber": 250

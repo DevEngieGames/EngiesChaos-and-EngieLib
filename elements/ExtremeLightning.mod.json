@@ -3,8 +3,8 @@
   "_type": "gamerule",
   "definition": {
     "type": "Logic",
-    "displayName": "[Engie's Chaos] Extreme Lightning",
-    "description": "Experience Zeus REALLY smite the world down during thunderstorms. Heavy Lightning must be enabled for this to work.",
+    "displayName": "Engie's Chaos // Extreme Lightning",
+    "description": "Experience Zeus try to smite the world down during thunderstorms. Lightning amount increases by player count.",
     "category": "MISC",
     "defaultValueLogic": false,
     "defaultValueNumber": 0

@@ -5,6 +5,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingEvent;
 
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.entity.player.Player;
@@ -17,7 +19,7 @@ import net.minecraft.client.Minecraft;
 
 import javax.annotation.Nullable;
 
-import java.util.ArrayList;
+import java.util.Comparator;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 
@@ -40,11 +42,15 @@ public class DDayHordeTickingProcedure {
 				if ((EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayFullStart || EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart
 						|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart) == true) {
 					if (EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle == true) {
-						for (Entity entityiterator : new ArrayList<>(world.players())) {
-							if ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive) {
-								if (getEntityGameType(entityiterator) == GameType.SURVIVAL || getEntityGameType(entityiterator) == GameType.ADVENTURE) {
-									if (entity instanceof Mob _entity && entityiterator instanceof LivingEntity _ent)
-										_entity.setTarget(_ent);
+						{
+							final Vec3 _center = new Vec3((entity.getX()), (entity.getY()), (entity.getZ()));
+							for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(502 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+									.toList()) {
+								if ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive) {
+									if (getEntityGameType(entityiterator) == GameType.SURVIVAL || getEntityGameType(entityiterator) == GameType.ADVENTURE) {
+										if (entity instanceof Mob _entity && entityiterator instanceof LivingEntity _ent)
+											_entity.setTarget(_ent);
+									}
 								}
 							}
 						}

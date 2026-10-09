@@ -3,8 +3,8 @@
   "_type": "gamerule",
   "definition": {
     "type": "Logic",
-    "displayName": "[Engie's Chaos] Extreme Doomsday Lightning",
-    "description": "Experience the full wrath of Zeus during Mother Natures wrath.",
+    "displayName": "Engie's Chaos // Extreme Doomsday Lightning",
+    "description": "[Engie's Chaos // Doomsday Toggle REQUIRED] Experience the full wrath of Zeus during Mother Natures wrath.",
     "category": "MISC",
     "defaultValueLogic": false,
     "defaultValueNumber": 0

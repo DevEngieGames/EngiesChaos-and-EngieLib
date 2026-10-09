@@ -9,10 +9,17 @@ import net.minecraft.client.model.HumanoidModel;
 
 import engiegames.engies_chaos.entity.ExoticEngieEntity;
 
+import com.mojang.blaze3d.vertex.PoseStack;
+
 public class ExoticEngieRenderer extends HumanoidMobRenderer<ExoticEngieEntity, HumanoidModel<ExoticEngieEntity>> {
 	public ExoticEngieRenderer(EntityRendererProvider.Context context) {
 		super(context, new HumanoidModel<ExoticEngieEntity>(context.bakeLayer(ModelLayers.PLAYER)), 0.5f);
 		this.addLayer(new HumanoidArmorLayer(this, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_INNER_ARMOR)), new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_OUTER_ARMOR))));
+	}
+
+	@Override
+	protected void scale(ExoticEngieEntity entity, PoseStack poseStack, float f) {
+		poseStack.scale(0.93f, 0.93f, 0.93f);
 	}
 
 	@Override

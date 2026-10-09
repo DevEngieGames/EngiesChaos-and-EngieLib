@@ -3,8 +3,8 @@
   "_type": "gamerule",
   "definition": {
     "type": "Logic",
-    "displayName": "[Engie's Chaos] Engie's Chaos Toggle",
-    "description": "When going to play throwback, PLEASE DISABLE THIS!",
+    "displayName": "Engie's Chaos // Engie's Chaos Toggle",
+    "description": "This toggles the main portion of the mod. This cannot be disabled outside of True Throwback.",
     "category": "MISC",
     "defaultValueLogic": true,
     "defaultValueNumber": 0

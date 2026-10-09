@@ -413,7 +413,7 @@ public class TheEndAltProcedure {
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 										EngiesChaosModVariables.MapVariables.get(world).DDAYCleanup = true;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-										EngiesChaosModVariables.MapVariables.get(world).ddayhappened = true;
+										EngiesChaosModVariables.MapVariables.get(world).theendhappened = true;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 									} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 2) {
 										EngiesChaosModVariables.MapVariables.get(world).ddaytimerseconds = 0;

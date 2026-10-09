@@ -3,8 +3,8 @@
   "_type": "gamerule",
   "definition": {
     "type": "Logic",
-    "displayName": "[Engie's Chaos] True Throwback Toggle",
-    "description": "In order for this to work YOU MUST TURN OFF ALL ABOUT ENGIE TOGGLE AND ENRAGED ZOMBIES TOGGLE!!!!!!",
+    "displayName": "Engie's Chaos // True Throwback Toggle",
+    "description": "Relive 2023 All About Engie with Engie's Chaos structures. Do note this is a little buggy.",
     "category": "MISC",
     "defaultValueLogic": false,
     "defaultValueNumber": 0

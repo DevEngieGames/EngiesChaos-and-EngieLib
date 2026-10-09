@@ -189,6 +189,7 @@ public class EngiesChaosModVariables {
 			clone.CrucifixOffHandDurabilityPercentage = original.CrucifixOffHandDurabilityPercentage;
 			clone.pickaxeonly = original.pickaxeonly;
 			clone.playerrequested = original.playerrequested;
+			clone.Photosensitivity = original.Photosensitivity;
 			if (!event.isWasDeath()) {
 				clone.firstplay = original.firstplay;
 				clone.RespawnNormInstantHealth = original.RespawnNormInstantHealth;
@@ -319,7 +320,7 @@ public class EngiesChaosModVariables {
 		public double lightningcooldown = 0.0;
 		public double riftcooldown = 0.0;
 		public double ddaydialoguenum = 0.0;
-		public double doomsdaychance = 0.01;
+		public double doomsdaychance = 0.0;
 		public double stunmobsradiusnum = 100.0;
 		public double spikecooldown = 0;
 		public double avalanchecooldown = 0;
@@ -409,8 +410,6 @@ public class EngiesChaosModVariables {
 		public boolean heavylightningenabled = false;
 		public boolean extremelightningenabled = false;
 		public boolean extremeddaylightningenabled = false;
-		public double heavylightningcd = 0;
-		public double extremelightningcd = 0;
 		public double riskcooldownnumb = 0;
 		public double DDayRiftedEntityCount = 0.0;
 		public double wormholesharkorandnum = 0;
@@ -533,6 +532,7 @@ public class EngiesChaosModVariables {
 		public boolean truechaosenabledbydev = false;
 		public boolean playlightningsound2 = false;
 		public boolean EngiesWrathForceCreativePlayersAdventure = false;
+		public double tstormlightning = 0;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -689,8 +689,6 @@ public class EngiesChaosModVariables {
 			heavylightningenabled = nbt.getBoolean("heavylightningenabled");
 			extremelightningenabled = nbt.getBoolean("extremelightningenabled");
 			extremeddaylightningenabled = nbt.getBoolean("extremeddaylightningenabled");
-			heavylightningcd = nbt.getDouble("heavylightningcd");
-			extremelightningcd = nbt.getDouble("extremelightningcd");
 			riskcooldownnumb = nbt.getDouble("riskcooldownnumb");
 			DDayRiftedEntityCount = nbt.getDouble("DDayRiftedEntityCount");
 			wormholesharkorandnum = nbt.getDouble("wormholesharkorandnum");
@@ -813,6 +811,7 @@ public class EngiesChaosModVariables {
 			truechaosenabledbydev = nbt.getBoolean("truechaosenabledbydev");
 			playlightningsound2 = nbt.getBoolean("playlightningsound2");
 			EngiesWrathForceCreativePlayersAdventure = nbt.getBoolean("EngiesWrathForceCreativePlayersAdventure");
+			tstormlightning = nbt.getDouble("tstormlightning");
 		}
 
 		@Override
@@ -965,8 +964,6 @@ public class EngiesChaosModVariables {
 			nbt.putBoolean("heavylightningenabled", heavylightningenabled);
 			nbt.putBoolean("extremelightningenabled", extremelightningenabled);
 			nbt.putBoolean("extremeddaylightningenabled", extremeddaylightningenabled);
-			nbt.putDouble("heavylightningcd", heavylightningcd);
-			nbt.putDouble("extremelightningcd", extremelightningcd);
 			nbt.putDouble("riskcooldownnumb", riskcooldownnumb);
 			nbt.putDouble("DDayRiftedEntityCount", DDayRiftedEntityCount);
 			nbt.putDouble("wormholesharkorandnum", wormholesharkorandnum);
@@ -1089,6 +1086,7 @@ public class EngiesChaosModVariables {
 			nbt.putBoolean("truechaosenabledbydev", truechaosenabledbydev);
 			nbt.putBoolean("playlightningsound2", playlightningsound2);
 			nbt.putBoolean("EngiesWrathForceCreativePlayersAdventure", EngiesWrathForceCreativePlayersAdventure);
+			nbt.putDouble("tstormlightning", tstormlightning);
 			return nbt;
 		}
 
@@ -1303,6 +1301,7 @@ public class EngiesChaosModVariables {
 		public double CrucifixOffHandDurabilityPercentage = 0;
 		public double pickaxeonly = 0;
 		public boolean playerrequested = false;
+		public boolean Photosensitivity = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -1433,6 +1432,7 @@ public class EngiesChaosModVariables {
 			nbt.putDouble("CrucifixOffHandDurabilityPercentage", CrucifixOffHandDurabilityPercentage);
 			nbt.putDouble("pickaxeonly", pickaxeonly);
 			nbt.putBoolean("playerrequested", playerrequested);
+			nbt.putBoolean("Photosensitivity", Photosensitivity);
 			return nbt;
 		}
 
@@ -1560,6 +1560,7 @@ public class EngiesChaosModVariables {
 			CrucifixOffHandDurabilityPercentage = nbt.getDouble("CrucifixOffHandDurabilityPercentage");
 			pickaxeonly = nbt.getDouble("pickaxeonly");
 			playerrequested = nbt.getBoolean("playerrequested");
+			Photosensitivity = nbt.getBoolean("Photosensitivity");
 		}
 	}
 
@@ -1706,6 +1707,7 @@ public class EngiesChaosModVariables {
 					variables.CrucifixOffHandDurabilityPercentage = message.data.CrucifixOffHandDurabilityPercentage;
 					variables.pickaxeonly = message.data.pickaxeonly;
 					variables.playerrequested = message.data.playerrequested;
+					variables.Photosensitivity = message.data.Photosensitivity;
 				}
 			});
 			context.setPacketHandled(true);

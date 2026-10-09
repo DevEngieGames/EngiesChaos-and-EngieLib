@@ -3,8 +3,8 @@
   "_type": "gamerule",
   "definition": {
     "type": "Logic",
-    "displayName": "[Engie's Chaos] ENGIES WRATH",
-    "description": "MAY DEATH RAIN UPON YOU ALL. DOOMSDAY TOGGLE MUST BE ENABLED FOR THIS TO WORK!!!!",
+    "displayName": "Engie's Chaos // Engie's Wrath",
+    "description": "[Engie's Chaos // Doomsday Toggle REQUIRED] If you want sub disaster hell, you found it. However... MAY DEATH RAIN UPON YOU ALL.",
     "category": "MISC",
     "defaultValueLogic": false,
     "defaultValueNumber": 0

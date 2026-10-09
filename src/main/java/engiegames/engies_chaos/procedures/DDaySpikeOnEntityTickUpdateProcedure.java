@@ -1,12 +1,11 @@
 package engiegames.engies_chaos.procedures;
 
+import net.minecraft.world.scores.PlayerTeam;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.commands.CommandSourceStack;
-import net.minecraft.commands.CommandSource;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.entity.DDaySpikeEntity;
@@ -16,10 +15,13 @@ public class DDaySpikeOnEntityTickUpdateProcedure {
 		if (entity == null)
 			return;
 		{
-			Entity _ent = entity;
-			if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-				_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-						_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "team join @s DDayNoCol");
+			Entity _entityTeam = entity;
+			PlayerTeam _pt = _entityTeam.level.getScoreboard().getPlayerTeam("DDayNoCol");
+			if (_pt != null) {
+				if (_entityTeam instanceof Player _player)
+					_entityTeam.level.getScoreboard().addPlayerToTeam(_player.getGameProfile().getName(), _pt);
+				else
+					_entityTeam.level.getScoreboard().addPlayerToTeam(_entityTeam.getStringUUID(), _pt);
 			}
 		}
 		{

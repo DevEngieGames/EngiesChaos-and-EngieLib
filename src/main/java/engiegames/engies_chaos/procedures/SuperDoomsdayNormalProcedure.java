@@ -235,7 +235,7 @@ public class SuperDoomsdayNormalProcedure {
 						if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayDialogueDelayTimer >= 37) {
 							for (Entity entityiterator : new ArrayList<>(world.players())) {
 								if (entityiterator instanceof ServerPlayer _player) {
-									Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:i_guess_this_is_dday"));
+									Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:rise"));
 									AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 									if (!_ap.isDone()) {
 										for (String criteria : _ap.getRemainingCriteria())

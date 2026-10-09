@@ -3,9 +3,9 @@
   "_type": "gamerule",
   "definition": {
     "type": "Logic",
-    "displayName": "[Engie's Chaos] EngiePoc",
-    "description": "Are you brave enough to face Engie's own Apocalypse challenge? \"Nightmare\"(Hardcore) is required to play this as intended!",
-    "category": "UPDATES",
+    "displayName": "Engie's Chaos Difficulty // EngiePoc",
+    "description": "This here... I have not seen anyone complete yet. Hardcore is required to play this as intended.",
+    "category": "MOBS",
     "defaultValueLogic": false,
     "defaultValueNumber": 0
   }

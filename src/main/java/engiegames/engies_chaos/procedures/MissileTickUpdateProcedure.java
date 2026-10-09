@@ -1,11 +1,12 @@
 package engiegames.engies_chaos.procedures;
 
+import net.minecraft.world.scores.PlayerTeam;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 import net.minecraft.server.level.ServerPlayer;
@@ -41,14 +42,34 @@ public class MissileTickUpdateProcedure {
 		}
 		for (Entity entityiterator : new ArrayList<>(world.players())) {
 			if (entityiterator instanceof LivingEntity _livEnt3 && _livEnt3.hasEffect(MobEffects.DARKNESS)) {
-				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 1, 255, false, false));
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect clear @e[type=#engies_chaos:ddaymissiles] minecraft:glowing");
+					}
+				}
 			} else if (!(entityiterator instanceof LivingEntity _livEnt5 && _livEnt5.hasEffect(MobEffects.DARKNESS))) {
-				if (entity instanceof LivingEntity _entity)
-					_entity.removeEffect(MobEffects.GLOWING);
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @e[type=#engies_chaos:ddaymissiles] minecraft:glowing 1 255 true");
+					}
+				}
 			}
 		}
 		if (entity instanceof YellowLightningEntity) {
+			{
+				Entity _entityTeam = entity;
+				PlayerTeam _pt = _entityTeam.level.getScoreboard().getPlayerTeam("YellowLightning");
+				if (_pt != null) {
+					if (_entityTeam instanceof Player _player)
+						_entityTeam.level.getScoreboard().addPlayerToTeam(_player.getGameProfile().getName(), _pt);
+					else
+						_entityTeam.level.getScoreboard().addPlayerToTeam(_entityTeam.getStringUUID(), _pt);
+				}
+			}
 			entity.getPersistentData().putDouble("YellowLightningTimeBeforeExplosion", (entity.getPersistentData().getDouble("YellowLightningTimeBeforeExplosion") + 0.05));
 			if (entity.getPersistentData().getDouble("YellowLightningTimeBeforeExplosion") >= 1) {
 				EngiesChaosModVariables.MapVariables.get(world).playmissileexplosionsound = true;
@@ -69,6 +90,16 @@ public class MissileTickUpdateProcedure {
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			}
 		} else if (entity instanceof BlueBurstEntity) {
+			{
+				Entity _entityTeam = entity;
+				PlayerTeam _pt = _entityTeam.level.getScoreboard().getPlayerTeam("BlueBurst");
+				if (_pt != null) {
+					if (_entityTeam instanceof Player _player)
+						_entityTeam.level.getScoreboard().addPlayerToTeam(_player.getGameProfile().getName(), _pt);
+					else
+						_entityTeam.level.getScoreboard().addPlayerToTeam(_entityTeam.getStringUUID(), _pt);
+				}
+			}
 			entity.getPersistentData().putDouble("BlueBurstTimeBeforeExplosion", (entity.getPersistentData().getDouble("BlueBurstTimeBeforeExplosion") + 0.05));
 			if (entity.getPersistentData().getDouble("BlueBurstTimeBeforeExplosion") >= 3) {
 				EngiesChaosModVariables.MapVariables.get(world).playmissileexplosionsound = true;
@@ -89,6 +120,16 @@ public class MissileTickUpdateProcedure {
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			}
 		} else if (entity instanceof NormalEntity) {
+			{
+				Entity _entityTeam = entity;
+				PlayerTeam _pt = _entityTeam.level.getScoreboard().getPlayerTeam("Normal");
+				if (_pt != null) {
+					if (_entityTeam instanceof Player _player)
+						_entityTeam.level.getScoreboard().addPlayerToTeam(_player.getGameProfile().getName(), _pt);
+					else
+						_entityTeam.level.getScoreboard().addPlayerToTeam(_entityTeam.getStringUUID(), _pt);
+				}
+			}
 			entity.getPersistentData().putDouble("NormalTimeBeforeExplosion", (entity.getPersistentData().getDouble("NormalTimeBeforeExplosion") + 0.05));
 			if (entity.getPersistentData().getDouble("NormalTimeBeforeExplosion") >= 6) {
 				EngiesChaosModVariables.MapVariables.get(world).playmissileexplosionsound = true;

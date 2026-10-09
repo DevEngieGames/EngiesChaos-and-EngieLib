@@ -9,10 +9,17 @@ import net.minecraft.client.model.HumanoidModel;
 
 import engiegames.engies_chaos.entity.RareEngieEntity;
 
+import com.mojang.blaze3d.vertex.PoseStack;
+
 public class RareEngieRenderer extends HumanoidMobRenderer<RareEngieEntity, HumanoidModel<RareEngieEntity>> {
 	public RareEngieRenderer(EntityRendererProvider.Context context) {
 		super(context, new HumanoidModel<RareEngieEntity>(context.bakeLayer(ModelLayers.PLAYER)), 0.5f);
 		this.addLayer(new HumanoidArmorLayer(this, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_INNER_ARMOR)), new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_OUTER_ARMOR))));
+	}
+
+	@Override
+	protected void scale(RareEngieEntity entity, PoseStack poseStack, float f) {
+		poseStack.scale(0.93f, 0.93f, 0.93f);
 	}
 
 	@Override

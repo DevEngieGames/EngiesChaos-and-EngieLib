@@ -27,79 +27,102 @@ public class TraderCountsTickProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays >= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT))) {
+		if ((world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT)) == 0) {
 			EngiesChaosModVariables.MapVariables.get(world).TraderDoomsdaySpawnLock = true;
 			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			EngiesChaosModVariables.MapVariables.get(world).TraderSuperDoomsdaySpawnLock = true;
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			EngiesChaosModVariables.MapVariables.get(world).TraderTheEndSpawnLock = true;
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			EngiesChaosModVariables.MapVariables.get(world).TraderEngieSpawnLock = true;
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			EngiesChaosModVariables.MapVariables.get(world).TraderMindscapeEngieSpawnLock = true;
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			EngiesChaosModVariables.MapVariables.get(world).TraderEngieGamesSpawnLock = true;
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			EngiesChaosModVariables.MapVariables.get(world).TraderCosmicEngieGamesSpawnLock = true;
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			EngiesChaosModVariables.MapVariables.get(world).TraderRoughianEngieGamesSpawnLock = true;
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			if (entity.getPersistentData().getBoolean("CanDespawn") == true) {
+				if (!entity.level.isClientSide())
+					entity.discard();
+			}
+		} else if ((world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT)) != 0) {
+			if (EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays >= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT))) {
+				EngiesChaosModVariables.MapVariables.get(world).TraderDoomsdaySpawnLock = true;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			}
 			if (EngiesChaosModVariables.MapVariables.get(world).numberofdoomsdays > (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT))) {
 				if (entity.getPersistentData().getBoolean("CanDespawn") == true) {
 					if (!entity.level.isClientSide())
 						entity.discard();
 				}
 			}
-		}
-		if (EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays >= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT))) {
-			EngiesChaosModVariables.MapVariables.get(world).TraderSuperDoomsdaySpawnLock = true;
-			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			if (EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays >= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT))) {
+				EngiesChaosModVariables.MapVariables.get(world).TraderSuperDoomsdaySpawnLock = true;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			}
 			if (EngiesChaosModVariables.MapVariables.get(world).numberofsuperdoomsdays > (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT))) {
 				if (entity.getPersistentData().getBoolean("CanDespawn") == true) {
 					if (!entity.level.isClientSide())
 						entity.discard();
 				}
 			}
-		}
-		if (EngiesChaosModVariables.MapVariables.get(world).numberoftheend >= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT))) {
-			EngiesChaosModVariables.MapVariables.get(world).TraderTheEndSpawnLock = true;
-			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			if (EngiesChaosModVariables.MapVariables.get(world).numberoftheend >= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT))) {
+				EngiesChaosModVariables.MapVariables.get(world).TraderTheEndSpawnLock = true;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			}
 			if (EngiesChaosModVariables.MapVariables.get(world).numberoftheend > (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT))) {
 				if (entity.getPersistentData().getBoolean("CanDespawn") == true) {
 					if (!entity.level.isClientSide())
 						entity.discard();
 				}
 			}
-		}
-		if (EngiesChaosModVariables.MapVariables.get(world).numberofdistorted >= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT))) {
-			EngiesChaosModVariables.MapVariables.get(world).TraderEngieSpawnLock = true;
-			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			if (EngiesChaosModVariables.MapVariables.get(world).numberofdistorted >= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT))) {
+				EngiesChaosModVariables.MapVariables.get(world).TraderEngieSpawnLock = true;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			}
 			if (EngiesChaosModVariables.MapVariables.get(world).numberofdistorted > (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT))) {
 				if (entity.getPersistentData().getBoolean("CanDespawn") == true) {
 					if (!entity.level.isClientSide())
 						entity.discard();
 				}
 			}
-		}
-		if (EngiesChaosModVariables.MapVariables.get(world).numberofmindscapetradeable >= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT))) {
-			EngiesChaosModVariables.MapVariables.get(world).TraderMindscapeEngieSpawnLock = true;
-			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			if (EngiesChaosModVariables.MapVariables.get(world).numberofmindscapetradeable >= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT))) {
+				EngiesChaosModVariables.MapVariables.get(world).TraderMindscapeEngieSpawnLock = true;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			}
 			if (EngiesChaosModVariables.MapVariables.get(world).numberofmindscapetradeable > (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT))) {
 				if (entity.getPersistentData().getBoolean("CanDespawn") == true) {
 					if (!entity.level.isClientSide())
 						entity.discard();
 				}
 			}
-		}
-		if (EngiesChaosModVariables.MapVariables.get(world).numberofengiegames >= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT))) {
-			EngiesChaosModVariables.MapVariables.get(world).TraderEngieGamesSpawnLock = true;
-			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			if (EngiesChaosModVariables.MapVariables.get(world).numberofengiegames >= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT))) {
+				EngiesChaosModVariables.MapVariables.get(world).TraderEngieGamesSpawnLock = true;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			}
 			if (EngiesChaosModVariables.MapVariables.get(world).numberofengiegames > (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT))) {
 				if (entity.getPersistentData().getBoolean("CanDespawn") == true) {
 					if (!entity.level.isClientSide())
 						entity.discard();
 				}
 			}
-		}
-		if (EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames >= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT))) {
-			EngiesChaosModVariables.MapVariables.get(world).TraderCosmicEngieGamesSpawnLock = true;
-			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			if (EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames >= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT))) {
+				EngiesChaosModVariables.MapVariables.get(world).TraderCosmicEngieGamesSpawnLock = true;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			}
 			if (EngiesChaosModVariables.MapVariables.get(world).numberofcosmicengiegames > (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT))) {
 				if (entity.getPersistentData().getBoolean("CanDespawn") == true) {
 					if (!entity.level.isClientSide())
 						entity.discard();
 				}
 			}
-		}
-		if (EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames >= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT))) {
-			EngiesChaosModVariables.MapVariables.get(world).TraderRoughianEngieGamesSpawnLock = true;
-			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			if (EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames >= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT))) {
+				EngiesChaosModVariables.MapVariables.get(world).TraderRoughianEngieGamesSpawnLock = true;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			}
 			if (EngiesChaosModVariables.MapVariables.get(world).numberofroughianengiegames > (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRADERMAXCOUNT))) {
 				if (entity.getPersistentData().getBoolean("CanDespawn") == true) {
 					if (!entity.level.isClientSide())

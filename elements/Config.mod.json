@@ -521,6 +521,48 @@
           "y": 162,
           "locked": false
         }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_photosensitivity",
+          "text": "Photosensitivity",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "PhotosensitivityButtonToggle"
+          },
+          "width": 109,
+          "height": 20,
+          "x": 154,
+          "y": 179,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "denymark.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "PhotosensitivityOff"
+          },
+          "x": 265,
+          "y": 181,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "checkmark.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "PhotosensitivityOn"
+          },
+          "x": 265,
+          "y": 181,
+          "locked": false
+        }
       }
     ],
     "gridSettings": {

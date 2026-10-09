@@ -3,8 +3,8 @@
   "_type": "gamerule",
   "definition": {
     "type": "Number",
-    "displayName": "[Engie's Chaos] True Hardcore Life Count",
-    "description": "You can screw around with this if you want to. Otherwise... Default: 10",
+    "displayName": "Engie's Chaos // True Hardcore Life Count",
+    "description": "[Engie's Chaos // True Hardcore uses.] Max amount of lives given to a player.",
     "category": "PLAYER",
     "defaultValueLogic": false,
     "defaultValueNumber": 10

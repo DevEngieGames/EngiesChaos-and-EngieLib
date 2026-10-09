@@ -3,8 +3,8 @@
   "_type": "gamerule",
   "definition": {
     "type": "Logic",
-    "displayName": "[Engie's Chaos] The End",
-    "description": "Enable a even harder version of Doomsday. DOOMSDAY TOGGLE MUST BE ENABLED FOR THIS TO WORK!!!!",
+    "displayName": "Engie's Chaos // The End",
+    "description": "[Engie's Chaos // Doomsday Toggle REQUIRED] Enable a even harder version of Doomsday. (Name idea from Tornado Insanity & Disaster Warning)",
     "category": "MISC",
     "defaultValueLogic": false,
     "defaultValueNumber": 0

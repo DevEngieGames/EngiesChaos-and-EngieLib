@@ -10,6 +10,8 @@ import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.components.Button;
 
 import engiegames.engies_chaos.world.inventory.ConfigMenu;
+import engiegames.engies_chaos.procedures.PhotosensitivityOnProcedure;
+import engiegames.engies_chaos.procedures.PhotosensitivityOffProcedure;
 import engiegames.engies_chaos.procedures.MobHPBaseMultToggledOnCheckProcedure;
 import engiegames.engies_chaos.procedures.MobHPBaseMultToggledOffCheckProcedure;
 import engiegames.engies_chaos.procedures.HealthOverlayButtonDisplayProcedure;
@@ -57,6 +59,7 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 	Button button_0;
 	Button button_off1;
 	Button button_off;
+	Button button_photosensitivity;
 	ImageButton imagebutton_denymark;
 	ImageButton imagebutton_checkmark;
 
@@ -93,6 +96,14 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 		RenderSystem.defaultBlendFunc();
 		RenderSystem.setShaderTexture(0, texture);
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		if (PhotosensitivityOffProcedure.execute(entity)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/denymark.png"));
+			this.blit(ms, this.leftPos + 176, this.topPos + 144, 0, 0, 16, 16, 16, 16);
+		}
+		if (PhotosensitivityOnProcedure.execute(entity)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/checkmark.png"));
+			this.blit(ms, this.leftPos + 176, this.topPos + 144, 0, 0, 16, 16, 16, 16);
+		}
 		RenderSystem.disableBlend();
 	}
 
@@ -295,12 +306,21 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 			}
 		});
 		this.addRenderableWidget(button_off);
+		button_photosensitivity = new Button(this.leftPos + 65, this.topPos + 142, 109, 20, Component.translatable("gui.engies_chaos.config.button_photosensitivity"), e -> {
+			int x = ConfigScreen.this.x;
+			int y = ConfigScreen.this.y;
+			if (true) {
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(19, x, y, z));
+				ConfigButtonMessage.handleButtonAction(entity, 19, x, y, z);
+			}
+		});
+		this.addRenderableWidget(button_photosensitivity);
 		imagebutton_denymark = new ImageButton(this.leftPos + 230, this.topPos + 125, 16, 16, 0, 0, 16, new ResourceLocation("engies_chaos:textures/screens/atlas/imagebutton_denymark.png"), 16, 32, e -> {
 			int x = ConfigScreen.this.x;
 			int y = ConfigScreen.this.y;
 			if (EngiesTrueWrathToggleOffProcedure.execute(world, entity)) {
-				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(19, x, y, z));
-				ConfigButtonMessage.handleButtonAction(entity, 19, x, y, z);
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(20, x, y, z));
+				ConfigButtonMessage.handleButtonAction(entity, 20, x, y, z);
 			}
 		});
 		this.addRenderableWidget(imagebutton_denymark);
@@ -308,8 +328,8 @@ public class ConfigScreen extends AbstractContainerScreen<ConfigMenu> implements
 			int x = ConfigScreen.this.x;
 			int y = ConfigScreen.this.y;
 			if (EngiesTrueWrathToggleOnProcedure.execute(world, entity)) {
-				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(20, x, y, z));
-				ConfigButtonMessage.handleButtonAction(entity, 20, x, y, z);
+				EngiesChaosMod.PACKET_HANDLER.sendToServer(new ConfigButtonMessage(21, x, y, z));
+				ConfigButtonMessage.handleButtonAction(entity, 21, x, y, z);
 			}
 		});
 		this.addRenderableWidget(imagebutton_checkmark);
