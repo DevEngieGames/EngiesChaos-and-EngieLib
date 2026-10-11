@@ -13,9 +13,6 @@
     "onBodyTick": {
       "name": "BAEChestplate"
     },
-    "onBootsTick": {
-      "name": "BAEBoots"
-    },
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"
@@ -90,16 +87,16 @@
     "bootsPiglinNeutral": {
       "fixedValue": false
     },
-    "maxDamage": 250,
-    "damageValueHelmet": 250,
-    "damageValueBody": 250,
-    "damageValueLeggings": 250,
-    "damageValueBoots": 250,
+    "maxDamage": 125,
+    "damageValueHelmet": 125,
+    "damageValueBody": 125,
+    "damageValueLeggings": 125,
+    "damageValueBoots": 125,
     "enchantability": 14,
     "toughness": 5.0,
     "knockbackResistance": 0.19999999999999998,
     "equipSound": {
-      "value": "item.armor.equip_netherite"
+      "value": "item.armor.equip_iron"
     },
     "repairItems": [
       {

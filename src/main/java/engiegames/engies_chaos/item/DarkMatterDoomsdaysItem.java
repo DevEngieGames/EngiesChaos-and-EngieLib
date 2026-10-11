@@ -32,12 +32,12 @@ public abstract class DarkMatterDoomsdaysItem extends ArmorItem {
 		super(new ArmorMaterial() {
 			@Override
 			public int getDurabilityForSlot(EquipmentSlot slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 850;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 800;
 			}
 
 			@Override
 			public int getDefenseForSlot(EquipmentSlot slot) {
-				return new int[]{850, 850, 850, 850}[slot.getIndex()];
+				return new int[]{800, 800, 800, 800}[slot.getIndex()];
 			}
 
 			@Override
@@ -47,12 +47,12 @@ public abstract class DarkMatterDoomsdaysItem extends ArmorItem {
 
 			@Override
 			public SoundEvent getEquipSound() {
-				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(""));
+				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_diamond"));
 			}
 
 			@Override
 			public Ingredient getRepairIngredient() {
-				return Ingredient.of(new ItemStack(EngiesChaosModItems.ANTIMATTER_DOOMSDAY_COIN.get()));
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.DARK_MATTER_DOOMS_DAY_COIN.get()));
 			}
 
 			@Override
@@ -62,12 +62,12 @@ public abstract class DarkMatterDoomsdaysItem extends ArmorItem {
 
 			@Override
 			public float getToughness() {
-				return 155f;
+				return 130f;
 			}
 
 			@Override
 			public float getKnockbackResistance() {
-				return 5f;
+				return 3.2f;
 			}
 		}, slot, properties);
 	}

@@ -20,12 +20,12 @@ public abstract class DarkMatterEngiesItem extends ArmorItem {
 		super(new ArmorMaterial() {
 			@Override
 			public int getDurabilityForSlot(EquipmentSlot slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 675;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 625;
 			}
 
 			@Override
 			public int getDefenseForSlot(EquipmentSlot slot) {
-				return new int[]{675, 675, 675, 675}[slot.getIndex()];
+				return new int[]{625, 625, 625, 625}[slot.getIndex()];
 			}
 
 			@Override
@@ -40,7 +40,7 @@ public abstract class DarkMatterEngiesItem extends ArmorItem {
 
 			@Override
 			public Ingredient getRepairIngredient() {
-				return Ingredient.of(new ItemStack(EngiesChaosModItems.ANTIMATTER_ENGIE_GEM.get()));
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.DARK_MATTER_MAD_ENGIE_ESSENCE.get()));
 			}
 
 			@Override
@@ -50,12 +50,12 @@ public abstract class DarkMatterEngiesItem extends ArmorItem {
 
 			@Override
 			public float getToughness() {
-				return 120f;
+				return 95f;
 			}
 
 			@Override
 			public float getKnockbackResistance() {
-				return 5f;
+				return 2.5f;
 			}
 		}, slot, properties);
 	}

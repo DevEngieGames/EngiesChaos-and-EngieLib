@@ -32,12 +32,12 @@ public abstract class AntimatterEngieGamessItem extends ArmorItem {
 		super(new ArmorMaterial() {
 			@Override
 			public int getDurabilityForSlot(EquipmentSlot slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 850;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 500;
 			}
 
 			@Override
 			public int getDefenseForSlot(EquipmentSlot slot) {
-				return new int[]{850, 850, 850, 850}[slot.getIndex()];
+				return new int[]{500, 500, 500, 500}[slot.getIndex()];
 			}
 
 			@Override
@@ -47,7 +47,7 @@ public abstract class AntimatterEngieGamessItem extends ArmorItem {
 
 			@Override
 			public SoundEvent getEquipSound() {
-				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(""));
+				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_netherite"));
 			}
 
 			@Override

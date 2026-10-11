@@ -87,16 +87,16 @@
     "bootsPiglinNeutral": {
       "fixedValue": false
     },
-    "maxDamage": 475,
-    "damageValueHelmet": 475,
-    "damageValueBody": 475,
-    "damageValueLeggings": 475,
-    "damageValueBoots": 475,
+    "maxDamage": 400,
+    "damageValueHelmet": 400,
+    "damageValueBody": 400,
+    "damageValueLeggings": 400,
+    "damageValueBoots": 400,
     "enchantability": 22,
     "toughness": 45.0,
     "knockbackResistance": 1.7000000000000002,
     "equipSound": {
-      "value": ""
+      "value": "item.armor.equip_diamond"
     },
     "repairItems": [
       {

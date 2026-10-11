@@ -23,12 +23,12 @@ public abstract class DarkMatterBiblicallyAccurateEngiesItem extends ArmorItem {
 		super(new ArmorMaterial() {
 			@Override
 			public int getDurabilityForSlot(EquipmentSlot slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 775;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 725;
 			}
 
 			@Override
 			public int getDefenseForSlot(EquipmentSlot slot) {
-				return new int[]{775, 775, 775, 775}[slot.getIndex()];
+				return new int[]{725, 725, 725, 725}[slot.getIndex()];
 			}
 
 			@Override
@@ -38,12 +38,12 @@ public abstract class DarkMatterBiblicallyAccurateEngiesItem extends ArmorItem {
 
 			@Override
 			public SoundEvent getEquipSound() {
-				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_netherite"));
+				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_iron"));
 			}
 
 			@Override
 			public Ingredient getRepairIngredient() {
-				return Ingredient.of(new ItemStack(EngiesChaosModItems.ANTIMATTER_BIBLICALLY_ACCURATE_ENGIE_ESSENCE.get()));
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.DARK_MATTER_BIBLICALLY_ACCURATE_ENGIE_ESSENCE.get()));
 			}
 
 			@Override
@@ -53,12 +53,12 @@ public abstract class DarkMatterBiblicallyAccurateEngiesItem extends ArmorItem {
 
 			@Override
 			public float getToughness() {
-				return 140f;
+				return 115f;
 			}
 
 			@Override
 			public float getKnockbackResistance() {
-				return 5f;
+				return 2.9f;
 			}
 		}, slot, properties);
 	}

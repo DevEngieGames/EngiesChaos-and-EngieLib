@@ -32,12 +32,12 @@ public abstract class DoomsDaysItem extends ArmorItem {
 		super(new ArmorMaterial() {
 			@Override
 			public int getDurabilityForSlot(EquipmentSlot slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 350;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 200;
 			}
 
 			@Override
 			public int getDefenseForSlot(EquipmentSlot slot) {
-				return new int[]{350, 350, 350, 350}[slot.getIndex()];
+				return new int[]{200, 200, 200, 200}[slot.getIndex()];
 			}
 
 			@Override
@@ -47,7 +47,7 @@ public abstract class DoomsDaysItem extends ArmorItem {
 
 			@Override
 			public SoundEvent getEquipSound() {
-				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(""));
+				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_diamond"));
 			}
 
 			@Override

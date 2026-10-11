@@ -32,12 +32,12 @@ public abstract class XEngieItem extends ArmorItem {
 		super(new ArmorMaterial() {
 			@Override
 			public int getDurabilityForSlot(EquipmentSlot slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 1024;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 600;
 			}
 
 			@Override
 			public int getDefenseForSlot(EquipmentSlot slot) {
-				return new int[]{1024, 1024, 1024, 1024}[slot.getIndex()];
+				return new int[]{600, 600, 600, 600}[slot.getIndex()];
 			}
 
 			@Override
@@ -47,7 +47,7 @@ public abstract class XEngieItem extends ArmorItem {
 
 			@Override
 			public SoundEvent getEquipSound() {
-				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(""));
+				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_netherite"));
 			}
 
 			@Override
@@ -69,12 +69,12 @@ public abstract class XEngieItem extends ArmorItem {
 
 			@Override
 			public float getToughness() {
-				return 100f;
+				return 90f;
 			}
 
 			@Override
 			public float getKnockbackResistance() {
-				return 5f;
+				return 2.4f;
 			}
 		}, slot, properties);
 	}

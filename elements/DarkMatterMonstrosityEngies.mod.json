@@ -87,20 +87,20 @@
     "bootsPiglinNeutral": {
       "fixedValue": false
     },
-    "maxDamage": 800,
-    "damageValueHelmet": 800,
-    "damageValueBody": 800,
-    "damageValueLeggings": 800,
-    "damageValueBoots": 800,
+    "maxDamage": 750,
+    "damageValueHelmet": 750,
+    "damageValueBody": 750,
+    "damageValueLeggings": 750,
+    "damageValueBoots": 750,
     "enchantability": 22,
-    "toughness": 145.0,
-    "knockbackResistance": 5.0,
+    "toughness": 120.0,
+    "knockbackResistance": 3.0,
     "equipSound": {
-      "value": ""
+      "value": "item.armor.equip_iron"
     },
     "repairItems": [
       {
-        "value": "CUSTOM:AntimatterMonstrosityEngieEssence"
+        "value": "CUSTOM:DarkMatterMonstrosityEngieEssence"
       }
     ]
   }

@@ -84,77 +84,20 @@
     "bootsPiglinNeutral": {
       "fixedValue": false
     },
-    "maxDamage": 950,
-    "damageValueHelmet": 950,
-    "damageValueBody": 950,
-    "damageValueLeggings": 950,
-    "damageValueBoots": 950,
+    "maxDamage": 575,
+    "damageValueHelmet": 575,
+    "damageValueBody": 575,
+    "damageValueLeggings": 575,
+    "damageValueBoots": 575,
     "enchantability": 22,
-    "toughness": 90.0,
-    "knockbackResistance": 4.4,
+    "toughness": 85.0,
+    "knockbackResistance": 2.3,
     "equipSound": {
-      "value": ""
+      "value": "item.armor.equip_netherite"
     },
     "repairItems": [
       {
-        "value": "CUSTOM:EnragedCoin"
-      },
-      {
-        "value": "CUSTOM:DoomsDayCoin"
-      },
-      {
-        "value": "CUSTOM:SuperDoomsDayCoin"
-      },
-      {
-        "value": "CUSTOM:TheEndCoin"
-      },
-      {
-        "value": "CUSTOM:EngieCoin"
-      },
-      {
-        "value": "CUSTOM:AntimatterTheEndCoin"
-      },
-      {
-        "value": "CUSTOM:AntimatterEngieCoin"
-      },
-      {
-        "value": "CUSTOM:AntimatterDoomsdayCoin"
-      },
-      {
-        "value": "CUSTOM:AntimatterSuperDoomsdayCoin"
-      },
-      {
-        "value": "CUSTOM:CosmicEngieCoin"
-      },
-      {
-        "value": "CUSTOM:AngryEngieEssence"
-      },
-      {
-        "value": "CUSTOM:EnragedEngieEssence"
-      },
-      {
-        "value": "CUSTOM:OutragedEngieEssence"
-      },
-      {
-        "value": "CUSTOM:BiblicallyAccurateEngieEssence"
-      },
-      {
-        "value": "CUSTOM:MonstrosityEngieEssence"
-      },
-      {
-        "value": "CUSTOM:AntimatterAngryEngieEssence"
-      },
-      {
-        "value": "CUSTOM:AntimatterEnragedEngieEssence"
-      },
-      {
-        "value": "CUSTOM:AntimatterOutragedEngieEssence"
-      },
-      {
-        "value": "CUSTOM:AntimatterBiblicallyAccurateEngieEssence"
-      },
-      {
-        "value": "CUSTOM:AntimatterMonstrosityEngieEssence"
+        "value": "CUSTOM:EngieGamesTesseract"
       }
     ]
   }

@@ -84,21 +84,18 @@
     "bootsPiglinNeutral": {
       "fixedValue": false
     },
-    "maxDamage": 1024,
-    "damageValueHelmet": 1024,
-    "damageValueBody": 1024,
-    "damageValueLeggings": 1024,
-    "damageValueBoots": 1024,
+    "maxDamage": 975,
+    "damageValueHelmet": 975,
+    "damageValueBody": 975,
+    "damageValueLeggings": 975,
+    "damageValueBoots": 975,
     "enchantability": 22,
-    "toughness": 200.0,
-    "knockbackResistance": 5.0,
+    "toughness": 300.0,
+    "knockbackResistance": 3.9,
     "equipSound": {
-      "value": ""
+      "value": "item.armor.equip_netherite"
     },
     "repairItems": [
-      {
-        "value": "CUSTOM:EngieGem"
-      },
       {
         "value": "CUSTOM:AngryEngieEssence"
       },
@@ -130,7 +127,37 @@
         "value": "CUSTOM:AntimatterMonstrosityEngieEssence"
       },
       {
-        "value": "CUSTOM:EnragedCoin"
+        "value": "CUSTOM:DarkMatterAngryEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterEnragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterOutragedEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterBiblicallyAccurateEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterMonstrosityEngieEssence"
+      },
+      {
+        "value": "CUSTOM:MadEngieEssence"
+      },
+      {
+        "value": "CUSTOM:AntimatterMadEngieEssence"
+      },
+      {
+        "value": "CUSTOM:DarkMatterMadEngieEssence"
+      },
+      {
+        "value": "CUSTOM:EngieGem"
+      },
+      {
+        "value": "CUSTOM:AntimatterEngieGem"
+      },
+      {
+        "value": "CUSTOM:DarkMatterEngieGem"
       },
       {
         "value": "CUSTOM:DoomsDayCoin"
@@ -143,9 +170,6 @@
       },
       {
         "value": "CUSTOM:EngieCoin"
-      },
-      {
-        "value": "CUSTOM:AntimatterTheEndCoin"
       },
       {
         "value": "CUSTOM:AntimatterEngieCoin"
@@ -169,22 +193,7 @@
         "value": "CUSTOM:EngieGamesTesseract"
       },
       {
-        "value": "CUSTOM:DarkMatterEngieGem"
-      },
-      {
-        "value": "CUSTOM:DarkMatterAngryEngieEssence"
-      },
-      {
-        "value": "CUSTOM:DarkMatterEnragedEngieEssence"
-      },
-      {
-        "value": "CUSTOM:DarkMatterOutragedEngieEssence"
-      },
-      {
-        "value": "CUSTOM:DarkMatterBiblicallyAccurateEngieEssence"
-      },
-      {
-        "value": "CUSTOM:DarkMatterMonstrosityEngieEssence"
+        "value": "CUSTOM:MindscapeCoin"
       },
       {
         "value": "CUSTOM:DarkMatterDoomsDayCoin"

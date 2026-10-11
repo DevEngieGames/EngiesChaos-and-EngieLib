@@ -96,7 +96,7 @@
     "toughness": 7.0,
     "knockbackResistance": 0.4,
     "equipSound": {
-      "value": ""
+      "value": "item.armor.equip_diamond"
     },
     "repairItems": [
       {

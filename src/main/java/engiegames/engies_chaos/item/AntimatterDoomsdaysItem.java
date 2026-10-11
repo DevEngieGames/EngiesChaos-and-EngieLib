@@ -32,12 +32,12 @@ public abstract class AntimatterDoomsdaysItem extends ArmorItem {
 		super(new ArmorMaterial() {
 			@Override
 			public int getDurabilityForSlot(EquipmentSlot slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 775;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 425;
 			}
 
 			@Override
 			public int getDefenseForSlot(EquipmentSlot slot) {
-				return new int[]{775, 775, 775, 775}[slot.getIndex()];
+				return new int[]{425, 425, 425, 425}[slot.getIndex()];
 			}
 
 			@Override
@@ -47,7 +47,7 @@ public abstract class AntimatterDoomsdaysItem extends ArmorItem {
 
 			@Override
 			public SoundEvent getEquipSound() {
-				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(""));
+				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_diamond"));
 			}
 
 			@Override

@@ -32,12 +32,12 @@ public abstract class MindscapeEngiesItem extends ArmorItem {
 		super(new ArmorMaterial() {
 			@Override
 			public int getDurabilityForSlot(EquipmentSlot slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 550;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 300;
 			}
 
 			@Override
 			public int getDefenseForSlot(EquipmentSlot slot) {
-				return new int[]{550, 550, 550, 550}[slot.getIndex()];
+				return new int[]{300, 300, 300, 300}[slot.getIndex()];
 			}
 
 			@Override
@@ -47,15 +47,12 @@ public abstract class MindscapeEngiesItem extends ArmorItem {
 
 			@Override
 			public SoundEvent getEquipSound() {
-				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(""));
+				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_netherite"));
 			}
 
 			@Override
 			public Ingredient getRepairIngredient() {
-				return Ingredient.of(new ItemStack(EngiesChaosModItems.ANGRY_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.ENRAGED_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.OUTRAGED_ENGIE_ESSENCE.get()),
-						new ItemStack(EngiesChaosModItems.BIBLICALLY_ACCURATE_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.MONSTROSITY_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.ENRAGED_COIN.get()),
-						new ItemStack(EngiesChaosModItems.DOOMS_DAY_COIN.get()), new ItemStack(EngiesChaosModItems.SUPER_DOOMS_DAY_COIN.get()), new ItemStack(EngiesChaosModItems.THE_END_COIN.get()),
-						new ItemStack(EngiesChaosModItems.ENGIE_COIN.get()));
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.MINDSCAPE_COIN.get()));
 			}
 
 			@Override

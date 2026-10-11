@@ -13,9 +13,6 @@
     "onBodyTick": {
       "name": "MEChestplate"
     },
-    "onBootsTick": {
-      "name": "MEBoots"
-    },
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"
@@ -90,16 +87,16 @@
     "bootsPiglinNeutral": {
       "fixedValue": false
     },
-    "maxDamage": 750,
-    "damageValueHelmet": 750,
-    "damageValueBody": 750,
-    "damageValueLeggings": 750,
-    "damageValueBoots": 750,
+    "maxDamage": 375,
+    "damageValueHelmet": 375,
+    "damageValueBody": 375,
+    "damageValueLeggings": 375,
+    "damageValueBoots": 375,
     "enchantability": 22,
     "toughness": 45.0,
     "knockbackResistance": 1.6,
     "equipSound": {
-      "value": ""
+      "value": "item.armor.equip_iron"
     },
     "repairItems": [
       {

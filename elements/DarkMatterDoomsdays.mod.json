@@ -84,20 +84,20 @@
     "bootsPiglinNeutral": {
       "fixedValue": false
     },
-    "maxDamage": 850,
-    "damageValueHelmet": 850,
-    "damageValueBody": 850,
-    "damageValueLeggings": 850,
-    "damageValueBoots": 850,
+    "maxDamage": 800,
+    "damageValueHelmet": 800,
+    "damageValueBody": 800,
+    "damageValueLeggings": 800,
+    "damageValueBoots": 800,
     "enchantability": 22,
-    "toughness": 155.0,
-    "knockbackResistance": 5.0,
+    "toughness": 130.0,
+    "knockbackResistance": 3.2,
     "equipSound": {
-      "value": ""
+      "value": "item.armor.equip_diamond"
     },
     "repairItems": [
       {
-        "value": "CUSTOM:AntimatterDoomsdayCoin"
+        "value": "CUSTOM:DarkMatterDoomsDayCoin"
       }
     ]
   }

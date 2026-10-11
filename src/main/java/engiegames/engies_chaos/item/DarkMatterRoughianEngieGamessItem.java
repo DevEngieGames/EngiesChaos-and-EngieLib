@@ -32,12 +32,12 @@ public abstract class DarkMatterRoughianEngieGamessItem extends ArmorItem {
 		super(new ArmorMaterial() {
 			@Override
 			public int getDurabilityForSlot(EquipmentSlot slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 1000;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 950;
 			}
 
 			@Override
 			public int getDefenseForSlot(EquipmentSlot slot) {
-				return new int[]{1000, 1000, 1000, 1000}[slot.getIndex()];
+				return new int[]{950, 950, 950, 950}[slot.getIndex()];
 			}
 
 			@Override
@@ -47,18 +47,12 @@ public abstract class DarkMatterRoughianEngieGamessItem extends ArmorItem {
 
 			@Override
 			public SoundEvent getEquipSound() {
-				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(""));
+				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_netherite"));
 			}
 
 			@Override
 			public Ingredient getRepairIngredient() {
-				return Ingredient.of(new ItemStack(EngiesChaosModItems.ENRAGED_COIN.get()), new ItemStack(EngiesChaosModItems.DOOMS_DAY_COIN.get()), new ItemStack(EngiesChaosModItems.SUPER_DOOMS_DAY_COIN.get()),
-						new ItemStack(EngiesChaosModItems.THE_END_COIN.get()), new ItemStack(EngiesChaosModItems.ENGIE_COIN.get()), new ItemStack(EngiesChaosModItems.ANTIMATTER_THE_END_COIN.get()),
-						new ItemStack(EngiesChaosModItems.ANTIMATTER_ENGIE_COIN.get()), new ItemStack(EngiesChaosModItems.ANTIMATTER_DOOMSDAY_COIN.get()), new ItemStack(EngiesChaosModItems.ANTIMATTER_SUPER_DOOMSDAY_COIN.get()),
-						new ItemStack(EngiesChaosModItems.COSMIC_ENGIE_COIN.get()), new ItemStack(EngiesChaosModItems.ANGRY_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.ENRAGED_ENGIE_ESSENCE.get()),
-						new ItemStack(EngiesChaosModItems.OUTRAGED_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.BIBLICALLY_ACCURATE_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.MONSTROSITY_ENGIE_ESSENCE.get()),
-						new ItemStack(EngiesChaosModItems.ANTIMATTER_ANGRY_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.ANTIMATTER_ENRAGED_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.ANTIMATTER_OUTRAGED_ENGIE_ESSENCE.get()),
-						new ItemStack(EngiesChaosModItems.ANTIMATTER_BIBLICALLY_ACCURATE_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.ANTIMATTER_MONSTROSITY_ENGIE_ESSENCE.get()));
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.DARK_MATTER_ENGIE_GAMES_TESSERACT.get()));
 			}
 
 			@Override
@@ -68,12 +62,12 @@ public abstract class DarkMatterRoughianEngieGamessItem extends ArmorItem {
 
 			@Override
 			public float getToughness() {
-				return 190f;
+				return 160f;
 			}
 
 			@Override
 			public float getKnockbackResistance() {
-				return 5f;
+				return 3.8f;
 			}
 		}, slot, properties);
 	}

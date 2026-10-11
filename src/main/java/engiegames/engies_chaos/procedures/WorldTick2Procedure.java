@@ -43,7 +43,7 @@ public class WorldTick2Procedure {
 							if (Math.random() <= 0.5) {
 								world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.DOOMSDAY_TOGGLE).set((world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DOOMSDAY_TOGGLE)), world.getServer());
 							} else {
-								world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.LORE_MODE).set((world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DOOMSDAY_TOGGLE)), world.getServer());
+								world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.DOOMSDAY_TOGGLE).set((world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.DOOMSDAY_TOGGLE)), world.getServer());
 							}
 						}
 						if (Math.random() <= 0.25) {

@@ -2810,8 +2810,6 @@
   "item.engies_chaos.sword_base": "xEngie Sword Base",
   "item.engies_chaos.x_engie_upgrade_sword.description_0": "State: Sword",
   "item.engies_chaos.x_engie_upgrade_sword": "xEngie Upgrade",
-  "gamerule.detectiveMode": "Engie\u0027s Chaos // Lore Mode",
-  "gamerule.detectiveMode.description": "GETTING REWORKED SOON, NOT SUGGESTED TO ENABLE.",
   "advancements.engies_chaos_main.descr": "Create a world with Engie\u0027s Chaos installed.",
   "advancements.engies_chaos_main.title": "Engie\u0027s Chaos // Main",
   "item.engies_chaos.lucky_block": "EngieGames Lucky Block",
@@ -2866,5 +2864,7 @@
   "item.engies_chaos.e_chaos.description_0": "enjoy",
   "gui.engies_chaos.config.button_photosensitivity": "Photosensitivity",
   "gamerule.superDoomsdayToggle": "Engie\u0027s Chaos // Super Doomsday",
-  "gamerule.superDoomsdayToggle.description": "[Engie\u0027s Chaos // Doomsday Toggle REQUIRED] Enable a harder version of Doomsday."
+  "gamerule.superDoomsdayToggle.description": "[Engie\u0027s Chaos // Doomsday Toggle REQUIRED] Enable a harder version of Doomsday.",
+  "gamerule.customSprint.description": "Experience custom sprinting for every player, but in Engie\u0027s own way.",
+  "gamerule.customSprint": "Engie\u0027s Chaos // Custom Sprinting."
 }

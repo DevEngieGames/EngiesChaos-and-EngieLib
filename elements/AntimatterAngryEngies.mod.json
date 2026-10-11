@@ -10,9 +10,6 @@
     "textureLeggings": "antimatterangryengieleggings",
     "enableBoots": true,
     "textureBoots": "antimatterangryengieboots",
-    "onBootsTick": {
-      "name": "AEBoots"
-    },
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"
@@ -87,16 +84,16 @@
     "bootsPiglinNeutral": {
       "fixedValue": false
     },
-    "maxDamage": 650,
-    "damageValueHelmet": 650,
-    "damageValueBody": 650,
-    "damageValueLeggings": 650,
-    "damageValueBoots": 650,
+    "maxDamage": 375,
+    "damageValueHelmet": 375,
+    "damageValueBody": 375,
+    "damageValueLeggings": 375,
+    "damageValueBoots": 375,
     "enchantability": 22,
     "toughness": 25.0,
     "knockbackResistance": 1.2,
     "equipSound": {
-      "value": "item.armor.equip_iron"
+      "value": "item.armor.equip_chain"
     },
     "repairItems": [
       {

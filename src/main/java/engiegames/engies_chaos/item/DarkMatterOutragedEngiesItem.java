@@ -23,12 +23,12 @@ public abstract class DarkMatterOutragedEngiesItem extends ArmorItem {
 		super(new ArmorMaterial() {
 			@Override
 			public int getDurabilityForSlot(EquipmentSlot slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 750;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 700;
 			}
 
 			@Override
 			public int getDefenseForSlot(EquipmentSlot slot) {
-				return new int[]{750, 750, 750, 750}[slot.getIndex()];
+				return new int[]{700, 700, 700, 700}[slot.getIndex()];
 			}
 
 			@Override
@@ -38,12 +38,12 @@ public abstract class DarkMatterOutragedEngiesItem extends ArmorItem {
 
 			@Override
 			public SoundEvent getEquipSound() {
-				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_netherite"));
+				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_iron"));
 			}
 
 			@Override
 			public Ingredient getRepairIngredient() {
-				return Ingredient.of(new ItemStack(EngiesChaosModItems.ANTIMATTER_OUTRAGED_ENGIE_ESSENCE.get()));
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.DARK_MATTER_OUTRAGED_ENGIE_ESSENCE.get()));
 			}
 
 			@Override
@@ -53,12 +53,12 @@ public abstract class DarkMatterOutragedEngiesItem extends ArmorItem {
 
 			@Override
 			public float getToughness() {
-				return 135f;
+				return 110f;
 			}
 
 			@Override
 			public float getKnockbackResistance() {
-				return 5f;
+				return 2.8f;
 			}
 		}, slot, properties);
 	}

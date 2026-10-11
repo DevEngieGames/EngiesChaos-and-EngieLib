@@ -9,7 +9,6 @@ import net.minecraft.world.level.GameRules;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class EngiesChaosModGameRules {
-	public static final GameRules.Key<GameRules.BooleanValue> LORE_MODE = GameRules.register("detectiveMode", GameRules.Category.MISC, GameRules.BooleanValue.create(false));
 	public static final GameRules.Key<GameRules.BooleanValue> TRUE_HARDCORE = GameRules.register("trueHardcore", GameRules.Category.PLAYER, GameRules.BooleanValue.create(false));
 	public static final GameRules.Key<GameRules.BooleanValue> EXTREME_DOOMSDAY_LIGHTNING = GameRules.register("extremeDoomsdayLightning", GameRules.Category.MISC, GameRules.BooleanValue.create(false));
 	public static final GameRules.Key<GameRules.BooleanValue> DOOMSDAY_TOGGLE = GameRules.register("doomsdayToggle", GameRules.Category.MISC, GameRules.BooleanValue.create(false));
@@ -33,5 +32,6 @@ public class EngiesChaosModGameRules {
 	public static final GameRules.Key<GameRules.BooleanValue> ENGIES_WRATH_TOGGLE = GameRules.register("engiesWrathToggle", GameRules.Category.MISC, GameRules.BooleanValue.create(false));
 	public static final GameRules.Key<GameRules.IntegerValue> TRADERMAXCOUNT = GameRules.register("tradermaxcount", GameRules.Category.MOBS, GameRules.IntegerValue.create(10));
 	public static final GameRules.Key<GameRules.BooleanValue> RANDOM = GameRules.register("random", GameRules.Category.UPDATES, GameRules.BooleanValue.create(false));
+	public static final GameRules.Key<GameRules.BooleanValue> CUSTOM_SPRINT = GameRules.register("customSprint", GameRules.Category.PLAYER, GameRules.BooleanValue.create(false));
 	public static final GameRules.Key<GameRules.BooleanValue> SUPER_DOOMSDAY_TOGGLE = GameRules.register("superDoomsdayToggle", GameRules.Category.MISC, GameRules.BooleanValue.create(false));
 }

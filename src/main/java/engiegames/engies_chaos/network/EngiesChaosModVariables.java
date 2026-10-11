@@ -457,7 +457,7 @@ public class EngiesChaosModVariables {
 		public boolean hordespawnstoggle = false;
 		public double tradertimercounttick = 0;
 		public boolean traderneedcount = false;
-		public double random25minutetimer = 0;
+		public double random25minutetimer = 1500.0;
 		public boolean mobbasehpmulttoggle = false;
 		public boolean engiestruewrath = false;
 		public boolean resetpickaxeonlycount = false;

@@ -13,9 +13,6 @@
     "onBodyTick": {
       "name": "EEChestplate"
     },
-    "onBootsTick": {
-      "name": "EEBoots"
-    },
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"
@@ -90,16 +87,16 @@
     "bootsPiglinNeutral": {
       "fixedValue": false
     },
-    "maxDamage": 700,
-    "damageValueHelmet": 700,
-    "damageValueBody": 700,
-    "damageValueLeggings": 700,
-    "damageValueBoots": 700,
+    "maxDamage": 325,
+    "damageValueHelmet": 325,
+    "damageValueBody": 325,
+    "damageValueLeggings": 325,
+    "damageValueBoots": 325,
     "enchantability": 22,
     "toughness": 35.0,
     "knockbackResistance": 1.4,
     "equipSound": {
-      "value": "item.armor.equip_netherite"
+      "value": "item.armor.equip_iron"
     },
     "repairItems": [
       {

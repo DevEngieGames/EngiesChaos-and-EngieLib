@@ -23,12 +23,12 @@ public abstract class AntimatterOutragedEngiesItem extends ArmorItem {
 		super(new ArmorMaterial() {
 			@Override
 			public int getDurabilityForSlot(EquipmentSlot slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 700;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 325;
 			}
 
 			@Override
 			public int getDefenseForSlot(EquipmentSlot slot) {
-				return new int[]{700, 700, 700, 700}[slot.getIndex()];
+				return new int[]{325, 325, 325, 325}[slot.getIndex()];
 			}
 
 			@Override
@@ -38,7 +38,7 @@ public abstract class AntimatterOutragedEngiesItem extends ArmorItem {
 
 			@Override
 			public SoundEvent getEquipSound() {
-				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_netherite"));
+				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_iron"));
 			}
 
 			@Override

@@ -84,47 +84,20 @@
     "bootsPiglinNeutral": {
       "fixedValue": false
     },
-    "maxDamage": 550,
-    "damageValueHelmet": 550,
-    "damageValueBody": 550,
-    "damageValueLeggings": 550,
-    "damageValueBoots": 550,
+    "maxDamage": 300,
+    "damageValueHelmet": 300,
+    "damageValueBody": 300,
+    "damageValueLeggings": 300,
+    "damageValueBoots": 300,
     "enchantability": 22,
     "toughness": 10.0,
     "knockbackResistance": 0.9,
     "equipSound": {
-      "value": ""
+      "value": "item.armor.equip_netherite"
     },
     "repairItems": [
       {
-        "value": "CUSTOM:AngryEngieEssence"
-      },
-      {
-        "value": "CUSTOM:EnragedEngieEssence"
-      },
-      {
-        "value": "CUSTOM:OutragedEngieEssence"
-      },
-      {
-        "value": "CUSTOM:BiblicallyAccurateEngieEssence"
-      },
-      {
-        "value": "CUSTOM:MonstrosityEngieEssence"
-      },
-      {
-        "value": "CUSTOM:EnragedCoin"
-      },
-      {
-        "value": "CUSTOM:DoomsDayCoin"
-      },
-      {
-        "value": "CUSTOM:SuperDoomsDayCoin"
-      },
-      {
-        "value": "CUSTOM:TheEndCoin"
-      },
-      {
-        "value": "CUSTOM:EngieCoin"
+        "value": "CUSTOM:MindscapeCoin"
       }
     ]
   }

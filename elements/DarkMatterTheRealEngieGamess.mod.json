@@ -84,20 +84,20 @@
     "bootsPiglinNeutral": {
       "fixedValue": false
     },
-    "maxDamage": 950,
-    "damageValueHelmet": 950,
-    "damageValueBody": 950,
-    "damageValueLeggings": 950,
-    "damageValueBoots": 950,
+    "maxDamage": 900,
+    "damageValueHelmet": 900,
+    "damageValueBody": 900,
+    "damageValueLeggings": 900,
+    "damageValueBoots": 900,
     "enchantability": 22,
-    "toughness": 175.0,
-    "knockbackResistance": 5.0,
+    "toughness": 150.0,
+    "knockbackResistance": 3.6,
     "equipSound": {
-      "value": ""
+      "value": "item.armor.equip_netherite"
     },
     "repairItems": [
       {
-        "value": "CUSTOM:AntimatterEngieCoin"
+        "value": "CUSTOM:DarkMatterEngieGamesCoin"
       }
     ]
   }

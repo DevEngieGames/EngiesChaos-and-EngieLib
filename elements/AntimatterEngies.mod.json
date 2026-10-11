@@ -84,11 +84,11 @@
     "bootsPiglinNeutral": {
       "fixedValue": false
     },
-    "maxDamage": 625,
-    "damageValueHelmet": 625,
-    "damageValueBody": 625,
-    "damageValueLeggings": 625,
-    "damageValueBoots": 625,
+    "maxDamage": 350,
+    "damageValueHelmet": 350,
+    "damageValueBody": 350,
+    "damageValueLeggings": 350,
+    "damageValueBoots": 350,
     "enchantability": 22,
     "toughness": 20.0,
     "knockbackResistance": 1.1,
@@ -97,7 +97,7 @@
     },
     "repairItems": [
       {
-        "value": "CUSTOM:AntimatterEngieGem"
+        "value": "CUSTOM:AntimatterMadEngieEssence"
       }
     ]
   }

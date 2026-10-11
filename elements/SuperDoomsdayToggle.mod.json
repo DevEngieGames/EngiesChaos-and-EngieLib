@@ -3,8 +3,8 @@
   "_type": "gamerule",
   "definition": {
     "type": "Logic",
-    "displayName": "Engie's Chaos // Lore Mode",
-    "description": "GETTING REWORKED SOON, NOT SUGGESTED TO ENABLE.",
+    "displayName": "Engie's Chaos // Super Doomsday",
+    "description": "[Engie's Chaos // Doomsday Toggle REQUIRED] Enable a harder version of Doomsday.",
     "category": "MISC",
     "defaultValueLogic": false,
     "defaultValueNumber": 0

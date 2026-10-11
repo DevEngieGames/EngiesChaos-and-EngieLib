@@ -23,12 +23,12 @@ public abstract class AntimatterBiblicallyAccurateEngiesItem extends ArmorItem {
 		super(new ArmorMaterial() {
 			@Override
 			public int getDurabilityForSlot(EquipmentSlot slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 725;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 350;
 			}
 
 			@Override
 			public int getDefenseForSlot(EquipmentSlot slot) {
-				return new int[]{725, 725, 725, 725}[slot.getIndex()];
+				return new int[]{350, 350, 350, 350}[slot.getIndex()];
 			}
 
 			@Override
@@ -38,7 +38,7 @@ public abstract class AntimatterBiblicallyAccurateEngiesItem extends ArmorItem {
 
 			@Override
 			public SoundEvent getEquipSound() {
-				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_netherite"));
+				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_iron"));
 			}
 
 			@Override

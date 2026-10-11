@@ -41,7 +41,7 @@
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:MonstrosityEngies.helmet"
+      "value": "CUSTOM:MonstrosityEngies.body"
     },
     "name": "monstrosity_engie_chestplate_1",
     "namespace": "mod"

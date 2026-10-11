@@ -84,11 +84,11 @@
     "bootsPiglinNeutral": {
       "fixedValue": false
     },
-    "maxDamage": 50,
-    "damageValueHelmet": 50,
-    "damageValueBody": 50,
-    "damageValueLeggings": 50,
-    "damageValueBoots": 50,
+    "maxDamage": 25,
+    "damageValueHelmet": 25,
+    "damageValueBody": 25,
+    "damageValueLeggings": 25,
+    "damageValueBoots": 25,
     "enchantability": 10,
     "toughness": 2.0,
     "knockbackResistance": 0.0,
@@ -97,7 +97,7 @@
     },
     "repairItems": [
       {
-        "value": "CUSTOM:EngieGem"
+        "value": "CUSTOM:MadEngieEssence"
       }
     ]
   }

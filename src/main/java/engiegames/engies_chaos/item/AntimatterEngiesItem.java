@@ -20,12 +20,12 @@ public abstract class AntimatterEngiesItem extends ArmorItem {
 		super(new ArmorMaterial() {
 			@Override
 			public int getDurabilityForSlot(EquipmentSlot slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 625;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 350;
 			}
 
 			@Override
 			public int getDefenseForSlot(EquipmentSlot slot) {
-				return new int[]{625, 625, 625, 625}[slot.getIndex()];
+				return new int[]{350, 350, 350, 350}[slot.getIndex()];
 			}
 
 			@Override
@@ -40,7 +40,7 @@ public abstract class AntimatterEngiesItem extends ArmorItem {
 
 			@Override
 			public Ingredient getRepairIngredient() {
-				return Ingredient.of(new ItemStack(EngiesChaosModItems.ANTIMATTER_ENGIE_GEM.get()));
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.ANTIMATTER_MAD_ENGIE_ESSENCE.get()));
 			}
 
 			@Override
