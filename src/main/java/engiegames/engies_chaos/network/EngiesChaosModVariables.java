@@ -533,6 +533,17 @@ public class EngiesChaosModVariables {
 		public boolean playlightningsound2 = false;
 		public boolean EngiesWrathForceCreativePlayersAdventure = false;
 		public double tstormlightning = 0;
+		public double SpikeRX = 0;
+		public double SpikeRZ = 0;
+		public double AvalancheRX = 0;
+		public double AvalancheRZ = 0;
+		public double MissileRX = 0;
+		public double MissileRZ = 0;
+		public double RiftRX = 0;
+		public double RiftRZ = 0;
+		public double HordeRX = 0;
+		public double HordeRZ = 0;
+		public boolean lockhewhogamesotherspawn = false;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -812,6 +823,17 @@ public class EngiesChaosModVariables {
 			playlightningsound2 = nbt.getBoolean("playlightningsound2");
 			EngiesWrathForceCreativePlayersAdventure = nbt.getBoolean("EngiesWrathForceCreativePlayersAdventure");
 			tstormlightning = nbt.getDouble("tstormlightning");
+			SpikeRX = nbt.getDouble("SpikeRX");
+			SpikeRZ = nbt.getDouble("SpikeRZ");
+			AvalancheRX = nbt.getDouble("AvalancheRX");
+			AvalancheRZ = nbt.getDouble("AvalancheRZ");
+			MissileRX = nbt.getDouble("MissileRX");
+			MissileRZ = nbt.getDouble("MissileRZ");
+			RiftRX = nbt.getDouble("RiftRX");
+			RiftRZ = nbt.getDouble("RiftRZ");
+			HordeRX = nbt.getDouble("HordeRX");
+			HordeRZ = nbt.getDouble("HordeRZ");
+			lockhewhogamesotherspawn = nbt.getBoolean("lockhewhogamesotherspawn");
 		}
 
 		@Override
@@ -1087,6 +1109,17 @@ public class EngiesChaosModVariables {
 			nbt.putBoolean("playlightningsound2", playlightningsound2);
 			nbt.putBoolean("EngiesWrathForceCreativePlayersAdventure", EngiesWrathForceCreativePlayersAdventure);
 			nbt.putDouble("tstormlightning", tstormlightning);
+			nbt.putDouble("SpikeRX", SpikeRX);
+			nbt.putDouble("SpikeRZ", SpikeRZ);
+			nbt.putDouble("AvalancheRX", AvalancheRX);
+			nbt.putDouble("AvalancheRZ", AvalancheRZ);
+			nbt.putDouble("MissileRX", MissileRX);
+			nbt.putDouble("MissileRZ", MissileRZ);
+			nbt.putDouble("RiftRX", RiftRX);
+			nbt.putDouble("RiftRZ", RiftRZ);
+			nbt.putDouble("HordeRX", HordeRX);
+			nbt.putDouble("HordeRZ", HordeRZ);
+			nbt.putBoolean("lockhewhogamesotherspawn", lockhewhogamesotherspawn);
 			return nbt;
 		}
 

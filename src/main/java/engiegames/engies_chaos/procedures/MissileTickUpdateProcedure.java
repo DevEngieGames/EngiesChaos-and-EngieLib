@@ -1,6 +1,8 @@
 package engiegames.engies_chaos.procedures;
 
 import net.minecraft.world.scores.PlayerTeam;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.player.Player;
@@ -15,9 +17,11 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
+import java.util.Comparator;
 import java.util.ArrayList;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
+import engiegames.engies_chaos.init.EngiesChaosModDamageSources;
 import engiegames.engies_chaos.entity.YellowLightningEntity;
 import engiegames.engies_chaos.entity.NormalEntity;
 import engiegames.engies_chaos.entity.MOABEntity;
@@ -77,10 +81,11 @@ public class MissileTickUpdateProcedure {
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.EXPLOSION, x, y, z, 1, 1, 1, 1, 1);
 				{
-					Entity _ent = entity;
-					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("damages @a[distance=..7] " + Math.round(Mth.nextDouble(RandomSource.create(), 40, 60)) + " 1"));
+					final Vec3 _center = new Vec3(x, y, z);
+					for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(7 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
+						if (entityiterator instanceof Player && (entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive == true) {
+							entityiterator.hurt(EngiesChaosModDamageSources.YELLOW_LIGHTNING_EXPLOSION, Math.round(Mth.nextInt(RandomSource.create(), 15, 30)));
+						}
 					}
 				}
 				entity.getPersistentData().putDouble("YellowLightningTimeBeforeExplosion", 0);
@@ -107,10 +112,11 @@ public class MissileTickUpdateProcedure {
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.EXPLOSION, x, y, z, 5, 5, 5, 5, 1);
 				{
-					Entity _ent = entity;
-					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("damages @a[distance=..21] " + Math.round(Mth.nextDouble(RandomSource.create(), 40, 60)) + " 2"));
+					final Vec3 _center = new Vec3(x, y, z);
+					for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(21 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
+						if (entityiterator instanceof Player && (entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive == true) {
+							entityiterator.hurt(EngiesChaosModDamageSources.YELLOW_LIGHTNING_EXPLOSION, Math.round(Mth.nextInt(RandomSource.create(), 40, 60)));
+						}
 					}
 				}
 				entity.getPersistentData().putDouble("BlueBurstTimeBeforeExplosion", 0);
@@ -137,10 +143,11 @@ public class MissileTickUpdateProcedure {
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.EXPLOSION, x, y, z, 10, 10, 10, 10, 1);
 				{
-					Entity _ent = entity;
-					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("damages @a[distance=..70] " + Math.round(Mth.nextDouble(RandomSource.create(), 25, 40)) + " 3"));
+					final Vec3 _center = new Vec3(x, y, z);
+					for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(70 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
+						if (entityiterator instanceof Player && (entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive == true) {
+							entityiterator.hurt(EngiesChaosModDamageSources.NORMAL_EXPLOSION, Math.round(Mth.nextInt(RandomSource.create(), 25, 40)));
+						}
 					}
 				}
 				entity.getPersistentData().putDouble("NormalTimeBeforeExplosion", 0);
@@ -157,10 +164,11 @@ public class MissileTickUpdateProcedure {
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.EXPLOSION, x, y, z, 15, 15, 15, 15, 1);
 				{
-					Entity _ent = entity;
-					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("damages @a[distance=..126] " + Math.round(Mth.nextDouble(RandomSource.create(), 60, 80)) + " 4"));
+					final Vec3 _center = new Vec3(x, y, z);
+					for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(126 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
+						if (entityiterator instanceof Player && (entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive == true) {
+							entityiterator.hurt(EngiesChaosModDamageSources.MOAB_EXPLOSION, Math.round(Mth.nextInt(RandomSource.create(), 60, 80)));
+						}
 					}
 				}
 				entity.getPersistentData().putDouble("MoabTimeBeforeExplosion", 0);

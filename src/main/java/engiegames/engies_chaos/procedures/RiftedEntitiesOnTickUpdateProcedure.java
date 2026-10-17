@@ -44,19 +44,14 @@ public class RiftedEntitiesOnTickUpdateProcedure {
 				}
 				if ((EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayFullStart || EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart
 						|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart) == true) {
-					for (Entity entityiterator : new ArrayList<>(world.players())) {
-						if ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive) {
-							if (getEntityGameType(entityiterator) == GameType.SURVIVAL || getEntityGameType(entityiterator) == GameType.ADVENTURE) {
-								if (entity instanceof Mob _entity && entityiterator instanceof LivingEntity _ent)
-									_entity.setTarget(_ent);
+					if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null && EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount > 0) {
+						for (Entity entityiterator : new ArrayList<>(world.players())) {
+							if ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive) {
+								if (getEntityGameType(entityiterator) == GameType.SURVIVAL || getEntityGameType(entityiterator) == GameType.ADVENTURE) {
+									if (entity instanceof Mob _entity && entityiterator instanceof LivingEntity _ent)
+										_entity.setTarget(_ent);
+								}
 							}
-						}
-					}
-				} else {
-					for (Entity entityiterator : new ArrayList<>(world.players())) {
-						if (getEntityGameType(entityiterator) == GameType.SURVIVAL || getEntityGameType(entityiterator) == GameType.ADVENTURE) {
-							if (entity instanceof Mob _entity && entityiterator instanceof LivingEntity _ent)
-								_entity.setTarget(_ent);
 						}
 					}
 				}

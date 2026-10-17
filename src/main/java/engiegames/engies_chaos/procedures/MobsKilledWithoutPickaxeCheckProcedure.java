@@ -35,10 +35,10 @@ public class MobsKilledWithoutPickaxeCheckProcedure {
 		if (sourceentity instanceof Player) {
 			if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(new ResourceLocation("engies_chaos:pickaxe_only/allowed"))))) {
 				{
-					double _setval = (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pickaxeonly + 1;
-					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					double _setval = (sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pickaxeonly + 1;
+					sourceentity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.pickaxeonly = _setval;
-						capability.syncPlayerVariables(entity);
+						capability.syncPlayerVariables(sourceentity);
 					});
 				}
 			}

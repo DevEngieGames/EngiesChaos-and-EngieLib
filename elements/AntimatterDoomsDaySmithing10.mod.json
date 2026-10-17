@@ -12,7 +12,7 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "smithingInputStack": {
-      "value": "CUSTOM:AntimatterMonstrosityEngies.boots"
+      "value": "CUSTOM:AntimatterHostileEngies.boots"
     },
     "smithingInputAdditionStack": {
       "value": "CUSTOM:AntimatterDoomsDayCoinBlock"

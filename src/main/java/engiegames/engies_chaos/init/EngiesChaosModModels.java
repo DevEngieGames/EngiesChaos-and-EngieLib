@@ -69,7 +69,6 @@ import engiegames.engies_chaos.client.model.Modelbigboyo;
 import engiegames.engies_chaos.client.model.Modelavalanche_ball;
 import engiegames.engies_chaos.client.model.Modelangry_new;
 import engiegames.engies_chaos.client.model.ModelShadowEngieSharkEntity;
-import engiegames.engies_chaos.client.model.ModelHeWhoGames;
 import engiegames.engies_chaos.client.model.ModelEngieSharkEntity;
 import engiegames.engies_chaos.client.model.ModelEngieGames;
 import engiegames.engies_chaos.client.model.ModelEngie;
@@ -79,7 +78,6 @@ import engiegames.engies_chaos.client.model.ModelBiblicallyAccurateEngie;
 public class EngiesChaosModModels {
 	@SubscribeEvent
 	public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
-		event.registerLayerDefinition(ModelHeWhoGames.LAYER_LOCATION, ModelHeWhoGames::createBodyLayer);
 		event.registerLayerDefinition(Modelcustomarmorr.LAYER_LOCATION, Modelcustomarmorr::createBodyLayer);
 		event.registerLayerDefinition(Modelboyosit.LAYER_LOCATION, Modelboyosit::createBodyLayer);
 		event.registerLayerDefinition(Modelavalanche_ball.LAYER_LOCATION, Modelavalanche_ball::createBodyLayer);

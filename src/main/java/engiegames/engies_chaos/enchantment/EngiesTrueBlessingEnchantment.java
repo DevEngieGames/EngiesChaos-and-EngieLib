@@ -17,7 +17,7 @@ public class EngiesTrueBlessingEnchantment extends Enchantment {
 			item -> Ingredient.of(ItemTags.create(new ResourceLocation("engies_chaos:enchantable/engies_true_blessing"))).test(new ItemStack(item)));
 
 	public EngiesTrueBlessingEnchantment() {
-		super(Enchantment.Rarity.VERY_RARE, ENCHANTMENT_CATEGORY, EquipmentSlot.values());
+		super(Enchantment.Rarity.RARE, ENCHANTMENT_CATEGORY, EquipmentSlot.values());
 	}
 
 	@Override
@@ -32,7 +32,7 @@ public class EngiesTrueBlessingEnchantment extends Enchantment {
 
 	@Override
 	public int getMaxLevel() {
-		return 50;
+		return 5;
 	}
 
 	@Override
@@ -42,6 +42,6 @@ public class EngiesTrueBlessingEnchantment extends Enchantment {
 
 	@Override
 	protected boolean checkCompatibility(Enchantment enchantment) {
-		return super.checkCompatibility(enchantment) && !List.of(Enchantments.BINDING_CURSE, Enchantments.SILK_TOUCH, Enchantments.VANISHING_CURSE).contains(enchantment);
+		return super.checkCompatibility(enchantment) && !List.of(Enchantments.BLOCK_EFFICIENCY).contains(enchantment);
 	}
 }

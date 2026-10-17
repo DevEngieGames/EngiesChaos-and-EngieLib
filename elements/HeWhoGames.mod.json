@@ -4,8 +4,8 @@
   "definition": {
     "mobName": "He Who Games",
     "mobLabel": "",
-    "mobModelName": "ModelHeWhoGames",
-    "mobModelTexture": "hewhogames.png",
+    "mobModelName": "Biped",
+    "mobModelTexture": "hewhogamesbiped.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -16,19 +16,14 @@
       "fixedValue": false
     },
     "visualScale": {
-      "fixedValue": 0.93
+      "fixedValue": 0.93,
+      "name": "MobModelScaling"
     },
     "boundingBoxScale": {
-      "fixedValue": 1.0
+      "fixedValue": 1.0,
+      "name": "MobHitboxScaling"
     },
-    "modelLayers": [
-      {
-        "model": "Default",
-        "texture": "hewhogames_g.png",
-        "disableHurtOverlay": false,
-        "glow": true
-      }
-    ],
+    "modelLayers": [],
     "animations": [],
     "modelWidth": 0.6,
     "modelHeight": 1.9000000000000001,
@@ -52,38 +47,38 @@
     "bossBarColor": "PINK",
     "bossBarType": "PROGRESS",
     "equipmentMainHand": {
-      "value": ""
+      "value": "CUSTOM:DarkMatterEngieGamesEngieHallowBanHammer"
     },
     "equipmentOffHand": {
-      "value": ""
+      "value": "CUSTOM:TrueXEngieCrucifix"
     },
     "equipmentHelmet": {
-      "value": ""
+      "value": "CUSTOM:HWG.helmet"
     },
     "equipmentBody": {
-      "value": ""
+      "value": "CUSTOM:HWG.body"
     },
     "equipmentLeggings": {
-      "value": ""
+      "value": "CUSTOM:HWG.legs"
     },
     "equipmentBoots": {
-      "value": ""
+      "value": "CUSTOM:HWG.boots"
     },
     "mobBehaviourType": "Creature",
     "mobCreatureType": "UNDEFINED",
-    "attackStrength": 0,
+    "attackStrength": 1,
     "attackKnockback": 0.0,
     "knockbackResistance": 0.0,
-    "movementSpeed": 0.35,
-    "stepHeight": 1.0,
+    "movementSpeed": 0.3,
+    "stepHeight": 0.6,
     "armorBaseValue": 0.0,
-    "trackingRange": 128,
-    "followRange": 128,
-    "health": 1024,
+    "trackingRange": 256,
+    "followRange": 64,
+    "health": 525,
     "xpAmount": 0,
     "waterMob": false,
     "breatheUnderwater": {
-      "fixedValue": false
+      "fixedValue": true
     },
     "pushedByFluids": {
       "fixedValue": true
@@ -95,19 +90,19 @@
     "ridable": false,
     "canControlForward": false,
     "canControlStrafe": false,
-    "immuneToFire": true,
-    "immuneToArrows": true,
-    "immuneToFallDamage": true,
-    "immuneToCactus": true,
-    "immuneToDrowning": true,
-    "immuneToLightning": true,
-    "immuneToPotions": true,
-    "immuneToPlayer": true,
-    "immuneToExplosion": true,
-    "immuneToTrident": true,
-    "immuneToAnvil": true,
-    "immuneToWither": true,
-    "immuneToDragonBreath": true,
+    "immuneToFire": false,
+    "immuneToArrows": false,
+    "immuneToFallDamage": false,
+    "immuneToCactus": false,
+    "immuneToDrowning": false,
+    "immuneToLightning": false,
+    "immuneToPotions": false,
+    "immuneToPlayer": false,
+    "immuneToExplosion": false,
+    "immuneToTrident": false,
+    "immuneToAnvil": false,
+    "immuneToWither": false,
+    "immuneToDragonBreath": false,
     "mobDrop": {
       "value": ""
     },
@@ -127,12 +122,21 @@
       "value": ""
     },
     "entityDataEntries": [],
-    "onMobTickUpdate": {
-      "name": "HeWhoGamesOnEntityTickUpdate"
+    "whenMobDies": {
+      "name": "HeWhoGamesEntityDies"
+    },
+    "onRightClickedOn": {
+      "name": "XEngieGamesRightClickedOnEntityTrade"
+    },
+    "whenThisMobKillsAnother": {
+      "name": "HeWhoGamesKills"
+    },
+    "onInitialSpawn": {
+      "name": "HeWhoGamesOnInitialEntitySpawn"
     },
     "hasAI": true,
     "aiBase": "(none)",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></xml>",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.25</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"watch_closest_entity\"><field name=\"entity\">EntityPlayer</field><field name=\"radius\">12</field><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">TRUE</field><field name=\"nearby\">TRUE</field><field name=\"entity\">EntityMonster</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
     "breedable": false,
     "tameable": false,
     "breedTriggerItems": [],
@@ -144,12 +148,12 @@
     "rangedAttackInterval": 20,
     "rangedAttackRadius": 10.0,
     "spawnThisMob": true,
-    "doesDespawnWhenIdle": true,
+    "doesDespawnWhenIdle": false,
     "spawningCondition": {
       "name": "HeWhoGamesNaturalEntitySpawningCondition"
     },
-    "spawningProbability": 5,
-    "mobSpawningType": "ambient",
+    "spawningProbability": 1,
+    "mobSpawningType": "creature",
     "minNumberOfMobsPerGroup": 1,
     "maxNumberOfMobsPerGroup": 1,
     "restrictionBiomes": [],

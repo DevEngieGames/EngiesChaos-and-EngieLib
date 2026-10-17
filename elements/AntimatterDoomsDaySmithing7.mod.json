@@ -12,7 +12,7 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "smithingInputStack": {
-      "value": "CUSTOM:AntimatterMonstrosityEngies.helmet"
+      "value": "CUSTOM:AntimatterHostileEngies.helmet"
     },
     "smithingInputAdditionStack": {
       "value": "CUSTOM:AntimatterDoomsDayCoinBlock"

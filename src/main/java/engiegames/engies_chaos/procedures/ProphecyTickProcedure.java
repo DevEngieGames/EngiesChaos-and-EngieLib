@@ -38,7 +38,7 @@ public class ProphecyTickProcedure {
 				EngiesChaosModVariables.MapVariables.get(world).ProphecyTimerTotal = 0;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			}
-			if (EngiesChaosModVariables.MapVariables.get(world).ProphecyTimerTotal >= 13) {
+			if (EngiesChaosModVariables.MapVariables.get(world).ProphecyTimerTotal >= 12.5) {
 				EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = false;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;

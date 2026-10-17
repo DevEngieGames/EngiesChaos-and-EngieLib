@@ -42,14 +42,16 @@ public class DDayHordeTickingProcedure {
 				if ((EngiesChaosModVariables.MapVariables.get(world).DoomsdayFullStart || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayFullStart || EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart
 						|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart) == true) {
 					if (EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle == true) {
-						{
-							final Vec3 _center = new Vec3((entity.getX()), (entity.getY()), (entity.getZ()));
-							for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(502 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
-									.toList()) {
-								if ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive) {
-									if (getEntityGameType(entityiterator) == GameType.SURVIVAL || getEntityGameType(entityiterator) == GameType.ADVENTURE) {
-										if (entity instanceof Mob _entity && entityiterator instanceof LivingEntity _ent)
-											_entity.setTarget(_ent);
+						if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null && EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount > 0) {
+							{
+								final Vec3 _center = new Vec3((entity.getX()), (entity.getY()), (entity.getZ()));
+								for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(502 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+										.toList()) {
+									if ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive) {
+										if (getEntityGameType(entityiterator) == GameType.SURVIVAL || getEntityGameType(entityiterator) == GameType.ADVENTURE) {
+											if (entity instanceof Mob _entity && entityiterator instanceof LivingEntity _ent)
+												_entity.setTarget(_ent);
+										}
 									}
 								}
 							}

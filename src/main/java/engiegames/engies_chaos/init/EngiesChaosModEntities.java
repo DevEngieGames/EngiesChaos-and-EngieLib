@@ -80,7 +80,6 @@ import engiegames.engies_chaos.entity.InsanityAngryEngieEntity;
 import engiegames.engies_chaos.entity.HsotileEngieEntity;
 import engiegames.engies_chaos.entity.HostileBiblicallyAccurateEngieEntity;
 import engiegames.engies_chaos.entity.HordeSpawnerEntity;
-import engiegames.engies_chaos.entity.HeWhoGamesHostileEntity;
 import engiegames.engies_chaos.entity.HeWhoGamesEntity;
 import engiegames.engies_chaos.entity.GlitchSharkoEntity;
 import engiegames.engies_chaos.entity.ExoticSharkoEntity;
@@ -114,7 +113,6 @@ import engiegames.engies_chaos.entity.DoomsDayHostileEntity;
 import engiegames.engies_chaos.entity.DoomsDayEntity;
 import engiegames.engies_chaos.entity.DistortedEntity;
 import engiegames.engies_chaos.entity.DDaySpikeEntity;
-import engiegames.engies_chaos.entity.DDayLightningSpawnerEntity;
 import engiegames.engies_chaos.entity.DDayAvalancheEntity;
 import engiegames.engies_chaos.entity.DDAYRiftEntity;
 import engiegames.engies_chaos.entity.CosmicTheRealEngieGamesEntity;
@@ -224,10 +222,10 @@ public class EngiesChaosModEntities {
 					.sized(0.6f, 1.9f));
 	public static final RegistryObject<EntityType<MonstrosityEngieEntity>> MONSTROSITY_ENGIE = register("monstrosity_engie", EntityType.Builder.<MonstrosityEngieEntity>of(MonstrosityEngieEntity::new, MobCategory.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MonstrosityEngieEntity::new).fireImmune().sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<HeWhoGamesEntity>> HE_WHO_GAMES = register("he_who_games", EntityType.Builder.<HeWhoGamesEntity>of(HeWhoGamesEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
-			.setTrackingRange(128).setUpdateInterval(3).setCustomClientFactory(HeWhoGamesEntity::new).fireImmune().sized(0.6f, 1.9f));
-	public static final RegistryObject<EntityType<HeWhoGamesHostileEntity>> HE_WHO_GAMES_HOSTILE = register("he_who_games_hostile", EntityType.Builder.<HeWhoGamesHostileEntity>of(HeWhoGamesHostileEntity::new, MobCategory.MONSTER)
-			.setShouldReceiveVelocityUpdates(true).setTrackingRange(128).setUpdateInterval(3).setCustomClientFactory(HeWhoGamesHostileEntity::new).fireImmune().sized(0.6f, 1.9f));
+	public static final RegistryObject<EntityType<HeWhoGamesEntity>> HE_WHO_GAMES = register("he_who_games",
+			EntityType.Builder.<HeWhoGamesEntity>of(HeWhoGamesEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(256).setUpdateInterval(3).setCustomClientFactory(HeWhoGamesEntity::new)
+
+					.sized(0.6f, 1.9f));
 	public static final RegistryObject<EntityType<InsanityEntity>> INSANITY = register("insanity",
 			EntityType.Builder.<InsanityEntity>of(InsanityEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(InsanityEntity::new).fireImmune().sized(0.6f, 1.9f));
 	public static final RegistryObject<EntityType<YellowLightningEntity>> YELLOW_LIGHTNING = register("yellow_lightning", EntityType.Builder.<YellowLightningEntity>of(YellowLightningEntity::new, MobCategory.MISC).setShouldReceiveVelocityUpdates(true)
@@ -271,8 +269,6 @@ public class EngiesChaosModEntities {
 			EntityType.Builder.<EngieGamesEntity>of(EngieGamesEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EngieGamesEntity::new)
 
 					.sized(0.6f, 1.9f));
-	public static final RegistryObject<EntityType<DDayLightningSpawnerEntity>> D_DAY_LIGHTNING_SPAWNER = register("d_day_lightning_spawner", EntityType.Builder.<DDayLightningSpawnerEntity>of(DDayLightningSpawnerEntity::new, MobCategory.MISC)
-			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(DDayLightningSpawnerEntity::new).fireImmune().sized(1f, 1f));
 	public static final RegistryObject<EntityType<DDAYRiftEntity>> DDAY_RIFT = register("dday_rift",
 			EntityType.Builder.<DDAYRiftEntity>of(DDAYRiftEntity::new, MobCategory.MISC).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(DDAYRiftEntity::new).fireImmune().sized(4f, 0.1f));
 	public static final RegistryObject<EntityType<EnragedEngieOldRiftedEntity>> ENRAGED_ENGIE_OLD_RIFTED = register("enraged_engie_old_rifted",
@@ -657,7 +653,6 @@ public class EngiesChaosModEntities {
 			BiblicallyAccurateEngieEntity.init();
 			MonstrosityEngieEntity.init();
 			HeWhoGamesEntity.init();
-			HeWhoGamesHostileEntity.init();
 			InsanityEntity.init();
 			YellowLightningEntity.init();
 			BlueBurstEntity.init();
@@ -671,7 +666,6 @@ public class EngiesChaosModEntities {
 			TheEndEntity.init();
 			TheEndHostileEntity.init();
 			EngieGamesEntity.init();
-			DDayLightningSpawnerEntity.init();
 			DDAYRiftEntity.init();
 			EnragedEngieOldRiftedEntity.init();
 			MadEngieOldRiftedEntity.init();
@@ -787,7 +781,6 @@ public class EngiesChaosModEntities {
 		event.put(BIBLICALLY_ACCURATE_ENGIE.get(), BiblicallyAccurateEngieEntity.createAttributes().build());
 		event.put(MONSTROSITY_ENGIE.get(), MonstrosityEngieEntity.createAttributes().build());
 		event.put(HE_WHO_GAMES.get(), HeWhoGamesEntity.createAttributes().build());
-		event.put(HE_WHO_GAMES_HOSTILE.get(), HeWhoGamesHostileEntity.createAttributes().build());
 		event.put(INSANITY.get(), InsanityEntity.createAttributes().build());
 		event.put(YELLOW_LIGHTNING.get(), YellowLightningEntity.createAttributes().build());
 		event.put(BLUE_BURST.get(), BlueBurstEntity.createAttributes().build());
@@ -801,7 +794,6 @@ public class EngiesChaosModEntities {
 		event.put(THE_END.get(), TheEndEntity.createAttributes().build());
 		event.put(THE_END_HOSTILE.get(), TheEndHostileEntity.createAttributes().build());
 		event.put(ENGIE_GAMES.get(), EngieGamesEntity.createAttributes().build());
-		event.put(D_DAY_LIGHTNING_SPAWNER.get(), DDayLightningSpawnerEntity.createAttributes().build());
 		event.put(DDAY_RIFT.get(), DDAYRiftEntity.createAttributes().build());
 		event.put(ENRAGED_ENGIE_OLD_RIFTED.get(), EnragedEngieOldRiftedEntity.createAttributes().build());
 		event.put(MAD_ENGIE_OLD_RIFTED.get(), MadEngieOldRiftedEntity.createAttributes().build());

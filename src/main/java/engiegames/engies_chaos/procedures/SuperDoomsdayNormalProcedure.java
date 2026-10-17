@@ -108,7 +108,7 @@ public class SuperDoomsdayNormalProcedure {
 									Entity _ent = entityiterator;
 									if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 										_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null,
-												4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "worldborder set 338");
+												4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "worldborder set 352");
 									}
 								}
 								{
@@ -423,7 +423,7 @@ public class SuperDoomsdayNormalProcedure {
 				if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart == true && EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayFullStart == true) {
 					if (world instanceof ServerLevel _level)
 						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())),
-								Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "worldborder set 338");
+								Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "worldborder set 352");
 					for (Entity entityiterator : new ArrayList<>(world.players())) {
 						{
 							Entity _ent = entityiterator;
@@ -440,9 +440,9 @@ public class SuperDoomsdayNormalProcedure {
 							}
 						}
 					}
-					EngiesChaosModVariables.MapVariables.get(world).RX = Math.round(Mth.nextDouble(RandomSource.create(), -168, 168));
+					EngiesChaosModVariables.MapVariables.get(world).RX = Math.round(Mth.nextDouble(RandomSource.create(), -175, 175));
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).RZ = Math.round(Mth.nextDouble(RandomSource.create(), -168, 168));
+					EngiesChaosModVariables.MapVariables.get(world).RZ = Math.round(Mth.nextDouble(RandomSource.create(), -175, 175));
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					if (EngiesChaosModVariables.MapVariables.get(world).ddayoncleanup == false) {
 						if (EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer == false) {

@@ -1,17 +1,17 @@
 package engiegames.engies_chaos.procedures;
 
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.network.chat.Component;
-import net.minecraft.commands.CommandSourceStack;
-import net.minecraft.commands.CommandSource;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
+import engiegames.engies_chaos.init.EngiesChaosModEntities;
+import engiegames.engies_chaos.entity.DDayAvalancheEntity;
 
 public class AvalancheSpawnProcedure {
 	public static void execute(LevelAccessor world) {
@@ -22,11 +22,18 @@ public class AvalancheSpawnProcedure {
 				if (Math.random() > 0.125) {
 					EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount = EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (world instanceof ServerLevel _level)
-						_level.getServer().getCommands()
-								.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL,
-										new Vec3((Mth.nextDouble(RandomSource.create(), -168, 168)), (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0) + 100), (Mth.nextDouble(RandomSource.create(), -168, 168))), Vec2.ZERO, _level, 4,
-										"", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "summon engies_chaos:d_day_avalanche");
+					EngiesChaosModVariables.MapVariables.get(world).AvalancheRX = Mth.nextInt(RandomSource.create(), -175, 175);
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).AvalancheRZ = Mth.nextInt(RandomSource.create(), -175, 175);
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = new DDayAvalancheEntity(EngiesChaosModEntities.D_DAY_AVALANCHE.get(), _level);
+						entityToSpawn.moveTo(EngiesChaosModVariables.MapVariables.get(world).AvalancheRX, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0) + 150), EngiesChaosModVariables.MapVariables.get(world).AvalancheRZ,
+								world.getRandom().nextFloat() * 360F, 0);
+						if (entityToSpawn instanceof Mob _mobToSpawn)
+							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+						_level.addFreshEntity(entityToSpawn);
+					}
 				}
 			}
 		} else if (EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayFullStart == true) {
@@ -36,11 +43,18 @@ public class AvalancheSpawnProcedure {
 				if (Math.random() > 0.25) {
 					EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount = EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (world instanceof ServerLevel _level)
-						_level.getServer().getCommands()
-								.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL,
-										new Vec3((Mth.nextDouble(RandomSource.create(), -168, 168)), (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0) + 100), (Mth.nextDouble(RandomSource.create(), -168, 168))), Vec2.ZERO, _level, 4,
-										"", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "summon engies_chaos:d_day_avalanche");
+					EngiesChaosModVariables.MapVariables.get(world).AvalancheRX = Mth.nextInt(RandomSource.create(), -175, 175);
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).AvalancheRZ = Mth.nextInt(RandomSource.create(), -175, 175);
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = new DDayAvalancheEntity(EngiesChaosModEntities.D_DAY_AVALANCHE.get(), _level);
+						entityToSpawn.moveTo(EngiesChaosModVariables.MapVariables.get(world).AvalancheRX, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0) + 150), EngiesChaosModVariables.MapVariables.get(world).AvalancheRZ,
+								world.getRandom().nextFloat() * 360F, 0);
+						if (entityToSpawn instanceof Mob _mobToSpawn)
+							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+						_level.addFreshEntity(entityToSpawn);
+					}
 				}
 			}
 		} else if (EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart == true) {
@@ -50,11 +64,18 @@ public class AvalancheSpawnProcedure {
 				if (Math.random() > 0.375) {
 					EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount = EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (world instanceof ServerLevel _level)
-						_level.getServer().getCommands()
-								.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL,
-										new Vec3((Mth.nextDouble(RandomSource.create(), -168, 168)), (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0) + 100), (Mth.nextDouble(RandomSource.create(), -168, 168))), Vec2.ZERO, _level, 4,
-										"", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "summon engies_chaos:d_day_avalanche");
+					EngiesChaosModVariables.MapVariables.get(world).AvalancheRX = Mth.nextInt(RandomSource.create(), -175, 175);
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).AvalancheRZ = Mth.nextInt(RandomSource.create(), -175, 175);
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = new DDayAvalancheEntity(EngiesChaosModEntities.D_DAY_AVALANCHE.get(), _level);
+						entityToSpawn.moveTo(EngiesChaosModVariables.MapVariables.get(world).AvalancheRX, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0) + 150), EngiesChaosModVariables.MapVariables.get(world).AvalancheRZ,
+								world.getRandom().nextFloat() * 360F, 0);
+						if (entityToSpawn instanceof Mob _mobToSpawn)
+							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+						_level.addFreshEntity(entityToSpawn);
+					}
 				}
 			}
 		} else if (EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart == true) {
@@ -64,11 +85,18 @@ public class AvalancheSpawnProcedure {
 				if (Math.random() < 0.5) {
 					EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount = EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount + 1;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (world instanceof ServerLevel _level)
-						_level.getServer().getCommands()
-								.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL,
-										new Vec3((Mth.nextDouble(RandomSource.create(), -168, 168)), (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0) + 100), (Mth.nextDouble(RandomSource.create(), -168, 168))), Vec2.ZERO, _level, 4,
-										"", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "summon engies_chaos:d_day_avalanche");
+					EngiesChaosModVariables.MapVariables.get(world).AvalancheRX = Mth.nextInt(RandomSource.create(), -175, 175);
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).AvalancheRZ = Mth.nextInt(RandomSource.create(), -175, 175);
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					if (world instanceof ServerLevel _level) {
+						Entity entityToSpawn = new DDayAvalancheEntity(EngiesChaosModEntities.D_DAY_AVALANCHE.get(), _level);
+						entityToSpawn.moveTo(EngiesChaosModVariables.MapVariables.get(world).AvalancheRX, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0) + 150), EngiesChaosModVariables.MapVariables.get(world).AvalancheRZ,
+								world.getRandom().nextFloat() * 360F, 0);
+						if (entityToSpawn instanceof Mob _mobToSpawn)
+							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+						_level.addFreshEntity(entityToSpawn);
+					}
 				}
 			}
 		}

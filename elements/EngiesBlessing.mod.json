@@ -2,48 +2,15 @@
   "_fv": 79,
   "_type": "enchantment",
   "definition": {
-    "name": "Engies Blessing",
+    "name": "Engie's Blessing",
     "supportedSlots": "any",
-    "weight": 10,
+    "weight": 6,
     "anvilCost": 2,
-    "maxLevel": 25,
+    "maxLevel": 5,
     "damageModifier": 25,
     "incompatibleEnchantments": [
       {
-        "value": "BINDING_CURSE"
-      },
-      {
-        "value": "SILK_TOUCH"
-      },
-      {
-        "value": "INFINITY"
-      },
-      {
-        "value": "LUCK_OF_THE_SEA"
-      },
-      {
-        "value": "LURE"
-      },
-      {
-        "value": "LOYALTY"
-      },
-      {
-        "value": "IMPALING"
-      },
-      {
-        "value": "RIPTIDE"
-      },
-      {
-        "value": "CHANNELING"
-      },
-      {
-        "value": "MULTISHOT"
-      },
-      {
-        "value": "QUICK_CHARGE"
-      },
-      {
-        "value": "PIERCING"
+        "value": "#engies_chaos:blessing_not_allowed"
       }
     ],
     "supportedItems": [

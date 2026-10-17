@@ -5,7 +5,7 @@
   },
   "spawners": {
     "type": "engies_chaos:he_who_games",
-    "weight": 5,
+    "weight": 1,
     "minCount": 1,
     "maxCount": 1
   }

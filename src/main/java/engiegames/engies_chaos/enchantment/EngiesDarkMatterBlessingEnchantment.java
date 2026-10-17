@@ -31,11 +31,11 @@ public class EngiesDarkMatterBlessingEnchantment extends Enchantment {
 
 	@Override
 	public int getMaxLevel() {
-		return 25;
+		return 5;
 	}
 
 	@Override
 	protected boolean checkCompatibility(Enchantment enchantment) {
-		return super.checkCompatibility(enchantment) && !List.of(Enchantments.BINDING_CURSE, Enchantments.VANISHING_CURSE).contains(enchantment);
+		return super.checkCompatibility(enchantment) && !List.of(Enchantments.BLOCK_EFFICIENCY).contains(enchantment);
 	}
 }

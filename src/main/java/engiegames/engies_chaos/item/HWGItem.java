@@ -5,9 +5,7 @@ import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
-import net.minecraft.world.level.Level;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ArmorMaterial;
@@ -17,45 +15,65 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.Component;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.Minecraft;
 
 import java.util.function.Consumer;
 import java.util.Map;
-import java.util.List;
 import java.util.Collections;
 
-import engiegames.engies_chaos.client.model.Modelcustomarmorr;
-import engiegames.engies_chaos.client.model.Modelcustomarmorl;
+import engiegames.engies_chaos.init.EngiesChaosModItems;
+import engiegames.engies_chaos.init.EngiesChaosModBlocks;
+import engiegames.engies_chaos.client.model.Modelxengiegamesarmor;
 
 public abstract class HWGItem extends ArmorItem {
 	public HWGItem(EquipmentSlot slot, Item.Properties properties) {
 		super(new ArmorMaterial() {
 			@Override
 			public int getDurabilityForSlot(EquipmentSlot slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 300;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 975;
 			}
 
 			@Override
 			public int getDefenseForSlot(EquipmentSlot slot) {
-				return new int[]{300, 300, 300, 300}[slot.getIndex()];
+				return new int[]{975, 975, 975, 975}[slot.getIndex()];
 			}
 
 			@Override
 			public int getEnchantmentValue() {
-				return 35;
+				return 22;
 			}
 
 			@Override
 			public SoundEvent getEquipSound() {
-				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(""));
+				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_netherite"));
 			}
 
 			@Override
 			public Ingredient getRepairIngredient() {
-				return Ingredient.of();
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.ANGRY_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.ENRAGED_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.OUTRAGED_ENGIE_ESSENCE.get()),
+						new ItemStack(EngiesChaosModItems.BIBLICALLY_ACCURATE_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.MONSTROSITY_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.ANTIMATTER_ANGRY_ENGIE_ESSENCE.get()),
+						new ItemStack(EngiesChaosModItems.ANTIMATTER_ENRAGED_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.ANTIMATTER_OUTRAGED_ENGIE_ESSENCE.get()),
+						new ItemStack(EngiesChaosModItems.ANTIMATTER_BIBLICALLY_ACCURATE_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.ANTIMATTER_MONSTROSITY_ENGIE_ESSENCE.get()),
+						new ItemStack(EngiesChaosModItems.DARK_MATTER_ANGRY_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.DARK_MATTER_ENRAGED_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.DARK_MATTER_OUTRAGED_ENGIE_ESSENCE.get()),
+						new ItemStack(EngiesChaosModItems.DARK_MATTER_BIBLICALLY_ACCURATE_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.DARK_MATTER_MONSTROSITY_ENGIE_ESSENCE.get()),
+						new ItemStack(EngiesChaosModItems.MAD_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.ANTIMATTER_MAD_ENGIE_ESSENCE.get()), new ItemStack(EngiesChaosModItems.DARK_MATTER_MAD_ENGIE_ESSENCE.get()),
+						new ItemStack(EngiesChaosModItems.DOOMS_DAY_COIN.get()), new ItemStack(EngiesChaosModItems.SUPER_DOOMS_DAY_COIN.get()), new ItemStack(EngiesChaosModItems.THE_END_COIN.get()),
+						new ItemStack(EngiesChaosModItems.ENGIE_COIN.get()), new ItemStack(EngiesChaosModItems.ANTIMATTER_THE_END_COIN.get()), new ItemStack(EngiesChaosModItems.ANTIMATTER_ENGIE_COIN.get()),
+						new ItemStack(EngiesChaosModItems.ANTIMATTER_DOOMSDAY_COIN.get()), new ItemStack(EngiesChaosModItems.ANTIMATTER_SUPER_DOOMSDAY_COIN.get()), new ItemStack(EngiesChaosModItems.COSMIC_ENGIE_COIN.get()),
+						new ItemStack(EngiesChaosModItems.ENGIE_GAMES_COIN.get()), new ItemStack(EngiesChaosModItems.ANTIMATTER_ENGIE_GAMES_COIN.get()), new ItemStack(EngiesChaosModItems.MINDSCAPE_COIN.get()),
+						new ItemStack(EngiesChaosModBlocks.DOOMS_DAY_COIN_BLOCK.get()), new ItemStack(EngiesChaosModBlocks.SUPER_DOOMS_DAY_COIN_BLOCK.get()), new ItemStack(EngiesChaosModBlocks.THE_END_COIN_BLOCK.get()),
+						new ItemStack(EngiesChaosModBlocks.ENGIE_COIN_BLOCK.get()), new ItemStack(EngiesChaosModBlocks.MINDSCAPE_COIN_BLOCK.get()), new ItemStack(EngiesChaosModBlocks.ENGIE_GAMES_COIN_BLOCK.get()),
+						new ItemStack(EngiesChaosModBlocks.ANTIMATTER_DOOMS_DAY_COIN_BLOCK.get()), new ItemStack(EngiesChaosModBlocks.ANTIMATTER_SUPER_DOOMS_DAY_COIN_BLOCK.get()),
+						new ItemStack(EngiesChaosModBlocks.ANTIMATTER_THE_END_COIN_BLOCK.get()), new ItemStack(EngiesChaosModBlocks.ANTIMATTER_ENGIE_COIN_BLOCK.get()), new ItemStack(EngiesChaosModBlocks.ANTIMATTER_ENGIE_GAMES_COIN_BLOCK.get()),
+						new ItemStack(EngiesChaosModBlocks.COSMIC_ENGIE_GAMES_COIN_BLOCK.get()), new ItemStack(EngiesChaosModBlocks.ENGIE_GAMES_TESSERACT_BLOCK.get()), new ItemStack(EngiesChaosModItems.DARK_MATTER_DOOMS_DAY_COIN.get()),
+						new ItemStack(EngiesChaosModItems.DARK_MATTER_SUPER_DOOMS_DAY_COIN.get()), new ItemStack(EngiesChaosModItems.DARK_MATTER_THE_END_COIN.get()), new ItemStack(EngiesChaosModItems.DARK_MATTER_ENGIE_COIN.get()),
+						new ItemStack(EngiesChaosModItems.DARK_MATTER_ENGIE_GAMES_COIN.get()), new ItemStack(EngiesChaosModItems.DARK_MATTER_COSMIC_ENGIE_COIN.get()), new ItemStack(EngiesChaosModBlocks.DARK_MATTER_DOOMS_DAY_COIN_BLOCK.get()),
+						new ItemStack(EngiesChaosModBlocks.DARK_MATTER_SUPER_DOOMS_DAY_COIN_BLOCK.get()), new ItemStack(EngiesChaosModBlocks.DARK_MATTER_THE_END_COIN_BLOCK.get()),
+						new ItemStack(EngiesChaosModBlocks.DARK_MATTER_ENGIE_COIN_BLOCK.get()), new ItemStack(EngiesChaosModBlocks.DARK_MATTER_ENGIE_GAMES_COIN_BLOCK.get()),
+						new ItemStack(EngiesChaosModBlocks.DARK_MATTER_COSMIC_ENGIE_GAMES_COIN_BLOCK.get()), new ItemStack(EngiesChaosModBlocks.DARK_MATTER_ROUGHIAN_ENGIE_GAMES_COIN_BLOCK.get()), new ItemStack(EngiesChaosModItems.ENGIE_GEM.get()),
+						new ItemStack(EngiesChaosModItems.ANTIMATTER_ENGIE_GEM.get()), new ItemStack(EngiesChaosModItems.DARK_MATTER_ENGIE_GEM.get()));
 			}
 
 			@Override
@@ -65,12 +83,12 @@ public abstract class HWGItem extends ArmorItem {
 
 			@Override
 			public float getToughness() {
-				return 7f;
+				return 300f;
 			}
 
 			@Override
 			public float getKnockbackResistance() {
-				return 0.4f;
+				return 3.9f;
 			}
 		}, slot, properties);
 	}
@@ -87,7 +105,7 @@ public abstract class HWGItem extends ArmorItem {
 				@OnlyIn(Dist.CLIENT)
 				public HumanoidModel getHumanoidArmorModel(LivingEntity living, ItemStack stack, EquipmentSlot slot, HumanoidModel defaultModel) {
 					HumanoidModel armorModel = new HumanoidModel(new ModelPart(Collections.emptyList(),
-							Map.of("head", new Modelcustomarmorl(Minecraft.getInstance().getEntityModels().bakeLayer(Modelcustomarmorl.LAYER_LOCATION)).Helmet, "hat", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "body",
+							Map.of("head", new Modelxengiegamesarmor(Minecraft.getInstance().getEntityModels().bakeLayer(Modelxengiegamesarmor.LAYER_LOCATION)).Head, "hat", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "body",
 									new ModelPart(Collections.emptyList(), Collections.emptyMap()), "right_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "left_arm",
 									new ModelPart(Collections.emptyList(), Collections.emptyMap()), "right_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "left_leg",
 									new ModelPart(Collections.emptyList(), Collections.emptyMap()))));
@@ -97,13 +115,6 @@ public abstract class HWGItem extends ArmorItem {
 					return armorModel;
 				}
 			});
-		}
-
-		@Override
-		public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
-			super.appendHoverText(itemstack, level, list, flag);
-			list.add(Component.translatable("item.engies_chaos.hwg_helmet.description_0"));
-			list.add(Component.translatable("item.engies_chaos.hwg_helmet.description_1"));
 		}
 
 		@Override
@@ -123,9 +134,9 @@ public abstract class HWGItem extends ArmorItem {
 				@Override
 				@OnlyIn(Dist.CLIENT)
 				public HumanoidModel getHumanoidArmorModel(LivingEntity living, ItemStack stack, EquipmentSlot slot, HumanoidModel defaultModel) {
-					HumanoidModel armorModel = new HumanoidModel(new ModelPart(Collections.emptyList(), Map.of("body", new Modelcustomarmorl(Minecraft.getInstance().getEntityModels().bakeLayer(Modelcustomarmorl.LAYER_LOCATION)).Chestplate,
-							"left_arm", new Modelcustomarmorl(Minecraft.getInstance().getEntityModels().bakeLayer(Modelcustomarmorl.LAYER_LOCATION)).ArmsL, "right_arm",
-							new Modelcustomarmorl(Minecraft.getInstance().getEntityModels().bakeLayer(Modelcustomarmorl.LAYER_LOCATION)).ArmsR, "head", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "hat",
+					HumanoidModel armorModel = new HumanoidModel(new ModelPart(Collections.emptyList(), Map.of("body", new Modelxengiegamesarmor(Minecraft.getInstance().getEntityModels().bakeLayer(Modelxengiegamesarmor.LAYER_LOCATION)).Body,
+							"left_arm", new Modelxengiegamesarmor(Minecraft.getInstance().getEntityModels().bakeLayer(Modelxengiegamesarmor.LAYER_LOCATION)).LeftArm, "right_arm",
+							new Modelxengiegamesarmor(Minecraft.getInstance().getEntityModels().bakeLayer(Modelxengiegamesarmor.LAYER_LOCATION)).RightArm, "head", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "hat",
 							new ModelPart(Collections.emptyList(), Collections.emptyMap()), "right_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "left_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap()))));
 					armorModel.crouching = living.isShiftKeyDown();
 					armorModel.riding = defaultModel.riding;
@@ -133,13 +144,6 @@ public abstract class HWGItem extends ArmorItem {
 					return armorModel;
 				}
 			});
-		}
-
-		@Override
-		public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
-			super.appendHoverText(itemstack, level, list, flag);
-			list.add(Component.translatable("item.engies_chaos.hwg_chestplate.description_0"));
-			list.add(Component.translatable("item.engies_chaos.hwg_chestplate.description_1"));
 		}
 
 		@Override
@@ -160,8 +164,8 @@ public abstract class HWGItem extends ArmorItem {
 				@OnlyIn(Dist.CLIENT)
 				public HumanoidModel getHumanoidArmorModel(LivingEntity living, ItemStack stack, EquipmentSlot slot, HumanoidModel defaultModel) {
 					HumanoidModel armorModel = new HumanoidModel(new ModelPart(Collections.emptyList(),
-							Map.of("left_leg", new Modelcustomarmorr(Minecraft.getInstance().getEntityModels().bakeLayer(Modelcustomarmorr.LAYER_LOCATION)).LeggingsL, "right_leg",
-									new Modelcustomarmorr(Minecraft.getInstance().getEntityModels().bakeLayer(Modelcustomarmorr.LAYER_LOCATION)).LeggingsR, "head", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "hat",
+							Map.of("left_leg", new Modelxengiegamesarmor(Minecraft.getInstance().getEntityModels().bakeLayer(Modelxengiegamesarmor.LAYER_LOCATION)).LeftLeg, "right_leg",
+									new Modelxengiegamesarmor(Minecraft.getInstance().getEntityModels().bakeLayer(Modelxengiegamesarmor.LAYER_LOCATION)).RightLeg, "head", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "hat",
 									new ModelPart(Collections.emptyList(), Collections.emptyMap()), "body", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "right_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
 									"left_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()))));
 					armorModel.crouching = living.isShiftKeyDown();
@@ -170,13 +174,6 @@ public abstract class HWGItem extends ArmorItem {
 					return armorModel;
 				}
 			});
-		}
-
-		@Override
-		public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
-			super.appendHoverText(itemstack, level, list, flag);
-			list.add(Component.translatable("item.engies_chaos.hwg_leggings.description_0"));
-			list.add(Component.translatable("item.engies_chaos.hwg_leggings.description_1"));
 		}
 
 		@Override
@@ -197,8 +194,8 @@ public abstract class HWGItem extends ArmorItem {
 				@OnlyIn(Dist.CLIENT)
 				public HumanoidModel getHumanoidArmorModel(LivingEntity living, ItemStack stack, EquipmentSlot slot, HumanoidModel defaultModel) {
 					HumanoidModel armorModel = new HumanoidModel(new ModelPart(Collections.emptyList(),
-							Map.of("left_leg", new Modelcustomarmorl(Minecraft.getInstance().getEntityModels().bakeLayer(Modelcustomarmorl.LAYER_LOCATION)).BootsL, "right_leg",
-									new Modelcustomarmorl(Minecraft.getInstance().getEntityModels().bakeLayer(Modelcustomarmorl.LAYER_LOCATION)).BootsR, "head", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "hat",
+							Map.of("left_leg", new Modelxengiegamesarmor(Minecraft.getInstance().getEntityModels().bakeLayer(Modelxengiegamesarmor.LAYER_LOCATION)).LeftBoot, "right_leg",
+									new Modelxengiegamesarmor(Minecraft.getInstance().getEntityModels().bakeLayer(Modelxengiegamesarmor.LAYER_LOCATION)).RightBoot, "head", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "hat",
 									new ModelPart(Collections.emptyList(), Collections.emptyMap()), "body", new ModelPart(Collections.emptyList(), Collections.emptyMap()), "right_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()),
 									"left_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap()))));
 					armorModel.crouching = living.isShiftKeyDown();
@@ -207,13 +204,6 @@ public abstract class HWGItem extends ArmorItem {
 					return armorModel;
 				}
 			});
-		}
-
-		@Override
-		public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
-			super.appendHoverText(itemstack, level, list, flag);
-			list.add(Component.translatable("item.engies_chaos.hwg_boots.description_0"));
-			list.add(Component.translatable("item.engies_chaos.hwg_boots.description_1"));
 		}
 
 		@Override

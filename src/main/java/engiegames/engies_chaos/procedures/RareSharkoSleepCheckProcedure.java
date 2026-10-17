@@ -1,6 +1,5 @@
 package engiegames.engies_chaos.procedures;
 
-import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.Entity;
 
 import engiegames.engies_chaos.entity.RareSharkoEntity;
@@ -9,9 +8,9 @@ public class RareSharkoSleepCheckProcedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		if ((entity instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false) && (entity instanceof RareSharkoEntity _datEntI ? _datEntI.getEntityData().get(RareSharkoEntity.DATA_SharkoState) : 0) == 4) {
+		if ((entity instanceof RareSharkoEntity _datEntI ? _datEntI.getEntityData().get(RareSharkoEntity.DATA_SharkoState) : 0) == 4) {
 			return false;
-		} else if ((entity instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false) && (entity instanceof RareSharkoEntity _datEntI ? _datEntI.getEntityData().get(RareSharkoEntity.DATA_SharkoState) : 0) != 4) {
+		} else if ((entity instanceof RareSharkoEntity _datEntI ? _datEntI.getEntityData().get(RareSharkoEntity.DATA_SharkoState) : 0) != 4) {
 			return true;
 		}
 		return false;

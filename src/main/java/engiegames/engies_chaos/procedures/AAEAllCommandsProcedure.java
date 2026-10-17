@@ -26,9 +26,9 @@ public class AAEAllCommandsProcedure {
 	public static void execute(LevelAccessor world, CommandContext<CommandSourceStack> arguments, Entity entity) {
 		if (entity == null)
 			return;
-		if ((StringArgumentType.getString(arguments, "MainType")).equals("Doomsday") || (StringArgumentType.getString(arguments, "MainType")).equals("doomsday")) {
-			if ((StringArgumentType.getString(arguments, "AltType")).equals("Summon") || (StringArgumentType.getString(arguments, "AltType")).equals("summon")) {
-				if (entity.getPersistentData().getBoolean("EngiesChaos_Dev") == true) {
+		if (((StringArgumentType.getString(arguments, "MainType")).toLowerCase()).equals("dev")) {
+			if (entity.getPersistentData().getBoolean("EngiesChaos_Dev") == true) {
+				if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("summondoomsday") || ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("ddaysummon")) {
 					{
 						Entity _ent = entity;
 						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
@@ -38,77 +38,14 @@ public class AAEAllCommandsProcedure {
 									"tellraw @a [\"\",{\"selector\":\"@p\",\"bold\":true,\"color\":\"gold\"},{\"text\":\" has summoned Doomsday! It will occur the next day.\",\"bold\":true,\"color\":\"gold\"}]");
 						}
 					}
-					EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = Mth.nextDouble(RandomSource.create(), 50, 100);
+					EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = 525;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosMod.LOGGER.debug("THE DEVELOPER SUMMONED DOOMSDAY!!!!!");
-				} else if (world.players().size() == 1) {
-					if (entity.hasPermissions(4)) {
-						{
-							Entity _ent = entity;
-							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(
-										new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
-												_ent.level.getServer(), _ent),
-										"tellraw @a [\"\",{\"selector\":\"@p\",\"bold\":true,\"color\":\"gold\"},{\"text\":\" has summoned Doomsday! It will occur the next day.\",\"bold\":true,\"color\":\"gold\"}]");
-							}
-						}
-						EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = Mth.nextDouble(RandomSource.create(), 50, 100);
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosMod.LOGGER.debug((entity + " summoned Doomsday."));
-					}
-				} else if (world.players().size() > 1) {
-					if (entity.hasPermissions(4)) {
-						{
-							Entity _ent = entity;
-							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(
-										new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
-												_ent.level.getServer(), _ent),
-										"tellraw @a [\"\",{\"selector\":\"@p\",\"bold\":true,\"color\":\"gold\"},{\"text\":\" has summoned Doomsday! It will occur the next day.\",\"bold\":true,\"color\":\"gold\"}]");
-							}
-						}
-						EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = Mth.nextDouble(RandomSource.create(), 50, 100);
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosMod.LOGGER.debug((entity + " summoned Doomsday."));
-					}
-				} else {
-					{
-						Entity _ent = entity;
-						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "tellraw @p {\"text\":\"You do not have permission to run this command!\",\"color\":\"red\"}");
-						}
-					}
-				}
-			} else if ((StringArgumentType.getString(arguments, "AltType")).equals("GetRisk") || (StringArgumentType.getString(arguments, "AltType")).equals("getrisk")) {
-				RiskCheckProcedure.execute(world, entity);
-			} else if ((StringArgumentType.getString(arguments, "AltType")).equals("CleanUp") || (StringArgumentType.getString(arguments, "AltType")).equals("cleanup")) {
-				if (entity.getPersistentData().getBoolean("EngiesChaos_Dev") == true) {
+				} else if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("cleanupdoomsday") || ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("ddaycleanup")
+						|| ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("cleandday")) {
 					DoomsdayManualCleanupProcedure.execute(world);
 					EngiesChaosMod.LOGGER.debug("THE DEVELOPER CLEANED UP DOOMSDAY!!!!!");
-				} else if (world.players().size() == 1) {
-					if (entity.hasPermissions(4)) {
-						DoomsdayManualCleanupProcedure.execute(world);
-						EngiesChaosMod.LOGGER.debug((entity + " ran Doomsday cleanup."));
-					}
-				} else if (world.players().size() > 1) {
-					if (entity.hasPermissions(4)) {
-						DoomsdayManualCleanupProcedure.execute(world);
-						EngiesChaosMod.LOGGER.debug((entity + " ran Doomsday cleanup."));
-					}
-				} else {
-					{
-						Entity _ent = entity;
-						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "tellraw @p {\"text\":\"You do not have permission to run this command!\",\"color\":\"red\"}");
-						}
-					}
-				}
-			}
-		} else if ((StringArgumentType.getString(arguments, "MainType")).equals("PickaxeOnly") || (StringArgumentType.getString(arguments, "MainType")).equals("PickaxeOnly")) {
-			if ((StringArgumentType.getString(arguments, "AltType")).equals("Reset") || (StringArgumentType.getString(arguments, "AltType")).equals("reset")) {
-				if (entity.getPersistentData().getBoolean("EngiesChaos_Dev") == true) {
+				} else if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("resetpickaxeonly")) {
 					if (entity instanceof Player _player && !_player.level.isClientSide())
 						_player.displayClientMessage(Component.literal("Successfully reset the Pickaxe Only count!"), true);
 					EngiesChaosMod.LOGGER.info((entity.getDisplayName().getString() + " reset the Pickaxe Only count for all players."));
@@ -121,48 +58,85 @@ public class AAEAllCommandsProcedure {
 							});
 						}
 					}
-				} else if (world.players().size() == 1) {
-					if (entity.hasPermissions(4)) {
-						if (entity instanceof Player _player && !_player.level.isClientSide())
-							_player.displayClientMessage(Component.literal("Successfully reset the Pickaxe Only count!"), true);
-						EngiesChaosMod.LOGGER.info((entity.getDisplayName().getString() + " reset the Pickaxe Only count for all players."));
-						for (Entity entityiterator : new ArrayList<>(world.players())) {
+				} else if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("setlives")) {
+					if (!((commandParameterEntity(arguments, "user")) == null)) {
+						if (DoubleArgumentType.getDouble(arguments, "number") <= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRUE_HARDCORE_LIFE_COUNT))) {
 							{
-								double _setval = 0;
-								entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.pickaxeonly = _setval;
-									capability.syncPlayerVariables(entityiterator);
+								double _setval = DoubleArgumentType.getDouble(arguments, "number");
+								(commandParameterEntity(arguments, "user")).getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.TrueHardcoreLifeCount = _setval;
+									capability.syncPlayerVariables((commandParameterEntity(arguments, "user")));
 								});
 							}
-						}
-					}
-				} else if (world.players().size() > 1) {
-					if (entity.hasPermissions(4)) {
-						if (entity instanceof Player _player && !_player.level.isClientSide())
-							_player.displayClientMessage(Component.literal("Successfully reset the Pickaxe Only count!"), true);
-						EngiesChaosMod.LOGGER.info((entity.getDisplayName().getString() + " reset the Pickaxe Only count for all players."));
-						for (Entity entityiterator : new ArrayList<>(world.players())) {
+							if (entity instanceof Player _player && !_player.level.isClientSide())
+								_player.displayClientMessage(Component.literal(("Successfully set " + commandParameterEntity(arguments, "user") + "'s lives to " + DoubleArgumentType.getDouble(arguments, "number") + ".")), false);
+							EngiesChaosMod.LOGGER.debug((entity + " set " + commandParameterEntity(arguments, "user") + "'s lives were set to " + DoubleArgumentType.getDouble(arguments, "number") + "."));
+						} else if (DoubleArgumentType.getDouble(arguments, "number") > (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRUE_HARDCORE_LIFE_COUNT))) {
 							{
-								double _setval = 0;
-								entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.pickaxeonly = _setval;
-									capability.syncPlayerVariables(entityiterator);
+								double _setval = (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRUE_HARDCORE_LIFE_COUNT));
+								(commandParameterEntity(arguments, "user")).getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.TrueHardcoreLifeCount = _setval;
+									capability.syncPlayerVariables((commandParameterEntity(arguments, "user")));
 								});
 							}
+							if (entity instanceof Player _player && !_player.level.isClientSide())
+								_player.displayClientMessage(Component.literal(("\u00A7cYou went over the maximum life count so " + commandParameterEntity(arguments, "user") + "'s lives were set to "
+										+ (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRUE_HARDCORE_LIFE_COUNT)) + "!")), false);
+							EngiesChaosMod.LOGGER.debug((entity + " tried setting " + commandParameterEntity(arguments, "user") + "'s lives to " + DoubleArgumentType.getDouble(arguments, "number") + " which was over the limit and were set to "
+									+ (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRUE_HARDCORE_LIFE_COUNT)) + "."));
 						}
+					} else {
+						if (entity instanceof Player _player && !_player.level.isClientSide())
+							_player.displayClientMessage(Component.literal("\u00A7cYou need an player to use this command on them!"), false);
 					}
-				} else {
-					{
-						Entity _ent = entity;
-						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "tellraw @p {\"text\":\"You do not have permission to run this command!\",\"color\":\"red\"}");
-						}
+				}
+			} else {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "tellraw @p {\"text\":\"You do not have permission to run this command!\",\"color\":\"red\"}");
 					}
 				}
 			}
-		} else if ((StringArgumentType.getString(arguments, "MainType")).equals("Lives") || (StringArgumentType.getString(arguments, "MainType")).equals("lives")) {
-			if ((StringArgumentType.getString(arguments, "AltType")).equals("Set") || (StringArgumentType.getString(arguments, "AltType")).equals("set")) {
+		} else if (((StringArgumentType.getString(arguments, "MainType")).toLowerCase()).equals("admin")) {
+			if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("summondoomsday") || ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("ddaysummon")) {
+				if (entity.hasPermissions(4)) {
+					{
+						Entity _ent = entity;
+						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(
+									new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
+											_ent.level.getServer(), _ent),
+									"tellraw @a [\"\",{\"selector\":\"@p\",\"bold\":true,\"color\":\"gold\"},{\"text\":\" has summoned Doomsday! It will occur the next day.\",\"bold\":true,\"color\":\"gold\"}]");
+						}
+					}
+					EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = Mth.nextDouble(RandomSource.create(), 50, 100);
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosMod.LOGGER.debug((entity + " summoned Doomsday."));
+				}
+			} else if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("cleanupdoomsday") || ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("ddaycleanup")
+					|| ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("cleandday")) {
+				if (entity.hasPermissions(4)) {
+					DoomsdayManualCleanupProcedure.execute(world);
+					EngiesChaosMod.LOGGER.debug((entity + " ran Doomsday cleanup."));
+				}
+			} else if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("resetpickaxeonly")) {
+				if (entity.hasPermissions(4)) {
+					if (entity instanceof Player _player && !_player.level.isClientSide())
+						_player.displayClientMessage(Component.literal("Successfully reset the Pickaxe Only count!"), true);
+					EngiesChaosMod.LOGGER.info((entity.getDisplayName().getString() + " reset the Pickaxe Only count for all players."));
+					for (Entity entityiterator : new ArrayList<>(world.players())) {
+						{
+							double _setval = 0;
+							entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.pickaxeonly = _setval;
+								capability.syncPlayerVariables(entityiterator);
+							});
+						}
+					}
+				}
+			} else if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("setlives")) {
 				if (!((commandParameterEntity(arguments, "user")) == null)) {
 					if (DoubleArgumentType.getDouble(arguments, "number") <= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRUE_HARDCORE_LIFE_COUNT))) {
 						{
@@ -193,7 +167,11 @@ public class AAEAllCommandsProcedure {
 					if (entity instanceof Player _player && !_player.level.isClientSide())
 						_player.displayClientMessage(Component.literal("\u00A7cYou need an player to use this command on them!"), false);
 				}
-			} else if ((StringArgumentType.getString(arguments, "AltType")).equals("Set2") || (StringArgumentType.getString(arguments, "AltType")).equals("set2")) {
+			}
+		} else if (((StringArgumentType.getString(arguments, "MainType")).toLowerCase()).equals("getddayrisk") || ((StringArgumentType.getString(arguments, "MainType")).toLowerCase()).equals("getrisk")) {
+			RiskCheckProcedure.execute(world, entity);
+		} else if (((StringArgumentType.getString(arguments, "MainType")).toLowerCase()).equals("mod")) {
+			if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("setlives")) {
 				if (!((commandParameterEntity(arguments, "user")) == null)) {
 					if (DoubleArgumentType.getDouble(arguments, "number") <= (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRUE_HARDCORE_LIFE_COUNT))) {
 						{
@@ -215,9 +193,6 @@ public class AAEAllCommandsProcedure {
 				} else {
 					EngiesChaosMod.LOGGER.warn("NO USER FOUND!!!");
 				}
-			} else {
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("\u00A7cYou forgot some context here silly."), false);
 			}
 		}
 	}

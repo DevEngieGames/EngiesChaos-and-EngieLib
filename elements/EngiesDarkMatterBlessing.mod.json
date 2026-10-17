@@ -2,18 +2,15 @@
   "_fv": 79,
   "_type": "enchantment",
   "definition": {
-    "name": "Engies Dark Matter Blessing",
+    "name": "Engie's Dark Matter Blessing",
     "supportedSlots": "mainhand",
     "weight": 1,
     "anvilCost": 1,
-    "maxLevel": 25,
+    "maxLevel": 5,
     "damageModifier": 0,
     "incompatibleEnchantments": [
       {
-        "value": "BINDING_CURSE"
-      },
-      {
-        "value": "VANISHING_CURSE"
+        "value": "#engies_chaos:blessing_not_allowed"
       }
     ],
     "supportedItems": [

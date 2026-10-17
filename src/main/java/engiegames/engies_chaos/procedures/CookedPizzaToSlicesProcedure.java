@@ -17,7 +17,7 @@ public class CookedPizzaToSlicesProcedure {
 			_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 		}
 		if (entity instanceof Player _player) {
-			ItemStack _setstack = new ItemStack(EngiesChaosModItems.COOKED_PIZZA.get()).copy();
+			ItemStack _setstack = new ItemStack(EngiesChaosModItems.PIZZA_SLICE.get()).copy();
 			_setstack.setCount(4);
 			ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 		}

@@ -55,7 +55,7 @@ public class EngiePocTickingProcedure {
 							_level.getServer().getCommands().performPrefixedCommand(
 									new CommandSourceStack(CommandSource.NULL, new Vec3(0, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0)), 0), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null)
 											.withSuppressedOutput(),
-									"execute as @a run EngiesChaos Lives Set2 @s 999999");
+									"execute as @a run EngiesChaos mod setlives @s 999999");
 					} else if (EngiesChaosModVariables.MapVariables.get(world).engiepocgraceperiod >= 6000) {
 						world.getLevelData().getGameRules().getRule(EngiesChaosModGameRules.AMBIENCE_MODE).set(false, world.getServer());
 						EngiesChaosModVariables.MapVariables.get(world).difficultytoggle = true;

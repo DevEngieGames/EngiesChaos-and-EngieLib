@@ -32,7 +32,7 @@ public class EngiesBlessingEnchantment extends Enchantment {
 
 	@Override
 	public int getMaxLevel() {
-		return 25;
+		return 5;
 	}
 
 	@Override
@@ -42,7 +42,6 @@ public class EngiesBlessingEnchantment extends Enchantment {
 
 	@Override
 	protected boolean checkCompatibility(Enchantment enchantment) {
-		return super.checkCompatibility(enchantment) && !List.of(Enchantments.BINDING_CURSE, Enchantments.SILK_TOUCH, Enchantments.INFINITY_ARROWS, Enchantments.FISHING_LUCK, Enchantments.FISHING_SPEED, Enchantments.LOYALTY, Enchantments.IMPALING,
-				Enchantments.RIPTIDE, Enchantments.CHANNELING, Enchantments.MULTISHOT, Enchantments.QUICK_CHARGE, Enchantments.PIERCING).contains(enchantment);
+		return super.checkCompatibility(enchantment) && !List.of(Enchantments.BLOCK_EFFICIENCY).contains(enchantment);
 	}
 }

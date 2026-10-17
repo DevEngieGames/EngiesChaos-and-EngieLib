@@ -4,19 +4,13 @@
   "definition": {
     "name": "Engie's True Blessing",
     "supportedSlots": "any",
-    "weight": 1,
+    "weight": 2,
     "anvilCost": 1,
-    "maxLevel": 50,
+    "maxLevel": 5,
     "damageModifier": 50,
     "incompatibleEnchantments": [
       {
-        "value": "BINDING_CURSE"
-      },
-      {
-        "value": "SILK_TOUCH"
-      },
-      {
-        "value": "VANISHING_CURSE"
+        "value": "#engies_chaos:blessing_not_allowed"
       }
     ],
     "supportedItems": [
