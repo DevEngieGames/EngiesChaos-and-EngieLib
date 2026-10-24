@@ -2,7 +2,7 @@
 ## To PROPERLY report issues for either mod, PLEASE use their proper labels.
 ### Mod updates can be found under the releases page!
 ### If you're having difficulties trying to install the mods, you can look it up.
-## If you want to find the resourcepack compatibility for EngieLib and Engie's Chaos do the following:
+## If you want to find the resourcepacks for Engie's Chaos do the following:
 ### Change the branch to "Resourcepacks" and find the right resourcepack, the name of the resourcepack *should* tell you what it is.
 ## Code
 ### Check out the branches.
