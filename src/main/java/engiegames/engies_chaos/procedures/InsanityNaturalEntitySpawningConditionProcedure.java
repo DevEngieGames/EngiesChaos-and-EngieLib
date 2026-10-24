@@ -11,21 +11,7 @@ public class InsanityNaturalEntitySpawningConditionProcedure {
 			if ((world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.INSANITY_DIFFICULTY) || world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.APOCALYPSE_THREE)
 					|| world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIE_POC) || EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart || EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart
 					|| EngiesChaosModVariables.MapVariables.get(world).engiestruewrath) == true) {
-				if ((world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.APOCALYPSE_THREE) || world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIE_POC)
-						|| EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart || EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart || EngiesChaosModVariables.MapVariables.get(world).engiestruewrath) == true) {
-					return true;
-				} else if (!((world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.APOCALYPSE_THREE) || world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIE_POC)
-						|| EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart || EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart || EngiesChaosModVariables.MapVariables.get(world).engiestruewrath) == true)) {
-					if (EngiesChaosModVariables.MapVariables.get(world).ChallengeToggle == false) {
-						return true;
-					} else if (EngiesChaosModVariables.MapVariables.get(world).ChallengeToggle == true) {
-						if (EngiesChaosModVariables.MapVariables.get(world).BYEBYE == true) {
-							return true;
-						} else if (EngiesChaosModVariables.MapVariables.get(world).BYEBYE == false) {
-							return false;
-						}
-					}
-				}
+				return true;
 			} else if (!((world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.INSANITY_DIFFICULTY) || world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.APOCALYPSE_THREE)
 					|| world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIE_POC) || EngiesChaosModVariables.MapVariables.get(world).TheEndFullStart || EngiesChaosModVariables.MapVariables.get(world).EngiesWrathFullStart
 					|| EngiesChaosModVariables.MapVariables.get(world).engiestruewrath) == true)) {

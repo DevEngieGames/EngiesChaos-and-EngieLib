@@ -33,7 +33,7 @@ import engiegames.engies_chaos.procedures.MissileTickUpdateProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class BlueBurstEntity extends PathfinderMob {
-	public static final EntityDataAccessor<Integer> DATA_scalemult = SynchedEntityData.defineId(BlueBurstEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_BlueBurstTimeBeforeExplosion = SynchedEntityData.defineId(BlueBurstEntity.class, EntityDataSerializers.INT);
 
 	public BlueBurstEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(EngiesChaosModEntities.BLUE_BURST.get(), world);
@@ -55,7 +55,7 @@ public class BlueBurstEntity extends PathfinderMob {
 	@Override
 	protected void defineSynchedData() {
 		super.defineSynchedData();
-		this.entityData.define(DATA_scalemult, 0);
+		this.entityData.define(DATA_BlueBurstTimeBeforeExplosion, 60);
 	}
 
 	@Override
@@ -118,14 +118,14 @@ public class BlueBurstEntity extends PathfinderMob {
 	@Override
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
-		compound.putInt("Datascalemult", this.entityData.get(DATA_scalemult));
+		compound.putInt("DataBlueBurstTimeBeforeExplosion", this.entityData.get(DATA_BlueBurstTimeBeforeExplosion));
 	}
 
 	@Override
 	public void readAdditionalSaveData(CompoundTag compound) {
 		super.readAdditionalSaveData(compound);
-		if (compound.contains("Datascalemult"))
-			this.entityData.set(DATA_scalemult, compound.getInt("Datascalemult"));
+		if (compound.contains("DataBlueBurstTimeBeforeExplosion"))
+			this.entityData.set(DATA_BlueBurstTimeBeforeExplosion, compound.getInt("DataBlueBurstTimeBeforeExplosion"));
 	}
 
 	@Override

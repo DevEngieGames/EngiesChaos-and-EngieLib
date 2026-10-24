@@ -27,6 +27,8 @@ import engiegames.engies_chaos.procedures.Difficulty525000ReturnTrueCheckProcedu
 import engiegames.engies_chaos.procedures.Difficulty500000ReturnTrueCheckProcedure;
 import engiegames.engies_chaos.procedures.Difficulty4ReturnTrueCheckProcedure;
 import engiegames.engies_chaos.procedures.Difficulty3ReturnTrueCheckProcedure;
+import engiegames.engies_chaos.procedures.Difficulty34ReturnTrueCheckProcedure;
+import engiegames.engies_chaos.procedures.Difficulty33ReturnTrueCheckProcedure;
 import engiegames.engies_chaos.procedures.Difficulty32ReturnTrueCheckProcedure;
 import engiegames.engies_chaos.procedures.Difficulty31ReturnTrueCheckProcedure;
 import engiegames.engies_chaos.procedures.Difficulty30ReturnTrueCheckProcedure;
@@ -237,6 +239,14 @@ public class DifficultyOverlaySmallOverlay {
 			}
 			if (Difficulty32ReturnTrueCheckProcedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/diff32.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w - 128, 0, 0, 0, 128, 32, 128, 32);
+			}
+			if (Difficulty33ReturnTrueCheckProcedure.execute(world)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/diff33.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w - 128, 0, 0, 0, 128, 32, 128, 32);
+			}
+			if (Difficulty34ReturnTrueCheckProcedure.execute(world)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/diff34.png"));
 				Minecraft.getInstance().gui.blit(event.getPoseStack(), w - 128, 0, 0, 0, 128, 32, 128, 32);
 			}
 			if (Difficulty525ReturnTrueCheckProcedure.execute(world)) {

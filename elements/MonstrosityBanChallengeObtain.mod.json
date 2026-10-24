@@ -2,8 +2,8 @@
   "_fv": 79,
   "_type": "achievement",
   "definition": {
-    "achievementName": "9/9",
-    "achievementDescription": "CONGRATULATIONS!",
+    "achievementName": "9/15",
+    "achievementDescription": "6 more to go.",
     "achievementIcon": {
       "value": "CUSTOM:RegularObtainIcon3"
     },
@@ -15,7 +15,7 @@
     "rewardLoot": [],
     "rewardRecipes": [],
     "rewardXP": 50,
-    "achievementType": "challenge",
+    "achievementType": "goal",
     "parent": {
       "value": "CUSTOM:BiblicallyAccurateBanChallengeObtain"
     },

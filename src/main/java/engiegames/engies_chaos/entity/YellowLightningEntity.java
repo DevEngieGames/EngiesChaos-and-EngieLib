@@ -36,7 +36,7 @@ import engiegames.engies_chaos.procedures.MissileTickUpdateProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class YellowLightningEntity extends PathfinderMob {
-	public static final EntityDataAccessor<Integer> DATA_scalemult = SynchedEntityData.defineId(YellowLightningEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_YellowLightningTimeBeforeExplosion = SynchedEntityData.defineId(YellowLightningEntity.class, EntityDataSerializers.INT);
 
 	public YellowLightningEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(EngiesChaosModEntities.YELLOW_LIGHTNING.get(), world);
@@ -58,7 +58,7 @@ public class YellowLightningEntity extends PathfinderMob {
 	@Override
 	protected void defineSynchedData() {
 		super.defineSynchedData();
-		this.entityData.define(DATA_scalemult, 0);
+		this.entityData.define(DATA_YellowLightningTimeBeforeExplosion, 20);
 	}
 
 	@Override
@@ -131,14 +131,14 @@ public class YellowLightningEntity extends PathfinderMob {
 	@Override
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
-		compound.putInt("Datascalemult", this.entityData.get(DATA_scalemult));
+		compound.putInt("DataYellowLightningTimeBeforeExplosion", this.entityData.get(DATA_YellowLightningTimeBeforeExplosion));
 	}
 
 	@Override
 	public void readAdditionalSaveData(CompoundTag compound) {
 		super.readAdditionalSaveData(compound);
-		if (compound.contains("Datascalemult"))
-			this.entityData.set(DATA_scalemult, compound.getInt("Datascalemult"));
+		if (compound.contains("DataYellowLightningTimeBeforeExplosion"))
+			this.entityData.set(DATA_YellowLightningTimeBeforeExplosion, compound.getInt("DataYellowLightningTimeBeforeExplosion"));
 	}
 
 	@Override

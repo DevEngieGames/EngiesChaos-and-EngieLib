@@ -9,13 +9,12 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.commands.CommandSourceStack;
-import net.minecraft.commands.CommandSource;
 
 import java.util.Comparator;
 import java.util.ArrayList;
@@ -33,34 +32,17 @@ public class MissileTickUpdateProcedure {
 			return;
 		{
 			Entity _ent = entity;
-			if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-				_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-						_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "team join DDayNoCol");
-			}
-		}
-		{
-			Entity _ent = entity;
 			_ent.teleportTo(x, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) x, (int) z)), z);
 			if (_ent instanceof ServerPlayer _serverPlayer)
 				_serverPlayer.connection.teleport(x, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) x, (int) z)), z, _ent.getYRot(), _ent.getXRot());
 		}
 		for (Entity entityiterator : new ArrayList<>(world.players())) {
-			if (entityiterator instanceof LivingEntity _livEnt3 && _livEnt3.hasEffect(MobEffects.DARKNESS)) {
-				{
-					Entity _ent = entity;
-					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect clear @e[type=#engies_chaos:ddaymissiles] minecraft:glowing");
-					}
-				}
-			} else if (!(entityiterator instanceof LivingEntity _livEnt5 && _livEnt5.hasEffect(MobEffects.DARKNESS))) {
-				{
-					Entity _ent = entity;
-					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @e[type=#engies_chaos:ddaymissiles] minecraft:glowing 1 255 true");
-					}
-				}
+			if (!(entityiterator instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(MobEffects.DARKNESS))) {
+				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+					_entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 1, 255, false, false));
+			} else if (entityiterator instanceof LivingEntity _livEnt4 && _livEnt4.hasEffect(MobEffects.DARKNESS)) {
+				if (entity instanceof LivingEntity _entity)
+					_entity.removeEffect(MobEffects.GLOWING);
 			}
 		}
 		if (entity instanceof YellowLightningEntity) {
@@ -74,8 +56,10 @@ public class MissileTickUpdateProcedure {
 						_entityTeam.level.getScoreboard().addPlayerToTeam(_entityTeam.getStringUUID(), _pt);
 				}
 			}
-			entity.getPersistentData().putDouble("YellowLightningTimeBeforeExplosion", (entity.getPersistentData().getDouble("YellowLightningTimeBeforeExplosion") + 0.05));
-			if (entity.getPersistentData().getDouble("YellowLightningTimeBeforeExplosion") >= 1) {
+			if (entity instanceof YellowLightningEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(YellowLightningEntity.DATA_YellowLightningTimeBeforeExplosion,
+						(int) ((entity instanceof YellowLightningEntity _datEntI ? _datEntI.getEntityData().get(YellowLightningEntity.DATA_YellowLightningTimeBeforeExplosion) : 0) - 1));
+			if ((entity instanceof YellowLightningEntity _datEntI ? _datEntI.getEntityData().get(YellowLightningEntity.DATA_YellowLightningTimeBeforeExplosion) : 0) <= 0) {
 				EngiesChaosModVariables.MapVariables.get(world).playmissileexplosionsound = true;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				if (world instanceof ServerLevel _level)
@@ -88,7 +72,6 @@ public class MissileTickUpdateProcedure {
 						}
 					}
 				}
-				entity.getPersistentData().putDouble("YellowLightningTimeBeforeExplosion", 0);
 				if (!entity.level.isClientSide())
 					entity.discard();
 				EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount = EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount - 1;
@@ -105,8 +88,9 @@ public class MissileTickUpdateProcedure {
 						_entityTeam.level.getScoreboard().addPlayerToTeam(_entityTeam.getStringUUID(), _pt);
 				}
 			}
-			entity.getPersistentData().putDouble("BlueBurstTimeBeforeExplosion", (entity.getPersistentData().getDouble("BlueBurstTimeBeforeExplosion") + 0.05));
-			if (entity.getPersistentData().getDouble("BlueBurstTimeBeforeExplosion") >= 3) {
+			if (entity instanceof BlueBurstEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(BlueBurstEntity.DATA_BlueBurstTimeBeforeExplosion, (int) ((entity instanceof BlueBurstEntity _datEntI ? _datEntI.getEntityData().get(BlueBurstEntity.DATA_BlueBurstTimeBeforeExplosion) : 0) - 1));
+			if ((entity instanceof BlueBurstEntity _datEntI ? _datEntI.getEntityData().get(BlueBurstEntity.DATA_BlueBurstTimeBeforeExplosion) : 0) <= 0) {
 				EngiesChaosModVariables.MapVariables.get(world).playmissileexplosionsound = true;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				if (world instanceof ServerLevel _level)
@@ -119,7 +103,6 @@ public class MissileTickUpdateProcedure {
 						}
 					}
 				}
-				entity.getPersistentData().putDouble("BlueBurstTimeBeforeExplosion", 0);
 				if (!entity.level.isClientSide())
 					entity.discard();
 				EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount = EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount - 1;
@@ -136,8 +119,9 @@ public class MissileTickUpdateProcedure {
 						_entityTeam.level.getScoreboard().addPlayerToTeam(_entityTeam.getStringUUID(), _pt);
 				}
 			}
-			entity.getPersistentData().putDouble("NormalTimeBeforeExplosion", (entity.getPersistentData().getDouble("NormalTimeBeforeExplosion") + 0.05));
-			if (entity.getPersistentData().getDouble("NormalTimeBeforeExplosion") >= 6) {
+			if (entity instanceof NormalEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(NormalEntity.DATA_NormalTimeBeforeExplosion, (int) ((entity instanceof NormalEntity _datEntI ? _datEntI.getEntityData().get(NormalEntity.DATA_NormalTimeBeforeExplosion) : 0) - 1));
+			if ((entity instanceof NormalEntity _datEntI ? _datEntI.getEntityData().get(NormalEntity.DATA_NormalTimeBeforeExplosion) : 0) <= 0) {
 				EngiesChaosModVariables.MapVariables.get(world).playmissileexplosionsound = true;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				if (world instanceof ServerLevel _level)
@@ -150,15 +134,15 @@ public class MissileTickUpdateProcedure {
 						}
 					}
 				}
-				entity.getPersistentData().putDouble("NormalTimeBeforeExplosion", 0);
 				if (!entity.level.isClientSide())
 					entity.discard();
 				EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount = EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount - 1;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			}
 		} else if (entity instanceof MOABEntity) {
-			entity.getPersistentData().putDouble("MoabTimeBeforeExplosion", (entity.getPersistentData().getDouble("MoabTimeBeforeExplosion") + 0.05));
-			if (entity.getPersistentData().getDouble("MoabTimeBeforeExplosion") >= 16) {
+			if (entity instanceof MOABEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(MOABEntity.DATA_MOABTimeBeforeExplosion, (int) ((entity instanceof MOABEntity _datEntI ? _datEntI.getEntityData().get(MOABEntity.DATA_MOABTimeBeforeExplosion) : 0) - 1));
+			if ((entity instanceof MOABEntity _datEntI ? _datEntI.getEntityData().get(MOABEntity.DATA_MOABTimeBeforeExplosion) : 0) <= 0) {
 				EngiesChaosModVariables.MapVariables.get(world).playmissileexplosionsound = true;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				if (world instanceof ServerLevel _level)
@@ -171,7 +155,6 @@ public class MissileTickUpdateProcedure {
 						}
 					}
 				}
-				entity.getPersistentData().putDouble("MoabTimeBeforeExplosion", 0);
 				if (!entity.level.isClientSide())
 					entity.discard();
 				EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount = EngiesChaosModVariables.MapVariables.get(world).DDayMissileAmount - 1;

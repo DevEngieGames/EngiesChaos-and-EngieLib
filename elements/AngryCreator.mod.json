@@ -39,6 +39,15 @@
         "condition": {
           "name": "OutragedEngieColdSeasonedDisplay"
         }
+      },
+      {
+        "model": "Default",
+        "texture": "outragedengiehalloween.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "OutragedEngieHalloweenedDisplay"
+        }
       }
     ],
     "animations": [],

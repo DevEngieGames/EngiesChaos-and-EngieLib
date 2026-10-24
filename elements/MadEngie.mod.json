@@ -28,7 +28,7 @@
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "MadEngieNormDisplay"
+          "name": "MadEngieNormalDisplay"
         }
       },
       {
@@ -37,7 +37,16 @@
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "MadEngieColdDisplay"
+          "name": "MadEngieColdSeasonedDisplay"
+        }
+      },
+      {
+        "model": "Modelmadhalloween",
+        "texture": "madengiehalloween.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "MadEngieHolloweenedDisplay"
         }
       }
     ],
@@ -141,6 +150,11 @@
     "entityDataEntries": [
       {
         "name": "coldseasoned",
+        "type": "logic",
+        "value": false
+      },
+      {
+        "name": "halloweened",
         "type": "logic",
         "value": false
       }

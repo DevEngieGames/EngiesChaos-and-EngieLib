@@ -14,7 +14,7 @@
     "hideIfNotCompleted": false,
     "rewardLoot": [],
     "rewardRecipes": [],
-    "rewardXP": 5,
+    "rewardXP": 0,
     "achievementType": "task",
     "parent": {
       "value": "CUSTOM:SomethingIsNotRight"

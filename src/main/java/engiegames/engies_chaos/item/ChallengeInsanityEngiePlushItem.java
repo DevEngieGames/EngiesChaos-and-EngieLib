@@ -1,5 +1,6 @@
 package engiegames.engies_chaos.item;
 
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.TooltipFlag;
@@ -14,6 +15,7 @@ import net.minecraft.network.chat.Component;
 
 import java.util.List;
 
+import engiegames.engies_chaos.procedures.ChallengeInsanityEngiePlushSpecialInformationProcedure;
 import engiegames.engies_chaos.procedures.ChallengeInsanityEngiePlushRightclickedProcedure;
 import engiegames.engies_chaos.procedures.ChallengeInsanityEngiePlushItemInInventoryTickProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModTabs;
@@ -26,20 +28,26 @@ public class ChallengeInsanityEngiePlushItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.translatable("item.engies_chaos.challenge_insanity_engie_plush.description_0"));
+		Entity entity = itemstack.getEntityRepresentation();
+		String hoverText = ChallengeInsanityEngiePlushSpecialInformationProcedure.execute(level instanceof Level ? (LevelAccessor) level : null);
+		if (hoverText != null) {
+			for (String line : hoverText.split("\n")) {
+				list.add(Component.literal(line));
+			}
+		}
 	}
 
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
 		InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
-		ChallengeInsanityEngiePlushRightclickedProcedure.execute(entity);
+		ChallengeInsanityEngiePlushRightclickedProcedure.execute(world);
 		return ar;
 	}
 
 	@Override
 	public InteractionResult useOn(UseOnContext context) {
 		super.useOn(context);
-		ChallengeInsanityEngiePlushRightclickedProcedure.execute(context.getPlayer());
+		ChallengeInsanityEngiePlushRightclickedProcedure.execute(context.getLevel());
 		return InteractionResult.SUCCESS;
 	}
 

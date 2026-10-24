@@ -10,6 +10,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.MultiBufferSource;
 
 import engiegames.engies_chaos.procedures.AngryEngieNormalDisplayProcedure;
+import engiegames.engies_chaos.procedures.AngryEngieHolloweenedDisplayProcedure;
 import engiegames.engies_chaos.procedures.AngryEngieColdSeasonedDisplayProcedure;
 import engiegames.engies_chaos.entity.AngryEngieEntity;
 import engiegames.engies_chaos.client.model.Modelhostile;
@@ -45,6 +46,21 @@ public class AngryEngieRenderer extends MobRenderer<AngryEngieEntity, Modelhosti
 				double y = entity.getY();
 				double z = entity.getZ();
 				if (AngryEngieColdSeasonedDisplayProcedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<AngryEngieEntity, Modelhostile<AngryEngieEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/angryengiehalloween.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, AngryEngieEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (AngryEngieHolloweenedDisplayProcedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
 					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}

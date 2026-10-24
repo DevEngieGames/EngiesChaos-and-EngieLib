@@ -123,9 +123,9 @@
       {
         "min": -2147483648,
         "max": 2147483647,
-        "name": "scalemult",
+        "name": "YellowLightningTimeBeforeExplosion",
         "type": "integer",
-        "value": 0
+        "value": 20
       }
     ],
     "onMobTickUpdate": {

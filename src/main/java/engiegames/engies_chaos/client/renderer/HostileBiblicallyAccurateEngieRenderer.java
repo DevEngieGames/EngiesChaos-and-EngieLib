@@ -10,6 +10,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.MultiBufferSource;
 
 import engiegames.engies_chaos.procedures.HostileBiblicallyAccurateEngieNormalDisplayProcedure;
+import engiegames.engies_chaos.procedures.HostileBiblicallyAccurateEngieHalloweenedDisplayProcedure;
 import engiegames.engies_chaos.procedures.HostileBiblicallyAccurateEngieColdSeasonedDisplayProcedure;
 import engiegames.engies_chaos.entity.HostileBiblicallyAccurateEngieEntity;
 import engiegames.engies_chaos.client.model.Modelhostile;
@@ -48,6 +49,38 @@ public class HostileBiblicallyAccurateEngieRenderer extends MobRenderer<HostileB
 				double z = entity.getZ();
 				if (HostileBiblicallyAccurateEngieColdSeasonedDisplayProcedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<HostileBiblicallyAccurateEngieEntity, Modelhostile<HostileBiblicallyAccurateEngieEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/hostilebiblicallyaccurateengiehalloween.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, HostileBiblicallyAccurateEngieEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw,
+					float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (HostileBiblicallyAccurateEngieHalloweenedDisplayProcedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<HostileBiblicallyAccurateEngieEntity, Modelhostile<HostileBiblicallyAccurateEngieEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/hostilebiblicallyaccurateengiehalloween.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, HostileBiblicallyAccurateEngieEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw,
+					float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (HostileBiblicallyAccurateEngieHalloweenedDisplayProcedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.eyes(LAYER_TEXTURE));
 					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}
 			}

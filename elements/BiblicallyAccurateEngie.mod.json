@@ -39,6 +39,24 @@
         "condition": {
           "name": "BiblicallyAccurateEngieColdSeasonedDisplay"
         }
+      },
+      {
+        "model": "Default",
+        "texture": "biblicallyaccurateengiehalloween.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BiblicallyAccurateEngieHalloweenedDisplay"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "biblicallyaccurateengiehalloween.png",
+        "disableHurtOverlay": false,
+        "glow": true,
+        "condition": {
+          "name": "BiblicallyAccurateEngieHalloweenedDisplay"
+        }
       }
     ],
     "animations": [],

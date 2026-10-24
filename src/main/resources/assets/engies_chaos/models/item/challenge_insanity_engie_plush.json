@@ -1,8 +1,9 @@
 {
-  "parent": "engies_chaos:custom/engieplushhardmode",
+  "parent": "engies_chaos:custom/challengeinsanityplush",
   "textures": {
-    "0": "engies_chaos:block/roughianengie2",
-    "1": "engies_chaos:block/16101613",
+    "0": "engies_chaos:block/challengeinsanityplush",
+    "1": "engies_chaos:block/challengeinsanityplushscarf",
+    "2": "engies_chaos:block/white",
     "particle": "engies_chaos:item/insanityadvancementbg"
   }
 }

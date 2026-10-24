@@ -22,6 +22,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
@@ -445,16 +446,18 @@ public class EngiesWrathNormalProcedure {
 									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 								} else {
 									if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 4) {
-										EngiesChaosModVariables.MapVariables.get(world).ddaytimerseconds = 0;
+										EngiesChaosModVariables.MapVariables.get(world).ewrathtimerseconds = 0;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 										EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = true;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-										EngiesChaosModVariables.MapVariables.get(world).DDAYCleanup = true;
-										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-										EngiesChaosModVariables.MapVariables.get(world).ewrathhappened = true;
-										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+										EngiesChaosMod.queueServerWork(200, () -> {
+											EngiesChaosModVariables.MapVariables.get(world).DDAYCleanup = true;
+											EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+											EngiesChaosModVariables.MapVariables.get(world).ewrathhappened = true;
+											EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+										});
 									} else if (EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb == 2) {
-										EngiesChaosModVariables.MapVariables.get(world).ddaytimerseconds = 0;
+										EngiesChaosModVariables.MapVariables.get(world).ewrathtimerseconds = 0;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 										EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = true;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -465,7 +468,7 @@ public class EngiesWrathNormalProcedure {
 											EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 										});
 									} else {
-										EngiesChaosModVariables.MapVariables.get(world).ddaytimerseconds = 0;
+										EngiesChaosModVariables.MapVariables.get(world).ewrathtimerseconds = 0;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 										EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = true;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -502,67 +505,65 @@ public class EngiesWrathNormalProcedure {
 								EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = 0;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 								if (Mth.nextDouble(RandomSource.create(), 1, 100) < 85) {
-									for (Entity entityiterator : new ArrayList<>(world.players())) {
-										{
-											double _setval = 0.25;
-											entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-												capability.lightningflashnum = _setval;
-												capability.syncPlayerVariables(entityiterator);
-											});
-										}
-										{
-											Entity _ent = entityiterator;
-											if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-												_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(),
-														_ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
-														"stopsound @s weather engies_chaos:extreme_lightning_strike");
+									if ((world.getBlockState(new BlockPos(EngiesChaosModVariables.MapVariables.get(world).RX,
+											Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)) - 1,
+											EngiesChaosModVariables.MapVariables.get(world).RZ))).is(BlockTags.create(new ResourceLocation("engies_chaos:doomsday/strikeable")))) {
+										for (Entity entityiterator : new ArrayList<>(world.players())) {
+											{
+												double _setval = 0.25;
+												entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+													capability.lightningflashnum = _setval;
+													capability.syncPlayerVariables(entityiterator);
+												});
+											}
+											{
+												Entity _ent = entityiterator;
+												if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+													_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(),
+															_ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
+															"stopsound @s weather engies_chaos:extreme_lightning_strike");
+												}
+											}
+											{
+												Entity _ent = entityiterator;
+												if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+													_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(),
+															_ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
+															"playsound engies_chaos:extreme_lightning_strike weather @s ~ ~ ~ 0.5");
+												}
 											}
 										}
-										{
-											Entity _ent = entityiterator;
-											if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-												_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(),
-														_ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
-														"playsound engies_chaos:extreme_lightning_strike weather @s ~ ~ ~ 0.5");
-											}
-										}
-									}
-									if (world instanceof ServerLevel _level) {
-										LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-										entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(EngiesChaosModVariables.MapVariables.get(world).RX,
-												Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)),
-												EngiesChaosModVariables.MapVariables.get(world).RZ)));
-										entityToSpawn.setVisualOnly(true);
-										_level.addFreshEntity(entityToSpawn);
-									}
-									for (int index1 = 0; index1 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 3, 6)); index1++) {
 										if (world instanceof ServerLevel _level) {
 											LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-											entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(EngiesChaosModVariables.MapVariables.get(world).RX + Math.round(Mth.nextDouble(RandomSource.create(), -6, 6)),
+											entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(EngiesChaosModVariables.MapVariables.get(world).RX,
 													Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)),
-													EngiesChaosModVariables.MapVariables.get(world).RZ + Math.round(Mth.nextDouble(RandomSource.create(), -6, 6)))));
+													EngiesChaosModVariables.MapVariables.get(world).RZ)));
 											entityToSpawn.setVisualOnly(true);
 											_level.addFreshEntity(entityToSpawn);
 										}
+										for (int index1 = 0; index1 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 3, 6)); index1++) {
+											if (world instanceof ServerLevel _level) {
+												LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+												entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(EngiesChaosModVariables.MapVariables.get(world).RX + Math.round(Mth.nextDouble(RandomSource.create(), -6, 6)),
+														Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)),
+														EngiesChaosModVariables.MapVariables.get(world).RZ + Math.round(Mth.nextDouble(RandomSource.create(), -6, 6)))));
+												entityToSpawn.setVisualOnly(true);
+												_level.addFreshEntity(entityToSpawn);
+											}
+										}
+										if (world instanceof ServerLevel _level)
+											_level.getServer().getCommands()
+													.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(EngiesChaosModVariables.MapVariables.get(world).RX,
+															Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)),
+															EngiesChaosModVariables.MapVariables.get(world).RZ), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+															"effect give @a[distance=..12.5] engies_chaos:stunned 5 0 true");
+										if (world instanceof ServerLevel _level)
+											_level.getServer().getCommands()
+													.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(EngiesChaosModVariables.MapVariables.get(world).RX,
+															Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)),
+															EngiesChaosModVariables.MapVariables.get(world).RZ), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+															("damages @a[distance=..12.5] " + Math.round(Mth.nextDouble(RandomSource.create(), 40, 100)) + " 5"));
 									}
-									if (world instanceof ServerLevel _level)
-										_level.getServer().getCommands().performPrefixedCommand(
-												new CommandSourceStack(CommandSource.NULL,
-														new Vec3(EngiesChaosModVariables.MapVariables.get(world).RX,
-																Math.round(
-																		world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)),
-																EngiesChaosModVariables.MapVariables.get(world).RZ),
-														Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-												"effect give @a[distance=..12.5] engies_chaos:stunned 5 0 true");
-									if (world instanceof ServerLevel _level)
-										_level.getServer().getCommands().performPrefixedCommand(
-												new CommandSourceStack(CommandSource.NULL,
-														new Vec3(EngiesChaosModVariables.MapVariables.get(world).RX,
-																Math.round(
-																		world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)),
-																EngiesChaosModVariables.MapVariables.get(world).RZ),
-														Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-												("damages @a[distance=..12.5] " + Math.round(Mth.nextDouble(RandomSource.create(), 40, 100)) + " 5"));
 								} else if (Mth.nextDouble(RandomSource.create(), 1, 100) >= 85) {
 									EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = -2.5;
 									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -593,15 +594,15 @@ public class EngiesWrathNormalProcedure {
 									}
 									if (world instanceof ServerLevel _level) {
 										LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-										entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 168, 168)), 168)));
+										entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(175, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 175, 175)), 175)));
 										entityToSpawn.setVisualOnly(true);
 										_level.addFreshEntity(entityToSpawn);
 									}
 									if (world instanceof ServerLevel _level)
-										_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 168, 168)), 168),
+										_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(175, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 175, 175)), 175),
 												Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "effect give @a[distance=..12.5] engies_chaos:stunned 5 0 true");
 									if (world instanceof ServerLevel _level)
-										_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 168, 168)), 168),
+										_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(175, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 175, 175)), 175),
 												Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), ("damages @a[distance=..12.5] " + Math.round(Mth.nextDouble(RandomSource.create(), 40, 100)) + " 5"));
 									EngiesChaosMod.queueServerWork(10, () -> {
 										for (Entity entityiterator : new ArrayList<>(world.players())) {
@@ -631,15 +632,15 @@ public class EngiesWrathNormalProcedure {
 										}
 										if (world instanceof ServerLevel _level) {
 											LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-											entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 168, -168)), -168)));
+											entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(175, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 175, -175)), -175)));
 											entityToSpawn.setVisualOnly(true);
 											_level.addFreshEntity(entityToSpawn);
 										}
 										if (world instanceof ServerLevel _level)
-											_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 168, -168)), (-168)),
+											_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(175, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 175, -175)), (-175)),
 													Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "effect give @a[distance=..12.5] engies_chaos:stunned 5 0 true");
 										if (world instanceof ServerLevel _level)
-											_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 168, -168)), (-168)),
+											_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(175, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 175, -175)), (-175)),
 													Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 													("damages @a[distance=..12.5] " + Math.round(Mth.nextDouble(RandomSource.create(), 40, 100)) + " 5"));
 										EngiesChaosMod.queueServerWork(10, () -> {
@@ -670,17 +671,17 @@ public class EngiesWrathNormalProcedure {
 											}
 											if (world instanceof ServerLevel _level) {
 												LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-												entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(-168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -168, -168)), -168)));
+												entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(-175, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -175, -175)), -175)));
 												entityToSpawn.setVisualOnly(true);
 												_level.addFreshEntity(entityToSpawn);
 											}
 											if (world instanceof ServerLevel _level)
 												_level.getServer().getCommands()
-														.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((-168), Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -168, -168)), (-168)), Vec2.ZERO,
+														.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((-175), Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -175, -175)), (-175)), Vec2.ZERO,
 																_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "effect give @a[distance=..12.5] engies_chaos:stunned 5 0 true");
 											if (world instanceof ServerLevel _level)
 												_level.getServer().getCommands()
-														.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((-168), Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -168, -168)), (-168)), Vec2.ZERO,
+														.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((-175), Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -175, -175)), (-175)), Vec2.ZERO,
 																_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 																("damages @a[distance=..12.5] " + Math.round(Mth.nextDouble(RandomSource.create(), 40, 100)) + " 5"));
 											EngiesChaosMod.queueServerWork(10, () -> {
@@ -711,18 +712,18 @@ public class EngiesWrathNormalProcedure {
 												}
 												if (world instanceof ServerLevel _level) {
 													LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-													entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(-168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -168, 168)), 168)));
+													entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(-175, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -175, 175)), 175)));
 													entityToSpawn.setVisualOnly(true);
 													_level.addFreshEntity(entityToSpawn);
 												}
 												if (world instanceof ServerLevel _level)
 													_level.getServer().getCommands()
-															.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((-168), Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -168, 168)), 168), Vec2.ZERO,
+															.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((-175), Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -175, 175)), 175), Vec2.ZERO,
 																	_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "effect give @a[distance=..12.5] engies_chaos:stunned 5 0 true");
 												if (world instanceof ServerLevel _level)
 													_level.getServer().getCommands()
 															.performPrefixedCommand(
-																	new CommandSourceStack(CommandSource.NULL, new Vec3((-168), Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -168, 168)), 168), Vec2.ZERO, _level, 4, "",
+																	new CommandSourceStack(CommandSource.NULL, new Vec3((-175), Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -175, 175)), 175), Vec2.ZERO, _level, 4, "",
 																			Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 																	("damages @a[distance=..12.5] " + Math.round(Mth.nextDouble(RandomSource.create(), 40, 100)) + " 5"));
 											});
@@ -735,67 +736,65 @@ public class EngiesWrathNormalProcedure {
 								EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = 0;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 								if (Mth.nextDouble(RandomSource.create(), 1, 100) < 85) {
-									for (Entity entityiterator : new ArrayList<>(world.players())) {
-										{
-											double _setval = 0.25;
-											entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-												capability.lightningflashnum = _setval;
-												capability.syncPlayerVariables(entityiterator);
-											});
-										}
-										{
-											Entity _ent = entityiterator;
-											if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-												_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(),
-														_ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
-														"stopsound @s weather engies_chaos:extreme_lightning_strike");
+									if ((world.getBlockState(new BlockPos(EngiesChaosModVariables.MapVariables.get(world).RX,
+											Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)) - 1,
+											EngiesChaosModVariables.MapVariables.get(world).RZ))).is(BlockTags.create(new ResourceLocation("engies_chaos:doomsday/strikeable")))) {
+										for (Entity entityiterator : new ArrayList<>(world.players())) {
+											{
+												double _setval = 0.25;
+												entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+													capability.lightningflashnum = _setval;
+													capability.syncPlayerVariables(entityiterator);
+												});
+											}
+											{
+												Entity _ent = entityiterator;
+												if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+													_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(),
+															_ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
+															"stopsound @s weather engies_chaos:extreme_lightning_strike");
+												}
+											}
+											{
+												Entity _ent = entityiterator;
+												if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+													_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(),
+															_ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
+															"playsound engies_chaos:extreme_lightning_strike weather @s ~ ~ ~ 0.5");
+												}
 											}
 										}
-										{
-											Entity _ent = entityiterator;
-											if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-												_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(),
-														_ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
-														"playsound engies_chaos:extreme_lightning_strike weather @s ~ ~ ~ 0.5");
-											}
-										}
-									}
-									if (world instanceof ServerLevel _level) {
-										LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-										entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(EngiesChaosModVariables.MapVariables.get(world).RX,
-												Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)),
-												EngiesChaosModVariables.MapVariables.get(world).RZ)));
-										entityToSpawn.setVisualOnly(true);
-										_level.addFreshEntity(entityToSpawn);
-									}
-									for (int index2 = 0; index2 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 3, 6)); index2++) {
 										if (world instanceof ServerLevel _level) {
 											LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-											entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(EngiesChaosModVariables.MapVariables.get(world).RX + Math.round(Mth.nextDouble(RandomSource.create(), -6, 6)),
+											entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(EngiesChaosModVariables.MapVariables.get(world).RX,
 													Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)),
-													EngiesChaosModVariables.MapVariables.get(world).RZ + Math.round(Mth.nextDouble(RandomSource.create(), -6, 6)))));
+													EngiesChaosModVariables.MapVariables.get(world).RZ)));
 											entityToSpawn.setVisualOnly(true);
 											_level.addFreshEntity(entityToSpawn);
 										}
+										for (int index2 = 0; index2 < (int) Math.round(Mth.nextDouble(RandomSource.create(), 3, 6)); index2++) {
+											if (world instanceof ServerLevel _level) {
+												LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+												entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(EngiesChaosModVariables.MapVariables.get(world).RX + Math.round(Mth.nextDouble(RandomSource.create(), -6, 6)),
+														Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)),
+														EngiesChaosModVariables.MapVariables.get(world).RZ + Math.round(Mth.nextDouble(RandomSource.create(), -6, 6)))));
+												entityToSpawn.setVisualOnly(true);
+												_level.addFreshEntity(entityToSpawn);
+											}
+										}
+										if (world instanceof ServerLevel _level)
+											_level.getServer().getCommands()
+													.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(EngiesChaosModVariables.MapVariables.get(world).RX,
+															Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)),
+															EngiesChaosModVariables.MapVariables.get(world).RZ), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+															"effect give @a[distance=..12.5] engies_chaos:stunned 5 0 true");
+										if (world instanceof ServerLevel _level)
+											_level.getServer().getCommands()
+													.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(EngiesChaosModVariables.MapVariables.get(world).RX,
+															Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)),
+															EngiesChaosModVariables.MapVariables.get(world).RZ), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+															("damages @a[distance=..12.5] " + Math.round(Mth.nextDouble(RandomSource.create(), 40, 100)) + " 5"));
 									}
-									if (world instanceof ServerLevel _level)
-										_level.getServer().getCommands().performPrefixedCommand(
-												new CommandSourceStack(CommandSource.NULL,
-														new Vec3(EngiesChaosModVariables.MapVariables.get(world).RX,
-																Math.round(
-																		world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)),
-																EngiesChaosModVariables.MapVariables.get(world).RZ),
-														Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-												"effect give @a[distance=..12.5] engies_chaos:stunned 5 0 true");
-									if (world instanceof ServerLevel _level)
-										_level.getServer().getCommands().performPrefixedCommand(
-												new CommandSourceStack(CommandSource.NULL,
-														new Vec3(EngiesChaosModVariables.MapVariables.get(world).RX,
-																Math.round(
-																		world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) EngiesChaosModVariables.MapVariables.get(world).RX, (int) EngiesChaosModVariables.MapVariables.get(world).RZ)),
-																EngiesChaosModVariables.MapVariables.get(world).RZ),
-														Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-												("damages @a[distance=..12.5] " + Math.round(Mth.nextDouble(RandomSource.create(), 40, 100)) + " 5"));
 								} else if (Mth.nextDouble(RandomSource.create(), 1, 100) >= 85) {
 									EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = -2.5;
 									EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -826,15 +825,15 @@ public class EngiesWrathNormalProcedure {
 									}
 									if (world instanceof ServerLevel _level) {
 										LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-										entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 168, 168)), 168)));
+										entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(175, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 175, 175)), 175)));
 										entityToSpawn.setVisualOnly(true);
 										_level.addFreshEntity(entityToSpawn);
 									}
 									if (world instanceof ServerLevel _level)
-										_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 168, 168)), 168),
+										_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(175, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 175, 175)), 175),
 												Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "effect give @a[distance=..12.5] engies_chaos:stunned 5 0 true");
 									if (world instanceof ServerLevel _level)
-										_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 168, 168)), 168),
+										_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(175, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 175, 175)), 175),
 												Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), ("damages @a[distance=..12.5] " + Math.round(Mth.nextDouble(RandomSource.create(), 40, 100)) + " 5"));
 									EngiesChaosMod.queueServerWork(10, () -> {
 										for (Entity entityiterator : new ArrayList<>(world.players())) {
@@ -864,15 +863,15 @@ public class EngiesWrathNormalProcedure {
 										}
 										if (world instanceof ServerLevel _level) {
 											LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-											entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 168, -168)), -168)));
+											entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(175, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 175, -175)), -175)));
 											entityToSpawn.setVisualOnly(true);
 											_level.addFreshEntity(entityToSpawn);
 										}
 										if (world instanceof ServerLevel _level)
-											_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 168, -168)), (-168)),
+											_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(175, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 175, -175)), (-175)),
 													Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "effect give @a[distance=..12.5] engies_chaos:stunned 5 0 true");
 										if (world instanceof ServerLevel _level)
-											_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 168, -168)), (-168)),
+											_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(175, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 175, -175)), (-175)),
 													Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 													("damages @a[distance=..12.5] " + Math.round(Mth.nextDouble(RandomSource.create(), 40, 100)) + " 5"));
 										EngiesChaosMod.queueServerWork(10, () -> {
@@ -903,17 +902,17 @@ public class EngiesWrathNormalProcedure {
 											}
 											if (world instanceof ServerLevel _level) {
 												LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-												entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(-168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -168, -168)), -168)));
+												entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(-175, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -175, -175)), -175)));
 												entityToSpawn.setVisualOnly(true);
 												_level.addFreshEntity(entityToSpawn);
 											}
 											if (world instanceof ServerLevel _level)
 												_level.getServer().getCommands()
-														.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((-168), Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -168, -168)), (-168)), Vec2.ZERO,
+														.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((-175), Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -175, -175)), (-175)), Vec2.ZERO,
 																_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "effect give @a[distance=..12.5] engies_chaos:stunned 5 0 true");
 											if (world instanceof ServerLevel _level)
 												_level.getServer().getCommands()
-														.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((-168), Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -168, -168)), (-168)), Vec2.ZERO,
+														.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((-175), Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -175, -175)), (-175)), Vec2.ZERO,
 																_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 																("damages @a[distance=..12.5] " + Math.round(Mth.nextDouble(RandomSource.create(), 40, 100)) + " 5"));
 											EngiesChaosMod.queueServerWork(10, () -> {
@@ -944,18 +943,18 @@ public class EngiesWrathNormalProcedure {
 												}
 												if (world instanceof ServerLevel _level) {
 													LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-													entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(-168, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -168, 168)), 168)));
+													entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(-175, Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -175, 175)), 175)));
 													entityToSpawn.setVisualOnly(true);
 													_level.addFreshEntity(entityToSpawn);
 												}
 												if (world instanceof ServerLevel _level)
 													_level.getServer().getCommands()
-															.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((-168), Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -168, 168)), 168), Vec2.ZERO,
+															.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((-175), Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -175, 175)), 175), Vec2.ZERO,
 																	_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "effect give @a[distance=..12.5] engies_chaos:stunned 5 0 true");
 												if (world instanceof ServerLevel _level)
 													_level.getServer().getCommands()
 															.performPrefixedCommand(
-																	new CommandSourceStack(CommandSource.NULL, new Vec3((-168), Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -168, 168)), 168), Vec2.ZERO, _level, 4, "",
+																	new CommandSourceStack(CommandSource.NULL, new Vec3((-175), Math.round(world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, -175, 175)), 175), Vec2.ZERO, _level, 4, "",
 																			Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 																	("damages @a[distance=..12.5] " + Math.round(Mth.nextDouble(RandomSource.create(), 40, 100)) + " 5"));
 											});
@@ -967,12 +966,7 @@ public class EngiesWrathNormalProcedure {
 						if (EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown <= 0) {
 							EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5));
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-							if (Math.random() <= 0.3) {
-								if (world instanceof ServerLevel _level)
-									_level.getServer().getCommands()
-											.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((world.getLevelData().getXSpawn()), (world.getLevelData().getYSpawn()), (world.getLevelData().getZSpawn())), Vec2.ZERO, _level, 4,
-													"", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "EngieLib EChaos darkness");
-							}
+							BlizzardAnnoyanceProcedure.execute(world);
 						}
 						if (EngiesChaosModVariables.MapVariables.get(world).missilecooldown <= 0) {
 							EngiesChaosModVariables.MapVariables.get(world).missilecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 5));

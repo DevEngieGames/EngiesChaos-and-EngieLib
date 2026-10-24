@@ -41,6 +41,15 @@
         "condition": {
           "name": "HostileEngieColdSeasonedDisplay"
         }
+      },
+      {
+        "model": "Modelheadlesshostile",
+        "texture": "hostileengiecoldseasoned.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "HostileEngieHalloweenedDisplay"
+        }
       }
     ],
     "animations": [],
@@ -143,6 +152,11 @@
     "entityDataEntries": [
       {
         "name": "coldseasoned",
+        "type": "logic",
+        "value": false
+      },
+      {
+        "name": "halloweened",
         "type": "logic",
         "value": false
       }

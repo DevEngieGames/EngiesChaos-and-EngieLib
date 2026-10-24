@@ -39,6 +39,15 @@
         "condition": {
           "name": "MonstrosityEngieColdSeasonedDisplay"
         }
+      },
+      {
+        "model": "Modelmonstrosityhalloween",
+        "texture": "monstrosityengiehalloween.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "MonstrosityEngieHalloweenedDisplay"
+        }
       }
     ],
     "animations": [],

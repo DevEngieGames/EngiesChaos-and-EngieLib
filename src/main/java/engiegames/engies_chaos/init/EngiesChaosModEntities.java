@@ -36,6 +36,7 @@ import engiegames.engies_chaos.entity.TheEndHostileEntity;
 import engiegames.engies_chaos.entity.TheEndEntity;
 import engiegames.engies_chaos.entity.SuperDoomsDayHostileEntity;
 import engiegames.engies_chaos.entity.SuperDoomsDayEntity;
+import engiegames.engies_chaos.entity.SpikeEntity;
 import engiegames.engies_chaos.entity.SharkoEntity;
 import engiegames.engies_chaos.entity.ShadowSharkEngieEntity;
 import engiegames.engies_chaos.entity.ShadowSharkEngieBlindEntity;
@@ -112,8 +113,6 @@ import engiegames.engies_chaos.entity.EngiEntity;
 import engiegames.engies_chaos.entity.DoomsDayHostileEntity;
 import engiegames.engies_chaos.entity.DoomsDayEntity;
 import engiegames.engies_chaos.entity.DistortedEntity;
-import engiegames.engies_chaos.entity.DDaySpikeEntity;
-import engiegames.engies_chaos.entity.DDayAvalancheEntity;
 import engiegames.engies_chaos.entity.DDAYRiftEntity;
 import engiegames.engies_chaos.entity.CosmicTheRealEngieGamesEntity;
 import engiegames.engies_chaos.entity.CosmicDeathSharkoEntity;
@@ -123,6 +122,7 @@ import engiegames.engies_chaos.entity.BlueBurstEntity;
 import engiegames.engies_chaos.entity.BloodyEngieRiftedEntity;
 import engiegames.engies_chaos.entity.BiblicallyDeathSharkoEntity;
 import engiegames.engies_chaos.entity.BiblicallyAccurateEngieEntity;
+import engiegames.engies_chaos.entity.AvalancheBallEntity;
 import engiegames.engies_chaos.entity.AprilFoolsTigerSharkoEntity;
 import engiegames.engies_chaos.entity.AprilFoolsSharkoEntity;
 import engiegames.engies_chaos.entity.AprilFoolsRareSharkoEntity;
@@ -233,7 +233,7 @@ public class EngiesChaosModEntities {
 	public static final RegistryObject<EntityType<BlueBurstEntity>> BLUE_BURST = register("blue_burst",
 			EntityType.Builder.<BlueBurstEntity>of(BlueBurstEntity::new, MobCategory.MISC).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(BlueBurstEntity::new).fireImmune().sized(1f, 1f));
 	public static final RegistryObject<EntityType<NormalEntity>> NORMAL = register("normal",
-			EntityType.Builder.<NormalEntity>of(NormalEntity::new, MobCategory.MISC).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(NormalEntity::new).fireImmune().sized(0.6f, 1f));
+			EntityType.Builder.<NormalEntity>of(NormalEntity::new, MobCategory.MISC).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(NormalEntity::new).fireImmune().sized(1f, 1f));
 	public static final RegistryObject<EntityType<MOABEntity>> MOAB = register("moab",
 			EntityType.Builder.<MOABEntity>of(MOABEntity::new, MobCategory.MISC).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MOABEntity::new).fireImmune().sized(1f, 1f));
 	public static final RegistryObject<EntityType<PureInsanityEntity>> PURE_INSANITY = register("pure_insanity",
@@ -494,10 +494,6 @@ public class EngiesChaosModEntities {
 					.sized(0.7f, 0.9f));
 	public static final RegistryObject<EntityType<OMENEntity>> OMEN = register("omen",
 			EntityType.Builder.<OMENEntity>of(OMENEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(OMENEntity::new).fireImmune().sized(0.6f, 1.9f));
-	public static final RegistryObject<EntityType<DDaySpikeEntity>> D_DAY_SPIKE = register("d_day_spike", EntityType.Builder.<DDaySpikeEntity>of(DDaySpikeEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
-			.setUpdateInterval(3).setCustomClientFactory(DDaySpikeEntity::new).fireImmune().sized(0.5f, 1.8f));
-	public static final RegistryObject<EntityType<DDayAvalancheEntity>> D_DAY_AVALANCHE = register("d_day_avalanche", EntityType.Builder.<DDayAvalancheEntity>of(DDayAvalancheEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
-			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(DDayAvalancheEntity::new).fireImmune().sized(1f, 1f));
 	public static final RegistryObject<EntityType<AprilFoolsSharkoEntity>> APRIL_FOOLS_SHARKO = register("april_fools_sharko",
 			EntityType.Builder.<AprilFoolsSharkoEntity>of(AprilFoolsSharkoEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(AprilFoolsSharkoEntity::new)
 
@@ -622,6 +618,10 @@ public class EngiesChaosModEntities {
 					.setCustomClientFactory(EngieGamesHostileEngieEntity::new)
 
 					.sized(0.6f, 1.9f));
+	public static final RegistryObject<EntityType<AvalancheBallEntity>> AVALANCHE_BALL = register("avalanche_ball", EntityType.Builder.<AvalancheBallEntity>of(AvalancheBallEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(AvalancheBallEntity::new).fireImmune().sized(1f, 1f));
+	public static final RegistryObject<EntityType<SpikeEntity>> SPIKE = register("spike",
+			EntityType.Builder.<SpikeEntity>of(SpikeEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(SpikeEntity::new).fireImmune().sized(0.6f, 1.8f));
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
@@ -723,8 +723,6 @@ public class EngiesChaosModEntities {
 			MonstrosityDeathSharkoEntity.init();
 			CosmicDeathSharkoEntity.init();
 			OMENEntity.init();
-			DDaySpikeEntity.init();
-			DDayAvalancheEntity.init();
 			AprilFoolsSharkoEntity.init();
 			AprilFoolsAlbinoSharkoEntity.init();
 			AprilFoolsRareSharkoEntity.init();
@@ -755,6 +753,8 @@ public class EngiesChaosModEntities {
 			EngieGamesHostileBiblicallyAccurateEngieEntity.init();
 			EngieGamesMonstrosityEngieEntity.init();
 			EngieGamesHostileEngieEntity.init();
+			AvalancheBallEntity.init();
+			SpikeEntity.init();
 		});
 	}
 
@@ -851,8 +851,6 @@ public class EngiesChaosModEntities {
 		event.put(MONSTROSITY_DEATH_SHARKO.get(), MonstrosityDeathSharkoEntity.createAttributes().build());
 		event.put(COSMIC_DEATH_SHARKO.get(), CosmicDeathSharkoEntity.createAttributes().build());
 		event.put(OMEN.get(), OMENEntity.createAttributes().build());
-		event.put(D_DAY_SPIKE.get(), DDaySpikeEntity.createAttributes().build());
-		event.put(D_DAY_AVALANCHE.get(), DDayAvalancheEntity.createAttributes().build());
 		event.put(APRIL_FOOLS_SHARKO.get(), AprilFoolsSharkoEntity.createAttributes().build());
 		event.put(APRIL_FOOLS_ALBINO_SHARKO.get(), AprilFoolsAlbinoSharkoEntity.createAttributes().build());
 		event.put(APRIL_FOOLS_RARE_SHARKO.get(), AprilFoolsRareSharkoEntity.createAttributes().build());
@@ -883,5 +881,7 @@ public class EngiesChaosModEntities {
 		event.put(ENGIE_GAMES_HOSTILE_BIBLICALLY_ACCURATE_ENGIE.get(), EngieGamesHostileBiblicallyAccurateEngieEntity.createAttributes().build());
 		event.put(ENGIE_GAMES_MONSTROSITY_ENGIE.get(), EngieGamesMonstrosityEngieEntity.createAttributes().build());
 		event.put(ENGIE_GAMES_HOSTILE_ENGIE.get(), EngieGamesHostileEngieEntity.createAttributes().build());
+		event.put(AVALANCHE_BALL.get(), AvalancheBallEntity.createAttributes().build());
+		event.put(SPIKE.get(), SpikeEntity.createAttributes().build());
 	}
 }

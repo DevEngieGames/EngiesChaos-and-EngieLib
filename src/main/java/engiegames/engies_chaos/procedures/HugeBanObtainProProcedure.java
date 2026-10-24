@@ -2,13 +2,11 @@ package engiegames.engies_chaos.procedures;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.Component;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
@@ -30,16 +28,10 @@ public class HugeBanObtainProProcedure {
 							_player.getAdvancements().award(_adv, criteria);
 					}
 				}
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("The plush gets more angry..."), false);
 			}
-			EngiesChaosModVariables.MapVariables.get(world).BYEBYE = true;
-			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-			EngiesChaosModVariables.MapVariables.get(world).MobDifficulty = 30;
-			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 		} else if (itemstack.getItem() == EngiesChaosModItems.ANTIMATTER_HUGE_BAN_HAMMER.get() || itemstack.getItem() == EngiesChaosModItems.ANTIMATTER_HUGE_SCYTHE.get()) {
-			if ((entity instanceof ServerPlayer _plr7 && _plr7.level instanceof ServerLevel
-					&& _plr7.getAdvancements().getOrStartProgress(_plr7.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:antimatter_huge_ban_obtain"))).isDone()) == false) {
+			if ((entity instanceof ServerPlayer _plr6 && _plr6.level instanceof ServerLevel
+					&& _plr6.getAdvancements().getOrStartProgress(_plr6.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:antimatter_huge_ban_obtain"))).isDone()) == false) {
 				if (entity instanceof ServerPlayer _player) {
 					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:antimatter_huge_ban_obtain"));
 					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
@@ -50,8 +42,8 @@ public class HugeBanObtainProProcedure {
 				}
 			}
 		} else {
-			if ((entity instanceof ServerPlayer _plr9 && _plr9.level instanceof ServerLevel
-					&& _plr9.getAdvancements().getOrStartProgress(_plr9.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:huge_ban_obtain"))).isDone()) == false) {
+			if ((entity instanceof ServerPlayer _plr8 && _plr8.level instanceof ServerLevel
+					&& _plr8.getAdvancements().getOrStartProgress(_plr8.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:huge_ban_obtain"))).isDone()) == false) {
 				if (entity instanceof ServerPlayer _player) {
 					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:huge_ban_obtain"));
 					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);

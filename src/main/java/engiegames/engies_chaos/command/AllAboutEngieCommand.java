@@ -51,7 +51,21 @@ public class AllAboutEngieCommand {
 
 					AAEAllCommandsProcedure.execute(world, arguments, entity);
 					return 0;
-				}).then(Commands.argument("user", EntityArgument.player()).then(Commands.argument("number", DoubleArgumentType.doubleArg()).executes(arguments -> {
+				}).then(Commands.argument("user", EntityArgument.player()).executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					AAEAllCommandsProcedure.execute(world, arguments, entity);
+					return 0;
+				}).then(Commands.argument("number", DoubleArgumentType.doubleArg()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();

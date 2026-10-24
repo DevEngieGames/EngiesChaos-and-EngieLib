@@ -71,6 +71,10 @@ public class RespawnCheckProcedure {
 								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @s fire_resistance 300 255 true");
 					}
 				}
+				EngiesChaosMod.queueServerWork(5, () -> {
+					if (entity instanceof LivingEntity _entity)
+						_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
+				});
 			} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_HARDCORE) == true) {
 				{
 					Entity _ent = entity;
@@ -107,6 +111,10 @@ public class RespawnCheckProcedure {
 								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @s strength 600 9 true");
 					}
 				}
+				EngiesChaosMod.queueServerWork(5, () -> {
+					if (entity instanceof LivingEntity _entity)
+						_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
+				});
 			}
 			if ((EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart || EngiesChaosModVariables.MapVariables.get(world).TheEndStart
 					|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart) == true) {

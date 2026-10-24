@@ -8,12 +8,16 @@ import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.Minecraft;
 
 import engiegames.engies_chaos.procedures.MobModelScalingProcedure;
 import engiegames.engies_chaos.procedures.HostileEngieNormalDisplayProcedure;
+import engiegames.engies_chaos.procedures.HostileEngieHalloweenedDisplayProcedure;
 import engiegames.engies_chaos.procedures.HostileEngieColdSeasonedDisplayProcedure;
 import engiegames.engies_chaos.entity.HsotileEngieEntity;
 import engiegames.engies_chaos.client.model.Modelhostile;
+import engiegames.engies_chaos.client.model.Modelheadlesshostile;
 
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -48,6 +52,25 @@ public class HsotileEngieRenderer extends MobRenderer<HsotileEngieEntity, Modelh
 				if (HostileEngieColdSeasonedDisplayProcedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
 					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<HsotileEngieEntity, Modelhostile<HsotileEngieEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/hostileengiecoldseasoned.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, HsotileEngieEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (HostileEngieHalloweenedDisplayProcedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelheadlesshostile(Minecraft.getInstance().getEntityModels().bakeLayer(Modelheadlesshostile.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}
 			}
 		});

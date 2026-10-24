@@ -205,6 +205,14 @@
     "sounds": [
       {
         "name": "engies_chaos:theendeerie",
+        "stream": true
+      }
+    ]
+  },
+  "blizzard": {
+    "sounds": [
+      {
+        "name": "engies_chaos:blizzard",
         "stream": false
       }
     ]

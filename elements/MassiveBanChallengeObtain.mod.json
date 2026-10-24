@@ -2,8 +2,8 @@
   "_fv": 79,
   "_type": "achievement",
   "definition": {
-    "achievementName": "7/9",
-    "achievementDescription": "Keep going, you're almost there!",
+    "achievementName": "7/15",
+    "achievementDescription": "8 more to go. You're half way there, keep it up!",
     "achievementIcon": {
       "value": "CUSTOM:RegularObtainIcon"
     },
@@ -15,7 +15,7 @@
     "rewardLoot": [],
     "rewardRecipes": [],
     "rewardXP": 40,
-    "achievementType": "challenge",
+    "achievementType": "goal",
     "parent": {
       "value": "CUSTOM:GiganticBanChallengeObtain"
     },

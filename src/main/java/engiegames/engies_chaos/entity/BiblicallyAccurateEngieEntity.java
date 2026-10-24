@@ -132,7 +132,7 @@ public class BiblicallyAccurateEngieEntity extends PathfinderMob {
 	@Override
 	public void awardKillScore(Entity entity, int score, DamageSource damageSource) {
 		super.awardKillScore(entity, score, damageSource);
-		BiblicallyAccurateEngieThisEntityKillsAnotherOneProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), entity, this);
+		BiblicallyAccurateEngieThisEntityKillsAnotherOneProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), entity);
 	}
 
 	@Override

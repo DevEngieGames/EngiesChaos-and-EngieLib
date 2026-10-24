@@ -29,6 +29,7 @@ import engiegames.engies_chaos.client.renderer.TheEndRenderer;
 import engiegames.engies_chaos.client.renderer.TheEndHostileRenderer;
 import engiegames.engies_chaos.client.renderer.SuperDoomsDayRenderer;
 import engiegames.engies_chaos.client.renderer.SuperDoomsDayHostileRenderer;
+import engiegames.engies_chaos.client.renderer.SpikeRenderer;
 import engiegames.engies_chaos.client.renderer.SharkoRenderer;
 import engiegames.engies_chaos.client.renderer.ShadowSharkEngieRenderer;
 import engiegames.engies_chaos.client.renderer.ShadowSharkEngieBlindRenderer;
@@ -105,8 +106,6 @@ import engiegames.engies_chaos.client.renderer.EngiRenderer;
 import engiegames.engies_chaos.client.renderer.DoomsDayRenderer;
 import engiegames.engies_chaos.client.renderer.DoomsDayHostileRenderer;
 import engiegames.engies_chaos.client.renderer.DistortedRenderer;
-import engiegames.engies_chaos.client.renderer.DDaySpikeRenderer;
-import engiegames.engies_chaos.client.renderer.DDayAvalancheRenderer;
 import engiegames.engies_chaos.client.renderer.DDAYRiftRenderer;
 import engiegames.engies_chaos.client.renderer.CosmicTheRealEngieGamesRenderer;
 import engiegames.engies_chaos.client.renderer.CosmicDeathSharkoRenderer;
@@ -116,6 +115,7 @@ import engiegames.engies_chaos.client.renderer.BlueBurstRenderer;
 import engiegames.engies_chaos.client.renderer.BloodyEngieRiftedRenderer;
 import engiegames.engies_chaos.client.renderer.BiblicallyDeathSharkoRenderer;
 import engiegames.engies_chaos.client.renderer.BiblicallyAccurateEngieRenderer;
+import engiegames.engies_chaos.client.renderer.AvalancheBallRenderer;
 import engiegames.engies_chaos.client.renderer.AprilFoolsTigerSharkoRenderer;
 import engiegames.engies_chaos.client.renderer.AprilFoolsSharkoRenderer;
 import engiegames.engies_chaos.client.renderer.AprilFoolsRareSharkoRenderer;
@@ -227,8 +227,6 @@ public class EngiesChaosModEntityRenderers {
 		event.registerEntityRenderer(EngiesChaosModEntities.MONSTROSITY_DEATH_SHARKO.get(), MonstrosityDeathSharkoRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.COSMIC_DEATH_SHARKO.get(), CosmicDeathSharkoRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.OMEN.get(), OMENRenderer::new);
-		event.registerEntityRenderer(EngiesChaosModEntities.D_DAY_SPIKE.get(), DDaySpikeRenderer::new);
-		event.registerEntityRenderer(EngiesChaosModEntities.D_DAY_AVALANCHE.get(), DDayAvalancheRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.APRIL_FOOLS_SHARKO.get(), AprilFoolsSharkoRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.APRIL_FOOLS_ALBINO_SHARKO.get(), AprilFoolsAlbinoSharkoRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.APRIL_FOOLS_RARE_SHARKO.get(), AprilFoolsRareSharkoRenderer::new);
@@ -259,5 +257,7 @@ public class EngiesChaosModEntityRenderers {
 		event.registerEntityRenderer(EngiesChaosModEntities.ENGIE_GAMES_HOSTILE_BIBLICALLY_ACCURATE_ENGIE.get(), EngieGamesHostileBiblicallyAccurateEngieRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.ENGIE_GAMES_MONSTROSITY_ENGIE.get(), EngieGamesMonstrosityEngieRenderer::new);
 		event.registerEntityRenderer(EngiesChaosModEntities.ENGIE_GAMES_HOSTILE_ENGIE.get(), EngieGamesHostileEngieRenderer::new);
+		event.registerEntityRenderer(EngiesChaosModEntities.AVALANCHE_BALL.get(), AvalancheBallRenderer::new);
+		event.registerEntityRenderer(EngiesChaosModEntities.SPIKE.get(), SpikeRenderer::new);
 	}
 }

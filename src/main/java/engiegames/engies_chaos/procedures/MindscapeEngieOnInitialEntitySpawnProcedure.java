@@ -13,6 +13,7 @@ public class MindscapeEngieOnInitialEntitySpawnProcedure {
 			if (Math.random() <= 0.15) {
 				entity.getPersistentData().putBoolean("mindscapecandespawn", false);
 				entity.getPersistentData().putBoolean("CanDespawn", true);
+				entity.getPersistentData().putBoolean("tradeable", true);
 				EngiesChaosModVariables.MapVariables.get(world).numberofmindscapetradeable = EngiesChaosModVariables.MapVariables.get(world).numberofmindscapetradeable + 1;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			} else {

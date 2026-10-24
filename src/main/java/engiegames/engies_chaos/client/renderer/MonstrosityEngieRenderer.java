@@ -8,10 +8,14 @@ import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.Minecraft;
 
 import engiegames.engies_chaos.procedures.MonstrosityEngieNormalDisplayProcedure;
+import engiegames.engies_chaos.procedures.MonstrosityEngieHalloweenedDisplayProcedure;
 import engiegames.engies_chaos.procedures.MonstrosityEngieColdSeasonedDisplayProcedure;
 import engiegames.engies_chaos.entity.MonstrosityEngieEntity;
+import engiegames.engies_chaos.client.model.Modelmonstrosityhalloween;
 import engiegames.engies_chaos.client.model.Modelhostile;
 
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -47,6 +51,25 @@ public class MonstrosityEngieRenderer extends MobRenderer<MonstrosityEngieEntity
 				if (MonstrosityEngieColdSeasonedDisplayProcedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
 					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<MonstrosityEngieEntity, Modelhostile<MonstrosityEngieEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/monstrosityengiehalloween.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, MonstrosityEngieEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (MonstrosityEngieHalloweenedDisplayProcedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new Modelmonstrosityhalloween(Minecraft.getInstance().getEntityModels().bakeLayer(Modelmonstrosityhalloween.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}
 			}
 		});

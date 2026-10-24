@@ -5,6 +5,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 
@@ -17,15 +18,15 @@ public class ImmunityCheck2Procedure {
 	@SubscribeEvent
 	public static void onEntityAttacked(LivingAttackEvent event) {
 		if (event != null && event.getEntity() != null) {
-			execute(event, event.getSource(), event.getEntity());
+			execute(event, event.getEntity().level, event.getSource(), event.getEntity());
 		}
 	}
 
-	public static void execute(DamageSource damagesource, Entity entity) {
-		execute(null, damagesource, entity);
+	public static void execute(LevelAccessor world, DamageSource damagesource, Entity entity) {
+		execute(null, world, damagesource, entity);
 	}
 
-	private static void execute(@Nullable Event event, DamageSource damagesource, Entity entity) {
+	private static void execute(@Nullable Event event, LevelAccessor world, DamageSource damagesource, Entity entity) {
 		if (damagesource == null || entity == null)
 			return;
 		if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).playerhasimmunity == true) {
@@ -36,6 +37,16 @@ public class ImmunityCheck2Procedure {
 			}
 		}
 		if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).doublejumping == true) {
+			if (damagesource == DamageSource.FALL) {
+				if (event != null && event.isCancelable()) {
+					event.setCanceled(true);
+				} else if (event != null && event.hasResult()) {
+					event.setResult(Event.Result.DENY);
+				}
+			}
+		}
+		if ((EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart || EngiesChaosModVariables.MapVariables.get(world).TheEndStart
+				|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart) == true) {
 			if (damagesource == DamageSource.FALL) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);

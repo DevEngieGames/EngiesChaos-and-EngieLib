@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "crystalizedbonemeal1",
+  "pattern": [
+    " a ",
+    "aba",
+    " a "
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "b": {
+      "item": "minecraft:bone_meal"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:crystalized_bone_meal",
+    "count": 1
+  }
+}

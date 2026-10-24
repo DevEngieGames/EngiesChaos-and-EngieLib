@@ -8,7 +8,8 @@ public class HostileEngieColdSeasonedDisplayProcedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		if ((entity instanceof HsotileEngieEntity _datEntL0 && _datEntL0.getEntityData().get(HsotileEngieEntity.DATA_coldseasoned)) == true) {
+		if ((entity instanceof HsotileEngieEntity _datEntL0 && _datEntL0.getEntityData().get(HsotileEngieEntity.DATA_coldseasoned)) == true
+				&& (entity instanceof HsotileEngieEntity _datEntL1 && _datEntL1.getEntityData().get(HsotileEngieEntity.DATA_halloweened)) == false) {
 			return true;
 		}
 		return false;

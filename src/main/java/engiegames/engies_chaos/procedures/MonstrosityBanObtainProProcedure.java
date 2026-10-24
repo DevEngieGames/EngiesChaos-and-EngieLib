@@ -29,11 +29,6 @@ public class MonstrosityBanObtainProProcedure {
 					}
 				}
 			}
-			if (EngiesChaosModVariables.MapVariables.get(world).madlads == false) {
-				ChallengeCompletionProcedure.execute(world, entity);
-				EngiesChaosModVariables.MapVariables.get(world).madlads = true;
-				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-			}
 		} else if (itemstack.getItem() == EngiesChaosModItems.ANTIMATTER_MONSTROSITY_BAN_HAMMER.get() || itemstack.getItem() == EngiesChaosModItems.ANTIMATTER_MONSTROSITY_SCYTHE.get()) {
 			if ((entity instanceof ServerPlayer _plr6 && _plr6.level instanceof ServerLevel
 					&& _plr6.getAdvancements().getOrStartProgress(_plr6.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:antimatter_monstrosity_ban_obtain"))).isDone()) == false) {

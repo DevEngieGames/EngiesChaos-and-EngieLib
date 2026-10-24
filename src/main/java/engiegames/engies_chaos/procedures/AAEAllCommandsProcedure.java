@@ -28,7 +28,8 @@ public class AAEAllCommandsProcedure {
 			return;
 		if (((StringArgumentType.getString(arguments, "MainType")).toLowerCase()).equals("dev")) {
 			if (entity.getPersistentData().getBoolean("EngiesChaos_Dev") == true) {
-				if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("summondoomsday") || ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("ddaysummon")) {
+				if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("summondoomsday") || ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("summondday")
+						|| ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("ddaysummon")) {
 					{
 						Entity _ent = entity;
 						if (!_ent.level.isClientSide() && _ent.getServer() != null) {
@@ -41,8 +42,9 @@ public class AAEAllCommandsProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = 525;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosMod.LOGGER.debug("THE DEVELOPER SUMMONED DOOMSDAY!!!!!");
-				} else if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("cleanupdoomsday") || ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("ddaycleanup")
-						|| ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("cleandday")) {
+				} else if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("cleanupdoomsday") || ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("doomsdaycleanup")
+						|| ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("cleandday") || ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("ddayclean")
+						|| ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("cleanupdday") || ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("ddaycleanup")) {
 					DoomsdayManualCleanupProcedure.execute(world);
 					EngiesChaosMod.LOGGER.debug("THE DEVELOPER CLEANED UP DOOMSDAY!!!!!");
 				} else if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("resetpickaxeonly")) {
@@ -89,6 +91,56 @@ public class AAEAllCommandsProcedure {
 						if (entity instanceof Player _player && !_player.level.isClientSide())
 							_player.displayClientMessage(Component.literal("\u00A7cYou need an player to use this command on them!"), false);
 					}
+				} else if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("forceava")) {
+					AvalancheSpawnProcedure.execute(world);
+				} else if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("forcespike")) {
+					SpikeSpawnsProcedure.execute(world);
+				} else if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("forcerift")) {
+					RiftSpawnsProcedure.execute(world);
+				} else if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("forcemissile")) {
+					MissileSpawnProcedure.execute(world);
+				} else if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("resetready")) {
+					for (Entity entityiterator : new ArrayList<>(world.players())) {
+						if ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).playerready == true) {
+							{
+								boolean _setval = false;
+								entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.playerready = _setval;
+									capability.syncPlayerVariables(entityiterator);
+								});
+							}
+							EngiesChaosModVariables.MapVariables.get(world).challengeplayerreadyupcount = EngiesChaosModVariables.MapVariables.get(world).challengeplayerreadyupcount - 1;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						}
+					}
+				} else if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("forcealive")) {
+					if (!((commandParameterEntity(arguments, "user")) == null)) {
+						if (((commandParameterEntity(arguments, "user")).getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive == false) {
+							{
+								boolean _setval = true;
+								(commandParameterEntity(arguments, "user")).getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.DoomsdayAlive = _setval;
+									capability.syncPlayerVariables((commandParameterEntity(arguments, "user")));
+								});
+							}
+							EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount = EngiesChaosModVariables.MapVariables.get(world).ddayplayeralivecount + 1;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+							EngiesChaosModVariables.MapVariables.get(world).ddayplayerdeadcount = EngiesChaosModVariables.MapVariables.get(world).ddayplayerdeadcount - 1;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						} else {
+							if (entity instanceof Player _player && !_player.level.isClientSide())
+								_player.displayClientMessage(Component.literal("\u00A7cThat player is already alive!"), false);
+						}
+					} else {
+						if (entity instanceof Player _player && !_player.level.isClientSide())
+							_player.displayClientMessage(Component.literal("\u00A7cYou need a player to use this command on them!"), false);
+					}
+				} else if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("forcedday")) {
+					EngiesChaosModVariables.MapVariables.get(world).doomsdaychance = 525;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosMod.queueServerWork(1, () -> {
+						DoomsdaySummonProcedure.execute(world);
+					});
 				}
 			} else {
 				{
@@ -100,7 +152,8 @@ public class AAEAllCommandsProcedure {
 				}
 			}
 		} else if (((StringArgumentType.getString(arguments, "MainType")).toLowerCase()).equals("admin")) {
-			if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("summondoomsday") || ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("ddaysummon")) {
+			if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("summondoomsday") || ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("summondday")
+					|| ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("ddaysummon")) {
 				if (entity.hasPermissions(4)) {
 					{
 						Entity _ent = entity;
@@ -115,8 +168,9 @@ public class AAEAllCommandsProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosMod.LOGGER.debug((entity + " summoned Doomsday."));
 				}
-			} else if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("cleanupdoomsday") || ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("ddaycleanup")
-					|| ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("cleandday")) {
+			} else if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("cleanupdoomsday") || ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("doomsdaycleanup")
+					|| ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("cleandday") || ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("ddayclean")
+					|| ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("cleanupdday") || ((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("ddaycleanup")) {
 				if (entity.hasPermissions(4)) {
 					DoomsdayManualCleanupProcedure.execute(world);
 					EngiesChaosMod.LOGGER.debug((entity + " ran Doomsday cleanup."));
@@ -165,7 +219,7 @@ public class AAEAllCommandsProcedure {
 					}
 				} else {
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(Component.literal("\u00A7cYou need an player to use this command on them!"), false);
+						_player.displayClientMessage(Component.literal("\u00A7cYou need a player to use this command on them!"), false);
 				}
 			}
 		} else if (((StringArgumentType.getString(arguments, "MainType")).toLowerCase()).equals("getddayrisk") || ((StringArgumentType.getString(arguments, "MainType")).toLowerCase()).equals("getrisk")) {

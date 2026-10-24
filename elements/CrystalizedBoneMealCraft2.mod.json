@@ -1,0 +1,59 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 9,
+    "group": "crystalizedbonemeal2",
+    "unlockingItems": [
+      {
+        "value": "Items.DYE#15"
+      },
+      {
+        "value": "Items.AMETHYST_SHARD"
+      },
+      {
+        "value": "Blocks.AMETHYST_BLOCK"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "Items.DYE#15"
+      },
+      {
+        "value": "Items.DYE#15"
+      },
+      {
+        "value": "Items.DYE#15"
+      },
+      {
+        "value": "Items.DYE#15"
+      },
+      {
+        "value": "Blocks.AMETHYST_BLOCK"
+      },
+      {
+        "value": "Items.DYE#15"
+      },
+      {
+        "value": "Items.DYE#15"
+      },
+      {
+        "value": "Items.DYE#15"
+      },
+      {
+        "value": "Items.DYE#15"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:CrystalizedBoneMeal"
+    },
+    "name": "crystalized_bone_meal_craft_2",
+    "namespace": "mod"
+  }
+}

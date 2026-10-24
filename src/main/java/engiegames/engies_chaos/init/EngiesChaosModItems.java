@@ -562,6 +562,7 @@ import engiegames.engies_chaos.item.CyberItem;
 import engiegames.engies_chaos.item.CyberIngotItem;
 import engiegames.engies_chaos.item.CyberHoeItem;
 import engiegames.engies_chaos.item.CyberAxeItem;
+import engiegames.engies_chaos.item.CrystalizedBoneMealItem;
 import engiegames.engies_chaos.item.CrucifixItem;
 import engiegames.engies_chaos.item.CrucifixBaseItem;
 import engiegames.engies_chaos.item.CreativeEngieBundleItem;
@@ -1521,6 +1522,7 @@ public class EngiesChaosModItems {
 	public static final RegistryObject<Item> PUNISHER_PLUSH = REGISTRY.register("punisher_plush", PunisherPlushItem::new);
 	public static final RegistryObject<Item> TRUE_CHAOS_MATTER_FRAGMENT = REGISTRY.register("true_chaos_matter_fragment", TrueChaosMatterFragmentItem::new);
 	public static final RegistryObject<Item> TRUE_CHAOS_MATTER = REGISTRY.register("true_chaos_matter", TrueChaosMatterItem::new);
+	public static final RegistryObject<Item> CRYSTALIZED_BONE_MEAL = REGISTRY.register("crystalized_bone_meal", CrystalizedBoneMealItem::new);
 	public static final RegistryObject<Item> ENGIES_HELMET = REGISTRY.register("engies_helmet", EngiesItem.Helmet::new);
 	public static final RegistryObject<Item> ENGIES_CHESTPLATE = REGISTRY.register("engies_chestplate", EngiesItem.Chestplate::new);
 	public static final RegistryObject<Item> ENGIES_LEGGINGS = REGISTRY.register("engies_leggings", EngiesItem.Leggings::new);

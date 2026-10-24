@@ -33,7 +33,7 @@ import engiegames.engies_chaos.procedures.MissileTickUpdateProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class MOABEntity extends PathfinderMob {
-	public static final EntityDataAccessor<Integer> DATA_scalemult = SynchedEntityData.defineId(MOABEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_MOABTimeBeforeExplosion = SynchedEntityData.defineId(MOABEntity.class, EntityDataSerializers.INT);
 
 	public MOABEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(EngiesChaosModEntities.MOAB.get(), world);
@@ -55,7 +55,7 @@ public class MOABEntity extends PathfinderMob {
 	@Override
 	protected void defineSynchedData() {
 		super.defineSynchedData();
-		this.entityData.define(DATA_scalemult, 0);
+		this.entityData.define(DATA_MOABTimeBeforeExplosion, 320);
 	}
 
 	@Override
@@ -118,14 +118,14 @@ public class MOABEntity extends PathfinderMob {
 	@Override
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
-		compound.putInt("Datascalemult", this.entityData.get(DATA_scalemult));
+		compound.putInt("DataMOABTimeBeforeExplosion", this.entityData.get(DATA_MOABTimeBeforeExplosion));
 	}
 
 	@Override
 	public void readAdditionalSaveData(CompoundTag compound) {
 		super.readAdditionalSaveData(compound);
-		if (compound.contains("Datascalemult"))
-			this.entityData.set(DATA_scalemult, compound.getInt("Datascalemult"));
+		if (compound.contains("DataMOABTimeBeforeExplosion"))
+			this.entityData.set(DATA_MOABTimeBeforeExplosion, compound.getInt("DataMOABTimeBeforeExplosion"));
 	}
 
 	@Override

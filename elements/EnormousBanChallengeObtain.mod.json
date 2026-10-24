@@ -2,8 +2,8 @@
   "_fv": 79,
   "_type": "achievement",
   "definition": {
-    "achievementName": "5/9",
-    "achievementDescription": "Halfway there. Keep pushing through.",
+    "achievementName": "5/15",
+    "achievementDescription": "10 more to go.",
     "achievementIcon": {
       "value": "CUSTOM:RegularObtainIcon"
     },
@@ -15,7 +15,7 @@
     "rewardLoot": [],
     "rewardRecipes": [],
     "rewardXP": 30,
-    "achievementType": "goal",
+    "achievementType": "task",
     "parent": {
       "value": "CUSTOM:HugeBanChallengeObtain"
     },

@@ -48,6 +48,7 @@ import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class MadEngieEntity extends Monster {
 	public static final EntityDataAccessor<Boolean> DATA_coldseasoned = SynchedEntityData.defineId(MadEngieEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_halloweened = SynchedEntityData.defineId(MadEngieEntity.class, EntityDataSerializers.BOOLEAN);
 
 	public MadEngieEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(EngiesChaosModEntities.MAD_ENGIE.get(), world);
@@ -69,6 +70,7 @@ public class MadEngieEntity extends Monster {
 	protected void defineSynchedData() {
 		super.defineSynchedData();
 		this.entityData.define(DATA_coldseasoned, false);
+		this.entityData.define(DATA_halloweened, false);
 	}
 
 	@Override
@@ -202,6 +204,7 @@ public class MadEngieEntity extends Monster {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putBoolean("Datacoldseasoned", this.entityData.get(DATA_coldseasoned));
+		compound.putBoolean("Datahalloweened", this.entityData.get(DATA_halloweened));
 	}
 
 	@Override
@@ -209,6 +212,8 @@ public class MadEngieEntity extends Monster {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Datacoldseasoned"))
 			this.entityData.set(DATA_coldseasoned, compound.getBoolean("Datacoldseasoned"));
+		if (compound.contains("Datahalloweened"))
+			this.entityData.set(DATA_halloweened, compound.getBoolean("Datahalloweened"));
 	}
 
 	@Override

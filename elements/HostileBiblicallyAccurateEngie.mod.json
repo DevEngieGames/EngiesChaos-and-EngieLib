@@ -39,6 +39,24 @@
         "condition": {
           "name": "HostileBiblicallyAccurateEngieColdSeasonedDisplay"
         }
+      },
+      {
+        "model": "Default",
+        "texture": "hostilebiblicallyaccurateengiehalloween.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "HostileBiblicallyAccurateEngieHalloweenedDisplay"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "hostilebiblicallyaccurateengiehalloween.png",
+        "disableHurtOverlay": false,
+        "glow": true,
+        "condition": {
+          "name": "HostileBiblicallyAccurateEngieHalloweenedDisplay"
+        }
       }
     ],
     "animations": [],
@@ -141,6 +159,11 @@
     "entityDataEntries": [
       {
         "name": "coldseasoned",
+        "type": "logic",
+        "value": false
+      },
+      {
+        "name": "halloweened",
         "type": "logic",
         "value": false
       }

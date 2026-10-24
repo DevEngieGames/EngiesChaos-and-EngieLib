@@ -33,7 +33,7 @@ import engiegames.engies_chaos.procedures.MissileTickUpdateProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class NormalEntity extends PathfinderMob {
-	public static final EntityDataAccessor<Integer> DATA_scalemult = SynchedEntityData.defineId(NormalEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_NormalTimeBeforeExplosion = SynchedEntityData.defineId(NormalEntity.class, EntityDataSerializers.INT);
 
 	public NormalEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(EngiesChaosModEntities.NORMAL.get(), world);
@@ -55,7 +55,7 @@ public class NormalEntity extends PathfinderMob {
 	@Override
 	protected void defineSynchedData() {
 		super.defineSynchedData();
-		this.entityData.define(DATA_scalemult, 0);
+		this.entityData.define(DATA_NormalTimeBeforeExplosion, 120);
 	}
 
 	@Override
@@ -118,14 +118,14 @@ public class NormalEntity extends PathfinderMob {
 	@Override
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
-		compound.putInt("Datascalemult", this.entityData.get(DATA_scalemult));
+		compound.putInt("DataNormalTimeBeforeExplosion", this.entityData.get(DATA_NormalTimeBeforeExplosion));
 	}
 
 	@Override
 	public void readAdditionalSaveData(CompoundTag compound) {
 		super.readAdditionalSaveData(compound);
-		if (compound.contains("Datascalemult"))
-			this.entityData.set(DATA_scalemult, compound.getInt("Datascalemult"));
+		if (compound.contains("DataNormalTimeBeforeExplosion"))
+			this.entityData.set(DATA_NormalTimeBeforeExplosion, compound.getInt("DataNormalTimeBeforeExplosion"));
 	}
 
 	@Override

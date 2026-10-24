@@ -4,6 +4,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
 
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
@@ -17,6 +18,7 @@ import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.MobSpawnType;
@@ -33,6 +35,7 @@ import net.minecraft.nbt.CompoundTag;
 
 import javax.annotation.Nullable;
 
+import engiegames.engies_chaos.procedures.PureInsanitySpawningConditionProcedure;
 import engiegames.engies_chaos.procedures.EntitySpawnsProcedure;
 import engiegames.engies_chaos.procedures.AnyEngieDiesAddCountProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
@@ -47,7 +50,6 @@ public class PureInsanityEntity extends Monster {
 		maxUpStep = 1f;
 		xpReward = 525;
 		setNoAi(false);
-		setPersistenceRequired();
 	}
 
 	@Override
@@ -80,11 +82,6 @@ public class PureInsanityEntity extends Monster {
 	}
 
 	@Override
-	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
-		return false;
-	}
-
-	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.hurt"));
 	}
@@ -108,6 +105,12 @@ public class PureInsanityEntity extends Monster {
 	}
 
 	public static void init() {
+		SpawnPlacements.register(EngiesChaosModEntities.PURE_INSANITY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			return PureInsanitySpawningConditionProcedure.execute(world);
+		});
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

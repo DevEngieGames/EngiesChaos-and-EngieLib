@@ -2,8 +2,8 @@
   "_fv": 79,
   "_type": "achievement",
   "definition": {
-    "achievementName": "8/9",
-    "achievementDescription": "ONE MORE, YOU GOT THIS!",
+    "achievementName": "8/15",
+    "achievementDescription": "7 more to go.",
     "achievementIcon": {
       "value": "CUSTOM:RegularObtainIcon2"
     },
@@ -15,7 +15,7 @@
     "rewardLoot": [],
     "rewardRecipes": [],
     "rewardXP": 45,
-    "achievementType": "challenge",
+    "achievementType": "goal",
     "parent": {
       "value": "CUSTOM:MassiveBanChallengeObtain"
     },

@@ -30,9 +30,7 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInformation": {
-      "fixedValue": [
-        "Some say even DevEngie was chilled to the core making this."
-      ]
+      "fixedValue": []
     },
     "glowCondition": {
       "fixedValue": false

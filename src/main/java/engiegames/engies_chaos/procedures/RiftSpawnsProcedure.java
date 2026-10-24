@@ -187,6 +187,10 @@ public class RiftSpawnsProcedure {
 						_level.addFreshEntity(entityToSpawn);
 					}
 					if (Mth.nextInt(RandomSource.create(), 1, 100) <= 35) {
+						EngiesChaosModVariables.MapVariables.get(world).RiftRX = Mth.nextInt(RandomSource.create(), -175, 175);
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).RiftRZ = Mth.nextInt(RandomSource.create(), -175, 175);
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount = EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount + 1;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						if (world instanceof ServerLevel _level) {
@@ -247,6 +251,21 @@ public class RiftSpawnsProcedure {
 						}
 					}
 				}
+			}
+		} else {
+			EngiesChaosModVariables.MapVariables.get(world).RiftRX = Mth.nextInt(RandomSource.create(), -175, 175);
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			EngiesChaosModVariables.MapVariables.get(world).RiftRZ = Mth.nextInt(RandomSource.create(), -175, 175);
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount = EngiesChaosModVariables.MapVariables.get(world).DDayRiftAmount + 1;
+			EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = new DDAYRiftEntity(EngiesChaosModEntities.DDAY_RIFT.get(), _level);
+				entityToSpawn.moveTo(EngiesChaosModVariables.MapVariables.get(world).RiftRX, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0) + 125), EngiesChaosModVariables.MapVariables.get(world).RiftRZ,
+						world.getRandom().nextFloat() * 360F, 0);
+				if (entityToSpawn instanceof Mob _mobToSpawn)
+					_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+				_level.addFreshEntity(entityToSpawn);
 			}
 		}
 	}

@@ -1,6 +1,9 @@
 package engiegames.engies_chaos.block;
 
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -9,22 +12,42 @@ import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.MenuProvider;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.util.RandomSource;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 import engiegames.engies_chaos.procedures.BuddingDarkMatterEngieBlockOnTickUpdateProcedure;
+import engiegames.engies_chaos.procedures.BuddingBlockRCProcedure;
 import engiegames.engies_chaos.block.entity.BuddingDarkMatterEngieBlockBlockEntity;
 
 public class BuddingDarkMatterEngieBlockBlock extends Block implements EntityBlock {
+	public static final IntegerProperty DELAYTIMERDIVIDER = IntegerProperty.create("delaytimerdivider", 1, 10);
+
 	public BuddingDarkMatterEngieBlockBlock() {
 		super(BlockBehaviour.Properties.of(Material.BUILDABLE_GLASS).sound(SoundType.AMETHYST).strength(13.5f, 120f).requiresCorrectToolForDrops());
+		this.registerDefaultState(this.stateDefinition.any().setValue(DELAYTIMERDIVIDER, 1));
 	}
 
 	@Override
 	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 15;
+	}
+
+	@Override
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+		super.createBlockStateDefinition(builder);
+		builder.add(DELAYTIMERDIVIDER);
+	}
+
+	@Override
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
+		return super.getStateForPlacement(context).setValue(DELAYTIMERDIVIDER, 1);
 	}
 
 	@Override
@@ -41,6 +64,20 @@ public class BuddingDarkMatterEngieBlockBlock extends Block implements EntityBlo
 		int z = pos.getZ();
 		BuddingDarkMatterEngieBlockOnTickUpdateProcedure.execute(world, x, y, z);
 		world.scheduleTick(pos, this, 20);
+	}
+
+	@Override
+	public InteractionResult use(BlockState blockstate, Level world, BlockPos pos, Player entity, InteractionHand hand, BlockHitResult hit) {
+		super.use(blockstate, world, pos, entity, hand, hit);
+		int x = pos.getX();
+		int y = pos.getY();
+		int z = pos.getZ();
+		double hitX = hit.getLocation().x;
+		double hitY = hit.getLocation().y;
+		double hitZ = hit.getLocation().z;
+		Direction direction = hit.getDirection();
+		BuddingBlockRCProcedure.execute(world, x, y, z, blockstate, entity);
+		return InteractionResult.SUCCESS;
 	}
 
 	@Override

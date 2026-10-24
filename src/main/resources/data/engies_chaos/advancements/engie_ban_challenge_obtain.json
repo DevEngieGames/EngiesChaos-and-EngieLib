@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "engies_chaos:regular_obtain_icon_7"
+    },
+    "title": {
+      "translate": "advancements.engie_ban_challenge_obtain.title"
+    },
+    "description": {
+      "translate": "advancements.engie_ban_challenge_obtain.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "engie_ban_challenge_obtain_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 70
+  },
+  "parent": "engies_chaos:the_end_ban_challenge_obtain"
+}

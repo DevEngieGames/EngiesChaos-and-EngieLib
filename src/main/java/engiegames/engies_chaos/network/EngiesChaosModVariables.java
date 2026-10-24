@@ -544,6 +544,17 @@ public class EngiesChaosModVariables {
 		public double HordeRX = 0;
 		public double HordeRZ = 0;
 		public boolean lockhewhogamesotherspawn = false;
+		public double avascaledowncd = 0;
+		public double plushtimeuntildeathforall = 0;
+		public boolean challengehugewepobtained = false;
+		public double previousdifficulty = 0;
+		public boolean warnonce = false;
+		public double avaballtimebeforeshrink = 0;
+		public double spiketimewait = 5.0;
+		public boolean engiepocgivenplush = false;
+		public boolean blizzard = false;
+		public boolean spikescurrentlytriggering = false;
+		public double blizzardsfxtimerforchallenge = 0;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -834,6 +845,17 @@ public class EngiesChaosModVariables {
 			HordeRX = nbt.getDouble("HordeRX");
 			HordeRZ = nbt.getDouble("HordeRZ");
 			lockhewhogamesotherspawn = nbt.getBoolean("lockhewhogamesotherspawn");
+			avascaledowncd = nbt.getDouble("avascaledowncd");
+			plushtimeuntildeathforall = nbt.getDouble("plushtimeuntildeathforall");
+			challengehugewepobtained = nbt.getBoolean("challengehugewepobtained");
+			previousdifficulty = nbt.getDouble("previousdifficulty");
+			warnonce = nbt.getBoolean("warnonce");
+			avaballtimebeforeshrink = nbt.getDouble("avaballtimebeforeshrink");
+			spiketimewait = nbt.getDouble("spiketimewait");
+			engiepocgivenplush = nbt.getBoolean("engiepocgivenplush");
+			blizzard = nbt.getBoolean("blizzard");
+			spikescurrentlytriggering = nbt.getBoolean("spikescurrentlytriggering");
+			blizzardsfxtimerforchallenge = nbt.getDouble("blizzardsfxtimerforchallenge");
 		}
 
 		@Override
@@ -1120,6 +1142,17 @@ public class EngiesChaosModVariables {
 			nbt.putDouble("HordeRX", HordeRX);
 			nbt.putDouble("HordeRZ", HordeRZ);
 			nbt.putBoolean("lockhewhogamesotherspawn", lockhewhogamesotherspawn);
+			nbt.putDouble("avascaledowncd", avascaledowncd);
+			nbt.putDouble("plushtimeuntildeathforall", plushtimeuntildeathforall);
+			nbt.putBoolean("challengehugewepobtained", challengehugewepobtained);
+			nbt.putDouble("previousdifficulty", previousdifficulty);
+			nbt.putBoolean("warnonce", warnonce);
+			nbt.putDouble("avaballtimebeforeshrink", avaballtimebeforeshrink);
+			nbt.putDouble("spiketimewait", spiketimewait);
+			nbt.putBoolean("engiepocgivenplush", engiepocgivenplush);
+			nbt.putBoolean("blizzard", blizzard);
+			nbt.putBoolean("spikescurrentlytriggering", spikescurrentlytriggering);
+			nbt.putDouble("blizzardsfxtimerforchallenge", blizzardsfxtimerforchallenge);
 			return nbt;
 		}
 

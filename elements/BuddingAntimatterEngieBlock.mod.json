@@ -35,7 +35,15 @@
         "subtract": false
       }
     ],
-    "customProperties": [],
+    "customProperties": [
+      {
+        "min": 1,
+        "max": 10,
+        "name": "CUSTOM:delaytimerdivider",
+        "type": "integer",
+        "value": 1
+      }
+    ],
     "name": "§6Budding §5Anti§dmatter §cEngie §6Block",
     "specialInformation": {
       "fixedValue": []
@@ -131,6 +139,9 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onRightClicked": {
+      "name": "BuddingBlockRC"
+    },
     "onTickUpdate": {
       "name": "BuddingAntimatterEngieBlockOnTickUpdate"
     },

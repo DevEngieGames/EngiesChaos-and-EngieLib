@@ -26,9 +26,7 @@ public class EngieLibNeedProcedure {
 		if (entity == null)
 			return;
 		if ((StringArgumentType.getString(arguments, "EngieLib")).equals("EngieLib")) {
-			if ((StringArgumentType.getString(arguments, "Type")).equals("StartChallenge")) {
-				ChallengeDialogueProcedure.execute(world, entity);
-			} else if ((StringArgumentType.getString(arguments, "Type")).equals("StartEndgameLoot")) {
+			if ((StringArgumentType.getString(arguments, "Type")).equals("StartEndgameLoot")) {
 				EngiesChaosModVariables.MapVariables.get(world).antimatterdropcheck = true;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			} else if ((StringArgumentType.getString(arguments, "Type")).equals("DoomsdayAwardPlayer")) {

@@ -2,8 +2,8 @@
   "_fv": 79,
   "_type": "achievement",
   "definition": {
-    "achievementName": "6/9",
-    "achievementDescription": "3 more.",
+    "achievementName": "6/15",
+    "achievementDescription": "9 more to go.",
     "achievementIcon": {
       "value": "CUSTOM:RegularObtainIcon"
     },
@@ -15,7 +15,7 @@
     "rewardLoot": [],
     "rewardRecipes": [],
     "rewardXP": 35,
-    "achievementType": "goal",
+    "achievementType": "task",
     "parent": {
       "value": "CUSTOM:EnormousBanChallengeObtain"
     },

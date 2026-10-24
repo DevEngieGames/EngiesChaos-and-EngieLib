@@ -39,6 +39,15 @@
         "condition": {
           "name": "AngryEngieColdSeasonedDisplay"
         }
+      },
+      {
+        "model": "Default",
+        "texture": "angryengiehalloween.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "AngryEngieHolloweenedDisplay"
+        }
       }
     ],
     "animations": [],

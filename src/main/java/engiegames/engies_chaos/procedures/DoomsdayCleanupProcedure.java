@@ -56,16 +56,11 @@ public class DoomsdayCleanupProcedure {
 								Entity _ent = entityiterator;
 								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a");
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a music engies_chaos:doomshalf2");
 								}
 							}
-							{
-								Entity _ent = entityiterator;
-								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect clear @a");
-								}
-							}
+							EngiesChaosModVariables.MapVariables.get(world).blizzard = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						}
 					}
 				}
@@ -88,14 +83,8 @@ public class DoomsdayCleanupProcedure {
 									capability.syncPlayerVariables(entityiterator);
 								});
 							}
-							{
-								Entity _ent = entityiterator;
-								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @a darkness 20 1 true");
-								}
-							}
 						}
+						BlizzardAnnoyanceProcedure.execute(world);
 						AvalancheSpawnProcedure.execute(world);
 						SpikeSpawnsProcedure.execute(world);
 						RiftSpawnsProcedure.execute(world);
@@ -115,20 +104,8 @@ public class DoomsdayCleanupProcedure {
 											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "kill @e[type=#engies_chaos:doomsday/entitycleanup]");
 								}
 							}
-							{
-								Entity _ent = entityiterator;
-								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a");
-								}
-							}
-							{
-								Entity _ent = entityiterator;
-								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect clear @a");
-								}
-							}
+							EngiesChaosModVariables.MapVariables.get(world).blizzard = false;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						}
 					}
 				}
@@ -155,6 +132,13 @@ public class DoomsdayCleanupProcedure {
 								capability.syncPlayerVariables(entityiterator);
 							});
 						}
+						{
+							boolean _setval = false;
+							entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.crucifixbypass = _setval;
+								capability.syncPlayerVariables(entityiterator);
+							});
+						}
 					}
 					if (world instanceof ServerLevel _level)
 						_level.setDayTime((int) (EngiesChaosModVariables.MapVariables.get(world).timeticks + 11000));
@@ -166,15 +150,17 @@ public class DoomsdayCleanupProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).ransecondcleanup = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).stopdialogue = true;
+					EngiesChaosModVariables.MapVariables.get(world).stopdialogue = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).OHBOY = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).ddayprophshow = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).pausedialogue = false;
+					EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = true;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).prophallowticking = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).pausedialogue = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -283,6 +269,8 @@ public class DoomsdayCleanupProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 0;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).ddayprophnumb = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).missilecooldown = 0;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).lightningcooldown = 0;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);

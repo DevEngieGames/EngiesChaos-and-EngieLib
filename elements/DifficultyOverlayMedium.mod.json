@@ -547,6 +547,34 @@
       {
         "type": "image",
         "data": {
+          "image": "diff33.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty33ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 235,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "diff34.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Difficulty34ReturnTrueCheck"
+          },
+          "anchorPoint": "TOP_RIGHT",
+          "x": 235,
+          "y": 0,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
           "image": "diff525.png",
           "use1Xscale": true,
           "displayCondition": {

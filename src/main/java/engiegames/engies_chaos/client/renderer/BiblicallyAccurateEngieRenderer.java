@@ -10,6 +10,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.MultiBufferSource;
 
 import engiegames.engies_chaos.procedures.BiblicallyAccurateEngieNormalDisplayProcedure;
+import engiegames.engies_chaos.procedures.BiblicallyAccurateEngieHalloweenedDisplayProcedure;
 import engiegames.engies_chaos.procedures.BiblicallyAccurateEngieColdSeasonedDisplayProcedure;
 import engiegames.engies_chaos.entity.BiblicallyAccurateEngieEntity;
 import engiegames.engies_chaos.client.model.Modelhostile;
@@ -46,6 +47,36 @@ public class BiblicallyAccurateEngieRenderer extends MobRenderer<BiblicallyAccur
 				double z = entity.getZ();
 				if (BiblicallyAccurateEngieColdSeasonedDisplayProcedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<BiblicallyAccurateEngieEntity, Modelhostile<BiblicallyAccurateEngieEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/biblicallyaccurateengiehalloween.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, BiblicallyAccurateEngieEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (BiblicallyAccurateEngieHalloweenedDisplayProcedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<BiblicallyAccurateEngieEntity, Modelhostile<BiblicallyAccurateEngieEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("engies_chaos:textures/entities/biblicallyaccurateengiehalloween.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, BiblicallyAccurateEngieEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level;
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (BiblicallyAccurateEngieHalloweenedDisplayProcedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.eyes(LAYER_TEXTURE));
 					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}
 			}

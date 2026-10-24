@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "engies_chaos:regular_obtain_icon_8"
+    },
+    "title": {
+      "translate": "advancements.mindscape_ban_challenge_obtain.title"
+    },
+    "description": {
+      "translate": "advancements.mindscape_ban_challenge_obtain.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "mindscape_ban_challenge_obtain_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 75
+  },
+  "parent": "engies_chaos:engie_ban_challenge_obtain"
+}

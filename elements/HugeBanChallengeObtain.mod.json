@@ -2,8 +2,8 @@
   "_fv": 79,
   "_type": "achievement",
   "definition": {
-    "achievementName": "4/9",
-    "achievementDescription": "HE stepped in. GOOD LUCK.",
+    "achievementName": "4/15",
+    "achievementDescription": "11 more to go.",
     "achievementIcon": {
       "value": "CUSTOM:RegularObtainIcon"
     },
@@ -15,7 +15,7 @@
     "rewardLoot": [],
     "rewardRecipes": [],
     "rewardXP": 20,
-    "achievementType": "goal",
+    "achievementType": "task",
     "parent": {
       "value": "CUSTOM:LargeBanChallengeObtain"
     },

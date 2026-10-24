@@ -12,6 +12,7 @@ import net.minecraft.world.entity.Entity;
 import javax.annotation.Nullable;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
+import engiegames.engies_chaos.init.EngiesChaosModGameRules;
 
 @Mod.EventBusSubscriber
 public class PlayerDiesChallengeProcedure {
@@ -29,12 +30,16 @@ public class PlayerDiesChallengeProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (EngiesChaosModVariables.MapVariables.get(world).ChallengeToggle == true) {
+		if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIE_POC) == true && world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.AMBIENCE_MODE) == true
+				|| EngiesChaosModVariables.MapVariables.get(world).ChallengeToggle == true) {
 			if (entity instanceof Player) {
 				if (EngiesChaosModVariables.MapVariables.get(world).graceperiodbeforeplushangryagain == false) {
 					EngiesChaosModVariables.MapVariables.get(world).graceperiodbeforeplushangryagain = true;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					entity.getPersistentData().putDouble("plushtimeuntildeathforall", 0);
+					EngiesChaosModVariables.MapVariables.get(world).warnonce = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).plushtimeuntildeathforall = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				}
 			}
 		}
