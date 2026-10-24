@@ -8,27 +8,11 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.StringArgumentType;
 
 public class LibStuffProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, CommandContext<CommandSourceStack> arguments, Entity entity) {
+	public static void execute(LevelAccessor world, CommandContext<CommandSourceStack> arguments, Entity entity) {
 		if (entity == null)
 			return;
 		if ((StringArgumentType.getString(arguments, "LibNeed")).equals("EChaos")) {
-			if ((StringArgumentType.getString(arguments, "LibStuff")).equals("darkness")) {
-				DarknessProcedure.execute(world, x, y, z);
-			} else if ((StringArgumentType.getString(arguments, "LibStuff")).equals("missile")) {
-				MissileProcedure.execute(world);
-			} else if ((StringArgumentType.getString(arguments, "LibStuff")).equals("rift")) {
-				RiftProcedure.execute(world);
-			} else if ((StringArgumentType.getString(arguments, "LibStuff")).equals("spike")) {
-				SpikeProcedure.execute(world);
-			} else if ((StringArgumentType.getString(arguments, "LibStuff")).equals("horde")) {
-				HordeProcedure.execute(world);
-			} else if ((StringArgumentType.getString(arguments, "LibStuff")).equals("startchallenge")) {
-				StartchallengeProcedure.execute(world, entity);
-			} else if ((StringArgumentType.getString(arguments, "LibStuff")).equals("challengecompleted")) {
-				ChallengeCompletionProcedure.execute(world, entity);
-			} else if ((StringArgumentType.getString(arguments, "LibStuff")).equals("startchallenge")) {
-				StartchallengeProcedure.execute(world, entity);
-			} else if ((StringArgumentType.getString(arguments, "LibStuff")).equals("giveoperatorgear")) {
+			if ((StringArgumentType.getString(arguments, "LibStuff")).equals("giveoperatorgear")) {
 				OperatorGearProcedure.execute(world, entity);
 			} else if ((StringArgumentType.getString(arguments, "LibStuff")).equals("givestartergear")) {
 				StarterGearProcedure.execute(world, entity);

@@ -329,7 +329,7 @@ public class EngielibModVariables {
 		public double playerjoinid = 0;
 		public boolean playeraddedtototalplayers = false;
 		public double homeX = 0;
-		public double homeY = -100.0;
+		public double homeY = 999999.0;
 		public double homeZ = 0;
 
 		public void syncPlayerVariables(Entity entity) {

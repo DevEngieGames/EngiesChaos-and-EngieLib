@@ -17,42 +17,55 @@ public class HomesProcedure {
 			return;
 		if (entity instanceof Player) {
 			if ((StringArgumentType.getString(arguments, "type")).equals("set")) {
-				{
-					double _setval = Math.floor(entity.getX()) + 0.5;
-					entity.getCapability(EngielibModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.homeX = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+				if (entity.getY() > 320) {
+					if (entity instanceof Player _player && !_player.level.isClientSide())
+						_player.displayClientMessage(Component.literal("\u00A7cYou are higher than the build height, please be below Y: 321 to set your home point!"), false);
+				} else if (entity.getY() < -64) {
+					if (entity instanceof Player _player && !_player.level.isClientSide())
+						_player.displayClientMessage(Component.literal("\u00A7cYou are lower than the build height, please be above Y: -64 to set your home point!"), false);
+				} else {
+					{
+						double _setval = Math.floor(entity.getX()) + 0.5;
+						entity.getCapability(EngielibModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.homeX = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						double _setval = Math.floor(entity.getY());
+						entity.getCapability(EngielibModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.homeY = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					{
+						double _setval = Math.floor(entity.getZ()) + 0.5;
+						entity.getCapability(EngielibModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.homeZ = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					if (entity instanceof Player _player && !_player.level.isClientSide())
+						_player.displayClientMessage(Component.literal(("Home point set to " + Math.floor(entity.getX()) + ", " + Math.floor(entity.getY()) + ", " + Math.floor(entity.getZ()) + "!")), false);
 				}
-				{
-					double _setval = Math.floor(entity.getY());
-					entity.getCapability(EngielibModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.homeY = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				{
-					double _setval = Math.floor(entity.getZ()) + 0.5;
-					entity.getCapability(EngielibModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.homeZ = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal(("Home point set to " + Math.floor(entity.getX()) + ", " + Math.floor(entity.getY()) + ", " + Math.floor(entity.getZ()) + "!")), false);
 			} else if ((StringArgumentType.getString(arguments, "type")).equals("teleport") || (StringArgumentType.getString(arguments, "type")).equals("tp")) {
-				{
-					Entity _ent = entity;
-					_ent.teleportTo(((entity.getCapability(EngielibModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngielibModVariables.PlayerVariables())).homeX),
-							((entity.getCapability(EngielibModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngielibModVariables.PlayerVariables())).homeY),
-							((entity.getCapability(EngielibModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngielibModVariables.PlayerVariables())).homeZ));
-					if (_ent instanceof ServerPlayer _serverPlayer)
-						_serverPlayer.connection.teleport(((entity.getCapability(EngielibModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngielibModVariables.PlayerVariables())).homeX),
+				if ((entity.getCapability(EngielibModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngielibModVariables.PlayerVariables())).homeY != 999999) {
+					{
+						Entity _ent = entity;
+						_ent.teleportTo(((entity.getCapability(EngielibModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngielibModVariables.PlayerVariables())).homeX),
 								((entity.getCapability(EngielibModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngielibModVariables.PlayerVariables())).homeY),
-								((entity.getCapability(EngielibModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngielibModVariables.PlayerVariables())).homeZ), _ent.getYRot(), _ent.getXRot());
+								((entity.getCapability(EngielibModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngielibModVariables.PlayerVariables())).homeZ));
+						if (_ent instanceof ServerPlayer _serverPlayer)
+							_serverPlayer.connection.teleport(((entity.getCapability(EngielibModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngielibModVariables.PlayerVariables())).homeX),
+									((entity.getCapability(EngielibModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngielibModVariables.PlayerVariables())).homeY),
+									((entity.getCapability(EngielibModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngielibModVariables.PlayerVariables())).homeZ), _ent.getYRot(), _ent.getXRot());
+					}
+					if (entity instanceof Player _player && !_player.level.isClientSide())
+						_player.displayClientMessage(Component.literal("Teleported you to your home point!"), false);
+				} else {
+					if (entity instanceof Player _player && !_player.level.isClientSide())
+						_player.displayClientMessage(Component.literal("\u00A7cYou need to set your home point before teleporting!"), false);
 				}
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal("Teleported you to your home point!"), false);
 			}
 		}
 	}

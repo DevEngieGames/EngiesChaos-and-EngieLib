@@ -11,9 +11,10 @@ public class ToppingProcedure {
 			return;
 		{
 			Entity _ent = entity;
-			_ent.teleportTo((entity.getX()), (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) entity.getX(), (int) entity.getZ())), (entity.getZ()));
+			_ent.teleportTo(Math.round(entity.getX()), (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) Math.round(entity.getX()), (int) Math.round(entity.getZ()))), Math.round(entity.getZ()));
 			if (_ent instanceof ServerPlayer _serverPlayer)
-				_serverPlayer.connection.teleport((entity.getX()), (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) entity.getX(), (int) entity.getZ())), (entity.getZ()), _ent.getYRot(), _ent.getXRot());
+				_serverPlayer.connection.teleport(Math.round(entity.getX()), (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) Math.round(entity.getX()), (int) Math.round(entity.getZ()))), Math.round(entity.getZ()), _ent.getYRot(),
+						_ent.getXRot());
 		}
 	}
 }

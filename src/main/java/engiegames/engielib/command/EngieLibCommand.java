@@ -49,7 +49,7 @@ public class EngieLibCommand {
 					if (entity != null)
 						direction = entity.getDirection();
 
-					LibStuffProcedure.execute(world, x, y, z, arguments, entity);
+					LibStuffProcedure.execute(world, arguments, entity);
 					return 0;
 				}).then(Commands.argument("Number", DoubleArgumentType.doubleArg()).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
@@ -63,7 +63,7 @@ public class EngieLibCommand {
 					if (entity != null)
 						direction = entity.getDirection();
 
-					LibStuffProcedure.execute(world, x, y, z, arguments, entity);
+					LibStuffProcedure.execute(world, arguments, entity);
 					return 0;
 				})))));
 	}
