@@ -948,7 +948,7 @@ public class CoinDropping1Procedure {
 								}
 							}
 						}
-						if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty == 30 && (world.dimensionType().moonPhase(world.dayTime()) == 0 || world.dimensionType().moonPhase(world.dayTime()) == 4)) {
+						if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty >= 30 && (world.dimensionType().moonPhase(world.dayTime()) == 0 || world.dimensionType().moonPhase(world.dayTime()) == 4)) {
 							if (!(world instanceof Level _lvl714 && _lvl714.isDay()) && world.dimensionType().moonPhase(world.dayTime()) == 4) {
 								if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 1) {
 									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
@@ -1456,7 +1456,7 @@ public class CoinDropping1Procedure {
 									}
 								}
 							}
-						} else if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty == 29 && world.dimensionType().moonPhase(world.dayTime()) == 4) {
+						} else if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty >= 29 && world.dimensionType().moonPhase(world.dayTime()) == 4) {
 							if (!(world instanceof Level _lvl1119 && _lvl1119.isDay())) {
 								if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 1) {
 									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {

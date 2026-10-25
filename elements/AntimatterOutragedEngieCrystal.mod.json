@@ -127,6 +127,9 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onRightClicked": {
+      "name": "CrystalRC"
+    },
     "onTickUpdate": {
       "name": "AntimatterOutragedEngieCrystalOnTickUpdate"
     },

@@ -50,7 +50,7 @@ public class AnyEngieDiesDropItemProcedure {
 					for (int index0 = 0; index0 < ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
 							.getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_BLESSING.get()); index0++) {
 						if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) <= 25) {
-							AnyEngieDiesDropItemAlt2Procedure.execute(world, x, y, z, entity, sourceentity);
+							AnyEngieDiesDropItemAltProcedure.execute(world, x, y, z, entity, sourceentity);
 						}
 					}
 				}
@@ -62,7 +62,7 @@ public class AnyEngieDiesDropItemProcedure {
 					for (int index1 = 0; index1 < ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
 							.getEnchantmentLevel(EngiesChaosModEnchantments.ENGIES_TRUE_BLESSING.get()); index1++) {
 						if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) <= 25) {
-							AnyEngieDiesDropItemAlt2Procedure.execute(world, x, y, z, entity, sourceentity);
+							AnyEngieDiesDropItemAltProcedure.execute(world, x, y, z, entity, sourceentity);
 						}
 					}
 				}
@@ -71,7 +71,7 @@ public class AnyEngieDiesDropItemProcedure {
 					for (int index2 = 0; index2 < ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
 							.getEnchantmentLevel(Enchantments.MOB_LOOTING); index2++) {
 						if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) <= 25) {
-							AnyEngieDiesDropItemAlt2Procedure.execute(world, x, y, z, entity, sourceentity);
+							AnyEngieDiesDropItemAltProcedure.execute(world, x, y, z, entity, sourceentity);
 						}
 					}
 				}
@@ -80,7 +80,7 @@ public class AnyEngieDiesDropItemProcedure {
 					for (int index3 = 0; index3 < ((sourceentity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
 							.getEnchantmentLevel(Enchantments.BLOCK_FORTUNE); index3++) {
 						if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) <= 25) {
-							AnyEngieDiesDropItemAlt2Procedure.execute(world, x, y, z, entity, sourceentity);
+							AnyEngieDiesDropItemAltProcedure.execute(world, x, y, z, entity, sourceentity);
 						}
 					}
 				}

@@ -3,6 +3,7 @@ package engiegames.engies_chaos.block;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
@@ -21,11 +22,14 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.MenuProvider;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.util.RandomSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
+import engiegames.engies_chaos.procedures.CrystalRCProcedure;
 import engiegames.engies_chaos.procedures.AntimatterEnragedEngieCrystalOnTickUpdateProcedure;
 import engiegames.engies_chaos.procedures.AntimatterEnragedEngieCrystalDestroyedProcedure;
 import engiegames.engies_chaos.block.entity.AntimatterEnragedEngieCrystalBlockEntity;
@@ -105,6 +109,20 @@ public class AntimatterEnragedEngieCrystalBlock extends Block implements EntityB
 		boolean retval = super.onDestroyedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
 		AntimatterEnragedEngieCrystalDestroyedProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
 		return retval;
+	}
+
+	@Override
+	public InteractionResult use(BlockState blockstate, Level world, BlockPos pos, Player entity, InteractionHand hand, BlockHitResult hit) {
+		super.use(blockstate, world, pos, entity, hand, hit);
+		int x = pos.getX();
+		int y = pos.getY();
+		int z = pos.getZ();
+		double hitX = hit.getLocation().x;
+		double hitY = hit.getLocation().y;
+		double hitZ = hit.getLocation().z;
+		Direction direction = hit.getDirection();
+		CrystalRCProcedure.execute(world, x, y, z, entity);
+		return InteractionResult.SUCCESS;
 	}
 
 	@Override

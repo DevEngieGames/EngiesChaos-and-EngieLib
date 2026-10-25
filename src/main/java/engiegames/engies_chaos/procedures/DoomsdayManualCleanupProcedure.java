@@ -68,6 +68,8 @@ public class DoomsdayManualCleanupProcedure {
 		}
 		if (world instanceof ServerLevel _level)
 			_level.setDayTime((int) (EngiesChaosModVariables.MapVariables.get(world).timeticks + 11000));
+		EngiesChaosModVariables.MapVariables.get(world).blizzard = false;
+		EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 		EngiesChaosModVariables.MapVariables.get(world).EngiesWrathForceCreativePlayersAdventure = false;
 		EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 		EngiesChaosModVariables.MapVariables.get(world).spawnedfinaldisasters = false;
@@ -182,6 +184,10 @@ public class DoomsdayManualCleanupProcedure {
 		EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 		world.getLevelData().getGameRules().getRule(GameRules.RULE_DOMOBSPAWNING).set(true, world.getServer());
 		world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(true, world.getServer());
+		EngiesChaosModVariables.MapVariables.get(world).prophshowedupfirsttime = true;
+		EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+		EngiesChaosModVariables.MapVariables.get(world).prophposition = 115;
+		EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 		EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount = 0;
 		EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 		EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount = 0;

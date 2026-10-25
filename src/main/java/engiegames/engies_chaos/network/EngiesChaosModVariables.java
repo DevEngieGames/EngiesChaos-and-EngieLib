@@ -555,6 +555,8 @@ public class EngiesChaosModVariables {
 		public boolean blizzard = false;
 		public boolean spikescurrentlytriggering = false;
 		public double blizzardsfxtimerforchallenge = 0;
+		public double prophposition = 115.0;
+		public boolean prophshowedupfirsttime = true;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -856,6 +858,8 @@ public class EngiesChaosModVariables {
 			blizzard = nbt.getBoolean("blizzard");
 			spikescurrentlytriggering = nbt.getBoolean("spikescurrentlytriggering");
 			blizzardsfxtimerforchallenge = nbt.getDouble("blizzardsfxtimerforchallenge");
+			prophposition = nbt.getDouble("prophposition");
+			prophshowedupfirsttime = nbt.getBoolean("prophshowedupfirsttime");
 		}
 
 		@Override
@@ -1153,6 +1157,8 @@ public class EngiesChaosModVariables {
 			nbt.putBoolean("blizzard", blizzard);
 			nbt.putBoolean("spikescurrentlytriggering", spikescurrentlytriggering);
 			nbt.putDouble("blizzardsfxtimerforchallenge", blizzardsfxtimerforchallenge);
+			nbt.putDouble("prophposition", prophposition);
+			nbt.putBoolean("prophshowedupfirsttime", prophshowedupfirsttime);
 			return nbt;
 		}
 

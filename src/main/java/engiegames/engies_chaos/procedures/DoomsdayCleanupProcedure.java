@@ -19,6 +19,7 @@ import javax.annotation.Nullable;
 import java.util.ArrayList;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
+import engiegames.engies_chaos.EngiesChaosMod;
 
 @Mod.EventBusSubscriber
 public class DoomsdayCleanupProcedure {
@@ -44,6 +45,11 @@ public class DoomsdayCleanupProcedure {
 					if (EngiesChaosModVariables.MapVariables.get(world).ranfirstcleanup == false) {
 						EngiesChaosModVariables.MapVariables.get(world).ranfirstcleanup = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).blizzard = true;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosMod.queueServerWork(1, () -> {
+							BlizzardAnnoyanceProcedure.execute(world);
+						});
 						for (Entity entityiterator : new ArrayList<>(world.players())) {
 							{
 								Entity _ent = entityiterator;
@@ -59,8 +65,6 @@ public class DoomsdayCleanupProcedure {
 											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @a music engies_chaos:doomshalf2");
 								}
 							}
-							EngiesChaosModVariables.MapVariables.get(world).blizzard = false;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						}
 					}
 				}
@@ -96,6 +100,11 @@ public class DoomsdayCleanupProcedure {
 					if (EngiesChaosModVariables.MapVariables.get(world).ransecondcleanup == false) {
 						EngiesChaosModVariables.MapVariables.get(world).ransecondcleanup = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosModVariables.MapVariables.get(world).blizzard = false;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						EngiesChaosMod.queueServerWork(1, () -> {
+							BlizzardAnnoyanceProcedure.execute(world);
+						});
 						for (Entity entityiterator : new ArrayList<>(world.players())) {
 							{
 								Entity _ent = entityiterator;
@@ -104,8 +113,6 @@ public class DoomsdayCleanupProcedure {
 											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "kill @e[type=#engies_chaos:doomsday/entitycleanup]");
 								}
 							}
-							EngiesChaosModVariables.MapVariables.get(world).blizzard = false;
-							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						}
 					}
 				}
@@ -142,6 +149,8 @@ public class DoomsdayCleanupProcedure {
 					}
 					if (world instanceof ServerLevel _level)
 						_level.setDayTime((int) (EngiesChaosModVariables.MapVariables.get(world).timeticks + 11000));
+					EngiesChaosModVariables.MapVariables.get(world).blizzard = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).EngiesWrathForceCreativePlayersAdventure = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).spawnedfinaldisasters = false;
@@ -256,6 +265,10 @@ public class DoomsdayCleanupProcedure {
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					world.getLevelData().getGameRules().getRule(GameRules.RULE_DOMOBSPAWNING).set(true, world.getServer());
 					world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(true, world.getServer());
+					EngiesChaosModVariables.MapVariables.get(world).prophshowedupfirsttime = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).prophposition = 115;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount = 0;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).DDaySpikeAmount = 0;

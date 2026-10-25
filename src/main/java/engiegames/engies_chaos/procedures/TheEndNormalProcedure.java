@@ -394,6 +394,8 @@ public class TheEndNormalProcedure {
 						EngiesChaosModVariables.MapVariables.get(world).hordecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 10)) + 4;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						EngiesChaosMod.queueServerWork(262, () -> {
+							EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = 115;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							EngiesChaosModVariables.MapVariables.get(world).ddayprophshow = true;
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							EngiesChaosModVariables.MapVariables.get(world).doomsdayprophwait = false;
@@ -461,6 +463,8 @@ public class TheEndNormalProcedure {
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 										EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = false;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+										EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = -75;
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 										EngiesChaosMod.queueServerWork(95, () -> {
 											EngiesChaosModVariables.MapVariables.get(world).DoomsdayHalf = 2;
 											EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -471,6 +475,8 @@ public class TheEndNormalProcedure {
 										EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = true;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 										EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = false;
+										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+										EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum = -75;
 										EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 										EngiesChaosMod.queueServerWork(200, () -> {
 											EngiesChaosModVariables.MapVariables.get(world).prophallowticking = true;

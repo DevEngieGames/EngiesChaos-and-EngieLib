@@ -9,7 +9,6 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
@@ -72,23 +71,23 @@ public class ApocalypseCheckProcedure {
 					}
 				}
 			}
+			if ((entity.level.dimension()) == Level.END) {
+				if (!(entity instanceof ServerPlayer _plr9 && _plr9.level instanceof ServerLevel
+						&& _plr9.getAdvancements().getOrStartProgress(_plr9.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:end/kill_dragon"))).isDone())) {
+					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+						_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 20, 0, false, false));
+				}
+			} else if ((entity.level.dimension()) == Level.OVERWORLD) {
+				if (!(world instanceof Level _lvl14 && _lvl14.isDay())) {
+					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+						_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 20, 0, false, false));
+				}
+			}
 			if (entity instanceof LivingEntity _entity)
 				_entity.removeEffect(MobEffects.MOVEMENT_SPEED);
 			world.getLevelData().getGameRules().getRule(GameRules.RULE_UNIVERSAL_ANGER).set(true, world.getServer());
 			if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.RANDOM) == false) {
 				world.getLevelData().getGameRules().getRule(GameRules.RULE_NATURAL_REGENERATION).set(false, world.getServer());
-			}
-			if ((entity.level.dimension()) == Level.END) {
-				if (!(entity instanceof ServerPlayer _plr13 && _plr13.level instanceof ServerLevel
-						&& _plr13.getAdvancements().getOrStartProgress(_plr13.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:end/kill_dragon"))).isDone())) {
-					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-						_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 20, 0, false, false));
-				}
-			} else if ((entity.level.dimension()) == Level.OVERWORLD) {
-				if (!(world instanceof Level _lvl18 && _lvl18.isDay())) {
-					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-						_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 20, 0, false, false));
-				}
 			}
 		} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.APOCALYPSE_THREE) == true) {
 			if (entity.isSprinting()) {
@@ -233,14 +232,14 @@ public class ApocalypseCheckProcedure {
 							Entity _ent = entity;
 							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:generic.movement_speed base set " + 0.1125));
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:generic.movement_speed base set " + 0.125));
 							}
 						}
 						{
 							Entity _ent = entity;
 							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:movement_speed base set " + 0.1125));
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:movement_speed base set " + 0.125));
 							}
 						}
 					} else {
@@ -248,14 +247,14 @@ public class ApocalypseCheckProcedure {
 							Entity _ent = entity;
 							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:generic.movement_speed base set " + 0.075));
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:generic.movement_speed base set " + 0.05));
 							}
 						}
 						{
 							Entity _ent = entity;
 							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:movement_speed base set " + 0.075));
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:movement_speed base set " + 0.05));
 							}
 						}
 					}
@@ -266,80 +265,14 @@ public class ApocalypseCheckProcedure {
 							Entity _ent = entity;
 							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:generic.movement_speed base set " + 0.075));
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:generic.movement_speed base set " + 0.1));
 							}
 						}
 						{
 							Entity _ent = entity;
 							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:movement_speed base set " + 0.075));
-							}
-						}
-					} else {
-						{
-							Entity _ent = entity;
-							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:generic.movement_speed base set " + 0.05));
-							}
-						}
-						{
-							Entity _ent = entity;
-							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:movement_speed base set " + 0.05));
-							}
-						}
-					}
-				} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 4d
-						&& (entity instanceof Player _plr ? _plr.getFoodData().getFoodLevel() : 0) <= 10) {
-					if (entity.isSprinting()) {
-						{
-							Entity _ent = entity;
-							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:generic.movement_speed base set " + 0.075));
-							}
-						}
-						{
-							Entity _ent = entity;
-							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:movement_speed base set " + 0.075));
-							}
-						}
-					} else {
-						{
-							Entity _ent = entity;
-							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:generic.movement_speed base set " + 0.05));
-							}
-						}
-						{
-							Entity _ent = entity;
-							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:movement_speed base set " + 0.05));
-							}
-						}
-					}
-				} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 4d
-						&& (entity instanceof Player _plr ? _plr.getFoodData().getFoodLevel() : 0) <= 10) {
-					if (entity.isSprinting()) {
-						{
-							Entity _ent = entity;
-							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:generic.movement_speed base set " + 0.0375));
-							}
-						}
-						{
-							Entity _ent = entity;
-							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:movement_speed base set " + 0.0375));
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:movement_speed base set " + 0.1));
 							}
 						}
 					} else {
@@ -358,10 +291,88 @@ public class ApocalypseCheckProcedure {
 							}
 						}
 					}
+				} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 4d
+						&& (entity instanceof Player _plr ? _plr.getFoodData().getFoodLevel() : 0) <= 10) {
+					if (entity.isSprinting()) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:generic.movement_speed base set " + 0.1));
+							}
+						}
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:movement_speed base set " + 0.1));
+							}
+						}
+					} else {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:generic.movement_speed base set " + 0.025));
+							}
+						}
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:movement_speed base set " + 0.025));
+							}
+						}
+					}
+				} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 4d
+						&& (entity instanceof Player _plr ? _plr.getFoodData().getFoodLevel() : 0) <= 10) {
+					if (entity.isSprinting()) {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:generic.movement_speed base set " + 0.0875));
+							}
+						}
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:movement_speed base set " + 0.0875));
+							}
+						}
+					} else {
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:generic.movement_speed base set " + 0.0125));
+							}
+						}
+						{
+							Entity _ent = entity;
+							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:movement_speed base set " + 0.0125));
+							}
+						}
+					}
 				}
-			} else {
-				if (entity instanceof LivingEntity _livingEntity100 && _livingEntity100.getAttributes().hasAttribute(Attributes.MOVEMENT_SPEED))
-					_livingEntity100.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.1);
+			} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.CUSTOM_SPRINT) == false) {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:generic.movement_speed base set " + 0.1));
+					}
+				}
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), ("attribute @s minecraft:movement_speed base set " + 0.1));
+					}
+				}
 			}
 		}
 	}
