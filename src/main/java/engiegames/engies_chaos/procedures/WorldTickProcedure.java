@@ -83,6 +83,20 @@ public class WorldTickProcedure {
 				EngiesChaosModVariables.MapVariables.get(world).extremeddaylightningenabled = false;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			}
+			if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIE_POC) == true) {
+				EngiesChaosModVariables.MapVariables.get(world).engiepocenabled = true;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			} else {
+				EngiesChaosModVariables.MapVariables.get(world).engiepocenabled = false;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			}
+			if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.AMBIENCE_MODE) == true) {
+				EngiesChaosModVariables.MapVariables.get(world).ambiencemodeenabled = true;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			} else {
+				EngiesChaosModVariables.MapVariables.get(world).ambiencemodeenabled = false;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			}
 			if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.NIGHTMARE_DIFFICULTY) == true || world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.INSANITY_DIFFICULTY) == true
 					|| world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.APOCALYPSE_ONE) == true || world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.APOCALYPSE_TWO) == true
 					|| world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.APOCALYPSE_THREE) == true || world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIE_POC) == true) {

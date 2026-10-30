@@ -1,6 +1,5 @@
 package engiegames.engies_chaos.procedures;
 
-import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
@@ -8,7 +7,6 @@ import net.minecraftforge.event.TickEvent;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.LevelAccessor;
@@ -16,7 +14,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
@@ -28,10 +25,7 @@ import net.minecraft.commands.CommandSource;
 
 import javax.annotation.Nullable;
 
-import java.util.Comparator;
-
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
-import engiegames.engies_chaos.init.EngiesChaosModItems;
 import engiegames.engies_chaos.init.EngiesChaosModGameRules;
 import engiegames.engies_chaos.init.EngiesChaosModEntities;
 import engiegames.engies_chaos.entity.XEngieGamesEntity;
@@ -118,21 +112,8 @@ public class EngiePocTickingProcedure {
 											.withSuppressedOutput(),
 									"tellraw @a [\"\",{\"text\":\"It's highly recommended to take that entity at 0, 0 with you at all times. Getting Doomsday, Super Doomsday, and The End Crucifixes was impossible originally so... that entity makes it possible to get those. Not just that as well, you can trade for any gear with that entity. \",\"bold\":true,\"color\":\"gold\"},{\"text\":\"DO NOT LOSE THAT ENTITY.\",\"bold\":true,\"underlined\":true,\"color\":\"red\"}]");
 					}
-					if (EngiesChaosModVariables.MapVariables.get(world).engiepocgivenplush == false) {
-						EngiesChaosModVariables.MapVariables.get(world).engiepocgivenplush = true;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						if ((findEntityInWorldRange(world, Player.class, 0, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0)), 0, 5000000)) instanceof Player _player) {
-							ItemStack _setstack = new ItemStack(EngiesChaosModItems.CHALLENGE_INSANITY_ENGIE_PLUSH.get()).copy();
-							_setstack.setCount(1);
-							ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-						}
-					}
 				}
 			}
 		}
-	}
-
-	private static Entity findEntityInWorldRange(LevelAccessor world, Class<? extends Entity> clazz, double x, double y, double z, double range) {
-		return (Entity) world.getEntitiesOfClass(clazz, AABB.ofSize(new Vec3(x, y, z), range, range, range), e -> true).stream().sorted(Comparator.comparingDouble(e -> e.distanceToSqr(x, y, z))).findFirst().orElse(null);
 	}
 }

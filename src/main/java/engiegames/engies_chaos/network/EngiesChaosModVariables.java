@@ -557,6 +557,8 @@ public class EngiesChaosModVariables {
 		public double blizzardsfxtimerforchallenge = 0;
 		public double prophposition = 115.0;
 		public boolean prophshowedupfirsttime = true;
+		public boolean engiepocenabled = false;
+		public boolean ambiencemodeenabled = false;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -860,6 +862,8 @@ public class EngiesChaosModVariables {
 			blizzardsfxtimerforchallenge = nbt.getDouble("blizzardsfxtimerforchallenge");
 			prophposition = nbt.getDouble("prophposition");
 			prophshowedupfirsttime = nbt.getBoolean("prophshowedupfirsttime");
+			engiepocenabled = nbt.getBoolean("engiepocenabled");
+			ambiencemodeenabled = nbt.getBoolean("ambiencemodeenabled");
 		}
 
 		@Override
@@ -1159,6 +1163,8 @@ public class EngiesChaosModVariables {
 			nbt.putDouble("blizzardsfxtimerforchallenge", blizzardsfxtimerforchallenge);
 			nbt.putDouble("prophposition", prophposition);
 			nbt.putBoolean("prophshowedupfirsttime", prophshowedupfirsttime);
+			nbt.putBoolean("engiepocenabled", engiepocenabled);
+			nbt.putBoolean("ambiencemodeenabled", ambiencemodeenabled);
 			return nbt;
 		}
 

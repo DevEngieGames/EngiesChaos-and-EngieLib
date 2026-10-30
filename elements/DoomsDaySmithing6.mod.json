@@ -12,7 +12,7 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "smithingInputStack": {
-      "value": "CUSTOM:MonstrosityEngiePaxel"
+      "value": "CUSTOM:HostileEngiePaxel"
     },
     "smithingInputAdditionStack": {
       "value": "CUSTOM:DoomsDayCoinBlock"

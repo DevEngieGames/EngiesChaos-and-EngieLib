@@ -29,9 +29,9 @@ public class EngiesChaosModTabs {
 
 			@Override
 			public boolean hasSearchBar() {
-				return true;
+				return false;
 			}
-		}.setBackgroundSuffix("item_search.png");
+		};
 		TAB_ENGIES_CHAOS_ITEMS = new CreativeModeTab("engies_chaos.engies_chaos_items") {
 			@Override
 			@OnlyIn(Dist.CLIENT)
@@ -41,9 +41,9 @@ public class EngiesChaosModTabs {
 
 			@Override
 			public boolean hasSearchBar() {
-				return true;
+				return false;
 			}
-		}.setBackgroundSuffix("item_search.png");
+		};
 		TAB_ENGIES_CHAOS_ARMOR = new CreativeModeTab("engies_chaos.engies_chaos_armor") {
 			@Override
 			@OnlyIn(Dist.CLIENT)
@@ -53,9 +53,9 @@ public class EngiesChaosModTabs {
 
 			@Override
 			public boolean hasSearchBar() {
-				return true;
+				return false;
 			}
-		}.setBackgroundSuffix("item_search.png");
+		};
 		TAB_ENGIES_CHAOS_MOBS = new CreativeModeTab("engies_chaos.engies_chaos_mobs") {
 			@Override
 			@OnlyIn(Dist.CLIENT)
@@ -65,9 +65,9 @@ public class EngiesChaosModTabs {
 
 			@Override
 			public boolean hasSearchBar() {
-				return true;
+				return false;
 			}
-		}.setBackgroundSuffix("item_search.png");
+		};
 		TAB_ENGIES_CHAOS_SHARKOS = new CreativeModeTab("engies_chaos.engies_chaos_sharkos") {
 			@Override
 			@OnlyIn(Dist.CLIENT)
@@ -77,9 +77,9 @@ public class EngiesChaosModTabs {
 
 			@Override
 			public boolean hasSearchBar() {
-				return true;
+				return false;
 			}
-		}.setBackgroundSuffix("item_search.png");
+		};
 		TAB_ENGIES_CHAOS_ZOMBIES = new CreativeModeTab("engies_chaos.engies_chaos_zombies") {
 			@Override
 			@OnlyIn(Dist.CLIENT)

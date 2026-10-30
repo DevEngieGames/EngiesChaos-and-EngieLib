@@ -12,7 +12,7 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "smithingInputStack": {
-      "value": "CUSTOM:MonstrosityEngiePickaxe"
+      "value": "CUSTOM:HostileEngiePickaxe"
     },
     "smithingInputAdditionStack": {
       "value": "CUSTOM:DoomsDayCoinBlock"

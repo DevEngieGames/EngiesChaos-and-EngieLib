@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "item": "engies_chaos:monstrosity_engie_sword"
+    "item": "engies_chaos:hostile_engie_sword"
   },
   "addition": {
     "item": "engies_chaos:dooms_day_coin_block"
