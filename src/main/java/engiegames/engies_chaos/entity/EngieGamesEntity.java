@@ -59,10 +59,10 @@ public class EngieGamesEntity extends PathfinderMob {
 		setPersistenceRequired();
 		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(EngiesChaosModItems.ENGIE_SCYTHE.get()));
 		this.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(EngiesChaosModItems.ENGIE_CRUCIFIX.get()));
-		this.setItemSlot(EquipmentSlot.HEAD, new ItemStack(EngiesChaosModItems.ENGIE_GAMESS_HELMET.get()));
-		this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(EngiesChaosModItems.ENGIE_GAMESS_CHESTPLATE.get()));
-		this.setItemSlot(EquipmentSlot.LEGS, new ItemStack(EngiesChaosModItems.ENGIE_GAMESS_LEGGINGS.get()));
-		this.setItemSlot(EquipmentSlot.FEET, new ItemStack(EngiesChaosModItems.ENGIE_GAMESS_BOOTS.get()));
+		this.setItemSlot(EquipmentSlot.HEAD, new ItemStack(EngiesChaosModItems.ENGIES_HELMET.get()));
+		this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(EngiesChaosModItems.ENGIES_CHESTPLATE.get()));
+		this.setItemSlot(EquipmentSlot.LEGS, new ItemStack(EngiesChaosModItems.ENGIES_LEGGINGS.get()));
+		this.setItemSlot(EquipmentSlot.FEET, new ItemStack(EngiesChaosModItems.ENGIES_BOOTS.get()));
 	}
 
 	@Override

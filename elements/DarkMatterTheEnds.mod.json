@@ -10,6 +10,9 @@
     "textureLeggings": "darktheendleg",
     "enableBoots": true,
     "textureBoots": "darktheendboot",
+    "onBodyTick": {
+      "name": "DarkMatterChestplates"
+    },
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"

@@ -11,14 +11,14 @@
     "enableBoots": true,
     "textureBoots": "darkmatterbiblicallyaccurateengieboots",
     "onBodyTick": {
-      "name": "BAEChestplate"
+      "name": "DarkMatterChestplates"
     },
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"
       }
     ],
-    "armorTextureFile": "darkmatterbiblicallyaccurateengie",
+    "armorTextureFile": "darkmatterbiblicallyaccurate",
     "helmetName": "Dark Matter Biblically Accurate Engie Helmet",
     "bodyName": "Dark Matter Biblically Accurate Engie Chestplate",
     "leggingsName": "Dark Matter Biblically Accurate Engie Leggings",

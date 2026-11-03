@@ -9,10 +9,9 @@
     "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
     "guiTexture": "",
-    "name": "Antimatter Engie Hoe",
+    "name": "Antimatter Mad Engie Hoe",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem2"
+      "fixedValue": []
     },
     "creativeTabs": [
       {
@@ -29,7 +28,7 @@
     },
     "repairItems": [
       {
-        "value": "CUSTOM:AntimatterEngieGem"
+        "value": "CUSTOM:AntimatterMadEngieEssence"
       }
     ],
     "immuneToFire": false,

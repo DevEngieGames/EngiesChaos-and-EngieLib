@@ -3,23 +3,23 @@
   "group": "engiespaxel",
   "ingredients": [
     {
-      "item": "engies_chaos:engies_axe"
+      "item": "engies_chaos:engie_axe"
     },
     {
-      "item": "engies_chaos:engies_pickaxe"
+      "item": "engies_chaos:engie_pickaxe"
     },
     {
-      "item": "engies_chaos:engies_shovel"
+      "item": "engies_chaos:engie_shovel"
     },
     {
-      "item": "engies_chaos:engies_sword"
+      "item": "engies_chaos:engie_sword"
     },
     {
-      "item": "engies_chaos:engies_hoe"
+      "item": "engies_chaos:engie_hoe"
     }
   ],
   "result": {
-    "item": "engies_chaos:engies_aiot",
+    "item": "engies_chaos:engie_aiot",
     "count": 1
   }
 }

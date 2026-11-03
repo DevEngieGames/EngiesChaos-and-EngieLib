@@ -1,6 +1,9 @@
 package engiegames.engies_chaos.procedures;
 
+import net.minecraftforge.items.ItemHandlerHelper;
+
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
@@ -14,6 +17,7 @@ import net.minecraft.commands.CommandSource;
 import java.util.ArrayList;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
+import engiegames.engies_chaos.init.EngiesChaosModItems;
 import engiegames.engies_chaos.init.EngiesChaosModGameRules;
 import engiegames.engies_chaos.EngiesChaosMod;
 
@@ -220,6 +224,45 @@ public class AAEAllCommandsProcedure {
 				} else {
 					if (entity instanceof Player _player && !_player.level.isClientSide())
 						_player.displayClientMessage(Component.literal("\u00A7cYou need a player to use this command on them!"), false);
+				}
+			}
+		} else if (((StringArgumentType.getString(arguments, "MainType")).toLowerCase()).equals("contentcreator")) {
+			if ((entity.getPersistentData().getBoolean("EngiesChaos_Dev") || entity.getPersistentData().getBoolean("EngiesChaos_Contributor") || entity.getPersistentData().getBoolean("EngiesChaos_BetaTester")
+					|| entity.getPersistentData().getBoolean("EngiesChaos_Tester") || entity.getPersistentData().getBoolean("EngiesChaos_CC")) == true) {
+				if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("givegear")) {
+					if (entity instanceof Player _player) {
+						ItemStack _setstack = new ItemStack(EngiesChaosModItems.CONTENT_CREATOR_HELMET.get()).copy();
+						_setstack.setCount(1);
+						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+					}
+					if (entity instanceof Player _player) {
+						ItemStack _setstack = new ItemStack(EngiesChaosModItems.CONTENT_CREATOR_CHESTPLATE.get()).copy();
+						_setstack.setCount(1);
+						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+					}
+					if (entity instanceof Player _player) {
+						ItemStack _setstack = new ItemStack(EngiesChaosModItems.CONTENT_CREATOR_LEGGINGS.get()).copy();
+						_setstack.setCount(1);
+						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+					}
+					if (entity instanceof Player _player) {
+						ItemStack _setstack = new ItemStack(EngiesChaosModItems.CONTENT_CREATOR_BOOTS.get()).copy();
+						_setstack.setCount(1);
+						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+					}
+					if (entity instanceof Player _player) {
+						ItemStack _setstack = new ItemStack(EngiesChaosModItems.CONTENT_CREATOR_ENGIE_BUNDLE.get()).copy();
+						_setstack.setCount(1);
+						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+					}
+				}
+			} else {
+				{
+					Entity _ent = entity;
+					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "tellraw @p {\"text\":\"You do not have permission to run this command!\",\"color\":\"red\"}");
+					}
 				}
 			}
 		} else if (((StringArgumentType.getString(arguments, "MainType")).toLowerCase()).equals("getddayrisk") || ((StringArgumentType.getString(arguments, "MainType")).toLowerCase()).equals("getrisk")) {

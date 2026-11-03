@@ -1,12 +1,12 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "item": "engies_chaos:mindscape_engies_shovel"
+    "item": "engies_chaos:engie_games_shovel"
   },
   "addition": {
-    "item": "engies_chaos:antimatter_engie_block"
+    "item": "engies_chaos:antimatter_mad_engie_block"
   },
   "result": {
-    "item": "engies_chaos:antimatter_engie_shovel"
+    "item": "engies_chaos:antimatter_mad_engie_shovel"
   }
 }

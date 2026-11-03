@@ -9,10 +9,9 @@
     "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
     "guiTexture": "",
-    "name": "Dark Matter Engies Pickaxe",
+    "name": "Dark Matter Engie Pickaxe",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem3"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

@@ -49,7 +49,11 @@
     "maxStackSize": 64,
     "rarity": "EPIC",
     "immuneToFire": false,
-    "creativeTabs": [],
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsItems"
+      }
+    ],
     "destroyTool": "Not specified",
     "customDrop": {
       "value": ""

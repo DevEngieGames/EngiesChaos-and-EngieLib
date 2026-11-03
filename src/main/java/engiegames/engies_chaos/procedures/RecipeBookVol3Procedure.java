@@ -2347,7 +2347,7 @@ public class RecipeBookVol3Procedure {
 				}
 				{
 					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARK_MATTER_ENGIES_HELMET.get()).copy();
+					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARK_MATTER_MAD_ENGIES_HELMET.get()).copy();
 					final int _sltid = 9;
 					_setstack.setCount(1);
 					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -2458,7 +2458,7 @@ public class RecipeBookVol3Procedure {
 				}
 				{
 					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARK_MATTER_ENGIES_CHESTPLATE.get()).copy();
+					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARK_MATTER_MAD_ENGIES_CHESTPLATE.get()).copy();
 					final int _sltid = 9;
 					_setstack.setCount(1);
 					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -2569,7 +2569,7 @@ public class RecipeBookVol3Procedure {
 				}
 				{
 					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARK_MATTER_ENGIES_LEGGINGS.get()).copy();
+					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARK_MATTER_MAD_ENGIES_LEGGINGS.get()).copy();
 					final int _sltid = 9;
 					_setstack.setCount(1);
 					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -2680,7 +2680,7 @@ public class RecipeBookVol3Procedure {
 				}
 				{
 					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARK_MATTER_ENGIES_BOOTS.get()).copy();
+					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.DARK_MATTER_MAD_ENGIES_BOOTS.get()).copy();
 					final int _sltid = 9;
 					_setstack.setCount(1);
 					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {

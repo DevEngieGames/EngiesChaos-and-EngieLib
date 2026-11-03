@@ -16,10 +16,10 @@
       }
     ],
     "armorTextureFile": "engie_",
-    "helmetName": "Engie Helmet",
-    "bodyName": "Engie Chestplate",
-    "leggingsName": "Engie Leggings",
-    "bootsName": "Engie Boots",
+    "helmetName": "Mad Engie Helmet",
+    "bodyName": "Mad Engie Chestplate",
+    "leggingsName": "Mad Engie Leggings",
+    "bootsName": "Mad Engie Boots",
     "helmetSpecialInformation": {
       "fixedValue": []
     },

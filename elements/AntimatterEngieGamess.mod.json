@@ -10,16 +10,19 @@
     "textureLeggings": "antiengiegamesleg",
     "enableBoots": true,
     "textureBoots": "antiengiegamesboot",
+    "onBodyTick": {
+      "name": "AntimatterChestplates"
+    },
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"
       }
     ],
     "armorTextureFile": "backup_",
-    "helmetName": "Antimatter Engies Helmet",
-    "bodyName": "Antimatter Engies Chestplate",
-    "leggingsName": "Antimatter Engies Leggings",
-    "bootsName": "Antimatter Engies Boots",
+    "helmetName": "Antimatter Engie Helmet",
+    "bodyName": "Antimatter Engie Chestplate",
+    "leggingsName": "Antimatter Engie Leggings",
+    "bootsName": "Antimatter Engie Boots",
     "helmetSpecialInformation": {
       "fixedValue": []
     },

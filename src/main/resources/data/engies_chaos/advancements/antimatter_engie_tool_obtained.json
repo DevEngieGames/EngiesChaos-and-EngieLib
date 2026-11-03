@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "engies_chaos:antimatter_engie_pickaxe"
+      "item": "engies_chaos:antimatter_mad_engie_pickaxe"
     },
     "title": {
       "translate": "advancements.antimatter_engie_tool_obtained.title"

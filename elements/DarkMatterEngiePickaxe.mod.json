@@ -9,10 +9,9 @@
     "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
     "guiTexture": "",
-    "name": "Dark Matter Engie Pickaxe",
+    "name": "Dark Matter Mad Engie Pickaxe",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem3"
+      "fixedValue": []
     },
     "creativeTabs": [
       {
@@ -29,7 +28,7 @@
     },
     "repairItems": [
       {
-        "value": "CUSTOM:DarkMatterEngieGem"
+        "value": "CUSTOM:DarkMatterMadEngieEssence"
       }
     ],
     "immuneToFire": false,

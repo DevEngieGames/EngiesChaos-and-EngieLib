@@ -9,10 +9,9 @@
     "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
     "guiTexture": "",
-    "name": "Dark Matter Engies AIOT",
+    "name": "Dark Matter Engie AIOT",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem2"
+      "fixedValue": []
     },
     "creativeTabs": [
       {

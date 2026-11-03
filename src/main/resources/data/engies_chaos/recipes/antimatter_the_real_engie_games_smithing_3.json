@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "item": "engies_chaos:antimatter_engies_axe"
+    "item": "engies_chaos:antimatter_engie_axe"
   },
   "addition": {
     "item": "engies_chaos:antimatter_engie_games_coin_block"

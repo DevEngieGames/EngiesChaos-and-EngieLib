@@ -10,6 +10,9 @@
     "textureLeggings": "xengieleg",
     "enableBoots": true,
     "textureBoots": "xengieboot",
+    "onBodyTick": {
+      "name": "DarkMatterChestplates"
+    },
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"

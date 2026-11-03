@@ -9,7 +9,7 @@
     "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
     "guiTexture": "",
-    "name": "Antimatter Engie AIOT",
+    "name": "Antimatter Mad Engie AIOT",
     "specialInformation": {
       "fixedValue": []
     },
@@ -28,7 +28,7 @@
     },
     "repairItems": [
       {
-        "value": "CUSTOM:AntimatterEngieGem"
+        "value": "CUSTOM:AntimatterMadEngieEssence"
       }
     ],
     "immuneToFire": false,

@@ -27,11 +27,6 @@ public class GearGiverScreen extends AbstractContainerScreen<GearGiverMenu> impl
 	Button button_bundle;
 	Button button_recipe_book;
 	Button button_operator;
-	Button button_developer;
-	Button button_idea_giver;
-	Button button_beta_tester;
-	Button button_tester;
-	Button button_creator;
 
 	public GearGiverScreen(GearGiverMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -104,7 +99,7 @@ public class GearGiverScreen extends AbstractContainerScreen<GearGiverMenu> impl
 			}
 		});
 		this.addRenderableWidget(button_empty);
-		button_starter_kit = new Button(this.leftPos + 4, this.topPos + 24, 82, 20, Component.translatable("gui.engies_chaos.gear_giver.button_starter_kit"), e -> {
+		button_starter_kit = new Button(this.leftPos + 83, this.topPos + 25, 82, 20, Component.translatable("gui.engies_chaos.gear_giver.button_starter_kit"), e -> {
 			int x = GearGiverScreen.this.x;
 			int y = GearGiverScreen.this.y;
 			if (true) {
@@ -113,7 +108,7 @@ public class GearGiverScreen extends AbstractContainerScreen<GearGiverMenu> impl
 			}
 		});
 		this.addRenderableWidget(button_starter_kit);
-		button_bundle = new Button(this.leftPos + 97, this.topPos + 24, 56, 20, Component.translatable("gui.engies_chaos.gear_giver.button_bundle"), e -> {
+		button_bundle = new Button(this.leftPos + 97, this.topPos + 110, 56, 20, Component.translatable("gui.engies_chaos.gear_giver.button_bundle"), e -> {
 			int x = GearGiverScreen.this.x;
 			int y = GearGiverScreen.this.y;
 			if (true) {
@@ -122,7 +117,7 @@ public class GearGiverScreen extends AbstractContainerScreen<GearGiverMenu> impl
 			}
 		});
 		this.addRenderableWidget(button_bundle);
-		button_recipe_book = new Button(this.leftPos + 164, this.topPos + 24, 82, 20, Component.translatable("gui.engies_chaos.gear_giver.button_recipe_book"), e -> {
+		button_recipe_book = new Button(this.leftPos + 83, this.topPos + 54, 82, 20, Component.translatable("gui.engies_chaos.gear_giver.button_recipe_book"), e -> {
 			int x = GearGiverScreen.this.x;
 			int y = GearGiverScreen.this.y;
 			if (true) {
@@ -131,7 +126,7 @@ public class GearGiverScreen extends AbstractContainerScreen<GearGiverMenu> impl
 			}
 		});
 		this.addRenderableWidget(button_recipe_book);
-		button_operator = new Button(this.leftPos + 4, this.topPos + 56, 67, 20, Component.translatable("gui.engies_chaos.gear_giver.button_operator"), e -> {
+		button_operator = new Button(this.leftPos + 91, this.topPos + 83, 67, 20, Component.translatable("gui.engies_chaos.gear_giver.button_operator"), e -> {
 			int x = GearGiverScreen.this.x;
 			int y = GearGiverScreen.this.y;
 			if (true) {
@@ -140,50 +135,5 @@ public class GearGiverScreen extends AbstractContainerScreen<GearGiverMenu> impl
 			}
 		});
 		this.addRenderableWidget(button_operator);
-		button_developer = new Button(this.leftPos + 88, this.topPos + 56, 72, 20, Component.translatable("gui.engies_chaos.gear_giver.button_developer"), e -> {
-			int x = GearGiverScreen.this.x;
-			int y = GearGiverScreen.this.y;
-			if (true) {
-				EngiesChaosMod.PACKET_HANDLER.sendToServer(new GearGiverButtonMessage(6, x, y, z));
-				GearGiverButtonMessage.handleButtonAction(entity, 6, x, y, z);
-			}
-		});
-		this.addRenderableWidget(button_developer);
-		button_idea_giver = new Button(this.leftPos + 169, this.topPos + 56, 77, 20, Component.translatable("gui.engies_chaos.gear_giver.button_idea_giver"), e -> {
-			int x = GearGiverScreen.this.x;
-			int y = GearGiverScreen.this.y;
-			if (true) {
-				EngiesChaosMod.PACKET_HANDLER.sendToServer(new GearGiverButtonMessage(7, x, y, z));
-				GearGiverButtonMessage.handleButtonAction(entity, 7, x, y, z);
-			}
-		});
-		this.addRenderableWidget(button_idea_giver);
-		button_beta_tester = new Button(this.leftPos + 4, this.topPos + 88, 82, 20, Component.translatable("gui.engies_chaos.gear_giver.button_beta_tester"), e -> {
-			int x = GearGiverScreen.this.x;
-			int y = GearGiverScreen.this.y;
-			if (true) {
-				EngiesChaosMod.PACKET_HANDLER.sendToServer(new GearGiverButtonMessage(8, x, y, z));
-				GearGiverButtonMessage.handleButtonAction(entity, 8, x, y, z);
-			}
-		});
-		this.addRenderableWidget(button_beta_tester);
-		button_tester = new Button(this.leftPos + 97, this.topPos + 88, 56, 20, Component.translatable("gui.engies_chaos.gear_giver.button_tester"), e -> {
-			int x = GearGiverScreen.this.x;
-			int y = GearGiverScreen.this.y;
-			if (true) {
-				EngiesChaosMod.PACKET_HANDLER.sendToServer(new GearGiverButtonMessage(9, x, y, z));
-				GearGiverButtonMessage.handleButtonAction(entity, 9, x, y, z);
-			}
-		});
-		this.addRenderableWidget(button_tester);
-		button_creator = new Button(this.leftPos + 185, this.topPos + 88, 61, 20, Component.translatable("gui.engies_chaos.gear_giver.button_creator"), e -> {
-			int x = GearGiverScreen.this.x;
-			int y = GearGiverScreen.this.y;
-			if (true) {
-				EngiesChaosMod.PACKET_HANDLER.sendToServer(new GearGiverButtonMessage(10, x, y, z));
-				GearGiverButtonMessage.handleButtonAction(entity, 10, x, y, z);
-			}
-		});
-		this.addRenderableWidget(button_creator);
 	}
 }

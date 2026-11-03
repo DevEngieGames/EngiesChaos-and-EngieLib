@@ -51,7 +51,7 @@ public class DarkMatterEngiePaxelItem extends TieredItem {
 			}
 
 			public Ingredient getRepairIngredient() {
-				return Ingredient.of(new ItemStack(EngiesChaosModItems.DARK_MATTER_ENGIE_GEM.get()));
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.DARK_MATTER_MAD_ENGIE_ESSENCE.get()));
 			}
 		}, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}

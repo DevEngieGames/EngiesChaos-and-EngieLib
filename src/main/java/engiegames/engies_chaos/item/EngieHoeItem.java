@@ -36,7 +36,7 @@ public class EngieHoeItem extends HoeItem {
 			}
 
 			public Ingredient getRepairIngredient() {
-				return Ingredient.of(new ItemStack(EngiesChaosModItems.ENGIE_GEM.get()));
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.MAD_ENGIE_ESSENCE.get()));
 			}
 		}, 0, -3f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}

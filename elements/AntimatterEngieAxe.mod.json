@@ -11,8 +11,7 @@
     "guiTexture": "",
     "name": "Antimatter Engie Axe",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem2"
+      "fixedValue": []
     },
     "creativeTabs": [
       {
@@ -29,7 +28,7 @@
     },
     "repairItems": [
       {
-        "value": "CUSTOM:AntimatterEngieGem"
+        "value": "CUSTOM:AntimatterMadEngieEssence"
       }
     ],
     "immuneToFire": false,

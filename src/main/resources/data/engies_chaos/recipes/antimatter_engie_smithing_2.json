@@ -1,12 +1,12 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "item": "engies_chaos:mindscape_engies_pickaxe"
+    "item": "engies_chaos:engie_games_pickaxe"
   },
   "addition": {
-    "item": "engies_chaos:antimatter_engie_block"
+    "item": "engies_chaos:antimatter_mad_engie_block"
   },
   "result": {
-    "item": "engies_chaos:antimatter_engie_pickaxe"
+    "item": "engies_chaos:antimatter_mad_engie_pickaxe"
   }
 }

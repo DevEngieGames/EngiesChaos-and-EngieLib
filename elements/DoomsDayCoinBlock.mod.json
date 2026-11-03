@@ -48,7 +48,11 @@
     "maxStackSize": 64,
     "rarity": "UNCOMMON",
     "immuneToFire": false,
-    "creativeTabs": [],
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsItems"
+      }
+    ],
     "destroyTool": "Not specified",
     "customDrop": {
       "value": ""

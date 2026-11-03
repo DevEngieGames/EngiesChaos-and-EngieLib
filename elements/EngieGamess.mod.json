@@ -10,16 +10,19 @@
     "textureLeggings": "engiegamesleg",
     "enableBoots": true,
     "textureBoots": "engiegamesboot",
+    "onBodyTick": {
+      "name": "RegularChestplates"
+    },
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"
       }
     ],
     "armorTextureFile": "backup_",
-    "helmetName": "Engies Helmet",
-    "bodyName": "Engies Chestplate",
-    "leggingsName": "Engies Leggings",
-    "bootsName": "Engies Boots",
+    "helmetName": "Engie Helmet",
+    "bodyName": "Engie Chestplate",
+    "leggingsName": "Engie Leggings",
+    "bootsName": "Engie Boots",
     "helmetSpecialInformation": {
       "fixedValue": []
     },

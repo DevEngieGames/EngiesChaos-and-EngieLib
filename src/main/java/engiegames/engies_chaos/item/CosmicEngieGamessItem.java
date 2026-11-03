@@ -12,6 +12,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Entity;
@@ -28,6 +29,7 @@ import java.util.List;
 import java.util.Collections;
 
 import engiegames.engies_chaos.procedures.CosmicEngieGamesPickaxeSpecialInformationProcedure;
+import engiegames.engies_chaos.procedures.AntimatterChestplatesProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModTabs;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 import engiegames.engies_chaos.client.model.Modelcosmicengiearmor;
@@ -157,6 +159,11 @@ public abstract class CosmicEngieGamessItem extends ArmorItem {
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
 			return "engies_chaos:textures/entities/cosmicarmorlayer1.png";
+		}
+
+		@Override
+		public void onArmorTick(ItemStack itemstack, Level world, Player entity) {
+			AntimatterChestplatesProcedure.execute(entity, itemstack);
 		}
 	}
 

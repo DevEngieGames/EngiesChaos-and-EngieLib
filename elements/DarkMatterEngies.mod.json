@@ -10,16 +10,19 @@
     "textureLeggings": "darkmatterengileggings",
     "enableBoots": true,
     "textureBoots": "darkmatterengiboots",
+    "onBodyTick": {
+      "name": "DarkMatterChestplates"
+    },
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"
       }
     ],
     "armorTextureFile": "darkmatterengie",
-    "helmetName": "Dark Matter Engie Helmet",
-    "bodyName": "Dark Matter Engie Chestplate",
-    "leggingsName": "Dark Matter Engie Leggings",
-    "bootsName": "Dark Matter Engie Boots",
+    "helmetName": "Dark Matter Mad Engie Helmet",
+    "bodyName": "Dark Matter Mad Engie Chestplate",
+    "leggingsName": "Dark Matter Mad Engie Leggings",
+    "bootsName": "Dark Matter Mad Engie Boots",
     "helmetSpecialInformation": {
       "fixedValue": []
     },

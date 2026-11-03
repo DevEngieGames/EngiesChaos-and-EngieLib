@@ -11,7 +11,7 @@
     "enableBoots": true,
     "textureBoots": "hostileengieboots",
     "onBodyTick": {
-      "name": "HostileEngieChestplate"
+      "name": "RegularChestplates"
     },
     "creativeTabs": [
       {

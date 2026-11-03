@@ -10,6 +10,9 @@
     "textureLeggings": "technopants",
     "enableBoots": true,
     "textureBoots": "technoshoes",
+    "onBodyTick": {
+      "name": "DarkMatterChestplates"
+    },
     "creativeTabs": [],
     "armorTextureFile": "backup_",
     "helmetName": "Technoblade's Crown",

@@ -457,6 +457,19 @@
           "y": 140,
           "locked": false
         }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 11,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": false,
+          "x": 115,
+          "y": 179,
+          "locked": false
+        }
       }
     ],
     "onTick": {

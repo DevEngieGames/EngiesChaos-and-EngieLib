@@ -10,6 +10,9 @@
     "textureLeggings": "doomsleg",
     "enableBoots": true,
     "textureBoots": "doomsboot",
+    "onBodyTick": {
+      "name": "RegularChestplates"
+    },
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"

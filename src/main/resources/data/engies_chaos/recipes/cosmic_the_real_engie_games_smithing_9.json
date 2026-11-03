@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "item": "engies_chaos:antimatter_the_real_engie_gamess_leggings"
+    "item": "engies_chaos:antimatter_engiegamess_leggings"
   },
   "addition": {
     "item": "engies_chaos:cosmic_engie_games_coin_block"

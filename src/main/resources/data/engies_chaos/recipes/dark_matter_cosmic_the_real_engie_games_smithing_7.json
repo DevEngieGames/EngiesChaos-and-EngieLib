@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "item": "engies_chaos:dark_matter_the_real_engie_gamess_helmet"
+    "item": "engies_chaos:dark_matter_engiegamess_helmet"
   },
   "addition": {
     "item": "engies_chaos:dark_matter_cosmic_engie_games_coin_block"

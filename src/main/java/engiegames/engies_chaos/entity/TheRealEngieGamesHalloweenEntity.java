@@ -57,10 +57,10 @@ public class TheRealEngieGamesHalloweenEntity extends PathfinderMob {
 		setPersistenceRequired();
 		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(EngiesChaosModItems.ENGIEGAMES_SWORD.get()));
 		this.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(EngiesChaosModItems.ENGIE_GAMES_CRUCIFIX.get()));
-		this.setItemSlot(EquipmentSlot.HEAD, new ItemStack(EngiesChaosModItems.THE_REAL_ENGIE_GAMESS_HELMET.get()));
-		this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(EngiesChaosModItems.THE_REAL_ENGIE_GAMESS_CHESTPLATE.get()));
-		this.setItemSlot(EquipmentSlot.LEGS, new ItemStack(EngiesChaosModItems.THE_REAL_ENGIE_GAMESS_LEGGINGS.get()));
-		this.setItemSlot(EquipmentSlot.FEET, new ItemStack(EngiesChaosModItems.THE_REAL_ENGIE_GAMESS_BOOTS.get()));
+		this.setItemSlot(EquipmentSlot.HEAD, new ItemStack(EngiesChaosModItems.ENGIEGAMESS_HELMET.get()));
+		this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(EngiesChaosModItems.ENGIEGAMESS_CHESTPLATE.get()));
+		this.setItemSlot(EquipmentSlot.LEGS, new ItemStack(EngiesChaosModItems.ENGIEGAMESS_LEGGINGS.get()));
+		this.setItemSlot(EquipmentSlot.FEET, new ItemStack(EngiesChaosModItems.ENGIEGAMESS_BOOTS.get()));
 	}
 
 	@Override

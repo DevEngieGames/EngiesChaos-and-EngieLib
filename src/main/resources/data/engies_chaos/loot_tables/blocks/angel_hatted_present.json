@@ -361,7 +361,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engies_helmet",
+          "name": "engies_chaos:mad_engies_helmet",
           "weight": 5000,
           "functions": [
             {
@@ -375,7 +375,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engies_chestplate",
+          "name": "engies_chaos:mad_engies_chestplate",
           "weight": 5000,
           "functions": [
             {
@@ -389,7 +389,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engies_leggings",
+          "name": "engies_chaos:mad_engies_leggings",
           "weight": 5000,
           "functions": [
             {
@@ -403,7 +403,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engies_boots",
+          "name": "engies_chaos:mad_engies_boots",
           "weight": 5000,
           "functions": [
             {
@@ -921,7 +921,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engie_gamess_helmet",
+          "name": "engies_chaos:engies_helmet",
           "weight": 2500,
           "functions": [
             {
@@ -935,7 +935,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engie_gamess_chestplate",
+          "name": "engies_chaos:engies_chestplate",
           "weight": 2500,
           "functions": [
             {
@@ -949,7 +949,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engie_gamess_leggings",
+          "name": "engies_chaos:engies_leggings",
           "weight": 2500,
           "functions": [
             {
@@ -963,7 +963,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engie_gamess_boots",
+          "name": "engies_chaos:engies_boots",
           "weight": 2500,
           "functions": [
             {
@@ -1033,7 +1033,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:the_real_engie_gamess_helmet",
+          "name": "engies_chaos:engiegamess_helmet",
           "weight": 2000,
           "functions": [
             {
@@ -1047,7 +1047,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:the_real_engie_gamess_chestplate",
+          "name": "engies_chaos:engiegamess_chestplate",
           "weight": 2000,
           "functions": [
             {
@@ -1061,7 +1061,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:the_real_engie_gamess_leggings",
+          "name": "engies_chaos:engiegamess_leggings",
           "weight": 2000,
           "functions": [
             {
@@ -1075,7 +1075,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:the_real_engie_gamess_boots",
+          "name": "engies_chaos:engiegamess_boots",
           "weight": 2000,
           "functions": [
             {
@@ -1089,7 +1089,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:dark_matter_engies_helmet",
+          "name": "engies_chaos:dark_matter_mad_engies_helmet",
           "weight": 500,
           "functions": [
             {
@@ -1103,7 +1103,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:dark_matter_engies_chestplate",
+          "name": "engies_chaos:dark_matter_mad_engies_chestplate",
           "weight": 500,
           "functions": [
             {
@@ -1117,7 +1117,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:dark_matter_engies_leggings",
+          "name": "engies_chaos:dark_matter_mad_engies_leggings",
           "weight": 500,
           "functions": [
             {
@@ -1131,7 +1131,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:dark_matter_engies_boots",
+          "name": "engies_chaos:dark_matter_mad_engies_boots",
           "weight": 500,
           "functions": [
             {
@@ -1649,7 +1649,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:dark_matter_engie_gamess_helmet",
+          "name": "engies_chaos:dark_matter_engies_helmet",
           "weight": 250,
           "functions": [
             {
@@ -1663,7 +1663,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:dark_matter_engie_gamess_chestplate",
+          "name": "engies_chaos:dark_matter_engies_chestplate",
           "weight": 250,
           "functions": [
             {
@@ -1677,7 +1677,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:dark_matter_engie_gamess_leggings",
+          "name": "engies_chaos:dark_matter_engies_leggings",
           "weight": 250,
           "functions": [
             {
@@ -1691,7 +1691,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:dark_matter_engie_gamess_boots",
+          "name": "engies_chaos:dark_matter_engies_boots",
           "weight": 250,
           "functions": [
             {
@@ -1705,7 +1705,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:dark_matter_the_real_engie_gamess_helmet",
+          "name": "engies_chaos:dark_matter_engiegamess_helmet",
           "weight": 200,
           "functions": [
             {
@@ -1719,7 +1719,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:dark_matter_the_real_engie_gamess_chestplate",
+          "name": "engies_chaos:dark_matter_engiegamess_chestplate",
           "weight": 200,
           "functions": [
             {
@@ -1733,7 +1733,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:dark_matter_the_real_engie_gamess_leggings",
+          "name": "engies_chaos:dark_matter_engiegamess_leggings",
           "weight": 200,
           "functions": [
             {
@@ -1747,7 +1747,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:dark_matter_the_real_engie_gamess_boots",
+          "name": "engies_chaos:dark_matter_engiegamess_boots",
           "weight": 200,
           "functions": [
             {
@@ -1766,7 +1766,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engie_sword",
+          "name": "engies_chaos:mad_engie_sword",
           "weight": 5000,
           "functions": [
             {
@@ -1780,7 +1780,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engie_pickaxe",
+          "name": "engies_chaos:mad_engie_pickaxe",
           "weight": 5000,
           "functions": [
             {
@@ -1794,7 +1794,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engie_axe",
+          "name": "engies_chaos:mad_engie_axe",
           "weight": 5000,
           "functions": [
             {
@@ -1808,7 +1808,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engie_shovel",
+          "name": "engies_chaos:mad_engie_shovel",
           "weight": 5000,
           "functions": [
             {
@@ -1822,7 +1822,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engie_hoe",
+          "name": "engies_chaos:mad_engie_hoe",
           "weight": 5000,
           "functions": [
             {
@@ -1836,7 +1836,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engie_aiot",
+          "name": "engies_chaos:mad_engie_aiot",
           "weight": 5000,
           "functions": [
             {
@@ -2522,7 +2522,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engies_sword",
+          "name": "engies_chaos:engie_sword",
           "weight": 2500,
           "functions": [
             {
@@ -2536,7 +2536,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engies_pickaxe",
+          "name": "engies_chaos:engie_pickaxe",
           "weight": 2500,
           "functions": [
             {
@@ -2550,7 +2550,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engies_axe",
+          "name": "engies_chaos:engie_axe",
           "weight": 2500,
           "functions": [
             {
@@ -2564,7 +2564,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engies_shovel",
+          "name": "engies_chaos:engie_shovel",
           "weight": 2500,
           "functions": [
             {
@@ -2578,7 +2578,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engies_hoe",
+          "name": "engies_chaos:engie_hoe",
           "weight": 2500,
           "functions": [
             {
@@ -2592,7 +2592,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engies_aiot",
+          "name": "engies_chaos:engie_aiot",
           "weight": 2500,
           "functions": [
             {
@@ -2774,7 +2774,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:dark_matter_engie_sword",
+          "name": "engies_chaos:dark_matter_mad_engie_sword",
           "weight": 500,
           "functions": [
             {
@@ -2788,7 +2788,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:dark_matter_engie_pickaxe",
+          "name": "engies_chaos:dark_matter_mad_engie_pickaxe",
           "weight": 500,
           "functions": [
             {
@@ -2802,7 +2802,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:dark_matter_engie_axe",
+          "name": "engies_chaos:dark_matter_mad_engie_axe",
           "weight": 500,
           "functions": [
             {
@@ -2816,7 +2816,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:dark_matter_engie_shovel",
+          "name": "engies_chaos:dark_matter_mad_engie_shovel",
           "weight": 500,
           "functions": [
             {
@@ -2830,7 +2830,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:dark_matter_engie_hoe",
+          "name": "engies_chaos:dark_matter_mad_engie_hoe",
           "weight": 500,
           "functions": [
             {
@@ -2844,7 +2844,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:dark_matter_engie_aiot",
+          "name": "engies_chaos:dark_matter_mad_engie_aiot",
           "weight": 500,
           "functions": [
             {
@@ -3614,7 +3614,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:dark_matter_engies_sword",
+          "name": "engies_chaos:dark_matter_engie_sword",
           "weight": 250,
           "functions": [
             {
@@ -3628,7 +3628,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:dark_matter_engies_pickaxe",
+          "name": "engies_chaos:dark_matter_engie_pickaxe",
           "weight": 250,
           "functions": [
             {
@@ -3642,7 +3642,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:dark_matter_engies_axe",
+          "name": "engies_chaos:dark_matter_engie_axe",
           "weight": 250,
           "functions": [
             {
@@ -3656,7 +3656,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:dark_matter_engies_shovel",
+          "name": "engies_chaos:dark_matter_engie_shovel",
           "weight": 250,
           "functions": [
             {
@@ -3670,7 +3670,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:dark_matter_engies_hoe",
+          "name": "engies_chaos:dark_matter_engie_hoe",
           "weight": 250,
           "functions": [
             {
@@ -3684,7 +3684,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:dark_matter_engies_aiot",
+          "name": "engies_chaos:dark_matter_engie_aiot",
           "weight": 250,
           "functions": [
             {

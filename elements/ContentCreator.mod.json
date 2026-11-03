@@ -10,35 +10,34 @@
     "textureLeggings": "contentcreator",
     "enableBoots": true,
     "textureBoots": "contentcreator",
-    "onHelmetTick": {
-      "name": "DevContriHelmet"
-    },
     "onBodyTick": {
-      "name": "DevContriChestplate"
-    },
-    "onLeggingsTick": {
-      "name": "DevContriLeggings"
-    },
-    "onBootsTick": {
-      "name": "DevContriBoots"
+      "name": "SpecialChestplates"
     },
     "creativeTabs": [],
     "armorTextureFile": "contentcreator",
-    "helmetName": "\"I'm a All About Engie content creator and I'm proud.\"",
-    "bodyName": "\"I'm a All About Engie content creator and I'm proud.\"",
-    "leggingsName": "\"I'm a All About Engie content creator and I'm proud.\"",
-    "bootsName": "\"I'm a All About Engie content creator and I'm proud.\"",
+    "helmetName": "Engie's Chaos Content Creator Helmet",
+    "bodyName": "Engie's Chaos Content Creator Chestplate",
+    "leggingsName": "Engie's Chaos Content Creator Leggings",
+    "bootsName": "Engie's Chaos Content Creator Boots",
     "helmetSpecialInformation": {
-      "fixedValue": []
+      "fixedValue": [
+        "Thanks for making content out of Engie's Chaos. It's really appreciated."
+      ]
     },
     "bodySpecialInformation": {
-      "fixedValue": []
+      "fixedValue": [
+        "Thanks for making content out of Engie's Chaos. It's really appreciated."
+      ]
     },
     "leggingsSpecialInformation": {
-      "fixedValue": []
+      "fixedValue": [
+        "Thanks for making content out of Engie's Chaos. It's really appreciated."
+      ]
     },
     "bootsSpecialInformation": {
-      "fixedValue": []
+      "fixedValue": [
+        "Thanks for making content out of Engie's Chaos. It's really appreciated."
+      ]
     },
     "helmetModelName": "Default",
     "helmetModelPart": "Helmet",

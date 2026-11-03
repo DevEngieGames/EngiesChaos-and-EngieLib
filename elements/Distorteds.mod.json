@@ -10,6 +10,9 @@
     "textureLeggings": "distortedleg",
     "enableBoots": true,
     "textureBoots": "distortedboot",
+    "onBodyTick": {
+      "name": "SpecialChestplates"
+    },
     "creativeTabs": [],
     "armorTextureFile": "backup_",
     "helmetName": "Distorteds Helmet",

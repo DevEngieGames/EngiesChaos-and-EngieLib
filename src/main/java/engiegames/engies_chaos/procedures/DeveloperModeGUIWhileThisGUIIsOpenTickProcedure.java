@@ -54,6 +54,12 @@ public class DeveloperModeGUIWhileThisGUIIsOpenTickProcedure {
 				_menu.getSlots().get(9).set(_setstack);
 				_player.containerMenu.broadcastChanges();
 			}
+			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+				ItemStack _setstack = new ItemStack(EngiesChaosModItems.DEVELOPER_ENGIE_BUNDLE.get()).copy();
+				_setstack.setCount(1);
+				_menu.getSlots().get(11).set(_setstack);
+				_player.containerMenu.broadcastChanges();
+			}
 		} else if (entity.getPersistentData().getBoolean("EngiesChaos_Contributor") == true) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
 				ItemStack _setstack = new ItemStack(EngiesChaosModItems.OME_NS_HELMET.get()).copy();
@@ -79,29 +85,41 @@ public class DeveloperModeGUIWhileThisGUIIsOpenTickProcedure {
 				_menu.getSlots().get(9).set(_setstack);
 				_player.containerMenu.broadcastChanges();
 			}
+			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+				ItemStack _setstack = new ItemStack(EngiesChaosModItems.CONTRIBUTOR_ENGIE_BUNDLE.get()).copy();
+				_setstack.setCount(1);
+				_menu.getSlots().get(11).set(_setstack);
+				_player.containerMenu.broadcastChanges();
+			}
 		} else if (entity.getPersistentData().getBoolean("EngiesChaos_BetaTester") == true || entity.getPersistentData().getBoolean("EngiesChaos_Tester") == true) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				ItemStack _setstack = new ItemStack(EngiesChaosModItems.TRUE_X_ENGIE_HELMET.get()).copy();
+				ItemStack _setstack = new ItemStack(EngiesChaosModItems.HWG_HELMET.get()).copy();
 				_setstack.setCount(1);
 				_menu.getSlots().get(6).set(_setstack);
 				_player.containerMenu.broadcastChanges();
 			}
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				ItemStack _setstack = new ItemStack(EngiesChaosModItems.TRUE_X_ENGIE_CHESTPLATE.get()).copy();
+				ItemStack _setstack = new ItemStack(EngiesChaosModItems.HWG_CHESTPLATE.get()).copy();
 				_setstack.setCount(1);
 				_menu.getSlots().get(7).set(_setstack);
 				_player.containerMenu.broadcastChanges();
 			}
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				ItemStack _setstack = new ItemStack(EngiesChaosModItems.TRUE_X_ENGIE_LEGGINGS.get()).copy();
+				ItemStack _setstack = new ItemStack(EngiesChaosModItems.HWG_LEGGINGS.get()).copy();
 				_setstack.setCount(1);
 				_menu.getSlots().get(8).set(_setstack);
 				_player.containerMenu.broadcastChanges();
 			}
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
-				ItemStack _setstack = new ItemStack(EngiesChaosModItems.TRUE_X_ENGIE_BOOTS.get()).copy();
+				ItemStack _setstack = new ItemStack(EngiesChaosModItems.HWG_BOOTS.get()).copy();
 				_setstack.setCount(1);
 				_menu.getSlots().get(9).set(_setstack);
+				_player.containerMenu.broadcastChanges();
+			}
+			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
+				ItemStack _setstack = new ItemStack(EngiesChaosModItems.TESTER_ENGIE_BUNDLE.get()).copy();
+				_setstack.setCount(1);
+				_menu.getSlots().get(11).set(_setstack);
 				_player.containerMenu.broadcastChanges();
 			}
 		}

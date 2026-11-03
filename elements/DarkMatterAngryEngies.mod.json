@@ -10,6 +10,9 @@
     "textureLeggings": "darkmatterangryengieleggings",
     "enableBoots": true,
     "textureBoots": "darkmatterangryengieboots",
+    "onBodyTick": {
+      "name": "DarkMatterChestplates"
+    },
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"

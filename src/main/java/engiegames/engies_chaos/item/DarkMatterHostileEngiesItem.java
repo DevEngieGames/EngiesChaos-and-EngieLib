@@ -14,7 +14,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 
-import engiegames.engies_chaos.procedures.HostileEngieChestplateProcedure;
+import engiegames.engies_chaos.procedures.DarkMatterChestplatesProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModTabs;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 
@@ -86,7 +86,7 @@ public abstract class DarkMatterHostileEngiesItem extends ArmorItem {
 
 		@Override
 		public void onArmorTick(ItemStack itemstack, Level world, Player entity) {
-			HostileEngieChestplateProcedure.execute(entity);
+			DarkMatterChestplatesProcedure.execute(entity);
 		}
 	}
 

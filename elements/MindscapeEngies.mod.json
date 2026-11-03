@@ -10,6 +10,9 @@
     "textureLeggings": "mindscapeleg",
     "enableBoots": true,
     "textureBoots": "mindscapeboot",
+    "onBodyTick": {
+      "name": "RegularChestplates"
+    },
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"

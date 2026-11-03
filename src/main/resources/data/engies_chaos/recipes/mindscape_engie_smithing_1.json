@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "item": "engies_chaos:engies_sword"
+    "item": "engies_chaos:engie_sword"
   },
   "addition": {
     "item": "engies_chaos:mindscape_coin_block"

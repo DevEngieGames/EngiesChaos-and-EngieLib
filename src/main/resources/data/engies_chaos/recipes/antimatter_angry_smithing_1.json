@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "item": "engies_chaos:antimatter_engie_sword"
+    "item": "engies_chaos:antimatter_mad_engie_sword"
   },
   "addition": {
     "item": "engies_chaos:antimatter_angry_engie_block"

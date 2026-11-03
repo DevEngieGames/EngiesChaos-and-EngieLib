@@ -12,10 +12,10 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "smithingInputStack": {
-      "value": "CUSTOM:MindscapeEngiesPickaxe"
+      "value": "CUSTOM:EngieGamesPickaxe"
     },
     "smithingInputAdditionStack": {
-      "value": "CUSTOM:AntimatterEngieBlock"
+      "value": "CUSTOM:AntimatterMadEngieBlock"
     },
     "smithingInputTemplateStack": {
       "value": ""

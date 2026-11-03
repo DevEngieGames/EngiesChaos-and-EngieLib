@@ -36,7 +36,7 @@ public class AntimatterEngieHoeItem extends HoeItem {
 			}
 
 			public Ingredient getRepairIngredient() {
-				return Ingredient.of(new ItemStack(EngiesChaosModItems.ANTIMATTER_ENGIE_GEM.get()));
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.ANTIMATTER_MAD_ENGIE_ESSENCE.get()));
 			}
 		}, 0, 1.8f, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}

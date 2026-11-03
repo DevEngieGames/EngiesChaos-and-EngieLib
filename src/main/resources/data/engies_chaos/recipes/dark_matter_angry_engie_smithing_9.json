@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "item": "engies_chaos:dark_matter_engies_leggings"
+    "item": "engies_chaos:dark_matter_mad_engies_leggings"
   },
   "addition": {
     "item": "engies_chaos:dark_matter_angry_engie_block"

@@ -10,6 +10,9 @@
     "textureLeggings": "antimatterangryengieleggings",
     "enableBoots": true,
     "textureBoots": "antimatterangryengieboots",
+    "onBodyTick": {
+      "name": "AntimatterChestplates"
+    },
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"

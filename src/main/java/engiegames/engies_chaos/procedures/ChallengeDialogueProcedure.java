@@ -65,22 +65,22 @@ public class ChallengeDialogueProcedure {
 						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 					}
 					if (entityiterator instanceof Player _player) {
-						ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIES_HELMET.get()).copy();
+						ItemStack _setstack = new ItemStack(EngiesChaosModItems.MAD_ENGIES_HELMET.get()).copy();
 						_setstack.setCount(1);
 						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 					}
 					if (entityiterator instanceof Player _player) {
-						ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIES_CHESTPLATE.get()).copy();
+						ItemStack _setstack = new ItemStack(EngiesChaosModItems.MAD_ENGIES_CHESTPLATE.get()).copy();
 						_setstack.setCount(1);
 						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 					}
 					if (entityiterator instanceof Player _player) {
-						ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIES_LEGGINGS.get()).copy();
+						ItemStack _setstack = new ItemStack(EngiesChaosModItems.MAD_ENGIES_LEGGINGS.get()).copy();
 						_setstack.setCount(1);
 						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 					}
 					if (entityiterator instanceof Player _player) {
-						ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIES_BOOTS.get()).copy();
+						ItemStack _setstack = new ItemStack(EngiesChaosModItems.MAD_ENGIES_BOOTS.get()).copy();
 						_setstack.setCount(1);
 						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 					}

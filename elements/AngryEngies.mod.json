@@ -10,6 +10,9 @@
     "textureLeggings": "angryengieleggings",
     "enableBoots": true,
     "textureBoots": "angryengieboots",
+    "onBodyTick": {
+      "name": "RegularChestplates"
+    },
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"

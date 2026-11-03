@@ -14,7 +14,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 
-import engiegames.engies_chaos.procedures.BAEChestplateProcedure;
+import engiegames.engies_chaos.procedures.DarkMatterChestplatesProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModTabs;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 
@@ -70,7 +70,7 @@ public abstract class DarkMatterBiblicallyAccurateEngiesItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "engies_chaos:textures/models/armor/darkmatterbiblicallyaccurateengie_layer_1.png";
+			return "engies_chaos:textures/models/armor/darkmatterbiblicallyaccurate_layer_1.png";
 		}
 	}
 
@@ -81,12 +81,12 @@ public abstract class DarkMatterBiblicallyAccurateEngiesItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "engies_chaos:textures/models/armor/darkmatterbiblicallyaccurateengie_layer_1.png";
+			return "engies_chaos:textures/models/armor/darkmatterbiblicallyaccurate_layer_1.png";
 		}
 
 		@Override
 		public void onArmorTick(ItemStack itemstack, Level world, Player entity) {
-			BAEChestplateProcedure.execute(entity);
+			DarkMatterChestplatesProcedure.execute(entity);
 		}
 	}
 
@@ -97,7 +97,7 @@ public abstract class DarkMatterBiblicallyAccurateEngiesItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "engies_chaos:textures/models/armor/darkmatterbiblicallyaccurateengie_layer_2.png";
+			return "engies_chaos:textures/models/armor/darkmatterbiblicallyaccurate_layer_2.png";
 		}
 	}
 
@@ -108,7 +108,7 @@ public abstract class DarkMatterBiblicallyAccurateEngiesItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "engies_chaos:textures/models/armor/darkmatterbiblicallyaccurateengie_layer_1.png";
+			return "engies_chaos:textures/models/armor/darkmatterbiblicallyaccurate_layer_1.png";
 		}
 	}
 }

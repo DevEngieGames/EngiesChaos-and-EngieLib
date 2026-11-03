@@ -38,7 +38,7 @@ public class DeveloperModeGUIMenu extends AbstractContainerMenu implements Engie
 	public final Map<String, Object> menuState = new HashMap<>() {
 		@Override
 		public Object put(String key, Object value) {
-			if (!this.containsKey(key) && this.size() >= 27)
+			if (!this.containsKey(key) && this.size() >= 28)
 				return null;
 			return super.put(key, value);
 		}
@@ -58,7 +58,7 @@ public class DeveloperModeGUIMenu extends AbstractContainerMenu implements Engie
 		super(EngiesChaosModMenus.DEVELOPER_MODE_GUI.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level;
-		this.internal = new ItemStackHandler(11);
+		this.internal = new ItemStackHandler(12);
 		BlockPos pos = null;
 		if (extraData != null) {
 			pos = extraData.readBlockPos();
@@ -203,6 +203,16 @@ public class DeveloperModeGUIMenu extends AbstractContainerMenu implements Engie
 				return false;
 			}
 		}));
+		this.customSlots.put(11, this.addSlot(new SlotItemHandler(internal, 11, 25, 180) {
+			private final int slot = 11;
+			private int x = DeveloperModeGUIMenu.this.x;
+			private int y = DeveloperModeGUIMenu.this.y;
+
+			@Override
+			public boolean mayPlace(ItemStack stack) {
+				return false;
+			}
+		}));
 		for (int si = 0; si < 3; ++si)
 			for (int sj = 0; sj < 9; ++sj)
 				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 35 + 8 + sj * 18, 78 + 84 + si * 18));
@@ -230,16 +240,16 @@ public class DeveloperModeGUIMenu extends AbstractContainerMenu implements Engie
 		if (slot != null && slot.hasItem()) {
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
-			if (index < 11) {
-				if (!this.moveItemStackTo(itemstack1, 11, this.slots.size(), true))
+			if (index < 12) {
+				if (!this.moveItemStackTo(itemstack1, 12, this.slots.size(), true))
 					return ItemStack.EMPTY;
 				slot.onQuickCraft(itemstack1, itemstack);
-			} else if (!this.moveItemStackTo(itemstack1, 0, 11, false)) {
-				if (index < 11 + 27) {
-					if (!this.moveItemStackTo(itemstack1, 11 + 27, this.slots.size(), true))
+			} else if (!this.moveItemStackTo(itemstack1, 0, 12, false)) {
+				if (index < 12 + 27) {
+					if (!this.moveItemStackTo(itemstack1, 12 + 27, this.slots.size(), true))
 						return ItemStack.EMPTY;
 				} else {
-					if (!this.moveItemStackTo(itemstack1, 11, 11 + 27, false))
+					if (!this.moveItemStackTo(itemstack1, 12, 12 + 27, false))
 						return ItemStack.EMPTY;
 				}
 				return ItemStack.EMPTY;
@@ -353,6 +363,8 @@ public class DeveloperModeGUIMenu extends AbstractContainerMenu implements Engie
 						continue;
 					if (j == 10)
 						continue;
+					if (j == 11)
+						continue;
 					playerIn.drop(internal.getStackInSlot(j), false);
 					if (internal instanceof IItemHandlerModifiable ihm)
 						ihm.setStackInSlot(j, ItemStack.EMPTY);
@@ -372,6 +384,8 @@ public class DeveloperModeGUIMenu extends AbstractContainerMenu implements Engie
 					if (i == 9)
 						continue;
 					if (i == 10)
+						continue;
+					if (i == 11)
 						continue;
 					playerIn.getInventory().placeItemBackInInventory(internal.getStackInSlot(i));
 					if (internal instanceof IItemHandlerModifiable ihm)

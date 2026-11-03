@@ -3,23 +3,23 @@
   "group": "antimatterengiepaxel",
   "ingredients": [
     {
-      "item": "engies_chaos:antimatter_engie_axe"
+      "item": "engies_chaos:antimatter_mad_engie_axe"
     },
     {
-      "item": "engies_chaos:antimatter_engie_pickaxe"
+      "item": "engies_chaos:antimatter_mad_engie_pickaxe"
     },
     {
-      "item": "engies_chaos:antimatter_engie_shovel"
+      "item": "engies_chaos:antimatter_mad_engie_shovel"
     },
     {
-      "item": "engies_chaos:antimatter_engie_sword"
+      "item": "engies_chaos:antimatter_mad_engie_sword"
     },
     {
-      "item": "engies_chaos:antimatter_engie_hoe"
+      "item": "engies_chaos:antimatter_mad_engie_hoe"
     }
   ],
   "result": {
-    "item": "engies_chaos:antimatter_engie_aiot",
+    "item": "engies_chaos:antimatter_mad_engie_aiot",
     "count": 1
   }
 }

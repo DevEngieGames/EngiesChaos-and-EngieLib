@@ -12,16 +12,11 @@ import net.minecraft.core.BlockPos;
 
 import java.util.function.Supplier;
 
-import engiegames.engies_chaos.procedures.GearGiverTesterProcedure;
 import engiegames.engies_chaos.procedures.GearGiverStarterProcedure;
 import engiegames.engies_chaos.procedures.GearGiverStarterBundleProcedure;
 import engiegames.engies_chaos.procedures.GearGiverRecipeBookProcedure;
 import engiegames.engies_chaos.procedures.GearGiverOperatorProcedure;
-import engiegames.engies_chaos.procedures.GearGiverIdeaGiverProcedure;
 import engiegames.engies_chaos.procedures.GearGiverGoBackToConfigProcedure;
-import engiegames.engies_chaos.procedures.GearGiverDeveloperProcedure;
-import engiegames.engies_chaos.procedures.GearGiverContentCreatorProcedure;
-import engiegames.engies_chaos.procedures.GearGiverBetaTesterProcedure;
 import engiegames.engies_chaos.procedures.ConfigButton10Procedure;
 import engiegames.engies_chaos.EngiesChaosMod;
 
@@ -84,26 +79,6 @@ public class GearGiverButtonMessage {
 		if (buttonID == 5) {
 
 			GearGiverOperatorProcedure.execute(entity);
-		}
-		if (buttonID == 6) {
-
-			GearGiverDeveloperProcedure.execute(entity);
-		}
-		if (buttonID == 7) {
-
-			GearGiverIdeaGiverProcedure.execute(entity);
-		}
-		if (buttonID == 8) {
-
-			GearGiverBetaTesterProcedure.execute(entity);
-		}
-		if (buttonID == 9) {
-
-			GearGiverTesterProcedure.execute(entity);
-		}
-		if (buttonID == 10) {
-
-			GearGiverContentCreatorProcedure.execute(entity);
 		}
 	}
 

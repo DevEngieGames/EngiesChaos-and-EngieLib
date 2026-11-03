@@ -305,7 +305,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engies_helmet",
+          "name": "engies_chaos:mad_engies_helmet",
           "weight": 24,
           "functions": [
             {
@@ -327,7 +327,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engies_chestplate",
+          "name": "engies_chaos:mad_engies_chestplate",
           "weight": 24,
           "functions": [
             {
@@ -349,7 +349,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engies_leggings",
+          "name": "engies_chaos:mad_engies_leggings",
           "weight": 24,
           "functions": [
             {
@@ -371,7 +371,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engies_boots",
+          "name": "engies_chaos:mad_engies_boots",
           "weight": 24,
           "functions": [
             {
@@ -481,7 +481,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engie_axe",
+          "name": "engies_chaos:mad_engie_axe",
           "weight": 24,
           "functions": [
             {
@@ -503,7 +503,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engie_pickaxe",
+          "name": "engies_chaos:mad_engie_pickaxe",
           "weight": 24,
           "functions": [
             {
@@ -525,7 +525,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engie_shovel",
+          "name": "engies_chaos:mad_engie_shovel",
           "weight": 24,
           "functions": [
             {
@@ -547,7 +547,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engie_hoe",
+          "name": "engies_chaos:mad_engie_hoe",
           "weight": 24,
           "functions": [
             {
@@ -657,7 +657,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engie_sword",
+          "name": "engies_chaos:mad_engie_sword",
           "weight": 24,
           "functions": [
             {
@@ -701,7 +701,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "engies_chaos:engie_aiot",
+          "name": "engies_chaos:mad_engie_aiot",
           "weight": 24,
           "functions": [
             {

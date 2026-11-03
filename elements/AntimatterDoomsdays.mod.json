@@ -10,6 +10,9 @@
     "textureLeggings": "antidoomsleg",
     "enableBoots": true,
     "textureBoots": "antidoomsboot",
+    "onBodyTick": {
+      "name": "AntimatterChestplates"
+    },
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"

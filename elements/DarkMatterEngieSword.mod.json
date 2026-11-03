@@ -9,10 +9,9 @@
     "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
     "guiTexture": "",
-    "name": "Dark Matter Engie Sword",
+    "name": "Dark Matter Mad Engie Sword",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "DescriptionOfItem"
+      "fixedValue": []
     },
     "creativeTabs": [
       {
@@ -29,7 +28,7 @@
     },
     "repairItems": [
       {
-        "value": "CUSTOM:DarkMatterEngieGem"
+        "value": "CUSTOM:DarkMatterMadEngieEssence"
       }
     ],
     "immuneToFire": false,

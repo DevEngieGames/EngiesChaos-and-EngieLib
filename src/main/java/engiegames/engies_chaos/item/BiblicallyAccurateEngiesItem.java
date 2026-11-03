@@ -14,7 +14,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 
-import engiegames.engies_chaos.procedures.BAEChestplateProcedure;
+import engiegames.engies_chaos.procedures.RegularChestplatesProcedure;
 import engiegames.engies_chaos.init.EngiesChaosModTabs;
 import engiegames.engies_chaos.init.EngiesChaosModItems;
 
@@ -86,7 +86,7 @@ public abstract class BiblicallyAccurateEngiesItem extends ArmorItem {
 
 		@Override
 		public void onArmorTick(ItemStack itemstack, Level world, Player entity) {
-			BAEChestplateProcedure.execute(entity);
+			RegularChestplatesProcedure.execute(entity, itemstack);
 		}
 	}
 

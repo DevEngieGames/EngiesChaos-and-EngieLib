@@ -10,6 +10,9 @@
     "textureLeggings": "codeleg",
     "enableBoots": true,
     "textureBoots": "codeboot",
+    "onBodyTick": {
+      "name": "RegularChestplates"
+    },
     "creativeTabs": [],
     "armorTextureFile": "coderedeemer_",
     "helmetName": "Code Redeemers Helmet",

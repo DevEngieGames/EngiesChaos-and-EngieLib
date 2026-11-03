@@ -10,6 +10,9 @@
     "textureLeggings": "roughleg",
     "enableBoots": true,
     "textureBoots": "roughianboot",
+    "onBodyTick": {
+      "name": "AntimatterChestplates"
+    },
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"

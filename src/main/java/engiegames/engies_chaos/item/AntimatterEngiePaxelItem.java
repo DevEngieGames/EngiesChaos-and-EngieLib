@@ -53,7 +53,7 @@ public class AntimatterEngiePaxelItem extends TieredItem {
 			}
 
 			public Ingredient getRepairIngredient() {
-				return Ingredient.of(new ItemStack(EngiesChaosModItems.ANTIMATTER_ENGIE_GEM.get()));
+				return Ingredient.of(new ItemStack(EngiesChaosModItems.ANTIMATTER_MAD_ENGIE_ESSENCE.get()));
 			}
 		}, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}

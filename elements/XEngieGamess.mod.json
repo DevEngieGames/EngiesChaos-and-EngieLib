@@ -10,6 +10,9 @@
     "textureLeggings": "xengiegamesleg",
     "enableBoots": true,
     "textureBoots": "xengiegamesboot",
+    "onBodyTick": {
+      "name": "SpecialChestplates"
+    },
     "creativeTabs": [],
     "armorTextureFile": "backup_",
     "helmetName": "xEngieGames Helmet",

@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "item": "engies_chaos:dark_matter_engies_hoe"
+    "item": "engies_chaos:dark_matter_engie_hoe"
   },
   "addition": {
     "item": "engies_chaos:dark_matter_engie_games_coin_block"

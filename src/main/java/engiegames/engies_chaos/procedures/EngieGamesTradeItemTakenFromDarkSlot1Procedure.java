@@ -32,7 +32,7 @@ public class EngieGamesTradeItemTakenFromDarkSlot1Procedure {
 				_player.containerMenu.broadcastChanges();
 			}
 		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu8 ? _menu8.getSlots().get(10).getItem() : ItemStack.EMPTY)
-				.getItem() == EngiesChaosModItems.DARK_MATTER_THE_REAL_ENGIE_GAMESS_HELMET.get()) {
+				.getItem() == EngiesChaosModItems.DARK_MATTER_ENGIEGAMESS_HELMET.get()) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
 				_menu.getSlots().get(8).remove(64);
 				_player.containerMenu.broadcastChanges();
@@ -42,7 +42,7 @@ public class EngieGamesTradeItemTakenFromDarkSlot1Procedure {
 				_player.containerMenu.broadcastChanges();
 			}
 		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu12 ? _menu12.getSlots().get(10).getItem() : ItemStack.EMPTY)
-				.getItem() == EngiesChaosModItems.DARK_MATTER_THE_REAL_ENGIE_GAMESS_CHESTPLATE.get()) {
+				.getItem() == EngiesChaosModItems.DARK_MATTER_ENGIEGAMESS_CHESTPLATE.get()) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
 				_menu.getSlots().get(8).remove(64);
 				_player.containerMenu.broadcastChanges();
@@ -52,7 +52,7 @@ public class EngieGamesTradeItemTakenFromDarkSlot1Procedure {
 				_player.containerMenu.broadcastChanges();
 			}
 		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu16 ? _menu16.getSlots().get(10).getItem() : ItemStack.EMPTY)
-				.getItem() == EngiesChaosModItems.DARK_MATTER_THE_REAL_ENGIE_GAMESS_LEGGINGS.get()) {
+				.getItem() == EngiesChaosModItems.DARK_MATTER_ENGIEGAMESS_LEGGINGS.get()) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
 				_menu.getSlots().get(8).remove(64);
 				_player.containerMenu.broadcastChanges();
@@ -62,7 +62,7 @@ public class EngieGamesTradeItemTakenFromDarkSlot1Procedure {
 				_player.containerMenu.broadcastChanges();
 			}
 		} else if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu20 ? _menu20.getSlots().get(10).getItem() : ItemStack.EMPTY)
-				.getItem() == EngiesChaosModItems.DARK_MATTER_THE_REAL_ENGIE_GAMESS_BOOTS.get()) {
+				.getItem() == EngiesChaosModItems.DARK_MATTER_ENGIEGAMESS_BOOTS.get()) {
 			if (entity instanceof Player _player && _player.containerMenu instanceof EngiesChaosModMenus.MenuAccessor _menu) {
 				_menu.getSlots().get(8).remove(64);
 				_player.containerMenu.broadcastChanges();

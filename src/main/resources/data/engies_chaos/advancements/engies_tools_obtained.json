@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "engies_chaos:engies_pickaxe"
+      "item": "engies_chaos:engie_pickaxe"
     },
     "title": {
       "translate": "advancements.engies_tools_obtained.title"

@@ -45,7 +45,7 @@ public abstract class EngiesItem extends ArmorItem {
 
 			@Override
 			public String getName() {
-				return "engies";
+				return "mad_engies";
 			}
 
 			@Override
