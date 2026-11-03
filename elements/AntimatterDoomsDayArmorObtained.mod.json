@@ -3,7 +3,7 @@
   "_type": "achievement",
   "definition": {
     "achievementName": "That's not bad!",
-    "achievementDescription": "Obtain a full set of Antimatter DoomsDay Armor for the first time.",
+    "achievementDescription": "Obtain a full set of Antimatter Doomsday Armor for the first time.",
     "achievementIcon": {
       "value": "CUSTOM:DoomsDays.helmet"
     },

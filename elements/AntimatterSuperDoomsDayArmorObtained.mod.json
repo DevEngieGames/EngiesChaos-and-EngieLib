@@ -3,7 +3,7 @@
   "_type": "achievement",
   "definition": {
     "achievementName": "Not to shabby eh?",
-    "achievementDescription": "Obtain a full set of Antimatter Super DoomsDay Armor for the first time.",
+    "achievementDescription": "Obtain a full set of Antimatter Super Doomsday Armor for the first time.",
     "achievementIcon": {
       "value": "CUSTOM:SuperDoomsDays.helmet"
     },

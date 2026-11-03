@@ -3,7 +3,7 @@
   "_type": "achievement",
   "definition": {
     "achievementName": "I'll take it.",
-    "achievementDescription": "Obtain Outraged Engie Armor for the first time.",
+    "achievementDescription": "Obtain a full set of Outraged Engie Armor for the first time.",
     "achievementIcon": {
       "value": "CUSTOM:OutragedEngies.helmet"
     },

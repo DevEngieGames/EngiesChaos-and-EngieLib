@@ -3,7 +3,7 @@
   "_type": "achievement",
   "definition": {
     "achievementName": "\"What was noise?\"",
-    "achievementDescription": "\"The sound of progress my friend.\" (Obtain Engie Armor for the first time.)",
+    "achievementDescription": "\"The sound of progress my friend.\" (Obtain a full set of Mad Engie Armor for the first time.)",
     "achievementIcon": {
       "value": "CUSTOM:Engies.helmet"
     },
@@ -11,7 +11,7 @@
     "disableDisplay": false,
     "showPopup": true,
     "announceToChat": true,
-    "hideIfNotCompleted": true,
+    "hideIfNotCompleted": false,
     "rewardLoot": [],
     "rewardRecipes": [],
     "rewardXP": 10,

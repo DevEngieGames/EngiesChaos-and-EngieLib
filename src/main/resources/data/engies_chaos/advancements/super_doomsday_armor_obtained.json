@@ -1,27 +1,27 @@
 {
   "display": {
     "icon": {
-      "item": "engies_chaos:antimatter_enraged_engies_helmet"
+      "item": "engies_chaos:super_dooms_days_helmet"
     },
     "title": {
-      "translate": "advancements.antimatter_enraged_engie_armor_made.title"
+      "translate": "advancements.super_doomsday_armor_obtained.title"
     },
     "description": {
-      "translate": "advancements.antimatter_enraged_engie_armor_made.descr"
+      "translate": "advancements.super_doomsday_armor_obtained.descr"
     },
-    "frame": "goal",
+    "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true,
-    "hidden": true
+    "hidden": false
   },
   "criteria": {
-    "antimatter_enraged_engie_armor_made_0": {
+    "super_doomsday_armor_obtained_0": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "engies_chaos:antimatter_enraged_engies_helmet"
+              "engies_chaos:super_dooms_days_helmet"
             ],
             "count": {
               "min": 1,
@@ -31,13 +31,13 @@
         ]
       }
     },
-    "antimatter_enraged_engie_armor_made_1": {
+    "super_doomsday_armor_obtained_1": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "engies_chaos:antimatter_enraged_engies_chestplate"
+              "engies_chaos:super_dooms_days_chestplate"
             ],
             "count": {
               "min": 1,
@@ -47,13 +47,13 @@
         ]
       }
     },
-    "antimatter_enraged_engie_armor_made_2": {
+    "super_doomsday_armor_obtained_2": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "engies_chaos:antimatter_enraged_engies_leggings"
+              "engies_chaos:super_dooms_days_leggings"
             ],
             "count": {
               "min": 1,
@@ -63,13 +63,13 @@
         ]
       }
     },
-    "antimatter_enraged_engie_armor_made_3": {
+    "super_doomsday_armor_obtained_3": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "engies_chaos:antimatter_enraged_engies_boots"
+              "engies_chaos:super_dooms_days_boots"
             ],
             "count": {
               "min": 1,
@@ -81,7 +81,7 @@
     }
   },
   "rewards": {
-    "experience": 30
+    "experience": 65
   },
-  "parent": "engies_chaos:antimatter_enraged_engie_essence_obtained"
+  "parent": "engies_chaos:super_doomsday_coin_obtained"
 }

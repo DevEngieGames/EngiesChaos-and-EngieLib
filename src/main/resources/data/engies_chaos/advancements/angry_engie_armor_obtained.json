@@ -1,27 +1,27 @@
 {
   "display": {
     "icon": {
-      "item": "engies_chaos:engiegamess_helmet"
+      "item": "engies_chaos:angry_engies_helmet"
     },
     "title": {
-      "translate": "advancements.engie_games_armor_obtained.title"
+      "translate": "advancements.angry_engie_armor_obtained.title"
     },
     "description": {
-      "translate": "advancements.engie_games_armor_obtained.descr"
+      "translate": "advancements.angry_engie_armor_obtained.descr"
     },
-    "frame": "challenge",
+    "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
   "criteria": {
-    "engie_games_armor_obtained_0": {
+    "angry_engie_armor_obtained_0": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "engies_chaos:engiegamess_helmet"
+              "engies_chaos:angry_engies_helmet"
             ],
             "count": {
               "min": 1,
@@ -31,13 +31,13 @@
         ]
       }
     },
-    "engie_games_armor_obtained_1": {
+    "angry_engie_armor_obtained_1": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "engies_chaos:engiegamess_chestplate"
+              "engies_chaos:angry_engies_chestplate"
             ],
             "count": {
               "min": 1,
@@ -47,13 +47,13 @@
         ]
       }
     },
-    "engie_games_armor_obtained_2": {
+    "angry_engie_armor_obtained_2": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "engies_chaos:engiegamess_leggings"
+              "engies_chaos:angry_engies_leggings"
             ],
             "count": {
               "min": 1,
@@ -63,13 +63,13 @@
         ]
       }
     },
-    "engie_games_armor_obtained_3": {
+    "angry_engie_armor_obtained_3": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "engies_chaos:engiegamess_boots"
+              "engies_chaos:angry_engies_boots"
             ],
             "count": {
               "min": 1,
@@ -81,7 +81,7 @@
     }
   },
   "rewards": {
-    "experience": 80
+    "experience": 20
   },
-  "parent": "engies_chaos:engie_games_coin_obtained"
+  "parent": "engies_chaos:angry_engie_essence_obtained"
 }

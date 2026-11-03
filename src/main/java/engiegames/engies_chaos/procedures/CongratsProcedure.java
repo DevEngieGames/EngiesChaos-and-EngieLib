@@ -58,11 +58,11 @@ public class CongratsProcedure {
 													if (entity instanceof ServerPlayer _plr11 && _plr11.level instanceof ServerLevel
 															&& _plr11.getAdvancements().getOrStartProgress(_plr11.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_games_coin_obtained"))).isDone()) {
 														if (entity instanceof ServerPlayer _plr12 && _plr12.level instanceof ServerLevel
-																&& _plr12.getAdvancements().getOrStartProgress(_plr12.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_armor_made"))).isDone()) {
+																&& _plr12.getAdvancements().getOrStartProgress(_plr12.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:mad_engie_armor_obtained"))).isDone()) {
 															if (entity instanceof ServerPlayer _plr13 && _plr13.level instanceof ServerLevel
-																	&& _plr13.getAdvancements().getOrStartProgress(_plr13.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:angry_engie_armor_made"))).isDone()) {
+																	&& _plr13.getAdvancements().getOrStartProgress(_plr13.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:angry_engie_armor_obtained"))).isDone()) {
 																if (entity instanceof ServerPlayer _plr14 && _plr14.level instanceof ServerLevel
-																		&& _plr14.getAdvancements().getOrStartProgress(_plr14.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:enraged_engie_armor_made"))).isDone()) {
+																		&& _plr14.getAdvancements().getOrStartProgress(_plr14.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:enraged_engie_armor_obtained"))).isDone()) {
 																	if (entity instanceof ServerPlayer _plr15 && _plr15.level instanceof ServerLevel
 																			&& _plr15.getAdvancements().getOrStartProgress(_plr15.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:outraged_engie_armor_obtained"))).isDone()) {
 																		if (entity instanceof ServerPlayer _plr16 && _plr16.level instanceof ServerLevel && _plr16.getAdvancements()
@@ -72,9 +72,9 @@ public class CongratsProcedure {
 																				if (entity instanceof ServerPlayer _plr18 && _plr18.level instanceof ServerLevel && _plr18.getAdvancements()
 																						.getOrStartProgress(_plr18.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:hostile_engie_armor_obtained"))).isDone()) {
 																					if (entity instanceof ServerPlayer _plr19 && _plr19.level instanceof ServerLevel && _plr19.getAdvancements()
-																							.getOrStartProgress(_plr19.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:dooms_day_armor_obtained"))).isDone()) {
+																							.getOrStartProgress(_plr19.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:doomsday_armor_obtained"))).isDone()) {
 																						if (entity instanceof ServerPlayer _plr20 && _plr20.level instanceof ServerLevel && _plr20.getAdvancements()
-																								.getOrStartProgress(_plr20.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:super_dooms_day_armor_obtained"))).isDone()) {
+																								.getOrStartProgress(_plr20.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:super_doomsday_armor_obtained"))).isDone()) {
 																							if (entity instanceof ServerPlayer _plr21 && _plr21.level instanceof ServerLevel && _plr21.getAdvancements()
 																									.getOrStartProgress(_plr21.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:the_end_armor_obtained"))).isDone()) {
 																								if (entity instanceof ServerPlayer _plr22 && _plr22.level instanceof ServerLevel && _plr22.getAdvancements()
@@ -87,7 +87,7 @@ public class CongratsProcedure {
 																										if (entity instanceof ServerPlayer _plr24 && _plr24.level instanceof ServerLevel
 																												&& _plr24.getAdvancements()
 																														.getOrStartProgress(
-																																_plr24.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_games_armor_obtained")))
+																																_plr24.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engiegames_armor_obtained")))
 																														.isDone()) {
 																											if (entity instanceof ServerPlayer _plr25 && _plr25.level instanceof ServerLevel
 																													&& _plr25.getAdvancements()
@@ -419,7 +419,7 @@ public class CongratsProcedure {
 																																																																												.getAdvancements()
 																																																																												.getAdvancement(
 																																																																														new ResourceLocation(
-																																																																																"engies_chaos:antimatter_engie_armor_made")))
+																																																																																"engies_chaos:antimatter_mad_engie_armor_obtained")))
 																																																																								.isDone()) {
 																																																																					if (entity instanceof ServerPlayer _plr67
 																																																																							&& _plr67.level instanceof ServerLevel
@@ -430,7 +430,7 @@ public class CongratsProcedure {
 																																																																													.getAdvancements()
 																																																																													.getAdvancement(
 																																																																															new ResourceLocation(
-																																																																																	"engies_chaos:antimatter_angry_engie_armor_made")))
+																																																																																	"engies_chaos:antimatter_angry_engie_armor_obtained")))
 																																																																									.isDone()) {
 																																																																						if (entity instanceof ServerPlayer _plr68
 																																																																								&& _plr68.level instanceof ServerLevel
@@ -441,7 +441,7 @@ public class CongratsProcedure {
 																																																																														.getAdvancements()
 																																																																														.getAdvancement(
 																																																																																new ResourceLocation(
-																																																																																		"engies_chaos:antimatter_enraged_engie_armor_made")))
+																																																																																		"engies_chaos:antimatter_enraged_engie_armor_obtained")))
 																																																																										.isDone()) {
 																																																																							if (entity instanceof ServerPlayer _plr69
 																																																																									&& _plr69.level instanceof ServerLevel
@@ -496,7 +496,7 @@ public class CongratsProcedure {
 																																																																																			.getAdvancements()
 																																																																																			.getAdvancement(
 																																																																																					new ResourceLocation(
-																																																																																							"engies_chaos:antimatter_dooms_day_armor_obtained")))
+																																																																																							"engies_chaos:antimatter_doomsday_armor_obtained")))
 																																																																															.isDone()) {
 																																																																												if (entity instanceof ServerPlayer _plr74
 																																																																														&& _plr74.level instanceof ServerLevel

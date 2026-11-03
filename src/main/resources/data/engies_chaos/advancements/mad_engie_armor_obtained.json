@@ -1,27 +1,27 @@
 {
   "display": {
     "icon": {
-      "item": "engies_chaos:dooms_days_helmet"
+      "item": "engies_chaos:mad_engies_helmet"
     },
     "title": {
-      "translate": "advancements.antimatter_dooms_day_armor_obtained.title"
+      "translate": "advancements.mad_engie_armor_obtained.title"
     },
     "description": {
-      "translate": "advancements.antimatter_dooms_day_armor_obtained.descr"
+      "translate": "advancements.mad_engie_armor_obtained.descr"
     },
-    "frame": "challenge",
+    "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
   "criteria": {
-    "antimatter_dooms_day_armor_obtained_0": {
+    "mad_engie_armor_obtained_0": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "engies_chaos:antimatter_doomsdays_helmet"
+              "engies_chaos:mad_engies_helmet"
             ],
             "count": {
               "min": 1,
@@ -31,13 +31,13 @@
         ]
       }
     },
-    "antimatter_dooms_day_armor_obtained_1": {
+    "mad_engie_armor_obtained_1": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "engies_chaos:antimatter_doomsdays_chestplate"
+              "engies_chaos:mad_engies_chestplate"
             ],
             "count": {
               "min": 1,
@@ -47,13 +47,13 @@
         ]
       }
     },
-    "antimatter_dooms_day_armor_obtained_2": {
+    "mad_engie_armor_obtained_2": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "engies_chaos:antimatter_doomsdays_leggings"
+              "engies_chaos:mad_engies_leggings"
             ],
             "count": {
               "min": 1,
@@ -63,13 +63,13 @@
         ]
       }
     },
-    "antimatter_dooms_day_armor_obtained_3": {
+    "mad_engie_armor_obtained_3": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "engies_chaos:antimatter_doomsdays_boots"
+              "engies_chaos:mad_engies_boots"
             ],
             "count": {
               "min": 1,
@@ -81,7 +81,7 @@
     }
   },
   "rewards": {
-    "experience": 60
+    "experience": 10
   },
-  "parent": "engies_chaos:antimatter_doomsday_coin_obtained"
+  "parent": "engies_chaos:mad_engie_essence_obtained"
 }

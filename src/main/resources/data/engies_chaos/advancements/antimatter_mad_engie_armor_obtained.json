@@ -4,18 +4,18 @@
       "item": "engies_chaos:antimatter_mad_engies_helmet"
     },
     "title": {
-      "translate": "advancements.antimatter_engie_armor_made.title"
+      "translate": "advancements.antimatter_mad_engie_armor_obtained.title"
     },
     "description": {
-      "translate": "advancements.antimatter_engie_armor_made.descr"
+      "translate": "advancements.antimatter_mad_engie_armor_obtained.descr"
     },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
-    "hidden": true
+    "hidden": false
   },
   "criteria": {
-    "antimatter_engie_armor_made_0": {
+    "antimatter_mad_engie_armor_obtained_0": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
@@ -31,7 +31,7 @@
         ]
       }
     },
-    "antimatter_engie_armor_made_1": {
+    "antimatter_mad_engie_armor_obtained_1": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
@@ -47,7 +47,7 @@
         ]
       }
     },
-    "antimatter_engie_armor_made_2": {
+    "antimatter_mad_engie_armor_obtained_2": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
@@ -63,7 +63,7 @@
         ]
       }
     },
-    "antimatter_engie_armor_made_3": {
+    "antimatter_mad_engie_armor_obtained_3": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [

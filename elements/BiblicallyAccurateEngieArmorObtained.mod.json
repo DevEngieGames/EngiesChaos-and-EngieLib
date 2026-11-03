@@ -3,7 +3,7 @@
   "_type": "achievement",
   "definition": {
     "achievementName": "Hey, this isn't bad!",
-    "achievementDescription": "Obtain Biblically Accurate Engie Armor for the first time.",
+    "achievementDescription": "Obtain a full set of Biblically Accurate Engie Armor for the first time.",
     "achievementIcon": {
       "value": "CUSTOM:BiblicallyAccurateEngies.helmet"
     },
