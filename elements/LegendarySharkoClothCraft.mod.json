@@ -4,40 +4,50 @@
   "definition": {
     "recipeType": "Crafting",
     "recipeRetstackSize": 1,
-    "group": "legendarysharkocloth",
-    "unlockingItems": [],
+    "group": "",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:EpicSharkoCloth"
+      },
+      {
+        "value": "Items.GOLD_NUGGET"
+      },
+      {
+        "value": "Items.DYE#11"
+      }
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
-    "recipeShapeless": true,
+    "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": ""
+        "value": "Items.DYE#11"
       },
       {
-        "value": ""
+        "value": "Items.GOLD_NUGGET"
       },
       {
-        "value": ""
+        "value": "Items.DYE#11"
+      },
+      {
+        "value": "Items.GOLD_NUGGET"
       },
       {
         "value": "CUSTOM:EpicSharkoCloth"
       },
       {
-        "value": "Items.GOLD_INGOT"
+        "value": "Items.GOLD_NUGGET"
       },
       {
-        "value": "Items.GOLD_INGOT"
+        "value": "Items.DYE#11"
       },
       {
-        "value": "Items.GOLD_INGOT"
+        "value": "Items.GOLD_NUGGET"
       },
       {
-        "value": ""
-      },
-      {
-        "value": ""
+        "value": "Items.DYE#11"
       }
     ],
     "recipeReturnStack": {

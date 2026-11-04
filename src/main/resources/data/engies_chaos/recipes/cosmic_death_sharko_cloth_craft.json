@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aba",
+    "bcb",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:cosmic_engie_coin"
+    },
+    "b": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "c": {
+      "item": "engies_chaos:monstrosity_death_sharko_cloth"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:cosmic_death_sharko_cloth",
+    "count": 1
+  }
+}

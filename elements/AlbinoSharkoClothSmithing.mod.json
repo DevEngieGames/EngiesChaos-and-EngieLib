@@ -5,7 +5,14 @@
     "recipeType": "Smithing",
     "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:SharkoCloth"
+      },
+      {
+        "value": "Items.DYE#19"
+      }
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,

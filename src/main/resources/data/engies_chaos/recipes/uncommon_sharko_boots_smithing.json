@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:shark_boots"
+  },
+  "addition": {
+    "item": "engies_chaos:uncommon_sharko_cloth"
+  },
+  "result": {
+    "item": "engies_chaos:uncommon_shark_boots"
+  }
+}

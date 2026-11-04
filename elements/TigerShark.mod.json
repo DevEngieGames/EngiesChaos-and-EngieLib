@@ -1,11 +1,107 @@
 {
   "_fv": 79,
-  "_type": "painting",
+  "_type": "armor",
   "definition": {
-    "texture": "tshark",
-    "width": 16,
-    "height": 16,
-    "title": "Tiger Shark",
-    "author": "DevEngie, EngieGames(xEngie)"
+    "enableHelmet": true,
+    "textureHelmet": "tigersharkohelm",
+    "enableBody": true,
+    "textureBody": "tigersharkochest",
+    "enableLeggings": true,
+    "textureLeggings": "tigersharkoleg",
+    "enableBoots": true,
+    "textureBoots": "tigersharkoboot",
+    "onBodyTick": {
+      "name": "TigerSharkoArmorFullSet"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsArmor"
+      }
+    ],
+    "armorTextureFile": "backup_",
+    "helmetName": "Tiger Sharko Helmet",
+    "bodyName": "Tiger Sharko Chestplate",
+    "leggingsName": "Tiger Sharko Leggings",
+    "bootsName": "Tiger Sharko Boots",
+    "helmetSpecialInformation": {
+      "fixedValue": []
+    },
+    "bodySpecialInformation": {
+      "fixedValue": []
+    },
+    "leggingsSpecialInformation": {
+      "fixedValue": []
+    },
+    "bootsSpecialInformation": {
+      "fixedValue": []
+    },
+    "helmetModelName": "Modelsharkoarmor",
+    "helmetModelPart": "Head",
+    "helmetModelTexture": "tigersharkoarmor.png",
+    "bodyModelName": "Modelsharkoarmor",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "LeftArm",
+    "armsModelPartR": "RightArm",
+    "bodyModelTexture": "tigersharkoarmor.png",
+    "leggingsModelName": "Modelsharkoarmor",
+    "leggingsModelPartL": "LeftLeg",
+    "leggingsModelPartR": "RightLeg",
+    "leggingsModelTexture": "tigersharkoarmor.png",
+    "bootsModelName": "Modelsharkoarmor",
+    "bootsModelPartL": "LeftBoot",
+    "bootsModelPartR": "RightBoot",
+    "bootsModelTexture": "tigersharkoarmor.png",
+    "helmetItemRenderType": 0,
+    "helmetItemCustomModelName": "Normal",
+    "bodyItemRenderType": 0,
+    "bodyItemCustomModelName": "Normal",
+    "leggingsItemRenderType": 0,
+    "leggingsItemCustomModelName": "Normal",
+    "bootsItemRenderType": 0,
+    "bootsItemCustomModelName": "Normal",
+    "helmetImmuneToFire": false,
+    "bodyImmuneToFire": false,
+    "leggingsImmuneToFire": false,
+    "bootsImmuneToFire": false,
+    "helmetGlowCondition": {
+      "fixedValue": false
+    },
+    "bodyGlowCondition": {
+      "fixedValue": false
+    },
+    "leggingsGlowCondition": {
+      "fixedValue": false
+    },
+    "bootsGlowCondition": {
+      "fixedValue": false
+    },
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "maxDamage": 580,
+    "damageValueHelmet": 580,
+    "damageValueBody": 580,
+    "damageValueLeggings": 580,
+    "damageValueBoots": 580,
+    "enchantability": 14,
+    "toughness": 10.0,
+    "knockbackResistance": 0.7,
+    "equipSound": {
+      "value": "item.armor.equip_netherite"
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:TigerSharkoCloth"
+      }
+    ]
   }
 }

@@ -1,0 +1,107 @@
+{
+  "_fv": 79,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "aliensharkohelm",
+    "enableBody": true,
+    "textureBody": "aliensharkochest",
+    "enableLeggings": true,
+    "textureLeggings": "aliensharkoleg",
+    "enableBoots": true,
+    "textureBoots": "aliensharkoboot",
+    "onBodyTick": {
+      "name": "AlienSharkoArmorFullSet"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsArmor"
+      }
+    ],
+    "armorTextureFile": "backup_",
+    "helmetName": "Alien Sharko Helmet",
+    "bodyName": "Alien Sharko Chestplate",
+    "leggingsName": "Alien Sharko Leggings",
+    "bootsName": "Alien Sharko Boots",
+    "helmetSpecialInformation": {
+      "fixedValue": []
+    },
+    "bodySpecialInformation": {
+      "fixedValue": []
+    },
+    "leggingsSpecialInformation": {
+      "fixedValue": []
+    },
+    "bootsSpecialInformation": {
+      "fixedValue": []
+    },
+    "helmetModelName": "Modelsharkoarmor",
+    "helmetModelPart": "Head",
+    "helmetModelTexture": "aliensharkoarmor.png",
+    "bodyModelName": "Modelsharkoarmor",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "LeftArm",
+    "armsModelPartR": "RightArm",
+    "bodyModelTexture": "aliensharkoarmor.png",
+    "leggingsModelName": "Modelsharkoarmor",
+    "leggingsModelPartL": "LeftLeg",
+    "leggingsModelPartR": "RightLeg",
+    "leggingsModelTexture": "aliensharkoarmor.png",
+    "bootsModelName": "Modelsharkoarmor",
+    "bootsModelPartL": "LeftBoot",
+    "bootsModelPartR": "RightBoot",
+    "bootsModelTexture": "aliensharkoarmor.png",
+    "helmetItemRenderType": 0,
+    "helmetItemCustomModelName": "Normal",
+    "bodyItemRenderType": 0,
+    "bodyItemCustomModelName": "Normal",
+    "leggingsItemRenderType": 0,
+    "leggingsItemCustomModelName": "Normal",
+    "bootsItemRenderType": 0,
+    "bootsItemCustomModelName": "Normal",
+    "helmetImmuneToFire": false,
+    "bodyImmuneToFire": false,
+    "leggingsImmuneToFire": false,
+    "bootsImmuneToFire": false,
+    "helmetGlowCondition": {
+      "fixedValue": false
+    },
+    "bodyGlowCondition": {
+      "fixedValue": false
+    },
+    "leggingsGlowCondition": {
+      "fixedValue": false
+    },
+    "bootsGlowCondition": {
+      "fixedValue": false
+    },
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "maxDamage": 638,
+    "damageValueHelmet": 638,
+    "damageValueBody": 638,
+    "damageValueLeggings": 638,
+    "damageValueBoots": 638,
+    "enchantability": 14,
+    "toughness": 11.0,
+    "knockbackResistance": 0.7999999999999999,
+    "equipSound": {
+      "value": "item.armor.equip_netherite"
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:AlienSharkoCloth"
+      }
+    ]
+  }
+}

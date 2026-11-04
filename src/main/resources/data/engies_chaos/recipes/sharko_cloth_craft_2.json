@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "engies_chaos:albino_sharko_cloth"
+    }
+  ],
+  "result": {
+    "item": "engies_chaos:sharko_cloth",
+    "count": 1
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "uncommonsharkoleggings",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:UncommonSharkoCloth"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:AlbinoShark.legs"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:UncommonSharkoCloth"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:UncommonShark.legs"
+    },
+    "name": "uncommon_sharko_leggings_smithing_2",
+    "namespace": "mod"
+  }
+}

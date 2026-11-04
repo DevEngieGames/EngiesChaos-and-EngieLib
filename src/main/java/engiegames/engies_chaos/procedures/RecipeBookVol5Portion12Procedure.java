@@ -17,1667 +17,10 @@ public class RecipeBookVol5Portion12Procedure {
 		if (entity == null)
 			return;
 		if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 35) {
-			if (itemstack.getOrCreateTag().getDouble("RecipeBookTimer") == 0) {
-				itemstack.getOrCreateTag().putDouble("RecipeBookTimer", 60);
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimer") > 0) {
-				itemstack.getOrCreateTag().putDouble("RecipeBookTimer", (itemstack.getOrCreateTag().getDouble("RecipeBookTimer") - 1));
-			} else {
-				itemstack.getOrCreateTag().putDouble("RecipeBookTimer", 60);
-			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
-				final int _sltid = 4;
-				_setstack.setCount(1);
-				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-					}
-				});
-			}
-			if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID") == 0) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 1;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 6;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 7;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 8;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARK_HELMET.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID") == 1) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 1;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 6;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 7;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 8;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARK_HELMET.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID") == 2) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 1;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 6;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 7;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 8;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARK_HELMET.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID") == 3) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 1;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 6;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 7;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 8;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARK_HELMET.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID") == 4) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 1;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 6;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 7;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 8;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARK_HELMET.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID") == 5) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 1;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 6;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 7;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 8;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARK_HELMET.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID") == 6) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 1;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 6;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 7;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 8;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARK_HELMET.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID") == 7) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 1;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 6;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 7;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 8;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARK_HELMET.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			}
-			if (itemstack.getOrCreateTag().getDouble("RecipeBookTimer") == 0 && itemstack.getOrCreateTag().getDouble("RecipeBookGroupID") < 7) {
-				itemstack.getOrCreateTag().putDouble("RecipeBookGroupID", (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID") + 1));
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimer") == 0 && itemstack.getOrCreateTag().getDouble("RecipeBookGroupID") == 7) {
-				itemstack.getOrCreateTag().putDouble("RecipeBookGroupID", 0);
-			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 36) {
-			if (itemstack.getOrCreateTag().getDouble("RecipeBookTimer2") == 0) {
-				itemstack.getOrCreateTag().putDouble("RecipeBookTimer2", 60);
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimer2") > 0) {
-				itemstack.getOrCreateTag().putDouble("RecipeBookTimer2", (itemstack.getOrCreateTag().getDouble("RecipeBookTimer2") - 1));
-			} else {
-				itemstack.getOrCreateTag().putDouble("RecipeBookTimer2", 60);
-			}
-			{
-				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
-				final int _sltid = 1;
-				_setstack.setCount(1);
-				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-					}
-				});
-			}
-			if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID2") == 0) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 4;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 6;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 7;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 8;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARK_CHESTPLATE.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID2") == 1) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 4;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 6;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 7;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 8;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARK_CHESTPLATE.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID2") == 2) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 4;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 6;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 7;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 8;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARK_CHESTPLATE.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID2") == 3) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 4;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 6;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 7;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 8;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARK_CHESTPLATE.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID2") == 4) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 4;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 6;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 7;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 8;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARK_CHESTPLATE.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID2") == 5) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 4;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 6;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 7;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 8;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARK_CHESTPLATE.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID2") == 6) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 4;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 6;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 7;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 8;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARK_CHESTPLATE.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID2") == 7) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 4;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 6;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 7;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 8;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARK_CHESTPLATE.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			}
-			if (itemstack.getOrCreateTag().getDouble("RecipeBookTimer2") == 0 && itemstack.getOrCreateTag().getDouble("RecipeBookGroupID2") < 7) {
-				itemstack.getOrCreateTag().putDouble("RecipeBookGroupID2", (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID2") + 1));
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimer2") == 0 && itemstack.getOrCreateTag().getDouble("RecipeBookGroupID2") == 7) {
-				itemstack.getOrCreateTag().putDouble("RecipeBookGroupID2", 0);
-			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 37) {
-			if (itemstack.getOrCreateTag().getDouble("RecipeBookTimer3") == 0) {
-				itemstack.getOrCreateTag().putDouble("RecipeBookTimer3", 60);
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimer3") > 0) {
-				itemstack.getOrCreateTag().putDouble("RecipeBookTimer3", (itemstack.getOrCreateTag().getDouble("RecipeBookTimer3") - 1));
-			} else {
-				itemstack.getOrCreateTag().putDouble("RecipeBookTimer3", 60);
-			}
-			{
-				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
-				final int _sltid = 4;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
+				final int _sltid = 0;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
@@ -1687,777 +30,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
-				final int _sltid = 7;
-				_setstack.setCount(1);
-				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-					}
-				});
-			}
-			if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID3") == 0) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 1;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 6;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 8;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARK_LEGGINGS.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID3") == 1) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 1;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 6;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 8;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARK_LEGGINGS.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID3") == 2) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 1;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 6;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 8;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARK_LEGGINGS.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID3") == 3) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 1;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 6;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 8;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARK_LEGGINGS.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID3") == 4) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 1;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 6;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 8;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARK_LEGGINGS.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID3") == 5) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 1;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 6;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 7;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 8;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARK_LEGGINGS.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID3") == 6) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 1;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 6;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 7;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 8;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARK_LEGGINGS.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID3") == 7) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 1;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 6;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 7;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 8;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARK_LEGGINGS.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			}
-			if (itemstack.getOrCreateTag().getDouble("RecipeBookTimer3") == 0 && itemstack.getOrCreateTag().getDouble("RecipeBookGroupID3") < 7) {
-				itemstack.getOrCreateTag().putDouble("RecipeBookGroupID3", (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID3") + 1));
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimer3") == 0 && itemstack.getOrCreateTag().getDouble("RecipeBookGroupID3") == 7) {
-				itemstack.getOrCreateTag().putDouble("RecipeBookGroupID3", 0);
-			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 38) {
-			if (itemstack.getOrCreateTag().getDouble("RecipeBookTimer4") == 0) {
-				itemstack.getOrCreateTag().putDouble("RecipeBookTimer4", 60);
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimer4") > 0) {
-				itemstack.getOrCreateTag().putDouble("RecipeBookTimer4", (itemstack.getOrCreateTag().getDouble("RecipeBookTimer4") - 1));
-			} else {
-				itemstack.getOrCreateTag().putDouble("RecipeBookTimer4", 60);
-			}
-			{
-				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
 				final int _sltid = 1;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -2468,8 +41,41 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
+				final int _sltid = 2;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
+				final int _sltid = 3;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
 				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
 				final int _sltid = 4;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
+				final int _sltid = 5;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
@@ -2510,464 +116,21 @@ public class RecipeBookVol5Portion12Procedure {
 					}
 				});
 			}
-			if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID4") == 0) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARK_BOOTS.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID4") == 1) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARK_BOOTS.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID4") == 2) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARK_BOOTS.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID4") == 3) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARK_BOOTS.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID4") == 4) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARK_BOOTS.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID4") == 5) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARK_BOOTS.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID4") == 6) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARK_BOOTS.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID4") == 7) {
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 0;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 2;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 3;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARKO_CLOTH.get()).copy();
-					final int _sltid = 5;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-				{
-					ItemStack _isc = itemstack;
-					final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ENGIE_SHARK_BOOTS.get()).copy();
-					final int _sltid = 9;
-					_setstack.setCount(1);
-					_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
-							itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
-						}
-					});
-				}
-			}
-			if (itemstack.getOrCreateTag().getDouble("RecipeBookTimer4") == 0 && itemstack.getOrCreateTag().getDouble("RecipeBookGroupID4") < 7) {
-				itemstack.getOrCreateTag().putDouble("RecipeBookGroupID4", (itemstack.getOrCreateTag().getDouble("RecipeBookGroupID4") + 1));
-			} else if (itemstack.getOrCreateTag().getDouble("RecipeBookTimer4") == 0 && itemstack.getOrCreateTag().getDouble("RecipeBookGroupID4") == 7) {
-				itemstack.getOrCreateTag().putDouble("RecipeBookGroupID4", 0);
-			}
-		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 39) {
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Items.LEATHER).copy();
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARK_HELMET.get()).copy();
+				final int _sltid = 9;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 36) {
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
 				final int _sltid = 0;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -2978,7 +141,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Items.BLUE_DYE).copy();
+				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
 				final int _sltid = 1;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -2989,7 +152,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
 				final int _sltid = 2;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3000,7 +163,118 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Items.WHITE_DYE).copy();
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
+				final int _sltid = 3;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
+				final int _sltid = 4;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
+				final int _sltid = 5;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
+				final int _sltid = 6;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
+				final int _sltid = 7;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
+				final int _sltid = 8;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARK_CHESTPLATE.get()).copy();
+				final int _sltid = 9;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 37) {
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
+				final int _sltid = 0;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
+				final int _sltid = 1;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
+				final int _sltid = 2;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
 				final int _sltid = 3;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3022,7 +296,118 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
+				final int _sltid = 5;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
+				final int _sltid = 6;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
 				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final int _sltid = 7;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
+				final int _sltid = 8;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARK_LEGGINGS.get()).copy();
+				final int _sltid = 9;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 38) {
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
+				final int _sltid = 0;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final int _sltid = 1;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
+				final int _sltid = 2;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
+				final int _sltid = 3;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final int _sltid = 4;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
 				final int _sltid = 5;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3056,6 +441,117 @@ public class RecipeBookVol5Portion12Procedure {
 			{
 				ItemStack _isc = itemstack;
 				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final int _sltid = 8;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARK_BOOTS.get()).copy();
+				final int _sltid = 9;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 39) {
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(Items.BLUE_DYE).copy();
+				final int _sltid = 0;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(Items.STRING).copy();
+				final int _sltid = 1;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(Items.BLUE_DYE).copy();
+				final int _sltid = 2;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(Items.STRING).copy();
+				final int _sltid = 3;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(Items.LEATHER).copy();
+				final int _sltid = 4;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(Items.STRING).copy();
+				final int _sltid = 5;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(Items.BLUE_DYE).copy();
+				final int _sltid = 6;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(Items.STRING).copy();
+				final int _sltid = 7;
+				_setstack.setCount(1);
+				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable itemHandlerModifiable) {
+						itemHandlerModifiable.setStackInSlot(_sltid, _setstack);
+					}
+				});
+			}
+			{
+				ItemStack _isc = itemstack;
+				final ItemStack _setstack = new ItemStack(Items.BLUE_DYE).copy();
 				final int _sltid = 8;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3078,7 +574,7 @@ public class RecipeBookVol5Portion12Procedure {
 		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 40) {
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
+				final ItemStack _setstack = new ItemStack(Items.LIME_DYE).copy();
 				final int _sltid = 0;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3089,7 +585,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Items.WHITE_DYE).copy();
+				final ItemStack _setstack = new ItemStack(Items.EMERALD).copy();
 				final int _sltid = 1;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3100,7 +596,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.LIME_DYE).copy();
 				final int _sltid = 2;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3111,7 +607,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Items.WHITE_DYE).copy();
+				final ItemStack _setstack = new ItemStack(Items.EMERALD).copy();
 				final int _sltid = 3;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3122,7 +618,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Items.WHITE_DYE).copy();
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.SHARKO_CLOTH.get()).copy();
 				final int _sltid = 4;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3133,7 +629,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.EMERALD).copy();
 				final int _sltid = 5;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3144,7 +640,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.LIME_DYE).copy();
 				final int _sltid = 6;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3155,7 +651,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.EMERALD).copy();
 				final int _sltid = 7;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3166,7 +662,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.LIME_DYE).copy();
 				final int _sltid = 8;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3177,7 +673,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.UNCOMMON_SHARKO_CLOTH.get()).copy();
 				final int _sltid = 9;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3189,7 +685,7 @@ public class RecipeBookVol5Portion12Procedure {
 		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 41) {
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.ALBINO_SHARKO_CLOTH.get()).copy();
+				final ItemStack _setstack = new ItemStack(Items.BLUE_DYE).copy();
 				final int _sltid = 0;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3211,7 +707,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.BLUE_DYE).copy();
 				final int _sltid = 2;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3233,7 +729,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Items.LAPIS_LAZULI).copy();
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.UNCOMMON_SHARKO_CLOTH.get()).copy();
 				final int _sltid = 4;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3244,7 +740,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.LAPIS_LAZULI).copy();
 				final int _sltid = 5;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3255,7 +751,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.BLUE_DYE).copy();
 				final int _sltid = 6;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3266,7 +762,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.LAPIS_LAZULI).copy();
 				final int _sltid = 7;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3277,7 +773,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.BLUE_DYE).copy();
 				final int _sltid = 8;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3300,7 +796,7 @@ public class RecipeBookVol5Portion12Procedure {
 		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 42) {
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
+				final ItemStack _setstack = new ItemStack(Items.PURPLE_DYE).copy();
 				final int _sltid = 0;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3322,7 +818,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.PURPLE_DYE).copy();
 				final int _sltid = 2;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3344,7 +840,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Items.AMETHYST_SHARD).copy();
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.RARE_SHARKO_CLOTH.get()).copy();
 				final int _sltid = 4;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3355,7 +851,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.AMETHYST_SHARD).copy();
 				final int _sltid = 5;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3366,7 +862,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.PURPLE_DYE).copy();
 				final int _sltid = 6;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3377,7 +873,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.AMETHYST_SHARD).copy();
 				final int _sltid = 7;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3388,7 +884,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.PURPLE_DYE).copy();
 				final int _sltid = 8;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3411,7 +907,7 @@ public class RecipeBookVol5Portion12Procedure {
 		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 43) {
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
+				final ItemStack _setstack = new ItemStack(Items.YELLOW_DYE).copy();
 				final int _sltid = 0;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3422,7 +918,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Items.GOLD_INGOT).copy();
+				final ItemStack _setstack = new ItemStack(Items.GOLD_NUGGET).copy();
 				final int _sltid = 1;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3433,7 +929,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.YELLOW_DYE).copy();
 				final int _sltid = 2;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3444,7 +940,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Items.GOLD_INGOT).copy();
+				final ItemStack _setstack = new ItemStack(Items.GOLD_NUGGET).copy();
 				final int _sltid = 3;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3455,7 +951,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Items.GOLD_INGOT).copy();
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EPIC_SHARKO_CLOTH.get()).copy();
 				final int _sltid = 4;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3466,7 +962,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.GOLD_NUGGET).copy();
 				final int _sltid = 5;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3477,7 +973,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.YELLOW_DYE).copy();
 				final int _sltid = 6;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3488,7 +984,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.GOLD_NUGGET).copy();
 				final int _sltid = 7;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3499,7 +995,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.YELLOW_DYE).copy();
 				final int _sltid = 8;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3522,7 +1018,7 @@ public class RecipeBookVol5Portion12Procedure {
 		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 44) {
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
+				final ItemStack _setstack = new ItemStack(Items.YELLOW_DYE).copy();
 				final int _sltid = 0;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3533,7 +1029,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.GOLD_BLOCK).copy();
+				final ItemStack _setstack = new ItemStack(Items.GOLD_INGOT).copy();
 				final int _sltid = 1;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3544,7 +1040,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.YELLOW_DYE).copy();
 				final int _sltid = 2;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3555,7 +1051,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.GOLD_BLOCK).copy();
+				final ItemStack _setstack = new ItemStack(Items.GOLD_INGOT).copy();
 				final int _sltid = 3;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3566,7 +1062,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.GOLD_BLOCK).copy();
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.LEGENDARY_SHARKO_CLOTH.get()).copy();
 				final int _sltid = 4;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3577,7 +1073,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.GOLD_INGOT).copy();
 				final int _sltid = 5;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3588,7 +1084,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.YELLOW_DYE).copy();
 				final int _sltid = 6;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3599,7 +1095,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.GOLD_INGOT).copy();
 				final int _sltid = 7;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3610,7 +1106,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.YELLOW_DYE).copy();
 				final int _sltid = 8;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3633,7 +1129,7 @@ public class RecipeBookVol5Portion12Procedure {
 		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 45) {
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
+				final ItemStack _setstack = new ItemStack(Items.LIGHT_BLUE_DYE).copy();
 				final int _sltid = 0;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3644,7 +1140,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.DIAMOND_BLOCK).copy();
+				final ItemStack _setstack = new ItemStack(Items.DIAMOND).copy();
 				final int _sltid = 1;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3655,7 +1151,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.LIGHT_BLUE_DYE).copy();
 				final int _sltid = 2;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3677,7 +1173,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Items.DIAMOND).copy();
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.MYTHIC_SHARKO_CLOTH.get()).copy();
 				final int _sltid = 4;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3688,7 +1184,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.DIAMOND).copy();
 				final int _sltid = 5;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3699,7 +1195,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.LIGHT_BLUE_DYE).copy();
 				final int _sltid = 6;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3710,7 +1206,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.DIAMOND).copy();
 				final int _sltid = 7;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3721,7 +1217,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.LIGHT_BLUE_DYE).copy();
 				final int _sltid = 8;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3744,7 +1240,7 @@ public class RecipeBookVol5Portion12Procedure {
 		} else if ((entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pageNumber == 46) {
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
+				final ItemStack _setstack = new ItemStack(Items.BLACK_DYE).copy();
 				final int _sltid = 0;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3766,7 +1262,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.BLACK_DYE).copy();
 				final int _sltid = 2;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3788,7 +1284,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Items.NETHERITE_INGOT).copy();
+				final ItemStack _setstack = new ItemStack(EngiesChaosModItems.EXOTIC_SHARKO_CLOTH.get()).copy();
 				final int _sltid = 4;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3799,7 +1295,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.NETHERITE_INGOT).copy();
 				final int _sltid = 5;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3810,7 +1306,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.BLACK_DYE).copy();
 				final int _sltid = 6;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3821,7 +1317,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.NETHERITE_INGOT).copy();
 				final int _sltid = 7;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
@@ -3832,7 +1328,7 @@ public class RecipeBookVol5Portion12Procedure {
 			}
 			{
 				ItemStack _isc = itemstack;
-				final ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
+				final ItemStack _setstack = new ItemStack(Items.BLACK_DYE).copy();
 				final int _sltid = 8;
 				_setstack.setCount(1);
 				_isc.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {

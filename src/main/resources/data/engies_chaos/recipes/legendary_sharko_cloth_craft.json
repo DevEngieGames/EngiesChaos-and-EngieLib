@@ -1,20 +1,21 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "group": "legendarysharkocloth",
-  "ingredients": [
-    {
-      "item": "engies_chaos:epic_sharko_cloth"
-    },
-    {
-      "item": "minecraft:gold_ingot"
-    },
-    {
-      "item": "minecraft:gold_ingot"
-    },
-    {
-      "item": "minecraft:gold_ingot"
-    }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aba",
+    "bcb",
+    "aba"
   ],
+  "key": {
+    "a": {
+      "item": "minecraft:yellow_dye"
+    },
+    "b": {
+      "item": "minecraft:gold_nugget"
+    },
+    "c": {
+      "item": "engies_chaos:epic_sharko_cloth"
+    }
+  },
   "result": {
     "item": "engies_chaos:legendary_sharko_cloth",
     "count": 1

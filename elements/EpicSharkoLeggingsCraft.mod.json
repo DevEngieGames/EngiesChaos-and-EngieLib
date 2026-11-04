@@ -1,0 +1,53 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "epicsharkoleggings",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:EpicSharkoCloth"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:EpicSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:EpicSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:EpicSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:EpicSharkoCloth"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:EpicSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:EpicSharkoCloth"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:EpicSharkoCloth"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:EpicShark.legs"
+    },
+    "name": "epic_sharko_leggings_craft",
+    "namespace": "mod"
+  }
+}

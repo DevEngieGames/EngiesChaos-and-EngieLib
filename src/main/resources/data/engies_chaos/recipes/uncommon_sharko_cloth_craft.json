@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aba",
+    "bcb",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:lime_dye"
+    },
+    "b": {
+      "item": "minecraft:emerald"
+    },
+    "c": {
+      "tag": "engies_chaos:same_sharko_type"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:uncommon_sharko_cloth",
+    "count": 1
+  }
+}

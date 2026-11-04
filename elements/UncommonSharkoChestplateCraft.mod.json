@@ -1,0 +1,53 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "uncommonsharkochestplate",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:UncommonSharkoCloth"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:UncommonSharkoCloth"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:UncommonSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:UncommonSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:UncommonSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:UncommonSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:UncommonSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:UncommonSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:UncommonSharkoCloth"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:UncommonShark.body"
+    },
+    "name": "uncommon_sharko_chestplate_craft",
+    "namespace": "mod"
+  }
+}

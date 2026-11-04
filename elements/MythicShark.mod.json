@@ -3,19 +3,22 @@
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
-    "textureHelmet": "mysharkhelm",
+    "textureHelmet": "mythicsharkohelm",
     "enableBody": true,
-    "textureBody": "mysharkbody",
+    "textureBody": "mythicsharkochest",
     "enableLeggings": true,
-    "textureLeggings": "mysharkleggings",
+    "textureLeggings": "mythicsharkoleg",
     "enableBoots": true,
-    "textureBoots": "mysharkboots",
+    "textureBoots": "mythicsharkoboot",
+    "onBodyTick": {
+      "name": "MythicSharkoArmorFullSet"
+    },
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"
       }
     ],
-    "armorTextureFile": "mythicsharko_",
+    "armorTextureFile": "backup_",
     "helmetName": "Mythic Sharko Helmet",
     "bodyName": "Mythic Sharko Chestplate",
     "leggingsName": "Mythic Sharko Leggings",
@@ -32,22 +35,22 @@
     "bootsSpecialInformation": {
       "fixedValue": []
     },
-    "helmetModelName": "Default",
-    "helmetModelPart": "Helmet",
-    "helmetModelTexture": "From armor",
-    "bodyModelName": "Default",
+    "helmetModelName": "Modelsharkoarmor",
+    "helmetModelPart": "Head",
+    "helmetModelTexture": "mythicsharkoarmor.png",
+    "bodyModelName": "Modelsharkoarmor",
     "bodyModelPart": "Body",
-    "armsModelPartL": "Arms L",
-    "armsModelPartR": "Arms R",
-    "bodyModelTexture": "From armor",
-    "leggingsModelName": "Default",
-    "leggingsModelPartL": "Leggings L",
-    "leggingsModelPartR": "Leggings R",
-    "leggingsModelTexture": "From armor",
-    "bootsModelName": "Default",
-    "bootsModelPartL": "Boots L",
-    "bootsModelPartR": "Boots R",
-    "bootsModelTexture": "From armor",
+    "armsModelPartL": "LeftArm",
+    "armsModelPartR": "RightArm",
+    "bodyModelTexture": "mythicsharkoarmor.png",
+    "leggingsModelName": "Modelsharkoarmor",
+    "leggingsModelPartL": "LeftLeg",
+    "leggingsModelPartR": "RightLeg",
+    "leggingsModelTexture": "mythicsharkoarmor.png",
+    "bootsModelName": "Modelsharkoarmor",
+    "bootsModelPartL": "LeftBoot",
+    "bootsModelPartR": "RightBoot",
+    "bootsModelTexture": "mythicsharkoarmor.png",
     "helmetItemRenderType": 0,
     "helmetItemCustomModelName": "Normal",
     "bodyItemRenderType": 0,
@@ -60,17 +63,45 @@
     "bodyImmuneToFire": false,
     "leggingsImmuneToFire": false,
     "bootsImmuneToFire": false,
-    "maxDamage": 25,
-    "damageValueHelmet": 25,
-    "damageValueBody": 25,
-    "damageValueLeggings": 25,
-    "damageValueBoots": 25,
-    "enchantability": 9,
-    "toughness": 7.0,
-    "knockbackResistance": 0.4,
-    "equipSound": {
-      "value": "item.armor.equip_leather"
+    "helmetGlowCondition": {
+      "fixedValue": false
     },
-    "repairItems": []
+    "bodyGlowCondition": {
+      "fixedValue": false
+    },
+    "leggingsGlowCondition": {
+      "fixedValue": false
+    },
+    "bootsGlowCondition": {
+      "fixedValue": false
+    },
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "maxDamage": 348,
+    "damageValueHelmet": 348,
+    "damageValueBody": 348,
+    "damageValueLeggings": 348,
+    "damageValueBoots": 348,
+    "enchantability": 14,
+    "toughness": 6.0,
+    "knockbackResistance": 0.30000000000000004,
+    "equipSound": {
+      "value": "item.armor.equip_iron"
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:MythicSharkoCloth"
+      }
+    ]
   }
 }

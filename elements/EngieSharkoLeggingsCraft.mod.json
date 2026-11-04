@@ -1,0 +1,53 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "engiesharkoleggings",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:EngieSharkoCloth"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:EngieSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:EngieSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:EngieSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:EngieSharkoCloth"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:EngieSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:EngieSharkoCloth"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:EngieSharkoCloth"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:EngieShark.legs"
+    },
+    "name": "engie_sharko_leggings_craft",
+    "namespace": "mod"
+  }
+}

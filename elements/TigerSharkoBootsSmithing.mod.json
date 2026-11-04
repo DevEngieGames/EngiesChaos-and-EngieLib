@@ -1,0 +1,33 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "tigersharkoboots",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:TigerSharkoCloth"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:RareEngieShark.boots"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:TigerSharkoCloth"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:TigerShark.boots"
+    },
+    "name": "tiger_sharko_boots_smithing",
+    "namespace": "mod"
+  }
+}

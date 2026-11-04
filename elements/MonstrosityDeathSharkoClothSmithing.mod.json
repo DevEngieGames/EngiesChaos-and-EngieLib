@@ -1,0 +1,36 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:BiblicallyDeathSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:MonstrosityEngieEssence"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:BiblicallyDeathSharkoCloth"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:MonstrosityEngieBlock"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:MonstrosityDeathSharkoCloth"
+    },
+    "name": "monstrosity_death_sharko_cloth_smithing",
+    "namespace": "mod"
+  }
+}

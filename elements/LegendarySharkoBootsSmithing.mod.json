@@ -1,0 +1,33 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "legendarysharkoboots",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:LegendarySharkoCloth"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:EpicShark.boots"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:LegendarySharkoCloth"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:LegendaryShark.boots"
+    },
+    "name": "legendary_sharko_boots_smithing",
+    "namespace": "mod"
+  }
+}

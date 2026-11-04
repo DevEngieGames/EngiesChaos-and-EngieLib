@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aba",
+    "bcb",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:enraged_engie_essence"
+    },
+    "b": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "c": {
+      "item": "engies_chaos:angry_death_sharko_cloth"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:enraged_death_sharko_cloth",
+    "count": 1
+  }
+}

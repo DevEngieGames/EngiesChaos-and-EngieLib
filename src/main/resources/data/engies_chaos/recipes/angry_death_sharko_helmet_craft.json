@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "angrydeathsharkohelmet",
+  "pattern": [
+    "aaa",
+    "a a"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:angry_death_sharko_cloth"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:angry_death_shark_helmet",
+    "count": 1
+  }
+}

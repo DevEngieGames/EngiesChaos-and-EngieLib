@@ -1,20 +1,21 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "group": "engiesharkocloth",
-  "ingredients": [
-    {
-      "item": "engies_chaos:exotic_sharko_cloth"
-    },
-    {
-      "item": "minecraft:netherite_block"
-    },
-    {
-      "item": "minecraft:netherite_ingot"
-    },
-    {
-      "item": "minecraft:netherite_ingot"
-    }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aba",
+    "bcb",
+    "aba"
   ],
+  "key": {
+    "a": {
+      "item": "minecraft:black_dye"
+    },
+    "b": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "c": {
+      "item": "engies_chaos:exotic_sharko_cloth"
+    }
+  },
   "result": {
     "item": "engies_chaos:engie_sharko_cloth",
     "count": 1

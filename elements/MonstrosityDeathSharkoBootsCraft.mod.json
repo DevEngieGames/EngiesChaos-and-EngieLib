@@ -1,0 +1,53 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "monstrositydeathsharkoboots",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:MonstrosityDeathSharkoCloth"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:MonstrosityDeathSharkoCloth"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:MonstrosityDeathSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:MonstrosityDeathSharkoCloth"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:MonstrosityDeathSharkoCloth"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:MonstrosityDeathShark.boots"
+    },
+    "name": "monstrosity_death_sharko_boots_craft",
+    "namespace": "mod"
+  }
+}

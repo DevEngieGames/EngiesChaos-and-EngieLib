@@ -1,0 +1,53 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "outrageddeathsharkoleggings",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:OutragedDeathSharkoCloth"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:OutragedDeathSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:OutragedDeathSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:OutragedDeathSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:OutragedDeathSharkoCloth"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:OutragedDeathSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:OutragedDeathSharkoCloth"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:OutragedDeathSharkoCloth"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:OutragedDeathShark.legs"
+    },
+    "name": "outraged_death_sharko_leggings_craft",
+    "namespace": "mod"
+  }
+}

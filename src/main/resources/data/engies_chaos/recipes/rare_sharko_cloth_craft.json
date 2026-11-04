@@ -1,20 +1,21 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "group": "raresharkocloth",
-  "ingredients": [
-    {
-      "item": "engies_chaos:albino_sharko_cloth"
-    },
-    {
-      "item": "minecraft:lapis_lazuli"
-    },
-    {
-      "item": "minecraft:lapis_lazuli"
-    },
-    {
-      "item": "minecraft:lapis_lazuli"
-    }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aba",
+    "bcb",
+    "aba"
   ],
+  "key": {
+    "a": {
+      "item": "minecraft:blue_dye"
+    },
+    "b": {
+      "item": "minecraft:lapis_lazuli"
+    },
+    "c": {
+      "item": "engies_chaos:uncommon_sharko_cloth"
+    }
+  },
   "result": {
     "item": "engies_chaos:rare_sharko_cloth",
     "count": 1

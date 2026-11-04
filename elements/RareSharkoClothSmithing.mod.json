@@ -5,17 +5,24 @@
     "recipeType": "Smithing",
     "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:UncommonSharkoCloth"
+      },
+      {
+        "value": "Items.DYE#4"
+      }
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "smithingInputStack": {
-      "value": "CUSTOM:AlbinoSharkoCloth"
+      "value": "CUSTOM:UncommonSharkoCloth"
     },
     "smithingInputAdditionStack": {
-      "value": "Items.DYE#4"
+      "value": "Blocks.LAPIS_BLOCK"
     },
     "smithingInputTemplateStack": {
       "value": ""

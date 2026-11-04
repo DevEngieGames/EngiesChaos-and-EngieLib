@@ -13,6 +13,7 @@ import engiegames.engies_chaos.client.model.Modelxengiearmor;
 import engiegames.engies_chaos.client.model.Modelwormholeengie;
 import engiegames.engies_chaos.client.model.Modelthrowbackboyo;
 import engiegames.engies_chaos.client.model.Modeltechnoarmor;
+import engiegames.engies_chaos.client.model.Modelsharkoarmor;
 import engiegames.engies_chaos.client.model.Modelscorched;
 import engiegames.engies_chaos.client.model.Modelrougharmor;
 import engiegames.engies_chaos.client.model.Modelpunishernew;
@@ -144,6 +145,7 @@ public class EngiesChaosModModels {
 		event.registerLayerDefinition(Modelbigboyolayonside.LAYER_LOCATION, Modelbigboyolayonside::createBodyLayer);
 		event.registerLayerDefinition(Modelboyoxengie.LAYER_LOCATION, Modelboyoxengie::createBodyLayer);
 		event.registerLayerDefinition(Modeltechnoarmor.LAYER_LOCATION, Modeltechnoarmor::createBodyLayer);
+		event.registerLayerDefinition(Modelsharkoarmor.LAYER_LOCATION, Modelsharkoarmor::createBodyLayer);
 		event.registerLayerDefinition(Modelmissilebeam.LAYER_LOCATION, Modelmissilebeam::createBodyLayer);
 		event.registerLayerDefinition(Modelenraged_new.LAYER_LOCATION, Modelenraged_new::createBodyLayer);
 		event.registerLayerDefinition(Modelcustom_lighting_bolt.LAYER_LOCATION, Modelcustom_lighting_bolt::createBodyLayer);

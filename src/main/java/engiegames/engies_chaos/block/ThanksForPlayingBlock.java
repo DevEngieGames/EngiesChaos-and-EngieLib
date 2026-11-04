@@ -8,10 +8,13 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
 
 import java.util.List;
+
+import engiegames.engies_chaos.procedures.ThanksForPlayingBlockInfoProcedure;
 
 public class ThanksForPlayingBlock extends Block {
 	public ThanksForPlayingBlock() {
@@ -21,7 +24,13 @@ public class ThanksForPlayingBlock extends Block {
 	@Override
 	public void appendHoverText(ItemStack itemstack, BlockGetter level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.translatable("block.engies_chaos.thanks_for_playing.description_0"));
+		Entity entity = itemstack.getEntityRepresentation();
+		String hoverText = ThanksForPlayingBlockInfoProcedure.execute();
+		if (hoverText != null) {
+			for (String line : hoverText.split("\n")) {
+				list.add(Component.literal(line));
+			}
+		}
 	}
 
 	@Override

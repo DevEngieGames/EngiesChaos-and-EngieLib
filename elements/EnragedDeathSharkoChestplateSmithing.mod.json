@@ -1,0 +1,33 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "enrageddeathsharkochestplate",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:EnragedDeathSharkoCloth"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:AngryDeathShark.body"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:EnragedDeathSharkoCloth"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:EnragedDeathShark.body"
+    },
+    "name": "enraged_death_sharko_chestplate_smithing",
+    "namespace": "mod"
+  }
+}

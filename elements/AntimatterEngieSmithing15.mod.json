@@ -12,16 +12,16 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "smithingInputStack": {
-      "value": "CUSTOM:TheRealEngieGamess.helmet"
+      "value": "CUSTOM:EngieGamesPaxel"
     },
     "smithingInputAdditionStack": {
-      "value": "CUSTOM:AntimatterEngieBlock"
+      "value": "CUSTOM:AntimatterMadEngieBlock"
     },
     "smithingInputTemplateStack": {
       "value": ""
     },
     "smithingReturnStack": {
-      "value": "CUSTOM:AntimatterEngies.helmet"
+      "value": "CUSTOM:AntimatterEngiePaxel"
     },
     "name": "antimatter_engie_smithing_15",
     "namespace": "mod"

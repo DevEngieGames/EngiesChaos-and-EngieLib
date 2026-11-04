@@ -3,19 +3,22 @@
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
-    "textureHelmet": "esharkhelm",
+    "textureHelmet": "engiesharkohelm",
     "enableBody": true,
-    "textureBody": "esharkbody",
+    "textureBody": "engiesharkochest",
     "enableLeggings": true,
-    "textureLeggings": "esharkleggings",
+    "textureLeggings": "engiesharkoleg",
     "enableBoots": true,
-    "textureBoots": "esharkboots",
+    "textureBoots": "engiesharkoboot",
+    "onBodyTick": {
+      "name": "EngieSharkoArmorFullSet"
+    },
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"
       }
     ],
-    "armorTextureFile": "engiesharko_",
+    "armorTextureFile": "backup_",
     "helmetName": "Engie Sharko Helmet",
     "bodyName": "Engie Sharko Chestplate",
     "leggingsName": "Engie Sharko Leggings",
@@ -32,22 +35,22 @@
     "bootsSpecialInformation": {
       "fixedValue": []
     },
-    "helmetModelName": "Default",
-    "helmetModelPart": "Helmet",
-    "helmetModelTexture": "From armor",
-    "bodyModelName": "Default",
+    "helmetModelName": "Modelsharkoarmor",
+    "helmetModelPart": "Head",
+    "helmetModelTexture": "engiesharkoarmor.png",
+    "bodyModelName": "Modelsharkoarmor",
     "bodyModelPart": "Body",
-    "armsModelPartL": "Arms L",
-    "armsModelPartR": "Arms R",
-    "bodyModelTexture": "From armor",
-    "leggingsModelName": "Default",
-    "leggingsModelPartL": "Leggings L",
-    "leggingsModelPartR": "Leggings R",
-    "leggingsModelTexture": "From armor",
-    "bootsModelName": "Default",
-    "bootsModelPartL": "Boots L",
-    "bootsModelPartR": "Boots R",
-    "bootsModelTexture": "From armor",
+    "armsModelPartL": "LeftArm",
+    "armsModelPartR": "RightArm",
+    "bodyModelTexture": "engiesharkoarmor.png",
+    "leggingsModelName": "Modelsharkoarmor",
+    "leggingsModelPartL": "LeftLeg",
+    "leggingsModelPartR": "RightLeg",
+    "leggingsModelTexture": "engiesharkoarmor.png",
+    "bootsModelName": "Modelsharkoarmor",
+    "bootsModelPartL": "LeftBoot",
+    "bootsModelPartR": "RightBoot",
+    "bootsModelTexture": "engiesharkoarmor.png",
     "helmetItemRenderType": 0,
     "helmetItemCustomModelName": "Normal",
     "bodyItemRenderType": 0,
@@ -60,17 +63,45 @@
     "bodyImmuneToFire": false,
     "leggingsImmuneToFire": false,
     "bootsImmuneToFire": false,
-    "maxDamage": 35,
-    "damageValueHelmet": 35,
-    "damageValueBody": 35,
-    "damageValueLeggings": 35,
-    "damageValueBoots": 35,
-    "enchantability": 11,
-    "toughness": 10.0,
-    "knockbackResistance": 0.6,
-    "equipSound": {
-      "value": "item.armor.equip_leather"
+    "helmetGlowCondition": {
+      "fixedValue": false
     },
-    "repairItems": []
+    "bodyGlowCondition": {
+      "fixedValue": false
+    },
+    "leggingsGlowCondition": {
+      "fixedValue": false
+    },
+    "bootsGlowCondition": {
+      "fixedValue": false
+    },
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "maxDamage": 464,
+    "damageValueHelmet": 464,
+    "damageValueBody": 464,
+    "damageValueLeggings": 464,
+    "damageValueBoots": 464,
+    "enchantability": 14,
+    "toughness": 8.0,
+    "knockbackResistance": 0.5,
+    "equipSound": {
+      "value": "item.armor.equip_diamond"
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:EngieSharkoCloth"
+      }
+    ]
   }
 }

@@ -39,8 +39,9 @@
     "name": "Thanks for playing!",
     "specialInformation": {
       "fixedValue": [
-        "3,908"
-      ]
+        "4,053"
+      ],
+      "name": "ThanksForPlayingBlockInfo"
     },
     "hardness": 1.5,
     "resistance": 64000.0,

@@ -93,6 +93,69 @@
         "condition": {
           "name": "AlienSharkoTDisplayCondition7"
         }
+      },
+      {
+        "model": "Modelboyotamed",
+        "texture": "starclaw.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "StarclawAlienSharkoTDisplayCondition"
+        }
+      },
+      {
+        "model": "Modelboyosit",
+        "texture": "starclaw.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "StarclawAlienSharkoTDisplayCondition2"
+        }
+      },
+      {
+        "model": "Modelboyolay",
+        "texture": "starclaw.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "StarclawAlienSharkoTDisplayCondition3"
+        }
+      },
+      {
+        "model": "Modelboyolayonside",
+        "texture": "starclaw.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "StarclawAlienSharkoTDisplayCondition4"
+        }
+      },
+      {
+        "model": "Modelboyosleep",
+        "texture": "starclaw.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "StarclawAlienSharkoTDisplayCondition5"
+        }
+      },
+      {
+        "model": "Modelboyolayalt",
+        "texture": "starclaw.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "StarclawAlienSharkoTDisplayCondition6"
+        }
+      },
+      {
+        "model": "Modelboyosleepalt",
+        "texture": "starclaw.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "StarclawAlienSharkoTDisplayCondition7"
+        }
       }
     ],
     "animations": [],

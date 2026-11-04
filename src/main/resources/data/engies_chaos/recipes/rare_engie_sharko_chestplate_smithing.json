@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:engie_shark_chestplate"
+  },
+  "addition": {
+    "item": "engies_chaos:rare_engie_sharko_cloth"
+  },
+  "result": {
+    "item": "engies_chaos:rare_engie_shark_chestplate"
+  }
+}

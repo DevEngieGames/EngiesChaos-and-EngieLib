@@ -5,7 +5,14 @@
     "recipeType": "Smithing",
     "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:RareSharkoCloth"
+      },
+      {
+        "value": "Items.AMETHYST_SHARD"
+      }
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
@@ -15,7 +22,7 @@
       "value": "CUSTOM:RareSharkoCloth"
     },
     "smithingInputAdditionStack": {
-      "value": "Items.AMETHYST_SHARD"
+      "value": "Blocks.AMETHYST_BLOCK"
     },
     "smithingInputTemplateStack": {
       "value": ""

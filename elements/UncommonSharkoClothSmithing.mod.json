@@ -1,0 +1,36 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      {
+        "value": "TAG:engies_chaos:same_sharko_type"
+      },
+      {
+        "value": "Items.EMERALD"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:SharkoCloth"
+    },
+    "smithingInputAdditionStack": {
+      "value": "Blocks.EMERALD_BLOCK"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:UncommonSharkoCloth"
+    },
+    "name": "uncommon_sharko_cloth_smithing",
+    "namespace": "mod"
+  }
+}

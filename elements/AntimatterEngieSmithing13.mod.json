@@ -12,10 +12,10 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "smithingInputStack": {
-      "value": "CUSTOM:MindscapeEngies.legs"
+      "value": "CUSTOM:TheRealEngieGamess.legs"
     },
     "smithingInputAdditionStack": {
-      "value": "CUSTOM:AntimatterEngieBlock"
+      "value": "CUSTOM:AntimatterMadEngieBlock"
     },
     "smithingInputTemplateStack": {
       "value": ""

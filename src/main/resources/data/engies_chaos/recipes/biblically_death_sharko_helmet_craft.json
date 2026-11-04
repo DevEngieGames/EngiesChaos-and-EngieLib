@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "biblicallydeathsharkohelmet",
+  "pattern": [
+    "aaa",
+    "a a"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:biblically_death_sharko_cloth"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:biblically_death_shark_helmet",
+    "count": 1
+  }
+}

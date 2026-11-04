@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:legendary_shark_chestplate"
+  },
+  "addition": {
+    "item": "engies_chaos:mythic_sharko_cloth"
+  },
+  "result": {
+    "item": "engies_chaos:mythic_shark_chestplate"
+  }
+}

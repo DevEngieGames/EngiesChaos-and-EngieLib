@@ -2,7 +2,6 @@ package engiegames.engies_chaos.item;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.network.chat.Component;
@@ -13,12 +12,13 @@ import engiegames.engies_chaos.init.EngiesChaosModTabs;
 
 public class MythicSharkoClothItem extends Item {
 	public MythicSharkoClothItem() {
-		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS).rarity(Rarity.UNCOMMON));
+		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}
 
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
 		list.add(Component.translatable("item.engies_chaos.mythic_sharko_cloth.description_0"));
+		list.add(Component.translatable("item.engies_chaos.mythic_sharko_cloth.description_1"));
 	}
 }

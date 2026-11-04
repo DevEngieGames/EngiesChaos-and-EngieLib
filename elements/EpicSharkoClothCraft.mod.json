@@ -4,22 +4,35 @@
   "definition": {
     "recipeType": "Crafting",
     "recipeRetstackSize": 1,
-    "group": "epicsharkocloth",
-    "unlockingItems": [],
+    "group": "",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:RareSharkoCloth"
+      },
+      {
+        "value": "Items.AMETHYST_SHARD"
+      },
+      {
+        "value": "Items.DYE#5"
+      }
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
-    "recipeShapeless": true,
+    "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": ""
+        "value": "Items.DYE#5"
       },
       {
-        "value": ""
+        "value": "Items.AMETHYST_SHARD"
       },
       {
-        "value": ""
+        "value": "Items.DYE#5"
+      },
+      {
+        "value": "Items.AMETHYST_SHARD"
       },
       {
         "value": "CUSTOM:RareSharkoCloth"
@@ -28,16 +41,13 @@
         "value": "Items.AMETHYST_SHARD"
       },
       {
-        "value": "Items.AMETHYST_SHARD"
+        "value": "Items.DYE#5"
       },
       {
         "value": "Items.AMETHYST_SHARD"
       },
       {
-        "value": ""
-      },
-      {
-        "value": ""
+        "value": "Items.DYE#5"
       }
     ],
     "recipeReturnStack": {

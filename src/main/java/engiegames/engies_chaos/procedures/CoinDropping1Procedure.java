@@ -950,844 +950,85 @@ public class CoinDropping1Procedure {
 						}
 						if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty >= 30 && (world.dimensionType().moonPhase(world.dayTime()) == 0 || world.dimensionType().moonPhase(world.dayTime()) == 4)) {
 							if (!(world instanceof Level _lvl714 && _lvl714.isDay()) && world.dimensionType().moonPhase(world.dayTime()) == 4) {
-								if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 1) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.COSMIC_ENGIE_GAMES_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.COSMIC_ENGIE_GAMES_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.COSMIC_ENGIE_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.COSMIC_ENGIE_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
+								if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
+									if (world instanceof ServerLevel _level) {
+										ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.COSMIC_ENGIE_GAMES_COIN_BLOCK.get()));
+										entityToSpawn.setPickUpDelay(10);
+										_level.addFreshEntity(entityToSpawn);
 									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 2) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.ENGIE_GAMES_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.ENGIE_GAMES_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_GAMES_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_GAMES_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
+								} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
+									if (world instanceof ServerLevel _level) {
+										ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.COSMIC_ENGIE_GAMES_COIN_BLOCK.get()));
+										entityToSpawn.setPickUpDelay(10);
+										_level.addFreshEntity(entityToSpawn);
 									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 3) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.MINDSCAPE_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.MINDSCAPE_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.MINDSCAPE_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.MINDSCAPE_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
+									if (world instanceof ServerLevel _level) {
+										ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.COSMIC_ENGIE_COIN.get()));
+										entityToSpawn.setPickUpDelay(10);
+										_level.addFreshEntity(entityToSpawn);
 									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 4) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.ENGIE_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.ENGIE_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 5) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.THE_END_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.THE_END_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 6) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.SUPER_DOOMS_DAY_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.SUPER_DOOMS_DAY_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.SUPER_DOOMS_DAY_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.SUPER_DOOMS_DAY_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 7) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.DOOMS_DAY_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.DOOMS_DAY_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DOOMS_DAY_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DOOMS_DAY_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
+								} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
+									if (world instanceof ServerLevel _level) {
+										ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.COSMIC_ENGIE_COIN.get()));
+										entityToSpawn.setPickUpDelay(10);
+										_level.addFreshEntity(entityToSpawn);
 									}
 								}
-							} else if (world instanceof Level _lvl856 && _lvl856.isDay() && world.dimensionType().moonPhase(world.dayTime()) == 0) {
-								if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 1) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.ENGIE_GAMES_TESSERACT_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.ENGIE_GAMES_TESSERACT_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_GAMES_TESSERACT.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_GAMES_TESSERACT.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
+							} else if (world instanceof Level _lvl735 && _lvl735.isDay() && world.dimensionType().moonPhase(world.dayTime()) == 0) {
+								if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
+									if (world instanceof ServerLevel _level) {
+										ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.ENGIE_GAMES_TESSERACT_BLOCK.get()));
+										entityToSpawn.setPickUpDelay(10);
+										_level.addFreshEntity(entityToSpawn);
 									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 2) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.ENGIE_GAMES_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.ENGIE_GAMES_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_GAMES_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_GAMES_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
+								} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
+									if (world instanceof ServerLevel _level) {
+										ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.ENGIE_GAMES_TESSERACT_BLOCK.get()));
+										entityToSpawn.setPickUpDelay(10);
+										_level.addFreshEntity(entityToSpawn);
 									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 3) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.MINDSCAPE_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.MINDSCAPE_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.MINDSCAPE_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.MINDSCAPE_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
+									if (world instanceof ServerLevel _level) {
+										ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_GAMES_TESSERACT.get()));
+										entityToSpawn.setPickUpDelay(10);
+										_level.addFreshEntity(entityToSpawn);
 									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 4) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.ENGIE_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.ENGIE_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 5) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.THE_END_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.THE_END_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 6) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.SUPER_DOOMS_DAY_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.SUPER_DOOMS_DAY_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.SUPER_DOOMS_DAY_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.SUPER_DOOMS_DAY_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 7) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.DOOMS_DAY_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.DOOMS_DAY_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DOOMS_DAY_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DOOMS_DAY_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									}
-								}
-							} else {
-								if (Math.round(Mth.nextInt(RandomSource.create(), 1, 6)) == 1) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.ENGIE_GAMES_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.ENGIE_GAMES_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_GAMES_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_GAMES_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 6)) == 2) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.MINDSCAPE_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.MINDSCAPE_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.MINDSCAPE_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.MINDSCAPE_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 6)) == 3) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.ENGIE_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.ENGIE_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 6)) == 4) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.THE_END_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.THE_END_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 6)) == 5) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.SUPER_DOOMS_DAY_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.SUPER_DOOMS_DAY_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.SUPER_DOOMS_DAY_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.SUPER_DOOMS_DAY_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 6)) == 6) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.DOOMS_DAY_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.DOOMS_DAY_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DOOMS_DAY_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DOOMS_DAY_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
+								} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
+									if (world instanceof ServerLevel _level) {
+										ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_GAMES_TESSERACT.get()));
+										entityToSpawn.setPickUpDelay(10);
+										_level.addFreshEntity(entityToSpawn);
 									}
 								}
 							}
 						} else if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty >= 29 && world.dimensionType().moonPhase(world.dayTime()) == 4) {
-							if (!(world instanceof Level _lvl1119 && _lvl1119.isDay())) {
-								if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 1) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.COSMIC_ENGIE_GAMES_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.COSMIC_ENGIE_GAMES_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.COSMIC_ENGIE_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.COSMIC_ENGIE_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
+							if (!(world instanceof Level _lvl757 && _lvl757.isDay())) {
+								if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
+									if (world instanceof ServerLevel _level) {
+										ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.COSMIC_ENGIE_GAMES_COIN_BLOCK.get()));
+										entityToSpawn.setPickUpDelay(10);
+										_level.addFreshEntity(entityToSpawn);
 									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 2) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.ENGIE_GAMES_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.ENGIE_GAMES_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_GAMES_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_GAMES_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
+								} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
+									if (world instanceof ServerLevel _level) {
+										ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.COSMIC_ENGIE_GAMES_COIN_BLOCK.get()));
+										entityToSpawn.setPickUpDelay(10);
+										_level.addFreshEntity(entityToSpawn);
 									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 3) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.MINDSCAPE_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.MINDSCAPE_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.MINDSCAPE_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.MINDSCAPE_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
+									if (world instanceof ServerLevel _level) {
+										ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.COSMIC_ENGIE_COIN.get()));
+										entityToSpawn.setPickUpDelay(10);
+										_level.addFreshEntity(entityToSpawn);
 									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 4) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.ENGIE_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.ENGIE_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 5) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.THE_END_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.THE_END_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 6) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.SUPER_DOOMS_DAY_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.SUPER_DOOMS_DAY_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.SUPER_DOOMS_DAY_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.SUPER_DOOMS_DAY_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 7)) == 7) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.DOOMS_DAY_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.DOOMS_DAY_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DOOMS_DAY_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DOOMS_DAY_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									}
-								}
-							} else {
-								if (Math.round(Mth.nextInt(RandomSource.create(), 1, 6)) == 1) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.ENGIE_GAMES_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.ENGIE_GAMES_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_GAMES_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_GAMES_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 6)) == 2) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.MINDSCAPE_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.MINDSCAPE_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.MINDSCAPE_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.MINDSCAPE_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 6)) == 3) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.ENGIE_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.ENGIE_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.ENGIE_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 6)) == 4) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.THE_END_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.THE_END_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.THE_END_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 6)) == 5) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.SUPER_DOOMS_DAY_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.SUPER_DOOMS_DAY_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.SUPER_DOOMS_DAY_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.SUPER_DOOMS_DAY_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									}
-								} else if (Math.round(Mth.nextInt(RandomSource.create(), 1, 6)) == 6) {
-									if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.DOOMS_DAY_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) == 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.DOOMS_DAY_COIN_BLOCK.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DOOMS_DAY_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
-									} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
-										if (world instanceof ServerLevel _level) {
-											ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.DOOMS_DAY_COIN.get()));
-											entityToSpawn.setPickUpDelay(10);
-											_level.addFreshEntity(entityToSpawn);
-										}
+								} else if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) > 50) {
+									if (world instanceof ServerLevel _level) {
+										ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModItems.COSMIC_ENGIE_COIN.get()));
+										entityToSpawn.setPickUpDelay(10);
+										_level.addFreshEntity(entityToSpawn);
 									}
 								}
 							}
-						} else if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty >= 13) {
+						}
+						if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty >= 13) {
 							if (Math.round(Mth.nextInt(RandomSource.create(), 1, 6)) == 1) {
 								if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
 									if (world instanceof ServerLevel _level) {
@@ -2329,7 +1570,7 @@ public class CoinDropping1Procedure {
 				if (Math.round(Mth.nextInt(RandomSource.create(), 1, 100)) <= 25) {
 					if (EngiesChaosModVariables.MapVariables.get(world).antimatterdropcheck == true) {
 						if (world.dimensionType().moonPhase(world.dayTime()) == 0) {
-							if (world instanceof Level _lvl1801 && _lvl1801.isDay()) {
+							if (world instanceof Level _lvl1198 && _lvl1198.isDay()) {
 								if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
 									if (world instanceof ServerLevel _level) {
 										ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.DARK_MATTER_ROUGHIAN_ENGIE_GAMES_COIN_BLOCK.get()));
@@ -2357,7 +1598,7 @@ public class CoinDropping1Procedure {
 							}
 						}
 						if (world.dimensionType().moonPhase(world.dayTime()) == 4) {
-							if (!(world instanceof Level _lvl1822 && _lvl1822.isDay())) {
+							if (!(world instanceof Level _lvl1219 && _lvl1219.isDay())) {
 								if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {
 									if (world instanceof ServerLevel _level) {
 										ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(EngiesChaosModBlocks.DARK_MATTER_COSMIC_ENGIE_GAMES_COIN_BLOCK.get()));
@@ -2385,8 +1626,8 @@ public class CoinDropping1Procedure {
 							}
 						}
 						if (Math.round(Mth.nextInt(RandomSource.create(), 1,
-								100)) < (sourceentity instanceof LivingEntity _livingEntity1843 && _livingEntity1843.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
-										? _livingEntity1843.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
+								100)) < (sourceentity instanceof LivingEntity _livingEntity1240 && _livingEntity1240.getAttributes().hasAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get())
+										? _livingEntity1240.getAttribute(EngiesChaosModAttributes.ENGIES_ANTIMATTER_BLESSING_CHANCE_FOR_PLAYER.get()).getBaseValue()
 										: 0) / 4) {
 							if (Math.round(Mth.nextInt(RandomSource.create(), 1, 5)) <= 1) {
 								if (Math.round(Mth.nextDouble(RandomSource.create(), 0, 100)) < 50) {

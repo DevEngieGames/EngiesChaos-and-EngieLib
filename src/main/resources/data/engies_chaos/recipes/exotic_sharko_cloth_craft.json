@@ -1,20 +1,21 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "group": "exoticsharkocloth",
-  "ingredients": [
-    {
-      "item": "engies_chaos:mythic_sharko_cloth"
-    },
-    {
-      "item": "minecraft:diamond_block"
-    },
-    {
-      "item": "minecraft:diamond"
-    },
-    {
-      "item": "minecraft:diamond"
-    }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aba",
+    "bcb",
+    "aba"
   ],
+  "key": {
+    "a": {
+      "item": "minecraft:light_blue_dye"
+    },
+    "b": {
+      "item": "minecraft:diamond"
+    },
+    "c": {
+      "item": "engies_chaos:mythic_sharko_cloth"
+    }
+  },
   "result": {
     "item": "engies_chaos:exotic_sharko_cloth",
     "count": 1

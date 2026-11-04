@@ -9,8 +9,9 @@ public class AlienSharkoTDisplayCondition3Procedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		if ((entity instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false) && (entity instanceof AlienSharkoEntity _datEntI ? _datEntI.getEntityData().get(AlienSharkoEntity.DATA_SharkoState) : 0) == 2
-				&& (entity instanceof AlienSharkoEntity _datEntL2 && _datEntL2.getEntityData().get(AlienSharkoEntity.DATA_AlternateState)) == false) {
+		if (!(entity.getDisplayName().getString()).equals("Starclaw") && (entity instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false)
+				&& (entity instanceof AlienSharkoEntity _datEntI ? _datEntI.getEntityData().get(AlienSharkoEntity.DATA_SharkoState) : 0) == 2
+				&& (entity instanceof AlienSharkoEntity _datEntL3 && _datEntL3.getEntityData().get(AlienSharkoEntity.DATA_AlternateState)) == false) {
 			return true;
 		}
 		return false;

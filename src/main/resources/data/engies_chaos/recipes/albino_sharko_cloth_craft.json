@@ -1,18 +1,8 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "albinosharkocloth",
   "ingredients": [
     {
       "item": "engies_chaos:sharko_cloth"
-    },
-    {
-      "item": "minecraft:white_dye"
-    },
-    {
-      "item": "minecraft:white_dye"
-    },
-    {
-      "item": "minecraft:white_dye"
     }
   ],
   "result": {

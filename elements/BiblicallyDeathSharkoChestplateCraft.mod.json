@@ -1,0 +1,53 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "biblicallydeathsharkochestplate",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:BiblicallyDeathSharkoCloth"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:BiblicallyDeathSharkoCloth"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:BiblicallyDeathSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:BiblicallyDeathSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:BiblicallyDeathSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:BiblicallyDeathSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:BiblicallyDeathSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:BiblicallyDeathSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:BiblicallyDeathSharkoCloth"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:BiblicallyDeathShark.body"
+    },
+    "name": "biblically_death_sharko_chestplate_craft",
+    "namespace": "mod"
+  }
+}

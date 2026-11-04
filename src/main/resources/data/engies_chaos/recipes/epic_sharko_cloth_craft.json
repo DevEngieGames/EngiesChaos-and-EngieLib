@@ -1,20 +1,21 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "group": "epicsharkocloth",
-  "ingredients": [
-    {
-      "item": "engies_chaos:rare_sharko_cloth"
-    },
-    {
-      "item": "minecraft:amethyst_shard"
-    },
-    {
-      "item": "minecraft:amethyst_shard"
-    },
-    {
-      "item": "minecraft:amethyst_shard"
-    }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aba",
+    "bcb",
+    "aba"
   ],
+  "key": {
+    "a": {
+      "item": "minecraft:purple_dye"
+    },
+    "b": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "c": {
+      "item": "engies_chaos:rare_sharko_cloth"
+    }
+  },
   "result": {
     "item": "engies_chaos:epic_sharko_cloth",
     "count": 1

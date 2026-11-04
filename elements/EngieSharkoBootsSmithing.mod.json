@@ -1,0 +1,33 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "engiesharkoboots",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:EngieSharkoCloth"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:ExoticShark.boots"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:EngieSharkoCloth"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:EngieShark.boots"
+    },
+    "name": "engie_sharko_boots_smithing",
+    "namespace": "mod"
+  }
+}

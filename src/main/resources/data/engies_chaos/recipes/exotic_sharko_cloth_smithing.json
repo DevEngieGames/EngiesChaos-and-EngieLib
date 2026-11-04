@@ -4,7 +4,7 @@
     "item": "engies_chaos:mythic_sharko_cloth"
   },
   "addition": {
-    "item": "minecraft:diamond"
+    "item": "minecraft:diamond_block"
   },
   "result": {
     "item": "engies_chaos:exotic_sharko_cloth"

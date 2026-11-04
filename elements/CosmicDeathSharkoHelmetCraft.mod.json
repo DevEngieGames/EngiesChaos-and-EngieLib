@@ -1,0 +1,53 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "cosmicdeathsharkohelmet",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:CosmicDeathSharkoCloth"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:CosmicDeathSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:CosmicDeathSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:CosmicDeathSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:CosmicDeathSharkoCloth"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:CosmicDeathSharkoCloth"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:CosmicDeathShark.helmet"
+    },
+    "name": "cosmic_death_sharko_helmet_craft",
+    "namespace": "mod"
+  }
+}

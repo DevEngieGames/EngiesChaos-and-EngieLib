@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:outraged_death_shark_boots"
+  },
+  "addition": {
+    "item": "engies_chaos:biblically_death_sharko_cloth"
+  },
+  "result": {
+    "item": "engies_chaos:biblically_death_shark_boots"
+  }
+}

@@ -4,40 +4,50 @@
   "definition": {
     "recipeType": "Crafting",
     "recipeRetstackSize": 1,
-    "group": "exoticsharkocloth",
-    "unlockingItems": [],
+    "group": "",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:MythicSharkoCloth"
+      },
+      {
+        "value": "Items.DIAMOND"
+      },
+      {
+        "value": "Items.DYE#12"
+      }
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
-    "recipeShapeless": true,
+    "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": ""
+        "value": "Items.DYE#12"
       },
       {
-        "value": ""
+        "value": "Items.DIAMOND"
       },
       {
-        "value": ""
+        "value": "Items.DYE#12"
+      },
+      {
+        "value": "Items.DIAMOND"
       },
       {
         "value": "CUSTOM:MythicSharkoCloth"
       },
       {
-        "value": "Blocks.DIAMOND_BLOCK"
+        "value": "Items.DIAMOND"
+      },
+      {
+        "value": "Items.DYE#12"
       },
       {
         "value": "Items.DIAMOND"
       },
       {
-        "value": "Items.DIAMOND"
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
+        "value": "Items.DYE#12"
       }
     ],
     "recipeReturnStack": {

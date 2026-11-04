@@ -1,10 +1,10 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "item": "engies_chaos:albino_sharko_cloth"
+    "item": "engies_chaos:uncommon_sharko_cloth"
   },
   "addition": {
-    "item": "minecraft:lapis_lazuli"
+    "item": "minecraft:lapis_block"
   },
   "result": {
     "item": "engies_chaos:rare_sharko_cloth"

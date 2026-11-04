@@ -3,8 +3,9 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "epicsharkcloth",
+    "texture": "epicsharkocloth",
     "customModelName": "Normal",
+    "guiTexture": "",
     "customProperties": {},
     "states": [],
     "name": "Epic Sharko Cloth",
@@ -30,14 +31,21 @@
     "damageVsEntity": 0.0,
     "specialInformation": {
       "fixedValue": [
-        "my pain is unmeasureable"
+        "You don't need to kill Sharkos to obtain this.",
+        "The first recipe is immediately unlocked when joining for the first time."
       ]
     },
+    "glowCondition": {
+      "fixedValue": false
+    },
     "inventorySize": 9,
-    "inventoryStackSize": 64,
+    "inventoryStackSize": 99,
     "enableRanged": false,
     "shootConstantly": false,
     "rangedItemChargesPower": false,
+    "projectile": {
+      "value": "Arrow"
+    },
     "projectileDisableAmmoCheck": false,
     "isFood": false,
     "nutritionalValue": 4,
@@ -49,7 +57,11 @@
     "isAlwaysEdible": false,
     "animation": "none",
     "isMusicDisc": false,
-    "musicDiscLengthInTicks": 0,
+    "musicDiscMusic": {
+      "value": ""
+    },
+    "musicDiscDescription": "",
+    "musicDiscLengthInTicks": 100,
     "musicDiscAnalogOutput": 0,
     "providedBannerPatterns": []
   }

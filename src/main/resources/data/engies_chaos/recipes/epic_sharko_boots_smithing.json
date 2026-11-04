@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "engies_chaos:rare_shark_boots"
+  },
+  "addition": {
+    "item": "engies_chaos:epic_sharko_cloth"
+  },
+  "result": {
+    "item": "engies_chaos:epic_shark_boots"
+  }
+}

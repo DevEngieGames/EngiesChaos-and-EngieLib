@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "engiesharkohelmet",
+  "pattern": [
+    "aaa",
+    "a a"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:engie_sharko_cloth"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:engie_shark_helmet",
+    "count": 1
+  }
+}

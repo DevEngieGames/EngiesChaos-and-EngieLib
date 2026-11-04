@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "tigersharkoboots",
+  "pattern": [
+    "a a",
+    "a a"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:tiger_sharko_cloth"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:tiger_shark_boots",
+    "count": 1
+  }
+}

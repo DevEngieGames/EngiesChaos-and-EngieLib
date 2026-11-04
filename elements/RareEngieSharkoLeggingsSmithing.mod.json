@@ -1,0 +1,33 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "rareengiesharkoleggings",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:RareEngieSharkoCloth"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:EngieShark.legs"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:RareEngieSharkoCloth"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:RareEngieShark.legs"
+    },
+    "name": "rare_engie_sharko_leggings_smithing",
+    "namespace": "mod"
+  }
+}

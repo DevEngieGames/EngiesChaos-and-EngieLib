@@ -3,19 +3,22 @@
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
-    "textureHelmet": "epicsharkhelm",
+    "textureHelmet": "epicsharkohelm",
     "enableBody": true,
-    "textureBody": "epicsharkbody",
+    "textureBody": "epicsharkochest",
     "enableLeggings": true,
-    "textureLeggings": "epicsharkleggings",
+    "textureLeggings": "epicsharkoleg",
     "enableBoots": true,
-    "textureBoots": "epicsharkboots",
+    "textureBoots": "epicsharkoboot",
+    "onBodyTick": {
+      "name": "EpicSharkoArmorFullSet"
+    },
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"
       }
     ],
-    "armorTextureFile": "epicsharko_",
+    "armorTextureFile": "backup_",
     "helmetName": "Epic Sharko Helmet",
     "bodyName": "Epic Sharko Chestplate",
     "leggingsName": "Epic Sharko Leggings",
@@ -32,22 +35,22 @@
     "bootsSpecialInformation": {
       "fixedValue": []
     },
-    "helmetModelName": "Default",
-    "helmetModelPart": "Helmet",
-    "helmetModelTexture": "From armor",
-    "bodyModelName": "Default",
+    "helmetModelName": "Modelsharkoarmor",
+    "helmetModelPart": "Head",
+    "helmetModelTexture": "epicsharkoarmor.png",
+    "bodyModelName": "Modelsharkoarmor",
     "bodyModelPart": "Body",
-    "armsModelPartL": "Arms L",
-    "armsModelPartR": "Arms R",
-    "bodyModelTexture": "From armor",
-    "leggingsModelName": "Default",
-    "leggingsModelPartL": "Leggings L",
-    "leggingsModelPartR": "Leggings R",
-    "leggingsModelTexture": "From armor",
-    "bootsModelName": "Default",
-    "bootsModelPartL": "Boots L",
-    "bootsModelPartR": "Boots R",
-    "bootsModelTexture": "From armor",
+    "armsModelPartL": "LeftArm",
+    "armsModelPartR": "RightArm",
+    "bodyModelTexture": "epicsharkoarmor.png",
+    "leggingsModelName": "Modelsharkoarmor",
+    "leggingsModelPartL": "LeftLeg",
+    "leggingsModelPartR": "RightLeg",
+    "leggingsModelTexture": "epicsharkoarmor.png",
+    "bootsModelName": "Modelsharkoarmor",
+    "bootsModelPartL": "LeftBoot",
+    "bootsModelPartR": "RightBoot",
+    "bootsModelTexture": "epicsharkoarmor.png",
     "helmetItemRenderType": 0,
     "helmetItemCustomModelName": "Normal",
     "bodyItemRenderType": 0,
@@ -60,17 +63,45 @@
     "bodyImmuneToFire": false,
     "leggingsImmuneToFire": false,
     "bootsImmuneToFire": false,
-    "maxDamage": 15,
-    "damageValueHelmet": 15,
-    "damageValueBody": 15,
-    "damageValueLeggings": 15,
-    "damageValueBoots": 15,
-    "enchantability": 7,
-    "toughness": 4.0,
+    "helmetGlowCondition": {
+      "fixedValue": false
+    },
+    "bodyGlowCondition": {
+      "fixedValue": false
+    },
+    "leggingsGlowCondition": {
+      "fixedValue": false
+    },
+    "bootsGlowCondition": {
+      "fixedValue": false
+    },
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "maxDamage": 232,
+    "damageValueHelmet": 100,
+    "damageValueBody": 232,
+    "damageValueLeggings": 232,
+    "damageValueBoots": 232,
+    "enchantability": 10,
+    "toughness": 5.0,
     "knockbackResistance": 0.2,
     "equipSound": {
-      "value": "item.armor.equip_leather"
+      "value": "item.armor.equip_iron"
     },
-    "repairItems": []
+    "repairItems": [
+      {
+        "value": "CUSTOM:EpicSharkoCloth"
+      }
+    ]
   }
 }

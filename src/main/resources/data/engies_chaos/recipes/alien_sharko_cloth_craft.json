@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aba",
+    "bcb",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:lime_dye"
+    },
+    "b": {
+      "item": "minecraft:glowstone"
+    },
+    "c": {
+      "item": "engies_chaos:tiger_sharko_cloth"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:alien_sharko_cloth",
+    "count": 1
+  }
+}

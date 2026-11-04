@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aba",
+    "bcb",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "engies_chaos:monstrosity_engie_essence"
+    },
+    "b": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "c": {
+      "item": "engies_chaos:biblically_death_sharko_cloth"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:monstrosity_death_sharko_cloth",
+    "count": 1
+  }
+}

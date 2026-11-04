@@ -1,0 +1,36 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:AlienSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:AngryEngieEssence"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:AlienSharkoCloth"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:AngryEngieBlock"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:AngryDeathSharkoCloth"
+    },
+    "name": "angry_death_sharko_cloth_smithing",
+    "namespace": "mod"
+  }
+}

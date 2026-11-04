@@ -1,0 +1,33 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "tigersharkohelmet",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:TigerSharkoCloth"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:RareEngieShark.helmet"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:TigerSharkoCloth"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:TigerShark.helmet"
+    },
+    "name": "tiger_sharko_helmet_smithing",
+    "namespace": "mod"
+  }
+}

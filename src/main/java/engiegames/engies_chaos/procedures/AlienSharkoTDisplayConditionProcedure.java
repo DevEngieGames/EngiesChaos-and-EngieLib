@@ -9,7 +9,8 @@ public class AlienSharkoTDisplayConditionProcedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		if ((entity instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false) && (entity instanceof AlienSharkoEntity _datEntI ? _datEntI.getEntityData().get(AlienSharkoEntity.DATA_SharkoState) : 0) == 0) {
+		if (!(entity.getDisplayName().getString()).equals("Starclaw") && (entity instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false)
+				&& (entity instanceof AlienSharkoEntity _datEntI ? _datEntI.getEntityData().get(AlienSharkoEntity.DATA_SharkoState) : 0) == 0) {
 			return true;
 		}
 		return false;

@@ -5,7 +5,14 @@
     "recipeType": "Smithing",
     "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:ExoticSharkoCloth"
+      },
+      {
+        "value": "Items.NETHERITE_INGOT"
+      }
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
@@ -15,7 +22,7 @@
       "value": "CUSTOM:ExoticSharkoCloth"
     },
     "smithingInputAdditionStack": {
-      "value": "Items.NETHERITE_INGOT"
+      "value": "Blocks.NETHERITE_BLOCK"
     },
     "smithingInputTemplateStack": {
       "value": ""

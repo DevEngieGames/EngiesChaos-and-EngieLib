@@ -1,0 +1,53 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "aliensharkochestplate",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:AlienSharkoCloth"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:AlienSharkoCloth"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:AlienSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:AlienSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:AlienSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:AlienSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:AlienSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:AlienSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:AlienSharkoCloth"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:AlienShark.body"
+    },
+    "name": "alien_sharko_chestplate_craft",
+    "namespace": "mod"
+  }
+}

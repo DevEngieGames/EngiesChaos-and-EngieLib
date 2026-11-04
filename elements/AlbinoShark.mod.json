@@ -3,19 +3,22 @@
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
-    "textureHelmet": "asharkhelm",
+    "textureHelmet": "albinosharkohelm",
     "enableBody": true,
-    "textureBody": "asharkbody",
+    "textureBody": "albinosharkochest",
     "enableLeggings": true,
-    "textureLeggings": "asharkleggings",
+    "textureLeggings": "albinosharkoleg",
     "enableBoots": true,
-    "textureBoots": "asharkboots",
+    "textureBoots": "albinosharkoboot",
+    "onBodyTick": {
+      "name": "SharkoArmorFullSet"
+    },
     "creativeTabs": [
       {
         "value": "CUSTOM:AAEItemsArmor"
       }
     ],
-    "armorTextureFile": "albinosharko_",
+    "armorTextureFile": "backup_",
     "helmetName": "Albino Sharko Helmet",
     "bodyName": "Albino Sharko Chestplate",
     "leggingsName": "Albino Sharko Leggings",
@@ -32,22 +35,22 @@
     "bootsSpecialInformation": {
       "fixedValue": []
     },
-    "helmetModelName": "Default",
-    "helmetModelPart": "Helmet",
-    "helmetModelTexture": "From armor",
-    "bodyModelName": "Default",
+    "helmetModelName": "Modelsharkoarmor",
+    "helmetModelPart": "Head",
+    "helmetModelTexture": "albinosharkoarmor.png",
+    "bodyModelName": "Modelsharkoarmor",
     "bodyModelPart": "Body",
-    "armsModelPartL": "Arms L",
-    "armsModelPartR": "Arms R",
-    "bodyModelTexture": "From armor",
-    "leggingsModelName": "Default",
-    "leggingsModelPartL": "Leggings L",
-    "leggingsModelPartR": "Leggings R",
-    "leggingsModelTexture": "From armor",
-    "bootsModelName": "Default",
-    "bootsModelPartL": "Boots L",
-    "bootsModelPartR": "Boots R",
-    "bootsModelTexture": "From armor",
+    "armsModelPartL": "LeftArm",
+    "armsModelPartR": "RightArm",
+    "bodyModelTexture": "albinosharkoarmor.png",
+    "leggingsModelName": "Modelsharkoarmor",
+    "leggingsModelPartL": "LeftLeg",
+    "leggingsModelPartR": "RightLeg",
+    "leggingsModelTexture": "albinosharkoarmor.png",
+    "bootsModelName": "Modelsharkoarmor",
+    "bootsModelPartL": "LeftBoot",
+    "bootsModelPartR": "RightBoot",
+    "bootsModelTexture": "albinosharkoarmor.png",
     "helmetItemRenderType": 0,
     "helmetItemCustomModelName": "Normal",
     "bodyItemRenderType": 0,
@@ -60,17 +63,48 @@
     "bodyImmuneToFire": false,
     "leggingsImmuneToFire": false,
     "bootsImmuneToFire": false,
-    "maxDamage": 5,
-    "damageValueHelmet": 5,
-    "damageValueBody": 5,
-    "damageValueLeggings": 5,
-    "damageValueBoots": 5,
-    "enchantability": 5,
+    "helmetGlowCondition": {
+      "fixedValue": false
+    },
+    "bodyGlowCondition": {
+      "fixedValue": false
+    },
+    "leggingsGlowCondition": {
+      "fixedValue": false
+    },
+    "bootsGlowCondition": {
+      "fixedValue": false
+    },
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "maxDamage": 58,
+    "damageValueHelmet": 58,
+    "damageValueBody": 58,
+    "damageValueLeggings": 58,
+    "damageValueBoots": 58,
+    "enchantability": 10,
     "toughness": 2.0,
     "knockbackResistance": 0.0,
     "equipSound": {
       "value": "item.armor.equip_leather"
     },
-    "repairItems": []
+    "repairItems": [
+      {
+        "value": "CUSTOM:AlbinoSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:SharkoCloth"
+      }
+    ]
   }
 }

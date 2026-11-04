@@ -1,0 +1,33 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "outrageddeathsharkohelmet",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:OutragedDeathSharkoCloth"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:EnragedDeathShark.helmet"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:OutragedDeathSharkoCloth"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:OutragedDeathShark.helmet"
+    },
+    "name": "outraged_death_sharko_helmet_smithing",
+    "namespace": "mod"
+  }
+}
