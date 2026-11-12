@@ -19,18 +19,18 @@ public class TigerSharkoArmorFullSetProcedure {
 				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == EngiesChaosModItems.TIGER_SHARK_BOOTS.get()) {
 			if (entity.isUnderWater()) {
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, (int) (20 * 0.05), 255));
+					_entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, (int) (20 * 0.05), 255, true, false));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, (int) (20 * 0.05), 20));
+					_entity.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, (int) (20 * 0.05), 19, true, false));
 			}
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, (int) (20 * 0.05), 20));
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, (int) (20 * 0.05), 19, true, false));
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, (int) (20 * 0.05), 20));
+				_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, (int) (20 * 0.05), 19, true, false));
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, (int) (20 * 0.05), 20));
+				_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, (int) (20 * 0.05), 19, true, false));
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, (int) (20 * 0.05), 20));
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, (int) (20 * 0.05), 19, true, false));
 		}
 	}
 }

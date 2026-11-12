@@ -10,6 +10,6 @@ public class SpecialChestplatesProcedure {
 		if (entity == null)
 			return;
 		if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-			_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 50));
+			_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 49, true, false));
 	}
 }

@@ -19,18 +19,18 @@ public class CosmicDeathSharkoArmorFullSetProcedure {
 				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == EngiesChaosModItems.COSMIC_DEATH_SHARK_BOOTS.get()) {
 			if (entity.isUnderWater()) {
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, (int) (20 * 0.05), 255));
+					_entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, (int) (20 * 0.05), 255, true, false));
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, (int) (20 * 0.05), 30));
+					_entity.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, (int) (20 * 0.05), 31, true, false));
 			}
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, (int) (20 * 0.05), 30));
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, (int) (20 * 0.05), 31, true, false));
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, (int) (20 * 0.05), 30));
+				_entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, (int) (20 * 0.05), 31, true, false));
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, (int) (20 * 0.05), 30));
+				_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, (int) (20 * 0.05), 31, true, false));
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, (int) (20 * 0.05), 30));
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, (int) (20 * 0.05), 31, true, false));
 		}
 	}
 }

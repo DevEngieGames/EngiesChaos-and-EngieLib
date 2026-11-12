@@ -14,43 +14,43 @@ public class AntimatterChestplatesProcedure {
 			return;
 		if (itemstack.getItem() == EngiesChaosModItems.ANTIMATTER_MAD_ENGIES_CHESTPLATE.get()) {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 13));
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 12, true, false));
 		} else if (itemstack.getItem() == EngiesChaosModItems.ANTIMATTER_ANGRY_ENGIES_CHESTPLATE.get()) {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 14));
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 13, true, false));
 		} else if (itemstack.getItem() == EngiesChaosModItems.ANTIMATTER_ENRAGED_ENGIES_CHESTPLATE.get()) {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 15));
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 14, true, false));
 		} else if (itemstack.getItem() == EngiesChaosModItems.ANTIMATTER_OUTRAGED_ENGIES_CHESTPLATE.get()) {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 16));
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 15, true, false));
 		} else if (itemstack.getItem() == EngiesChaosModItems.ANTIMATTER_BIBLICALLY_ACCURATE_ENGIES_CHESTPLATE.get()) {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 17));
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 16, true, false));
 		} else if (itemstack.getItem() == EngiesChaosModItems.ANTIMATTER_MONSTROSITY_ENGIES_CHESTPLATE.get()) {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 18));
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 17, true, false));
 		} else if (itemstack.getItem() == EngiesChaosModItems.ANTIMATTER_HOSTILE_ENGIES_CHESTPLATE.get()) {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 19));
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 18, true, false));
 		} else if (itemstack.getItem() == EngiesChaosModItems.ANTIMATTER_DOOMSDAYS_CHESTPLATE.get()) {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 20));
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 19, true, false));
 		} else if (itemstack.getItem() == EngiesChaosModItems.ANTIMATTER_SUPER_DOOMSDAYS_CHESTPLATE.get()) {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 21));
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 20, true, false));
 		} else if (itemstack.getItem() == EngiesChaosModItems.ANTIMATTER_THE_ENDS_CHESTPLATE.get()) {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 22));
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 21, true, false));
 		} else if (itemstack.getItem() == EngiesChaosModItems.ANTIMATTER_ENGIES_CHESTPLATE.get()) {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 23));
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 22, true, false));
 		} else if (itemstack.getItem() == EngiesChaosModItems.ANTIMATTER_ENGIEGAMESS_CHESTPLATE.get()) {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 24));
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 23, true, false));
 		} else if (itemstack.getItem() == EngiesChaosModItems.COSMIC_ENGIE_GAMESS_CHESTPLATE.get() || itemstack.getItem() == EngiesChaosModItems.ROUGHIAN_ENGIE_GAMESS_CHESTPLATE.get()) {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 25));
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1, 24, true, false));
 		}
 	}
 }
