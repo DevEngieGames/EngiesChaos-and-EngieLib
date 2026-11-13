@@ -22,7 +22,7 @@ public class MadEngieTickProcedure {
 				if (entity instanceof MadEngieEntity _datEntSetL)
 					_datEntSetL.getEntityData().set(MadEngieEntity.DATA_coldseasoned, true);
 				if (entity instanceof MadEngieEntity _datEntSetL)
-					_datEntSetL.getEntityData().set(MadEngieEntity.DATA_halloweened, true);
+					_datEntSetL.getEntityData().set(MadEngieEntity.DATA_halloweened, false);
 			}
 		} else {
 			if (entity instanceof MadEngieEntity _datEntSetL)

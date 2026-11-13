@@ -45,6 +45,8 @@ public class ChallengePlushChaosProcedure {
 							if (EngiesChaosModVariables.MapVariables.get(world).plushtimeuntildeathforall >= 60 && EngiesChaosModVariables.MapVariables.get(world).BYEBYE == false) {
 								EngiesChaosModVariables.MapVariables.get(world).graceperiodbeforeplushangryagain = true;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).plushtimeuntildeathforall = 0;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 								for (Entity entityiterator : new ArrayList<>(world.players())) {
 									{
 										boolean _setval = true;
@@ -73,6 +75,8 @@ public class ChallengePlushChaosProcedure {
 							}
 							if (EngiesChaosModVariables.MapVariables.get(world).plushtimeuntildeathforall >= 30 && EngiesChaosModVariables.MapVariables.get(world).BYEBYE == true) {
 								EngiesChaosModVariables.MapVariables.get(world).graceperiodbeforeplushangryagain = true;
+								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+								EngiesChaosModVariables.MapVariables.get(world).plushtimeuntildeathforall = 0;
 								EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 								for (Entity entityiterator : new ArrayList<>(world.players())) {
 									{
