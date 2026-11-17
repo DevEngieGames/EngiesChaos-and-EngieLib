@@ -77,7 +77,7 @@ public abstract class AntimatterDoomsdaysItem extends ArmorItem {
 
 	public static class Helmet extends AntimatterDoomsdaysItem {
 		public Helmet() {
-			super(EquipmentSlot.HEAD, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR).fireResistant());
+			super(EquipmentSlot.HEAD, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS).fireResistant());
 		}
 
 		@Override
@@ -107,7 +107,7 @@ public abstract class AntimatterDoomsdaysItem extends ArmorItem {
 
 	public static class Chestplate extends AntimatterDoomsdaysItem {
 		public Chestplate() {
-			super(EquipmentSlot.CHEST, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR).fireResistant());
+			super(EquipmentSlot.CHEST, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS).fireResistant());
 		}
 
 		@Override
@@ -141,7 +141,7 @@ public abstract class AntimatterDoomsdaysItem extends ArmorItem {
 
 	public static class Leggings extends AntimatterDoomsdaysItem {
 		public Leggings() {
-			super(EquipmentSlot.LEGS, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR).fireResistant());
+			super(EquipmentSlot.LEGS, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS).fireResistant());
 		}
 
 		@Override
@@ -171,7 +171,7 @@ public abstract class AntimatterDoomsdaysItem extends ArmorItem {
 
 	public static class Boots extends AntimatterDoomsdaysItem {
 		public Boots() {
-			super(EquipmentSlot.FEET, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR).fireResistant());
+			super(EquipmentSlot.FEET, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS).fireResistant());
 		}
 
 		@Override

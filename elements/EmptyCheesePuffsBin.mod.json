@@ -5,11 +5,16 @@
     "renderType": 1,
     "texture": "emptybin",
     "customModelName": "cheeseballsempty:default",
+    "guiTexture": "",
     "customProperties": {},
     "states": [],
     "name": "Empty Cheese Balls Bin",
     "rarity": "COMMON",
-    "creativeTabs": [],
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsItems"
+      }
+    ],
     "stackSize": 64,
     "enchantability": 0,
     "useDuration": 0,
@@ -19,7 +24,7 @@
       "value": ""
     },
     "destroyAnyBlock": false,
-    "immuneToFire": true,
+    "immuneToFire": false,
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
     "enableMeleeDamage": false,
@@ -27,11 +32,17 @@
     "specialInformation": {
       "fixedValue": []
     },
+    "glowCondition": {
+      "fixedValue": false
+    },
     "inventorySize": 9,
     "inventoryStackSize": 64,
     "enableRanged": false,
     "shootConstantly": false,
     "rangedItemChargesPower": false,
+    "projectile": {
+      "value": "Arrow"
+    },
     "projectileDisableAmmoCheck": false,
     "isFood": false,
     "nutritionalValue": 4,
@@ -43,6 +54,10 @@
     "isAlwaysEdible": false,
     "animation": "none",
     "isMusicDisc": false,
+    "musicDiscMusic": {
+      "value": ""
+    },
+    "musicDiscDescription": "",
     "musicDiscLengthInTicks": 0,
     "musicDiscAnalogOutput": 0,
     "providedBannerPatterns": []

@@ -40,8 +40,8 @@ public class BootsThatAllowFlightProcedure {
 			return;
 		if (!(getEntityGameType(entity) == GameType.CREATIVE || getEntityGameType(entity) == GameType.SPECTATOR)) {
 			if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).is(ItemTags.create(new ResourceLocation("engies_chaos:boots/allowflight")))) {
-				if ((EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart && EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart && EngiesChaosModVariables.MapVariables.get(world).TheEndStart
-						&& EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart) == false) {
+				if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart == false && EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart == false && EngiesChaosModVariables.MapVariables.get(world).TheEndStart == false
+						&& EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart == false) {
 					if (entity instanceof Player _player) {
 						_player.getAbilities().mayfly = true;
 						_player.onUpdateAbilities();

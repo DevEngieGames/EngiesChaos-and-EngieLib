@@ -5,13 +5,14 @@
     "renderType": 1,
     "texture": "pizzaitem",
     "customModelName": "pizza_slice:default",
+    "guiTexture": "",
     "customProperties": {},
     "states": [],
     "name": "Pizza Slice",
     "rarity": "COMMON",
     "creativeTabs": [
       {
-        "value": "CUSTOM:AAEItemsFood"
+        "value": "CUSTOM:AAEItemsItems"
       }
     ],
     "stackSize": 64,
@@ -31,11 +32,17 @@
     "specialInformation": {
       "fixedValue": []
     },
+    "glowCondition": {
+      "fixedValue": false
+    },
     "inventorySize": 9,
     "inventoryStackSize": 64,
     "enableRanged": false,
     "shootConstantly": false,
     "rangedItemChargesPower": false,
+    "projectile": {
+      "value": "Arrow"
+    },
     "projectileDisableAmmoCheck": false,
     "isFood": true,
     "nutritionalValue": 4,
@@ -47,6 +54,10 @@
     "isAlwaysEdible": false,
     "animation": "eat",
     "isMusicDisc": false,
+    "musicDiscMusic": {
+      "value": ""
+    },
+    "musicDiscDescription": "",
     "musicDiscLengthInTicks": 0,
     "musicDiscAnalogOutput": 0,
     "providedBannerPatterns": []

@@ -61,7 +61,7 @@ public abstract class CyberItem extends ArmorItem {
 
 	public static class Helmet extends CyberItem {
 		public Helmet() {
-			super(EquipmentSlot.HEAD, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR));
+			super(EquipmentSlot.HEAD, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 		}
 
 		@Override
@@ -72,7 +72,7 @@ public abstract class CyberItem extends ArmorItem {
 
 	public static class Chestplate extends CyberItem {
 		public Chestplate() {
-			super(EquipmentSlot.CHEST, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR));
+			super(EquipmentSlot.CHEST, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 		}
 
 		@Override
@@ -83,7 +83,7 @@ public abstract class CyberItem extends ArmorItem {
 
 	public static class Leggings extends CyberItem {
 		public Leggings() {
-			super(EquipmentSlot.LEGS, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR));
+			super(EquipmentSlot.LEGS, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 		}
 
 		@Override
@@ -94,7 +94,7 @@ public abstract class CyberItem extends ArmorItem {
 
 	public static class Boots extends CyberItem {
 		public Boots() {
-			super(EquipmentSlot.FEET, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR));
+			super(EquipmentSlot.FEET, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 		}
 
 		@Override

@@ -12,7 +12,7 @@
     "textureBoots": "uncommonboots",
     "creativeTabs": [
       {
-        "value": "CUSTOM:AAEItemsArmor"
+        "value": "CUSTOM:AAEItemsItems"
       }
     ],
     "armorTextureFile": "uncommon_",
@@ -60,6 +60,30 @@
     "bodyImmuneToFire": false,
     "leggingsImmuneToFire": false,
     "bootsImmuneToFire": false,
+    "helmetGlowCondition": {
+      "fixedValue": false
+    },
+    "bodyGlowCondition": {
+      "fixedValue": false
+    },
+    "leggingsGlowCondition": {
+      "fixedValue": false
+    },
+    "bootsGlowCondition": {
+      "fixedValue": false
+    },
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
     "maxDamage": 7,
     "damageValueHelmet": 2,
     "damageValueBody": 5,
@@ -69,7 +93,7 @@
     "toughness": 0.0,
     "knockbackResistance": 0.0,
     "equipSound": {
-      "value": "item.armor.equip_gold"
+      "value": "item.armor.equip_chain"
     },
     "repairItems": []
   }

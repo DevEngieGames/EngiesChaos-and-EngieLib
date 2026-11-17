@@ -77,7 +77,7 @@ public abstract class UncommonSharkItem extends ArmorItem {
 
 	public static class Helmet extends UncommonSharkItem {
 		public Helmet() {
-			super(EquipmentSlot.HEAD, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR));
+			super(EquipmentSlot.HEAD, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 		}
 
 		@Override
@@ -107,7 +107,7 @@ public abstract class UncommonSharkItem extends ArmorItem {
 
 	public static class Chestplate extends UncommonSharkItem {
 		public Chestplate() {
-			super(EquipmentSlot.CHEST, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR));
+			super(EquipmentSlot.CHEST, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 		}
 
 		@Override
@@ -141,7 +141,7 @@ public abstract class UncommonSharkItem extends ArmorItem {
 
 	public static class Leggings extends UncommonSharkItem {
 		public Leggings() {
-			super(EquipmentSlot.LEGS, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR));
+			super(EquipmentSlot.LEGS, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 		}
 
 		@Override
@@ -171,7 +171,7 @@ public abstract class UncommonSharkItem extends ArmorItem {
 
 	public static class Boots extends UncommonSharkItem {
 		public Boots() {
-			super(EquipmentSlot.FEET, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR));
+			super(EquipmentSlot.FEET, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 		}
 
 		@Override

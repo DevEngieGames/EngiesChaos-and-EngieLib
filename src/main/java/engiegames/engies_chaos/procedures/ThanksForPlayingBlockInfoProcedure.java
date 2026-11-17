@@ -2,6 +2,6 @@ package engiegames.engies_chaos.procedures;
 
 public class ThanksForPlayingBlockInfoProcedure {
 	public static String execute() {
-		return "4,072" + " Mod Elements Total";
+		return "4,158" + " Mod Elements Total";
 	}
 }

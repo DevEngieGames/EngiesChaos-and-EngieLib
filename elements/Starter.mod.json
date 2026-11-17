@@ -12,7 +12,7 @@
     "textureBoots": "starter_boots",
     "creativeTabs": [
       {
-        "value": "CUSTOM:AAEItemsArmor"
+        "value": "CUSTOM:AAEItemsItems"
       }
     ],
     "armorTextureFile": "starter",

@@ -12,7 +12,7 @@
     "textureBoots": "oldengieboots",
     "creativeTabs": [
       {
-        "value": "CUSTOM:AAEItemsArmor"
+        "value": "CUSTOM:AAEItemsItems"
       }
     ],
     "armorTextureFile": "engi_",

@@ -77,7 +77,7 @@ public abstract class TheRealEngieGamessItem extends ArmorItem {
 
 	public static class Helmet extends TheRealEngieGamessItem {
 		public Helmet() {
-			super(EquipmentSlot.HEAD, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR).fireResistant());
+			super(EquipmentSlot.HEAD, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS).fireResistant());
 		}
 
 		@Override
@@ -107,7 +107,7 @@ public abstract class TheRealEngieGamessItem extends ArmorItem {
 
 	public static class Chestplate extends TheRealEngieGamessItem {
 		public Chestplate() {
-			super(EquipmentSlot.CHEST, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR).fireResistant());
+			super(EquipmentSlot.CHEST, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS).fireResistant());
 		}
 
 		@Override
@@ -141,7 +141,7 @@ public abstract class TheRealEngieGamessItem extends ArmorItem {
 
 	public static class Leggings extends TheRealEngieGamessItem {
 		public Leggings() {
-			super(EquipmentSlot.LEGS, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR).fireResistant());
+			super(EquipmentSlot.LEGS, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS).fireResistant());
 		}
 
 		@Override
@@ -171,7 +171,7 @@ public abstract class TheRealEngieGamessItem extends ArmorItem {
 
 	public static class Boots extends TheRealEngieGamessItem {
 		public Boots() {
-			super(EquipmentSlot.FEET, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR).fireResistant());
+			super(EquipmentSlot.FEET, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS).fireResistant());
 		}
 
 		@Override

@@ -8,9 +8,11 @@ import net.minecraft.network.chat.Component;
 
 import java.util.List;
 
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
+
 public class FrozenCorndogItem extends Item {
 	public FrozenCorndogItem() {
-		super(new Item.Properties().tab(null));
+		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS));
 	}
 
 	@Override

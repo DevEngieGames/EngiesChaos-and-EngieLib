@@ -81,7 +81,7 @@ public abstract class DarkMatterCosmicEngieGamessItem extends ArmorItem {
 
 	public static class Helmet extends DarkMatterCosmicEngieGamessItem {
 		public Helmet() {
-			super(EquipmentSlot.HEAD, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR).fireResistant());
+			super(EquipmentSlot.HEAD, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS).fireResistant());
 		}
 
 		@Override
@@ -123,7 +123,7 @@ public abstract class DarkMatterCosmicEngieGamessItem extends ArmorItem {
 
 	public static class Chestplate extends DarkMatterCosmicEngieGamessItem {
 		public Chestplate() {
-			super(EquipmentSlot.CHEST, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR).fireResistant());
+			super(EquipmentSlot.CHEST, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS).fireResistant());
 		}
 
 		@Override
@@ -169,7 +169,7 @@ public abstract class DarkMatterCosmicEngieGamessItem extends ArmorItem {
 
 	public static class Leggings extends DarkMatterCosmicEngieGamessItem {
 		public Leggings() {
-			super(EquipmentSlot.LEGS, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR).fireResistant());
+			super(EquipmentSlot.LEGS, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS).fireResistant());
 		}
 
 		@Override
@@ -211,7 +211,7 @@ public abstract class DarkMatterCosmicEngieGamessItem extends ArmorItem {
 
 	public static class Boots extends DarkMatterCosmicEngieGamessItem {
 		public Boots() {
-			super(EquipmentSlot.FEET, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ARMOR).fireResistant());
+			super(EquipmentSlot.FEET, new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS).fireResistant());
 		}
 
 		@Override

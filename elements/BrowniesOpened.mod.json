@@ -5,13 +5,14 @@
     "renderType": 1,
     "texture": "brownie",
     "customModelName": "browniesopened:default",
+    "guiTexture": "",
     "customProperties": {},
     "states": [],
     "name": "Brownies Opened",
     "rarity": "COMMON",
     "creativeTabs": [
       {
-        "value": "CUSTOM:AAEItemsFood"
+        "value": "CUSTOM:AAEItemsItems"
       }
     ],
     "stackSize": 64,
@@ -31,6 +32,9 @@
     "specialInformation": {
       "fixedValue": []
     },
+    "glowCondition": {
+      "fixedValue": false
+    },
     "inventorySize": 9,
     "inventoryStackSize": 64,
     "onRightClickedInAir": {
@@ -45,6 +49,9 @@
     "enableRanged": false,
     "shootConstantly": false,
     "rangedItemChargesPower": false,
+    "projectile": {
+      "value": "Arrow"
+    },
     "projectileDisableAmmoCheck": false,
     "isFood": false,
     "nutritionalValue": 4,
@@ -56,6 +63,10 @@
     "isAlwaysEdible": false,
     "animation": "none",
     "isMusicDisc": false,
+    "musicDiscMusic": {
+      "value": ""
+    },
+    "musicDiscDescription": "",
     "musicDiscLengthInTicks": 0,
     "musicDiscAnalogOutput": 0,
     "providedBannerPatterns": []

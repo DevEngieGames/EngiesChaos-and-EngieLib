@@ -2,7 +2,7 @@
   "parent": "engies_chaos:custom/plaque",
   "textures": {
     "0": "engies_chaos:block/holster",
-    "1": "engies_chaos:block/newengiepfp",
+    "1": "engies_chaos:block/engiepfp-november2026-1",
     "particle": "engies_chaos:item/newengiepfplol"
   }
 }

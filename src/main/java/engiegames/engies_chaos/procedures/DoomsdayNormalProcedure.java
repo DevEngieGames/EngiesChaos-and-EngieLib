@@ -372,17 +372,17 @@ public class DoomsdayNormalProcedure {
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = true;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 20)) + 4;
+						EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown = Mth.nextInt(RandomSource.create(), 0, 20) + 4;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).missilecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 20)) + 4;
+						EngiesChaosModVariables.MapVariables.get(world).missilecooldown = Mth.nextInt(RandomSource.create(), 0, 20) + 4;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).riftcooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 20)) + 4;
+						EngiesChaosModVariables.MapVariables.get(world).riftcooldown = Mth.nextInt(RandomSource.create(), 0, 20) + 4;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).spikecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 20)) + 4;
+						EngiesChaosModVariables.MapVariables.get(world).spikecooldown = Mth.nextInt(RandomSource.create(), 0, 20) + 4;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).avalanchecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 20)) + 4;
+						EngiesChaosModVariables.MapVariables.get(world).avalanchecooldown = Mth.nextInt(RandomSource.create(), 0, 20) + 4;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosModVariables.MapVariables.get(world).hordecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 20)) + 4;
+						EngiesChaosModVariables.MapVariables.get(world).hordecooldown = Mth.nextInt(RandomSource.create(), 0, 20) + 4;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						EngiesChaosMod.queueServerWork(262, () -> {
 							EngiesChaosModVariables.MapVariables.get(world).prophposition = 115;
@@ -959,32 +959,32 @@ public class DoomsdayNormalProcedure {
 							}
 						}
 						if (EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown <= 0) {
-							EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 20));
+							EngiesChaosModVariables.MapVariables.get(world).darknessretrycooldown = Mth.nextInt(RandomSource.create(), 0, 20);
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							BlizzardAnnoyanceProcedure.execute(world);
 						}
 						if (EngiesChaosModVariables.MapVariables.get(world).missilecooldown <= 0) {
-							EngiesChaosModVariables.MapVariables.get(world).missilecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 20));
+							EngiesChaosModVariables.MapVariables.get(world).missilecooldown = Mth.nextInt(RandomSource.create(), 0, 20);
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							MissileSpawnProcedure.execute(world);
 						}
 						if (EngiesChaosModVariables.MapVariables.get(world).riftcooldown <= 0) {
-							EngiesChaosModVariables.MapVariables.get(world).riftcooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 20));
+							EngiesChaosModVariables.MapVariables.get(world).riftcooldown = Mth.nextInt(RandomSource.create(), 0, 20);
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							RiftSpawnsProcedure.execute(world);
 						}
 						if (EngiesChaosModVariables.MapVariables.get(world).spikecooldown <= 0) {
-							EngiesChaosModVariables.MapVariables.get(world).spikecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 20));
+							EngiesChaosModVariables.MapVariables.get(world).spikecooldown = Mth.nextInt(RandomSource.create(), 0, 20);
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							SpikeSpawnsProcedure.execute(world);
 						}
 						if (EngiesChaosModVariables.MapVariables.get(world).avalanchecooldown <= 0) {
-							EngiesChaosModVariables.MapVariables.get(world).avalanchecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 20));
+							EngiesChaosModVariables.MapVariables.get(world).avalanchecooldown = Mth.nextInt(RandomSource.create(), 0, 20);
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							AvalancheSpawnProcedure.execute(world);
 						}
 						if (EngiesChaosModVariables.MapVariables.get(world).hordecooldown <= 0) {
-							EngiesChaosModVariables.MapVariables.get(world).hordecooldown = Math.round(Mth.nextDouble(RandomSource.create(), 1, 20));
+							EngiesChaosModVariables.MapVariables.get(world).hordecooldown = Mth.nextInt(RandomSource.create(), 0, 20);
 							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 							HordeSpawnsProcedure.execute(world);
 						}

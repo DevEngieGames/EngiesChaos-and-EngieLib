@@ -12,9 +12,11 @@ import net.minecraft.network.chat.Component;
 
 import java.util.List;
 
+import engiegames.engies_chaos.init.EngiesChaosModTabs;
+
 public class CorndogItem extends Item {
 	public CorndogItem() {
-		super(new Item.Properties().tab(null).food((new FoodProperties.Builder()).nutrition(8).saturationMod(0.5f).meat().build()));
+		super(new Item.Properties().tab(EngiesChaosModTabs.TAB_ENGIES_CHAOS_ITEMS).food((new FoodProperties.Builder()).nutrition(8).saturationMod(0.5f).meat().build()));
 	}
 
 	@Override

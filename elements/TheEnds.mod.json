@@ -12,7 +12,7 @@
     "textureBoots": "theendboot",
     "creativeTabs": [
       {
-        "value": "CUSTOM:AAEItemsArmor"
+        "value": "CUSTOM:AAEItemsItems"
       }
     ],
     "armorTextureFile": "backup_",

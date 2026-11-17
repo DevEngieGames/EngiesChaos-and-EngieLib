@@ -12,7 +12,7 @@
     "rarity": "RARE",
     "creativeTabs": [
       {
-        "value": "CUSTOM:AAEItemsFood"
+        "value": "CUSTOM:AAEItemsItems"
       }
     ],
     "stackSize": 64,
